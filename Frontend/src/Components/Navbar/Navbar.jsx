@@ -29,7 +29,19 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <ul className="nav-menu">
             <li className="nav-item">Home <FiChevronDown /></li>
-            <li className="nav-item">Pages <FiChevronDown /></li>
+            <li className="nav-item dropdown-parent"><a href="/pages">Pages</a> <FiChevronDown />
+
+             <ul className="dropdown">
+                <li className="arrow-item">About Us </li>
+                <li className="arrow-item">Our Team </li>
+                <li className="arrow-item">Testimonials</li>
+                <li className="arrow-item">Contact Us</li>
+                <li className="arrow-item"><a href="/faq">FAQ</a></li>
+                <li className="arrow-item">404</li>
+                
+              </ul>
+            </li>
+
             <li className="nav-item">Services <FiChevronDown /></li>
 
             <li className="nav-item dropdown-parent">
@@ -51,7 +63,7 @@ const Navbar = () => {
               </ul>
             </li>
 
-            <li className="nav-item">Contact</li>
+            <li className="nav-item"><a href="/contact">Contact</a></li>
           </ul>
 
           {/* CTA */}
