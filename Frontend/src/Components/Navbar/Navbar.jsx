@@ -23,40 +23,53 @@ const Navbar = () => {
         <nav className="navbar">
           {/* Logo */}
           <div className="nav-logo">
-            <img src={logo} alt="CloudXSecure Logo" />
+            <a href="#">
+              <img src={logo} alt="CloudXSecure Logo" />
+            </a>
           </div>
 
           {/* Desktop Menu */}
           <ul className="nav-menu">
-            <li className="nav-item">Home <FiChevronDown /></li>
-            <li className="nav-item">Pages <FiChevronDown /></li>
-            <li className="nav-item">Services <FiChevronDown /></li>
+            <li className="nav-item">
+              <a href="#">Home</a> <FiChevronDown />
+            </li>
+
+            <li className="nav-item">
+              <a href="#">Pages</a> <FiChevronDown />
+            </li>
+
+            <li className="nav-item">
+              <a href="#">Services</a> <FiChevronDown />
+            </li>
 
             <li className="nav-item dropdown-parent">
-              Case Study <FiChevronDown />
+              <a href="#">Case Study</a> <FiChevronDown />
               <ul className="dropdown">
-                <li>Case Study</li>
-                <li className="arrow-item">
-                  Case Details <FiChevronRight />
+                <li><a href="#">Case Study</a></li>
+                <li>
+                  <a href="#">Case Details</a>
+                  <FiChevronRight />
                 </li>
               </ul>
             </li>
 
             <li className="nav-item dropdown-parent">
-              Blogs <FiChevronDown />
+              <a href="#">Blogs</a> <FiChevronDown />
               <ul className="dropdown">
-                <li className="arrow-item">Our Blogs <FiChevronRight /></li>
-                <li className="arrow-item">Blog Sidebar <FiChevronRight /></li>
-                <li className="arrow-item">Blog Details <FiChevronRight /></li>
+                <li><a href="#">Our Blogs</a></li>
+                <li><a href="#">Blog Sidebar</a></li>
+                <li><a href="#">Blog Details</a></li>
               </ul>
             </li>
 
-            <li className="nav-item">Contact</li>
+            <li className="nav-item">
+              <a href="#">Contact</a>
+            </li>
           </ul>
 
           {/* CTA */}
           <button className="nav-cta">
-            Get In Touch
+            <a href="#">Get In Touch</a>
             <span className="cta-icon">
               <HiArrowUpRight />
             </span>
@@ -78,45 +91,49 @@ const Navbar = () => {
 
         <ul>
           <li onClick={() => toggleDropdown("home")}>
-            Home <FiChevronRight />
+            <a href="#">Home</a> <FiChevronRight />
           </li>
+
           <li onClick={() => toggleDropdown("pages")}>
-            Pages <FiChevronRight />
+            <a href="#">Pages</a> <FiChevronRight />
           </li>
+
           <li onClick={() => toggleDropdown("services")}>
-            Services <FiChevronRight />
+            <a href="#">Services</a> <FiChevronRight />
           </li>
 
           <li onClick={() => toggleDropdown("case")}>
-            Case Study <FiChevronRight />
+            <a href="#">Case Study</a> <FiChevronRight />
           </li>
+
           {activeDropdown === "case" && (
             <div className="mobile-sub">
-              <span>Case Study</span>
-              <span>Case Details</span>
+              <a href="#">Case Study</a>
+              <a href="#">Case Details</a>
             </div>
           )}
 
           <li onClick={() => toggleDropdown("blog")}>
-            Blogs <FiChevronRight />
+            <a href="#">Blogs</a> <FiChevronRight />
           </li>
+
           {activeDropdown === "blog" && (
             <div className="mobile-sub">
-              <span>Our Blogs</span>
-              <span>Blog Sidebar</span>
-              <span>Blog Details</span>
+              <a href="#">Our Blogs</a>
+              <a href="#">Blog Sidebar</a>
+              <a href="#">Blog Details</a>
             </div>
           )}
 
-          <li>Contact</li>
+          <li><a href="#">Contact</a></li>
         </ul>
 
         <button className="mobile-cta">
-          Get In Touch <HiArrowUpRight />
+          <a href="#">Get In Touch</a>
+          <HiArrowUpRight />
         </button>
       </div>
 
-      {/* Overlay */}
       {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)} />}
     </>
   );

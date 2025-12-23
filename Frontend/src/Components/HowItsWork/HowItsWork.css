@@ -1,0 +1,340 @@
+:root {
+  --HowitsWork-primary: #2563eb;
+  --HowitsWork-dark: #1e40af;
+  --HowitsWork-bg: #eef2ff;
+  --HowitsWork-text-dark: #0f172a;
+  --HowitsWork-text-light: #64748b;
+  --HowitsWork-accent: #7c3aed;
+  --HowitsWork-accent-light: #c4b5fd;
+}
+
+/* SECTION */
+.HowitsWork {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #4f46e5 0%, #2563eb 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.HowitsWork::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.HowitsWork-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* HEADER */
+.HowitsWork-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.HowitsWork-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.HowitsWork-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: transform 0.6s ease;
+}
+
+.HowitsWork-badge:hover::before {
+  transform: translateX(100%);
+}
+
+.HowitsWork-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.HowitsWork-title::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: var(--HowitsWork-accent);
+  margin: 18px auto 0;
+  border-radius: 2px;
+}
+
+/* CARD */
+.HowitsWork-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 60px 50px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 50px;
+  color: var(--HowitsWork-text-dark);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.HowitsWork-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--HowitsWork-accent),
+    var(--HowitsWork-primary),
+    var(--HowitsWork-accent-light)
+  );
+  border-radius: 28px 28px 0 0;
+}
+
+/* STEPS */
+.HowitsWork-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+}
+
+.HowitsWork-steps.left {
+  padding-top: 20px;
+}
+
+.HowitsWork-steps.right {
+  padding-top: 70px;
+}
+
+.HowitsWork-step {
+  display: flex;
+  gap: 18px;
+  position: relative;
+  min-height: 96px;
+}
+
+/* NUMBER */
+.HowitsWork-step-number {
+  min-width: 46px;
+  height: 46px;
+  background: linear-gradient(
+    135deg,
+    var(--HowitsWork-primary),
+    var(--HowitsWork-dark)
+  );
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.HowitsWork-step-number::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--HowitsWork-primary),
+    var(--HowitsWork-accent)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+/* STEP BOX */
+.HowitsWork-step-box {
+  background: var(--HowitsWork-bg);
+  padding: 20px;
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+  flex: 1;
+}
+
+.HowitsWork-step-box h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.HowitsWork-step-box p {
+  font-size: 14px;
+  color: var(--HowitsWork-text-light);
+  line-height: 1.6;
+}
+
+/* CONNECTOR */
+.HowitsWork-step::after {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 46px;
+  width: 2px;
+  height: calc(100% + 28px);
+  background: linear-gradient(
+    to bottom,
+    var(--HowitsWork-primary),
+    rgba(37, 99, 235, 0.3),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.HowitsWork-step:last-child::after {
+  display: none;
+}
+
+/* CENTER IMAGE */
+.HowitsWork-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HowitsWork-center-ring {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  padding: 12px;
+  background: linear-gradient(
+    135deg,
+    var(--HowitsWork-primary),
+    var(--HowitsWork-accent),
+    #60a5fa
+  );
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.9),
+    0 15px 40px rgba(37, 99, 235, 0.3);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.02); }
+}
+
+.HowitsWork-center-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 6px;
+}
+
+/* HOVER */
+.HowitsWork-step:hover .HowitsWork-step-box {
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
+  border-left-color: var(--HowitsWork-primary);
+}
+
+.HowitsWork-step:hover .HowitsWork-step-number {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 0 8px rgba(37, 99, 235, 0.15),
+    0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.HowitsWork-step:hover .HowitsWork-step-number::after {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .HowitsWork-card {
+    grid-template-columns: 1fr;
+    padding: 50px 36px;
+  }
+
+  .HowitsWork-center {
+    order: -1;
+  }
+
+  .HowitsWork-steps.left,
+  .HowitsWork-steps.right {
+    padding-top: 0;
+  }
+
+  .HowitsWork-step::after {
+    display: none;
+  }
+  
+}
+
+/* 🔥 MOBILE PREMIUM ALIGNMENT */
+@media (max-width: 768px) {
+  .HowitsWork-step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    min-height: auto;
+  }
+
+  .HowitsWork-step-number {
+    min-width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .HowitsWork-step-box {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .HowitsWork-center-ring {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .HowitsWork-title {
+    font-size: 32px;
+  }
+
+  .HowitsWork-center-ring {
+    width: 200px;
+    height: 200px;
+  }
+}

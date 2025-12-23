@@ -325,24 +325,22 @@
   }
 }
 
+/* 🔥 MOBILE: HIDE RIGHT VISUAL COMPLETELY */
 @media (max-width: 768px) {
+  .subscribe-visual.delay-4 {
+    display: none;
+  }
+
   .subscribe-wrapper {
     padding: 80px 20px;
   }
-  
+
   .subscribe-title {
     font-size: 38px;
   }
-  
-  .subscribe-text {
-    font-size: 16px;
-    margin-bottom: 36px;
-  }
-  
-  .subscribe-girl {
-    width: 260px;
-  }
 }
+
+
 
 @media (max-width: 480px) {
   .subscribe-title {

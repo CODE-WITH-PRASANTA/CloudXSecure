@@ -1,0 +1,164 @@
+:root {
+  --bestitsolution-primary: #2563eb;
+  --bestitsolution-primary-dark: #1e40af;
+  --bestitsolution-text-dark: #0f172a;
+  --bestitsolution-text-light: #64748b;
+  --bestitsolution-bg-soft: #f1f5ff;
+  --bestitsolution-radius: 16px;
+}
+
+.bestitsolution {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  font-family: "Inter", sans-serif;
+}
+
+.bestitsolution-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* LEFT CONTENT */
+.bestitsolution-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--bestitsolution-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.bestitsolution-title {
+  margin-top: 26px;
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--bestitsolution-text-dark);
+}
+
+.bestitsolution-title span {
+  color: var(--bestitsolution-primary);
+}
+
+.bestitsolution-description {
+  margin-top: 18px;
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--bestitsolution-text-light);
+}
+
+/* PROGRESS CARD */
+.bestitsolution-progress-card {
+  margin-top: 34px;
+  background: var(--bestitsolution-bg-soft);
+  padding: 26px;
+  border-radius: var(--bestitsolution-radius);
+}
+
+.bestitsolution-progress {
+  margin-bottom: 20px;
+}
+
+.bestitsolution-progress:last-child {
+  margin-bottom: 0;
+}
+
+.bestitsolution-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--bestitsolution-text-dark);
+  margin-bottom: 10px;
+}
+
+.bestitsolution-progress-bar {
+  height: 8px;
+  background: #e0e7ff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bestitsolution-progress-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--bestitsolution-primary),
+    #3b82f6
+  );
+  border-radius: 8px;
+}
+
+/* Progress widths */
+.fill-98 {
+  width: 98%;
+}
+
+.fill-99 {
+  width: 99%;
+}
+
+/* BUTTON */
+.bestitsolution-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 28px;
+  background: var(--bestitsolution-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bestitsolution-btn:hover {
+  background: var(--bestitsolution-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* IMAGES */
+.bestitsolution-images {
+  position: relative;
+}
+
+.bestitsolution-image {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 35px 60px rgba(15, 23, 42, 0.15);
+}
+
+.bestitsolution-image-small {
+  position: absolute;
+  width: 62%;
+  bottom: -40px;
+  left: -40px;
+  border: 6px solid #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .bestitsolution-container {
+    grid-template-columns: 1fr;
+  }
+
+  .bestitsolution-title {
+    font-size: 38px;
+  }
+
+  .bestitsolution-image-small {
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: 24px;
+  }
+}

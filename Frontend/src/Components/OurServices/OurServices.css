@@ -1,0 +1,210 @@
+:root {
+  --os-primary: #4f46e5;
+  --os-dark: #4338ca;
+  --os-bg: #f4f6ff;
+  --os-text: #0f172a;
+  --os-muted: #64748b;
+}
+
+/* SECTION */
+.OurServices {
+  padding: 40px 0;
+  background: radial-gradient(circle at top, #eef2ff, #f8faff);
+}
+
+.OurServices-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* HEADER */
+.OurServices-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.OurServices-badge {
+  padding: 6px 16px;
+  background: #eef2ff;
+  color: var(--os-primary);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.OurServices-header h2 {
+  margin-top: 18px;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--os-text);
+}
+
+/* GRID */
+.OurServices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* CARD (SCROLL ANIMATION BASE) */
+.OurServices-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: serviceFadeUp 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% entry 40%;
+}
+
+/* STAGGER DELAY */
+.OurServices-card:nth-child(1) { animation-delay: 0.05s; }
+.OurServices-card:nth-child(2) { animation-delay: 0.15s; }
+.OurServices-card:nth-child(3) { animation-delay: 0.25s; }
+.OurServices-card:nth-child(4) { animation-delay: 0.35s; }
+.OurServices-card:nth-child(5) { animation-delay: 0.45s; }
+.OurServices-card:nth-child(6) { animation-delay: 0.55s; }
+
+/* SCROLL KEYFRAMES */
+@keyframes serviceFadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* GRADIENT OVERLAY (HOVER) */
+.OurServices-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #4f46e5, #6d5dfc);
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+/* ICON */
+.OurServices-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--os-primary), var(--os-dark));
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  transition: transform 0.45s ease, background 0.45s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* TEXT */
+.OurServices-card h4,
+.OurServices-card p,
+.OurServices-footer {
+  position: relative;
+  z-index: 1;
+  transition: color 0.45s ease, transform 0.45s ease;
+}
+
+.OurServices-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--os-text);
+  margin-bottom: 10px;
+}
+
+.OurServices-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--os-muted);
+}
+
+/* FOOTER */
+.OurServices-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+
+.OurServices-footer span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--os-primary);
+  position: relative;
+}
+
+.OurServices-footer span::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  bottom: 7px;
+  width: 34px;
+  height: 2px;
+  background: var(--os-primary);
+  transition: background 0.45s ease;
+}
+
+/* ARROW */
+.OurServices-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--os-primary);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.45s ease;
+}
+
+/* HOVER */
+.OurServices-card:hover::before {
+  transform: translateY(0);
+}
+
+.OurServices-card:hover h4,
+.OurServices-card:hover p,
+.OurServices-card:hover span {
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.OurServices-card:hover .OurServices-icon {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-6px) scale(1.05);
+}
+
+.OurServices-card:hover .OurServices-footer span::after {
+  background: #fff;
+}
+
+.OurServices-card:hover .OurServices-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .OurServices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .OurServices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .OurServices-header h2 {
+    font-size: 32px;
+  }
+}

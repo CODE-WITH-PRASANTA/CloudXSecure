@@ -5,10 +5,16 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Wrapper */
+/* ===================== */
+/* Sticky Wrapper */
+/* ===================== */
 .nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   padding: 20px 30px;
-  background: #ffffff;
+  /* background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);; */
+
 }
 
 /* Navbar */
@@ -217,7 +223,7 @@
 }
 
 /* ===================== */
-/* RESPONSIVE FIX (✔)   */
+/* Responsive */
 /* ===================== */
 @media (max-width: 992px) {
   .nav-menu,
@@ -229,15 +235,18 @@
     display: block;
   }
 
-  /* ✅ Mobile Navbar Fix */
   .navbar {
     width: 100%;
-   
-    border-radius: 0px; /* optional but recommended */
+    border-radius: 0;
   }
 
   .nav-wrapper {
-    padding: 0px; /* optional for full edge-to-edge */
+    padding: 0;
   }
 }
 
+.navbar a,
+.mobile-menu a {
+  text-decoration: none;
+  color: inherit;
+}

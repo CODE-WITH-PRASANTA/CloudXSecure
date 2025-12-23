@@ -1,0 +1,197 @@
+/* ===============================
+   Section
+================================ */
+.OurExpertTeam-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.OurExpertTeam-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ===============================
+   Header
+================================ */
+.OurExpertTeam-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.OurExpertTeam-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(91, 77, 252, 0.08);
+  color: #5b4dfc;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.OurExpertTeam-badge-icon {
+  width: 18px;
+  height: 18px;
+  background: #5b4dfc;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.OurExpertTeam-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+/* ===============================
+   Grid
+================================ */
+.OurExpertTeam-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+/* ===============================
+   Card
+================================ */
+.OurExpertTeam-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.OurExpertTeam-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* ===============================
+   Image
+================================ */
+.OurExpertTeam-image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.OurExpertTeam-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===============================
+   Socials (Premium Hover)
+================================ */
+.OurExpertTeam-socials {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.OurExpertTeam-card:hover .OurExpertTeam-socials {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.OurExpertTeam-socials a {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  color: #5b4dfc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.OurExpertTeam-socials a:hover {
+  background: #5b4dfc;
+  color: #ffffff;
+}
+
+/* ===============================
+   Info
+================================ */
+.OurExpertTeam-info {
+  margin-top: 18px;
+  position: relative;
+}
+
+.OurExpertTeam-info h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.OurExpertTeam-info p {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ===============================
+   Share Button (Subtle)
+================================ */
+.OurExpertTeam-share {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(91, 77, 252, 0.1);
+  color: #5b4dfc;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.OurExpertTeam-share:hover {
+  background: #5b4dfc;
+  color: #ffffff;
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 1024px) {
+  .OurExpertTeam-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .OurExpertTeam-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .OurExpertTeam-title {
+    font-size: 30px;
+  }
+}

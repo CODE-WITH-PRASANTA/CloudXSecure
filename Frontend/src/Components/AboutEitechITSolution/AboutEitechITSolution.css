@@ -1,0 +1,237 @@
+:root {
+  --ab-primary: #4f46e5;
+  --ab-muted: #64748b;
+  --ab-text: #0f172a;
+  --ab-gradient: linear-gradient(135deg, #4f46e5, #6366f1, #8b5cf6);
+  --ab-card-shadow: 0 25px 50px -12px rgba(0,0,0,0.12);
+}
+
+/* SECTION */
+.AbouteitechITSolution {
+  padding: 30px 0;
+  background: #fff;
+  position: relative;
+  
+}
+@media (min-width: 992px) {
+  .AbouteitechITSolution {
+    top: -60px;
+  }
+}
+
+.AbouteitechITSolution-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+/* ================= LEFT IMAGE SECTION ================= */
+.AbouteitechITSolution-images {
+  display: flex;
+  gap: 28px;
+  position: relative;
+}
+
+/* MAIN IMAGE */
+.image-main {
+  width: 60%;
+  position: relative;
+}
+
+.image-main img {
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  object-fit: cover;
+  box-shadow: var(--ab-card-shadow);
+}
+
+/* EXPERIENCE CARD */
+.experience-card {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 18px 22px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--ab-card-shadow);
+}
+
+.experience-card .check {
+  width: 42px;
+  height: 42px;
+  background: var(--ab-gradient);
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.experience-card .text strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ab-primary);
+}
+
+.experience-card .text p {
+  font-size: 13px;
+  margin: 0;
+  color: var(--ab-muted);
+}
+
+/* STACKED IMAGES */
+.image-stack {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.image-small img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: var(--ab-card-shadow);
+}
+
+/* ================= RIGHT CONTENT (UNCHANGED) ================= */
+.AbouteitechITSolution-badge-top {
+  background: #eef2ff;
+  color: var(--ab-primary);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.AbouteitechITSolution-content h2 {
+  font-size: 46px;
+  font-weight: 800;
+  margin: 20px 0;
+  color: var(--ab-text);
+}
+
+.AbouteitechITSolution-desc {
+  font-size: 17px;
+  color: var(--ab-muted);
+  border-left: 3px solid var(--ab-primary);
+  padding-left: 20px;
+  margin-bottom: 32px;
+}
+
+/* STATS */
+.AbouteitechITSolution-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.AbouteitechITSolution-stat {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              var(--ab-gradient) border-box;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: var(--ab-primary);
+}
+
+/* QUOTE */
+.AbouteitechITSolution-quote {
+  background: #f8faff;
+  padding: 28px;
+  border-left: 5px solid var(--ab-primary);
+  border-radius: 16px;
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+/* BUTTON */
+.AbouteitechITSolution-btn {
+  background: var(--ab-gradient);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 10px;
+}
+
+/* ================= ANIMATION ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .AbouteitechITSolution-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .AbouteitechITSolution-images {
+    flex-direction: column;
+  }
+
+  .image-main,
+  .image-stack {
+    width: 100%;
+  }
+
+  .experience-card {
+    position: relative;
+    transform: none;
+    left: auto;
+    margin: 16px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .AbouteitechITSolution-content h2 {
+    font-size: 34px;
+  }
+
+  .AbouteitechITSolution-stats {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .AbouteitechITSolution-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .experience-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
