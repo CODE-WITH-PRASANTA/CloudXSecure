@@ -1,8 +1,8 @@
 import React from "react";
 import "./BestITSolution.css";
 
-import imageLarge from "../../assets/female.jpg";
-import imageSmall from "../../assets/female.jpg";
+import imageLarge from "../../assets/female.webp";
+import imageSmall from "../../assets/female.webp";
 
 const BestITSolution = () => {
   return (

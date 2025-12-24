@@ -2,9 +2,9 @@ import React, { memo } from "react";
 import "./OurExpertTeam.css";
 
 // Local image imports
-import alex from "../../assets/female.jpg";
-import shelia from "../../assets/female.jpg";
-import devin from "../../assets/female.jpg";
+import alex from "../../assets/female.webp";
+import shelia from "../../assets/female.webp";
+import devin from "../../assets/female.webp";
 
 /* Static Team Data */
 const TEAM = [

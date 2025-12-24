@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Testimonials.css";
-import testimonialImg from "../../assets/doctors.jpg";
+import testimonialImg from "../../assets/doctors.webp";
 
 const DATA = [
   {

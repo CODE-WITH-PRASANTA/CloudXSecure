@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Subscribe.css";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { FiCheckCircle } from "react-icons/fi";
-import girl from "../../assets/cta-img1.png"; // your image
+import girl from "../../assets/cta-img1.webp"; // your image
 
 const Subscribe = () => {
   const ref = useRef(null);
