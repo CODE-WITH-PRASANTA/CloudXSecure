@@ -1,0 +1,208 @@
+/* SECTION */
+.pricing {
+  padding: 80px 20px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* HEADER */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.pricing-header.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #eef3ff;
+  color: #1f3cff;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.pricing-header h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+/* GRID */
+.pricing-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD BASE */
+.pricing-card {
+  background: #f4f7ff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* SCROLL SHOW */
+.pricing-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* STAGGER DELAYS */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+.delay-2 {
+  transition-delay: 0.4s;
+}
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+/* HOVER EFFECT (360 ROTATE) */
+.pricing-card:hover {
+  transform: translateY(-10px) rotateY(360deg);
+  transition: transform 0.9s ease;
+}
+
+/* ACTIVE CARD */
+.pricing-card.active {
+  background: linear-gradient(180deg, #1f3cff, #0f2edc);
+  color: #ffffff;
+}
+
+/* PRICE HEXAGON */
+.price-badge {
+  width: 110px;
+  height: 110px;
+  background: #1f3cff;
+  color: #fff;
+  clip-path: polygon(
+    25% 6%,
+    75% 6%,
+    100% 50%,
+    75% 94%,
+    25% 94%,
+    0% 50%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.6s ease;
+}
+
+.pricing-card:hover .price-badge {
+  transform: rotate(360deg);
+}
+
+.pricing-card.active .price-badge {
+  background: #ffffff;
+  color: #1f3cff;
+}
+
+.price-badge h3 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.price-badge span {
+  font-size: 12px;
+}
+
+/* PLAN TEXT */
+.plan-label {
+  font-size: 13px;
+  color: #777;
+}
+
+.pricing-card.active .plan-label {
+  color: #cdd6ff;
+}
+
+.pricing-card h4 {
+  font-size: 22px;
+  margin: 10px 0 20px;
+}
+
+/* FEATURES */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.pricing-card ul li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.pricing-card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #1f3cff;
+  font-weight: bold;
+}
+
+.pricing-card.active ul li::before {
+  color: #ffffff;
+}
+
+/* BUTTON */
+.plan-btn {
+  background: #1f3cff;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.plan-btn.white {
+  background: #ffffff;
+  color: #1f3cff;
+}
+
+.plan-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(31, 60, 255, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-header h2 {
+    font-size: 32px;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-6px);
+  }
+}
