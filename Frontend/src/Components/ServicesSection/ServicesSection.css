@@ -1,0 +1,150 @@
+/* ================= ROOT ================= */
+
+.services-wrapper {
+  padding: 90px 6%;
+  background: #ffffff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  perspective: 1200px;
+}
+
+/* ================= CARD ================= */
+
+.service-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 32px;
+  min-height: 280px;
+  transform-style: preserve-3d;
+  transition:
+    background 0.45s ease,
+    box-shadow 0.45s ease,
+    transform 0.25s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* GRADIENT OVERLAY (hidden by default) */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #3a0ca3, #6c63ff);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 0;
+}
+
+/* ================= DEPTH LAYERS ================= */
+
+.service-icon,
+.service-card h3,
+.service-card p,
+.service-footer,
+.arrow {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(35px);
+}
+
+/* ICON */
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle at top left, #6c63ff, #3a0ca3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 14px;
+  color: #0c1239;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* FOOTER */
+.service-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.service-footer .line {
+  width: 60px;
+  height: 2px;
+  background: #3a0ca3;
+  margin-right: 10px;
+}
+
+.service-footer .number {
+  font-weight: 600;
+  color: #3a0ca3;
+}
+
+/* ARROW */
+.arrow {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 20px;
+  color: #3a0ca3;
+}
+
+/* ================= HOVER STATE ================= */
+
+.service-card:hover::before {
+  opacity: 1; /* 🔥 FULL COLOR FILL */
+}
+
+.service-card:hover {
+  box-shadow:
+    0 40px 80px rgba(92, 82, 255, 0.35),
+    0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* TEXT COLOR SWITCH */
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover .number,
+.service-card:hover .arrow {
+  color: #ffffff;
+}
+
+.service-card:hover .line {
+  background: #ffffff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 26px;
+  }
+}

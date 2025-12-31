@@ -138,8 +138,8 @@ const Footer = () => {
           <div className="footer-legal">
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms">Terms of Service</a>
-            <a href="/cookie-policy">Cookie Policy</a>
-            <a href="/sitemap">Sitemap</a>
+            <a href="/cookie-policy">Coming Soon</a>
+            
           </div>
         </div>
       </div>

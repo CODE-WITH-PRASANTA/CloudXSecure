@@ -1,0 +1,169 @@
+/* ================================
+   PAGE WRAPPER + ANIMATION
+================================ */
+.terms-page-wrapper {
+  animation: termsPageEnter 0.9s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes termsPageEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   HERO IMAGE
+================================ */
+.terms-page-hero {
+  width: 100%;
+  max-width: 1250px;
+  height: 750px;
+  margin: 100px auto 40px;
+  overflow: hidden;
+  border-radius: 18px;
+  position: relative;
+  background: #000;
+}
+
+.terms-page-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* zoom-out animation */
+  transform: scale(1.1);
+  transition: transform 0.9s ease;
+}
+
+.terms-page-hero:hover img {
+  transform: scale(1);
+}
+
+/* subtle overlay */
+.terms-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.15)
+  );
+  pointer-events: none;
+}
+
+/* ================================
+   CONTENT
+================================ */
+.terms-page-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 20px 80px;
+  animation: contentFade 1s ease 0.2s forwards;
+  opacity: 0;
+}
+
+@keyframes contentFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TEXT */
+.terms-page-content h2 {
+  font-size: 26px;
+  margin: 36px 0 12px;
+  font-weight: 700;
+  color: #1c1c2b;
+}
+
+.terms-page-content p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #5f6470;
+  margin-bottom: 16px;
+}
+
+.terms-page-content ul,
+.terms-page-content ol {
+  margin-left: 22px;
+  margin-bottom: 20px;
+}
+
+.terms-page-content li {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* INFO BOX */
+.terms-page-highlight {
+  background: #eef6fb;
+  padding: 22px 26px;
+  border-radius: 12px;
+  margin: 24px 0;
+  color: #4b5d6b;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* UPDATED TEXT */
+.terms-page-updated {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 1200px) {
+  .terms-page-hero {
+    height: 600px;
+  }
+}
+
+@media (max-width: 900px) {
+  .terms-page-hero {
+    height: 480px;
+  }
+
+  .terms-page-content {
+    padding: 20px 16px 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-page-hero {
+    height: 320px;
+    border-radius: 12px;
+  }
+
+  .terms-page-content h2 {
+    font-size: 22px;
+  }
+
+  .terms-page-content p,
+  .terms-page-content li {
+    font-size: 15px;
+  }
+}

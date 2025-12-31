@@ -38,6 +38,7 @@ const Navbar = () => {
               <li className="nav-item dropdown-parent">
                 <a href="/services">Services</a> <FiChevronDown />
                 <ul className="dropdown">
+                  <li><a href="/services/our-services">Our Services</a></li>
                   <li><a href="/services/managed-cloud">Managed Cloud Services</a></li>
                   <li><a href="/services/security">Cloud Security</a></li>
                   <li><a href="/services/hosting">Cloud Hosting</a></li>
@@ -64,7 +65,9 @@ const Navbar = () => {
 
             {/* ================= CTA ================= */}
             <button className="nav-cta">
-              Get In Touch <HiArrowUpRight />
+               <ul> 
+                  <li><a href="/get-in-touch">Get In Touch <HiArrowUpRight /></a></li>
+               </ul>
             </button>
 
             {/* ================= MOBILE TOGGLE ================= */}
@@ -92,6 +95,7 @@ const Navbar = () => {
 
           {activeDropdown === "services" && (
             <div className="mobile-sub">
+              <a href="/services/our-services">Our Services</a>
               <a href="/services/managed-cloud">Managed Cloud Services</a>
               <a href="/services/security">Cloud Security</a>
               <a href="/services/hosting">Cloud Hosting</a>
@@ -121,7 +125,9 @@ const Navbar = () => {
         </ul>
 
         <button className="mobile-cta">
-          Get In Touch <HiArrowUpRight />
+         <ul> 
+          <li><a href="/get-in-touch">Get In Touch <HiArrowUpRight /></a></li>
+         </ul>
         </button>
       </div>
     </>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./FAQBreadcrum.css";
+import "./ServicesBreadcrum.css";
 
 import hand from "../../assets/elements16.webp";
 import circles from "../../assets/elements5.webp";
@@ -66,15 +66,15 @@ const Breadcrumb = () => {
   }, []);
 
   return (
-    <section className="faqbreadcrumb-wrapper" ref={wrapperRef}>
+    <section className="servicesbreadcrumb-wrapper" ref={wrapperRef}>
       <canvas ref={canvasRef} className="stars-canvas" />
 
-      <div className="faqbreadcrumb-inner">
+      <div className="servicesbreadcrumb-inner">
         {/* TEXT */}
-        <div className="faqbreadcrumb-content">
-          <h1>FAQ's</h1>
+        <div className="servicesbreadcrumb-content">
+          <h1>Services</h1>
           <p>
-            Home <span>&gt;</span> FAQ's
+            Home <span>&gt;</span> Services
           </p>
         </div>
 

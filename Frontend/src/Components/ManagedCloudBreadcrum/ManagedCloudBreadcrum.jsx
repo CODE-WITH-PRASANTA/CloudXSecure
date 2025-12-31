@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./FAQBreadcrum.css";
+import "./ManagedCloudBreadcrum.css";
 
 import hand from "../../assets/elements16.webp";
 import circles from "../../assets/elements5.webp";
@@ -72,9 +72,9 @@ const Breadcrumb = () => {
       <div className="faqbreadcrumb-inner">
         {/* TEXT */}
         <div className="faqbreadcrumb-content">
-          <h1>FAQ's</h1>
+          <h1>Managed Cloud Services </h1>
           <p>
-            Home <span>&gt;</span> FAQ's
+            Home <span>&gt;</span> Services <span>&gt;</span> Managed Cloud Services 
           </p>
         </div>
 

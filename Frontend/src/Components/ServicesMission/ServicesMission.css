@@ -1,0 +1,192 @@
+/* ================= ROOT ================= */
+
+.mission-wrapper {
+  padding: 90px 6%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  background: radial-gradient(circle at top left, #f3f5ff, #ffffff);
+}
+
+/* ================= LEFT CONTENT ================= */
+
+
+/* BADGE */
+.badge {
+  background: #e8e6ff;
+  color: #3a0ca3;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 18px;
+  display: inline-block;
+}
+
+/* TITLE */
+.mission-content h2 {
+  font-size: 38px;
+  line-height: 1.3;
+  margin-bottom: 18px;
+  color: #0c1239;
+}
+
+/* DESCRIPTION */
+.intro {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+/* ================= CARDS ================= */
+
+.mission-card {
+  display: flex;
+  gap: 18px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.mission-card .icon {
+  width: 56px;
+  height: 56px;
+  background: radial-gradient(circle at top left, #6c63ff, #3a0ca3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.mission-card h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #0c1239;
+}
+
+.mission-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* CLEAN HOVER (NO ROTATION, NO FLOATING FEEL) */
+.mission-card:hover {
+  background: linear-gradient(120deg, #3a0ca3, #6c63ff);
+  box-shadow: 0 24px 45px rgba(92, 82, 255, 0.35);
+}
+
+.mission-card:hover h4,
+.mission-card:hover p {
+  color: #ffffff;
+}
+
+/* ================= BUTTON ================= */
+
+.mission-btn {
+  margin-top: 24px;
+  background: linear-gradient(90deg, #3a0ca3, #6c63ff);
+  color: #ffffff;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 14px;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.35s ease;
+}
+
+.mission-btn:hover {
+  box-shadow: 0 16px 36px rgba(92, 82, 255, 0.4);
+}
+
+/* ================= IMAGES ================= */
+
+.mission-images {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* IMAGE BASE */
+.mission-images img {
+  width: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+/* TOP IMAGE – GLOW + SLIGHT MOVE */
+.img-top img:hover {
+  transform: translateY(-8px) scale(1.02);
+  filter: contrast(1.25) brightness(1.08);
+  box-shadow: 0 32px 60px rgba(92, 82, 255, 0.35);
+}
+
+/* BOTTOM GRID */
+.img-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* LEFT IMAGE – SIDE MOVE */
+.img-bottom img:first-child:hover {
+  transform: translateX(-6px) scale(1.02);
+  filter: contrast(1.2);
+  box-shadow: 0 24px 48px rgba(92, 82, 255, 0.3);
+}
+
+/* RIGHT IMAGE – MICRO ROTATION */
+.img-bottom img:last-child:hover {
+  transform: rotate(-1deg) scale(1.03);
+  filter: brightness(1.08) contrast(1.25);
+  box-shadow: 0 28px 55px rgba(92, 82, 255, 0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .mission-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-content h2 {
+    font-size: 30px;
+  }
+
+  .img-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-wrapper {
+    padding: 70px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-content h2 {
+    font-size: 26px;
+  }
+
+  .mission-card {
+    padding: 18px;
+  }
+}
