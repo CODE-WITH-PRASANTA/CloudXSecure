@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import "./OurServicesVision.css";
 
-import vision1 from "../../assets/visiton-img1(OS).png";
-import vision2 from "../../assets/visiton-img2(OS).png";
-import vision3 from "../../assets/visiton-img3(OS).png";
+import vision1 from "../../assets/visiton-img1(OS).webp";
+import vision2 from "../../assets/visiton-img2(OS).webp";
+import vision3 from "../../assets/visiton-img3(OS).webp";
 
 export default function Vision() {
   const refs = useRef([]);
