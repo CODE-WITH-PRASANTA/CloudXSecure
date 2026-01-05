@@ -1,0 +1,103 @@
+.getintouch-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.getintouch-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+}
+
+
+/* LEFT */
+
+.getintouch-info h2 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.getintouch-info p {
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 420px;
+}
+
+.info-box {
+    display: flex;
+    gap: 18px;
+    padding: 20px;
+    background: #f8f9fc;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    background: #dfe6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box h4 {
+    margin: 0;
+}
+
+.info-box p {
+    font-size: 14px;
+    margin: 4px 0 0;
+}
+
+
+/* FORM */
+
+.getintouch-form {
+    background: #f9fafc;
+    padding: 40px;
+    border-radius: 14px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.getintouch-form input,
+.getintouch-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.getintouch-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+.getintouch-form button {
+    background: #123ad6;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+    .getintouch-container {
+        grid-template-columns: 1fr;
+    }
+}
