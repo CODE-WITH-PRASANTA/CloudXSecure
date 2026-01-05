@@ -36,14 +36,12 @@ const AboutBestItSolution = () => {
           <span className="bestit__badge">⭐ BEST IT SOLUTION</span>
 
           <h2 className="bestit__title">
-            End-to-End IT Solutions for <br />
-            Growing Businesses
+           End-to-End Cloud & Digital Solutions for<br />
+           Modern Businesses
           </h2>
 
           <p className="bestit__desc">
-            We provide comprehensive, end-to-end IT solutions designed
-            to support businesses at every stage of growth with
-            reliability, scalability, and security.
+            CloudXSecure delivers scalable cloud services, secure web and app design, and end-to-end IT solutions that help businesses innovate, grow, and stay protected in a digital-first world. From cloud infrastructure to custom digital experiences, we ensure performance, security, and long-term success.
           </p>
 
           <div className="bestit__progress-box">
@@ -59,7 +57,7 @@ const AboutBestItSolution = () => {
 
             <div className="bestit__progress">
               <div className="bestit__progress-head">
-                <span>Cyber Security</span>
+                <span>Cloud Security</span>
                 <span>99%</span>
               </div>
               <div className="bestit__progress-bar">
@@ -69,7 +67,7 @@ const AboutBestItSolution = () => {
 
             <div className="bestit__progress">
               <div className="bestit__progress-head">
-                <span>Cloud Solution</span>
+                <span>DevOps & Automation</span>
                 <span>99%</span>
               </div>
               <div className="bestit__progress-bar">
