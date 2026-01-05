@@ -1,71 +1,203 @@
-/* SECTION */
+/* ===============================
+   SKILLSET SECTION
+================================ */
 .skillset-section {
   position: relative;
-  padding: 120px 60px;
-  overflow: hidden;
+  padding: 120px 0;
   background: #ffffff;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
 }
 
-/* FLOATING SHAPES */
+/* ===============================
+   FLOATING DECORATIVE SHAPES
+================================ */
 .float-shape {
   position: absolute;
-  width: 80px;
-  pointer-events: none;
-  animation: float 6s ease-in-out infinite;
   z-index: 1;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.9;
 }
 
 .shape-1 {
-  top: 8%;
-  right: 10%;
-  width: 70px;
+  top: 10%;
+  right: 8%;
+  width: 80px;
   animation-delay: 0s;
 }
 
 .shape-2 {
   bottom: 12%;
-  right: 4%;
-  width: 100px;
-  animation-delay: 1.5s;
+  right: 45%;
+  width: 60px;
+  animation-delay: 2s;
 }
 
 .shape-3 {
-  bottom: 10%;
-  left: 45%;
-  width: 80px;
-  animation-delay: 2.5s;
+  bottom: 5%;
+  left: 6%;
+  width: 70px;
+  animation-delay: 4s;
 }
 
-/* FLOAT MOTION */
 @keyframes float {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-16px) rotate(8deg);
+    transform: translateY(-18px);
   }
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0px);
   }
 }
 
-/* MAIN GRID */
+/* ===============================
+   WRAPPER LAYOUT
+================================ */
 .skillset-wrapper {
   max-width: 1200px;
   margin: auto;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
   align-items: center;
   position: relative;
   z-index: 2;
 }
 
-/* REVEAL ANIMATION */
+/* ===============================
+   LEFT CONTENT
+================================ */
+.skillset-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.skill-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1b083f;
+  margin-bottom: 30px;
+}
+
+.skill-title span {
+  color: #a855f7;
+}
+
+/* ===============================
+   SKILL BARS
+================================ */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+.skill-bar {
+  width: 100%;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1b083f;
+}
+
+.skill-count {
+  font-weight: 700;
+  color: #1b083f;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* Progress Track */
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #f1f1f1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Progress Fill */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  transition: width 1.6s ease;
+}
+
+/* Color Variants */
+.progress-fill.purple {
+  background: linear-gradient(90deg, #6b21a8, #9333ea);
+}
+
+.progress-fill.pink {
+  background: linear-gradient(90deg, #db2777, #ec4899);
+}
+
+.progress-fill.yellow {
+  background: linear-gradient(90deg, #f59e0b, #facc15);
+}
+
+.progress-fill.violet {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.skill-btn {
+  width: fit-content;
+  padding: 14px 34px;
+  background: linear-gradient(90deg, #d9f800, #facc15);
+  color: #1b083f;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.skill-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(250, 204, 21, 0.4);
+}
+
+/* ===============================
+   RIGHT IMAGE
+================================ */
+.skillset-right img {
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin-left: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===============================
+   SCROLL REVEAL ANIMATION
+================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: 0.9s ease;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
 .reveal-active {
@@ -73,120 +205,30 @@
   transform: translateY(0);
 }
 
-/* LEFT CONTENT */
-.skill-tag {
-  color: #f4b400;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  display: inline-block;
-}
-
-.skill-title {
-  font-size: 46px;
-  font-weight: 800;
-  color: #1b083f;
-  margin-bottom: 40px;
-  line-height: 1.25;
-}
-
-.skill-title span {
-  color: #a64bf4;
-}
-
-/* SKILLS */
-.skill-bar {
-  margin-bottom: 26px;
-  opacity: 0;
-  transform: translateY(25px);
-  transition: 0.8s ease;
-}
-
-.reveal-active .skill-bar {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.skill-label {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #222;
-}
-
-.progress-track {
-  width: 100%;
-  height: 10px;
-  background: #eee;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: 20px;
-  animation: growBar 1.4s ease forwards;
-}
-
-.progress-fill.purple {
-  background: linear-gradient(90deg, #6a11cb, #8e44ad);
-}
-.progress-fill.pink {
-  background: linear-gradient(90deg, #ff4ecd, #ff7eb3);
-}
-.progress-fill.yellow {
-  background: linear-gradient(90deg, #f9c74f, #f9844a);
-}
-.progress-fill.violet {
-  background: linear-gradient(90deg, #9b5de5, #5f27cd);
-}
-
-@keyframes growBar {
-  from {
-    width: 0;
-  }
-  to {
-    width: inherit;
-  }
-}
-
-/* BUTTON */
-.skill-btn {
-  margin-top: 30px;
-  padding: 14px 38px;
-  border-radius: 14px;
-  border: none;
-  background: linear-gradient(90deg, #dfff00, #c9f000);
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.skill-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(210, 255, 0, 0.45);
-}
-
-/* RIGHT IMAGE */
-.skillset-right img {
-  max-width: 420px;
-  width: 100%;
-  border-radius: 30px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 992px) {
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
   .skillset-wrapper {
     grid-template-columns: 1fr;
-    text-align: center;
+    gap: 60px;
+  }
+
+  .skillset-right img {
+    margin: auto;
   }
 
   .skill-title {
-    font-size: 34px;
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skill-title {
+    font-size: 30px;
   }
 
-  .skillset-right {
-    margin-top: 40px;
+  .skillset-section {
+    padding: 80px 0;
   }
 }

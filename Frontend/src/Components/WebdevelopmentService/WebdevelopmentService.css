@@ -1,0 +1,214 @@
+/* =======================
+   MAIN SECTION
+======================= */
+.services-section {
+  position: relative;
+  padding: 120px 80px;
+  background: linear-gradient(135deg, #1b0033, #0b001a);
+  border-radius: 0 0 80px 80px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* =======================
+   FLOATING SHAPES
+======================= */
+.float-shape {
+  position: absolute;
+  opacity: 0.9;
+  pointer-events: none;
+  animation: float 10s infinite ease-in-out;
+}
+
+.shape-1 {
+  top: 15%;
+  left: 5%;
+  width: 80px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  top: 25%;
+  right: 8%;
+  width: 90px;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  bottom: 15%;
+  right: 12%;
+  width: 70px;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* =======================
+   SCROLL REVEAL
+======================= */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal-active .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   HEADER
+======================= */
+.services-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px;
+}
+
+.services-tag {
+  color: #ffcc00;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.services-header h2 {
+  font-size: 44px;
+  font-weight: 800;
+  margin: 16px 0;
+}
+
+.services-header h2 span {
+  color: #ff7ad9;
+}
+
+.services-header p {
+  color: #cfcfcf;
+  font-size: 16px;
+}
+
+/* =======================
+   GRID
+======================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* =======================
+   CARD
+======================= */
+.service-card {
+  background: #2a1a3d;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* IMAGE */
+.service-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.service-card:hover img {
+  filter: blur(4px);
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.service-content {
+  padding: 24px;
+}
+
+.service-content h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #ffcc00;
+}
+
+.service-content p {
+  color: #d2cbe0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.service-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: #ffcc00;
+  font-weight: 600;
+}
+
+/* =======================
+   BUTTON
+======================= */
+.services-btn {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.services-btn button {
+  background: linear-gradient(90deg, #ffeb00, #b6ff00);
+  color: #000;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.services-btn button:hover {
+  transform: translateY(-4px);
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 80px 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-header h2 {
+    font-size: 32px;
+  }
+}

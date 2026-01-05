@@ -3,6 +3,7 @@ import WebdevelopmentBreadcrum from '../../Components/WebdevelopmentBreadcrum/We
 import WebdevelopmentWeAre from '../../Components/WebdevelopmentWeAre/WebdevelopmentWeAre'
 import WebdevelopmentWhyChoose from '../../Components/WebdevelopmentWhyChoose/WebdevelopmentWhyChoose'
 import WebdevelopmentSkillSet from '../../Components/WebdevelopmentSkillSet/WebdevelopmentSkillSet'
+import WebdevelopmentService from '../../Components/WebdevelopmentService/WebdevelopmentService'
 
 const Webdevelopment = () => {
   return (
@@ -11,6 +12,7 @@ const Webdevelopment = () => {
       <WebdevelopmentWeAre />
       <WebdevelopmentWhyChoose />
       <WebdevelopmentSkillSet />
+      <WebdevelopmentService />
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import "./AboutUsBreadcrum.css";
+import "./GetInTouchBreadcrumb.css";
 
 import hand from "../../assets/elements16.webp";
 import circles from "../../assets/elements5.webp";
 import orbits from "../../assets/elements4.webp";
 import moon from "../../assets/elements1.webp";
 
-const Breadcrumb = () => {
+const GetInTouchBreadcrumb = () => {
   const wrapperRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -66,15 +66,15 @@ const Breadcrumb = () => {
   }, []);
 
   return (
-    <section className="faqbreadcrumb-wrapper" ref={wrapperRef}>
+    <section className="getintouchbreadcrumb-wrapper" ref={wrapperRef}>
       <canvas ref={canvasRef} className="stars-canvas" />
 
-      <div className="faqbreadcrumb-inner">
+      <div className="getintouchbreadcrumb-inner">
         {/* TEXT */}
-        <div className="faqbreadcrumb-content">
-          <h1>About Us</h1>
+        <div className="getintouchbreadcrumb-content">
+          <h1>Get in Touch</h1>
           <p>
-            Home <span>&gt;</span> About Us
+            Home <span>&gt;</span> Get in Touch
           </p>
         </div>
 
@@ -92,4 +92,4 @@ const Breadcrumb = () => {
   );
 };
 
-export default Breadcrumb;
+export default GetInTouchBreadcrumb;

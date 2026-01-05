@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./WebdevelopmentSkillSet.css";
 
 // MAIN ILLUSTRATION
@@ -9,7 +9,7 @@ import shape1 from "../../assets/slides-shape-1.png";
 import shape2 from "../../assets/slides-shape-2.png";
 import shape3 from "../../assets/slides-shape-3.png";
 
-const skills = [
+const skillsData = [
   { title: "Software Development", percent: 92, color: "purple" },
   { title: "App Development", percent: 80, color: "pink" },
   { title: "Artificial Intelligence", percent: 70, color: "yellow" },
@@ -18,17 +18,21 @@ const skills = [
 
 const SkillSet = () => {
   const sectionRef = useRef(null);
+  const [startCount, setStartCount] = useState(false);
+  const [counts, setCounts] = useState(skillsData.map(() => 0));
 
+  /* SCROLL REVEAL + START COUNTER */
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("reveal-active");
+            setStartCount(true);
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.3 }
     );
 
     sectionRef.current
@@ -37,6 +41,25 @@ const SkillSet = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  /* NUMBER COUNTER LOGIC */
+  useEffect(() => {
+    if (!startCount) return;
+
+    const intervals = skillsData.map((skill, index) => {
+      return setInterval(() => {
+        setCounts(prev => {
+          const updated = [...prev];
+          if (updated[index] < skill.percent) {
+            updated[index] += 1;
+          }
+          return updated;
+        });
+      }, 20);
+    });
+
+    return () => intervals.forEach(clearInterval);
+  }, [startCount]);
 
   return (
     <section className="skillset-section" ref={sectionRef}>
@@ -56,7 +79,7 @@ const SkillSet = () => {
           </h2>
 
           <div className="skills-list">
-            {skills.map((skill, index) => (
+            {skillsData.map((skill, index) => (
               <div
                 key={index}
                 className="skill-bar reveal"
@@ -64,13 +87,17 @@ const SkillSet = () => {
               >
                 <div className="skill-label">
                   <span>{skill.title}</span>
-                  <span>{skill.percent}%</span>
+                  <span className="skill-count">
+                    {counts[index]}%
+                  </span>
                 </div>
 
                 <div className="progress-track">
                   <div
                     className={`progress-fill ${skill.color}`}
-                    style={{ width: `${skill.percent}%` }}
+                    style={{
+                      width: startCount ? `${skill.percent}%` : "0%",
+                    }}
                   />
                 </div>
               </div>

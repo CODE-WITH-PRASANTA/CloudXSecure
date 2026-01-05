@@ -13,17 +13,16 @@ const BestITSolution = () => {
         <div className="bestitsolution-content">
           <span className="bestitsolution-badge">
             <span className="bestitsolution-badge-icon">⚡</span>
-            BEST IT SOLUTION
+             Best IT & Cloud Solutions Provider
           </span>
 
           <h1 className="bestitsolution-title">
-            End-to-End IT Solutions for <br />
+           End-to-End Cloud, Web & App Solutions For <br />
             <span>Growing Businesses</span>
           </h1>
 
           <p className="bestitsolution-description">
-            We provide comprehensive, end-to-end IT solutions designed to
-            support businesses at every stage of growth.
+           CloudXSecure is a trusted technology partner providing comprehensive cloud solutions, modern web design, and mobile app development services. From cloud infrastructure and security to high-performance websites and applications, we help businesses streamline operations, enhance digital experiences, and scale with confidence.
           </p>
 
           {/* PROGRESS CARD */}
@@ -41,7 +40,7 @@ const BestITSolution = () => {
 
             <div className="bestitsolution-progress">
               <div className="bestitsolution-progress-header">
-                <span>Cyber Security</span>
+                <span>Devops & Automation</span>
                 <span>99%</span>
               </div>
               <div className="bestitsolution-progress-bar">

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Subscribe.css";
+import "./CTASection.css";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { FiCheckCircle } from "react-icons/fi";
-import girl from "../../assets/cta-img1.webp"; // your image
+import girl from "../../assets/cta-img1.webp";
 
-const Subscribe = () => {
+const CTASection = () => {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
 
@@ -25,43 +25,45 @@ const Subscribe = () => {
   return (
     <section
       ref={ref}
-      className={`subscribe-wrapper ${show ? "subscribe-show" : ""}`}
+      className={`cta-wrapper ${show ? "cta-show" : ""}`}
     >
-      <div className="subscribe-container">
+      <div className="cta-container">
         {/* LEFT CONTENT */}
-        <div className="subscribe-content">
-          <h1 className="subscribe-title delay-1">
-            Transform Your Business with Secure Cloud, Web & App Solutions–
+        <div className="cta-content">
+          <h1 className="cta-title delay-1">
+            Transform Your IT Today–
             <br />
             Speak with Our Experts!
           </h1>
 
-          <p className="subscribe-text delay-2">
-           At CloudXSecure, we help businesses accelerate growth with end-to-end cloud solutions, professional web development, mobile app design, and advanced IT services. Get a personalized consultation and discover how our secure, scalable, and cost-effective solutions can transform your digital infrastructure.
+          <p className="cta-text delay-2">
+            Ready to take your business to the next level with cutting-edge IT
+            solutions? Our team is here to help you transform. Get personalized
+            consultation and accelerate your digital transformation journey.
           </p>
 
-          <div className="subscribe-form delay-3">
+          <div className="cta-form delay-3">
             <input
               type="email"
               placeholder="Enter your business email"
-              className="subscribe-input"
+              className="cta-input"
             />
-            <button className="subscribe-btn">
+            <button className="cta-btn">
               Get Free Consultation <HiArrowUpRight />
             </button>
           </div>
         </div>
 
         {/* RIGHT IMAGE + FLOATING TAGS */}
-        <div className="subscribe-visual delay-4">
-          <img src={girl} alt="IT Expert" className="subscribe-girl" />
+        <div className="cta-visual delay-4">
+          <img src={girl} alt="IT Expert" className="cta-girl" />
 
-          <div className="subscribe-badges">
+          <div className="cta-badges">
             <span className="badge badge-1">
               <FiCheckCircle /> IT Solution Services
             </span>
             <span className="badge badge-2">
-              <FiCheckCircle /> Devops & Automation Services
+              <FiCheckCircle /> Cyber Security Services
             </span>
             <span className="badge badge-3">
               <FiCheckCircle /> Software Development
@@ -73,4 +75,4 @@ const Subscribe = () => {
   );
 };
 
-export default Subscribe;
+export default CTASection;

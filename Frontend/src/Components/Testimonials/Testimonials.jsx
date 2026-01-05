@@ -7,14 +7,14 @@ const DATA = [
     id: 1,
     name: "Ben Stokes",
     role: "Owner, Taxfirm",
-    text: "Partnering with ETech has transformed our IT Solution. Their tailored solutions help streamline our operations, improve cybersecurity, and drive efficiency across the board. We've experienced fewer disruptions, faster answers.",
+    text: "Partnering with CloudXSecure has transformed our IT Solution. Their tailored solutions help streamline our operations, improve cybersecurity, and drive efficiency across the board. We've experienced fewer disruptions, faster answers.",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     id: 2,
     name: "Sarah Miller",
     role: "CTO, Fintechly",
-    text: "ETech delivered a seamless migration with zero downtime. Their proactive support and deep expertise gave us confidence from day one.",
+    text: "CloudXSecure delivered a seamless migration with zero downtime. Their proactive support and deep expertise gave us confidence from day one.",
     avatar: "https://randomuser.me/api/portraits/women/45.jpg",
   },
   {
@@ -28,7 +28,7 @@ const DATA = [
     id: 4,
     name: "Emily Watson",
     role: "Product Lead, Startify",
-    text: "We scaled faster with ETech's infrastructure solutions. Outstanding experience overall.",
+    text: "We scaled faster with CloudXSecure's infrastructure solutions. Outstanding experience overall.",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ];

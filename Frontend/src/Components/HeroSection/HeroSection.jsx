@@ -43,9 +43,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="hero-description">
-            We deliver secure, scalable, and innovative IT solutions that help
-            businesses grow faster, operate smarter, and stay ahead in the
-            digital era.
+            CloudXSecure is a trusted technology partner delivering end-to-end cloud solutions, modern web design, mobile app development, and enterprise cloud services. We help startups, SMEs, and enterprises build secure digital products, migrate to the cloud, and scale efficiently with future-ready technology.
           </p>
 
           <div className="hero-actions">
@@ -61,7 +59,7 @@ const HeroSection = () => {
 
         {/* IMAGE SECOND */}
         <div className="hero-visual">
-          <img src={heroImg} alt="Hero" className="hero-image" />
+          <img src={heroImg} alt="Hero" className="hero-img" />
 
           <div className="floating-card users">
             <h4>Active Users</h4>
