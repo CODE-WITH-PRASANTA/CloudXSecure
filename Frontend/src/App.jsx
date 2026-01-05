@@ -12,6 +12,7 @@ import ManagedCloud from "./Pages/ManagedCloud/ManagedCloud";
 import TermsOfService from "./Pages/TermsOfService/TermsOfService";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import ComingSoon from "./Pages/ComimgSoon/ComimgSoon";
+import GetInTouch from "./Pages/GetInTouch/GetInTouch";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="//privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<ComingSoon />} />
+        <Route path="/get-in-touch" element={<GetInTouch  />} />
       </Routes>
       <Footer/>
     </>
