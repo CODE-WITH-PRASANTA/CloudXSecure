@@ -12,7 +12,7 @@ const HowItsWork = () => {
         <div className="HowitsWork-header">
           <span className="HowitsWork-badge">HOW IT WORKS</span>
           <h2 className="HowitsWork-title">
-            Expert IT Services Designed To <br />
+            Expert Cloud, Web & App Services Designed to<br />
             Elevate Your Business
           </h2>
         </div>
@@ -26,9 +26,9 @@ const HowItsWork = () => {
             <div className="HowitsWork-step">
               <div className="HowitsWork-step-number">01</div>
               <div className="HowitsWork-step-box">
-                <h4>Discovery Consultation</h4>
+                <h4>Discovery & Consultation</h4>
                 <p>
-                  With our intuitive interface and robust features, you buy, sell.
+                  Understanding Your Business & Technology Needs.
                 </p>
               </div>
             </div>
@@ -36,9 +36,9 @@ const HowItsWork = () => {
             <div className="HowitsWork-step">
               <div className="HowitsWork-step-number">02</div>
               <div className="HowitsWork-step-box">
-                <h4>Quality Assurance</h4>
+                <h4>Design, Development & Quality Assurance</h4>
                 <p>
-                  Trusted partner in the world of crypto trading. Join us today.
+                  Building Secure, Scalable & High-Performance Solutions.
                 </p>
               </div>
             </div>
@@ -58,9 +58,9 @@ const HowItsWork = () => {
             <div className="HowitsWork-step">
               <div className="HowitsWork-step-number">03</div>
               <div className="HowitsWork-step-box">
-                <h4>Customized IT Strategy</h4>
+                <h4>Customized Cloud & IT Strategy</h4>
                 <p>
-                  Plus, our commitment to the security means that PayCoin.
+                  Tailored Solutions for Long-Term Growth.
                 </p>
               </div>
             </div>

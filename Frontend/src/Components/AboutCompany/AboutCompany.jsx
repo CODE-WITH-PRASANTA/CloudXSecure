@@ -56,18 +56,16 @@ const AboutCompany = () => {
         {/* RIGHT CONTENT */}
         <div className="aboutco__content">
           <span className="aboutco__badge">
-            📘 ABOUT EITECH IT SOLUTION
+            📘About CloudXSecure
           </span>
 
           <h2 className="aboutco__title">
-            Unlock Business Potential <br />
-            with Tailored IT Services
+           Unlock Business Potential <br />
+            with Secure Cloud & Digital Solutions
           </h2>
 
           <p className="aboutco__desc">
-            At Eitech, we understand that every business is unique, which
-            is why we offer customized IT solutions designed to meet
-            your specific goals and challenges.
+            At CloudXSecure, we empower businesses to grow, scale, and innovate through secure cloud services, modern web design, mobile app development, and end-to-end cloud solutions. We understand that every organization has unique goals, which is why we deliver tailored IT and cloud solutions designed to improve performance, enhance security, and support long-term success.
           </p>
 
           <div className="aboutco__stats">
@@ -89,8 +87,7 @@ const AboutCompany = () => {
           </div>
 
           <blockquote className="aboutco__quote">
-            “The right IT solutions don’t just support your business —
-            they transform it. At Eitech, we believe.”
+            “Partner with CloudXSecure to build secure cloud infrastructure, powerful digital experiences, and scalable IT solutions that move your business forward.”
           </blockquote>
 
           <a href="#" className="aboutco__btn">

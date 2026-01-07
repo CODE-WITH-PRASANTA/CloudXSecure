@@ -3,48 +3,48 @@ import "./OurServicesServe.css";
 
 const services = [
   {
-    title: "Consulting Service",
-    desc: "Strategic IT planning roadmap development. Business process analysis and improvement for IT solution & technology.",
+    title: "Managed Cloud Services",
+    desc: "CloudXSecure provides fully managed cloud services to ensure your cloud environment is secure, optimized, and always available. We handle monitoring, maintenance, performance tuning, and ongoing support so you can focus on growing your business.",
     icon: "💡",
   },
   {
-    title: "Software Development",
-    desc: "Mobile app development for iOS, Android, and cross-platform solutions & web application development.",
+    title: "Cloud Security",
+    desc: "Protect your cloud infrastructure with advanced cloud security services. CloudXSecure delivers threat detection, access control, encryption, compliance support, and continuous monitoring to keep your data and applications secure.",
     icon: "⚙️",
   },
   {
-    title: "Cloud Solution",
-    desc: "Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).",
+    title: "Cloud Hosting",
+    desc: "CloudXSecure offers scalable cloud hosting solutions with high availability, fast performance, and enterprise-level security. Our cloud hosting services are designed to support websites, applications, and business systems of all sizes.",
     icon: "☁️",
   },
   {
-    title: "Cyber Security",
-    desc: "Threat assessment and vulnerability analysis. Security strategy development and implementation.",
+    title: "Cloud Migration",
+    desc: "We help businesses migrate applications, data, and infrastructure to the cloud with minimal downtime. CloudXSecure ensures a secure, efficient, and smooth cloud migration process tailored to your business needs.",
     icon: "🔐",
   },
   {
-    title: "Data Analytics",
-    desc: "Data visualization and business intelligence solutions. Predictive analytics and ML solutions.",
+    title: "DevOps & Automation",
+    desc: "CloudXSecure implements DevOps practices and automation to accelerate development, improve deployment efficiency, and enhance system reliability. Our solutions help teams deliver faster and scale smarter.",
     icon: "📊",
   },
   {
-    title: "Manage IT Services",
-    desc: "Proactive IT monitoring and management. Network infrastructure setup and maintenance.",
+    title: "Monitoring & Cost Optimization",
+    desc: "Optimize cloud performance and reduce operational costs with real-time monitoring and cost optimization strategies. CloudXSecure ensures efficient resource utilization without compromising performance or security.",
     icon: "🌐",
   },
   {
     title: "Mobile App Development",
-    desc: "Custom mobile applications with secure and scalable architecture.",
+    desc: "CloudXSecure delivers custom mobile app development services designed to help businesses build secure, scalable, and high-performance mobile applications. We develop intuitive and user-friendly apps for Android, iOS, and cross-platform environments, ensuring seamless performance and future-ready architecture.",
     icon: "📱",
   },
   {
-    title: "IT Infrastructure & Networking",
-    desc: "Enterprise-grade infrastructure and networking solutions.",
+    title: "Backup & Disaster Recovery",
+    desc: "Protect your critical business data with reliable cloud backup and disaster recovery solutions. CloudXSecure ensures data availability, fast recovery, and business continuity during unexpected incidents.",
     icon: "🖧",
   },
   {
-    title: "Custom Software Development",
-    desc: "Tailored software solutions for business automation and growth.",
+    title: "Cloud Consulting",
+    desc: "Our cloud consulting experts help you plan, design, and implement cloud strategies that align with your business goals. CloudXSecure provides guidance on architecture, security, scalability, and optimization.",
     icon: "🧩",
   },
 ];

@@ -1,0 +1,234 @@
+/* ===============================
+   SKILLSET SECTION
+================================ */
+.skillset-section {
+  position: relative;
+  padding: 120px 0;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===============================
+   FLOATING DECORATIVE SHAPES
+================================ */
+.float-shape {
+  position: absolute;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+.shape-1 {
+  top: 10%;
+  right: 8%;
+  width: 80px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  bottom: 12%;
+  right: 45%;
+  width: 60px;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  bottom: 5%;
+  left: 6%;
+  width: 70px;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ===============================
+   WRAPPER LAYOUT
+================================ */
+.skillset-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+.skillset-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.skill-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1b083f;
+  margin-bottom: 30px;
+}
+
+.skill-title span {
+  color: #a855f7;
+}
+
+/* ===============================
+   SKILL BARS
+================================ */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+.skill-bar {
+  width: 100%;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1b083f;
+}
+
+.skill-count {
+  font-weight: 700;
+  color: #1b083f;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* Progress Track */
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #f1f1f1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Progress Fill */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  transition: width 1.6s ease;
+}
+
+/* Color Variants */
+.progress-fill.purple {
+  background: linear-gradient(90deg, #6b21a8, #9333ea);
+}
+
+.progress-fill.pink {
+  background: linear-gradient(90deg, #db2777, #ec4899);
+}
+
+.progress-fill.yellow {
+  background: linear-gradient(90deg, #f59e0b, #facc15);
+}
+
+.progress-fill.violet {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.skill-btn {
+  width: fit-content;
+  padding: 14px 34px;
+  background: linear-gradient(90deg, #d9f800, #facc15);
+  color: #1b083f;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.skill-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(250, 204, 21, 0.4);
+}
+
+/* ===============================
+   RIGHT IMAGE
+================================ */
+.skillset-right img {
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  margin-left: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===============================
+   SCROLL REVEAL ANIMATION
+================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .skillset-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .skillset-right img {
+    margin: auto;
+  }
+
+  .skill-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skill-title {
+    font-size: 30px;
+  }
+
+  .skillset-section {
+    padding: 80px 0;
+  }
+}

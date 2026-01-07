@@ -70,10 +70,9 @@ export default function Vision() {
           </h2>
 
           <p className="vision-text">
-            At CloudXSecure, our vision is to be the leading force driving digital
-            transformation and innovation worldwide. We envision a future where
-            businesses of all sizes have the tools and expertise they need to
-            thrive in an increasingly digital world.
+            At CloudXSecure, our vision is to empower businesses through secure cloud services, innovative web design, intelligent app development, and end-to-end cloud solutions. We aim to be a trusted technology partner that helps organizations embrace digital transformation with confidence, scalability, and security.
+
+We envision a future where businesses of all sizes leverage cloud technology and digital platforms to operate efficiently, innovate faster, and achieve sustainable growth in an increasingly connected world.
           </p>
 
           <div className="vision-points">

@@ -1,11 +1,11 @@
 /* ================= ROOT ================= */
 
-.services-wrapper {
+.ctt-wrapper {
   padding: 90px 6%;
   background: #ffffff;
 }
 
-.services-grid {
+.ctt-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -14,7 +14,7 @@
 
 /* ================= CARD ================= */
 
-.service-card {
+.btt-card {
   position: relative;
   background: #ffffff;
   border-radius: 22px;
@@ -30,7 +30,7 @@
 }
 
 /* GRADIENT OVERLAY (hidden by default) */
-.service-card::before {
+.btt-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -42,10 +42,10 @@
 
 /* ================= DEPTH LAYERS ================= */
 
-.service-icon,
-.service-card h3,
-.service-card p,
-.service-footer,
+.btt-icon,
+.btt-card h3,
+.btt-card p,
+.btt-footer,
 .arrow {
   position: relative;
   z-index: 1;
@@ -53,7 +53,7 @@
 }
 
 /* ICON */
-.service-icon {
+.btt-icon {
   width: 64px;
   height: 64px;
   background: radial-gradient(circle at top left, #6c63ff, #3a0ca3);
@@ -67,33 +67,33 @@
 }
 
 /* TEXT */
-.service-card h3 {
+.btt-card h3 {
   font-size: 20px;
   margin-bottom: 14px;
   color: #0c1239;
 }
 
-.service-card p {
+.btt-card p {
   font-size: 14px;
   line-height: 1.6;
   color: #555;
 }
 
 /* FOOTER */
-.service-footer {
+.btt-footer {
   display: flex;
   align-items: center;
   margin-top: 24px;
 }
 
-.service-footer .line {
+.btt-footer .line {
   width: 60px;
   height: 2px;
   background: #3a0ca3;
   margin-right: 10px;
 }
 
-.service-footer .number {
+.btt-footer .number {
   font-weight: 600;
   color: #3a0ca3;
 }
@@ -109,42 +109,42 @@
 
 /* ================= HOVER STATE ================= */
 
-.service-card:hover::before {
+.btt-card:hover::before {
   opacity: 1; /* 🔥 FULL COLOR FILL */
 }
 
-.service-card:hover {
+.btt-card:hover {
   box-shadow:
     0 40px 80px rgba(92, 82, 255, 0.35),
     0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* TEXT COLOR SWITCH */
-.service-card:hover h3,
-.service-card:hover p,
-.service-card:hover .number,
-.service-card:hover .arrow {
+.btt-card:hover h3,
+.btt-card:hover p,
+.btt-card:hover .number,
+.btt-card:hover .arrow {
   color: #ffffff;
 }
 
-.service-card:hover .line {
+.btt-card:hover .line {
   background: #ffffff;
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1200px) {
-  .services-grid {
+  .ctt-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .services-grid {
+  .ctt-grid {
     grid-template-columns: 1fr;
   }
 
-  .service-card {
+  .btt-card {
     padding: 26px;
   }
 }

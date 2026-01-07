@@ -40,12 +40,11 @@ const AboutOurMission = () => {
 
           <h2 className="about-mission-title">
             Driving Innovation: Our <br />
-            Mission Vision at <span>Eitech</span>
+            Mission Vision at <span>CloudXSecure</span>
           </h2>
 
           <p className="about-mission-description">
-            At the core of innovation, our cutting-edge IT solutions are
-            designed to transform your business ETech operations.
+           At CloudXSecure, our mission is to empower businesses through secure cloud services, intelligent web and app design, and scalable cloud solutions that drive innovation and long-term growth. We combine advanced technology with strategic thinking to help organizations operate smarter, faster, and more securely in a digital-first world.
           </p>
 
           {/* CARD 1 */}
@@ -56,8 +55,7 @@ const AboutOurMission = () => {
             <div className="about-mission-card-content">
               <h4>Network Infrastructure Solutions</h4>
               <p>
-                In today's fast-paced world, technology is the backbone of
-                success. Our comprehensive IT.
+                In today’s fast-paced digital environment, cloud and network infrastructure form the backbone of successful businesses. CloudXSecure provides robust cloud infrastructure solutions designed to ensure high availability, performance, and security.
               </p>
             </div>
           </div>
@@ -70,8 +68,7 @@ const AboutOurMission = () => {
             <div className="about-mission-card-content">
               <h4>Performance Tailored IT Services</h4>
               <p>
-                Our tailored IT services are crafted to meet your unique
-                business needs, ensuring that.
+                Our performance-focused IT services are crafted to meet your unique business requirements. From cloud services to web and app design, CloudXSecure delivers solutions that are efficient, scalable, and aligned with your goals.
               </p>
             </div>
           </div>

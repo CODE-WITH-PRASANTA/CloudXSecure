@@ -12,38 +12,38 @@ import {
 const services = [
   {
     id: "01",
-    title: "Cyber Security Solution",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    title: "Managed Cloud Services",
+    desc: "CloudXSecure provides managed cloud services that handle your cloud infrastructure end-to-end. We ensure high availability, performance optimization, security monitoring, and continuous support so you can focus on growing your business.",
     icon: <FaShieldAlt size={20} />
   },
   {
     id: "02",
-    title: "Scalable Cloud Solutions",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    title: "Cloud Security",
+    desc: "Our cloud security services protect your applications, data, and infrastructure from cyber threats. We implement robust security controls, continuous monitoring, and compliance-ready solutions to keep your cloud environment safe.",
     icon: <FaCloud size={20} />
   },
   {
     id: "03",
-    title: "Data Protection Services",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    title: "Cloud Hosting",
+    desc: "We deliver secure and scalable cloud hosting services designed for speed, reliability, and performance. Whether hosting websites, applications, or enterprise systems, our cloud hosting ensures maximum uptime and flexibility.",
     icon: <FaDatabase size={20} />
   },
   {
     id: "04",
-    title: "Optimization Management",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    title: "Cloud Migration",
+    desc: "CloudXSecure helps businesses move to the cloud with minimal downtime. Our cloud migration services ensure safe data transfer, application compatibility, and optimized cloud performance for a seamless transition.",
     icon: <FaCogs size={20} />
   },
   {
     id: "05",
-    title: "HelpDesk 360 Solutions",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    title: "DevOps & Automation",
+    desc: "Our DevOps and automation services streamline development and deployment processes. We automate workflows, improve CI/CD pipelines, and enhance system reliability to help businesses deliver faster and smarter.",
     icon: <FaHeadset size={20} />
   },
   {
     id: "06",
-    title: "Software Development",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    title: "Monitoring & Cost Optimization",
+    desc: "We provide cloud monitoring and cost optimization services to track performance, detect issues early, and reduce unnecessary cloud spending. Our solutions help you achieve efficiency without compromising performance.",
     icon: <FaCode size={20} />
   }
 ];

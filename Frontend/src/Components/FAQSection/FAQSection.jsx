@@ -12,44 +12,44 @@ const categories = [
 
 const faqs = [
   {
-    question: "What types of IT solutions do you offer?",
+    question: "What types of IT and cloud solutions does CloudXSecure offer?",
     answer:
-      "We offer a wide range of IT solutions including cybersecurity, cloud services, software development, help desk support, data protection, and IT infrastructure management tailored to your business needs.",
+      "CloudXSecure provides a comprehensive range of IT and cloud solutions designed to support businesses of all sizes. Our services include cloud services, complete cloud solutions, web design and development, mobile app design and development, cybersecurity, data protection, and IT infrastructure management. All solutions are customized to align with your business goals, scalability needs, and security requirements.",
   },
   {
-    question: "What is your policy on data backup and recovery?",
+    question: "How does CloudXSecure ensure cloud and data security?",
     answer:
-      "Our data backup and recovery policy ensures your critical data is securely backed up with regular schedules and can be quickly restored in case of data loss, cyberattacks, or system failures.",
+      "Security is a top priority at CloudXSecure. We implement advanced cloud security measures including data encryption, access control, threat monitoring, secure backups, and compliance-ready cloud environments. Our cybersecurity solutions protect your data, applications, and infrastructure from evolving threats.",
   },
   {
-    question: "How can IT solutions benefit my business?",
+    question: "Can CloudXSecure scale services as my business grows?",
     answer:
-      "IT solutions improve operational efficiency, enhance security, reduce costs, enable scalability, and help your business stay competitive through modern technology and automation.",
+      "Yes. Our scalable cloud and IT solutions are designed to grow with your business. Whether you need additional cloud resources, new digital platforms, or expanded security measures, CloudXSecure ensures seamless scalability without disruption.",
   },
   {
-    question: "What industries do you specialize in?",
+    question: "What is your approach to data backup and disaster recovery?",
     answer:
-      "We specialize in serving industries such as healthcare, finance, retail, education, manufacturing, and technology-driven businesses of all sizes.",
+      "CloudXSecure provides reliable data backup and disaster recovery solutions to protect your critical business data. We use secure cloud-based backups, automated recovery processes, and continuous monitoring to minimize downtime and ensure business continuity.",
   },
   {
-    question: "What is the process for onboarding a new client?",
+    question: "How can I get in touch with CloudXSecure’s support team?",
     answer:
-      "Our onboarding process includes an initial consultation, requirement analysis, solution planning, implementation, testing, and continuous support to ensure a smooth transition.",
+      "You can contact our support team through our website, email, or scheduled consultation. CloudXSecure provides responsive and reliable support to ensure your systems remain secure, optimized, and operational.",
   },
   {
-    question: "How can I get in touch with your support team?",
+    question: "What types of businesses does CloudXSecure work with?",
     answer:
-      "You can reach our support team via email, phone, or our online support portal. Our dedicated team is available to assist you during business hours and for emergencies.",
+      "We work with startups, small and medium-sized businesses, and enterprises across various industries. Our flexible cloud services, web design, and app development solutions are tailored to meet diverse business requirements.",
   },
   {
-    question: "What kind of technology partners do you work with?",
+    question: "Do you offer flexible pricing and payment plans?",
     answer:
-      "We work with leading technology partners and platforms including cloud providers, cybersecurity vendors, and enterprise software companies to deliver reliable solutions.",
+      "Yes. CloudXSecure offers flexible pricing models and customized service plans based on your business needs and project scope. Contact us for a personalized quote or consultation.",
   },
   {
-    question: "Can I scale the services as my business grows?",
+    question: "Do you offer custom web design and development services?",
     answer:
-      "Yes, our services are fully scalable. As your business grows, we can easily expand or customize solutions to meet your evolving requirements.",
+      "Yes. CloudXSecure specializes in professional, SEO-friendly web design and development. We build responsive, fast-loading, and secure websites that enhance user experience and improve search engine rankings. Our web solutions are tailored to your brand and business objectives.",
   },
   {
     question: "What types of payment plans do you offer?",
@@ -57,9 +57,9 @@ const faqs = [
       "We offer flexible payment plans including monthly subscriptions, project-based pricing, and customized plans depending on the scope of services.",
   },
   {
-    question: "What is your policy on data backup recovery?",
+    question: "Does CloudXSecure provide mobile app design and development?",
     answer:
-      "We follow industry best practices for data backup recovery, ensuring secure storage, regular testing, and rapid restoration to minimize downtime.",
+      "Absolutely. We design and develop high-performance mobile applications for Android, iOS, and cross-platform environments. Our app development services focus on UI/UX excellence, cloud integration, security, and scalability, ensuring long-term performance and growth.",
   },
 ];
 
