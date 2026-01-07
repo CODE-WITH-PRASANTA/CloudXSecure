@@ -1,0 +1,36 @@
+.banner-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #0b3cc1;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.banner-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+.banner-track span {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 20px;
+  text-transform: capitalize;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Optional: pause on hover */
+.banner-wrapper:hover .banner-track {
+  animation-play-state: paused;
+}

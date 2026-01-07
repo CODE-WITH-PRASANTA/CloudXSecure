@@ -52,18 +52,18 @@ const Services = () => {
   };
 
   return (
-    <section className="services-wrapper">
-      <div className="services-grid">
+    <section className="ctt-wrapper">
+      <div className="ctt-grid">
         {services.map((item, index) => (
           <div
             key={index}
-            className="service-card"
+            className="btt-card"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
             <span className="arrow">↗</span>
 
-            <div className="service-icon">{item.icon}</div>
+            <div className="btt-icon">{item.icon}</div>
 
             <h3>{item.title}</h3>
 
@@ -72,7 +72,7 @@ const Services = () => {
               ever-an evolving threats, approach ensures.
             </p>
 
-            <div className="service-footer">
+            <div className="btt-footer">
               <span className="line" />
               <span className="number">{item.number}</span>
             </div>

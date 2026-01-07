@@ -14,7 +14,7 @@ const OurBlog = memo(() => {
 
           <h2 className="ourblog-title">
             Stay Updated with the <br />
-            Latest in IT Solutions
+            Latest Insights on Cloud, Web & App Solutions
           </h2>
         </header>
 
@@ -73,9 +73,9 @@ const BLOGS = [
     date: "26 August 2024",
     author: "Alex Roy",
     title:
-      "Revolutionize Your Business Operations with Advanced IT Solution Technology",
+      "How Cloud Solutions Are Transforming Modern Business Operations",
     desc:
-      "Fuel your business success with our custom IT services. We design solutions that are tailored to your specific needs.",
+      "Discover how secure and scalable cloud services help businesses improve efficiency, reduce operational costs, and accelerate digital transformation through modern cloud infrastructure and automation.",
   },
   {
     image:
@@ -83,8 +83,8 @@ const BLOGS = [
     date: "26 August 2024",
     author: "Alex Roy",
     title:
-      "Transform Your Business Operations with Tailored IT Solutions Designed",
+      "Why Modern Web Design Is Critical for Business Growth in 2024",
     desc:
-      "Fuel your business success with our custom IT services. We design solutions that are tailored to your specific needs.",
+      "Learn how professional web design and development improves user experience, boosts SEO rankings, and increases conversions with fast, responsive, and secure websites.",
   },
 ];

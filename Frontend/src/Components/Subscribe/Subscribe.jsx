@@ -31,15 +31,13 @@ const Subscribe = () => {
         {/* LEFT CONTENT */}
         <div className="subscribe-content">
           <h1 className="subscribe-title delay-1">
-            Transform Your IT Today–
+            Transform Your Business with Secure Cloud, Web & App Solutions–
             <br />
             Speak with Our Experts!
           </h1>
 
           <p className="subscribe-text delay-2">
-            Ready to take your business to the next level with cutting-edge IT
-            solutions? Our team is here to help you transform. Get personalized
-            consultation and accelerate your digital transformation journey.
+           At CloudXSecure, we help businesses accelerate growth with end-to-end cloud solutions, professional web development, mobile app design, and advanced IT services. Get a personalized consultation and discover how our secure, scalable, and cost-effective solutions can transform your digital infrastructure.
           </p>
 
           <div className="subscribe-form delay-3">
@@ -63,7 +61,7 @@ const Subscribe = () => {
               <FiCheckCircle /> IT Solution Services
             </span>
             <span className="badge badge-2">
-              <FiCheckCircle /> Cyber Security Services
+              <FiCheckCircle /> Devops & Automation Services
             </span>
             <span className="badge badge-3">
               <FiCheckCircle /> Software Development

@@ -68,7 +68,7 @@ const BlogSection = () => {
         <div className="sidebar-box">
           <h4>Blog Category</h4>
           {[
-            "Cyber Security Solution",
+            "Devops & Automation",
             "Cloud Services",
             "Data Protection",
             "IT Consulting",
@@ -85,12 +85,14 @@ const BlogSection = () => {
           <h4>Popular Tags</h4>
           <div className="tags">
             {[
-              "#ITSolutions",
+              "#CloudServices",
+              "#CloudSolutions",
+              "#WebDesign",
+              "#AppDevelopment",
               "#CyberSecurity",
               "#CloudComputing",
-              "#BusinessIT",
-              "#DataProtection",
-              "#TechTrends",
+              "#DigitalTransformation",
+              "#BusinessIT"
             ].map((tag) => (
               <span key={tag}>{tag}</span>
             ))}

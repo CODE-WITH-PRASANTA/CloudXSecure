@@ -67,13 +67,12 @@ const AboutEitechITSolution = () => {
         {/* CONTENT */}
         <div className={`about-content ${isVisible ? "animate" : ""}`}>
           <h2>
-            Dedicated To Delivering <br />
-            <span>Technology-Driven Services</span>
+            Dedicated to Delivering  <br />
+            <span>Secure, Scalable & Technology-Driven Solutions</span>
           </h2>
 
           <p>
-            We deliver innovative IT solutions that empower businesses to grow,
-            scale, and stay secure with a dedicated team of professionals.
+           At CloudXSecure, we specialize in delivering end-to-end cloud solutions, modern web design, and mobile app development services that help businesses scale securely in a digital-first world. Our expert team combines innovation, security, and industry best practices to build reliable cloud infrastructure, intuitive digital experiences, and high-performance applications tailored to your business needs.
           </p>
 
           <div className={`progress-group ${isVisible ? "animate" : ""}`}>
@@ -89,7 +88,7 @@ const AboutEitechITSolution = () => {
 
             <div className="progress-item">
               <div className="progress-label">
-                <span>Cyber Security</span>
+                <span>Cloud Computing</span>
                 <span>99%</span>
               </div>
               <div className="progress-bar">
