@@ -15,6 +15,7 @@ import ComingSoon from "./Pages/ComimgSoon/ComimgSoon";
 import GetInTouch from "./Pages/GetInTouch/GetInTouch";
 import OurServices from "./Pages/OurServices/OurServices";
 import CloudSecurity from "./Pages/CloudSecurity/CloudSecurity";
+import CloudHosting from "./Pages/CloudHosting/CloudHosting";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/get-in-touch" element={<GetInTouch  />} />
         <Route path="/services/our-services" element={<OurServices />} />
         <Route path="/services/security" element={<CloudSecurity />} />
+        <Route path="/services/hosting" element={<CloudHosting />} />
       </Routes>
       <Footer/>
     </>

@@ -1,0 +1,117 @@
+/* ===== Brand Banner Section ===== */
+
+.brand-banner {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+/* ===== Moving Track (animation container) ===== */
+
+.brand-track {
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    /* spacing between logos */
+    animation: scrollLoop 50s linear infinite;
+    /* slowed down for smooth flow */
+    width: max-content;
+    will-change: transform;
+}
+
+
+/* Each logo container */
+
+.brand-logo {
+    flex: 0 0 auto;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Logo styling — colorful, crisp */
+
+.brand-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform .8s ease;
+    filter: brightness(1) contrast(1.05);
+}
+
+
+/* Subtle hover zoom for interactivity */
+
+.brand-logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.15) contrast(1.1);
+}
+
+
+/* ===== Infinite smooth scroll animation ===== */
+
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ===== Optional gradient fade edges (luxury look) ===== */
+
+.brand-banner::before,
+.brand-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.brand-banner::before {
+    left: 0;
+    background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.brand-banner::after {
+    right: 0;
+    background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+/* ===== Responsive tuning ===== */
+
+@media (max-width: 1024px) {
+    .brand-track {
+        gap: 80px;
+        animation-duration: 45s;
+        /* slightly slower on tablet */
+    }
+    .brand-logo {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-track {
+        gap: 60px;
+        animation-duration: 50s;
+        /* slowest on mobile for elegance */
+    }
+    .brand-logo {
+        width: 120px;
+    }
+}
