@@ -1,0 +1,195 @@
+/* ===== SECTION CONTAINER ===== */
+
+.expert-team-section {
+    width: 100%;
+    background: #fff;
+    padding: 60px 80px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* ===== HEADER ===== */
+
+.team-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.team-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0a0a0a;
+}
+
+
+/* ===== ARROW CONTROLS ===== */
+
+.arrow-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.arrow-btn {
+    background: #f6f8ff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: #293eff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-btn:hover {
+    background: #293eff;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.arrow-btn.active {
+    background: #293eff;
+    color: #fff;
+}
+
+
+/* ===== TEAM CONTAINER ===== */
+
+.team-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 32px;
+    padding-bottom: 10px;
+}
+
+.team-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ===== CARD DESIGN ===== */
+
+.team-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    flex: 0 0 350px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===== IMAGE SECTION ===== */
+
+.team-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.05);
+}
+
+
+/* ===== SHARE BUTTON ===== */
+
+.share-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #293eff;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn:hover {
+    transform: rotate(20deg);
+    background: #1f2fcc;
+}
+
+
+/* ===== TEXT ===== */
+
+.team-info {
+    padding: 16px 20px 24px;
+    text-align: left;
+}
+
+.team-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.team-role {
+    color: #777;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 992px) {
+    .expert-team-section {
+        padding: 40px 30px;
+    }
+    .team-header h2 {
+        font-size: 28px;
+    }
+    .team-card {
+        flex: 0 0 260px;
+    }
+    .team-image-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .arrow-controls {
+        justify-content: center;
+    }
+    .team-card {
+        flex: 0 0 240px;
+    }
+}
