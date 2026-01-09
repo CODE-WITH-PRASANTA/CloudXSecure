@@ -1,0 +1,224 @@
+/* ================= SECTION ================= */
+.pricingSectionUnique {
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= DECOR ================= */
+.pricingDiamondDecor {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+  width: 70px;
+}
+
+.pricingHandDecor {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 130px;
+}
+
+/* ================= HEADER ================= */
+.pricingHeaderUnique {
+  text-align: center;
+  max-width: 720px;
+  margin: auto;
+}
+
+.pricingBadgeUnique {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #3f5bff;
+}
+
+.pricingTitleUnique {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 12px 0 28px;
+}
+
+/* ================= TOGGLE ================= */
+.pricingToggleWrapUnique {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pricingToggleBtnUnique {
+  padding: 10px 26px;
+  border-radius: 30px;
+  border: 1px solid #d4dcff;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+}
+
+.pricingToggleBtnUnique.active {
+  background: #3f5bff;
+  color: #fff;
+}
+
+.pricingSaveWrapUnique {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 10px;
+  font-weight: 500;
+  color: #3f5bff;
+}
+
+.pricingSaveWrapUnique img {
+  width: 42px;
+}
+
+/* ================= GRID ================= */
+.pricingGridUnique {
+  max-width: 1200px;
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ================= CARD ================= */
+.pricingCardUnique {
+  border: 1px solid #dbe1ff;
+  border-radius: 24px;
+  padding: 30px;
+  transition: transform 0.35s ease;
+  background: #fff;
+}
+
+.pricingCardUnique:hover {
+  transform: translateY(-12px);
+}
+
+.pricingCardActiveUnique {
+  transform: translateY(-18px);
+}
+
+/* ================= CARD TOP ================= */
+.pricingCardTopUnique {
+  background: #3f5bff;
+  color: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pricingCardActiveUnique .pricingCardTopUnique {
+  background: #171a57;
+}
+
+.pricingCardTopUnique h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.pricingCardTopUnique h3 {
+  font-size: 36px;
+  margin-top: 6px;
+}
+
+.pricingCardTopUnique span {
+  font-size: 14px;
+}
+
+/* ================= LIST ================= */
+.pricingListUnique {
+  list-style: none;
+  padding: 28px 0;
+  margin: 0;
+}
+
+.pricingItemUnique {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.pricingText {
+  flex: 1;
+  font-size: 15px;
+  color: #1f1f1f;
+}
+
+.pricingItemUnique.disabled .pricingText {
+  color: #9a9a9a;
+}
+
+/* ================= ICONS ================= */
+.pricingIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.pricingIcon.tick {
+  background: #eaf0ff;
+  color: #3f5bff;
+}
+
+.pricingIcon.cross {
+  background: #ffecec;
+  color: #ff3b3b;
+}
+
+.pricingHelpIcon {
+  font-size: 15px;
+  color: #6f7cff;
+  cursor: pointer;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.pricingHelpIcon:hover {
+  color: #3f5bff;
+  transform: scale(1.1);
+}
+
+/* ================= BUTTON ================= */
+.pricingBtnUnique {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: 1px solid #3f5bff;
+  background: #fff;
+  color: #3f5bff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.pricingBtnUnique:hover {
+  background: #171a57;
+  color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .pricingGridUnique {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .pricingGridUnique {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingTitleUnique {
+    font-size: 32px;
+  }
+}
