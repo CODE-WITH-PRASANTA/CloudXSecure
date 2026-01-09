@@ -14,7 +14,13 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import ComingSoon from "./Pages/ComimgSoon/ComimgSoon";
 import GetInTouch from "./Pages/GetInTouch/GetInTouch";
 import OurServices from "./Pages/OurServices/OurServices";
+<<<<<<< HEAD
 import CloudMaigration from "./Pages/CloudMaigration/CloudMaigration";
+=======
+import WebdevlopementService from "./Pages/WebdevlopementService/WebdevlopementService";
+import CloudSecurity from "./Pages/CloudSecurity/CloudSecurity";
+import CloudHosting from "./Pages/CloudHosting/CloudHosting";
+>>>>>>> d28ff4e114644d3b7f11b1b72c9981c3a9714ea0
 
 function App() {
   return (
@@ -34,8 +40,15 @@ function App() {
         <Route path="/cookie-policy" element={<ComingSoon />} />
         <Route path="/get-in-touch" element={<GetInTouch  />} />
         <Route path="/services/our-services" element={<OurServices />} />
+<<<<<<< HEAD
         <Route path="/services/migration" element={<CloudMaigration />} />
         </Routes> 
+=======
+        <Route path="/devlopment/webdevlopment" element={<WebdevlopementService/>}/>
+        <Route path="/services/security" element={<CloudSecurity />} />
+        <Route path="/services/hosting" element={<CloudHosting />} />
+      </Routes>
+>>>>>>> d28ff4e114644d3b7f11b1b72c9981c3a9714ea0
       <Footer/>
     </>
   );

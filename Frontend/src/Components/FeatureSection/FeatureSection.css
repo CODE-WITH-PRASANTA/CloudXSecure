@@ -1,0 +1,151 @@
+/* ===== Base Layout ===== */
+
+.feature-section {
+    width: 100%;
+    background: #fff;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-container {
+    width: 90%;
+    max-width: 1700px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* ===== Card Design ===== */
+
+.feature-card {
+    flex: 1;
+    min-width: 300px;
+    background: #f5f8ff;
+    border: 1px solid #e0e6ff;
+    border-radius: 6px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.feature-card:hover {
+    background: #ffffff;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== Icon Section ===== */
+
+.feature-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+
+/* ===== Text ===== */
+
+.feature-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.feature-description {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+
+/* ===== Button ===== */
+
+.feature-btn {
+    background: transparent;
+    border: 1px solid #cdd5ff;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.feature-btn:hover {
+    background: #1a38ff;
+    color: #fff;
+    border-color: #1a38ff;
+    transform: scale(1.05);
+}
+
+.feature-btn .arrow {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature-btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* ===== Animations ===== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes iconFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+    .feature-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-card {
+        width: 80%;
+        text-align: center;
+    }
+    .feature-icon-wrapper {
+        margin: 0 auto 20px auto;
+    }
+}

@@ -1,0 +1,207 @@
+/* =========================
+   HERO BASE
+========================= */
+.wd-hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #f6f8ff, #eef1ff);
+  overflow: hidden;
+}
+
+/* soft white glass layer */
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.096);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.wd-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   LEFT IMAGE
+========================= */
+.hero-img {
+  max-width: 100%;
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+.tag {
+  color: #6c63ff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.wd-right h1 {
+  font-size: 48px;
+  line-height: 1.25;
+  margin: 18px 0;
+  color: #0b0e1b;
+}
+
+.wd-right h1 span {
+  color: #6c63ff;
+}
+
+.wd-right p {
+  max-width: 520px;
+  color: #6b7280;
+  margin-bottom: 26px;
+}
+
+/* =========================
+   TRUSTPILOT
+========================= */
+.trustpilot {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.trust-content span {
+  font-weight: 600;
+  color: #0b0e1b;
+}
+
+.trust-content small {
+  color: #6b7280;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.hero-btn {
+  padding: 15px 36px;
+  background: #6c63ff;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 14px 30px rgba(108, 99, 255, 0.35);
+}
+
+.hero-btn:hover {
+  background: #554ce8;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(108, 99, 255, 0.45);
+}
+
+/* =========================
+   SHAPES
+========================= */
+.shape-top {
+  position: absolute;
+  top: 70px;
+  right: 120px;
+  width: 260px;
+  z-index: 0.99;
+}
+
+.shape-bottom {
+  position: absolute;
+  bottom: -120px;
+  right: -100px;
+  width: 420px;
+  opacity: 0.65;
+  z-index: 0;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+.rotate {
+  animation: rotate 22s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal {
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.from-left { transform: translateX(-70px); }
+.from-right { transform: translateX(70px); }
+.from-bottom { transform: translateY(70px); }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .wd-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wd-right h1 {
+    font-size: 36px;
+  }
+
+  .trustpilot {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .wd-right h1 {
+    font-size: 28px;
+  }
+
+  .shape-top,
+  .shape-bottom {
+    display: none;
+  }
+}
