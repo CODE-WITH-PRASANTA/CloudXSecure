@@ -1,0 +1,189 @@
+/* ================================
+   BRAND TRUST BAR – FULL CSS
+================================ */
+
+/* SECTION */
+.btb-wrapper {
+  background: linear-gradient(90deg, #050b18 0%, #0b1224 100%);
+  padding: 22px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* CONTAINER */
+.btb-container {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+/* ================================
+   TRUSTPILOT LEFT
+================================ */
+
+.btb-trustpilot {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+/* SMALL AVATAR IMAGES */
+.btb-small-imgs {
+  display: flex;
+  align-items: center;
+}
+
+.btb-small-imgs img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #1f2a44;
+  margin-left: -10px;
+  background: #fff;
+}
+
+.btb-small-imgs img:first-child {
+  margin-left: 0;
+}
+
+/* TRUSTPILOT LOGO */
+.btb-tp-logo {
+  width: 90px;
+  height: auto;
+}
+
+/* RATING TEXT */
+.btb-rating {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btb-score {
+  color: #6c63ff;
+  font-weight: 600;
+}
+
+.btb-review {
+  color: #cbd5ff;
+  margin-left: 6px;
+}
+
+/* DIVIDER */
+.btb-divider {
+  width: 1px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+/* ================================
+   BRAND CAROUSEL
+================================ */
+
+.btb-brand-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* SLIDER */
+.btb-brand-slider {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  will-change: transform;
+}
+
+/* BRAND ITEM */
+.btb-brand-item {
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  
+}
+
+/* BRAND IMAGE */
+.btb-brand-item img {
+  max-height: 32px;
+  width: auto;
+  opacity: 0.85;
+  transition: all 0.35s ease;
+  filter: brightness(0.95);
+  display: flex;
+}
+
+/* HOVER EFFECT */
+.btb-brand-item:hover img {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(108, 99, 255, 0.65));
+  transform: scale(1.05);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1200px) {
+  .btb-brand-item {
+    min-width: 160px;
+  }
+
+  .btb-brand-slider {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .btb-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btb-divider {
+    display: none;
+  }
+
+  .btb-brand-item {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btb-brand-item {
+    min-width: 130px;
+  }
+
+  .btb-brand-item img {
+    max-height: 28px;
+  }
+
+  .btb-rating {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btb-small-imgs img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .btb-tp-logo {
+    width: 80px;
+  }
+
+  .btb-brand-item {
+    min-width: 120px;
+  }
+
+  .btb-brand-item img {
+    max-height: 24px;
+  }
+}

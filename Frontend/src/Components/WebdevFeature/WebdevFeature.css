@@ -1,0 +1,143 @@
+/* ==========================
+   SECTION
+========================== */
+.feature1-section {
+  position: relative;
+  padding: 100px 20px 140px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ==========================
+   ANIMATED GRADIENT OVERLAY
+========================== */
+.feature1-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(108, 99, 255, 0.12),
+    rgba(255, 255, 255, 0.8),
+    rgba(108, 99, 255, 0.12)
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+.feature1-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================
+   CARD
+========================== */
+.feature1-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.feature1-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(108, 99, 255, 0.18);
+}
+
+/* ==========================
+   IMAGE
+========================== */
+.feature1-img {
+  margin-bottom: 25px;
+}
+
+.feature1-img img {
+  width: 120px;
+  height: auto;
+}
+
+/* ==========================
+   TEXT
+========================== */
+.feature1-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.feature1-desc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ==========================
+   WAVE SHAPE
+========================== */
+.feature1-wave {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  opacity: 0.4;
+  z-index: 1;
+  animation: waveFloat 4s ease-in-out infinite;
+}
+
+@keyframes waveFloat {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -8px);
+  }
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 992px) {
+  .feature1-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .feature1-container {
+    grid-template-columns: 1fr;
+  }
+
+  .feature1-section {
+    padding: 80px 15px 120px;
+  }
+
+  .feature1-img img {
+    width: 100px;
+  }
+}

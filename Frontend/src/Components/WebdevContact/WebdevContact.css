@@ -1,0 +1,237 @@
+/* ================= SECTION ================= */
+.ct3-section {
+  position: relative;
+  padding: 120px 20px;
+  background: linear-gradient(180deg, #f5f6ff 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+/* BACKGROUND MOVING TEXT */
+.ct3-bg-text {
+  position: absolute;
+  font-size: 150px;
+  font-weight: 900;
+  color: rgba(108, 99, 255, 0.06);
+  white-space: nowrap;
+  animation: ctMove 22s linear infinite;
+  pointer-events: none;
+}
+
+.ct3-bg-text.top {
+  top: 80px;
+  left: -10%;
+}
+
+@keyframes ctMove {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= LAYOUT ================= */
+.ct3-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= LEFT ================= */
+.ct3-tag {
+  color: #6c63ff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ct3-title {
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.ct3-highlight {
+  color: #6c63ff;
+}
+
+.ct3-desc {
+  margin: 20px 0 30px;
+  color: #666;
+  max-width: 480px;
+}
+
+/* INFO BOX */
+.ct3-info-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.ct3-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: #6c63ff;
+  color: #fff;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.ct3-info-box:hover {
+  background: #6c63ff;
+  color: #fff;
+}
+
+.ct3-info-box:hover .ct3-icon {
+  background: #fff;
+  color: #6c63ff;
+}
+
+/* GIRL IMAGE FIX */
+.ct3-person-fixed {
+  position: absolute;
+  right: 500px;
+  bottom: -15px;
+  width: 250px;
+  z-index: 1;
+}
+
+
+
+/* ================= FORM ================= */
+.ct3-form-wrap {
+  position: relative;
+  background: linear-gradient(135deg, #6c63ff, #7a72ff);
+  padding: 30px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+/* BLUE TRIANGLE */
+.ct3-form-triangle {
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 240px;
+  height: 240px;
+ 
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  opacity: 0.9;
+  z-index: 3;
+}
+
+.ct3-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  z-index: 0;
+}
+
+.ct3-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ct3-field label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.ct3-input {
+  position: relative;
+}
+
+.ct3-input input {
+  width: 100%;
+  padding: 14px 42px 14px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.ct3-input svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c63ff;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* BUTTON */
+.ct3-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: #6c63ff;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.ct3-btn:hover {
+  background: #fff;
+  color: #6c63ff;
+}
+
+/* ================= REVEAL ================= */
+.ct-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.9s ease;
+}
+
+.ct-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .ct3-container {
+    grid-template-columns: 1fr;
+  }
+
+  .ct3-person-fixed {
+    position: static;
+    width: 260px;
+    margin: 30px auto 0;
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .ct3-title {
+    font-size: 34px;
+  }
+
+  .ct3-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ct3-bg-text {
+    font-size: 90px;
+  }
+}
