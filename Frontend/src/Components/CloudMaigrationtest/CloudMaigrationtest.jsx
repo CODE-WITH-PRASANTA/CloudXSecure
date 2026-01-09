@@ -43,11 +43,11 @@ export default function Testimonials() {
   /* ---------------- AUTO SLIDE ---------------- */
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      setIndex((prev) => (prev + 2) % testimonials.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [index]);
+  }, []);
 
   const nextSlide = () => {
     setIndex((prev) => (prev + 2) % testimonials.length);
@@ -55,13 +55,10 @@ export default function Testimonials() {
 
   const prevSlide = () => {
     setIndex((prev) =>
-      prev === 0
-        ? testimonials.length - 2
-        : prev - 2
+      prev === 0 ? testimonials.length - 2 : prev - 2
     );
   };
 
-  // pick 2 visible cards
   const visible = [
     testimonials[index],
     testimonials[(index + 1) % testimonials.length],
@@ -73,24 +70,20 @@ export default function Testimonials() {
         <span className="ts-tag">TESTIMONIALS</span>
         <h2 className="ts-title">People Who Already Love Us</h2>
 
-        {/* SLIDER */}
         <div className="ts-slider-area">
-          {/* LEFT ARROW */}
           <button className="ts-arrow ts-left" onClick={prevSlide}>
             <FaChevronLeft />
           </button>
 
-          {/* CARDS */}
           <div className="ts-slider">
             {visible.map((item) => (
-              <div className="ts-card active" key={item.id}>
+              <div className="ts-card" key={item.id}>
                 <div className="ts-card-header">
                   <img src={item.img} alt={item.name} />
                   <div>
                     <h4>{item.name}</h4>
                     <span>{item.role}</span>
 
-                    {/* STARS */}
                     <div className="ts-stars">
                       {[...Array(4)].map((_, s) => (
                         <FaStar key={s} />
@@ -105,20 +98,17 @@ export default function Testimonials() {
             ))}
           </div>
 
-          {/* RIGHT ARROW */}
           <button className="ts-arrow ts-right" onClick={nextSlide}>
             <FaChevronRight />
           </button>
         </div>
 
-        {/* DOTS */}
+        {/* DOTS (per slide group) */}
         <div className="ts-dots">
-          {testimonials.map((_, i) => (
+          {[0, 2].map((i) => (
             <span
               key={i}
-              className={`ts-dot ${
-                i === index ? "active" : ""
-              }`}
+              className={`ts-dot ${i === index ? "active" : ""}`}
               onClick={() => setIndex(i)}
             ></span>
           ))}

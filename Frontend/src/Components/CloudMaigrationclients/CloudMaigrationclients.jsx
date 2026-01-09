@@ -5,7 +5,7 @@ import { FaPlay, FaArrowRight } from "react-icons/fa";
 // background image
 import bgImg from "../../assets/bg.webp";
 
-// card images (use any from your assets)
+// card images
 import c1 from "../../assets/card-1.webp";
 import c2 from "../../assets/card-2.webp";
 import c3 from "../../assets/card-3.webp";
@@ -22,30 +22,36 @@ export default function ProjectShowcase() {
     { id: 4, img: c4, tag: "Technology", title: "Software Development" },
   ];
 
-  /* ---------------- AUTO SLIDE ---------------- */
+  /* ---------------- AUTO SLIDE (FIXED) ---------------- */
   useEffect(() => {
     const interval = setInterval(() => {
-      goNext();
+      setActive((prev) => {
+        const next = (prev + 1) % cards.length;
+        scrollToIndex(next);
+        return next;
+      });
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [active]);
+  }, []);
 
-  const goTo = (index) => {
+  /* ---------------- SCROLL FUNCTION ---------------- */
+  const scrollToIndex = (index) => {
     const slider = sliderRef.current;
-    const width = slider.children[0].offsetWidth + 30;
+    if (!slider || !slider.children.length) return;
+
+    const cardWidth = slider.children[0].offsetWidth + 30;
 
     slider.scrollTo({
-      left: index * width,
+      left: index * cardWidth,
       behavior: "smooth",
     });
-
-    setActive(index);
   };
 
-  const goNext = () => {
-    const next = (active + 1) % cards.length;
-    goTo(next);
+  /* ---------------- MANUAL DOT CLICK ---------------- */
+  const goTo = (index) => {
+    scrollToIndex(index);
+    setActive(index);
   };
 
   return (
@@ -53,7 +59,7 @@ export default function ProjectShowcase() {
       className="ps-wrap"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      {/* DARK OVERLAY */}
+      {/* OVERLAY */}
       <div className="ps-bg-overlay"></div>
 
       {/* HEADER */}
@@ -71,7 +77,6 @@ export default function ProjectShowcase() {
 
       {/* SLIDER */}
       <div className="ps-slider-area">
-
         <div className="ps-slider" ref={sliderRef}>
           {cards.map((item, i) => (
             <div
@@ -80,12 +85,10 @@ export default function ProjectShowcase() {
             >
               <img src={item.img} alt={item.title} />
 
-              {/* CARD CONTENT */}
               <div className="ps-card-info">
                 <span>{item.tag}</span>
                 <h4>{item.title}</h4>
 
-                {/* ARROW */}
                 <div className="ps-arrow">
                   <FaArrowRight />
                 </div>
@@ -94,7 +97,7 @@ export default function ProjectShowcase() {
           ))}
         </div>
 
-        {/* PAGINATION */}
+        {/* DOTS */}
         <div className="ps-dots">
           {cards.map((_, i) => (
             <span

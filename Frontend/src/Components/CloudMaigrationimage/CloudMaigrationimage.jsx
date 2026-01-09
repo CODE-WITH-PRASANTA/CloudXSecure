@@ -10,10 +10,8 @@ export default function LoopingKeywords() {
     "IT Solution",
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
-
   const wrapRef = useRef(null);
 
   /* -------- SCROLL REVEAL -------- */
@@ -25,22 +23,11 @@ export default function LoopingKeywords() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (wrapRef.current) observer.observe(wrapRef.current);
   }, []);
-
-  /* -------- AUTO LOOP (pause on hover) -------- */
-  useEffect(() => {
-    if (paused) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % words.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [paused]);
 
   return (
     <div
@@ -49,21 +36,16 @@ export default function LoopingKeywords() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="lk-line">
-        {words.map((word, index) => (
-          <span
-            key={index}
-            className={`lk-item ${
-              index === activeIndex ? "lk-active" : ""
-            }`}
-            style={{
-              transform: `translateY(${(index - activeIndex) * 100}%)`,
-            }}
-          >
-            {word}
-            <span className="lk-star">✱</span>
-          </span>
-        ))}
+      <div className={`lk-ticker ${paused ? "lk-paused" : ""}`}>
+        <div className="lk-track">
+          {/* duplicate list for seamless loop */}
+          {[...words, ...words].map((word, index) => (
+            <span className="lk-item" key={index}>
+              {word}
+              <span className="lk-star">✦</span>
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
