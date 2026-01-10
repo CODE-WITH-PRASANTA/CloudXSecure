@@ -1,0 +1,369 @@
+/* ===============================
+   HERO BASE
+================================ */
+.app-development-hero {
+  position: relative;
+  padding: 90px 0 0;
+  background: #ffffff;
+  overflow: hidden;
+
+}
+
+/* ===============================
+   STACKED STEPS BACKGROUND
+================================ */
+.app-development-bg-steps {
+  position: absolute;
+  inset: 0;
+  background-image: url("../../assets/stacked-steps-haikei.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+  animation: stepsFloat 14s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ===============================
+   GRADIENT OVERLAY
+================================ */
+.app-development-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0.6)
+  );
+  z-index: 1;
+}
+
+/* ===============================
+   DECORATIVE SHAPES
+================================ */
+.app-development-bg-shape {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.app-development-bg-shape.shape-1 {
+  top: -20px;
+  right: -20px;
+  width: 260px;
+  height: 260px;
+  background-image: url("../../assets/banner-one-img-shape-5.png");
+  animation: bgFloat 8s ease-in-out infinite;
+}
+
+.app-development-bg-shape.shape-2 {
+  bottom: -40px;
+  left: -30px;
+  width: 220px;
+  height: 220px;
+  background-image: url("../../assets/banner-one-img-shape-5.png");
+  opacity: 0.6;
+  animation: bgRotate 16s linear infinite;
+}
+
+/* ===============================
+   CONTENT CONTAINER
+================================ */
+.app-development-hero-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  position: relative;
+  z-index: 4;
+}
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+.app-development-hero-content {
+  max-width: 620px;
+}
+
+.app-development-badge {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #6c63ff;
+  margin-bottom: 18px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.app-development-title {
+  font-size: 56px;
+  line-height: 1.15;
+  margin-bottom: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #111;
+}
+
+.app-development-title span {
+  color: #6c63ff;
+}
+
+.app-development-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 36px;
+  font-weight: 500;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.app-development-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.app-development-btn {
+  padding: 16px 34px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.app-development-btn.primary {
+  background: #6c63ff;
+  color: #fff;
+}
+
+.app-development-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(108, 99, 255, 0.4);
+}
+
+.app-development-btn.secondary {
+  background: transparent;
+  color: #6c63ff;
+  border: 2px solid #6c63ff;
+}
+
+.app-development-btn.secondary:hover {
+  background: #6c63ff;
+  color: #fff;
+}
+
+/* ===============================
+   RIGHT IMAGE
+================================ */
+.app-development-hero-image {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.app-development-hero-image img {
+  width: 520px;
+  max-width: 100%;
+  height: auto;
+  animation: fadeSlide 1.2s ease forwards;
+}
+
+.app-development-play-btn {
+  position: absolute;
+  top: 42%;
+  right: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  animation: pulseRing 2s infinite;
+}
+
+/* ===============================
+   FLOATING DOTS
+================================ */
+.app-development-shape {
+  position: absolute;
+  z-index: 3;
+  animation: floatDots 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.app-development-shape.circle {
+  width: 28px;
+  height: 28px;
+  background: #6c63ff;
+  border-radius: 50%;
+  top: 25%;
+  left: 12%;
+}
+
+.app-development-shape.circle.small {
+  width: 20px;
+  height: 20px;
+  top: 65%;
+  left: 42%;
+  animation-duration: 4s;
+}
+
+.app-development-shape.square {
+  width: 14px;
+  height: 14px;
+  background: #6c63ff;
+  top: 35%;
+  right: 22%;
+  animation-duration: 5s;
+}
+
+/* ===============================
+   KEYFRAMES
+================================ */
+@keyframes stepsFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bgFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(25px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bgRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatDots {
+  0% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(-20px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.6; }
+}
+
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(108,99,255,0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(108,99,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(108,99,255,0); }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE — LARGE TABLETS
+================================ */
+@media (max-width: 1024px) {
+  .app-development-hero {
+    padding: 120px 0 80px;
+  }
+
+  .app-development-hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .app-development-hero-content {
+    max-width: 720px;
+  }
+
+  .app-development-hero-image img {
+    width: 420px;
+  }
+
+  .app-development-buttons {
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — TABLETS
+================================ */
+@media (max-width: 768px) {
+  .app-development-hero {
+    padding: 100px 0 70px;
+  }
+
+  .app-development-title {
+    font-size: 44px;
+  }
+
+  .app-development-description {
+    font-size: 16px;
+  }
+
+  .app-development-hero-image img {
+    width: 360px;
+  }
+
+  .app-development-bg-shape {
+    opacity: 0.4;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE
+================================ */
+@media (max-width: 576px) {
+  .app-development-hero {
+    padding: 90px 0 60px;
+  }
+
+  .app-development-hero-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .app-development-title {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+
+  .app-development-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .app-development-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .app-development-btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .app-development-hero-image  img{
+    /* width: 400px;
+    height: 400px; */
+    display: none;
+  }
+
+  .app-development-bg-shape {
+   width: 120px;
+  height: 120px;
+  }
+}
