@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import "./WebdevelopmentService.css";
 
-import service1 from "../../assets/services-1.jpg";
-import service2 from "../../assets/services-2.jpg";
-import service3 from "../../assets/services-3.jpg";
-import service4 from "../../assets/services-4.jpg";
+import service1 from "../../assets/webdevlopment-services-1.jpg";
+import service2 from "../../assets/webdevlopment-services-2.jpg";
+import service3 from "../../assets/webdevlopment-services-3.jpg";
+import service4 from "../../assets/webdevlopment-services-4.jpg";
 
-import shape1 from "../../assets/services-shape-1.png";
+import shape1 from "../../assets/webdevlopment-services-shape-1.png";
 import shape2 from "../../assets/slides-shape-2.png";
 import shape3 from "../../assets/slides-shape-3.png";
 
@@ -44,7 +44,7 @@ const ServicesSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          sectionRef.current.classList.add("reveal-active");
+          sectionRef.current.classList.add("webdevlopmentreveal-active");
         }
       },
       { threshold: 0.25 }
@@ -56,15 +56,15 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="services-section" ref={sectionRef}>
+    <section className="webdevlopment-services-section" ref={sectionRef}>
       {/* FLOATING SHAPES */}
       <img src={shape1} className="float-shape shape-1" alt="" />
       <img src={shape2} className="float-shape shape-2" alt="" />
       <img src={shape3} className="float-shape shape-3" alt="" />
 
       {/* HEADER */}
-      <div className="services-header reveal-item">
-        <span className="services-tag">SERVICES</span>
+      <div className="webdevlopment-services-header webdevlopmentreveal-item">
+        <span className="webdevlopment-services-tag">SERVICES</span>
         <h2>
           We Provide the Best Quality <br />
           <span>Services</span>
@@ -76,10 +76,10 @@ const ServicesSection = () => {
       </div>
 
       {/* CARDS */}
-      <div className="services-grid">
+      <div className="webdevlopment-services-grid">
         {services.map((service, index) => (
           <div
-            className="service-card reveal-item"
+            className="service-card webdevlopmentreveal-item"
             key={service.id}
             style={{ transitionDelay: `${index * 0.15}s` }}
           >
@@ -97,7 +97,7 @@ const ServicesSection = () => {
       </div>
 
       {/* BUTTON */}
-      <div className="services-btn reveal-item">
+      <div className="webdevlopment-services-btn webdevlopmentreveal-item">
         <button>Explore All Services</button>
       </div>
     </section>
