@@ -2,12 +2,12 @@
    SECTION
 ===================== */
 
-.vision-section {
+.ourservicesvision-section {
   padding: 90px 20px;
   background: #ffffff;
 }
 
-.vision-container {
+.ourservicesvision-container {
   max-width: 1200px;
   margin: auto;
   display: grid;
@@ -20,7 +20,7 @@
    IMAGE GRID
 ===================== */
 
-.vision-images {
+.ourservicesvision-images {
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -50,12 +50,12 @@
    CONTENT
 ===================== */
 
-.vision-content {
+.ourservicesvision-content {
   display: flex;
   flex-direction: column;
 }
 
-.vision-tag {
+.ourservicesvision-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -64,14 +64,14 @@
   margin-bottom: 12px;
 }
 
-.vision-content h2 {
+.ourservicesvision-content h2 {
   font-size: 42px;
   line-height: 1.25;
   margin-bottom: 22px;
   color: #0a0a0a;
 }
 
-.vision-text {
+.ourservicesvision-text {
   color: #5a5a5a;
   line-height: 1.75;
   margin-bottom: 34px;
@@ -82,7 +82,7 @@
    POINTS
 ===================== */
 
-.vision-points {
+.ourservicesvision-points {
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -123,7 +123,7 @@
    BUTTON
 ===================== */
 
-.vision-btn {
+.ourservicesvision-btn {
   align-self: flex-start;
   background: #0b3cc1;
   color: #ffffff;
@@ -136,7 +136,7 @@
   transition: all 0.3s ease;
 }
 
-.vision-btn:hover {
+.ourservicesvision-btn:hover {
   background: #092f9e;
   transform: translateY(-3px);
 }
@@ -160,10 +160,10 @@
    TEXT STAGGER
 ===================== */
 
-.vision-content h2,
-.vision-text,
-.vision-points,
-.vision-btn {
+.ourservicesvision-content h2,
+.ourservicesvision-text,
+.ourservicesvision-points,
+.ourservicesvision-btn {
   opacity: 0;
   transform: translateY(25px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -175,19 +175,19 @@
   transition-delay: 0.15s;
 }
 
-.reveal-active .vision-text {
+.reveal-active .ourservicesvision-text {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.3s;
 }
 
-.reveal-active .vision-points {
+.reveal-active .ourservicesvision-points {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.45s;
 }
 
-.reveal-active .vision-btn {
+.reveal-active .ourservicesvision-btn {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.6s;
@@ -198,22 +198,22 @@
 ===================== */
 
 @media (max-width: 992px) {
-  .vision-container {
+  .ourservicesvision-container {
     grid-template-columns: 1fr;
     gap: 50px;
   }
 
-  .vision-content h2 {
+  .ourservicesvision-content h2 {
     font-size: 34px;
   }
 
-  .vision-btn {
+  .ourservicesvision-btn {
     align-self: center;
   }
 }
 
 @media (max-width: 600px) {
-  .vision-section {
+  .ourservicesvision-section {
     padding: 60px 16px;
   }
 
@@ -225,7 +225,7 @@
     grid-template-columns: 1fr;
   }
 
-  .vision-content h2 {
+  .ourservicesvision-content h2 {
     font-size: 28px;
   }
 }

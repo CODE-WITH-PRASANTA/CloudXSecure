@@ -1,0 +1,116 @@
+/* ================= RESET SAFETY ================= */
+.logo-marquee,
+.logo-marquee * {
+  box-sizing: border-box;
+}
+
+/* ================= SECTION ================= */
+.logo-marquee {
+  width: 100%;
+  background: #ffffff;
+
+  /* REMOVE GAP BETWEEN SECTIONS */
+  margin: 0;
+
+  /* HEIGHT CONTROL */
+  padding: 24px 0;
+
+  /* ❌ BLUE LINES REMOVED */
+  border: none;
+
+  /* PREVENT LINE-HEIGHT GAP */
+  line-height: 0;
+
+  overflow: hidden;
+}
+
+/* ================= TRACK ================= */
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+
+/* Pause on hover */
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+/* ================= LOGO ITEM ================= */
+.logo-item {
+  flex: 0 0 auto;
+  padding: 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FULL COLOR LOGOS */
+.logo-item img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+
+  /* Restore normal line-height */
+  line-height: normal;
+
+  filter: none;
+  opacity: 1;
+
+  transition: transform 0.3s ease;
+}
+
+/* Hover micro-interaction */
+.logo-item img:hover {
+  transform: scale(1.06);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .logo-item {
+    padding: 0 32px;
+  }
+
+  .logo-item img {
+    height: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-marquee {
+    padding: 20px 0;
+  }
+
+  .logo-item {
+    padding: 0 26px;
+  }
+
+  .logo-item img {
+    height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-marquee {
+    padding: 16px 0;
+  }
+
+  .logo-item {
+    padding: 0 20px;
+  }
+
+  .logo-item img {
+    height: 30px;
+  }
+}

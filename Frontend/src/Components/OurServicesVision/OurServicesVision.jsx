@@ -29,10 +29,10 @@ export default function Vision() {
   }, []);
 
   return (
-    <section className="vision-section">
-      <div className="vision-container">
+    <section className="ourservicesvision-section">
+      <div className="ourservicesvision-container">
         {/* LEFT IMAGE GRID */}
-        <div className="vision-images">
+        <div className="ourservicesvision-images">
           <img
             ref={(el) => (refs.current[0] = el)}
             src={vision1}
@@ -61,21 +61,21 @@ export default function Vision() {
         {/* RIGHT CONTENT */}
         <div
           ref={(el) => (refs.current[3] = el)}
-          className="vision-content reveal"
+          className="ourservicesvision-content reveal"
         >
-          <span className="vision-tag">Our Vision</span>
+          <span className="ourservicesvision-tag">Our Vision</span>
 
           <h2>
             Driving Innovation: Our Vision <br /> at CloudXSecure
           </h2>
 
-          <p className="vision-text">
+          <p className="ourservicesvision-text">
             At CloudXSecure, our vision is to empower businesses through secure cloud services, innovative web design, intelligent app development, and end-to-end cloud solutions. We aim to be a trusted technology partner that helps organizations embrace digital transformation with confidence, scalability, and security.
 
 We envision a future where businesses of all sizes leverage cloud technology and digital platforms to operate efficiently, innovate faster, and achieve sustainable growth in an increasingly connected world.
           </p>
 
-          <div className="vision-points">
+          <div className="ourservicesvision-points">
             <div className="point">
               <span className="point-icon">📡</span>
               <div>
@@ -100,7 +100,7 @@ We envision a future where businesses of all sizes leverage cloud technology and
             </div>
           </div>
 
-          <button className="vision-btn">Get In Touch →</button>
+          <button className="ourservicesvision-btn">Get In Touch →</button>
         </div>
       </div>
     </section>

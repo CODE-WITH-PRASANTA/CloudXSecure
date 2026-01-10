@@ -57,7 +57,7 @@ export default function Services() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-active");
+            entry.target.classList.add("ourservicesreveal-active");
           }
         });
       },
@@ -70,11 +70,11 @@ export default function Services() {
   }, []);
 
   return (
-    <section className="services-section">
-      <div className="services-grid">
+    <section className="ourservicesserve-section">
+      <div className="ourservicesserve-grid">
         {services.map((item, index) => (
           <div
-            className="service-card reveal"
+            className="service-card ourservicesreveal"
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
             style={{ transitionDelay: `${index * 120}ms` }}
