@@ -14,6 +14,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import ComingSoon from "./Pages/ComimgSoon/ComimgSoon";
 import GetInTouch from "./Pages/GetInTouch/GetInTouch";
 import OurServices from "./Pages/OurServices/OurServices";
+import AppDevlopment from "./Pages/AppDevlopment/AppDevlopment";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/cookie-policy" element={<ComingSoon />} />
         <Route path="/get-in-touch" element={<GetInTouch  />} />
         <Route path="/services/our-services" element={<OurServices />} />
+        <Route path="/devlopment/appdevlopment" element={<AppDevlopment />} />
       </Routes>
       <Footer/>
     </>

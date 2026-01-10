@@ -1,0 +1,234 @@
+/* ===============================
+   BASE
+================================ */
+.app-service {
+  padding: 110px 0;
+  background: linear-gradient(180deg, #f8f9ff, #ffffff);
+  overflow-x: hidden; /* 🔥 FIX: allow vertical hover */
+}
+
+.app-service-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.app-service-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.app-service-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6c63ff;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.app-service-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.app-service-header span {
+  color: #6c63ff;
+}
+
+.app-service-subtext {
+  max-width: 640px;
+  margin: 16px auto 0;
+  font-size: 15px;
+  color: #555;
+}
+
+/* ===============================
+   CAROUSEL
+================================ */
+.service-carousel {
+  overflow-x: hidden;
+  overflow-y: visible; /* 🔥 FIX */
+  padding-top: 20px;   /* optional spacing */
+}
+
+.service-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===============================
+   CARD
+================================ */
+.service-card {
+  min-width: calc(25% - 24px);
+  margin: 0 12px;
+  padding: 30px 24px;
+  background: rgba(236, 235, 235, 0.42);
+  border-radius: 20px;
+  border: 1px solid rgba(108, 99, 255, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 22px 55px rgba(108, 99, 255, 0.22);
+  z-index: 10;
+}
+
+/* ===============================
+   ICON
+================================ */
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #6c63ff, #8b84ff);
+  color: #fff;
+  border-radius: 40% 51% 40% 67%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  animation: floatIcon 4.5s ease-in-out infinite;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.service-list li {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.service-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #6c63ff;
+  font-weight: 700;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.service-btn {
+  background: linear-gradient(135deg, #6c63ff, #8b84ff);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===============================
+   DOTS
+================================ */
+.service-dots {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  background: #d6d6ff;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #6c63ff;
+  transform: scale(1.2);
+}
+
+/* ===============================
+   TABLET
+================================ */
+@media (max-width: 1024px) {
+  .service-card {
+    min-width: calc(50% - 24px);
+  }
+}
+
+/* ===============================
+   MOBILE (SWIPE WORKING)
+================================ */
+@media (max-width: 576px) {
+  .app-service-header h2 {
+    font-size: 32px;
+  }
+
+  .service-carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-track {
+    transition: none;
+  }
+
+  .service-card {
+    min-width: 100%;
+    margin: 0 12px;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  .service-list {
+    text-align: center;
+  }
+
+  .service-dots {
+    display: none;
+  }
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
