@@ -1,13 +1,13 @@
 /* ===============================
    BASE
 ================================ */
-.app-service {
+.app-devlopment-our-service {
   padding: 110px 0;
-  background: linear-gradient(180deg, #f8f9ff, #ffffff);
-  overflow-x: hidden; /* 🔥 FIX: allow vertical hover */
+  background: linear-gradient(180deg, #f4f7ff 0%, #ffffff 70%);
+  overflow-x: hidden;
 }
 
-.app-service-container {
+.app-devlopment-our-service-container {
   max-width: 1280px;
   margin: auto;
   padding: 0 24px;
@@ -16,12 +16,12 @@
 /* ===============================
    HEADER
 ================================ */
-.app-service-header {
+.app-devlopment-our-service-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.app-service-tag {
+.app-devlopment-our-service-tag {
   font-size: 13px;
   font-weight: 700;
   color: #6c63ff;
@@ -30,17 +30,17 @@
   display: inline-block;
 }
 
-.app-service-header h2 {
+.app-devlopment-our-service-header h2 {
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
 }
 
-.app-service-header span {
+.app-devlopment-our-service-header span {
   color: #6c63ff;
 }
 
-.app-service-subtext {
+.app-devlopment-our-service-subtext {
   max-width: 640px;
   margin: 16px auto 0;
   font-size: 15px;
@@ -50,13 +50,12 @@
 /* ===============================
    CAROUSEL
 ================================ */
-.service-carousel {
-  overflow-x: hidden;
-  overflow-y: visible; /* 🔥 FIX */
-  padding-top: 20px;   /* optional spacing */
+.app-devlopment-our-service-carousel {
+  overflow: hidden;
+  padding-top: 20px;
 }
 
-.service-track {
+.app-devlopment-our-service-track {
   display: flex;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -64,7 +63,7 @@
 /* ===============================
    CARD
 ================================ */
-.service-card {
+.app-devlopment-our-service-card {
   min-width: calc(25% - 24px);
   margin: 0 12px;
   padding: 30px 24px;
@@ -73,22 +72,20 @@
   border: 1px solid rgba(108, 99, 255, 0.15);
   transition: all 0.4s ease;
   position: relative;
-  z-index: 1;
 }
 
-.service-card:hover {
+.app-devlopment-our-service-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 22px 55px rgba(108, 99, 255, 0.22);
-  z-index: 10;
+  box-shadow: 0 22px 55px rgba(71, 68, 239, 0.35);
 }
 
 /* ===============================
    ICON
 ================================ */
-.service-icon {
+.app-devlopment-our-service-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, #6c63ff, #8b84ff);
+  background: linear-gradient(135deg, #681778, #8b84ff);
   color: #fff;
   border-radius: 40% 51% 40% 67%;
   display: grid;
@@ -101,25 +98,25 @@
 /* ===============================
    CONTENT
 ================================ */
-.service-card h3 {
+.app-devlopment-our-service-card h3 {
   font-size: 20px;
   margin-bottom: 6px;
 }
 
-.service-desc {
+.app-devlopment-our-service-desc {
   font-size: 14px;
   color: #555;
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
-.service-list {
+.app-devlopment-our-service-list {
   list-style: none;
   padding: 0;
   margin: 0 0 16px;
 }
 
-.service-list li {
+.app-devlopment-our-service-list li {
   font-size: 13px;
   color: #444;
   margin-bottom: 6px;
@@ -127,7 +124,7 @@
   position: relative;
 }
 
-.service-list li::before {
+.app-devlopment-our-service-list li::before {
   content: "✔";
   position: absolute;
   left: 0;
@@ -138,7 +135,7 @@
 /* ===============================
    BUTTON
 ================================ */
-.service-btn {
+.app-devlopment-our-service-btn {
   background: linear-gradient(135deg, #6c63ff, #8b84ff);
   color: #fff;
   border: none;
@@ -155,12 +152,12 @@
 /* ===============================
    DOTS
 ================================ */
-.service-dots {
+.app-devlopment-our-service-dots {
   margin-top: 32px;
   text-align: center;
 }
 
-.dot {
+.app-devlopment-our-service-dot {
   width: 9px;
   height: 9px;
   background: #d6d6ff;
@@ -170,7 +167,7 @@
   cursor: pointer;
 }
 
-.dot.active {
+.app-devlopment-our-service-dot.active {
   background: #6c63ff;
   transform: scale(1.2);
 }
@@ -179,41 +176,55 @@
    TABLET
 ================================ */
 @media (max-width: 1024px) {
-  .service-card {
+  .app-devlopment-our-service-card {
     min-width: calc(50% - 24px);
   }
 }
 
 /* ===============================
-   MOBILE (SWIPE WORKING)
+   MOBILE (SCROLL + TICK FIX)
 ================================ */
 @media (max-width: 576px) {
-  .app-service-header h2 {
-    font-size: 32px;
-  }
-
-  .service-carousel {
+  .app-devlopment-our-service-carousel {
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
   }
 
-  .service-track {
+  .app-devlopment-our-service-track {
+    transform: none !important;
     transition: none;
   }
 
-  .service-card {
+  .app-devlopment-our-service-card {
     min-width: 100%;
-    margin: 0 12px;
     scroll-snap-align: center;
     text-align: center;
   }
 
-  .service-list {
+  /* ✔ Tick + text center & gap fix */
+  .app-devlopment-our-service-list {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1;
+  }
+  
+
+  .app-devlopment-our-service-list li {
+    display: inline-flex;
+    
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    gap: 6px;
   }
 
-  .service-dots {
+  .app-devlopment-our-service-list li::before {
+    position: static;
+  }
+
+  .app-devlopment-our-service-dots {
     display: none;
   }
 }
