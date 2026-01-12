@@ -7,7 +7,7 @@
     color: #fff;
     position: relative;
     overflow: hidden;
-    width: 100vw;
+    width: 95vw;
     max-width: 100%;
 }
 
@@ -16,7 +16,7 @@
 
 .hero-content {
     flex: 0.8;
-    max-width: 600px;
+    max-width: 700px;
 }
 
 .hero-subtitle {
@@ -27,13 +27,14 @@
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 20px;
+    left: 1;
 }
 
 .hero-title {
-    font-size: 53px;
+    font-size: 60px;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .hero-description {
@@ -85,10 +86,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    right: -40px;
 }
 
 .hero-main-image {
-    width: 100%;
+    width: 110%;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
@@ -98,8 +100,8 @@
 
 .play-button {
     position: absolute;
-    top: -2%;
-    left: 3%;
+    top: 1%;
+    left: -3%;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -111,7 +113,7 @@
 /* Rotating play background (CD effect) */
 
 .play-bg {
-    width: 120px;
+    width: 110px;
     animation: spin 6s linear infinite;
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
     transition: all 0.4s ease;

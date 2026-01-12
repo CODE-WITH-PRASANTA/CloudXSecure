@@ -63,15 +63,24 @@
     background-size: 200% auto;
     color: #fff;
     padding: 14px 32px;
+    position: fixed;
+    right: 40px;
+    top: -170px;
+    z-index: 1000;
     border: none;
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(41, 62, 255, 0.3);
+}
+
+.button-wrapper {
+    text-align: right;
+    width: 100%;
 }
 
 .company-btn:hover {
@@ -82,7 +91,7 @@
 }
 
 .company-btn .arrow {
-    margin-left: 10px;
+    margin-left: 15px;
     transition: transform 0.3s ease;
 }
 

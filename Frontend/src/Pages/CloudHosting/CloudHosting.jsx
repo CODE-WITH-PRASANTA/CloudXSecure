@@ -11,7 +11,6 @@ import CaseStudySection1 from "../../Components/CaseStudySection1/CaseStudySecti
 import PricingSection from "../../Components/PricingSection/PricingSection";
 import ExpertTeamSection from "../../Components/ExpertTeamSection/ExpertTeamSection";
 import ContactPage from "../../Components/ContactPage/ContactPage";
-//import ServiceShowcase from "../../Components/ServiceShowcase/ServiceShowcase";
 
 const CloudHosting = () => {
   return (
