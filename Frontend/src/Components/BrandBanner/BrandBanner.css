@@ -17,7 +17,7 @@
 .brand-track {
     display: flex;
     align-items: center;
-    gap: 400px;
+    gap: 300px;
     /* spacing between logos */
     animation: scrollLoop 50s linear infinite;
     /* slowed down for smooth flow */

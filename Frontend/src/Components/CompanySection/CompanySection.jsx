@@ -28,9 +28,11 @@ const CompanySection = () => {
         </p>
 
         {/* ✅ Navigate to About Page */}
+        <div className="button-wrapper">
         <button className="company-btn" onClick={() => navigate("/about")}>
           ABOUT MORE <span className="arrow">→</span>
         </button>
+        </div>
       </div>
 
       {/* ===== BOTTOM IMAGE SECTION ===== */}

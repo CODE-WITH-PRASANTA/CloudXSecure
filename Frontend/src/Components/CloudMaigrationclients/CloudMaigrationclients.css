@@ -1,0 +1,182 @@
+/* ROOT */
+.ps-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0 140px;
+  overflow: hidden;
+}
+
+/* OVERLAY */
+.ps-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(35, 32, 90, 0.85);
+  z-index: 1;
+}
+
+/* HEADER */
+.ps-header {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px 60px;
+}
+
+.ps-tag {
+  color: #c7ccff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.ps-title {
+  margin-top: 12px;
+  font-size: 36px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* VIDEO BUTTON */
+.ps-video-btn {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  width: 60px;
+  height: 60px;
+  background: #4f6df5;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* SLIDER AREA */
+.ps-slider-area {
+  position: relative;
+  z-index: 2;
+  margin-top: 60px;
+}
+
+/* SLIDER */
+.ps-slider {
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  padding-left: 80px;
+}
+
+/* CARD */
+.ps-card {
+  min-width: 300px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform .4s ease;
+}
+
+.ps-card.active {
+  transform: translateY(-10px);
+}
+
+.ps-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* CARD INFO */
+.ps-card-info {
+  padding: 18px;
+  position: relative;
+}
+
+.ps-card-info span {
+  font-size: 12px;
+  color: #4f6df5;
+  font-weight: 600;
+}
+
+.ps-card-info h4 {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ARROW */
+.ps-arrow {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 34px;
+  height: 34px;
+  background: #eef1ff;
+  color: #4f6df5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.ps-arrow:hover {
+  background: #4f6df5;
+  color: #fff;
+}
+
+/* DOTS */
+.ps-dots {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ps-dot {
+  width: 10px;
+  height: 10px;
+  background: #aeb6ff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ps-dot.active {
+  background: #fff;
+  transform: scale(1.4);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1024px) {
+  .ps-slider {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ps-title {
+    font-size: 28px;
+  }
+
+  .ps-card {
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ps-wrap {
+    padding: 80px 0 120px;
+  }
+
+  .ps-video-btn {
+    width: 50px;
+    height: 50px;
+  }
+}

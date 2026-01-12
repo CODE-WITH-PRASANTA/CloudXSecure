@@ -1,0 +1,176 @@
+/* ROOT */
+.cloudmigration-wrap {
+  padding: 110px 0;
+  background: #fff;
+}
+
+.cloudmigration-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* HEADER */
+.cloudmigration-header {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.cloudmigration-tag {
+  color: #4f6df5;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.cloudmigration-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* GRID */
+.cloudmigration-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+/* ---------------- ZIG-ZAG POSITION ---------------- */
+.cloudmigration-step-card {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: transform .35s ease;
+}
+
+/* up icons */
+.cloudmigration-up {
+  margin-top: -40px;
+}
+
+/* down icons */
+.cloudmigration-down {
+  margin-top: 40px;
+}
+
+/* ---------------- CURVED CONNECTORS ---------------- */
+.cloudmigration-connectors {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 260px;
+  z-index: 0;
+}
+
+.cloudmigration-curve {
+  fill: none;
+  stroke: #cfd6ff;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+/* ICON CIRCLE */
+.cloudmigration-icon-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  background: #f7f9ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* STEP NUMBER */
+.cloudmigration-step-num {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #4f6df5;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ICON */
+.cloudmigration-icon {
+  font-size: 34px;
+  color: #4f6df5;
+  transition: transform .35s ease;
+}
+
+/* TEXT */
+.cloudmigration-step-title {
+  margin: 22px 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cloudmigration-step-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ---------------- HOVER EFFECTS ---------------- */
+.cloudmigration-step-card:hover {
+  transform: translateY(-10px);
+}
+
+.cloudmigration-step-card:hover .cloudmigration-icon-wrap {
+  box-shadow: 0 15px 35px rgba(79,109,245,.35);
+  transform: scale(1.06);
+}
+
+.cloudmigration-step-card:hover .cloudmigration-icon {
+  transform: rotate(12deg) scale(1.12);
+}
+
+/* ---------------- SCROLL REVEAL ---------------- */
+.cloudmigration-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .9s ease;
+}
+
+.cloudmigration-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1024px) {
+  .cloudmigration-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cloudmigration-up,
+  .cloudmigration-down {
+    margin-top: 0;
+  }
+
+  .cloudmigration-connectors {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cloudmigration-title {
+    font-size: 26px;
+  }
+
+  .cloudmigration-steps {
+    grid-template-columns: 1fr;
+  }
+}

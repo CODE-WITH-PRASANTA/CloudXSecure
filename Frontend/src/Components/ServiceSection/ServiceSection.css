@@ -69,10 +69,15 @@
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 450px;
+    /* reduce this value to make the blocks shorter */
+    padding: 20px;
+    /* optional, to reduce inner spacing */
+    box-sizing: border-box;
 }
 
 .service-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -135,7 +140,7 @@
 .chat-container {
     background-color: #293eff;
     border-radius: 20px;
-    flex: 1.2;
+    flex: 1;
     position: relative;
     display: flex;
     justify-content: center;
@@ -144,10 +149,11 @@
 }
 
 .chat-person {
-    width: 100%;
+    width: 80%;
     height: auto;
     object-fit: cover;
     border-radius: 20px;
+    height: 450px;
 }
 
 
