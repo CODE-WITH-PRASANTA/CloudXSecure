@@ -1,0 +1,184 @@
+/* =========================
+   SECTION
+========================= */
+.wt-section {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.wt-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  background: #1b2433;
+  border-radius: 20px;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.wt-content {
+  flex: 1;
+  color: #fff;
+}
+
+.wt-quote {
+  width: 60px;
+  height: 60px;
+  background: #6c63ff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+}
+
+.wt-quote svg {
+  font-size: 26px;
+  color: #fff;
+}
+
+.wt-text {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.wt-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.wt-role {
+  font-size: 14px;
+  color: #b9b9c9;
+}
+
+.wt-stars {
+  margin-top: 15px;
+}
+
+.wt-stars svg {
+  color: #6c63ff;
+  margin-right: 4px;
+}
+
+/* =========================
+   ARROWS
+========================= */
+.wt-arrows {
+  margin-top: 30px;
+}
+
+.wt-arrows button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #3c4564;
+  background: transparent;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wt-arrows button:hover {
+  background: #6c63ff;
+  border-color: #6c63ff;
+}
+
+/* =========================
+   MAIN IMAGE
+========================= */
+.wt-main-img {
+  flex: 0.9;
+  text-align: center;
+}
+
+.wt-main-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   THUMB CIRCLES
+========================= */
+.wt-thumbs {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wt-thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wt-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wt-thumb.active {
+  border-color: #6c63ff;
+}
+
+/* =========================
+   SLIDE ANIMATION
+========================= */
+.slide {
+  animation: slideFade 0.6s ease;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .wt-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wt-thumbs {
+    position: static;
+    flex-direction: row;
+    transform: none;
+    margin-top: 30px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .wt-wrapper {
+    padding: 40px 25px;
+  }
+
+  .wt-text {
+    font-size: 14px;
+  }
+}

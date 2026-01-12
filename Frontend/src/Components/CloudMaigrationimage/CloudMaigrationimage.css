@@ -1,0 +1,89 @@
+/* ================= ROOT ================= */
+.lk-wrap {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b0f3f, #161b6d);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.lk-wrap.lk-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= TICKER ================= */
+.lk-ticker {
+  width: 100%;
+  position: relative;
+}
+
+.lk-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: lk-marquee 18s linear infinite;
+}
+
+/* pause animation */
+.lk-paused .lk-track {
+  animation-play-state: paused;
+}
+
+/* ================= ITEM ================= */
+.lk-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 40px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  /* gradient text */
+  background: linear-gradient(90deg, #6dd5ff, #9f7aea, #ff7ad5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+}
+
+/* glow on hover */
+.lk-item:hover {
+  filter: drop-shadow(0 0 10px rgba(124, 134, 255, 0.6));
+}
+
+/* star divider */
+.lk-star {
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 18px;
+  margin-left: 6px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes lk-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .lk-item {
+    font-size: 20px;
+    margin-right: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lk-item {
+    font-size: 16px;
+    margin-right: 18px;
+  }
+}

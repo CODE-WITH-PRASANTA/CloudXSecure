@@ -1,0 +1,119 @@
+:root {
+  --blue: #3f51ff;
+  --bg: #f5f7ff;
+  --text-dark: #0b0b23;
+  --text-gray: #6b6b85;
+  --gold: #ffb400;
+}
+
+/* SECTION */
+.tsl-section {
+  padding: 90px 20px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* HEADING */
+.tsl-heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.tsl-sub {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--blue);
+}
+
+.tsl-title {
+  font-size: 44px;
+  font-weight: 800;
+}
+
+/* SLIDER */
+.tsl-slider-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.tsl-slider-track {
+  display: flex;
+  width: max-content;
+}
+
+/* CARD */
+.tsl-card {
+  width: 360px;
+  height: 300px;
+  margin: 0 10px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 32px;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* ACTIVE CENTER CARD */
+.tsl-card-active {
+  background: var(--blue);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.tsl-card-active p,
+.tsl-card-active h4,
+.tsl-card-active span {
+  color: #ffffff;
+}
+
+/* STARS */
+.tsl-stars {
+  color: var(--gold);
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* TEXT */
+.tsl-text {
+  color: var(--text-gray);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* USER */
+.tsl-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.tsl-user img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+
+/* QUOTE */
+.tsl-quote {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 42px;
+  opacity: 0.15;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .tsl-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tsl-card {
+    width: 90vw;
+    height: auto;
+  }
+}

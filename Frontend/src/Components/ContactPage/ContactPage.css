@@ -1,6 +1,6 @@
 /* ===== CONTACT PAGE CONTAINER ===== */
 
-.contact-page {
+.contact-page-page {
     width: 100%;
     background: #fff;
     display: flex;
@@ -11,7 +11,7 @@
 
 /* ===== HEADER SECTION ===== */
 
-.contact-header {
+.contact-page-header {
     background: #293eff;
     color: #fff;
     display: flex;
@@ -22,7 +22,7 @@
     flex-wrap: wrap;
 }
 
-.contact-subtitle {
+.contact-page-subtitle {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -32,18 +32,18 @@
     opacity: 0.9;
 }
 
-.contact-subtitle .arrow {
+.contact-page-subtitle .arrow {
     font-size: 18px;
     opacity: 0.8;
 }
 
-.contact-title {
+.contact-page-title {
     font-size: 45px;
     font-weight: 800;
     margin-top: 10px;
 }
 
-.contact-header-right {
+.contact-page-header-right {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -99,7 +99,7 @@
 
 /* ===== BODY SECTION ===== */
 
-.contact-body {
+.contact-page-body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -111,7 +111,7 @@
 
 /* ===== LEFT FORM ===== */
 
-.contact-form {
+.contact-page-form {
     flex: 1;
     background: #fff;
     border-radius: 20px;
@@ -119,7 +119,7 @@
     padding: 40px;
 }
 
-.contact-form h3 {
+.contact-page-form h3 {
     font-size: 26px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -183,7 +183,7 @@ textarea {
 
 /* ===== RIGHT SIDE MAP & INFO ===== */
 
-.contact-info-wrapper {
+.contact-page-info-wrapper {
     position: relative;
     flex: 1;
     height: 520px;
@@ -198,7 +198,7 @@ textarea {
     border-radius: 20px;
 }
 
-.contact-info {
+.contact-page-info {
     position: absolute;
     top: 0px;
     right: 110px;
@@ -211,7 +211,7 @@ textarea {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.contact-info h4 {
+.contact-page-info h4 {
     font-size: 25px;
     margin-bottom: 16px;
 }
@@ -267,22 +267,22 @@ textarea {
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 992px) {
-    .contact-header {
+    .contact-page-header {
         flex-direction: column;
         text-align: center;
         gap: 30px;
     }
-    .contact-header-right {
+    .contact-page-header-right {
         justify-content: center;
     }
-    .contact-body {
+    .contact-page-body {
         flex-direction: column;
         padding: 0 40px 60px;
     }
-    .contact-info-wrapper {
+    .contact-page-info-wrapper {
         height: 400px;
     }
-    .contact-info {
+    .contact-page-info {
         right: 20px;
         top: 20px;
         width: 240px;
@@ -293,13 +293,13 @@ textarea {
     .form-row {
         flex-direction: column;
     }
-    .contact-title {
+    .contact-page-title {
         font-size: 30px;
     }
-    .contact-info-wrapper {
+    .contact-page-info-wrapper {
         height: 350px;
     }
-    .contact-info {
+    .contact-page-info {
         width: 220px;
         padding: 20px;
     }

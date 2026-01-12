@@ -1,9 +1,9 @@
-.services-section {
+.ourservicesserve-section {
   padding: 60px 20px;
   background-color: #f8f9fc;
 }
 
-.services-grid {
+.ourservicesserve-grid {
   max-width: 1200px;
   margin: auto;
   display: grid;
@@ -100,16 +100,16 @@
 }
 
 /* =====================
-   SCROLL REVEAL ANIMATION
+   SCROLL ourservicesreveal ANIMATION
 ===================== */
 
-.reveal {
+.ourservicesreveal {
   opacity: 0;
   transform: translateY(40px) scale(0.98);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal-active {
+.ourservicesreveal-active {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
@@ -125,13 +125,13 @@
   transition: all 0.5s ease;
 }
 
-.reveal-active h3 {
+.ourservicesreveal-active h3 {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.15s;
 }
 
-.reveal-active p {
+.ourservicesreveal-active p {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.3s;
@@ -142,13 +142,13 @@
 ===================== */
 
 @media (max-width: 992px) {
-  .services-grid {
+  .ourservicesserve-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .services-grid {
+  .ourservicesserve-grid {
     grid-template-columns: 1fr;
   }
 

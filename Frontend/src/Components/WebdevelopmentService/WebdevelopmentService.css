@@ -1,7 +1,7 @@
 /* =======================
    MAIN SECTION
 ======================= */
-.services-section {
+.webdevlopment-services-section {
   position: relative;
   padding: 120px 80px;
   background: linear-gradient(135deg, #1b0033, #0b001a);
@@ -54,15 +54,15 @@
 }
 
 /* =======================
-   SCROLL REVEAL
+   SCROLL webdevlopmentreveal
 ======================= */
-.reveal-item {
+.webdevlopmentreveal-item {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
 }
 
-.reveal-active .reveal-item {
+.webdevlopmentreveal-active .webdevlopmentreveal-item {
   opacity: 1;
   transform: translateY(0);
 }
@@ -70,29 +70,29 @@
 /* =======================
    HEADER
 ======================= */
-.services-header {
+.webdevlopment-services-header {
   text-align: center;
   max-width: 720px;
   margin: 0 auto 80px;
 }
 
-.services-tag {
+.webdevlopment-services-tag {
   color: #ffcc00;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
-.services-header h2 {
+.webdevlopment-services-header h2 {
   font-size: 44px;
   font-weight: 800;
   margin: 16px 0;
 }
 
-.services-header h2 span {
+.webdevlopment-services-header h2 span {
   color: #ff7ad9;
 }
 
-.services-header p {
+.webdevlopment-services-header p {
   color: #cfcfcf;
   font-size: 16px;
 }
@@ -100,7 +100,7 @@
 /* =======================
    GRID
 ======================= */
-.services-grid {
+.webdevlopment-services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
@@ -170,12 +170,12 @@
 /* =======================
    BUTTON
 ======================= */
-.services-btn {
+.webdevlopment-services-btn {
   text-align: center;
   margin-top: 60px;
 }
 
-.services-btn button {
+.webdevlopment-services-btn button {
   background: linear-gradient(90deg, #ffeb00, #b6ff00);
   color: #000;
   border: none;
@@ -186,7 +186,7 @@
   transition: transform 0.3s ease;
 }
 
-.services-btn button:hover {
+.webdevlopment-services-btn button:hover {
   transform: translateY(-4px);
 }
 
@@ -194,21 +194,21 @@
    RESPONSIVE
 ======================= */
 @media (max-width: 1200px) {
-  .services-grid {
+  .webdevlopment-services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .services-section {
+  .webdevlopment-services-section {
     padding: 80px 20px;
   }
 
-  .services-grid {
+  .webdevlopment-services-grid {
     grid-template-columns: 1fr;
   }
 
-  .services-header h2 {
+  .webdevlopment-services-header h2 {
     font-size: 32px;
   }
 }

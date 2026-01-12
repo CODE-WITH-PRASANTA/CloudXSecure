@@ -1,0 +1,106 @@
+/* =========================
+   COUNTER SECTION
+========================= */
+.counter2-section {
+  position: relative;
+  background: #6c63ff;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* Moving Background */
+.counter2-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.25;
+}
+
+@keyframes waveMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2000px 0;
+  }
+}
+
+.counter2-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+/* =========================
+   COUNTER BOX
+========================= */
+.counter2-box {
+  color: #fff;
+}
+
+.counter2-icon {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  background: #5b54e6;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: all 0.4s ease;
+}
+
+.counter2-icon svg {
+  font-size: 36px;
+  color: #fff;
+  transition: color 0.4s ease;
+}
+
+.counter2-icon:hover {
+  background: #fff;
+}
+
+.counter2-icon:hover svg {
+  color: #000;
+}
+
+/* =========================
+   NUMBER
+========================= */
+.counter2-number {
+  font-size: 44px;
+  font-weight: 800;
+  margin: 18px 0 8px;
+}
+
+/* =========================
+   TEXT
+========================= */
+.counter2-text {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .counter2-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .counter2-container {
+    grid-template-columns: 1fr;
+  }
+
+  .counter2-number {
+    font-size: 36px;
+  }
+}
