@@ -10,17 +10,17 @@ const features = [
   {
     img: img1,
     title: "Security Services",
-    desc: "Innovating and empowering businesses with tailored solutions for success and growth. Innovating and empowering",
+    desc: "CloudXSecure provides enterprise-level website security with encrypted architecture, malware defense, server hardening, and real-time threat monitoring.Our secure development workflow protects your data, users, and online operations from evolving cyber threats.",
   },
   {
     img: img2,
     title: "Data Privacy",
-    desc: "Innovating and empowering businesses with tailored solutions for success and growth. Innovating and empowering",
+    desc: "We ensure strict data privacy through encrypted databases, secure API communication, and GDPR-aligned practices.CloudXSecure safeguards sensitive customer information while maintaining confidentiality, compliance, and integrity across all systems.",
   },
   {
     img: img3,
     title: "Industry Certified",
-    desc: "Innovating and empowering businesses with tailored solutions for success and growth. Innovating and empowering",
+    desc: "CloudXSecure follows ISO-27001, OWASP Top-10, and global development security standards.our certified coding methods ensure your website is built with maximum security, performance, reliability, and long-term scalability.",
   },
 ];
 
