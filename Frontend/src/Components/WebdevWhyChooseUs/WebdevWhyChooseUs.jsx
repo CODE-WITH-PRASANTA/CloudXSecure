@@ -34,13 +34,15 @@ const WhyChooseUsThree = () => {
           <span className="wc3-subtitle wc3-reveal">WHY CHOOSE US</span>
 
           <h2 className="wc3-title wc3-reveal">
-            Why People Are Very Loved <br />
-            To Working <span>With Us?</span>
+            Why Businesses Trust <br />
+            CloudXSecure <span>Web Development?</span>
           </h2>
 
           <p className="wc3-desc wc3-reveal">
-            Innovating and empowering businesses with tailored solutions
-            for success and growth. Innovating and empowering.
+            CloudXSecure delivers secure, scalable, and high-performance web
+            solutions designed to support growth and long-term success. We blend
+            innovation with reliability to create digital experiences that truly
+            make an impact.
           </p>
 
           {/* FEATURES */}
@@ -63,9 +65,9 @@ const WhyChooseUsThree = () => {
           {/* BULLET POINTS */}
           <ul className="wc3-points">
             {[
-              "Dramatically re-engineer value added IT systems via mission",
-              "We provide 24/7 monitoring and support to ensure your systems.",
-              "Professional User Experience & Interface researching",
+              "We build fully optimized, SEO-ready websites engineered for speed and growth.",
+              "24/7 monitoring and maintenance to keep your website secure and performing smoothly.",
+              "Modern UI/UX research and design practices to boost engagement and conversions.",
             ].map((item, i) => (
               <li className="wc3-reveal" key={i}>
                 <FaCheck /> {item}

@@ -2,7 +2,7 @@
    BASE
 ================================ */
 .work-process {
-  padding: 120px 0 0;
+  padding: 10px 0 0;
   background:
     radial-gradient(circle at top, rgba(108,99,255,0.08), transparent 40%),
     linear-gradient(180deg, #ffffff, #f8f9ff);

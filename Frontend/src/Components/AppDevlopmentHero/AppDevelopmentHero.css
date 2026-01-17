@@ -171,7 +171,7 @@
 }
 
 .app-development-hero-image img {
-  width: 520px;
+  width: 560px;
   max-width: 100%;
   height: auto;
   animation: fadeSlide 1.2s ease forwards;
@@ -357,8 +357,7 @@
   }
 
   .app-development-hero-image  img{
-    /* width: 400px;
-    height: 400px; */
+   
     display: none;
   }
 

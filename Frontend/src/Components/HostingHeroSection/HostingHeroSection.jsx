@@ -81,9 +81,7 @@ const HostingHeroSection = () => {
         {/* Ratings section */}
         <div className="rating-section">
           <div className="rating-box left-box">
-            <div className="rating-source">
-              <span className="star">★</span> Trustpilot
-            </div>
+            <div className="rating-source">Trustpilot</div>
             <div className="rating-stars">
               <span>★★★★★</span>
               <p>450+ reviews</p>

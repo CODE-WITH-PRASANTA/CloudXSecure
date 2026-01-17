@@ -51,7 +51,6 @@ const AppDevlopmentOurService = () => {
   const [index, setIndex] = useState(0);
   const visibleCards = 4;
 
-  // Desktop auto-slide only
   useEffect(() => {
     if (window.innerWidth <= 576) return;
 
@@ -65,41 +64,43 @@ const AppDevlopmentOurService = () => {
   }, []);
 
   return (
-    <section className="app-service">
-      <div className="app-service-container">
-        <div className="app-service-header">
-          <span className="app-service-tag">OUR SERVICES</span>
+    <section className="app-devlopment-our-service">
+      <div className="app-devlopment-our-service-container">
+        <div className="app-devlopment-our-service-header">
+          <span className="app-devlopment-our-service-tag">OUR SERVICES</span>
           <h2>
             Innovative IT Services <br />
             Tailored <span>For Your Success.</span>
           </h2>
-          <p className="app-service-subtext">
+          <p className="app-devlopment-our-service-subtext">
             Scalable, secure, and innovative IT services designed for growth.
           </p>
         </div>
 
-        <div className="service-carousel">
+        <div className="app-devlopment-our-service-carousel">
           <div
-            className="service-track"
+            className="app-devlopment-our-service-track"
             style={
               window.innerWidth <= 576
-                ? {} // 🔥 Disable transform on mobile
+                ? {}
                 : { transform: `translateX(-${index * 25}%)` }
             }
           >
             {services.map((item, i) => (
-              <div className="service-card" key={i}>
-                <div className="service-icon">{item.icon}</div>
+              <div className="app-devlopment-our-service-card" key={i}>
+                <div className="app-devlopment-our-service-icon">
+                  {item.icon}
+                </div>
                 <h3>{item.title}</h3>
-                <p className="service-desc">{item.desc}</p>
+                <p className="app-devlopment-our-service-desc">{item.desc}</p>
 
-                <ul className="service-list">
+                <ul className="app-devlopment-our-service-list">
                   {item.points.map((p, idx) => (
                     <li key={idx}>{p}</li>
                   ))}
                 </ul>
 
-                <button className="service-btn">
+                <button className="app-devlopment-our-service-btn">
                   Read More <FaArrowRight />
                 </button>
               </div>
@@ -107,13 +108,14 @@ const AppDevlopmentOurService = () => {
           </div>
         </div>
 
-        {/* Pagination (hidden on mobile via CSS) */}
-        <div className="service-dots">
+        <div className="app-devlopment-our-service-dots">
           {Array.from({ length: services.length - visibleCards + 1 }).map(
             (_, i) => (
               <span
                 key={i}
-                className={`dot ${i === index ? "active" : ""}`}
+                className={`app-devlopment-our-service-dot ${
+                  i === index ? "active" : ""
+                }`}
                 onClick={() => setIndex(i)}
               />
             )

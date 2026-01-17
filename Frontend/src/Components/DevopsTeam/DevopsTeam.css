@@ -1,0 +1,165 @@
+/* ================= SECTION ================= */
+.devops-team-section {
+  padding: 70px 20px 40px;
+  background: #f7f9fc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ================= HEADER ================= */
+.devops-team-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.devops-team-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #e9f1ff;
+  color: #0d6efd;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.devops-team-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.devops-team-header h2 span {
+  color: #0d6efd;
+}
+
+/* ================= GRID ================= */
+.devops-team-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ================= CARD ================= */
+.devops-team-card {
+  text-align: center;
+}
+
+/* ================= IMAGE ================= */
+.devops-team-img {
+  position: relative;
+  width: 100%;
+  height: 300px;             /* REDUCED to fit page */
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.devops-team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* WHITE FADE UP */
+.devops-team-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+.devops-team-card:hover .devops-team-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= SOCIAL ICONS ================= */
+.devops-team-socials {
+  position: absolute;
+  right: -46px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.4s ease;
+  z-index: 2;
+}
+
+.devops-team-socials a {
+  width: 40px;
+  height: 40px;
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.devops-team-socials a:hover {
+  background: #084ec4;
+}
+
+.devops-team-card:hover .devops-team-socials {
+  right: 12px;
+}
+
+/* ================= INFO ================= */
+.devops-team-info {
+  background: #fff;
+  padding: 14px 10px;
+  margin-top: -30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 3;
+}
+
+.devops-team-info h4 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.devops-team-info span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 991px) {
+  .devops-team-section {
+    height: auto;            /* allow scroll on small devices */
+  }
+
+  .devops-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .devops-team-header h2 {
+    font-size: 30px;
+  }
+
+  .devops-team-img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .devops-team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .devops-team-img {
+    height: 240px;
+  }
+
+  .devops-team-header h2 {
+    font-size: 24px;
+  }
+}

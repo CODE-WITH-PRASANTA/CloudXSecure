@@ -1,14 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AppDevlopmentOurPortfolio.css";
+import img1 from "../../assets/project-1-1.jpg";
+import img2 from "../../assets/project-1-2.jpg";
+import img3 from "../../assets/project-1-3.jpg";
+import img4 from "../../assets/project-1-4.jpg";
 
 const portfolioData = [
-  { title: "Digital Product Design", img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d" },
-  { title: "Enterprise Web Solutions", img: "https://images.unsplash.com/photo-1552664730-d307ca884978" },
-  { title: "Cloud-Based Platforms", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7" },
-  { title: "AI Driven Applications", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c" },
-  { title: "Startup MVP Development", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c" },
-  { title: "E-Commerce Systems", img: "https://images.unsplash.com/photo-1557821552-17105176677c" },
-  { title: "Business Automation Tools", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0" },
+  { title: "Digital Product Design", img: img1 },
+  { title: "Enterprise Web Solutions", img: img2 },
+  { title: "Cloud-Based Platforms", img: img3 },
+  { title: "AI Driven Applications", img: img4 },
+  { title: "Startup MVP Development", img: img1 },
+  { title: "E-Commerce Systems", img: img2 },
+  { title: "Business Automation Tools", img: img3 },
 ];
 
 const AppDevlopmentOurPortfolio = () => {
