@@ -20,8 +20,7 @@ const AppDevlopmentWhyChooseUs = () => {
           </h2>
 
           <p className="why-desc">
-            Innovating and empowering businesses with tailored solutions for
-            success and growth. Innovating and empowering businesses.
+           CloudXSecure delivers secure, scalable IT and cloud solutions that help businesses grow with confidence. We focus on performance, security, and long-term value.
           </p>
 
           {/* PROGRESS BARS */}

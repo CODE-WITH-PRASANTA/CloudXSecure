@@ -33,9 +33,7 @@ const AppDevlopmentAbout = () => {
           </h2>
 
           <p className="app-about-desc">
-            Innovating and empowering businesses with tailored solutions for
-            success and growth. Empowering businesses to create meaningful
-            innovation.
+            At CloudXSecure, we deliver secure, scalable, and business-focused IT solutions that help organizations grow with confidence. Our expertise in cloud services, cybersecurity, and IT infrastructure ensures reliable performance and strong data protection.
           </p>
 
           {/* FEATURE 1 */}
@@ -46,8 +44,7 @@ const AppDevlopmentAbout = () => {
             <div>
               <h4>Award-Winning Company</h4>
               <p>
-                Partner with us to unlock new possibilities, drive progress, and
-                shape a future filled with success.
+                We provide trusted IT and cybersecurity services designed to improve efficiency, reduce risks, and support long-term business growth.
               </p>
             </div>
           </div>
@@ -60,8 +57,7 @@ const AppDevlopmentAbout = () => {
             <div>
               <h4>Certified Company</h4>
               <p>
-                Partner with us to unlock new possibilities, drive progress, and
-                shape a future filled with success.
+                Our certified professionals follow industry standards to deliver compliant, secure, and high-performance IT solutions.
               </p>
             </div>
           </div>

@@ -11,22 +11,22 @@ const steps = [
   {
     icon: <FaRegFileAlt />,
     title: "Choose a project",
-    desc: "Once the strategy is in place, we move to designing and developing your vision."
+    desc: "We understand your business goals, challenges, and technical requirements to define the right solution."
   },
   {
     icon: <FaChartPie />,
     title: "Project analysis",
-    desc: "Once the strategy is in place, we move to designing and developing your vision."
+    desc: "Our experts analyze scope, security needs, timelines, and resources to create a clear execution plan."
   },
   {
     icon: <FaTasks />,
     title: "Plan Execute",
-    desc: "Once the strategy is in place, we move to designing and developing your vision."
+    desc: "We design, develop, and implement secure IT solutions using proven best practices and modern technologies."
   },
   {
     icon: <FaChartLine />,
     title: "Deliver result",
-    desc: "Once the strategy is in place, we move to designing and developing your vision."
+    desc: "We deliver high-quality, tested solutions with ongoing support to ensure long-term performance and success."
   }
 ];
 
@@ -41,8 +41,9 @@ const AppDevlopmentWorkProcess = () => {
         <div className="work-process-header">
           <span className="process-tag">WORKING PROCESS</span>
           <h2>
-            How To Work <span>It</span>
+           How We Work 
           </h2>
+          <p>A simple, transparent, and results-driven process to deliver secure and scalable IT solutions.</p>
         </div>
 
         {/* PROCESS */}
