@@ -46,18 +46,20 @@ const WebdevelopementServiceHeroScn = () => {
 
         {/* RIGHT CONTENT */}
         <div className="wd-right reveal from-right">
-          <span className="tag">BEST IT SOLUTION SERVICE</span>
+          <span className="tag">WEB DEVELOPMENT SERVICE</span>
 
           <h1>
-            Boost <span>Business</span> With Our <br />
-            Innovative IT Solutions <br />
-            For <span>Success Story</span>
+            Boost <span>Your Business</span> With Our <br />
+            Custom Web Development Solutions <br />
+            For <span>Long-Term Success</span>
           </h1>
 
           <p>
-            IT solutions refer to a broad range of services and technologies
-            designed to address specific business needs and streamline
-            operations.
+            CloudXsecure delivers high-performance, secure, and scalable web 
+            development services designed to strengthen your online presence. 
+            Our expert team builds responsive, SEO-friendly websites that enhance 
+            user experience, improve brand visibility, and accelerate digital 
+            growth. 
           </p>
 
           {/* Trustpilot */}
@@ -73,13 +75,12 @@ const WebdevelopementServiceHeroScn = () => {
               <span>5.0 Excellent</span>
               <small>Reviews 4,170</small>
             </div>
-            {/* Button */}
-          <div className="btn-wrap reveal from-bottom">
-            <button className="hero-btn">Discover More →</button>
-          </div>
-          </div>
 
-          
+            {/* Button */}
+            <div className="btn-wrap reveal from-bottom">
+              <button className="hero-btn">Discover More →</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

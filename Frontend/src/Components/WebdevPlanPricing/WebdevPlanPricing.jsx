@@ -4,21 +4,60 @@ import "./WebdevPlanPricing.css";
 import bgShape from "../../assets/pricing-two-bg-shape.webp";
 import cardBg from "../../assets/contact-three-bg-shape.webp";
 
+// UPDATED CONTENT (ONLY CONTENT CHANGED)
 const pricingData = {
   monthly: [
-    { title: "Personal", price: "$5.60", note: "Free 3 Months Solutions" },
-    { title: "Premium", price: "$25.60", note: "Free 5 Months Solutions" },
-    { title: "Business", price: "$120.60", note: "Free Lifetime Solutions" },
+    { 
+      title: "Starter", 
+      price: "₹8,999", 
+      note: "Perfect for small businesses starting online" 
+    },
+    { 
+      title: "Growth", 
+      price: "₹24,999", 
+      note: "Designed for growing brands and SMEs" 
+    },
+    { 
+      title: "Enterprise", 
+      price: "₹64,999", 
+      note: "Advanced solutions with premium support" 
+    },
   ],
+
   yearly: [
-    { title: "Personal", price: "$50.60", note: "Yearly Support" },
-    { title: "Premium", price: "$250.60", note: "Priority Support" },
-    { title: "Business", price: "$1200.60", note: "Enterprise Support" },
+    { 
+      title: "Starter", 
+      price: "₹79,999", 
+      note: "Full annual support + maintenance" 
+    },
+    { 
+      title: "Growth", 
+      price: "₹2,39,999", 
+      note: "Yearly plan with priority updates" 
+    },
+    { 
+      title: "Enterprise", 
+      price: "₹6,49,999", 
+      note: "Enterprise-level yearly support + upgrades" 
+    },
   ],
+
   packages: [
-    { title: "Starter", price: "$99", note: "One Time Setup" },
-    { title: "Growth", price: "$299", note: "Complete Package" },
-    { title: "Enterprise", price: "$799", note: "Unlimited Access" },
+    { 
+      title: "Starter", 
+      price: "₹8,999", 
+      note: "One-time setup for basic website needs" 
+    },
+    { 
+      title: "Growth", 
+      price: "₹24,999", 
+      note: "Complete package with enhanced features" 
+    },
+    { 
+      title: "Enterprise", 
+      price: "₹64,999", 
+      note: "Unlimited access with full customization" 
+    },
   ],
 };
 

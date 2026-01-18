@@ -52,7 +52,6 @@ const AboutSection = () => {
                 <img src={small1} alt="" />
                 <img src={small2} alt="" />
                 <img src={small3} alt="" />
-                
               </div>
               <p><strong>120K</strong> Satisfied Client</p>
             </div>
@@ -63,34 +62,49 @@ const AboutSection = () => {
             <span className="about-tag">ABOUT US</span>
 
             <h2 className="about-title">
-              Your Business Growth with Our <br />
-              <span>Cutting-Edge IT Solutions</span>
+              Driving Business Growth with Our <br />
+              <span>Advanced Web Development Solutions</span>
             </h2>
 
             <p className="about-desc">
-              Transform your business with our innovative IT solutions,
-              tailored to address your unique challenges and drive growth
-              in today’s digital landscape.
+              At CloudXsecure, we provide secure, scalable and high-performance
+              web development services designed to help businesses thrive in a
+              competitive digital environment. Our solutions combine modern
+              technologies, cloud infrastructure, UX-focused design, and a
+              results-driven development approach that aligns perfectly with your
+              long-term business goals.
             </p>
 
             <div className="feature-grid">
-              <div><FaCheckCircle /> Innovative IT Solutions Expert Support & Consulting</div>
-              <div><FaCheckCircle /> Seamless Digital Transformation AI-Driven</div>
-              <div><FaCheckCircle /> Cloud Solutions for Modern Enterprises</div>
+              <div>
+                <FaCheckCircle /> Custom Website Development & Technical Consulting
+              </div>
+              <div>
+                <FaCheckCircle /> AI-Enabled Digital Transformation & Automation
+              </div>
+              <div>
+                <FaCheckCircle /> Cloud-Integrated Web Solutions for Modern Enterprises
+              </div>
 
               <div className="founder">
-                <img src={thomas} alt="Thomas Alison" />
+                <img src={thomas} alt="davis paker" />
                 <div>
-                  <h4>Thomas Alison</h4>
-                  <span>Founder & CEO</span>
+                  <h4>davis Paker</h4>
+                  <span>Founder & CEO – CloudXsecure</span>
                 </div>
               </div>
             </div>
 
             <ul className="points">
-              <li><FaCheckCircle /> Professional User Experience & Interface researching</li>
-              <li><FaCheckCircle /> We provide 24/7 monitoring and support</li>
-              <li><FaCheckCircle /> Dramatically re-engineer value-added IT systems</li>
+              <li>
+                <FaCheckCircle /> Human-Centered UI/UX Design Focused on Conversion & Engagement
+              </li>
+              <li>
+                <FaCheckCircle /> 24/7 Website Support, Security Monitoring & Maintenance
+              </li>
+              <li>
+                <FaCheckCircle /> Modernization & Re-engineering of Legacy Web Systems
+              </li>
             </ul>
 
             <div className="action">
@@ -101,8 +115,8 @@ const AboutSection = () => {
                   <FaPhoneAlt />
                 </div>
                 <div>
-                  <span>Call to Anytime</span>
-                  <strong>1 (550) 250 5260</strong>
+                  <span>Speak With Our Team</span>
+                  <strong>+91 9500 250 526</strong>
                 </div>
               </div>
             </div>
@@ -116,14 +130,14 @@ const AboutSection = () => {
         <div className="banner-track">
           <span>BRANDING</span><span className="star">★</span>
           <span>CYBER SECURITY</span><span className="star">★</span>
-          <span>WEBSITE DESIGN</span><span className="star">★</span>
+          <span>WEBSITE DEVELOPMENT</span><span className="star">★</span>
           <span>DIGITAL MARKETING</span><span className="star">★</span>
           <span>UI / UX DESIGN</span>
 
           <span className="star">★</span>
           <span>BRANDING</span><span className="star">★</span>
           <span>CYBER SECURITY</span><span className="star">★</span>
-          <span>WEBSITE DESIGN</span><span className="star">★</span>
+          <span>WEBSITE DEVELOPMENT</span><span className="star">★</span>
           <span>DIGITAL MARKETING</span><span className="star">★</span>
           <span>UI / UX DESIGN</span>
         </div>
