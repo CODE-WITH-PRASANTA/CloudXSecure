@@ -7,10 +7,10 @@ import icon3 from "../../assets/service3.webp";
 import icon4 from "../../assets/service4.webp";
 
 const services = [
-  { icon: icon1, title: "Woo Commerce", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
-  { icon: icon2, title: "CRM Solutions", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
-  { icon: icon3, title: "Web Design", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
-  { icon: icon4, title: "Data Guard Sentinel", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
+  { icon: icon1, title: "Woo Commerce", desc: "Build fast, secure, and scalable WooCommerce stores designed to increase sales and deliver a smooth shopping experience." },
+  { icon: icon2, title: "CRM Solutions", desc: "Smart CRM systems to manage customers, automate workflows, and improve sales performance efficiently." },
+  { icon: icon3, title: "Web Design", desc: "Modern, responsive websites crafted for usability, performance, and strong brand presence." },
+  { icon: icon4, title: "Data Guard Sentinel", desc: "Advanced data security solutions to protect your systems, ensure privacy, and maintain compliance." },
 ];
 
 const Cloudservice = () => {
