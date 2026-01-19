@@ -9,22 +9,22 @@ const faqData = [
   {
     question: "Where Should I Incorporate My Business?",
     answer:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't.",
+      "The right location depends on your business goals, target market, tax structure, and legal requirements. We help you evaluate the best option based on long-term growth and compliance.",
   },
   {
     question: "How Long Should A Business Plan Be?",
     answer:
-      "A business plan typically ranges between 10–30 pages depending on the business model and purpose.",
+      "A well-structured business plan usually ranges from 10 to 30 pages, focusing on clarity, strategy, and realistic execution rather than length.",
   },
   {
     question: "What Is Included In Your Services?",
     answer:
-      "Our services include strategy planning, development, security optimization, and ongoing support.",
+      "Our services include consultation, UI/UX design, development, security optimization, performance improvement, and ongoing technical support.",
   },
   {
-    question: "What Type Of Company Is Measured?",
+    question: "What Types Of Companies Do You Work With?",
     answer:
-      "We work with startups, SMEs, and enterprise-level organizations across industries.",
+      "We collaborate with startups, educational platforms, SMEs, and growing enterprises across multiple industries.",
   },
 ];
 
@@ -36,12 +36,8 @@ const FAQSection = () => {
       <div className="faqContainerUnique">
         {/* LEFT IMAGES */}
         <div className="faqImageWrapUnique">
-          <img src={mainImg} alt="FAQ Main" className="faqMainImgUnique" />
-          <img
-            src={groupImg}
-            alt="Team Working"
-            className="faqGroupImgUnique"
-          />
+          <img src={mainImg} alt="Frequently Asked Questions" className="faqMainImgUnique" />
+          <img src={groupImg} alt="Team Collaboration" className="faqGroupImgUnique" />
         </div>
 
         {/* RIGHT CONTENT */}
@@ -49,8 +45,7 @@ const FAQSection = () => {
           <span className="faqBadgeUnique">FAQ</span>
 
           <h2 className="faqTitleUnique">
-            Prioritize Your Site’s Safety <br />
-            And Security
+            Prioritize Your Website’s <br /> Safety & Performance
           </h2>
 
           <div className="faqListUnique">

@@ -4,23 +4,23 @@ import "./ManagedCloudApproach.css";
 const faqs = [
   {
     q: "How Does Cloud Computing Benefit My Business?",
-    a: "Cloud computing enables scalability, cost efficiency, enhanced security, and remote accessibility, helping businesses adapt and grow faster."
+    a: "Cloud computing enables businesses to scale resources on demand, reduce infrastructure costs, and improve operational flexibility. With CloudXSecure’s cloud services, organizations gain secure access to data, improved collaboration, faster deployment, and enhanced performance without heavy upfront investments."
   },
   {
-    q: "What Included In IT Solution Infrastructure Services?",
-    a: "Infrastructure services include network setup, server management, cloud integration, monitoring, and disaster recovery solutions."
+    q: "What Is Included in IT Solution & Infrastructure Services?",
+    a: "CloudXSecure’s IT infrastructure services include network setup, server and cloud management, system monitoring, security integration, backup, and disaster recovery solutions. We ensure your IT environment is reliable, secure, and optimized for performance and scalability."
   },
   {
     q: "How Can IT Solutions Improve My Business Security?",
-    a: "IT solutions strengthen security using firewalls, endpoint protection, access control, encryption, and real-time monitoring."
+    a: "Our IT solutions strengthen business security through cloud security frameworks, access control, data encryption, threat monitoring, and regular system updates. CloudXSecure proactively protects your applications, networks, and data from cyber threats and unauthorized access."
   },
   {
-    q: "Can IT Solutions Help Remote Work Capabilities?",
-    a: "Yes, secure VPNs, cloud collaboration tools, and endpoint security enable safe and efficient remote work."
+    q: "Can IT Solutions Support Remote Work Capabilities?",
+    a: "Yes. CloudXSecure enables secure remote work through cloud-based applications, secure network access, data protection, and collaboration tools. Our solutions allow teams to work efficiently from anywhere without compromising security or performance."
   },
   {
-    q: "How To Often Should I Update My IT Systems?",
-    a: "IT systems should be reviewed annually, with critical security updates applied immediately upon release."
+    q: "Why Choose CloudXSecure for Cloud & Digital Solutions?",
+    a: "CloudXSecure delivers secure cloud services, professional web design, custom app development, and complete IT solutions under one roof. Our expert-driven approach ensures reliability, scalability, and long-term digital success for modern businesses."
   }
 ];
 
@@ -45,10 +45,9 @@ const ApproachFaq = () => {
         <div className="approach-left">
           <h2>Our Eitech Approach</h2>
           <p>
-            In an era where cyber threats are becoming increasingly sophisticated,
-            protecting your business has never been more crucial. Our proactive
-            cybersecurity strategy safeguards your infrastructure and data.
-          </p>
+               In an era where cyber threats, cloud complexity, and digital transformation are rapidly increasing, CloudXSecure follows a proactive and security-first approach to protect and scale your business.
+
+              We combine advanced cybersecurity practices, scalable cloud architecture, and modern development strategies to deliver reliable, high-performance digital solutions. Our approach ensures your infrastructure, applications, and data remain secure, compliant, and future-ready while supporting continuous business growth.          </p>
 
           <h3>Frequently Asked Question</h3>
           <p className="faq-intro">

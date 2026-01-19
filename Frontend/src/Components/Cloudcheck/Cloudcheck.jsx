@@ -70,8 +70,7 @@ const PortfolioShowcase = () => {
 
             <h3>Detailing Of Our Project</h3>
             <p>
-              There are many variations passages of Lorem Ipsum available but
-              the majority have suffered alteration in some form by injected humour.
+              We deliver well-structured digital projects built on practical learning, strong technical foundations, and real business needs. Every project follows a clear process focused on performance, usability, and long-term value rather than short-term trends.
             </p>
 
             <div className="pf-features">
