@@ -3,8 +3,10 @@
   padding: 110px 0;
   background: #ffffff;
   overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
+/* ================= CONTAINER ================= */
 .about-mission-container {
   max-width: 1200px;
   margin: auto;
@@ -14,23 +16,34 @@
   align-items: center;
 }
 
-/* ================= ENTRY ANIMATION ================= */
+/* ================= ENTRY STATE ================= */
 .about-mission-left,
-.about-mission-right {
+.about-mission-right,
+.about-mission-card {
   opacity: 0;
-  transform: translateY(40px) scale(0.98);
+  transform: translateY(40px);
 }
 
+/* ================= ACTIVE ================= */
 .about-mission--active .about-mission-left {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition: all 0.9s ease-out;
+  animation: fadeUp 0.9s ease forwards;
 }
 
 .about-mission--active .about-mission-right {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition: all 0.9s ease-out 0.2s;
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.about-mission--active .about-mission-card {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.about-mission-card--delay1 {
+  animation-delay: 0.3s;
+}
+
+.about-mission-card--delay2 {
+  animation-delay: 0.45s;
 }
 
 /* ================= LEFT ================= */
@@ -73,22 +86,7 @@
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   margin-bottom: 18px;
-  opacity: 0;
-  transform: translateY(25px);
-}
-
-.about-mission--active .about-mission-card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.7s ease;
-}
-
-.about-mission-card--delay1 {
-  transition-delay: 0.25s;
-}
-
-.about-mission-card--delay2 {
-  transition-delay: 0.4s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-mission-card:hover {
@@ -96,6 +94,7 @@
   box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
 }
 
+/* ICON */
 .about-mission-card-icon {
   width: 54px;
   height: 54px;
@@ -111,6 +110,7 @@
   width: 26px;
 }
 
+/* CARD TEXT */
 .about-mission-card-content h4 {
   font-size: 16px;
   font-weight: 600;
@@ -138,7 +138,7 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .about-mission-button:hover {
@@ -174,7 +174,7 @@
   animation-delay: 1.5s;
 }
 
-/* ================= DECORATION ================= */
+/* DECOR */
 .about-mission-decoration {
   position: absolute;
   right: -45px;
@@ -184,62 +184,42 @@
   animation: slowRotate 28s linear infinite;
 }
 
-/* ================= KEYFRAMES ================= */
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes softFloat {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-18px); }
+  50% { transform: translateY(-16px); }
   100% { transform: translateY(0); }
 }
 
 @keyframes pulseGlow {
-  0% { box-shadow: 0 0 0 rgba(91, 76, 242, 0.4); }
+  0% { box-shadow: 0 0 0 rgba(91, 76, 242, 0.35); }
   50% { box-shadow: 0 0 18px rgba(91, 76, 242, 0.55); }
-  100% { box-shadow: 0 0 0 rgba(91, 76, 242, 0.4); }
+  100% { box-shadow: 0 0 0 rgba(91, 76, 242, 0.35); }
 }
 
 @keyframes slowRotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-/* ================= RESPONSIVE MEDIA QUERIES ================= */
 
-/* ---------- Large Tablets (≤ 1024px) ---------- */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .about-mission {
     padding: 90px 24px;
   }
 
-  .about-mission-container {
-    gap: 50px;
-  }
-
   .about-mission-title {
     font-size: 34px;
   }
-
-  .about-mission-card {
-    padding: 22px;
-  }
-
-  .about-mission-card-icon {
-    width: 108px;
-    height: 60px;
-  }
-
-  .about-mission-card-icon img {
-    width: 24px;
-  }
-
-  .about-mission-image-main img {
-    border-radius: 18px;
-  }
-
-  .about-mission-image-grid {
-    gap: 18px;
-  }
 }
 
-/* ---------- Tablets (≤ 768px) ---------- */
 @media (max-width: 768px) {
   .about-mission {
     padding: 80px 20px;
@@ -250,69 +230,24 @@
     gap: 60px;
   }
 
-  .about-mission-left {
-    text-align: left;
-  }
-
-  .about-mission-title {
-    font-size: 30px;
-  }
-
-  .about-mission-description {
-    max-width: 100%;
-  }
-
-  .about-mission-card {
-    padding: 20px;
-  }
-
   .about-mission-right {
     max-width: 520px;
     margin: 0 auto;
   }
-
-  .about-mission-image-main img {
-    width: 100%;
-  }
-
-  .about-mission-image-grid img {
-    width: 100%;
-  }
-
-  .about-mission-decoration {
-    width: 120px;
-    right: -30px;
-    bottom: -30px;
-  }
 }
 
-/* ---------- Mobile (≤ 480px) ---------- */
 @media (max-width: 480px) {
   .about-mission {
     padding: 70px 16px;
   }
 
-  .about-mission-badge {
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-
   .about-mission-title {
     font-size: 26px;
-    line-height: 1.3;
   }
 
   .about-mission-card {
-    gap: 14px;
     padding: 18px;
-  }
-
-  .about-mission-card-content h4 {
-    font-size: 15px;
-  }
-
-  .about-mission-card-content p {
-    font-size: 13px;
+    gap: 14px;
   }
 
   .about-mission-button {
@@ -320,27 +255,17 @@
     font-size: 14px;
   }
 
-  /* RIGHT SIDE IMAGES — SAME POSITION, SMALLER SIZE */
-  .about-mission-right {
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  .about-mission-image-main img {
-    border-radius: 16px;
-  }
-
-  .about-mission-image-grid {
-    gap: 14px;
-  }
-
-  .about-mission-image-grid img {
-    border-radius: 14px;
-  }
-
   .about-mission-decoration {
     width: 95px;
     right: -22px;
     bottom: -22px;
+  }
+}
+
+/* ================= REDUCED MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

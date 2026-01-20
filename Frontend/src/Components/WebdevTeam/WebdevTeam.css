@@ -1,47 +1,30 @@
-/* =========================
-   SECTION
-========================= */
 .teamx-section {
   padding: 100px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f4f6ff 100%);
   overflow: hidden;
 }
 
-/* =========================
-   CONTAINER
-========================= */
 .teamx-container {
   max-width: 1300px;
   margin: auto;
   padding: 0 20px;
 }
 
-/* =========================
-   VIEWPORT
-========================= */
 .teamx-viewport {
   overflow: hidden;
 }
 
-/* =========================
-   TRACK
-========================= */
 .teamx-track {
   display: flex;
   will-change: transform;
 }
 
-/* =========================
-   CARD (4 visible)
-========================= */
+/* DEFAULT: 4 cards */
 .teamx-card {
   flex: 0 0 25%;
   padding: 0 15px;
 }
 
-/* =========================
-   IMAGE
-========================= */
 .teamx-img-wrapper {
   position: relative;
   border-radius: 16px;
@@ -50,7 +33,6 @@
 
 .teamx-img-wrapper img {
   width: 100%;
-  display: block;
   transition: transform 0.6s ease;
 }
 
@@ -58,24 +40,19 @@
   transform: scale(1.08);
 }
 
-/* =========================
-   OVERLAY
-========================= */
 .teamx-overlay {
   position: absolute;
   inset: 0;
   background: rgba(17, 17, 17, 0.55);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: 0.4s;
 }
 
 .teamx-card:hover .teamx-overlay {
   opacity: 1;
 }
 
-/* =========================
-   SHARE BUTTON
-========================= */
+/* SHARE */
 .teamx-share {
   position: absolute;
   bottom: 18px;
@@ -87,13 +64,8 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  cursor: pointer;
-  z-index: 3;
 }
 
-/* =========================
-   SOCIAL ICONS
-========================= */
 .teamx-socials {
   position: absolute;
   bottom: 55px;
@@ -103,7 +75,12 @@
   gap: 10px;
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.4s ease;
+  transition: 0.4s;
+}
+
+.teamx-share:hover .teamx-socials {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .teamx-socials a {
@@ -114,62 +91,26 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 15px;
-  transition: all 0.3s ease;
 }
 
-.teamx-socials a:hover {
-  background: #fff;
-  color: #6c63ff;
-}
-
-.teamx-share:hover .teamx-socials {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   INFO
-========================= */
 .teamx-info {
   background: #fff;
   margin-top: -20px;
-  padding: 22px 20px;
+  padding: 22px;
   border-radius: 12px;
   text-align: center;
-  position: relative;
-  z-index: 4;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-.teamx-info h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.teamx-info span {
-  font-size: 14px;
-  color: #777;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 @media (max-width: 1200px) {
-  .teamx-card {
-    flex: 0 0 33.333%;
-  }
+  .teamx-card { flex: 0 0 33.333%; }
 }
 
 @media (max-width: 900px) {
-  .teamx-card {
-    flex: 0 0 50%;
-  }
+  .teamx-card { flex: 0 0 50%; }
 }
 
 @media (max-width: 600px) {
-  .teamx-card {
-    flex: 0 0 100%;
-  }
+  .teamx-card { flex: 0 0 100%; }
 }

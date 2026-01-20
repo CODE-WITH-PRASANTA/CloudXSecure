@@ -2,7 +2,7 @@ import React from "react";
 import "./CloudHosting.css";
 import HostingHeroSection from "../../Components/HostingHeroSection/HostingHeroSection";
 import BrandBanner from "../../Components/BrandBanner/BrandBanner";
-import FeatureSection from "../../Components/FeatureSection/FeatureSection";
+// import FeatureSection from "../../Components/FeatureSection/FeatureSection";
 import CompanySection from "../../Components/CompanySection/CompanySection";
 import ServiceSection from "../../Components/ServiceSection/ServiceSection";
 import WorkProcessSection from "../../Components/WorkProcessSection/WorkProcessSection";
@@ -11,6 +11,7 @@ import CaseStudySection1 from "../../Components/CaseStudySection1/CaseStudySecti
 import PricingSection from "../../Components/PricingSection/PricingSection";
 import ExpertTeamSection from "../../Components/ExpertTeamSection/ExpertTeamSection";
 import ContactPage from "../../Components/ContactPage/ContactPage";
+import FeatureSection from "../../Components/FeatureSection/FeatureSection";
 
 const CloudHosting = () => {
   return (

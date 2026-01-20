@@ -1,386 +1,230 @@
-.company-section {
-    width: 100%;
-    background-color: #f6f8ff;
-    padding: 100px 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
+/* ================= ROOT ================= */
+:root {
+  --primary-blue: #293eff;
+  --secondary-blue: #3f51ff;
+  --bg-light: #f6f8ff;
+  --text-dark: #0b0b0b;
+  --text-gray: #4a4a4a;
 }
 
+/* ================= SECTION ================= */
+.company-section {
+  width: 100%;
+  background: var(--bg-light);
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* ===== TOP CONTENT ===== */
-
+/* ================= CONTENT ================= */
 .company-content {
-    text-align: left;
-    width: 100%;
-    max-width: 1500px;
-    position: relative;
-    margin-bottom: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 60px;
 }
 
 .company-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .company-subtitle {
-    font-size: 20px;
-    font-weight: 600;
-    color: #293eff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary-blue);
 }
 
 .company-hand-icon {
-    width: 100px;
-    position: absolute;
-    right: 0;
-    top: -20px;
-    animation: tap 2s ease-in-out infinite;
+  width: 64px;
+  animation: tap 2s ease-in-out infinite;
 }
 
+/* ================= TEXT ================= */
 .company-title {
-    font-size: 50px;
-    font-weight: 700;
-    margin-top: 20px;
-    color: #0b0b0b;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-dark);
+  margin-bottom: 20px;
 }
 
 .company-description {
-    font-size: 20px;
-    color: #4a4a4a;
-    line-height: 1.6;
-    margin: 20px 0 40px 0;
-    max-width: 700px;
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 34px;
 }
 
-
-/* ===== Animated Gradient Button ===== */
+/* ================= BUTTON ================= */
+.button-wrapper {
+  width: 100%;
+}
 
 .company-btn {
-    background: linear-gradient(90deg, #293eff 0%, #3f51ff 50%, #293eff 100%);
-    background-size: 200% auto;
-    color: #fff;
-    padding: 14px 32px;
-    position: fixed;
-    right: 40px;
-    top: -170px;
-    z-index: 1000;
-    border: none;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 20px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(41, 62, 255, 0.3);
-}
-
-.button-wrapper {
-    text-align: right;
-    width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-blue),
+    var(--secondary-blue)
+  );
+  color: #ffffff;
+  padding: 14px 32px;
+  border-radius: 40px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 18px rgba(41, 62, 255, 0.35);
 }
 
 .company-btn:hover {
-    background-position: right center;
-    /* ✨ Sliding gradient effect */
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(41, 62, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(41, 62, 255, 0.45);
 }
 
 .company-btn .arrow {
-    margin-left: 15px;
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .company-btn:hover .arrow {
-    transform: translateX(4px);
+  transform: translateX(5px);
 }
 
-
-/* ===== BOTTOM IMAGE SECTION ===== */
-
+/* ================= IMAGE ================= */
 .company-image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1500px;
-    margin-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
 }
 
 .company-main-image {
-    width: 100%;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
-
-/* Diamond Icon */
-
-.company-diamond-icon {
-    position: absolute;
-    bottom: -60px;
-    left: 30px;
-    width: 60px;
-    animation: floatDiamond 3s ease-in-out infinite;
-}
-
-
-/* Stats Box */
-
+/* ================= STATS ================= */
 .company-stats {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    border-radius: 80px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-    padding: 20px 60px;
+  margin: -40px auto 0;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 26px 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 900px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
 .stat-item {
-    text-align: center;
+  text-align: center;
 }
 
 .stat-item h3 {
-    font-size: 35px;
-    font-weight: 700;
-    color: #0b0b0b;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-dark);
 }
 
 .stat-item p {
-    font-size: 20px;
-    color: #444;
+  font-size: 14px;
+  color: var(--text-gray);
 }
 
+/* ================= DECOR ================= */
+.company-diamond-icon {
+  position: absolute;
+  bottom: -30px;
+  left: 20px;
+  width: 44px;
+  animation: floatDiamond 3s ease-in-out infinite;
+}
 
-/* ===== Animations ===== */
-
+/* ================= ANIMATIONS ================= */
 @keyframes tap {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(8px);
-    }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 @keyframes floatDiamond {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
+/* ================= RESPONSIVE ================= */
 
-/* =============================== */
-
-
-/* 📱 Responsive Layout Adjustments */
-
-
-/* =============================== */
-
-
-/* 🧩 Tablet View (≤1024px) */
-
+/* Tablet */
 @media (max-width: 1024px) {
-    .company-section {
-        flex-direction: column;
-        padding: 80px 40px;
-        text-align: center;
-    }
-    .company-content {
-        max-width: 100%;
-        margin-bottom: 40px;
-    }
-    .company-title {
-        font-size: 42px;
-        line-height: 1.3;
-    }
-    .company-description {
-        font-size: 18px;
-        margin: 20px auto 30px auto;
-        text-align: center;
-    }
-    .company-btn {
-        font-size: 17px;
-    }
-    .company-image-wrapper {
-        width: 100%;
-    }
-    .company-main-image {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .company-stats {
-        gap: 40px;
-        padding: 20px 40px;
-        flex-wrap: wrap;
-    }
-    .stat-item h3 {
-        font-size: 26px;
-    }
-    .company-diamond-icon {
-        width: 50px;
-        bottom: -40px;
-    }
+  .company-title {
+    font-size: 36px;
+  }
+
+  .company-description {
+    font-size: 15px;
+  }
+
+  .company-stats {
+    margin-top: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-
-/* 📱 Mobile View (≤768px) */
-
+/* Mobile */
 @media (max-width: 768px) {
-    .company-section {
-        flex-direction: column;
-        padding: 60px 20px;
-    }
-    .company-content {
-        text-align: center;
-    }
-    .company-subtitle {
-        font-size: 16px;
-    }
-    .company-title {
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-    .company-description {
-        font-size: 15px;
-        line-height: 1.5;
-    }
-    .company-btn {
-        width: 100%;
-        font-size: 16px;
-        padding: 12px 20px;
-    }
-    .company-hand-icon {
-        width: 70px;
-        top: -10px;
-        right: 0;
-    }
-    .company-image-wrapper {
-        margin-top: 20px;
-        width: 100%;
-    }
-    .company-main-image {
-        width: 100%;
-        border-radius: 20px;
-    }
-    .company-stats {
-        flex-direction: column;
-        gap: 20px;
-        border-radius: 20px;
-        padding: 20px 25px;
-    }
-    .stat-item h3 {
-        font-size: 22px;
-    }
-    .stat-item p {
-        font-size: 15px;
-    }
-    .company-diamond-icon {
-        width: 30px;
-        bottom: -20px;
-        left: 15px;
-    }
+  .company-section {
+    padding: 70px 16px;
+  }
+
+  .company-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .company-title {
+    font-size: 28px;
+  }
+
+  .company-description {
+    font-size: 14px;
+  }
+
+  .company-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .company-stats {
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .stat-item h3 {
+    font-size: 24px;
+  }
 }
 
-
-/* 📞 Extra Small Phones (≤480px) */
-
+/* Small Phones */
 @media (max-width: 480px) {
-    .company-section {
-        padding: 50px 15px;
-    }
-    .company-title {
-        font-size: 26px;
-    }
-    .company-description {
-        font-size: 14px;
-        margin: 15px 0 30px 0;
-    }
-    .company-btn {
-        font-size: 15px;
-        padding: 10px 18px;
-    }
-    .company-main-image {
-        border-radius: 16px;
-    }
-    .company-stats {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px;
-        /* ✅ Reduced padding for very small screens */
-        border-radius: 18px;
-    }
-    .stat-item h3 {
-        font-size: 20px;
-    }
-    .stat-item p {
-        font-size: 14px;
-    }
-    .company-diamond-icon {
-        width: 25px;
-        bottom: -15px;
-        left: 10px;
-    }
-}
+  .company-title {
+    font-size: 24px;
+  }
 
+  .company-hand-icon {
+    width: 48px;
+  }
 
-/* ✅ Keep Stats Box Below Image but in Row Layout */
-
-@media (max-width: 1024px) {
-    .company-stats {
-        position: static;
-        /* moves it below the image */
-        transform: none;
-        margin-top: 20px;
-        border-radius: 25px;
-        width: 100%;
-        max-width: 700px;
-        justify-content: space-around;
-        /* evenly space items in a row */
-        flex-direction: row;
-        /* ✅ stays horizontal */
-        flex-wrap: wrap;
-        /* wraps if screen is small */
-    }
-    .company-image-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .company-stats {
-        position: static;
-        transform: none;
-        margin-top: 20px;
-        border-radius: 20px;
-        width: 100%;
-        max-width: 550px;
-        justify-content: space-between;
-        flex-direction: row;
-        /* ✅ stays row layout */
-        flex-wrap: wrap;
-        /* ✅ if smaller screens, items wrap nicely */
-        padding: 15px 25px;
-    }
-    .stat-item {
-        flex: 1 1 30%;
-        /* ✅ makes each item share width equally */
-        text-align: center;
-    }
+  .company-stats {
+    padding: 18px;
+  }
 }

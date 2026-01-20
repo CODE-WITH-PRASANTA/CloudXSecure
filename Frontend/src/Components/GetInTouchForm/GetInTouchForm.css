@@ -1,103 +1,190 @@
+/* =============================
+   SECTION
+============================= */
 .getintouch-section {
-    padding: 80px 0;
-    background: #ffffff;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #f4f6ff 0%, #ffffff 100%);
 }
 
+/* =============================
+   CONTAINER
+============================= */
 .getintouch-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 70px;
+  align-items: flex-start;
 }
 
-
-/* LEFT */
-
+/* =============================
+   LEFT INFO
+============================= */
 .getintouch-info h2 {
-    font-size: 42px;
-    margin-bottom: 16px;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #0b1023;
 }
 
 .getintouch-info p {
-    color: #555;
-    margin-bottom: 40px;
-    max-width: 420px;
+  font-size: 16px;
+  color: #555;
+  max-width: 420px;
+  margin-bottom: 36px;
+  line-height: 1.7;
 }
 
+/* INFO BOX */
 .info-box {
-    display: flex;
-    gap: 18px;
-    padding: 20px;
-    background: #f8f9fc;
-    border-radius: 12px;
-    margin-bottom: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 22px;
+  background: #ffffff;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.35s ease;
+  cursor: pointer;
 }
 
+.info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(18, 58, 214, 0.15);
+}
+
+/* ICON */
 .icon {
-    width: 48px;
-    height: 48px;
-    background: #dfe6ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #e7ebff;
+  color: #123ad6;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .info-box h4 {
-    margin: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
 }
 
 .info-box p {
-    font-size: 14px;
-    margin: 4px 0 0;
+  font-size: 14px;
+  margin-top: 6px;
+  color: #666;
+  line-height: 1.5;
 }
 
-
-/* FORM */
-
+/* =============================
+   FORM CARD
+============================= */
 .getintouch-form {
-    background: #f9fafc;
-    padding: 40px;
-    border-radius: 14px;
+  background: #ffffff;
+  padding: 45px 40px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
 }
 
+/* =============================
+   FORM GRID
+============================= */
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
+/* INPUTS */
 .getintouch-form input,
 .getintouch-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    outline: none;
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e6f5;
+  font-size: 14px;
+  background: #f9fafc;
+  transition: all 0.3s ease;
+  outline: none;
+  margin-bottom: 18px;
 }
 
 .getintouch-form textarea {
-    height: 140px;
-    resize: none;
+  height: 140px;
+  resize: none;
 }
 
+/* FOCUS STATE */
+.getintouch-form input:focus,
+.getintouch-form textarea:focus {
+  border-color: #123ad6;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(18, 58, 214, 0.12);
+}
+
+/* =============================
+   BUTTON
+============================= */
 .getintouch-form button {
-    background: #123ad6;
-    color: #fff;
-    padding: 14px 28px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #123ad6, #2f5bff);
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
+.getintouch-form button span {
+  transition: transform 0.3s ease;
+}
 
-/* RESPONSIVE */
+.getintouch-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(18, 58, 214, 0.35);
+}
 
+.getintouch-form button:hover span {
+  transform: translateX(6px);
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
 @media (max-width: 992px) {
-    .getintouch-container {
-        grid-template-columns: 1fr;
-    }
+  .getintouch-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .getintouch-info h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .getintouch-form {
+    padding: 35px 24px;
+  }
+
+  .getintouch-info h2 {
+    font-size: 28px;
+  }
 }

@@ -12,6 +12,7 @@
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 /* ================= HEADER ================= */
@@ -26,12 +27,14 @@
   letter-spacing: 2px;
   display: inline-block;
   margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .expertTeamTitleUnique {
   font-size: 44px;
   font-weight: 800;
   color: var(--text-dark);
+  line-height: 1.2;
 }
 
 /* ================= GRID ================= */
@@ -46,18 +49,24 @@
 /* ================= CARD ================= */
 .expertTeamCardUnique {
   background: var(--blue-main);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 26px 18px 0;
   position: relative;
   overflow: hidden;
-  transition: background 0.4s ease, transform 0.4s ease;
-  animation: expertFloat 6s ease-in-out infinite;
+
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+
+  /* subtle idle animation */
+  animation: expertFloat 7s ease-in-out infinite;
 }
 
-/* hover effect */
+/* pause animation on hover */
 .expertTeamCardUnique:hover {
+  animation-play-state: paused;
   background: var(--blue-dark);
-  transform: translateY(-10px);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.25);
 }
 
 /* ================= IMAGE ================= */
@@ -101,7 +110,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-14px);
+    transform: translateY(-12px);
   }
   100% {
     transform: translateY(0);
@@ -109,6 +118,8 @@
 }
 
 /* ================= RESPONSIVE ================= */
+
+/* Tablet */
 @media (max-width: 1024px) {
   .expertTeamGridUnique {
     grid-template-columns: repeat(2, 1fr);
@@ -119,6 +130,7 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .expertTeamGridUnique {
     grid-template-columns: 1fr;
@@ -130,5 +142,17 @@
 
   .expertTeamTitleUnique {
     font-size: 30px;
+  }
+
+  .expertTeamImageWrapUnique {
+    height: 260px;
+  }
+}
+
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

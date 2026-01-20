@@ -2,7 +2,7 @@
 .aboutco {
   padding: 100px 6%;
   background: linear-gradient(180deg, #f4f6ff 0%, #f9faff 100%);
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -11,20 +11,19 @@
 /* ================= CONTAINER ================= */
 .aboutco__container {
   width: 100%;
-  max-width: 1380px; /* 🔥 increased for modern wide layout */
+  max-width: 1380px;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 100px;
   align-items: center;
 }
 
-/* ================= LEFT IMAGE COLLAGE ================= */
+/* ================= LEFT : IMAGES ================= */
 .aboutco__images {
   position: relative;
   min-height: 520px;
   opacity: 0;
   transform: translateX(-40px);
-  animation: aboutFadeLeft 1.1s ease forwards;
 }
 
 /* background shape */
@@ -32,24 +31,18 @@
   position: absolute;
   top: -80px;
   left: -120px;
-  width: 820px; /* 🔽 reduced */
+  width: 780px;
   opacity: 0.85;
   z-index: 0;
 }
 
-/* base image card */
+/* image cards */
 .aboutco__img {
   position: absolute;
   border-radius: 22px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 25px 60px rgba(18, 22, 66, 0.15);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-}
-
-.aboutco__img:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 35px 80px rgba(18, 22, 66, 0.25);
 }
 
 .aboutco__img img {
@@ -59,13 +52,14 @@
   display: block;
 }
 
-/* main vertical image */
+/* main image */
 .aboutco__img--large {
-  width: 330px; /* 🔽 reduced */
+  width: 330px;
   height: 440px;
   top: 0;
   left: 0;
   z-index: 2;
+  animation: floatSlow 6s ease-in-out infinite;
 }
 
 /* top-right image */
@@ -75,6 +69,7 @@
   top: -25px;
   right: 0;
   z-index: 3;
+  animation: floatSlow 7s ease-in-out infinite;
 }
 
 /* bottom-right image */
@@ -84,6 +79,7 @@
   bottom: -25px;
   right: 20px;
   z-index: 1;
+  animation: floatSlow 8s ease-in-out infinite;
 }
 
 /* experience badge */
@@ -100,9 +96,7 @@
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.15);
   z-index: 5;
   opacity: 0;
-  transform: translateY(20px);
-  animation: aboutFadeUp 0.9s ease forwards;
-  animation-delay: 0.8s;
+  transform: translateY(30px);
 }
 
 .aboutco__experience span {
@@ -123,12 +117,10 @@
   line-height: 1.45;
 }
 
-/* ================= RIGHT CONTENT ================= */
+/* ================= RIGHT : CONTENT ================= */
 .aboutco__content {
   opacity: 0;
   transform: translateX(40px);
-  animation: aboutFadeRight 1.1s ease forwards;
-  animation-delay: 0.2s;
 }
 
 .aboutco__badge {
@@ -160,7 +152,7 @@
   max-width: 560px;
 }
 
-/* ================= STATS ================= */
+/* stats */
 .aboutco__stats {
   display: flex;
   gap: 50px;
@@ -186,7 +178,7 @@
   font-size: 15px;
 }
 
-/* ================= QUOTE ================= */
+/* quote */
 .aboutco__quote {
   background: #ffffff;
   padding: 22px 26px;
@@ -198,7 +190,7 @@
   border-radius: 12px;
 }
 
-/* ================= BUTTON ================= */
+/* button */
 .aboutco__btn {
   display: inline-flex;
   align-items: center;
@@ -217,37 +209,7 @@
   box-shadow: 0 20px 45px rgba(79, 70, 229, 0.45);
 }
 
-/* ================= ANIMATIONS ================= */
-@keyframes aboutFadeLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes aboutFadeRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes aboutFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= INITIAL STATE ================= */
-.aboutco__images,
-.aboutco__content,
-.aboutco__experience {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-/* ================= ON SCROLL VISIBLE ================= */
+/* ================= SCROLL REVEAL ================= */
 .aboutco--visible .aboutco__images {
   animation: fadeLeft 1.1s ease forwards;
 }
@@ -260,19 +222,6 @@
 .aboutco--visible .aboutco__experience {
   animation: fadeUp 0.9s ease forwards;
   animation-delay: 0.8s;
-}
-
-/* ================= ALWAYS RUNNING SUBTLE ANIMATION ================= */
-.aboutco__img--large {
-  animation: floatSlow 6s ease-in-out infinite;
-}
-
-.aboutco__img--top {
-  animation: floatSlow 7s ease-in-out infinite;
-}
-
-.aboutco__img--bottom {
-  animation: floatSlow 8s ease-in-out infinite;
 }
 
 /* ================= KEYFRAMES ================= */
@@ -297,23 +246,15 @@
   }
 }
 
-/* very subtle floating (premium SaaS style) */
 @keyframes floatSlow {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
 }
 
+/* ================= RESPONSIVE ================= */
 
-/* ================= RESPONSIVE DESIGN ================= */
-
-/* ---------- Tablets (≤ 1024px) ---------- */
+/* ≤ 1024px */
 @media (max-width: 1024px) {
   .aboutco {
     padding: 80px 5%;
@@ -332,55 +273,42 @@
   }
 }
 
-/* ---------- Tablets & Large Mobiles (≤ 900px) ---------- */
+/* ≤ 900px */
 @media (max-width: 900px) {
   .aboutco__container {
     grid-template-columns: 1fr;
     gap: 70px;
   }
 
-  /* Content first */
   .aboutco__content {
     order: 1;
-    text-align: left;
   }
 
-  /* Images below */
   .aboutco__images {
     order: 2;
     min-height: 460px;
   }
 
   .aboutco__bg {
-    width: 680px;
+    width: 640px;
     left: -80px;
     top: -60px;
   }
 }
 
-/* ---------- Mobile (≤ 768px) ---------- */
+/* ≤ 768px */
 @media (max-width: 768px) {
   .aboutco {
-    margin-top: 50px;
     padding: 70px 20px;
   }
 
   .aboutco__title {
     font-size: 30px;
-    line-height: 1.3;
-  }
-
-  .aboutco__desc {
-    font-size: 15px;
   }
 
   .aboutco__stats {
     flex-direction: column;
     gap: 26px;
-  }
-
-  .aboutco__images {
-    min-height: 420px;
   }
 
   .aboutco__img--large {
@@ -401,52 +329,28 @@
   .aboutco__experience {
     bottom: -45px;
     left: 20px;
-    padding: 14px 18px;
-  }
-
-  .aboutco__experience p {
-    font-size: 13px;
   }
 }
-@media (max-width: 480px) {
-  .aboutco__badge {
-    font-size: 12px;
-    padding: 8px 18px;
-  }
 
+/* ≤ 480px */
+@media (max-width: 480px) {
   .aboutco__title {
     font-size: 26px;
-    line-height: 1.35;
   }
 
-  .aboutco__images {
-    min-height: 420px;
-  }
-
-  /* MAIN IMAGE */
   .aboutco__img--large {
     width: 220px;
     height: 300px;
-    left: 0;
-    top: 20px;
   }
 
-  /* TOP IMAGE */
   .aboutco__img--top {
     width: 170px;
     height: 130px;
-    top: 0;
-    right: 0;
-    display: block;
   }
 
-  /* BOTTOM IMAGE */
   .aboutco__img--bottom {
     width: 180px;
     height: 140px;
-    bottom: 10px;
-    right: 10px;
-    display: block;
   }
 
   .aboutco__btn {

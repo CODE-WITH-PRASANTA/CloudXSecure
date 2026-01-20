@@ -1,195 +1,196 @@
-/* ===== SECTION CONTAINER ===== */
-
-.expert-team-section {
-    width: 100%;
-    background: #fff;
-    padding: 60px 80px;
-    box-sizing: border-box;
-    overflow: hidden;
+/* ================= ROOT ================= */
+:root {
+  --primary: #293eff;
+  --dark: #0b0b0b;
+  --gray: #6b7280;
+  --bg-soft: #f6f8ff;
 }
 
+/* ================= SECTION ================= */
+.expert-team-section {
+  width: 100%;
+  padding: 100px 24px;
+  background: #ffffff;
+  overflow: hidden;
+}
 
-/* ===== HEADER ===== */
-
+/* ================= HEADER ================= */
 .team-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .team-header h2 {
-    font-size: 36px;
-    font-weight: 800;
-    color: #0a0a0a;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
 }
 
-
-/* ===== ARROW CONTROLS ===== */
-
+/* ================= ARROWS ================= */
 .arrow-controls {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  display: flex;
+  gap: 12px;
 }
 
 .arrow-btn {
-    background: #f6f8ff;
-    border: none;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    color: #293eff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-.arrow-btn:hover {
-    background: #293eff;
-    color: #fff;
-    transform: translateY(-3px);
-}
-
+.arrow-btn:hover,
 .arrow-btn.active {
-    background: #293eff;
-    color: #fff;
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
-
-/* ===== TEAM CONTAINER ===== */
-
+/* ================= SLIDER ================= */
 .team-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 32px;
-    padding-bottom: 10px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
 }
 
 .team-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-
-/* ===== CARD DESIGN ===== */
-
+/* ================= CARD ================= */
 .team-card {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    flex: 0 0 350px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 300px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .team-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.14);
 }
 
-
-/* ===== IMAGE SECTION ===== */
-
+/* ================= IMAGE ================= */
 .team-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 380px;
-    overflow: hidden;
+  position: relative;
+  height: 320px;
+  overflow: hidden;
 }
 
 .team-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .team-card:hover .team-image {
-    transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-
-/* ===== SHARE BUTTON ===== */
-
+/* ================= SHARE BUTTON ================= */
 .share-btn {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: #293eff;
-    color: #fff;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(41, 62, 255, 0.9);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .share-btn:hover {
-    transform: rotate(20deg);
-    background: #1f2fcc;
+  transform: rotate(18deg) scale(1.1);
+  background: #1f2fcc;
 }
 
-
-/* ===== TEXT ===== */
-
+/* ================= INFO ================= */
 .team-info {
-    padding: 16px 20px 24px;
-    text-align: left;
+  padding: 20px 22px 26px;
+  text-align: center;
 }
 
 .team-name {
-    font-size: 18px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
 }
 
 .team-role {
-    color: #777;
-    font-size: 15px;
-    margin: 0;
+  font-size: 14px;
+  color: var(--gray);
+  margin: 0;
 }
 
+/* ================= RESPONSIVE ================= */
 
-/* ===== RESPONSIVE ===== */
+/* Tablets */
+@media (max-width: 1024px) {
+  .expert-team-section {
+    padding: 80px 20px;
+  }
 
-@media (max-width: 992px) {
-    .expert-team-section {
-        padding: 40px 30px;
-    }
-    .team-header h2 {
-        font-size: 28px;
-    }
-    .team-card {
-        flex: 0 0 260px;
-    }
-    .team-image-wrapper {
-        height: 300px;
-    }
+  .team-header h2 {
+    font-size: 32px;
+  }
+
+  .team-card {
+    flex: 0 0 260px;
+  }
+
+  .team-image-wrapper {
+    height: 280px;
+  }
 }
 
-@media (max-width: 600px) {
-    .team-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    .arrow-controls {
-        justify-content: center;
-    }
-    .team-card {
-        flex: 0 0 240px;
-    }
+/* Mobile */
+@media (max-width: 640px) {
+  .team-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .team-header h2 {
+    font-size: 28px;
+  }
+
+  .arrow-controls {
+    justify-content: center;
+  }
+
+  .team-card {
+    flex: 0 0 240px;
+  }
+
+  .team-image-wrapper {
+    height: 260px;
+  }
 }

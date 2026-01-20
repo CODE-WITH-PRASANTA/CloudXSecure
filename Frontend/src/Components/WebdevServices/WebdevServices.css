@@ -3,7 +3,7 @@
 ========================== */
 .services3-section {
   position: relative;
-  padding: 110px 20px;
+  padding: clamp(70px, 8vw, 120px) 16px;
   background: #f8f9ff;
   overflow: hidden;
 }
@@ -11,9 +11,9 @@
 /* Background Shape */
 .services3-bg-shape {
   position: absolute;
-  right: 0;
-  top: 60px;
-  width: 420px;
+  right: -40px;
+  top: 80px;
+  width: clamp(260px, 35vw, 420px);
   z-index: 1;
 }
 
@@ -36,94 +36,62 @@
    HEADING
 ========================== */
 .services3-heading {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .services3-subtitle {
   color: #6c63ff;
   font-weight: 600;
   letter-spacing: 1px;
-  display: inline-block;
+  font-size: 14px;
 }
 
 .services3-title {
-  font-size: 42px;
+  font-size: clamp(26px, 4vw, 42px);
   font-weight: 800;
-  margin-top: 12px;
-  animation: floatTitle 4s ease-in-out infinite;
+  margin-top: 14px;
+  line-height: 1.25;
 }
 
 .services3-title .highlight {
   color: #6c63ff;
 }
 
-/* Floating title animation */
-@keyframes floatTitle {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-/* Text reveal animation */
-.reveal-text {
-  display: block;
-  overflow: hidden;
-  animation: revealText 1s ease forwards;
-}
-
-.reveal-text:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-@keyframes revealText {
-  from {
-    clip-path: inset(0 0 100% 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
 /* ==========================
    CAROUSEL
 ========================== */
 .services3-carousel {
-  margin-top: 60px;
   overflow: hidden;
   width: 100%;
 }
 
 .services3-track {
   display: flex;
+  gap: 24px;
+  transition: transform 0.8s ease-in-out;
   will-change: transform;
 }
 
-/* Slide animation class */
+/* Slide animation (DESKTOP = 3 cards) */
 .services3-track.slide {
-  transform: translateX(-33.333%);
-  transition: transform 0.8s ease-in-out;
+  transform: translateX(calc(-100% / 3));
 }
 
 /* ==========================
    CARD
 ========================== */
 .services3-card {
-  flex: 0 0 calc(100% / 3);
-  padding: 45px 30px;
-  margin: 0 15px;
+  flex: 0 0 calc((100% - 48px) / 3);
   background: #ffffff;
-  border-radius: 14px;
+  border-radius: 16px;
+  padding: 40px 28px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transition: all 0.4s ease;
-  box-sizing: border-box;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-align: center;
 }
 
 .services3-card:hover {
-  transform: translateY(-12px);
+  transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(108, 99, 255, 0.25);
 }
 
@@ -131,25 +99,24 @@
    ICON
 ========================== */
 .services3-icon {
-  width: 85px;
-  height: 80px;
+  width: 84px;
+  height: 84px;
   margin: auto;
   background-size: cover;
   background-position: center;
   display: grid;
   place-items: center;
-  margin-bottom: 25px;
-  transition: transform 0.5s ease;
+  margin-bottom: 22px;
+  transition: transform 0.4s ease;
 }
 
 .services3-icon svg {
-  font-size: 34px;
+  font-size: 32px;
   color: #ffffff;
 }
 
-/* Icon hover animation */
 .services3-card:hover .services3-icon {
-  transform: rotate(12deg) scale(1.1);
+  transform: rotate(10deg) scale(1.1);
 }
 
 /* ==========================
@@ -157,15 +124,16 @@
 ========================== */
 .services3-card h3 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: #0b0b23;
 }
 
 .services3-card p {
   font-size: 15px;
-  color: #666666;
+  color: #666;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 /* ==========================
@@ -180,6 +148,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-size: 15px;
 }
 
 .services3-btn span {
@@ -191,31 +160,28 @@
 }
 
 /* ==========================
-   RESPONSIVE
+   TABLET (2 CARDS)
 ========================== */
-@media (max-width: 1200px) {
-  .services3-bg-shape {
-    width: 360px;
-  }
-}
-
 @media (max-width: 992px) {
-  .services3-title {
-    font-size: 34px;
-  }
-
   .services3-track.slide {
     transform: translateX(-50%);
   }
 
   .services3-card {
-    flex: 0 0 50%;
+    flex: 0 0 calc((100% - 24px) / 2);
   }
 }
 
+/* ==========================
+   MOBILE (1 CARD)
+========================== */
 @media (max-width: 576px) {
-  .services3-title {
-    font-size: 28px;
+  .services3-heading {
+    margin-bottom: 36px;
+  }
+
+  .services3-track {
+    gap: 16px;
   }
 
   .services3-track.slide {
@@ -224,6 +190,6 @@
 
   .services3-card {
     flex: 0 0 100%;
-    margin: 0;
+    padding: 34px 22px;
   }
 }
