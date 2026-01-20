@@ -3,8 +3,8 @@ import "./OurExpertTeam.css";
 
 // Local image imports
 import alex from "../../assets/female.webp";
-import shelia from "../../assets/female.webp";
-import devin from "../../assets/female.webp";
+import shelia from "../../assets/dr-1.webp";
+import devin from "../../assets/dr-2.webp";
 
 /* Static Team Data */
 const TEAM = [

@@ -225,7 +225,7 @@
 }
 
 .biz-choose-btn:hover {
-  background: linear-gradient(90deg, #6d28d9, #7c3aed);
+  background:  #3f51ff; 
   color: #ffffff;
   border-color: transparent;
 }
