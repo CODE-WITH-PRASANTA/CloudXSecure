@@ -30,27 +30,25 @@ const CyberSecuritySection = () => {
         <div className="cyber-content">
           <img src={heroImg} alt="Cyber Security" className="hero-image" />
 
-          <h2>Cyber Security Solution</h2>
+          <h2>Cloud, Security & Digital Solutions You Can Trust</h2>
 
           <p className="desc">
-            In today’s rapidly evolving digital landscape, the security of your
-            business data is more critical than ever. Our Cyber Security
-            Solutions offer a multi-layered approach to protect your business
-            from cyber threats.
+            In today’s digital-first world, businesses need secure, scalable, and high-performance technology solutions to stay competitive. CloudXSecure delivers end-to-end cloud services, cybersecurity solutions, web design, and app development to help organizations grow securely and efficiently.
+
+We combine industry best practices, modern cloud architecture, and proactive security strategies to protect your digital assets while enabling seamless business operations.
           </p>
 
           <ul className="features">
-            <li>Incident Response & Recovery</li>
-            <li>Compliance Risk Management</li>
-            <li>Secure Access Controls</li>
-            <li>Vulnerability Assessments</li>
+            <li>Cloud Security & Compliance</li>
+            <li>Managed Cloud Services</li>
+            <li>Mobile & Web App Development</li>
+            <li>Cloud Migration & Hosting</li>
           </ul>
 
           <div className="highlight-box">
-            <h3>Safeguard Your Business With Advanced Cybersecurity</h3>
+            <h3>Safeguard Your Business with CloudXSecure</h3>
             <p>
-              Our comprehensive cybersecurity services are designed to defend
-              against evolving threats with precision and reliability.
+              CloudXSecure delivers enterprise-grade cybersecurity and cloud solutions designed to protect your business from cyber threats while supporting digital growth. From cloud consulting and DevOps automation to web and app design, we provide secure, scalable, and future-ready technology solutions under one roof.
             </p>
           </div>
 

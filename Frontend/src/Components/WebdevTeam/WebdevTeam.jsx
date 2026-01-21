@@ -25,7 +25,7 @@ const teamData = [
   { img: img6, name: "Anila Koper", role: "Software Engineer" },
 ];
 
-// duplicate for seamless loop
+// duplicate for infinite loop
 const loopData = [...teamData, ...teamData];
 
 const TeamCarousel = () => {
@@ -41,13 +41,22 @@ const TeamCarousel = () => {
   }, []);
 
   useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const card = track.children[0];
+    const cardWidth = card.offsetWidth;
+
+    track.style.transition = "transform 0.6s ease-in-out";
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+    // seamless reset
     if (index === teamData.length) {
       setTimeout(() => {
-        trackRef.current.style.transition = "none";
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
         setIndex(0);
       }, 600);
-    } else {
-      trackRef.current.style.transition = "transform 0.6s ease-in-out";
     }
   }, [index]);
 
@@ -55,13 +64,7 @@ const TeamCarousel = () => {
     <section className="teamx-section">
       <div className="teamx-container">
         <div className="teamx-viewport">
-          <div
-            className="teamx-track"
-            ref={trackRef}
-            style={{
-              transform: `translateX(-${index * 25}%)`,
-            }}
-          >
+          <div className="teamx-track" ref={trackRef}>
             {loopData.map((item, i) => (
               <div className="teamx-card" key={i}>
                 <div className="teamx-img-wrapper">

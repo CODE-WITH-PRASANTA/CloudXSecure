@@ -73,7 +73,7 @@ const AppDevlopmentOurService = () => {
             Tailored <span>For Your Success.</span>
           </h2>
           <p className="app-devlopment-our-service-subtext">
-            Scalable, secure, and innovative IT services designed for growth.
+           Scalable, secure, and business-driven IT solutions designed to support growth, performance, and long-term stability.
           </p>
         </div>
 

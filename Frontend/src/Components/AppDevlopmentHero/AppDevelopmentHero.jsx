@@ -24,15 +24,13 @@ const AppDevelopmentHero = () => {
             BEST IT SOLUTION SERVICE
           </span>
 
-          <h1 className="app-development-title">
-            Modern Your Business <br />
-            With <span>IT Service.</span>
-          </h1>
+          <h2 className="app-development-title">
+            Modernize Your Business <br />
+            With <span>Secure & Scalable IT Solutions.</span>
+          </h2>
 
           <p className="app-development-description">
-            IT solutions refer to a broad range of services and technologies
-            designed to address specific business needs, streamline operations,
-            and drive growth.
+            CloudXSecure delivers reliable, secure, and scalable IT solutions designed to help businesses grow faster, operate smarter, and stay protected in a digital-first world. 
           </p>
 
           <div className="app-development-buttons">

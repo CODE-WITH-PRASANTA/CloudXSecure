@@ -20,7 +20,12 @@ import WebdevlopementService from "./Pages/WebdevlopementService/WebdevlopementS
 import CloudSecurity from "./Pages/CloudSecurity/CloudSecurity";
 import CloudHosting from "./Pages/CloudHosting/CloudHosting";
 import DevOpsAutomation from "./Pages/DevOpsAutomation/DevOpsAutomation"
+<<<<<<< HEAD
 import Monitoring from "./Pages/monitoring/Monitoring";
+=======
+import BDrecovery from "./Pages/BDrecovery/BDrecovery";
+import PlanAndPricing from "./Pages/PlanAndPricing/PlanAndPricing";
+>>>>>>> 509c734b4772b20f6ced783e0831f2ef7de59164
 
 function App() {
   return (
@@ -46,7 +51,12 @@ function App() {
         <Route path="/services/security" element={<CloudSecurity />} />
         <Route path="/services/hosting" element={<CloudHosting />} />
         <Route path="/services/devops" element={<DevOpsAutomation/>}/>
+<<<<<<< HEAD
         <Route path="/services/monitoring" element={<Monitoring/>}/>
+=======
+        <Route path="/services/backup" element={<BDrecovery/>}/>
+        <Route path="/plan" element={<PlanAndPricing />} />
+>>>>>>> 509c734b4772b20f6ced783e0831f2ef7de59164
       </Routes>
       <Footer/>
     </>

@@ -1,0 +1,260 @@
+/* =========================
+   SECTION
+========================= */
+.biz-pricing-section {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.biz-pricing-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* =========================
+   HEADING
+========================= */
+.biz-pricing-heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+}
+
+.biz-pricing-heading span {
+  color: #2563eb;
+}
+
+.biz-pricing-subtext {
+  margin: 15px 0 60px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+.biz-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+.biz-pricing-card {
+  position: relative;
+  padding: 70px 30px 40px; /* 🔥 extra top space for badge */
+  border-radius: 18px;
+
+  border: 0.5px solid rgba(37, 99, 235, 0.25);
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* =========================
+   CARD CONNECTOR LINE
+========================= */
+.biz-pricing-card::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 0.5px;
+  background: rgba(37, 99, 235, 0.25);
+}
+
+/* REMOVE connector from last row */
+.biz-pricing-card:last-child::after {
+  display: none;
+}
+
+
+/* =========================
+   TOP GRID LINES (40%)
+========================= */
+.biz-pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 40%;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(37, 99, 235, 0.08) 0.5px,
+      transparent 0.5px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(37, 99, 235, 0.08) 0.5px,
+      transparent 0.5px
+    );
+
+  /* GRID SIZE + EXTRA ~3px GAP */
+  background-size: 42px 45px;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CONTENT ABOVE GRID */
+.biz-pricing-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   HOVER & ACTIVE
+========================= */
+.biz-pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(37, 99, 235, 0.12);
+}
+
+.biz-pricing-card.active {
+  border: 1px solid #6d28d9;
+}
+
+/* =========================
+   PLAN BADGE
+========================= */
+.biz-plan-badge {
+  position: absolute;
+  top: 12px; /* 🔥 SAME FOR ALL CARDS */
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.biz-plan-badge.basic {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.biz-plan-badge.standard {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.biz-plan-badge.business {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* =========================
+   PRICE
+========================= */
+.biz-price-box h3 {
+  font-size: 42px;
+  margin: 15px 0;
+  color: #111;
+}
+
+.biz-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   CREDITS PILL
+========================= */
+.biz-credit-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0d0e10;
+  background: transparent;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   FEATURES
+========================= */
+.biz-feature-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 45px;
+}
+
+.biz-feature-list li {
+  display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 22px;
+}
+
+.biz-check-icon {
+  color: #2563eb;
+  font-size: 14px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.biz-choose-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  background: #ffffff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.biz-choose-btn:hover {
+  background:  #3f51ff; 
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .biz-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .biz-pricing-card::before {
+    height: 38%;
+    background-size: 44px 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .biz-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-pricing-heading {
+    font-size: 32px;
+  }
+
+  .biz-pricing-card::before {
+    height: 35%;
+    background-size: 48px 50px;
+  }
+}

@@ -42,10 +42,7 @@ const AboutCompany = () => {
           </h2>
 
           <p className="ac-desc">
-            There are many variations of passages of Lorem Ipsum available,
-            but the majority have suffered alteration in some form, by
-            injected humour, or randomised words which don't look even
-            slightly believable.
+            We are a technology-driven organization focused on continuous learning, practical innovation, and long-term value creation.
           </p>
 
           {/* feature icons */}

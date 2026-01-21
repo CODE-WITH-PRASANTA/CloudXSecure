@@ -6,19 +6,19 @@ const services = [
   {
     id: "01",
     title: "Cyber Security Solution",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    desc: "CloudXSecure delivers enterprise-grade cybersecurity solutions to protect your networks, applications, and data from modern cyber threats. Our security-first approach includes threat detection, access control, compliance management, and incident response to ensure business continuity and digital trust.",
     icon: <FiShield />
   },
   {
     id: "02",
     title: "Scalable Cloud Solutions",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    desc: "Our scalable cloud solutions enable businesses to grow faster with secure, high-performance cloud infrastructure. CloudXSecure designs, deploys, and manages flexible cloud environments that improve efficiency, reduce costs, and support seamless scalability across workloads.",
     icon: <FiCloud />
   },
   {
     id: "03",
     title: "Data Protection Services",
-    desc: "Our advanced cybersecurity solution designed to protect against ever-an evolving threats, approach ensures.",
+    desc: "CloudXSecure provides advanced data protection services to safeguard critical business information across cloud and on-premise systems. We implement secure backups, encryption, disaster recovery, and monitoring solutions to prevent data loss and ensure compliance.",
     icon: <FiDatabase />
   }
 ];
