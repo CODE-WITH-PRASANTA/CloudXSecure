@@ -1,0 +1,115 @@
+/* ================= RESET SAFETY ================= */
+
+.marketing-logo-marquee,
+.marketing-logo-marquee * {
+    box-sizing: border-box;
+}
+
+
+/* ================= SECTION ================= */
+
+.marketing-logo-marquee {
+    width: 100%;
+    background: #ffffff;
+    margin: 0;
+    padding: 24px 0;
+    border: none;
+    line-height: 0;
+    overflow: hidden;
+}
+
+
+/* ================= TRACK ================= */
+
+.marketing-logo-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: marquee 18s linear infinite;
+}
+
+
+/* Pause on hover */
+
+.marketing-logo-marquee:hover .marketing-logo-track {
+    animation-play-state: paused;
+}
+
+
+/* ================= LOGO ITEM ================= */
+
+.marketing-logo-item {
+    flex: 0 0 auto;
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* FULL COLOR LOGOS */
+
+.marketing-logo-item img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    line-height: normal;
+    filter: none;
+    opacity: 1;
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover micro-interaction */
+
+.marketing-logo-item img:hover {
+    transform: scale(1.06);
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+    .marketing-logo-item {
+        padding: 0 32px;
+    }
+    .marketing-logo-item img {
+        height: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .marketing-logo-marquee {
+        padding: 20px 0;
+    }
+    .marketing-logo-item {
+        padding: 0 26px;
+    }
+    .marketing-logo-item img {
+        height: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+    .marketing-logo-marquee {
+        padding: 16px 0;
+    }
+    .marketing-logo-item {
+        padding: 0 20px;
+    }
+    .marketing-logo-item img {
+        height: 30px;
+    }
+}

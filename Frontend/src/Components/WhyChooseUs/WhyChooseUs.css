@@ -1,0 +1,238 @@
+/* ================= ROOT ================= */
+
+.why-page {
+    width: 100%;
+    background: #041a44;
+    padding: 80px 40px 140px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ================= MAIN GRID ================= */
+
+.why-container {
+    max-width: 100%;
+    margin: auto;
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* ================= IMAGE ================= */
+
+.why-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-blob {
+    width: 520px;
+    padding: 0;
+    position: relative;
+}
+
+
+/* ✨ Animated background glow */
+
+.image-blob::before {
+    content: "";
+    position: absolute;
+    inset: -40px;
+    background: linear-gradient(135deg, #0b5cff, #1c64ff);
+    border-radius: 32px;
+    opacity: 0.3;
+    filter: blur(30px);
+    z-index: 1;
+    animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.25;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 0.45;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.25;
+    }
+}
+
+.image-blob img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================= CONTENT ================= */
+
+.why-content {
+    color: #ffffff;
+}
+
+.why-badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.why-content h2 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.why-content p {
+    color: #c7d3ff;
+    max-width: 520px;
+    margin-bottom: 40px;
+}
+
+
+/* ================= STATS ================= */
+
+.why-stats {
+    display: flex;
+    gap: 40px;
+}
+
+.stat-circle {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.stat-circle:hover {
+    transform: scale(1.08);
+}
+
+.stat-circle svg {
+    width: 120px;
+    height: 120px;
+    transform: rotate(-90deg);
+}
+
+.stat-circle circle {
+    fill: none;
+    stroke-width: 10;
+    stroke: rgba(255, 255, 255, 0.2);
+}
+
+.stat-circle circle:last-child {
+    stroke: #0b5cff;
+    stroke-dasharray: 339;
+    stroke-dashoffset: 339;
+    animation: progressFill 2s ease forwards;
+}
+
+@keyframes progressFill {
+    to {
+        stroke-dashoffset: 85;
+    }
+}
+
+.stat-circle span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+/* ================= CONTACT BAR ================= */
+
+.contact-bar {
+    max-width: 1400px;
+    margin: 180px auto 0;
+    background: linear-gradient(135deg, #1c64ff, #0b5cff);
+    border-radius: 20px;
+    padding: 40px 50px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+}
+
+.phone-icon {
+    background: #fff;
+    color: #0b5cff;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.contact-left span {
+    font-size: 14px;
+}
+
+.contact-left strong {
+    display: block;
+    font-size: 18px;
+}
+
+.contact-bar h3 {
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.contact-btn {
+    background: #ffffff;
+    color: #0b5cff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+    .why-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 30px;
+    }
+    .why-stats {
+        justify-content: center;
+    }
+    .contact-bar {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
