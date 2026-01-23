@@ -9,7 +9,7 @@
 }
 
 /* Floating bulb */
-.contact-floating-bulb {
+.consult-contact-floating-bulb {
   position: absolute;
   top: 180px;
   left: 45%;
@@ -35,7 +35,7 @@
 }
 
 /* Layout */
-.contact-container {
+.consult-contact-container {
   max-width: 1200px;
   margin: auto;
   display: grid;
@@ -47,7 +47,7 @@
 }
 
 /* Left content */
-.contact-left .contact-subtitle {
+.consult-contact-left .consult-contact-subtitle {
   color: #0d5efd;
   font-weight: 600;
   letter-spacing: 1px;
@@ -56,7 +56,7 @@
   position: relative;
 }
 
-.contact-left .contact-subtitle::before {
+.consult-contact-left .consult-contact-subtitle::before {
   content: "";
   width: 30px;
   height: 3px;
@@ -65,7 +65,7 @@
   top: 50%;
 }
 
-.contact-left h2 {
+.consult-contact-left h2 {
   font-size: 42px;
   font-weight: 700;
   line-height: 1.2;
@@ -73,14 +73,14 @@
   margin-bottom: 20px;
 }
 
-.contact-left p {
+.consult-contact-left p {
   font-size: 16px;
   color: #5a6a85;
   max-width: 480px;
 }
 
 /* Form */
-.contact-form {
+.consult-contact-form {
   background: #ffffff;
   padding: 40px;
   border-radius: 14px;
@@ -93,8 +93,8 @@
   margin-bottom: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
+.consult-contact-form input,
+.consult-contact-form textarea {
   width: 100%;
   padding: 14px 16px;
   border: 1px solid #e2e8f0;
@@ -103,19 +103,19 @@
   outline: none;
 }
 
-.contact-form textarea {
+.consult-contact-form textarea {
   min-height: 120px;
   resize: none;
   margin-bottom: 25px;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.consult-contact-form input:focus,
+.consult-contact-form textarea:focus {
   border-color: #0d5efd;
 }
 
 /* Button */
-.contact-form button {
+.consult-contact-form button {
   width: 100%;
   padding: 16px;
   border: none;
@@ -128,27 +128,27 @@
   transition: 0.3s;
 }
 
-.contact-form button:hover {
+.consult-contact-form button:hover {
   background: #003cbf;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .contact-container {
+  .consult-contact-container {
     grid-template-columns: 1fr;
   }
 
-  .contact-floating-bulb {
+  .consult-contact-floating-bulb {
     left: 60%;
   }
 }
 
 @media (max-width: 576px) {
-  .contact-left h2 {
+  .consult-contact-left h2 {
     font-size: 30px;
   }
 
-  .contact-form {
+  .consult-contact-form {
     padding: 25px;
   }
 
@@ -156,7 +156,7 @@
     flex-direction: column;
   }
 
-  .contact-floating-bulb {
+  .consult-contact-floating-bulb {
     display: none;
   }
 }

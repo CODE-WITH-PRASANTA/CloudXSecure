@@ -9,12 +9,12 @@ const ContactSection = () => {
       style={{ backgroundImage: `url(${bgImg})` }}
     >
       {/* Floating bulb */}
-      <div className="contact-floating-bulb"></div>
+      <div className="consult-contact-floating-bulb"></div>
 
-      <div className="contact-container">
+      <div className="consult-contact-container">
         {/* Left Content */}
-        <div className="contact-left">
-          <span className="contact-subtitle">GET IN TOUCH</span>
+        <div className="consult-contact-left">
+          <span className="consult-contact-subtitle">GET IN TOUCH</span>
           <h2>
             We Are Connected To Help <br /> Your Business!
           </h2>
@@ -25,8 +25,8 @@ const ContactSection = () => {
         </div>
 
         {/* Right Form */}
-        <div className="contact-right">
-          <form className="contact-form">
+        <div className="consult-contact-right">
+          <form className="consult-contact-form">
             <div className="form-row">
               <input type="text" placeholder="Name *" />
               <input type="email" placeholder="E-mail *" />
