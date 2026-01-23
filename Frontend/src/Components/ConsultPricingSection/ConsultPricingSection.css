@@ -1,0 +1,201 @@
+/* SECTION */
+.gerowPricing__section {
+  padding: 120px 20px;
+  background: radial-gradient(circle at top, #f6f7fb, #ffffff);
+  text-align: center;
+}
+
+/* HEADER */
+.gerowPricing__header {
+  max-width: 760px;
+  margin: auto;
+}
+
+.gerowPricing__subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #0a4cff;
+}
+
+.gerowPricing__title {
+  font-size: 44px;
+  color: #0b1c3f;
+  margin: 14px 0;
+}
+
+.gerowPricing__desc {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* TOGGLE */
+.gerowPricing__toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.gerowPricing__toggleText {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.gerowPricing__toggleText.active {
+  color: #0a4cff;
+  font-weight: 600;
+}
+
+.gerowPricing__switch {
+  width: 56px;
+  height: 28px;
+  background: #0a4cff;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.gerowPricing__switch span {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: 0.3s ease;
+}
+
+.gerowPricing__switch.yearly span {
+  left: 30px;
+}
+
+/* GRID */
+.gerowPricing__grid {
+  max-width: 1200px;
+  margin: 90px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.gerowPricing__card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+/* NO OFFSET – ALL CARDS SAME LINE */
+.gerowPricing__card,
+.gerowPricing__popular {
+  transform: none !important;
+}
+
+/* PLAN */
+.gerowPricing__planTitle {
+  font-size: 22px;
+  color: #0b1c3f;
+}
+
+.gerowPricing__planDesc {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 14px 0 24px;
+}
+
+/* PRICE */
+.gerowPricing__pricePill {
+  background: #f3f6ff;
+  padding: 16px 32px;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 30px;
+}
+
+.gerowPricing__pricePill strong {
+  font-size: 34px;
+  color: #0b1c3f;
+}
+
+.gerowPricing__pricePill span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* LIST */
+.gerowPricing__list {
+  list-style: none;
+  padding: 0;
+  text-align:center;
+  margin-bottom: 32px;
+}
+
+.gerowPricing__list li {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.gerowPricing__list li::before {
+  content: "✓";
+  color: #22c55e;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* BUTTON */
+.gerowPricing__btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 40px;
+  border: none;
+  background: #eaf0ff;
+  color: #0a4cff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT (REQUESTED) */
+.gerowPricing__btn:hover {
+  background: #0a4cff;
+  color: #ffffff;
+}
+
+/* POPULAR BADGE */
+.gerowPricing__badge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff3b3b;
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .gerowPricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .gerowPricing__title {
+    font-size: 32px;
+  }
+
+  .gerowPricing__grid {
+    grid-template-columns: 1fr;
+  }
+}

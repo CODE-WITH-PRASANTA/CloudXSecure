@@ -1,0 +1,170 @@
+/* SECTION */
+.gerow-blog-section {
+  position: relative;
+  padding: 100px 20px;
+  background-color: #f6f8fc;
+  overflow: hidden;
+}
+
+/* BACKGROUND IMAGE OVERLAY */
+.gerow-blog-bg-overlay {
+   position: absolute;
+  inset: 0;
+  background-image: url("/images/const-blog_bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+/* CONTAINER */
+.gerow-blog-container {
+ position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+
+}
+
+/* HEADER */
+.gerow-blog-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gerow-blog-subtitle {
+  color: #0d5ef4;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.gerow-blog-header h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.gerow-blog-header p {
+  max-width: 650px;
+  margin: auto;
+  color: #6b7280;
+}
+
+/* GRID */
+.gerow-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.gerow-blog-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* IMAGE */
+.gerow-blog-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.gerow-blog-img-wrap img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* IMAGE ZOOM OUT ON HOVER */
+.gerow-blog-card:hover .gerow-blog-img-wrap img {
+  transform: scale(0.92);
+}
+
+/* DATE BADGE */
+.gerow-blog-date {
+  position: absolute;
+  top: -2px;
+  left: 20px;
+  background: #0d5ef4;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.gerow-blog-date span {
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+}
+
+.gerow-blog-date small {
+  font-size: 13px;
+}
+
+/* CONTENT */
+.gerow-blog-content {
+  padding: 25px;
+}
+
+.gerow-blog-category {
+  color: #0d5ef4;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gerow-blog-content h3 {
+  font-size: 20px;
+  margin: 12px 0;
+  transition: color 0.3s ease;
+}
+
+/* HEADING COLOR CHANGE */
+.gerow-blog-card:hover h3 {
+  color: #0d5ef4;
+}
+
+.gerow-blog-content p {
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* READ MORE */
+.gerow-blog-readmore {
+  font-weight: 600;
+  color: #111827;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+/* READ MORE COLOR CHANGE */
+.gerow-blog-card:hover .gerow-blog-readmore {
+  color: #0d5ef4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .gerow-blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gerow-blog-header h2 {
+    font-size: 28px;
+  }
+
+  .gerow-blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

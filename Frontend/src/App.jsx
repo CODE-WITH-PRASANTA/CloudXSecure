@@ -21,6 +21,7 @@ import CloudSecurity from "./Pages/CloudSecurity/CloudSecurity";
 import CloudHosting from "./Pages/CloudHosting/CloudHosting";
 import DevOpsAutomation from "./Pages/DevOpsAutomation/DevOpsAutomation"
 import PlanAndPricing from "./Pages/PlanAndPricing/PlanAndPricing";
+import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting"
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
         <Route path="/services/hosting" element={<CloudHosting />} />
         <Route path="/services/devops" element={<DevOpsAutomation/>}/>
         <Route path="/plan" element={<PlanAndPricing />} />
+        <Route path="/services/consulting"  element={<CloudConsulting/>}/>
+        
       </Routes>
       <Footer/>
     </>
