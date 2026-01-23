@@ -1,0 +1,193 @@
+.pricing-section1 {
+    width: 100%;
+    padding: 80px 0;
+    background: #f8fafd;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+
+/* ------------------------ HEADER --------------------------- */
+
+.pricing-header1 {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+}
+
+.pricing-badge1 {
+    background: #e8efff;
+    color: #2f5eff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-title1 {
+    margin-top: 18px;
+    font-size: 42px;
+    color: #001a49;
+    font-weight: 800;
+}
+
+.pricing-subtitle1 {
+    margin-top: 14px;
+    color: #4b587c;
+    font-size: 18px;
+}
+
+
+/* ------------------------ TOGGLE SWITCH --------------------------- */
+
+.pricing-toggle1 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.pricing-toggle1 span {
+    color: #7c8db5;
+    transition: 0.3s;
+}
+
+.pricing-toggle1 span.active {
+    color: #1a4cff;
+}
+
+
+/* Switch design */
+
+.switch1 {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch1 input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider1 {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #d1d9ff;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider1:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider1 {
+    background-color: #1a4cff;
+}
+
+input:checked+.slider1:before {
+    transform: translateX(30px);
+}
+
+
+/* ------------------------ PRICING CARDS --------------------------- */
+
+.pricing-cards1 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.pricing-card1 {
+    width: 350px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.pricing-card1:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-icon1 {
+    font-size: 42px;
+    color: #1a4cff;
+    margin-bottom: 20px;
+}
+
+.plan-title1 {
+    font-size: 22px;
+    color: #001a49;
+    margin-bottom: 10px;
+}
+
+.plan-price1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #001a49;
+}
+
+.plan-price1 span {
+    font-size: 16px;
+    margin-left: 6px;
+    color: #7c8db5;
+}
+
+.plan-features1 {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.plan-features1 li {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #4b587c;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features1 li span {
+    color: #1a4cff;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.plan-btn1 {
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 40px;
+    border: 2px solid #1a4cff;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a4cff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plan-btn1:hover {
+    background: #1a4cff;
+    color: #ffffff;
+}

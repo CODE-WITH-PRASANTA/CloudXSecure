@@ -141,19 +141,112 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 992px) {
-  .biz-stats-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.biz-testimonial-slider {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
 
-  .biz-testimonial-slider {
-    grid-template-columns: repeat(2, 1fr);
+.biz-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.biz-testimonial-card {
+  min-width: 33.333%;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+.biz-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.biz-testimonial-slider {
+  display: flex;
+  transform: translateX(0);
+}
+
+.biz-testimonial-slider.animate {
+  transition: transform 0.9s ease-in-out; /* slow & premium */
+}
+
+.biz-testimonial-card {
+  min-width: 33.333%;
+  padding: 35px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 14px;
+}
+
+/* ===============================
+   SLIDER WRAPPER
+================================ */
+.biz-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===============================
+   MARQUEE SLIDER
+================================ */
+.biz-testimonial-slider {
+  display: flex;
+  width: max-content;
+}
+
+.biz-testimonial-slider.marquee {
+  animation: biz-scroll-left 30s linear infinite;
+}
+
+/* ===============================
+   CARD
+================================ */
+.biz-testimonial-card {
+  min-width: 360px;
+  max-width: 360px;
+  margin-right: 25px;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 14px;
+  text-align: left;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.biz-testimonial-card:hover {
+  border-color: #1d4ed8;
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes biz-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  .biz-testimonial-card {
+    min-width: 300px;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 600px) {
-  .biz-stats-wrapper,
-  .biz-testimonial-slider {
-    grid-template-columns: 1fr;
+  .biz-testimonial-card {
+    min-width: 260px;
+    max-width: 260px;
   }
 }
+
+

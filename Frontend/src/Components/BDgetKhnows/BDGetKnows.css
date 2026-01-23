@@ -1,0 +1,287 @@
+/* ================= SECTION ================= */
+.af-section {
+  position: relative;
+  padding: 110px 20px 90px;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ================= BACKGROUND STRUCTURE ================= */
+.af-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.af-bg-circle {
+  position: absolute;
+  width: 120px;
+  top: 90px;
+  left: 80px;
+  opacity: 0.12;
+  animation: driftY 22s ease-in-out infinite;
+}
+
+.af-bg-grid {
+  position: absolute;
+  width: 260px;
+  right: -80px;
+  top: 140px;
+  opacity: 0.1;
+  animation: slowRotate 40s linear infinite;
+}
+
+/* ================= CONTAINER ================= */
+.af-container {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= LEFT ================= */
+.af-left {
+  position: relative;
+}
+
+.af-main-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 36px 0 0 36px;
+}
+
+.af-experience {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #0a55ff;
+  color: #ffffff;
+  padding: 26px 22px;
+  width: 210px;
+}
+
+.af-experience strong {
+  font-size: 44px;
+  display: block;
+}
+
+.af-experience span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.af-sub-img {
+  position: absolute;
+  right: -40px;
+  bottom: -60px;
+  width: 260px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= RIGHT ================= */
+.af-right h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0b1b44;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.af-badge {
+  display: inline-block;
+  background: #eef3ff;
+  color: #0a55ff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.af-right p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5b6785;
+  margin-bottom: 22px;
+}
+
+/* LIST */
+.af-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.af-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #0b1b44;
+  margin-bottom: 12px;
+}
+
+.af-list svg {
+  background: #0a55ff;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 12px;
+}
+
+/* ================= BRAND LOGOS ================= */
+.af-brands {
+  max-width: 1200px;
+  margin: 90px auto 0;
+  padding: 0 20px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.af-brands.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.af-brand-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+  animation: brandScroll 28s linear infinite;
+}
+
+.af-brands:hover .af-brand-track {
+  animation-play-state: paused;
+}
+
+.af-brand-track img {
+  max-width: 140px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+.af-brand-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes brandScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes driftY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .af-container {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .af-main-img {
+    height: 460px;
+    border-radius: 28px;
+  }
+
+  .af-sub-img {
+    right: 20px;
+    bottom: -40px;
+  }
+
+  .af-right h2 {
+    font-size: 34px;
+  }
+
+  .af-bg-grid {
+    display: none;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .af-section {
+    padding: 80px 16px 70px;
+  }
+
+  .af-main-img {
+    height: 360px;
+    border-radius: 22px;
+  }
+
+  .af-experience {
+    width: 170px;
+    padding: 20px 18px;
+  }
+
+  .af-experience strong {
+    font-size: 32px;
+  }
+
+  .af-sub-img {
+    display: none;
+  }
+
+  .af-right h2 {
+    font-size: 28px;
+  }
+
+  .af-right p {
+    font-size: 14.5px;
+  }
+
+  .af-list li {
+    font-size: 14px;
+  }
+
+  .af-brand-track {
+    gap: 36px;
+    animation-duration: 22s;
+  }
+
+  .af-brand-track img {
+    max-width: 100px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .af-main-img {
+    height: 300px;
+  }
+
+  .af-brand-track {
+    gap: 28px;
+    animation-duration: 18s;
+  }
+
+  .af-brand-track img {
+    max-width: 90px;
+  }
+}

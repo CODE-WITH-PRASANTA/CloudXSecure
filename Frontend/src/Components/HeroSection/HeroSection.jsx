@@ -3,16 +3,16 @@ import "./HeroSection.css";
 import heroImg from "../../assets/hero-img6.png";
 
 const HeroSection = () => {
-  const particlesRef = useRef(null);
+  const cxParticlesRef = useRef(null);
 
   useEffect(() => {
     const createParticles = () => {
-      if (!particlesRef.current) return;
-      particlesRef.current.innerHTML = "";
+      if (!cxParticlesRef.current) return;
+      cxParticlesRef.current.innerHTML = "";
 
       for (let i = 0; i < 20; i++) {
         const particle = document.createElement("div");
-        particle.className = "particle";
+        particle.className = "cx-hero-particle";
         const size = Math.random() * 4 + 2;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
@@ -20,7 +20,7 @@ const HeroSection = () => {
         particle.style.top = `${Math.random() * 100}%`;
         particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
         particle.style.animationDelay = `${Math.random() * 5}s`;
-        particlesRef.current.appendChild(particle);
+        cxParticlesRef.current.appendChild(particle);
       }
     };
 
@@ -30,44 +30,48 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="hero">
-      <div className="particles" ref={particlesRef}></div>
+    <section className="cx-hero-section">
+      <div className="cx-hero-particles" ref={cxParticlesRef}></div>
 
-      <div className="hero-container">
-        {/* CONTENT FIRST */}
-        <div className="hero-content">
-          <span className="hero-badge">🚀 CREATE YOUR DREAM PROJECT WITH US</span>
+      <div className="cx-hero-container">
+        {/* CONTENT */}
+        <div className="cx-hero-content">
+          <span className="cx-hero-badge">
+            🚀 CREATE YOUR DREAM PROJECT WITH US
+          </span>
 
-          <h1 className="hero-title">
+          <h1 className="cx-hero-title">
             Advanced IT Solutions For <span>Modern Businesses</span>
           </h1>
 
-          <p className="hero-description">
-            CloudXSecure is a trusted technology partner delivering end-to-end cloud solutions, modern web design, mobile app development, and enterprise cloud services. We help startups, SMEs, and enterprises build secure digital products, migrate to the cloud, and scale efficiently with future-ready technology.
+          <p className="cx-hero-description">
+            CloudXSecure is a trusted technology partner delivering end-to-end
+            cloud solutions, modern web design, mobile app development, and
+            enterprise cloud services.
           </p>
 
-          <div className="hero-actions">
-            <button className="hero-btn primary">
+          <div className="cx-hero-actions">
+            <button className="cx-hero-btn cx-hero-btn-primary">
               Explore Our Solutions <span>↗</span>
             </button>
 
-            <button className="hero-btn secondary">
-              <span className="play">▶</span> Play Video
+            <button className="cx-hero-btn cx-hero-btn-secondary">
+              <span className="cx-hero-play">▶</span> Play Video
             </button>
           </div>
         </div>
 
-        {/* IMAGE SECOND */}
-        <div className="hero-visual">
-          <img src={heroImg} alt="Hero" className="hero-img" />
+        {/* IMAGE */}
+        <div className="cx-hero-visual">
+          <img src={heroImg} alt="Hero" className="cx-hero-image" />
 
-          <div className="floating-card users">
+          <div className="cx-hero-float-card cx-users-card">
             <h4>Active Users</h4>
             <strong>1.2K+</strong>
-            <span className="growth">↑ 21.09% Growth</span>
+            <span className="cx-hero-growth">↑ 21.09% Growth</span>
           </div>
 
-          <div className="floating-card services">
+          <div className="cx-hero-float-card cx-services-card">
             <h4>Premium Services</h4>
             <p>Enterprise IT Solutions</p>
             <p>Advanced Cyber Security</p>

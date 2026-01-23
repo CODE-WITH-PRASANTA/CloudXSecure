@@ -1,0 +1,252 @@
+/* ===============================
+   SECTION CONTAINER
+================================= */
+
+.expert-team-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 60px 80px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ===============================
+   TOP CENTER TITLE SECTION
+================================= */
+
+.team-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-badge {
+    display: inline-block;
+    background: #e8ebff;
+    color: #1e2cff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.team-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0a0a0a;
+    margin: 10px 0 12px;
+}
+
+.team-subtitle {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* ===============================
+   HEADER WITH ARROWS
+================================= */
+
+.team-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.team-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0a0a0a;
+}
+
+
+/* ===============================
+   ARROW CONTROLS
+================================= */
+
+.arrow-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.arrow-btn {
+    background: #eef1ff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: #1e2cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.arrow-btn:hover {
+    background: #1e2cff;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+.arrow-btn.active {
+    background: #1e2cff;
+    color: #fff;
+}
+
+
+/* ===============================
+   TEAM HORIZONTAL SLIDER
+================================= */
+
+.team-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 32px;
+    padding-bottom: 12px;
+}
+
+.team-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ===============================
+   TEAM CARD
+================================= */
+
+.team-card {
+    background: #ffffff;
+    border-radius: 18px;
+    flex: 0 0 350px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.13);
+    transition: 0.35s ease;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ===============================
+   IMAGE WRAPPER
+================================= */
+
+.team-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.06);
+}
+
+
+/* ===============================
+   SHARE BUTTON
+================================= */
+
+.share-btn {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #1e2cff;
+    color: #ffffff;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+}
+
+.share-btn:hover {
+    transform: rotate(18deg);
+    background: #1823c9;
+}
+
+
+/* ===============================
+   TEXT AREA
+================================= */
+
+.team-info {
+    padding: 18px 20px 26px;
+    text-align: left;
+}
+
+.team-name {
+    font-size: 19px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.team-role {
+    color: #888;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 992px) {
+    .expert-team-section {
+        padding: 40px 30px;
+    }
+    .team-title {
+        font-size: 28px;
+    }
+    .team-card {
+        flex: 0 0 280px;
+    }
+    .team-image-wrapper {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .arrow-controls {
+        justify-content: center;
+    }
+    .team-card {
+        flex: 0 0 240px;
+    }
+}

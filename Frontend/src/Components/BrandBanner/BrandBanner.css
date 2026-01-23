@@ -1,117 +1,136 @@
-/* ===== Brand Banner Section ===== */
-
+/* ================= BRAND BANNER ================= */
 .brand-banner {
-    width: 100%;
-    overflow: hidden;
-    background-color: #fff;
-    padding: 60px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  padding: clamp(40px, 6vw, 80px) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-
-/* ===== Moving Track (animation container) ===== */
-
+/* ================= TRACK ================= */
 .brand-track {
-    display: flex;
-    align-items: center;
-    gap: 300px;
-    /* spacing between logos */
-    animation: scrollLoop 50s linear infinite;
-    /* slowed down for smooth flow */
-    width: max-content;
-    will-change: transform;
+  display: flex;
+  align-items: center;
+  gap: clamp(60px, 12vw, 260px);
+  width: max-content;
+
+  animation: brandScroll 48s linear infinite;
+  will-change: transform;
+  transform: translateZ(0); /* GPU acceleration */
 }
 
+/* Pause animation on hover */
+.brand-banner:hover .brand-track {
+  animation-play-state: paused;
+}
 
-/* Each logo container */
-
+/* ================= LOGO ================= */
 .brand-logo {
-    flex: 0 0 auto;
-    width: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 0 0 auto;
+  width: clamp(90px, 14vw, 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
-/* Logo styling — colorful, crisp */
 
 .brand-logo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    transition: transform .8s ease;
-    filter: brightness(1) contrast(1.05);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  filter: brightness(1) contrast(1.05);
+  transition: transform 0.6s ease, filter 0.6s ease;
+  pointer-events: none;
 }
 
-
-/* Subtle hover zoom for interactivity */
-
-.brand-logo img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.15) contrast(1.1);
+/* Subtle hover zoom (luxury feel) */
+.brand-logo:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.15) contrast(1.1);
 }
 
-
-/* ===== Infinite smooth scroll animation ===== */
-
-@keyframes scrollLoop {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+/* ================= INFINITE SCROLL ================= */
+@keyframes brandScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-
-/* ===== Optional gradient fade edges (luxury look) ===== */
-
+/* ================= FADE EDGES ================= */
 .brand-banner::before,
 .brand-banner::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 80px;
-    height: 100%;
-    pointer-events: none;
-    z-index: 2;
+  content: "";
+  position: absolute;
+  top: 0;
+  width: clamp(40px, 8vw, 120px);
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .brand-banner::before {
-    left: 0;
-    background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .brand-banner::after {
-    right: 0;
-    background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    animation: none;
+  }
+}
 
-/* ===== Responsive tuning ===== */
-
+/* ================= TABLET ================= */
 @media (max-width: 1024px) {
-    .brand-track {
-        gap: 80px;
-        animation-duration: 45s;
-        /* slightly slower on tablet */
-    }
-    .brand-logo {
-        width: 150px;
-    }
+  .brand-track {
+    gap: clamp(40px, 8vw, 120px);
+    animation-duration: 52s;
+  }
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-    .brand-track {
-        gap: 60px;
-        animation-duration: 50s;
-        /* slowest on mobile for elegance */
-    }
-    .brand-logo {
-        width: 120px;
-    }
+  .brand-banner {
+    padding: 40px 0;
+  }
+
+  .brand-track {
+    gap: 48px;
+    animation-duration: 56s;
+  }
+
+  .brand-logo {
+    width: 110px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .brand-track {
+    gap: 36px;
+    animation-duration: 60s;
+  }
+
+  .brand-logo {
+    width: 90px;
+  }
 }

@@ -7,56 +7,56 @@ import cardBg from "../../assets/contact-three-bg-shape.webp";
 // UPDATED CONTENT (ONLY CONTENT CHANGED)
 const pricingData = {
   monthly: [
-    { 
-      title: "Starter", 
-      price: "₹8,999", 
-      note: "Perfect for small businesses starting online" 
+    {
+      title: "Starter",
+      price: "₹8,999",
+      note: "Perfect for small businesses starting online",
     },
-    { 
-      title: "Growth", 
-      price: "₹24,999", 
-      note: "Designed for growing brands and SMEs" 
+    {
+      title: "Growth",
+      price: "₹24,999",
+      note: "Designed for growing brands and SMEs",
     },
-    { 
-      title: "Enterprise", 
-      price: "₹64,999", 
-      note: "Advanced solutions with premium support" 
+    {
+      title: "Enterprise",
+      price: "₹64,999",
+      note: "Advanced solutions with premium support",
     },
   ],
 
   yearly: [
-    { 
-      title: "Starter", 
-      price: "₹79,999", 
-      note: "Full annual support + maintenance" 
+    {
+      title: "Starter",
+      price: "₹79,999",
+      note: "Full annual support + maintenance",
     },
-    { 
-      title: "Growth", 
-      price: "₹2,39,999", 
-      note: "Yearly plan with priority updates" 
+    {
+      title: "Growth",
+      price: "₹2,39,999",
+      note: "Yearly plan with priority updates",
     },
-    { 
-      title: "Enterprise", 
-      price: "₹6,49,999", 
-      note: "Enterprise-level yearly support + upgrades" 
+    {
+      title: "Enterprise",
+      price: "₹6,49,999",
+      note: "Enterprise-level yearly support + upgrades",
     },
   ],
 
   packages: [
-    { 
-      title: "Starter", 
-      price: "₹8,999", 
-      note: "One-time setup for basic website needs" 
+    {
+      title: "Starter",
+      price: "₹8,999",
+      note: "One-time setup for basic website needs",
     },
-    { 
-      title: "Growth", 
-      price: "₹24,999", 
-      note: "Complete package with enhanced features" 
+    {
+      title: "Growth",
+      price: "₹24,999",
+      note: "Complete package with enhanced features",
     },
-    { 
-      title: "Enterprise", 
-      price: "₹64,999", 
-      note: "Unlimited access with full customization" 
+    {
+      title: "Enterprise",
+      price: "₹64,999",
+      note: "Unlimited access with full customization",
     },
   ],
 };
@@ -73,16 +73,18 @@ const PricingSection = () => {
       <div className="pricing2-header">
         <span className="pricing2-subtitle">PRICING & PLAN</span>
         <h2>
-          Select the Perfect <span>Plan</span> for Your <br /> Needs That Fits You
+          Select the Perfect <span>Plan</span> for Your <br /> Needs That Fits
+          You
         </h2>
 
         {/* TABS */}
         <div className="pricing2-tabs">
-          {["monthly", "yearly", "packages"].map(tab => (
+          {["monthly", "yearly", "packages"].map((tab) => (
             <button
               key={tab}
               className={`pricing2-tab ${activeTab === tab ? "active" : ""}`}
               onClick={() => setActiveTab(tab)}
+              aria-label={`${tab} pricing`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>

@@ -257,3 +257,7 @@
     font-size: 18px;
   }
 }
+
+.progress-bar span {
+  transition: width 1.6s ease-in-out;
+}

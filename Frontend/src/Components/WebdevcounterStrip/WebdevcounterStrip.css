@@ -3,29 +3,37 @@
 ========================= */
 .counter2-section {
   position: relative;
-  background: #6c63ff;
-  padding: 80px 20px;
+  background: linear-gradient(135deg, #6c63ff, #5a52e0);
+  padding: clamp(60px, 8vw, 100px) 16px;
   overflow: hidden;
 }
 
-/* Moving Background */
+/* Background Wave */
 .counter2-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
-  animation: float 4s ease-in-out infinite;
-  opacity: 0.25;
+  background-repeat: repeat-x;
+  opacity: 0.18;
+  animation: waveFloat 6s ease-in-out infinite;
 }
 
-@keyframes waveMove {
-  from {
-    background-position: 0 0;
+/* Subtle motion only */
+@keyframes waveFloat {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    background-position: -2000px 0;
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
+/* =========================
+   CONTAINER
+========================= */
 .counter2-container {
   position: relative;
   z-index: 2;
@@ -33,7 +41,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: clamp(24px, 4vw, 40px);
   text-align: center;
 }
 
@@ -41,66 +49,90 @@
    COUNTER BOX
 ========================= */
 .counter2-box {
-  color: #fff;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 }
 
+/* =========================
+   ICON
+========================= */
 .counter2-icon {
-  width: 90px;
-  height: 90px;
-  margin: auto;
-  background: #5b54e6;
+  width: clamp(70px, 8vw, 90px);
+  height: clamp(70px, 8vw, 90px);
+  background: rgba(255, 255, 255, 0.14);
   border-radius: 50%;
   display: grid;
   place-items: center;
-  transition: all 0.4s ease;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(6px);
 }
 
 .counter2-icon svg {
-  font-size: 36px;
-  color: #fff;
-  transition: color 0.4s ease;
+  font-size: clamp(28px, 4vw, 36px);
+  color: #ffffff;
 }
 
-.counter2-icon:hover {
-  background: #fff;
+/* Hover – subtle & premium */
+.counter2-box:hover .counter2-icon {
+  background: #ffffff;
+  transform: translateY(-6px);
 }
 
-.counter2-icon:hover svg {
-  color: #000;
+.counter2-box:hover .counter2-icon svg {
+  color: #0b0b23;
 }
 
 /* =========================
    NUMBER
 ========================= */
 .counter2-number {
-  font-size: 44px;
+  font-size: clamp(30px, 5vw, 46px);
   font-weight: 800;
-  margin: 18px 0 8px;
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 
 /* =========================
-   TEXT
+   LABEL
 ========================= */
 .counter2-text {
-  font-size: 16px;
-  opacity: 0.9;
+  font-size: clamp(14px, 2vw, 16px);
+  opacity: 0.92;
+  font-weight: 500;
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 @media (max-width: 992px) {
   .counter2-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
   }
 }
 
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 576px) {
   .counter2-container {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .counter2-bg {
+    animation: none;
   }
 
-  .counter2-number {
-    font-size: 36px;
+  .counter2-box:hover .counter2-icon {
+    transform: none;
   }
 }

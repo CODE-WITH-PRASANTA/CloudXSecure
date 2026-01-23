@@ -2,17 +2,20 @@
    SECTION
 ========================== */
 .wc3-section {
-  padding: 120px 20px;
+  padding: clamp(70px, 10vw, 120px) 16px;
   background: linear-gradient(180deg, #ffffff, #f6f7ff);
   overflow: hidden;
 }
 
+/* ==========================
+   CONTAINER
+========================== */
 .wc3-container {
   max-width: 1200px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(40px, 6vw, 70px);
   align-items: center;
 }
 
@@ -22,29 +25,25 @@
 .wc3-subtitle {
   color: #6c63ff;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  font-size: 14px;
 }
 
 .wc3-title {
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 42px);
   font-weight: 800;
-  margin: 15px 0;
-  animation: wc3TitleFloat 4s ease-in-out infinite;
+  margin: 14px 0 16px;
+  line-height: 1.25;
 }
 
 .wc3-title span {
   color: #6c63ff;
 }
 
-@keyframes wc3TitleFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
 .wc3-desc {
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
   color: #666;
-  max-width: 520px;
+  max-width: 560px;
   line-height: 1.7;
 }
 
@@ -54,8 +53,8 @@
 .wc3-features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin: 30px 0;
+  gap: 16px;
+  margin: 32px 0;
 }
 
 .wc3-feature {
@@ -63,10 +62,11 @@
   align-items: center;
   gap: 12px;
   padding: 14px 18px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
   font-weight: 600;
+  font-size: 15px;
 }
 
 .wc3-check {
@@ -76,7 +76,8 @@
   border-radius: 6px;
   display: grid;
   place-items: center;
-  color: #fff;
+  color: #ffffff;
+  flex-shrink: 0;
 }
 
 /* ==========================
@@ -85,31 +86,34 @@
 .wc3-points {
   list-style: none;
   padding: 0;
-  margin: 25px 0;
+  margin: 26px 0;
 }
 
 .wc3-points li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #555;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .wc3-points svg {
   color: #6c63ff;
+  margin-top: 3px;
 }
 
 /* ==========================
    BUTTON
 ========================== */
 .wc3-btn {
-  margin-top: 20px;
-  padding: 14px 30px;
+  margin-top: 24px;
+  padding: 14px 34px;
   background: #6c63ff;
-  color: #fff;
+  color: #ffffff;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -141,13 +145,20 @@
 
 .wc3-right img {
   width: 100%;
-  max-width: 620px;
+  max-width: 520px;
+  height: auto;
   animation: wc3ImageFloat 5s ease-in-out infinite;
 }
 
+/* Subtle float */
 @keyframes wc3ImageFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* ==========================
@@ -155,17 +166,17 @@
 ========================== */
 .wc3-reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(28px);
 }
 
 .wc3-reveal.active {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.8s ease;
+  transition: all 0.75s ease;
 }
 
 /* ==========================
-   RESPONSIVE
+   TABLET
 ========================== */
 @media (max-width: 992px) {
   .wc3-container {
@@ -173,21 +184,63 @@
     text-align: center;
   }
 
-  .wc3-features {
-    grid-template-columns: 1fr;
+  .wc3-desc {
+    margin: auto;
   }
 
-  .wc3-right img {
-    max-width: 360px;
+  .wc3-features {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 28px auto;
+  }
+
+  .wc3-points {
+    max-width: 520px;
+    margin: 24px auto;
+  }
+
+  .wc3-btn {
+    margin: 24px auto 0;
   }
 }
 
+/* ==========================
+   MOBILE
+========================== */
 @media (max-width: 576px) {
-  .wc3-title {
-    font-size: 30px;
+  .wc3-section {
+    padding: 60px 14px;
   }
 
-  .wc3-desc {
-    font-size: 15px;
+  .wc3-title {
+    font-size: 26px;
+  }
+
+  .wc3-feature {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .wc3-right img {
+    max-width: 320px;
+  }
+
+  .wc3-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================
+   ACCESSIBILITY
+========================== */
+@media (prefers-reduced-motion: reduce) {
+  .wc3-right img,
+  .wc3-title {
+    animation: none;
+  }
+
+  .wc3-reveal {
+    transition: none;
   }
 }

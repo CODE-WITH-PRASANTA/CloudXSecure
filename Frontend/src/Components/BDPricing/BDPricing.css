@@ -1,0 +1,248 @@
+/* ================= SECTION ================= */
+.bd-pricing {
+  padding: 120px 24px;
+  background: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ================= CONTAINER ================= */
+.bd-pricing-container {
+  max-width: 1320px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+.bd-pricing-header {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.bd-pricing-header h2 {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 14px;
+  color: #0a1a3a;
+}
+
+.bd-pricing-header p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5c6b8a;
+  max-width: 520px;
+}
+
+.bd-badge {
+  display: inline-block;
+  background: #e9f1ff;
+  color: #0d6efd;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* ================= TOGGLE ================= */
+.bd-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 60px;
+}
+
+.bd-toggle span {
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.bd-toggle span.active {
+  color: #0d6efd;
+}
+
+.bd-switch {
+  width: 64px;
+  height: 32px;
+  background: #0d6efd;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.bd-switch span {
+  width: 26px;
+  height: 26px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: 0.3s ease;
+}
+
+.bd-switch.yearly span {
+  left: 34px;
+}
+
+/* ================= GRID ================= */
+.bd-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ================= CARD ================= */
+.bd-pricing-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 40px;
+  position: relative;
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bd-pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.bd-pricing-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0a1a3a;
+}
+
+/* PRICE */
+.price {
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: #0a1a3a;
+}
+
+.price strong {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0 6px;
+}
+
+/* ================= POPULAR ================= */
+.popular {
+  border-color: #0d6efd;
+  box-shadow: 0 25px 70px rgba(13, 110, 253, 0.15);
+}
+
+.popular-tag {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #ff3b3b;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================= FEATURE LIST ================= */
+.bd-pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.bd-pricing-card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #334155;
+  font-size: 15px;
+}
+
+.bd-pricing-card li svg {
+  color: #16a34a;
+}
+
+/* ================= BUTTON ================= */
+.bd-btn {
+  background: #0d6efd;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.bd-btn:hover {
+  background: #0b5ed7;
+  transform: translateY(-2px);
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .bd-pricing {
+    padding: 100px 24px;
+  }
+
+  .bd-pricing-header {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .bd-pricing-header h2 {
+    font-size: 36px;
+  }
+
+  .bd-pricing-header p {
+    max-width: 100%;
+  }
+
+  .bd-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .bd-pricing {
+    padding: 80px 18px;
+  }
+
+  .bd-pricing-header h2 {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .bd-pricing-header p {
+    font-size: 15px;
+  }
+
+  .bd-toggle {
+    margin-bottom: 50px;
+  }
+
+  .bd-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .bd-pricing-card {
+    padding: 32px 26px;
+  }
+
+  .price strong {
+    font-size: 36px;
+  }
+}

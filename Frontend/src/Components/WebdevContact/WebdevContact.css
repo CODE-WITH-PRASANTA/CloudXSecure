@@ -1,25 +1,25 @@
 /* ================= SECTION ================= */
 .ct3-section {
   position: relative;
-  padding: 120px 20px;
+  padding: clamp(80px, 10vw, 130px) 16px;
   background: linear-gradient(180deg, #f5f6ff 0%, #ffffff 100%);
   overflow: hidden;
 }
 
-/* BACKGROUND MOVING TEXT */
+/* ================= BACKGROUND TEXT ================= */
 .ct3-bg-text {
   position: absolute;
-  font-size: 150px;
+  font-size: clamp(70px, 14vw, 150px);
   font-weight: 900;
   color: rgba(108, 99, 255, 0.06);
   white-space: nowrap;
-  animation: ctMove 22s linear infinite;
+  animation: ctMove 25s linear infinite;
   pointer-events: none;
 }
 
 .ct3-bg-text.top {
-  top: 80px;
-  left: -10%;
+  top: 70px;
+  left: -20%;
 }
 
 @keyframes ctMove {
@@ -33,8 +33,8 @@
   max-width: 1200px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(40px, 6vw, 70px);
   position: relative;
   z-index: 2;
 }
@@ -47,7 +47,7 @@
 }
 
 .ct3-title {
-  font-size: 46px;
+  font-size: clamp(30px, 4vw, 46px);
   line-height: 1.2;
   font-weight: 800;
   margin-top: 10px;
@@ -58,17 +58,18 @@
 }
 
 .ct3-desc {
-  margin: 20px 0 30px;
+  margin: 22px 0 34px;
   color: #666;
   max-width: 480px;
+  line-height: 1.7;
 }
 
-/* INFO BOX */
+/* ================= INFO BOX ================= */
 .ct3-info-box {
   display: flex;
   align-items: center;
   gap: 18px;
-  background: #fff;
+  background: #ffffff;
   padding: 18px;
   border-radius: 14px;
   margin-bottom: 16px;
@@ -82,66 +83,51 @@
   display: grid;
   place-items: center;
   background: #6c63ff;
-  color: #fff;
+  color: #ffffff;
   border-radius: 50%;
   transition: 0.4s;
 }
 
 .ct3-info-box:hover {
   background: #6c63ff;
-  color: #fff;
+  color: #ffffff;
 }
 
 .ct3-info-box:hover .ct3-icon {
-  background: #fff;
+  background: #ffffff;
   color: #6c63ff;
 }
 
-/* GIRL IMAGE FIX */
+/* ================= PERSON IMAGE ================= */
 .ct3-person-fixed {
-  position: absolute;
-  right: 500px;
-  bottom: -15px;
-  width: 250px;
-  z-index: 1;
+  margin-top: 40px;
+  width: 260px;
+  max-width: 100%;
 }
-
-
 
 /* ================= FORM ================= */
 .ct3-form-wrap {
   position: relative;
   background: linear-gradient(135deg, #6c63ff, #7a72ff);
-  padding: 30px;
-  border-radius: 22px;
-  overflow: hidden;
-}
-
-/* BLUE TRIANGLE */
-.ct3-form-triangle {
-  position: absolute;
-  right: -60px;
-  bottom: -60px;
-  width: 240px;
-  height: 240px;
- 
-  clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  opacity: 0.9;
-  z-index: 3;
+  padding: clamp(20px, 4vw, 34px);
+  border-radius: 24px;
 }
 
 .ct3-form {
-  background: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  position: relative;
-  z-index: 0;
+  background: #ffffff;
+  padding: clamp(26px, 4vw, 42px);
+  border-radius: 18px;
 }
 
+/* ================= FORM GRID ================= */
 .ct3-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+.ct3-field {
+  margin-bottom: 18px;
 }
 
 .ct3-field label {
@@ -150,6 +136,7 @@
   display: block;
 }
 
+/* ================= INPUT ================= */
 .ct3-input {
   position: relative;
 }
@@ -159,6 +146,7 @@
   padding: 14px 42px 14px 14px;
   border-radius: 10px;
   border: 1px solid #ddd;
+  font-size: 15px;
 }
 
 .ct3-input svg {
@@ -169,30 +157,33 @@
   color: #6c63ff;
 }
 
+/* ================= TEXTAREA ================= */
 textarea {
   width: 100%;
-  height: 120px;
+  height: 130px;
   padding: 14px;
   border-radius: 10px;
   border: 1px solid #ddd;
+  resize: none;
+  font-size: 15px;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .ct3-btn {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   padding: 16px;
   border: none;
   background: #6c63ff;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   border-radius: 12px;
   cursor: pointer;
-  transition: 0.4s;
+  transition: all 0.3s ease;
 }
 
 .ct3-btn:hover {
-  background: #fff;
+  background: #ffffff;
   color: #6c63ff;
 }
 
@@ -208,30 +199,40 @@ textarea {
   transform: translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
 @media (max-width: 992px) {
   .ct3-container {
     grid-template-columns: 1fr;
   }
 
+  .ct3-desc {
+    max-width: 100%;
+  }
+
   .ct3-person-fixed {
-    position: static;
-    width: 260px;
-    margin: 30px auto 0;
+    margin: 40px auto 0;
     display: block;
   }
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 576px) {
-  .ct3-title {
-    font-size: 34px;
-  }
-
   .ct3-row {
     grid-template-columns: 1fr;
   }
 
   .ct3-bg-text {
-    font-size: 90px;
+    font-size: 80px;
+  }
+
+  .ct3-title {
+    font-size: 28px;
+  }
+}
+
+/* ================= REDUCED MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+  .ct-reveal {
+    transition: none;
   }
 }

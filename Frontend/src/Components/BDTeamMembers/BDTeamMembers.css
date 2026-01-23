@@ -1,0 +1,184 @@
+/* ================= SECTION ================= */
+.bd-team {
+  padding: 120px 24px;
+  background: #f8faff;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ================= CONTAINER ================= */
+.bd-team-container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ================= TOP CONTENT ================= */
+.bd-team-left {
+  max-width: 640px;
+}
+
+.bd-team-left h2 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0a1a3a;
+  margin: 18px 0;
+}
+
+.bd-team-left p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5c6b8a;
+}
+
+.bd-badge {
+  display: inline-block;
+  background: #e9f1ff;
+  color: #0d6efd;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* ================= TEAM GRID ================= */
+.bd-team-right {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* ================= CARD ================= */
+.bd-team-card {
+  position: relative;
+  height: 460px;
+  background: linear-gradient(180deg, #0d6efd, #0b4ed9);
+  border-radius: 22px;
+  padding: 28px 22px;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.bd-team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(13, 110, 253, 0.35);
+}
+
+/* ================= INFO ================= */
+.bd-team-info {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.bd-team-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.bd-team-info span {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.bd-team-info i {
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ================= IMAGE ================= */
+.bd-team-card img {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+  height: 78%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* ================= SOCIAL ================= */
+.bd-team-social {
+  position: absolute;
+  left: 14px;
+  bottom: 30px;
+  background: #0b4ed9;
+  border-radius: 22px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 2;
+}
+
+.bd-team-social svg {
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bd-team-social svg:hover {
+  transform: scale(1.2);
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1200px) {
+  .bd-team {
+    padding: 100px 24px;
+  }
+
+  .bd-team-left h2 {
+    font-size: 40px;
+  }
+
+  .bd-team-right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .bd-team-card {
+    height: 440px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .bd-team {
+    padding: 80px 18px;
+  }
+
+  .bd-team-left h2 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .bd-team-left p {
+    font-size: 15px;
+  }
+
+  .bd-team-right {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .bd-team-card {
+    height: 400px;
+  }
+
+  .bd-team-card img {
+    height: 70%;
+    right: 8px;
+  }
+
+  .bd-team-social {
+    left: 10px;
+    bottom: 22px;
+  }
+}

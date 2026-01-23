@@ -6,14 +6,14 @@
   --gold: #ffb400;
 }
 
-/* SECTION */
+/* ================= SECTION ================= */
 .tsl-section {
   padding: 90px 20px;
   background: var(--bg);
   overflow: hidden;
 }
 
-/* HEADING */
+/* ================= HEADING ================= */
 .tsl-heading {
   text-align: center;
   margin-bottom: 70px;
@@ -28,9 +28,10 @@
 .tsl-title {
   font-size: 44px;
   font-weight: 800;
+  color: var(--text-dark);
 }
 
-/* SLIDER */
+/* ================= SLIDER ================= */
 .tsl-slider-wrapper {
   max-width: 1200px;
   margin: auto;
@@ -39,19 +40,22 @@
 
 .tsl-slider-track {
   display: flex;
+  align-items: stretch;
   width: max-content;
+  will-change: transform;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .tsl-card {
   width: 360px;
-  height: 300px;
+  min-height: 300px;
   margin: 0 10px;
   background: #ffffff;
   border-radius: 22px;
   padding: 32px;
   flex-shrink: 0;
-  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+  transition: background 0.35s ease, transform 0.35s ease;
 }
 
 /* ACTIVE CENTER CARD */
@@ -67,21 +71,21 @@
   color: #ffffff;
 }
 
-/* STARS */
+/* ================= STARS ================= */
 .tsl-stars {
   color: var(--gold);
   font-size: 18px;
   margin-bottom: 16px;
 }
 
-/* TEXT */
+/* ================= TEXT ================= */
 .tsl-text {
   color: var(--text-gray);
   font-size: 15px;
   line-height: 1.6;
 }
 
-/* USER */
+/* ================= USER ================= */
 .tsl-user {
   display: flex;
   align-items: center;
@@ -93,9 +97,20 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-/* QUOTE */
+.tsl-user h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tsl-user span {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ================= QUOTE ICON ================= */
 .tsl-quote {
   position: absolute;
   right: 28px;
@@ -104,16 +119,80 @@
   opacity: 0.15;
 }
 
-/* RESPONSIVE */
-@media (max-width: 991px) {
+/* =================================================
+   RESPONSIVE BREAKPOINTS
+================================================= */
+
+/* ---------- Large Tablets / Small Laptops ---------- */
+@media (max-width: 1024px) {
+  .tsl-title {
+    font-size: 36px;
+  }
+
   .tsl-card {
-    width: 300px;
+    width: 320px;
   }
 }
 
+/* ---------- Tablets ---------- */
+@media (max-width: 991px) {
+  .tsl-section {
+    padding: 80px 16px;
+  }
+
+  .tsl-heading {
+    margin-bottom: 60px;
+  }
+
+  .tsl-card {
+    width: 300px;
+    padding: 28px;
+  }
+}
+
+/* ---------- Mobile Devices ---------- */
 @media (max-width: 576px) {
+  .tsl-section {
+    padding: 70px 12px;
+  }
+
+  .tsl-heading {
+    margin-bottom: 50px;
+  }
+
+  .tsl-title {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
   .tsl-card {
     width: 90vw;
-    height: auto;
+    min-height: auto;
+    padding: 24px;
+    margin: 0 8px;
+  }
+
+  .tsl-stars {
+    font-size: 16px;
+  }
+
+  .tsl-text {
+    font-size: 14px;
+  }
+
+  .tsl-user img {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* ---------- Small Phones ---------- */
+@media (max-width: 400px) {
+  .tsl-title {
+    font-size: 26px;
+  }
+
+  .tsl-card {
+    padding: 20px;
   }
 }

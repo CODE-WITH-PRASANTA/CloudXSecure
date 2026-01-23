@@ -1,0 +1,136 @@
+/* ================= SECTION ================= */
+.completed-section {
+  padding: 110px 24px;
+  background: linear-gradient(180deg, #f7f9ff, #ffffff);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ================= CONTAINER ================= */
+.completed-container {
+  max-width: 1320px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+.completed-header {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  margin-bottom: 64px;
+  align-items: center;
+}
+
+.completed-header .left h2 {
+  font-size: 44px;
+  font-weight: 800;
+  color: #0a1a3a;
+  line-height: 1.2;
+  margin-top: 12px;
+}
+
+.completed-header .right p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5c6b8a;
+  max-width: 520px;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  background: #e9f1ff;
+  color: #0d6efd;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* ================= PROJECT GRID ================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ================= CARD ================= */
+.project-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+}
+
+/* IMAGE */
+.project-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .completed-section {
+    padding: 90px 24px;
+  }
+
+  .completed-header {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 50px;
+  }
+
+  .completed-header .left h2 {
+    font-size: 36px;
+  }
+
+  .completed-header .right p {
+    max-width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .completed-section {
+    padding: 70px 18px;
+  }
+
+  .completed-header {
+    gap: 22px;
+    margin-bottom: 40px;
+  }
+
+  .completed-header .left h2 {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .completed-header .right p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-card img {
+    min-height: 240px;
+  }
+}
