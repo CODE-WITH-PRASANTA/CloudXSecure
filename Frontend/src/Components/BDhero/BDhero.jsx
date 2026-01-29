@@ -24,20 +24,19 @@ const BDhero = () => {
       <div className="he-container">
         {/* LEFT */}
         <div className="he-left">
-          <span className="he-badge">WE ARE EXPERT IN THIS FIELD</span>
+          <span className="he-badge">SECURE BACKUP & DISASTER RECOVERY EXPERTS</span>
 
           <h1>
-            Get a Smart Way <br /> For Your Business
+           Reliable Backup & Disaster Recovery<br /> for Business Continuity
           </h1>
 
           <p>
-            Agilos helps you convert your data into a strategic asset and get
-            top-notch business insights that drive smarter decisions.
+            CloudXSecure provides end-to-end backup and disaster recovery services for cloud environments, websites, and applications. From secure data replication and encrypted storage to fast restoration and business continuity planning, we help organizations minimize downtime, protect sensitive information, and maintain compliance.
           </p>
 
           <div className="he-actions">
             <button className="he-btn-primary">
-              Our Services <span>→</span>
+              Explore Backup Solutions <span>→</span>
             </button>
 
             <button className="he-btn-video">
@@ -60,10 +59,9 @@ const BDhero = () => {
             <FaChartLine />
           </div>
           <div>
-            <h4>Growing Business</h4>
+            <h4>Business Continuity & Growth</h4>
             <p>
-              Financial strategies designed to drive sustainable growth and
-              long-term success.
+              Ensure uninterrupted operations with CloudXSecure’s backup and disaster recovery solutions. We help businesses protect critical systems, websites, and applications while enabling secure growth through reliable cloud infrastructure and rapid recovery strategies.
             </p>
           </div>
         </div>
@@ -73,10 +71,9 @@ const BDhero = () => {
             <FaBriefcase />
           </div>
           <div>
-            <h4>Finance Investment</h4>
+            <h4>Secure Cloud Recovery</h4>
             <p>
-              Smart investment planning that strengthens performance and
-              financial stability.
+              Our secure cloud recovery services deliver automated backups, encrypted storage, and fast data restoration. CloudXSecure ensures your cloud platforms, web applications, and business systems remain protected against outages, cyber threats, and unexpected failures.
             </p>
           </div>
         </div>
@@ -86,10 +83,9 @@ const BDhero = () => {
             <FaFileInvoiceDollar />
           </div>
           <div>
-            <h4>Tax Advisory</h4>
+            <h4>Application & Data Protection</h4>
             <p>
-              Professional tax guidance ensuring compliance and optimized
-              financial outcomes.
+              CloudXSecure safeguards your websites, mobile apps, and enterprise data with advanced backup frameworks and monitoring. Our solutions minimize downtime and protect sensitive information while maintaining compliance and performance across your digital ecosystem.
             </p>
           </div>
         </div>

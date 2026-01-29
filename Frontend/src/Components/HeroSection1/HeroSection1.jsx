@@ -14,16 +14,15 @@ const HeroSection1 = () => {
       <div className="hero-container1">
         {/* Left Content */}
         <div className="hero-content1">
-          <span className="hero-badge1">INSURANCE AGENCY</span>
+          <span className="hero-badge1">Cloud Monitoring & Digital Solutions</span>
 
           <h1>
-            Enjoy Life With <br />
-            <span>Safety Insurance</span>
+            Power Your Business with Secure Cloud &<br />
+            <span>Smart Digital Solutions </span>
           </h1>
 
           <p>
-            Agilos helps you convert your data into a strategic asset and get
-            top-notch business insights with complete peace of mind.
+            CloudXSecure delivers scalable cloud services, modern web design, custom app development, and end-to-end cloud solutions. We help businesses optimize performance, enhance security, and accelerate growth with reliable, future-ready technology.
           </p>
 
           <button className="hero-btn1">
@@ -42,20 +41,20 @@ const HeroSection1 = () => {
       <div className="hero-features1">
         <div className="feature-box1">
           <FaShieldAlt className="feature-icon1" />
-          <h4>More Coverage</h4>
-          <p>Comprehensive plans that protect you in every situation.</p>
+          <h4>Secure Cloud Infrastructure</h4>
+          <p>Scalable, secure cloud solutions built to boost performance and protect your business.</p>
         </div>
 
         <div className="feature-box1">
           <FaHandshake className="feature-icon1" />
-          <h4>Less Hassle</h4>
-          <p>Easy documentation and quick claim settlement process.</p>
+          <h4>Seamless Digital Development</h4>
+          <p>Professional web and app design that delivers engaging, high-impact digital experiences.</p>
         </div>
 
         <div className="feature-box1">
           <FaBolt className="feature-icon1" />
-          <h4>Faster Benefits</h4>
-          <p>Instant approvals with faster insurance benefits.</p>
+          <h4>Faster Deployment & Support</h4>
+          <p>Rapid delivery with continuous monitoring and expert cloud support.</p>
         </div>
       </div>
     </section>

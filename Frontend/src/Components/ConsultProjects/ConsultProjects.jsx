@@ -8,10 +8,10 @@ import img3 from "../../assets/const-project_img03.webp";
 import img4 from "../../assets/const-project_img04.webp";
 
 const projects = [
-  { img: img1, tag: "Achievement", title: "Based on your correct situation" },
-  { img: img2, tag: "Business Strategy", title: "Best mortgage rates guaranteed." },
-  { img: img3, tag: "Investment", title: "Investment Policy For New Project" },
-  { img: img4, tag: "Achievement", title: "Business growth & planning" },
+  { img: img1, tag: "Cloud Solutions", title: "Secure Cloud Infrastructure Deployment" },
+  { img: img2, tag: "Web & App Development", title: "Complete Digital Solutions" },
+  { img: img3, tag: "Managed Cloud Services", title: "End-to-End Cloud Management & Support" },
+  { img: img4, tag: "Complete Digital Solutions", title: "All-in-one cloud, web & app services." },
 ];
 
 const ProjectSection = () => {
@@ -26,15 +26,14 @@ const ProjectSection = () => {
         <div className="header-left">
           <span className="section-tag">CASE STUDIES</span>
           <h2>
-            Keep Your Business Safe Ensure <br />
-            High Availability.
+            Our Success Stories in Cloud & <br />
+            Digital Transformation
           </h2>
         </div>
 
         <div className="header-right">
           <p>
-            Ever Find Yourself Staring At Your Computer Screen A Good
-            Consulting Slogan To Come To Mind? Oftentimes.
+           CloudXSecure delivers secure cloud services, custom web design, and scalable app development to help businesses grow faster, stay protected, and succeed in the digital world.
           </p>
         </div>
       </div>

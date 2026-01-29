@@ -35,25 +35,24 @@ const DevopsHero = () => {
       <div className="devops-container">
         {/* LEFT CONTENT */}
         <div className="devops-content">
-          <span className="hero-tag reveal">Our Integrated IT Solutions</span>
+          <span className="hero-tag reveal">Integrated DevOps & Cloud Services</span>
 
           <h1 className="hero-title reveal">
-            Harness Technology <br />
-            Drive Growth with <br />
-            Our IT Solutions
+           CloudXSecure DevOps<br />
+            & Cloud Solutions for <br />
+            Scalable Business Growth
           </h1>
 
           <p className="hero-desc reveal">
-            Welcome to Your Company Teching where innovative IT
-            solutions meet your business needs head-on.
+            Accelerate deployments, optimize cloud infrastructure, and build secure web and mobile applications with CloudXSecure’s end-to-end DevOps, cloud services, and digital solutions.
           </p>
 
           <div className="hero-btns reveal">
             <a href="#" className="btn primary">
-              Free Consultation <span>↗</span>
+              Get Free DevOps Consultation <span>↗</span>
             </a>
             <a href="#" className="btn secondary">
-              Discover More <span>↗</span>
+              Explore Cloud Solutions<span>↗</span>
             </a>
           </div>
         </div>

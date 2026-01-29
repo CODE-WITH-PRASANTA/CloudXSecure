@@ -14,22 +14,22 @@ import bgWave from "../../assets/services_bg02.jpg";
 
 const services = [
   {
-    title: "Finance Planning",
+    title: "Cloud Backup Services",
     img: img1,
     icon: <FaPiggyBank />,
   },
   {
-    title: "Tax File Audit",
+    title: "Disaster Recovery Planning",
     img: img2,
     icon: <FaFileInvoiceDollar />,
   },
   {
-    title: "Investment Idea",
+    title: "Application & Website Recovery",
     img: img3,
     icon: <FaLightbulb />,
   },
   {
-    title: "Risk Management",
+    title: "Risk & Data Protection Management",
     img: img4,
     icon: <FaShieldAlt />,
   },
@@ -47,8 +47,8 @@ const BDServices = () => {
           <div>
             <span className="sv-badge">WHAT WE DO FOR YOU</span>
             <h2>
-              We can inspire and Offer <br />
-              Different Services
+              CloudXSecure Services: <br />
+              Backup, Recovery & Digital Resilience
             </h2>
           </div>
 

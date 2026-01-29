@@ -16,16 +16,15 @@ const WhyChooseUs = () => {
 
         {/* RIGHT CONTENT */}
         <div className="why-content">
-          <span className="why-badge">WHY CHOOSE US</span>
+          <span className="why-badge">WHY CHOOSE CLOUDXSECURE</span>
 
           <h2>
-            We’ll Ensure You Always Get <br />
-            the Best Guidance.
+           We Help Businesses Grow with Secure Cloud <br />
+            & Digital Solutions
           </h2>
 
           <p>
-            Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai
-            Ipsum Dolor Sit Amet, Consecteture. Borem.
+            At CloudXSecure, we empower businesses with modern cloud services, professional web design, and custom app development. Our expert team delivers scalable cloud solutions, secure infrastructure, and high-performance digital products that help organizations reduce costs, improve efficiency, and accelerate growth. From cloud migration and DevOps automation to responsive websites and mobile applications, we provide end-to-end technology solutions tailored to your business goals.
           </p>
 
           {/* CIRCULAR STATS */}
@@ -62,15 +61,15 @@ const WhyChooseUs = () => {
         <div className="contact-left">
           <div className="phone-icon">📞</div>
           <div>
-            <span>Call For More Info</span>
-            <strong>+123 8989 444</strong>
+            <span>Talk to Our Cloud Experts</span>
+            <strong>+1 (123) 456-7890</strong>
           </div>
         </div>
 
-        <h3>Let’s Request a Schedule For Free Consultation</h3>
+        <h3>Let’s Build Your Secure Cloud & Digital Solutions — Get a Free Consultation Today</h3>
 
         <button className="contact-btn">
-          CONTACT US →
+          Start Your Cloud Journey →
         </button>
       </div>
     </section>

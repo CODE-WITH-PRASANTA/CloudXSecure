@@ -12,29 +12,29 @@ const InsuranceSection = () => {
   const services = [
     {
       id: 1,
-      title: "Health Insurance",
-      desc: "When An Unknown Printeawr Took Galley Insurance Type Andey Ollowing.",
+      title: "Cloud Services",
+      desc: "Secure, scalable cloud infrastructure designed to optimize performance, reduce costs, and protect your data. CloudXSecure helps businesses migrate, manage, and modernize workloads across AWS, Azure, and Google Cloud with enterprise-grade security.",
       img: healthImg,
       icon: <FaHeartbeat />,
     },
     {
       id: 2,
-      title: "Vehicle Insurance",
-      desc: "When An Unknown Printeawr Took Galley Insurance Type Andey Ollowing.",
+      title: "Web Design & Development",
+      desc: "We design high-performance, SEO-optimized websites that convert visitors into customers. From UI/UX design to full-stack development, CloudXSecure builds responsive, fast, and secure web experiences tailored to your brand.",
       img: vehicleImg,
       icon: <FaCar />,
     },
     {
       id: 3,
-      title: "Cargo Insurance",
-      desc: "When An Unknown Printeawr Took Galley Insurance Type Andey Ollowing.",
+      title: "App Design & Development",
+      desc: "Custom mobile and web applications built for scalability and user engagement. Our expert team delivers modern apps with clean architecture, smooth performance, and seamless cloud integration.",
       img: cargoImg,
       icon: <FaShip />,
     },
     {
       id: 4,
-      title: "Fire Insurance",
-      desc: "When An Unknown Printeawr Took Galley Insurance Type Andey Ollowing.",
+      title: "Complete Cloud Solutions",
+      desc: "End-to-end cloud solutions including DevOps automation, cybersecurity, monitoring, and managed services. We help organizations streamline operations, enhance security, and accelerate digital transformation.",
       img: fireImg,
       icon: <FaFire />,
     },
@@ -43,7 +43,7 @@ const InsuranceSection = () => {
   return (
     <section className="insurance-section">
       <div className="insurance-header">
-        <h2>We Make Better Insurance For Everyone</h2>
+        <h2>We Deliver Smart Cloud & Digital Solutions for Every Business</h2>
         <button className="see-all-btn">
           SEE ALL SERVICE <span>→</span>
         </button>

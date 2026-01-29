@@ -23,7 +23,7 @@ const tabs = [
   { id: "uiux", label: "UI/UX Designing", icon: uiuxIcon },
   { id: "app", label: "App Development", icon: appIcon },
   { id: "wp", label: "Wp Development", icon: wpIcon },
-  { id: "3d", label: "3D Design Solution", icon: design3dIcon },
+  { id: "3d", label: "Cloud Solutions", icon: design3dIcon },
 ];
 
 const PortfolioShowcase = () => {
@@ -38,7 +38,7 @@ const PortfolioShowcase = () => {
           <span className="pf-subtitle">
             <span className="pf-line" /> EXAMPLES OF OUR WORK <span className="pf-line" />
           </span>
-          <h2 className="pf-title">Check Our Latest Portfolios</h2>
+          <h2 className="pf-title">Check Our Latest Cloud & Digital Projects</h2>
         </div>
 
         {/* TABS */}
@@ -68,15 +68,15 @@ const PortfolioShowcase = () => {
           {/* RIGHT CONTENT */}
           <div className="pf-content">
 
-            <h3>Detailing Of Our Project</h3>
+            <h3>Detailing Our Cloud & Digital Projects</h3>
             <p>
-              We deliver well-structured digital projects built on practical learning, strong technical foundations, and real business needs. Every project follows a clear process focused on performance, usability, and long-term value rather than short-term trends.
+              At CloudXSecure, we build secure cloud platforms, high-performance websites, and scalable mobile apps tailored to real business needs. Every project follows a proven process focused on speed, security, usability, and long-term growth.
             </p>
 
             <div className="pf-features">
               <div className="pf-feature">
                 <img src={responsiveIcon} alt="" />
-                <span>Responsive Website</span>
+                <span>Cloud & Data Analytics</span>
               </div>
 
               <div className="pf-feature">
@@ -86,7 +86,7 @@ const PortfolioShowcase = () => {
 
               <div className="pf-feature">
                 <img src={analyticsIcon} alt="" />
-                <span>Big Data & Analytics</span>
+                <span>Custom App Development</span>
               </div>
             </div>
           </div>

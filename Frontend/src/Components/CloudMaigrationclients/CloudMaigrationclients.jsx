@@ -16,10 +16,10 @@ export default function ProjectShowcase() {
   const [active, setActive] = useState(0);
 
   const cards = [
-    { id: 1, img: c1, tag: "Technology", title: "Software Development" },
-    { id: 2, img: c2, tag: "Solutions", title: "Analytic Solutions" },
-    { id: 3, img: c3, tag: "Technology", title: "Design Solutions" },
-    { id: 4, img: c4, tag: "Technology", title: "Software Development" },
+    { id: 1, img: c1, tag: "Cloud Technology", title: "Secure Cloud Infrastructure" },
+    { id: 2, img: c2, tag: "Cloud Solutions", title: "Data Analytics Platform" },
+    { id: 3, img: c3, tag: "Web & App Design", title: "UI/UX Design Solutions" },
+    { id: 4, img: c4, tag: "Software Development", title: "Custom App Development" },
   ];
 
   /* ---------------- AUTO SLIDE (FIXED) ---------------- */
@@ -66,7 +66,7 @@ export default function ProjectShowcase() {
       <div className="ps-header">
         <span className="ps-tag">PROJECTS</span>
         <h2 className="ps-title">
-          Our Latest Incredible <br /> Client's Projects
+         Our Latest Cloud, Web &  <br /> App Success Stories
         </h2>
 
         {/* VIDEO ICON */}

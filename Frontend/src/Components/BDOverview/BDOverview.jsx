@@ -47,19 +47,16 @@ const BDOverview = () => {
           <span className="co-badge">COMPANY OVERVIEW</span>
 
           <h2>
-            Plan your business strategy <br />
-            with Our Experts
+            Plan, Protect & Scale Your Business  <br />
+            with CloudXSecure
           </h2>
 
           <p>
-            We help organizations design data-driven strategies that improve
-            performance, scalability, and long-term growth through expert
-            financial and operational planning.
+            CloudXSecure delivers secure cloud services, backup and disaster recovery, professional web design, and custom app development to help businesses stay protected and grow confidently.
           </p>
 
           <p>
-            Our approach combines insight, execution, and measurable outcomes
-            tailored to modern business needs.
+            We design reliable cloud strategies that safeguard data, restore applications quickly, and ensure continuous operations across websites, mobile apps, and cloud infrastructure.
           </p>
 
           {/* METRICS */}

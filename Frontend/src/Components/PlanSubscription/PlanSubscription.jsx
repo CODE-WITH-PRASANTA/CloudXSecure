@@ -28,12 +28,12 @@ const pricingPlans = [
 ];
 
 const features = [
-  "Basic task management",
-  "Team collaboration",
-  "Up to 80% size reduction",
-  "Cloud storage (2GB)",
-  "Up to 5 Users",
-  "Customer Support"
+  "Managed cloud hosting & infrastructure",
+  "Advanced cybersecurity protection & monitoring",
+  "Cloud migration & setup assistance",
+  "Secure cloud storage (10GB)",
+  "Up to 10 team users",
+  "Priority technical support"
 ];
 
 const BiznityPricing = () => {
@@ -41,12 +41,11 @@ const BiznityPricing = () => {
     <section className="biz-pricing-section">
       <div className="biz-pricing-container">
         <h3 className="biz-pricing-heading">
-          Choose your <span>Perfect <br /> Premium</span> Subscription
+          Choose your <span>Perfect <br /> CloudXSecure</span> Plan
         </h3>
 
         <p className="biz-pricing-subtext">
-          Here’s a simple Pricing Demo for your Stress-Free Business Management service.
-        </p>
+              Power your business with secure cloud services, professional web design, custom app development, and enterprise IT solutions — all backed by CloudXSecure expertise.        </p>
 
         <div className="biz-pricing-grid">
           {pricingPlans.map((plan) => (

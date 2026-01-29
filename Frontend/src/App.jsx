@@ -3,8 +3,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Pages/Contact/Contact";
-import Pages from "./Pages/Pages/Pages"
-import FAQ from "./Pages/FAQ/FAQ"
+import Pages from "./Pages/Pages/Pages";
+import FAQ from "./Pages/FAQ/FAQ";
 import About from "./Pages/About/About";
 import Blog from "./Pages/Blog/Blog";
 import Services from "./Pages/Services/Services";
@@ -23,7 +23,7 @@ import DevOpsAutomation from "./Pages/DevOpsAutomation/DevOpsAutomation"
 import Monitoring from "./Pages/monitoring/Monitoring";
 import BDrecovery from "./Pages/BDrecovery/BDrecovery";
 import PlanAndPricing from "./Pages/PlanAndPricing/PlanAndPricing";
-import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting"
+import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";
 
 function App() {
   return (

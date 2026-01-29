@@ -13,11 +13,11 @@ const PricingSection1 = () => {
       monthly: 19,
       yearly: 190,
       features: [
-        "5000 User Activities",
-        "Unlimited Access",
-        "No Hidden Charge",
-        "03 Time Updates",
-        "Figma Source File",
+        "Cloud monitoring setup",
+        "Basic website support",
+        "Email support",
+        "Monthly performance report",
+        "Cloud Migration",
       ],
     },
     {
@@ -27,11 +27,11 @@ const PricingSection1 = () => {
       monthly: 39,
       yearly: 390,
       features: [
-        "5000 User Activities",
-        "Unlimited Access",
-        "No Hidden Charge",
-        "03 Time Updates",
-        "Figma Source File",
+        "Managed cloud services",
+        "Website maintenance",
+        "App performance monitoring",
+        "Priority support",
+        "SEO-Friendly Development",
       ],
     },
     {
@@ -41,11 +41,11 @@ const PricingSection1 = () => {
       monthly: 89,
       yearly: 890,
       features: [
-        "5000 User Activities",
-        "Unlimited Access",
-        "No Hidden Charge",
-        "03 Time Updates",
-        "Figma Source File",
+        "Full cloud management",
+        "Dedicated DevOps engineer",
+        "Custom web & app support",
+        "24/7 priority assistance",
+        "Cross-Platform Development",
       ],
     },
   ];
@@ -55,10 +55,9 @@ const PricingSection1 = () => {
       {/* Top Heading */}
       <div className="pricing-header1">
         <span className="pricing-badge1">FLEXIBLE PRICING PLAN</span>
-        <h2 className="pricing-title1">We’ve offered the best pricing for you</h2>
+        <h2 className="pricing-title1">Our Comprehensive Cloud & Digital Services</h2>
         <p className="pricing-subtitle1">
-          Ever find yourself staring at your computer screen a good consulting slogan to come to mind? Oftentimes.
-        </p>
+            CloudXSecure is a trusted technology partner delivering scalable cloud services, modern web design, mobile app development, and end-to-end cloud solutions. We help startups, SMEs, and enterprises accelerate digital transformation with secure infrastructure, high-performance applications, and future-ready technology.        </p>
 
         {/* Toggle Switch */}
         <div className="pricing-toggle1">

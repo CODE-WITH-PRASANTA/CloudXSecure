@@ -9,13 +9,13 @@ import quoteIcon from "../../assets/const-quote.svg";
 const testimonials = [
   {
     text:
-      "Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Floria Sum Dolor Sit Amet, Consecteture. Borem Ipsum Dolor Sit Amet, Elita Moremsit Amet.",
+      "CloudXSecure transformed our infrastructure with secure cloud deployment and seamless application development. Their team delivered a fast, scalable website and helped us migrate to the cloud without downtime. Professional, reliable, and highly skilled.",
     name: "Mr. Robey Alexa",
     role: "CEO, Gerow Agency",
   },
   {
     text:
-      "Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Floria Sum Dolor Sit Amet, Consecteture. Borem Ipsum Dolor Sit Amet, Elita Moremsit Amet.",
+      "From cloud architecture to mobile app development, CloudXSecure handled everything end-to-end. Their managed cloud services and DevOps support keep our systems running 24/7 while improving performance and security.",
     name: "Guy Hawkins",
     role: "CEO, Gerow Agency",
   },

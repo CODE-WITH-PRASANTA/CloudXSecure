@@ -7,16 +7,12 @@ import quoteImg from "../../assets/devops-qute.webp";
 
 const devopsTestimonials = [
   {
-    text: `I should be incapable of drawing a single stroke at the present moment;
-    and yet I feel that I never was a best greater artist than now. The lovely
-    valley teems with vapor around me, & the meridian sun strikes.`,
+    text: `CloudXSecure delivered secure cloud solutions and outstanding web and app development for our business. Their team improved performance, scalability, and data security while keeping everything on schedule. A trusted partner for modern IT solutions.`,
     name: "Shakib Mahmud",
     role: "Operating Officer",
   },
   {
-    text: `I should be incapable of drawing a single stroke at the present moment;
-    and yet I feel that I never was a best greater artist than now. The lovely
-    valley teems with vapor around me, & the meridian sun strikes.`,
+    text: `Working with CloudXSecure was seamless. From cloud infrastructure to custom web and mobile app design, their expertise helped us streamline operations and grow faster. Highly recommended for reliable cloud services and digital solutions.`,
     name: "Shakib Mahmud",
     role: "Operating Officer",
   },
@@ -41,11 +37,10 @@ const DevopsTestimonialScroll = () => {
       <div className="devops-testimonial-header">
         <span className="devops-testimonial-tag">Testimonial</span>
         <h2>
-          Feedback from <span>Customers</span>
+          Trusted by Businesses Worldwide –<span>Client Feedback</span>
         </h2>
         <p>
-          Whether you are looking to enhance productivity, improve efficiency,
-          or stay ahead of technological advancements, we've got you covered.
+          Discover how CloudXSecure helps organizations grow with secure cloud services, modern web design, scalable app development, and end-to-end cloud solutions.
         </p>
       </div>
 

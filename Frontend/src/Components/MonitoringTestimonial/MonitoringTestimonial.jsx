@@ -6,17 +6,17 @@ import QuoteIcon from "../../assets/quote-single.svg"; // ADD YOUR SINGLE QUOTE 
 const MonitoringTestimonial = () => {
   const testimonials = [
     {
-      text: "Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai Sum Dolor Sit Amet, Consecteture. Borem Ipsum Consectetur Adipiscinsit Consectetur Adipiscing.",
+      text: "CloudXSecure completely transformed our digital infrastructure. Their cloud services helped us migrate smoothly, improve security, and scale effortlessly. The web design team delivered a modern, SEO-optimized website, while their app developers built a fast, user-friendly mobile application. Truly a one-stop solution for cloud and digital growth.",
       name: "Mr. Robey Alexa",
       title: "CEO, Gerow Agency",
     },
     {
-      text: "Professional Monitoring Support Provided With Complete Transparency And Real-time Reporting. Excellent Team Performance And Communication Skills.",
+      text: "Working with CloudXSecure has been an outstanding experience. From cloud architecture and DevOps automation to professional web and app development, their team delivered everything on time and beyond expectations. Their managed cloud solutions significantly improved our performance, security, and customer engagement.",
       name: "Ms. Alisha Brown",
       title: "Founder, TechNova",
     },
     {
-      text: "Their Monitoring Solutions Helped Us Improve System Efficiency And Performance. Highly Recommended For Businesses Requiring Continuous Oversight.",
+      text: "CloudXSecure helped us modernize our entire digital ecosystem. From secure cloud deployment and scalable infrastructure to responsive web design and custom mobile app development, their end-to-end cloud solutions accelerated our business growth. Their expertise in cloud security and performance optimization truly sets them apart.",
       name: "Mr. David Wilson",
       title: "Manager, Bright Ventures",
     },

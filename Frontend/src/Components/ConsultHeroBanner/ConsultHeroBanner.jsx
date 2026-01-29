@@ -28,19 +28,17 @@ const HeroBanner = () => {
       </div>
 
       <div className="cx-hero__content">
-        <span className="cx-hero__subtitle">WE ARE EXPERT IN THIS FIELD</span>
+        <span className="cx-hero__subtitle">Trusted Cloud & Digital Solutions Experts</span>
 
         <h1 className="cx-hero__title">
-          Grow Your Business <br /> More Efficiently
+          Grow Your Business with Secure Cloud & <br />  Digital Solutions 
         </h1>
 
         <p className="cx-hero__desc">
-          Agilos helps you to convert your data into a strategic asset and
-          get top-notch business insights.
-        </p>
+          From cloud consulting and application development to complete managed cloud solutions, CloudXSecure empowers startups and enterprises with future-ready technology.        </p>
 
         <button className="cx-hero__btn">
-          Our Services <span>➜</span>
+          Start Your Cloud Journey  <span>➜</span>
         </button>
       </div>
     </section>

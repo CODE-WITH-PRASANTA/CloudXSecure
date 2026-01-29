@@ -25,10 +25,10 @@ const HeroITUnique = () => {
           </h1>
 
           <ul className="heroItUnique-list">
-            <li>Deployment and Support</li>
-            <li>Discovery and Analysis</li>
-            <li>Flexibility and Adaptability</li>
-            <li>Competitive Advantage</li>
+            <li>Secure Cloud Deployment & 24/7 Support</li>
+            <li>Custom Web & Mobile App Development</li>
+            <li>Scalable Cloud Infrastructure</li>
+            <li>Advanced Cybersecurity & Data Protection</li>
           </ul>
 
           <button className="heroItUnique-btn">Get Started →</button>

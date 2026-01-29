@@ -13,10 +13,10 @@ import t3 from "../../assets/h2_team_img03.jpg";
 import t4 from "../../assets/h2_team_img04.jpg";
 
 const team = [
-  { name: "Brooklyn Simmons", role: "Finance Advisor", img: t1 },
-  { name: "Jenny Wilson", role: "Finance Advisor", img: t2 },
-  { name: "Wade Warren", role: "Finance Advisor", img: t3 },
-  { name: "Marvin McKinney", role: "Finance Advisor", img: t4 },
+  { name: "Brooklyn Simmons", role: "Cloud Solutions Architect", img: t1 },
+  { name: "Jenny Wilson", role: "Cyber Security Specialist", img: t2 },
+  { name: "Wade Warren", role: "Web & App Development Lead", img: t3 },
+  { name: "Marvin McKinney", role: "Backup & Recovery Engineer", img: t4 },
 ];
 
 const BDTeamMembers = () => {
@@ -25,13 +25,12 @@ const BDTeamMembers = () => {
       <div className="bd-team-container">
         {/* TOP CONTENT */}
         <div className="bd-team-left">
-          <span className="bd-badge">EXPERT PEOPLE</span>
+          <span className="bd-badge">CLOUDXSECURE EXPERT TEAM</span>
           <h2>
-            Our Dedicated Team <br /> Members
+            Meet Our Cloud, Security & Digital Solution Experts
           </h2>
           <p>
-            Ever Find Yourself Staring At Your Computer Screen A Good Consulting
-            Slogan To Come To Mind? Oftentimes.
+            Our dedicated team at CloudXSecure brings together cloud engineers, cybersecurity specialists, web designers, and application developers to deliver secure, scalable, and high-performance digital solutions.
           </p>
         </div>
 

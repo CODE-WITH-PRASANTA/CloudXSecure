@@ -30,19 +30,17 @@ const ProcessSection = () => {
           <div className="ps-grid">
             <div className="ps-card">
               <span className="ps-number">01</span>
-              <h4>Requirement Analysis</h4>
+              <h4>Discovery & Planning</h4>
               <p>
-                We carefully understand business goals, user needs, and technical
-                requirements to build a strong project foundation.
+                We analyze your business goals and technical needs to design secure cloud, web, and app solutions that scale.
               </p>
             </div>
 
             <div className="ps-card active">
               <span className="ps-number">02</span>
-              <h4>UI / UX Design</h4>
+              <h4>UI/UX & Architecture</h4>
               <p>
-                Clean, user-focused designs that prioritize usability,
-                accessibility, and consistent experience across devices.
+               We create user-focused designs and cloud architecture optimized for performance, security, and SEO.
               </p>
             </div>
 
@@ -50,17 +48,15 @@ const ProcessSection = () => {
               <span className="ps-number">03</span>
               <h4>Prototype & Validation</h4>
               <p>
-                Interactive prototypes are developed to validate ideas, refine
-                workflows, and ensure clarity before development.
+                Interactive prototypes validate workflows, refine features, and ensure your product is ready for real users.
               </p>
             </div>
 
             <div className="ps-card">
               <span className="ps-number">04</span>
-              <h4>Development & Delivery</h4>
+              <h4>Development & Deployment</h4>
               <p>
-                Secure, scalable development followed by testing, optimization,
-                and smooth project delivery.
+                We deliver secure cloud systems, responsive websites, and scalable apps—fully tested and production-ready.
               </p>
             </div>
           </div>

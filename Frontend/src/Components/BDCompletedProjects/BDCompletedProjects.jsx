@@ -18,16 +18,15 @@ const BDCompletedProjects = () => {
         {/* HEADER */}
         <div className="completed-header">
           <div className="left">
-            <span className="badge">COMPLETE PROJECTS</span>
+            <span className="badge">SUCCESSFUL CLIENT PROJECTS</span>
             <h2>
-              Our recently completed <br /> projects list
+              Recent Cloud, Backup & Digital Transformation  <br /> Projects
             </h2>
           </div>
 
           <div className="right">
             <p>
-              Ever Find Yourself Staring At Your Computer Screen A Good
-              Consulting Slogan To Come To Mind? Oftentimes.
+              Explore how CloudXSecure helps organizations protect data, recover faster, and build secure digital platforms through cloud-first strategies.
             </p>
           </div>
         </div>

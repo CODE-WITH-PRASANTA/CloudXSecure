@@ -19,10 +19,10 @@ export default function TeamMembers() {
   const cardsRef = useRef([]);
 
   const members = [
-    { id: 1, img: team1, name: "Masirul Islam", role: "Web Designer" },
-    { id: 2, img: team2, name: "Jessica Mardol", role: "Cyber Expert" },
-    { id: 3, img: team3, name: "Arnold Hemingway", role: "Web Expert" },
-    { id: 4, img: team4, name: "Shikon Haque", role: "Data Analyst" },
+    { id: 1, img: team1, name: "Masirul Islam", role: "UI/UX & Web Designer" },
+    { id: 2, img: team2, name: "Jessica Mardol", role: "Cloud & Cyber Security Expert" },
+    { id: 3, img: team3, name: "Arnold Hemingway", role: "Full-Stack Web Developer" },
+    { id: 4, img: team4, name: "Shikon Haque", role: "Cloud Data Analyst" },
   ];
 
   /* ---------- SCROLL REVEAL ---------- */
@@ -50,7 +50,7 @@ export default function TeamMembers() {
       <div className="tm-container">
         <div className="tm-header">
           <span className="tm-tag">TEAM MEMBERS</span>
-          <h2 className="tm-title">Our Dedicated Team Members</h2>
+          <h2 className="tm-title">Meet Our Cloud, Web & App Technology Experts</h2>
 
           {/* ALL MEMBERS BUTTON */}
           <div className="tm-all-btn">

@@ -30,16 +30,12 @@ const AboutSection = () => {
           <span className="cx-about__label">WHAT WE ARE DOING</span>
 
           <h2 className="cx-about__title">
-            Changing The Way To Do Best
-            <br />
-            Business Solutions
+           Transforming Businesses with Secure Cloud &  <br />
+             Digital Solutions 
           </h2>
 
           <p className="cx-about__text">
-            Borem ipsum dolor sit amet, consectetur adipiscing elit a florai
-            psum dolor sit amet, consectetur adipiscing elit sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua quis suspendisse
-            ultricies gravida.
+           At CloudXSecure, we help organizations modernize, scale, and succeed through powerful cloud services, professional web design, and custom mobile app development. Our expert team delivers end-to-end cloud solutions—from cloud consulting and infrastructure setup to application development and managed services—ensuring performance, security, and long-term growth. We combine innovation with reliability to help businesses embrace digital transformation with confidence.
           </p>
         </div>
       </div>
@@ -47,18 +43,18 @@ const AboutSection = () => {
       {/* SERVICES */}
       <div className="cx-about__cards">
         <div className="cx-card">
-          <h4>Quality Services</h4>
-          <p>Eiusmod tempor incididunt ut labore magna aliqua quisery.</p>
+          <h4>Quality Cloud Services</h4>
+          <p>Secure, scalable cloud services including migration, DevOps, and managed infrastructure to keep your business fast, safe, and always online.</p>
         </div>
 
         <div className="cx-card">
-          <h4>Innovation Ideas</h4>
-          <p>Eiusmod tempor incididunt ut labore magna aliqua quisery.</p>
+          <h4>Web & App Development</h4>
+          <p>Modern websites and custom mobile apps designed for performance, usability, and growth—built to engage users and drive results.</p>
         </div>
 
         <div className="cx-card">
-          <h4>Business Growth</h4>
-          <p>Eiusmod tempor incididunt ut labore magna aliqua quisery.</p>
+          <h4>Complete Cloud Solutions</h4>
+          <p>End-to-end cloud solutions combining consulting, development, and management to accelerate digital transformation and business success.</p>
         </div>
       </div>
     </section>

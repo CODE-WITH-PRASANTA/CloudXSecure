@@ -12,20 +12,20 @@ import img3 from "../../assets/devops-service-img3.webp";
 const services = [
   {
     icon: icon1,
-    title: "Software Development and Integration",
-    desc: "IT solutions designed to streamline your operations, enhance security, and drive innovation.",
+    title: "Cloud Solutions & Software Development",
+    desc: "Build secure, scalable cloud infrastructure with custom software tailored to your business. CloudXSecure delivers cloud migration, SaaS development, and system integration for high-performance digital operations.",
     img: img1,
   },
   {
     icon: icon2,
-    title: "Unified Communications and Collaboration",
-    desc: "From cloud infrastructure management and cybersecurity solutions to data analytics, network optimization.",
+    title: "Web & Mobile App Design",
+    desc: "Create stunning websites and powerful mobile apps with CloudXSecure. We design user-friendly, SEO-optimized web platforms and high-performance mobile applications that convert visitors into customers.",
     img: img2,
   },
   {
     icon: icon3,
-    title: "Network Optimization Services Managed IT Services",
-    desc: "Whether you're looking to enhance productivity, improve efficiency, or stay ahead of technological.",
+    title: "Managed Cloud & IT Services",
+    desc: "From cloud security and DevOps to infrastructure management and monitoring, CloudXSecure provides complete managed IT services to keep your systems secure, optimized, and always online.",
     img: img3,
   },
 ];
@@ -37,12 +37,11 @@ const ServiceSection = () => {
         <span className="tx-service-tag">Service</span>
 
         <h2 className="tx-service-title">
-          Our Comprehensive <span>IT Solutions</span>
+          Our Comprehensive  <span>Cloud & Digital Solutions</span>
         </h2>
 
         <p className="tx-service-subtitle">
-          Whether you are looking to enhance productivity, improve efficiency,
-          or stay ahead of technological advancements, we've got you covered.
+         Empowering businesses with secure cloud services, modern web design, scalable app development, and end-to-end IT solutions—built to drive growth, performance, and digital success.
         </p>
 
         <div className="tx-service-grid">

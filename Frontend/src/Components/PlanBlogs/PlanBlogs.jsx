@@ -11,23 +11,23 @@ const BizBlogSection = () => {
     {
       id: 1,
       image: blogImg1,
-      title: "Build Faster and Smarter with Coreai Multipurpose Template",
-      author: "John Doe",
-      date: "March 15, 2025",
+      title: "Cybersecurity Best Practices Every Business Should Follow in 2026",
+      author: "Jane Doe",
+      date: "Jan 05, 2026",
     },
     {
       id: 2,
       image: blogImg2,
-      title: "If You Have The Self-Discipline, Start Honing These 4 Habits",
+      title: "Why Professional Web Design Matters for Business Growth",
       author: "John Doe",
-      date: "March 15, 2025",
+      date: "Jan 15, 2026",
     },
     {
       id: 3,
       image: blogImg3,
-      title: "This Long-Awaited Technology May Finally Change the World",
-      author: "John Doe",
-      date: "March 15, 2025",
+      title: "Building Scalable Cloud-Based Applications for the Future",
+      author: "CloudXSecure Team",
+      date: "Jan 25, 2026",
     },
   ];
 
@@ -36,8 +36,8 @@ const BizBlogSection = () => {
       <div className="bizblog-container">
         {/* SECTION HEADING */}
         <h2 className="bizblog-heading">
-          Insight & Updates, Discover <br />
-          <span>Our Blog Articles</span>
+          CloudXSecure Insights: <br />
+          <span>Cloud, Security & Digital Solutions</span>
         </h2>
 
         {/* BLOG CARDS */}

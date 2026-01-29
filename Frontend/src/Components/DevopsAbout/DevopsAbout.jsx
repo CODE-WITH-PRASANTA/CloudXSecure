@@ -20,33 +20,30 @@ const AboutTech = () => {
 
         {/* CONTENT SIDE */}
         <div className="about-tech-content">
-          <span className="about-tag">About Us</span>
+          <span className="about-tag">About CloudXSecure</span>
 
           <h2 className="about-title">
-            Transforming Industries with <br />
-            Technology <span>Our Commitment</span>
+            Transforming Businesses with Secure Cloud, DevOps <span>& Digital Solutions</span>
           </h2>
 
           <p className="about-desc">
-            At Your Company Name, we are passionate about leveraging technology
-            to drive meaningful change. With a team of seasoned experts in IT
-            solutions, we're committed to delivering cutting.
+           CloudXSecure delivers end-to-end cloud services, DevOps automation, web design, and mobile app development to help businesses scale securely and efficiently. From cloud migration and infrastructure management to modern website and app solutions, we provide reliable, high-performance technology tailored to your growth.
           </p>
 
           <ul className="about-list">
             <li>
-              <FaCheckCircle /> Highlight the unique features or benefits
+              <FaCheckCircle /> Secure cloud infrastructure & DevOps automation
             </li>
             <li>
-              <FaCheckCircle /> Provide a brief overview of each solution
+              <FaCheckCircle /> Custom web design & mobile app development
             </li>
             <li>
-              <FaCheckCircle /> Present your main solutions/services.
+              <FaCheckCircle /> Complete cloud solutions, migration & support
             </li>
           </ul>
 
           <a href="#" className="learn-more-btn">
-            Learn More ↗
+           Explore Our Cloud Solutions ↗
           </a>
         </div>
       </div>
@@ -55,19 +52,19 @@ const AboutTech = () => {
       <div className="about-stats">
         <div className="stat-box">
           <h3>450+</h3>
-          <p>Active Clients</p>
+          <p>Trusted Clients Worldwide</p>
         </div>
         <div className="stat-box">
           <h3>990+</h3>
-          <p>IT Projects</p>
+          <p>Cloud, Web & App Projects Delivered</p>
         </div>
         <div className="stat-box">
           <h3>45+</h3>
-          <p>Team Advisors</p>
+          <p>Certified Cloud & DevOps Experts</p>
         </div>
         <div className="stat-box ">
           <h3>20+</h3>
-          <p>Glorious Years</p>
+          <p>Years of Digital Innovation</p>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ const teamData = [
   {
     img: team1,
     name: "John Doe",
-    role: "CEO & Founder",
+    role: "Founder & Cloud Solutions Architect",
   },
   {
     img: team2,

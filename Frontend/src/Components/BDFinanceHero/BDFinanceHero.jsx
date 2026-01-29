@@ -3,9 +3,9 @@ import "./BDFinanceHero.css";
 import bgImage from "../../assets/choose_bg.jpg";
 
 const progressData = [
-  { title: "Consulting", value: 85 },
-  { title: "Investment", value: 76 },
-  { title: "Business", value: 90 },
+  { title: "Cloud Backup & Recovery", value: 85 },
+  { title: "Web & App Protection", value: 76 },
+  { title: "Managed Cloud Solutions", value: 90 },
 ];
 
 const BDFinanceHero = () => {
@@ -20,12 +20,11 @@ const BDFinanceHero = () => {
         {/* LEFT CONTENT */}
         <div className="finance-left">
           <h1>
-            We'll Ensure You Always Get <br />
-            the Best Guidance.
+           Secure Backup, Cloud Recovery & Digital <br />
+            Solutions for Your Business
           </h1>
           <p>
-            Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita
-            Florai Psum Dolor Sit Amet, Consecteture Borem.
+            CloudXSecure delivers enterprise-grade backup and disaster recovery services combined with secure cloud infrastructure, professional web design, and scalable app development. We help businesses protect critical data, restore applications quickly, and maintain continuous operations during disruptions.
           </p>
 
           <div className="finance-video">
@@ -36,13 +35,12 @@ const BDFinanceHero = () => {
 
         {/* RIGHT CARD */}
         <div className="finance-card">
-          <span className="badge">WHY WE ARE THE BEST</span>
+          <span className="badge">WHY CLOUDXSECURE</span>
           <h2>
-            Smart Great Finance <br /> For you Solutions
+           Secure Cloud Backup & Disaster Recovery  <br /> Solutions
           </h2>
           <p>
-            Morem Ipsum Dolor Sit Amet Consectedipiscing Elita
-            Florai Psum Dolor Sit Amonsectet Borem Ipsum Consectetur.
+           CloudXSecure provides reliable backup and disaster recovery services to protect your cloud systems, websites, and applications. Our secure cloud solutions ensure fast recovery, data protection, and uninterrupted business operations.
           </p>
 
           {progressData.map((item, index) => (

@@ -8,15 +8,15 @@ import avatar2 from "../../assets/testi_avatar02.png";
 const testimonials = [
   {
     text:
-      "Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai Sum Dolor Sit Amet, Consecteture.",
+      "CloudXSecure helped us migrate to the cloud and implement reliable backup and disaster recovery. Their cloud solutions improved performance while protecting our business data. Highly recommended for secure cloud services and digital transformation.",
     name: "Mr. Robey Alexa",
     role: "CEO, Gerow Agency",
     img: avatar1,
   },
   {
     text:
-      "Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai Sum Dolor Sit Amet, Consecteture.",
-    name: "Mr. John Carter",
+      "From professional web design to scalable app development, CloudXSecure delivered exactly what we needed. Their team built secure cloud-based applications that support our growth and improve customer experience.",
+    name: "Rajesh Kumar",
     role: "Founder, Carter Group",
     img: avatar2,
   },
@@ -30,7 +30,7 @@ const BDTestimonials = () => {
         <div className="bd-testimonial-header">
           <span className="bd-badge dark">OUR TESTIMONIALS</span>
           <h2>
-            What Customers Say’s About Our <br /> Gerow Services
+            What Our Clients Say About <br /> CloudXSecure 
           </h2>
         </div>
 

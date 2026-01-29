@@ -10,25 +10,25 @@ const blogData = [
     img: blogImg1,
     date: "25",
     month: "Jan",
-    category: "Development",
-    title: "Meet AutoManage, the best AI management tools",
-    desc: "Everything You Need To Start Building Area Atching Presence For Your Business.",
+    category: "Cloud Services",
+    title: "Secure Cloud Solutions for Modern Businesses",
+    desc: "Discover how CloudXSecure delivers scalable cloud infrastructure, data security, and performance-driven cloud services to help businesses grow faster and smarter.",
   },
   {
     img: blogImg2,
     date: "25",
     month: "Jan",
-    category: "Development",
-    title: "Meet AutoManage, the best AI management tools",
-    desc: "Everything You Need To Start Building Area Atching Presence For Your Business.",
+    category: "Web & App Development",
+    title: "Build High-Performance Websites & Mobile Apps",
+    desc: "Learn how our expert team designs responsive websites and powerful mobile apps that improve user experience, boost conversions, and strengthen your digital presence.",
   },
   {
     img: blogImg3,
     date: "25",
     month: "Jan",
-    category: "Development",
-    title: "Meet AutoManage, the best AI management tools",
-    desc: "Everything You Need To Start Building Area Atching Presence For Your Business.",
+    category: "Managed Cloud Solutions",
+    title: "Complete Cloud Management for Business Success",
+    desc: "Explore CloudXSecure’s end-to-end cloud solutions including DevOps, monitoring, maintenance, and 24/7 support—so you can focus on scaling your business.",
   },
 ];
 
@@ -42,10 +42,9 @@ const BlogSection = () => {
         {/* Header */}
         <div className="gerow-blog-header">
           <span className="gerow-blog-subtitle">NEWS BLOGS</span>
-          <h2>Read Our Latest Updates</h2>
+          <h2>Latest Insights on Cloud, Web & App Solutions</h2>
           <p>
-            Ever Find Yourself Staring At Your Computer Screen A Good Consulting
-            Slogan To Come To Mind? Oftentimes.
+            CloudXSecure shares quick insights on cloud services, web design, app development, and secure cloud solutions—helping businesses stay modern, scalable, and protected in today’s digital world.
           </p>
         </div>
 

@@ -18,67 +18,42 @@ const stats = [
 /* TESTIMONIALS */
 const testimonials = [
   {
-    title: "Amazing!",
-    text: "This API transformed our workflow! The integration was seamless, and the support team was always available.",
-    name: "Michael K. Wilson",
-    role: "CEO & Founder",
+    title: "Outstanding Cloud Support",
+    text: "CloudXSecure transformed our infrastructure with their managed cloud services. From migration to optimization, everything was seamless.",
+    name: "Rahul Mehta",
+    role: "IT Manager",
     rating: 5,
     avatar: user1,
   },
   {
-    title: "Exceptional",
-    text: "This API transformed our workflow! The integration was seamless, and the support team was always available.",
-    name: "Sarah Johnson",
-    role: "Marketing Head",
+    title: "Exceptional Cybersecurity Expertise",
+    text: "Security was our biggest concern, and CloudXSecure delivered beyond expectations.",
+    name: "Amit Sharma",
+    role: "Marketing Lead",
     rating: 5,
     avatar: user2,
   },
   {
-    title: "Exceptional Service",
-    text: "This API transformed our workflow! The integration was seamless, and the support team was always available.",
-    name: "David Miller",
-    role: "CTO",
+    title: "Reliable App Development Partner",
+    text: "The CloudXSecure team built a secure and scalable application tailored to our business needs.",
+    name: "Priya Verma",
+    role: "Startup Founder",
     rating: 5,
     avatar: user3,
   },
   {
-    title: "Superb!",
-    text: "This API transformed our workflow! The integration was seamless, and the support team was always available.",
-    name: "Emily Clark",
-    role: "Product Manager",
+    title: "Professional Web Design Experience",
+    text: "CloudXSecure designed a modern, responsive website that significantly increased engagement.",
+    name: "Abhisek Singh",
+    role: "Marketing Lead",
     rating: 5,
     avatar: user4,
   },
 ];
 
-const VISIBLE = 3;
-const TOTAL = testimonials.length;
-
 const BizTestimonials = () => {
-  const [index, setIndex] = useState(0);
-  const [enableTransition, setEnableTransition] = useState(true);
   const [counts, setCounts] = useState(stats.map(() => 0));
   const statsRef = useRef(null);
-
-  /* AUTO SLIDE (LEFT → RIGHT) */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setEnableTransition(true);
-      setIndex((prev) => prev + 1);
-    }, 2000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  /* SILENT RESET */
-  useEffect(() => {
-    if (index === TOTAL) {
-      setTimeout(() => {
-        setEnableTransition(false);
-        setIndex(0);
-      }, 900); // must match transition duration
-    }
-  }, [index]);
 
   /* COUNTER */
   useEffect(() => {
@@ -107,16 +82,11 @@ const BizTestimonials = () => {
     if (statsRef.current) observer.observe(statsRef.current);
   }, []);
 
-  const handleDotClick = (i) => {
-    setEnableTransition(true);
-    setIndex(i);
-  };
-
   return (
     <section className="biz-testimonial-section">
       <div className="biz-testimonial-container">
 
-        <h2 className="biz-testimonial-heading">What is the User Say</h2>
+        <h2 className="biz-testimonial-heading">What Our Users Say</h2>
         <p className="biz-testimonial-subheading">
           Explore how we've helped businesses grow organically with SEO.
         </p>
@@ -131,49 +101,36 @@ const BizTestimonials = () => {
           ))}
         </div>
 
-        {/* SLIDER */}
-       
-<div className="biz-slider-wrapper">
-  <div className="biz-testimonial-slider marquee">
-    {[...testimonials, ...testimonials].map((item, i) => (
-      <div className="biz-testimonial-card" key={i}>
-        <div className="biz-card-header">
-          <h4>{item.title}</h4>
-          <FaQuoteRight className="biz-quote-icon" />
-        </div>
+        {/* MARQUEE SLIDER */}
+        <div className="biz-slider-wrapper">
+          <div className="biz-testimonial-slider marquee">
+            {[...testimonials, ...testimonials].map((item, i) => (
+              <div className="biz-testimonial-card" key={i}>
+                <div className="biz-card-header">
+                  <h4>{item.title}</h4>
+                  <FaQuoteRight className="biz-quote-icon" />
+                </div>
 
-        <p className="biz-testimonial-text">"{item.text}"</p>
+                <p className="biz-testimonial-text">"{item.text}"</p>
 
-        <div className="biz-testimonial-footer">
-          <div className="biz-user-info">
-            <img src={item.avatar} alt={item.name} />
-            <div>
-              <h5>{item.name}</h5>
-              <span>{item.role}</span>
-            </div>
-          </div>
+                <div className="biz-testimonial-footer">
+                  <div className="biz-user-info">
+                    <img src={item.avatar} alt={item.name} />
+                    <div>
+                      <h5>{item.name}</h5>
+                      <span>{item.role}</span>
+                    </div>
+                  </div>
 
-          <div className="biz-rating">
-            {[...Array(item.rating)].map((_, j) => (
-              <FaStar key={j} />
+                  <div className="biz-rating">
+                    {[...Array(item.rating)].map((_, j) => (
+                      <FaStar key={j} />
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-
-        {/* DOTS */}
-        <div className="biz-slider-dots">
-          {testimonials.map((_, i) => (
-            <span
-              key={i}
-              className={`biz-dot ${index === i ? "active" : ""}`}
-              onClick={() => handleDotClick(i)}
-            />
-          ))}
         </div>
 
       </div>

@@ -15,10 +15,10 @@ import icon4 from "../../assets/s-icon-5.webp";
 
 export default function ServiceCards() {
   const services = [
-    { img: img1, icon: icon1, title: "Database Security" },
-    { img: img2, icon: icon2, title: "IT Consultancy" },
-    { img: img3, icon: icon3, title: "App Development" },
-    { img: img4, icon: icon4, title: "Cloud Security" },
+    { img: img1, icon: icon1, title: "Cloud Infrastructure Services" },
+    { img: img2, icon: icon2, title: "Professional Web Design" },
+    { img: img3, icon: icon3, title: "Mobile & App Development" },
+    { img: img4, icon: icon4, title: "Cloud Security Solutions" },
   ];
 
   return (
@@ -29,7 +29,7 @@ export default function ServiceCards() {
         <div className="prg-services-header">
           <span className="prg-services-tag">WHAT WE DO</span>
           <h2 className="prg-services-title">
-            We Solve IT Problems With Technology
+           We Power Businesses With Secure Cloud & Digital Solutions
           </h2>
 
           <button className="prg-services-btn">
@@ -53,8 +53,7 @@ export default function ServiceCards() {
 
                 <h4>{item.title}</h4>
                 <p>
-                  Accumsan. Pellentesque in magna tincidunt,
-                  this is.
+                 CloudXSecure delivers secure cloud services, professional web design, and custom app development to help businesses grow faster. Our end-to-end cloud solutions focus on performance, scalability, and data protection—ensuring reliable digital experiences from infrastructure to applications.
                 </p>
 
                 <a href="#" className="prg-read-more">

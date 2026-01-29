@@ -12,16 +12,16 @@ const ConsultFaqSection = () => {
 
   const faqs = [
     {
-      q: "Interdum et malesuada fames ac ante ipsum",
-      a: "Ever find yourself staring at your computer screen a good consulting slogan to come to mind? Oftentimes."
+      q: "What cloud services does CloudXSecure provide?",
+      a: "CloudXSecure offers end-to-end cloud solutions including cloud architecture design, migration, server management, DevOps automation, monitoring, and security—helping businesses achieve high availability, performance, and cost efficiency."
     },
     {
-      q: "Interdum et malesuada fames ac ante ipsum",
-      a: "Consulting slogans are often hard to craft but play a vital role in branding."
+      q: "Do you build websites and mobile applications?",
+      a: "Yes. We design and develop modern, responsive websites and high-performance mobile applications focused on user experience, speed, and conversions—tailored to your business goals and brand identity."
     },
     {
-      q: "Interdum et malesuada fames ac ante ipsum",
-      a: "A strong consulting slogan builds trust and credibility instantly."
+      q: "How does CloudXSecure ensure security and uptime?",
+      a: "We implement enterprise-grade security, automated backups, continuous monitoring, and scalable cloud infrastructure to protect your data and guarantee maximum uptime for your applications and services."
     }
   ];
 
@@ -47,11 +47,10 @@ const ConsultFaqSection = () => {
         >
           <span className="section-tag">OUR SERVICE BENEFITS</span>
           <h2>
-            Keep Your Business Safe Ensure <br /> High Availability.
+            Keep Your Business Safe Ensure <br /> High Availability Cloud Solutions
           </h2>
           <p className="section-desc">
-            Ever find yourself staring at your computer’s good consulting slogan
-            to come to mind? Oftentimes.
+            CloudXSecure helps businesses modernize their digital presence with secure cloud infrastructure, custom web and mobile app development, and fully managed cloud solutions. Our expert team delivers scalable, high-performance systems designed to improve reliability, enhance user experience, and accelerate business growth—while keeping your data protected around the clock.
           </p>
 
           <div className="faq-list">

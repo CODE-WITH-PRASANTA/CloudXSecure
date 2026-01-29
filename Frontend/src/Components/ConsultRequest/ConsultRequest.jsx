@@ -14,8 +14,8 @@ const RequestSchedule = () => {
 
       <div className="request-container">
         <h2>
-          Let’s Request A Schedule For <br />
-          Free Consultation
+         Schedule Your Free Cloud  <br />
+           & Digital Transformation Consultation 
         </h2>
 
         <div className="request-actions">
@@ -37,14 +37,14 @@ const RequestSchedule = () => {
             </span>
 
             <div>
-              <span>Hotline 24/7</span>
-              <strong>+123 8989 444</strong>
+              <span>Supporting Line</span>
+              <strong>+1 (123) 456-7890</strong>
             </div>
           </div>
 
           {/* Button */}
           <button className="request-btn-fixed">
-  REQUEST A SCHEDULE
+  Request a Free Consultation
   <span className="request-arrow">
     <svg
       width="14"

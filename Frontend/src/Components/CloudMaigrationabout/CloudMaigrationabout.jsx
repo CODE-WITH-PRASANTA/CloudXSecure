@@ -33,25 +33,24 @@ export default function HeroAbout() {
 
           {/* RIGHT : CONTENT */}
           <div className="prg-hero-content">
-            <span className="prg-tag">ABOUT EXTECH</span>
+            <span className="prg-tag">ABOUT CLOUDXSECURE</span>
 
             <h2 className="prg-title">
-              We Can Clients With The About Solution
+              Smart Cloud Solutions for Modern Businesses
             </h2>
 
             <p className="prg-desc">
-              It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout.
+             CloudXSecure delivers secure cloud services, custom web design, mobile app development, and complete cloud solutions to help businesses migrate, scale, and grow with confidence. Our expert team builds reliable digital platforms focused on performance, security, and long-term success.
             </p>
 
             <ul className="prg-list">
-              <li>Branding and design Identity</li>
-              <li>Website Marketing Solutions</li>
-              <li>Unlimited Download Data</li>
+              <li>Secure Cloud Migration & Management</li>
+              <li>Professional Web & App Development</li>
+              <li>Scalable Infrastructure & IT Solutions</li>
             </ul>
 
             <div className="prg-actions">
-              <button className="prg-btn-main">Explore More</button>
+              <button className="prg-btn-main">Explore Our Solutions</button>
 
               <div className="prg-call-box">
                 <span className="prg-call-icon">
@@ -59,7 +58,7 @@ export default function HeroAbout() {
                 </span>
                 <div>
                   <p className="prg-call-text">Call Us Now</p>
-                  <p className="prg-call-num">+208-555-0112</p>
+                  <p className="prg-call-num">+1 (123) 456-7890</p>
                 </div>
               </div>
             </div>

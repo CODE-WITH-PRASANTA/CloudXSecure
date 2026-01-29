@@ -9,7 +9,7 @@ export default function Testimonials() {
       name: "Albert Flores",
       role: "Medical Assistant",
       text:
-        "Consectetur adipiscing elit. Integer nunc viverra laoreet est porta pretium metus aliquam eget maecenas.",
+        "CloudXSecure transformed our business with their secure cloud solutions and modern web design. Their team delivered a fast, scalable platform that improved performance and customer engagement.",
       img: "https://i.pravatar.cc/100?img=12",
     },
     {
@@ -17,7 +17,7 @@ export default function Testimonials() {
       name: "Kathryn Murphy",
       role: "Web Designer",
       text:
-        "Consectetur adipiscing elit. Integer nunc viverra laoreet est porta pretium metus aliquam eget maecenas.",
+        "From cloud migration to mobile app development, CloudXSecure handled everything seamlessly. Professional service, clear communication, and outstanding results.",
       img: "https://i.pravatar.cc/100?img=32",
     },
     {
@@ -25,7 +25,7 @@ export default function Testimonials() {
       name: "Robert Fox",
       role: "UI Designer",
       text:
-        "Consectetur adipiscing elit. Integer nunc viverra laoreet est porta pretium metus aliquam eget maecenas.",
+        "We partnered with CloudXSecure for full-stack development and cloud security. Their expertise helped us launch quickly while keeping our data safe and optimized.",
       img: "https://i.pravatar.cc/100?img=45",
     },
     {
@@ -33,7 +33,7 @@ export default function Testimonials() {
       name: "Jane Cooper",
       role: "Developer",
       text:
-        "Consectetur adipiscing elit. Integer nunc viverra laoreet est porta pretium metus aliquam eget maecenas.",
+        "CloudXSecure provided an end-to-end digital solution—website design, app development, and cloud infrastructure. Highly reliable team with strong technical knowledge.",
       img: "https://i.pravatar.cc/100?img=56",
     },
   ];

@@ -33,22 +33,20 @@ const InsuranceHero = () => {
 
         {/* RIGHT CONTENT */}
         <div className="insurance-content">
-          <span className="tag">INSURANCE AGENCY</span>
+          <span className="tag">CLOUD & DIGITAL SOLUTIONS</span>
 
           <h1>
-            Today, any health insurance deductible can feel like
-          </h1>
+            Power Your Business with Secure Cloud & Digital Solutions          </h1>
 
           <p className="description">
-            When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.
-          </p>
+             CloudXSecure provides secure cloud services, professional web design, and custom app development to help businesses grow. Our complete cloud solutions deliver scalability, performance, and reliable digital experiences.          </p>
 
           {/* BULLET POINTS */}
           <ul className="feature-list">
-            <li><FaCheckCircle /> 100% Better Results</li>
-            <li><FaCheckCircle /> Suspe Ndisse Suscipit Sagittis</li>
-            <li><FaCheckCircle /> Promis Timelined Guarantee</li>
-            <li><FaCheckCircle /> Review Credit Reports</li>
+            <li><FaCheckCircle /> Secure Cloud Infrastructure</li>
+            <li><FaCheckCircle /> Web & App Development</li>
+            <li><FaCheckCircle /> DevOps & Cloud Migration</li>
+            <li><FaCheckCircle /> 24/7 Expert Support</li>
           </ul>
 
           {/* STAT ICONS */}

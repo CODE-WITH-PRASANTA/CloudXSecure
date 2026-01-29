@@ -8,10 +8,10 @@ import img3 from "../../assets/const-team_img03.webp";
 import img4 from "../../assets/const-team_img04.webp";
 
 const team = [
-  { img: img1, name: "Brooklyn Simmons", role: "Finance Advisor" },
-  { img: img2, name: "Guy Hawkins", role: "Investment Department" },
-  { img: img3, name: "Savannah Nguyen", role: "Business Consulting" },
-  { img: img4, name: "Kristin Watson", role: "Marketing Head" },
+  { img: img1, name: "Brooklyn Simmons", role: "Cloud Solutions Architect" },
+  { img: img2, name: "Guy Hawkins", role: "Web & UI/UX Designer" },
+  { img: img3, name: "Savannah Nguyen", role: "DevOps & Cloud Operations Lead" },
+  { img: img4, name: "Kristin Watson", role: "Web & UI/UX Designer" },
 ];
 
 const TeamGerow = () => {
@@ -23,11 +23,10 @@ const TeamGerow = () => {
       <div className="gerow-container">
 
         <div className="gerow-heading">
-          <span>SKILLED TEAM MEMBERS</span>
-          <h2>Meet Our Dedicated Team</h2>
+          <span>SKILLED TECHNOLOGY EXPERTS</span>
+          <h2>Meet Our Dedicated Cloud & Development Team</h2>
           <p>
-            Ever Find Yourself Staring At Your Computer Screen A Good Consulting
-            Slogan To Come To Mind? Oftentimes.
+            Our experienced cloud engineers and developers create secure infrastructure, high-performance websites, and powerful mobile apps—providing end-to-end cloud solutions that drive real business growth.
           </p>
         </div>
 

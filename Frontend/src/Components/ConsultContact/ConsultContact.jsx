@@ -16,11 +16,10 @@ const ContactSection = () => {
         <div className="consult-contact-left">
           <span className="consult-contact-subtitle">GET IN TOUCH</span>
           <h2>
-            We Are Connected To Help <br /> Your Business!
+            We’re Here to Power Your  <br /> Digital Growth
           </h2>
           <p>
-            Ever find yourself staring at your computer screen a good consulting
-            slogan to come to mind? Oftentimes.
+            CloudXSecure delivers secure cloud solutions, modern web design, and mobile app development to help your business grow faster. Connect with our experts today for scalable, reliable, and performance-driven digital services
           </p>
         </div>
 
@@ -39,7 +38,7 @@ const ContactSection = () => {
 
             <textarea placeholder="Comments *"></textarea>
 
-            <button type="submit">SUBMIT NOW</button>
+            <button type="submit">Get Free Consultation</button>
           </form>
         </div>
       </div>

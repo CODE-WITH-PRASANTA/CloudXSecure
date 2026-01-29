@@ -12,8 +12,8 @@ export default function ConnectBanner() {
           {/* LEFT TEXT */}
           <div className="cb-text">
             <h2>
-              Stay Connected With <br />
-              <span>Cutting Edge IT</span>
+              Stay Connected With Secure, <br />
+              <span>Scalable Cloud & Digital Solutions</span>
             </h2>
           </div>
 
@@ -24,7 +24,7 @@ export default function ConnectBanner() {
             </div>
             <div className="cb-call-info">
               <p>Call Us Now</p>
-              <h4>+208-555-0112</h4>
+              <h4>+1 (123) 456-7890</h4>
             </div>
           </div>
 

@@ -13,9 +13,7 @@ const FeaturedWork = () => {
           <div className="tx-work-img-overlay"></div>
 
           <p className="tx-work-img-text">
-            Dive into our portfolio to see how we have helped businesses like
-            yours overcome challenges, achieve their goals, and thrive in todays
-            digital landscape robust cybersecurity solutions.
+            CloudXSecure provides secure cloud solutions, modern web design, and scalable app development to help businesses grow faster with reliable, performance-driven technology.
           </p>
 
           <a href="/" className="tx-work-btn">
@@ -28,15 +26,12 @@ const FeaturedWork = () => {
           <span className="tx-work-tag">How It Works</span>
 
           <h2 className="tx-work-title">
-            See Our Work in Action <br />
-            <span>Featured Projects</span>
+           See Our Work in Action — <br />
+            <span>Featured CloudXSecure Projects </span>
           </h2>
 
           <p className="tx-work-desc">
-            Explore our diverse portfolio of successful projects and client
-            engagements. From implementing robust cybersecurity solutions to
-            developing cutting-edge software applications and optimizing
-            network infrastructure
+            Explore CloudXSecure’s portfolio of successful cloud solutions, web design, and mobile app development projects. From secure cloud infrastructure and DevOps automation to modern websites and scalable applications, we help businesses transform digitally with reliable, high-performance IT solutions.
           </p>
 
           <div className="tx-work-list">
@@ -45,9 +40,7 @@ const FeaturedWork = () => {
               <div>
                 <h4>Highlighted Engagements</h4>
                 <p>
-                  Dive into our portfolio to see how we've helped businesses
-                  like yours overcome challenges, achieve their goals,& thrive
-                  in today's landscape.
+                  Discover how CloudXSecure delivers cloud services, custom web design, and app development that drive growth, improve security, and streamline operations.
                 </p>
               </div>
             </div>
@@ -55,11 +48,9 @@ const FeaturedWork = () => {
             <div className="tx-work-item">
               <span className="tx-check">✓</span>
               <div>
-                <h4>Our Track Record Showcase</h4>
+                <h4>Proven Track Record</h4>
                 <p>
-                  From implementing robust cybersecurity solutions to
-                  developing cutting-edge software applications and optimizing
-                  network.
+                  Our experts build secure cloud platforms, responsive websites, and powerful mobile apps—helping startups and enterprises achieve measurable results.
                 </p>
               </div>
             </div>
@@ -67,10 +58,9 @@ const FeaturedWork = () => {
             <div className="tx-work-item">
               <span className="tx-check">✓</span>
               <div>
-                <h4>Past Achievements Featured</h4>
+                <h4>Real Business Outcomes</h4>
                 <p>
-                  Each project exemplifies our dedication to delivering
-                  innovative IT solutions that drive tangible results.
+                  Every project reflects our commitment to scalable cloud solutions, user-focused design, and performance-driven development.
                 </p>
               </div>
             </div>

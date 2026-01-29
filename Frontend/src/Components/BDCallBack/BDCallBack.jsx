@@ -7,10 +7,9 @@ const BDCallBack = () => {
       <div className="bd-callback-container">
         {/* LEFT CONTENT */}
         <div className="bd-callback-left">
-          <h2>Request a Call Back</h2>
+          <h2>Request a Free Cloud Consultation</h2>
           <p>
-            Ever Find Yourself Staring At Your Computer Screen A Good Consulting
-            Slogan To Come To Mind? Oftentimes.
+            Talk with CloudXSecure experts about secure cloud services, backup & disaster recovery, professional web design, custom app development, and complete cloud solutions—built to scale your business.
           </p>
         </div>
 

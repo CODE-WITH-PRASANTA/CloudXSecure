@@ -53,7 +53,7 @@ const BDGetKnows = () => {
             <strong>25</strong>
             <span>
               Years of Experience <br />
-              in Finance Advisory
+             in Cloud Security & Recovery
             </span>
           </div>
 
@@ -62,29 +62,26 @@ const BDGetKnows = () => {
 
         {/* RIGHT */}
         <div className="af-right">
-          <span className="af-badge">GET TO KNOW US</span>
+          <span className="af-badge">GET TO KNOW CLOUDXSECURE</span>
 
           <h2>
-            Innovative Business Solutions <br />
-            for Financial Company
+           Secure Backup & Disaster Recovery Solutions <br />
+           for Modern Businesses
           </h2>
 
           <p>
-            We help organizations transform financial data into actionable
-            insights that improve decision-making, performance, and long-term
-            growth.
+           CloudXSecure delivers enterprise-grade backup and disaster recovery services designed to protect your cloud infrastructure, websites, and applications from data loss, cyber threats, and unexpected downtime.
           </p>
 
           <ul className="af-list">
-            <li><FaArrowRight /> 100% Better Results</li>
-            <li><FaArrowRight /> Structured Financial Planning</li>
-            <li><FaArrowRight /> Timeline-Driven Execution</li>
-            <li><FaArrowRight /> Credit & Risk Review</li>
+            <li><FaArrowRight /> Automated Cloud Backup & Recovery</li>
+            <li><FaArrowRight /> Secure Data Encryption & Compliance</li>
+            <li><FaArrowRight /> Fast Application & Website Restoration</li>
+            <li><FaArrowRight /> Business Continuity & Disaster Planning</li>
           </ul>
 
           <p>
-            Our advisory approach combines experience, strategy, and measurable
-            outcomes.
+            Our backup and disaster recovery solutions integrate seamlessly with your cloud services, web platforms, and mobile applications. From cloud data replication and infrastructure recovery to application restoration and compliance-ready protection, CloudXSecure provides scalable solutions tailored to your business needs.
           </p>
         </div>
       </div>

@@ -31,11 +31,10 @@ export default function ServicesSlider() {
       <div className="srv-container">
         <p className="srv-subtitle">OUR DEDICATED SERVICES</p>
         <h2 className="srv-title">
-          Spotlight Some Most <br /> Important Features We Have
+          Smart Cloud & Digital Solutions<br /> to Grow Your Business
         </h2>
         <p className="srv-desc">
-          Borem ipsum dolor sit amet consectetur adipiscing elit
-        </p>
+        End-to-end cloud, web, and app solutions designed to scale your business.        </p>
 
         <div className="srv-slider">
           {slides[active].map((img, index) => (
@@ -53,10 +52,11 @@ export default function ServicesSlider() {
               </div>
 
               <ul>
-                <li>Seusmayed Tempose Atidim Area</li>
-                <li>Aliquam Duhipsum Is Simply Free</li>
-                <li>Get Life Time Access</li>
+                <li>Cloud Services, Web & App Development</li>
+                <li>Secure Scalable Business Solutions</li>
+                <li>End-to-End Digital Transformation</li>
               </ul>
+
             </div>
           ))}
         </div>
@@ -75,7 +75,7 @@ export default function ServicesSlider() {
   );
 }
 
-const titles = ["Business Analysis", "Tax Strategy", "Financial Advice"];
+const titles = ["Cloud Services", "Web Design", "App Development"];
 
 const icons = [
   // Business Analysis

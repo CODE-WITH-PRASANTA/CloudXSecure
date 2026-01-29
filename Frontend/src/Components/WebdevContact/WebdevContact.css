@@ -1,5 +1,5 @@
 /* ================= SECTION ================= */
-.ct3-section {
+.webdev-ct3-section {
   position: relative;
   padding: clamp(80px, 10vw, 130px) 16px;
   background: linear-gradient(180deg, #f5f6ff 0%, #ffffff 100%);
@@ -7,7 +7,7 @@
 }
 
 /* ================= BACKGROUND TEXT ================= */
-.ct3-bg-text {
+.webdev-ct3-bg-text {
   position: absolute;
   font-size: clamp(70px, 14vw, 150px);
   font-weight: 900;
@@ -17,7 +17,7 @@
   pointer-events: none;
 }
 
-.ct3-bg-text.top {
+.webdev-ct3-bg-text.top {
   top: 70px;
   left: -20%;
 }
@@ -29,7 +29,7 @@
 }
 
 /* ================= LAYOUT ================= */
-.ct3-container {
+.webdev-ct3-container {
   max-width: 1200px;
   margin: auto;
   display: grid;
@@ -40,24 +40,24 @@
 }
 
 /* ================= LEFT ================= */
-.ct3-tag {
+.webdev-ct3-tag {
   color: #6c63ff;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.ct3-title {
+.webdev-ct3-title {
   font-size: clamp(30px, 4vw, 46px);
   line-height: 1.2;
   font-weight: 800;
   margin-top: 10px;
 }
 
-.ct3-highlight {
+.webdev-ct3-highlight {
   color: #6c63ff;
 }
 
-.ct3-desc {
+.webdev-ct3-desc {
   margin: 22px 0 34px;
   color: #666;
   max-width: 480px;
@@ -65,7 +65,7 @@
 }
 
 /* ================= INFO BOX ================= */
-.ct3-info-box {
+.webdev-ct3-info-box {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -77,7 +77,7 @@
   cursor: pointer;
 }
 
-.ct3-icon {
+.webdev-ct3-icon {
   width: 46px;
   height: 46px;
   display: grid;
@@ -88,60 +88,60 @@
   transition: 0.4s;
 }
 
-.ct3-info-box:hover {
+.webdev-ct3-info-box:hover {
   background: #6c63ff;
   color: #ffffff;
 }
 
-.ct3-info-box:hover .ct3-icon {
+.webdev-ct3-info-box:hover .webdev-ct3-icon {
   background: #ffffff;
   color: #6c63ff;
 }
 
 /* ================= PERSON IMAGE ================= */
-.ct3-person-fixed {
+.webdev-ct3-person-fixed {
   margin-top: 40px;
   width: 260px;
   max-width: 100%;
 }
 
 /* ================= FORM ================= */
-.ct3-form-wrap {
+.webdev-ct3-form-wrap {
   position: relative;
   background: linear-gradient(135deg, #6c63ff, #7a72ff);
   padding: clamp(20px, 4vw, 34px);
   border-radius: 24px;
 }
 
-.ct3-form {
+.webdev-ct3-form {
   background: #ffffff;
   padding: clamp(26px, 4vw, 42px);
   border-radius: 18px;
 }
 
 /* ================= FORM GRID ================= */
-.ct3-row {
+.webdev-ct3-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.ct3-field {
+.webdev-ct3-field {
   margin-bottom: 18px;
 }
 
-.ct3-field label {
+.webdev-ct3-field label {
   font-weight: 600;
   margin-bottom: 8px;
   display: block;
 }
 
 /* ================= INPUT ================= */
-.ct3-input {
+.webdev-ct3-input {
   position: relative;
 }
 
-.ct3-input input {
+.webdev-ct3-input input {
   width: 100%;
   padding: 14px 42px 14px 14px;
   border-radius: 10px;
@@ -149,7 +149,7 @@
   font-size: 15px;
 }
 
-.ct3-input svg {
+.webdev-ct3-input svg {
   position: absolute;
   right: 14px;
   top: 50%;
@@ -169,7 +169,7 @@ textarea {
 }
 
 /* ================= BUTTON ================= */
-.ct3-btn {
+.webdev-ct3-btn {
   margin-top: 10px;
   width: 100%;
   padding: 16px;
@@ -182,7 +182,7 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.ct3-btn:hover {
+.webdev-ct3-btn:hover {
   background: #ffffff;
   color: #6c63ff;
 }
@@ -201,15 +201,15 @@ textarea {
 
 /* ================= TABLET ================= */
 @media (max-width: 992px) {
-  .ct3-container {
+  .webdev-ct3-container {
     grid-template-columns: 1fr;
   }
 
-  .ct3-desc {
+  .webdev-ct3-desc {
     max-width: 100%;
   }
 
-  .ct3-person-fixed {
+  .webdev-ct3-person-fixed {
     margin: 40px auto 0;
     display: block;
   }
@@ -217,15 +217,15 @@ textarea {
 
 /* ================= MOBILE ================= */
 @media (max-width: 576px) {
-  .ct3-row {
+  .webdev-ct3-row {
     grid-template-columns: 1fr;
   }
 
-  .ct3-bg-text {
+  .webdev-ct3-bg-text {
     font-size: 80px;
   }
 
-  .ct3-title {
+  .webdev-ct3-title {
     font-size: 28px;
   }
 }

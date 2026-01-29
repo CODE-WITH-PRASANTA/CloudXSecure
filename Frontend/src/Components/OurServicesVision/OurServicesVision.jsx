@@ -13,7 +13,7 @@ export default function Vision() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-active");
+            entry.target.classList.add("vision-reveal-active");
             observer.unobserve(entry.target); // 🔑 important
           }
         });
@@ -37,7 +37,7 @@ export default function Vision() {
             ref={(el) => (refs.current[0] = el)}
             src={vision1}
             alt="Team discussion"
-            className="img-large reveal"
+            className="img-large vision-reveal"
           />
 
           <div className="img-row">
@@ -45,14 +45,14 @@ export default function Vision() {
               ref={(el) => (refs.current[1] = el)}
               src={vision2}
               alt="Office teamwork"
-              className="img-small reveal"
+              className="img-small vision-reveal"
               style={{ transitionDelay: "0.15s" }}
             />
             <img
               ref={(el) => (refs.current[2] = el)}
               src={vision3}
               alt="Business meeting"
-              className="img-small reveal"
+              className="img-small vision-reveal"
               style={{ transitionDelay: "0.3s" }}
             />
           </div>
@@ -61,7 +61,7 @@ export default function Vision() {
         {/* RIGHT CONTENT */}
         <div
           ref={(el) => (refs.current[3] = el)}
-          className="ourservicesvision-content reveal"
+          className="ourservicesvision-content vision-reveal"
         >
           <span className="ourservicesvision-tag">Our Vision</span>
 

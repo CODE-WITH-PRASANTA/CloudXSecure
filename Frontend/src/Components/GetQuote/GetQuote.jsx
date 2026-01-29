@@ -6,7 +6,7 @@ const GetQuote = () => {
   const [activeTab, setActiveTab] = useState("Home");
   const [limit, setLimit] = useState(400000);
 
-  const tabs = ["Home", "Vehicles", "Health", "Life"];
+  const tabs = ["Cloud Services", "Web Design", "App Development", "All Cloud Solutions"];
 
   return (
     <section className="quote-section">
@@ -14,11 +14,11 @@ const GetQuote = () => {
 
         {/* LEFT FORM */}
         <div className="quote-left">
-          <span className="quote-badge">GET A FREE ESTIMATE</span>
+          <span className="quote-badge">FREE CLOUD CONSULTATION</span>
 
           <h2>
-            Get an insurance quote <br />
-            From Our Expertise
+            Get a Free Cloud & Digital Solutions Quote <br />
+            from CloudXSecure Experts
           </h2>
 
           {/* TABS */}
@@ -38,13 +38,13 @@ const GetQuote = () => {
           <form className="quote-form">
 
             {/* COMMON FIELDS */}
-            <input type="text" placeholder="Full Name" />
-            <input type="email" placeholder="E-mail" />
-            <input type="tel" placeholder="Phone" />
+            <input type="text" placeholder="Your Full Name" />
+            <input type="email" placeholder="Business Email Address" />
+            <input type="tel" placeholder="Phone Number" />
 
             {/* TAB BASED FIELDS */}
             {activeTab === "Vehicles" && (
-              <input type="text" placeholder="Vehicle Number" />
+              <input type="text" placeholder="Tell Us About Your Project" />
             )}
 
             {activeTab === "Health" && (
@@ -58,7 +58,7 @@ const GetQuote = () => {
             {/* SLIDER */}
             <div className="slider-box">
               <div className="slider-label">
-                <span>Limits Of Balance:</span>
+                <span>Estimated Project Budget:</span>
                 <strong>${limit}</strong>
               </div>
 
@@ -72,7 +72,7 @@ const GetQuote = () => {
               />
             </div>
 
-            <button className="quote-btn">GET A QUOTE NOW</button>
+            <button className="quote-btn">Start Your Free Consultation</button>
           </form>
         </div>
 

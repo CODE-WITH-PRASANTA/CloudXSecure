@@ -15,12 +15,11 @@ const MissionVision = () => {
         <span className="badge">OUR MISSION / VISION</span>
 
         <h2>
-          Driving Innovation: Our <br /> Mission Vision at Eitech
+          Driving Innovation: Our <br /> Mission Vision at CloudXSecure
         </h2>
 
         <p className="intro">
-          At the forefront of innovation, our cutting-edge IT solutions are
-          designed to transform your business ETech operations.
+         At CloudXSecure, we deliver secure cloud services, professional web design, custom app development, and end-to-end cloud solutions that help businesses scale faster, operate smarter, and stay protected in today’s digital world.
         </p>
 
         {/* CARD 1 */}
@@ -29,10 +28,9 @@ const MissionVision = () => {
             <FiCheckCircle />
           </div>
           <div>
-            <h4>Network Infrastructure Solutions</h4>
+            <h4>Secure Cloud Infrastructure</h4>
             <p>
-              In today’s fast-paced world, technology is the backbone of success.
-              Our comprehensive IT solutions ensure stability.
+              We design and manage reliable cloud environments with advanced security, backup, and disaster recovery—ensuring high availability, performance, and data protection.
             </p>
           </div>
         </div>
@@ -43,10 +41,9 @@ const MissionVision = () => {
             <FiShare2 />
           </div>
           <div>
-            <h4>Performance Tailored IT Services</h4>
+            <h4>Tailored Digital Solutions</h4>
             <p>
-              Our tailored IT services are crafted to meet your unique business
-              needs and deliver measurable performance.
+              From modern websites to scalable mobile apps, our custom development services are built to match your business goals and deliver measurable results.
             </p>
           </div>
         </div>

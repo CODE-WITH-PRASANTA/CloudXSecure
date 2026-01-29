@@ -7,24 +7,24 @@ import groupImg from "../../assets/faq2.webp";
 
 const faqData = [
   {
-    question: "Where Should I Incorporate My Business?",
+    question: "What services does CloudXSecure provide?",
     answer:
-      "The right location depends on your business goals, target market, tax structure, and legal requirements. We help you evaluate the best option based on long-term growth and compliance.",
+      "CloudXSecure delivers end-to-end cloud services, secure cloud infrastructure, modern web design, mobile & web app development, and complete cloud solutions to help businesses scale safely and efficiently.",
   },
   {
-    question: "How Long Should A Business Plan Be?",
+    question: "How does CloudXSecure improve website performance and security?",
     answer:
-      "A well-structured business plan usually ranges from 10 to 30 pages, focusing on clarity, strategy, and realistic execution rather than length.",
+      "We combine cloud optimization, SSL security, performance tuning, and scalable architecture to ensure fast-loading, secure, and reliable digital platforms.",
   },
   {
-    question: "What Is Included In Your Services?",
+    question: "Do you offer custom web and app development?",
     answer:
-      "Our services include consultation, UI/UX design, development, security optimization, performance improvement, and ongoing technical support.",
+     "Yes. We build fully customized websites and applications tailored to your business goals, focusing on user experience, performance, and long-term scalability.",
   },
   {
-    question: "What Types Of Companies Do You Work With?",
+    question: "What types of businesses do you work with?",
     answer:
-      "We collaborate with startups, educational platforms, SMEs, and growing enterprises across multiple industries.",
+      "We support startups, small businesses, and enterprises across industries, delivering flexible cloud solutions, professional web design, and robust app development.",
   },
 ];
 
@@ -42,10 +42,10 @@ const FAQSection = () => {
 
         {/* RIGHT CONTENT */}
         <div className="faqContentUnique">
-          <span className="faqBadgeUnique">FAQ</span>
+          <span className="faqBadgeUnique">CloudXSecure FAQ</span>
 
           <h2 className="faqTitleUnique">
-            Prioritize Your Website’s <br /> Safety & Performance
+            Prioritize Your Website’s Security, <br />Performance & Growth
           </h2>
 
           <div className="faqListUnique">

@@ -24,12 +24,12 @@ const plans = [
 ];
 
 const features = [
-  "5000 User Activities",
-  "Unlimited Access",
+  "Secure cloud hosting & basic backup",
+  "Professional website setup",
   "No Hidden Charge",
-  "03 Time Updates",
-  "Figma Source File",
-  "Many More Facilities",
+  "Essential app support",
+  "Managed cloud access",
+  "Email & chat support",
 ];
 
 const BDPricing = () => {
@@ -43,13 +43,12 @@ const BDPricing = () => {
           <div>
             <span className="bd-badge">FLEXIBLE PRICING PLAN</span>
             <h2>
-              We’ve offered the best <br /> pricing for you
+              Affordable Cloud Solutions <br />for Every Business
             </h2>
           </div>
 
           <p>
-            Ever Find Yourself Staring At Your Computer Screen A Good Consulting
-            Slogan To Come To Mind? Oftentimes.
+           Choose a plan that fits your growth. CloudXSecure delivers secure cloud services, professional web design, custom app development, and complete cloud solutions—backed by reliable support and transparent pricing.
           </p>
         </div>
 

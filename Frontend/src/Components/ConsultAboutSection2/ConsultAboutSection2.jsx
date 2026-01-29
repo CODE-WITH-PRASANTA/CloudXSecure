@@ -19,35 +19,34 @@ const AboutSecondSection = () => {
             <span className="about2-tag">WHO WE ARE</span>
 
             <h2 className="about2-heading">
-              Building Your Own Startup
-              <br /> Has Been Simpler
+              Empowering Businesses With Secure Cloud &
+              <br />Digital Solutions
             </h2>
 
             <p className="about2-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Boreum ipsum dolor sit amet, consectetur elit florai psum.
+              CloudXSecure is a trusted technology partner delivering secure cloud services, modern web design, custom mobile app development, and complete cloud solutions. We help startups and enterprises streamline operations, improve performance, and scale faster through innovative, future-ready digital experiences.
             </p>
 
             <ul className="about2-list">
-              <li>100% Better Results</li>
-              <li>Valuable Ideas</li>
-              <li>Budget Friendly Theme</li>
-              <li>Happy Customers</li>
+              <li>Secure & Scalable Cloud Infrastructure</li>
+              <li>Custom Web & Mobile App Development</li>
+              <li>End-to-End Cloud Solutions</li>
+              <li>Trusted by Growing Businesses Worldwide</li>
             </ul>
 
             <div className="about2-stats">
               <div>
                 <h3>+150.000</h3>
-                <span>Total Revenue in 1 Year</span>
+                <span>Successful Cloud Deployments</span>
               </div>
               <div>
                 <h3>90%</h3>
-                <span>Increase in Sales</span>
+                <span>Client Satisfaction Rate</span>
               </div>
             </div>
 
             <button className="about2-btn">
-              Get Started With Us <span>➜</span>
+              Start Your Digital Journey <span>➜</span>
             </button>
           </div>
 
