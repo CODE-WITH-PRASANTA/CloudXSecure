@@ -10,15 +10,15 @@ import {
 } from "react-icons/fi";
 
 const services = [
-  { icon: <FiShield />, title: "Cyber Security Solution", number: "01" },
+  { icon: <FiShield />, title: "Cyber Security Solutions", number: "01" },
   { icon: <FiCloud />, title: "Scalable Cloud Solutions", number: "02" },
   { icon: <FiDatabase />, title: "Data Protection Services", number: "03" },
-  { icon: <FiSettings />, title: "Optimization Management", number: "04" },
+  { icon: <FiSettings />, title: "Cloud Optimization Management", number: "04" },
   { icon: <FiHeadphones />, title: "HelpDesk 360 Solutions", number: "05" },
-  { icon: <FiCode />, title: "Software Development", number: "06" },
-  { icon: <FiShield />, title: "Cyber Security Solution", number: "07" },
-  { icon: <FiCloud />, title: "Scalable Cloud Solutions", number: "08" },
-  { icon: <FiDatabase />, title: "Data Protection Services", number: "09" },
+  { icon: <FiCode />, title: "Software Development Services", number: "06" },
+  { icon: <FiShield />, title: "Custom Web Design", number: "07" },
+  { icon: <FiCloud />, title: "Mobile App Development", number: "08" },
+  { icon: <FiDatabase />, title: "Complete Cloud Solutions", number: "09" },
 ];
 
 const Services = () => {
@@ -68,8 +68,7 @@ const Services = () => {
             <h3>{item.title}</h3>
 
             <p>
-              Our advanced cybersecurity solution designed to protect against
-              ever-an evolving threats, approach ensures.
+              Protect your digital assets with CloudXSecure’s enterprise-grade cybersecurity services, including threat detection, secure access control, compliance support, and proactive monitoring to keep your business safe.
             </p>
 
             <div className="btt-footer">

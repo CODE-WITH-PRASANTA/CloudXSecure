@@ -5,24 +5,24 @@ import faqImg from "../../assets/devops-faq-img.webp";
 
 const faqData = [
   {
-    question: "What does TechXen do?",
+    question: "What does CloudXSecure do?",
     answer:
-      "Yes, we'd be happy to provide references or case studies of past projects upon request. Our satisfied clients serve as a testament.",
+      "CloudXSecure provides end-to-end IT solutions including cloud services, web design, mobile app development, cybersecurity, and managed cloud infrastructure to help businesses grow securely and efficiently.",
   },
   {
-    question: "How can TechXen help my business?",
+    question: "How can CloudXSecure help my business?",
     answer:
-      "TechXen helps businesses enhance productivity, improve efficiency, and stay ahead of technological advancements through tailored IT solutions.",
+      "We streamline operations with scalable cloud solutions, high-performance websites, custom mobile apps, and secure IT systems—helping you reduce costs, improve productivity, and accelerate digital transformation.",
   },
   {
-    question: "What industries does TechXen serve?",
+    question: "What industries does CloudXSecure serve?",
     answer:
-      "We serve industries including healthcare, finance, education, retail, and technology-driven enterprises.",
+      "We support startups, SMEs, and enterprises across healthcare, finance, eCommerce, education, SaaS, and more—delivering tailored cloud, web, and application solutions for every industry.",
   },
   {
-    question: "How experienced is the team at TechXen?",
+    question: "How experienced is the CloudXSecure team?",
     answer:
-      "Our team consists of highly skilled professionals with years of experience delivering innovative IT solutions.",
+      "Our certified cloud engineers, developers, and designers bring years of hands-on experience in cloud architecture, web development, app design, and cybersecurity—ensuring reliable, future-ready solutions.",
   },
 ];
 

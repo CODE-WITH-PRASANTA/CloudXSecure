@@ -29,33 +29,33 @@ const ContactThree = () => {
   }, []);
 
   return (
-    <section className="ct3-section">
+    <section className="webdev-ct3-section">
       {/* BACKGROUND MOVING TEXT (TOP FIXED) */}
-      <div className="ct3-bg-text top">
+      <div className="webdev-ct3-bg-text top">
         GET IN TOUCH * GET IN TOUCH * GET IN TOUCH *
       </div>
 
-      <div className="ct3-container">
+      <div className="webdev-ct3-container">
         {/* LEFT CONTENT */}
-        <div className="ct3-left">
-          <span className="ct3-tag ct-reveal">GET IN TOUCH</span>
+        <div className="webdev-ct3-left">
+          <span className="webdev-ct3-tag ct-reveal">GET IN TOUCH</span>
 
-          <h2 className="ct3-title">
+          <h2 className="webdev-ct3-title">
             <span className="ct-reveal">Conversation –</span>
-            <span className="ct3-highlight ct-reveal">
+            <span className="webdev-ct3-highlight ct-reveal">
               {" "}
               Reach Out Anytime
             </span>
           </h2>
 
-          <p className="ct3-desc ct-reveal">
+          <p className="webdev-ct3-desc ct-reveal">
             We're here to listen! Whether you have questions, feedback,
             or just want to say hello, feel free to reach out.
           </p>
 
-          <div className="ct3-info ct-reveal">
-            <div className="ct3-info-box">
-              <span className="ct3-icon">
+          <div className="webdev-ct3-info ct-reveal">
+            <div className="webdev-ct3-info-box">
+              <span className="webdev-ct3-icon">
                 <FaEnvelope />
               </span>
               <div>
@@ -64,8 +64,8 @@ const ContactThree = () => {
               </div>
             </div>
 
-            <div className="ct3-info-box">
-              <span className="ct3-icon">
+            <div className="webdev-ct3-info-box">
+              <span className="webdev-ct3-icon">
                 <FaPhoneAlt />
               </span>
               <div>
@@ -74,8 +74,8 @@ const ContactThree = () => {
               </div>
             </div>
 
-            <div className="ct3-info-box">
-              <span className="ct3-icon">
+            <div className="webdev-ct3-info-box">
+              <span className="webdev-ct3-icon">
                 <FaMapMarkerAlt />
               </span>
               <div>
@@ -89,58 +89,58 @@ const ContactThree = () => {
           <img
             src={contactImg}
             alt="Support"
-            className="ct3-person-fixed"
+            className="webdev-ct3-person-fixed"
           />
         </div>
 
         {/* FORM SECTION */}
-        <div className="ct3-form-wrap ct-reveal">
+        <div className="webdev-ct3-form-wrap ct-reveal">
           {/* BLUE TRIANGLE */}
-          <span className="ct3-form-triangle"></span>
+          <span className="webdev-ct3-form-triangle"></span>
 
-          <div className="ct3-form">
-            <div className="ct3-row">
-              <div className="ct3-field">
+          <div className="webdev-ct3-form">
+            <div className="webdev-ct3-row">
+              <div className="webdev-ct3-field">
                 <label>Full Name</label>
-                <div className="ct3-input">
+                <div className="webdev-ct3-input">
                   <input placeholder="Thomas Alison" />
                   <FaUser />
                 </div>
               </div>
 
-              <div className="ct3-field">
+              <div className="webdev-ct3-field">
                 <label>Email Address</label>
-                <div className="ct3-input">
+                <div className="webdev-ct3-input">
                   <input placeholder="thomas@domain.com" />
                   <FaEnvelope />
                 </div>
               </div>
             </div>
 
-            <div className="ct3-row">
-              <div className="ct3-field">
+            <div className="webdev-ct3-row">
+              <div className="webdev-ct3-field">
                 <label>Phone Number</label>
-                <div className="ct3-input">
+                <div className="webdev-ct3-input">
                   <input placeholder="12 (00) 123 4567 890" />
                   <FaPhoneAlt />
                 </div>
               </div>
 
-              <div className="ct3-field">
+              <div className="webdev-ct3-field">
                 <label>Subject</label>
-                <div className="ct3-input">
+                <div className="webdev-ct3-input">
                   <input placeholder="Subject" />
                   <FaPen />
                 </div>
               </div>
             </div>
 
-            <div className="ct3-field">
+            <div className="webdev-ct3-field">
               <label>Inquiry about</label>
               <textarea placeholder="Write your message"></textarea>
             </div>
 
-            <button className="ct3-btn">
+            <button className="webdev-ct3-btn">
               Submit Now <span>→</span>
             </button>
           </div>

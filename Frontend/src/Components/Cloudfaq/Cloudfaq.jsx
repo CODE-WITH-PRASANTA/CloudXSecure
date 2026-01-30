@@ -7,24 +7,24 @@ import groupImg from "../../assets/faq2.webp";
 
 const faqData = [
   {
-    question: "Where Should I Incorporate My Business?",
+    question: "What services does CloudXSecure provide?",
     answer:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't.",
+      "CloudXSecure delivers end-to-end cloud services, secure cloud infrastructure, modern web design, mobile & web app development, and complete cloud solutions to help businesses scale safely and efficiently.",
   },
   {
-    question: "How Long Should A Business Plan Be?",
+    question: "How does CloudXSecure improve website performance and security?",
     answer:
-      "A business plan typically ranges between 10–30 pages depending on the business model and purpose.",
+      "We combine cloud optimization, SSL security, performance tuning, and scalable architecture to ensure fast-loading, secure, and reliable digital platforms.",
   },
   {
-    question: "What Is Included In Your Services?",
+    question: "Do you offer custom web and app development?",
     answer:
-      "Our services include strategy planning, development, security optimization, and ongoing support.",
+     "Yes. We build fully customized websites and applications tailored to your business goals, focusing on user experience, performance, and long-term scalability.",
   },
   {
-    question: "What Type Of Company Is Measured?",
+    question: "What types of businesses do you work with?",
     answer:
-      "We work with startups, SMEs, and enterprise-level organizations across industries.",
+      "We support startups, small businesses, and enterprises across industries, delivering flexible cloud solutions, professional web design, and robust app development.",
   },
 ];
 
@@ -36,21 +36,16 @@ const FAQSection = () => {
       <div className="faqContainerUnique">
         {/* LEFT IMAGES */}
         <div className="faqImageWrapUnique">
-          <img src={mainImg} alt="FAQ Main" className="faqMainImgUnique" />
-          <img
-            src={groupImg}
-            alt="Team Working"
-            className="faqGroupImgUnique"
-          />
+          <img src={mainImg} alt="Frequently Asked Questions" className="faqMainImgUnique" />
+          <img src={groupImg} alt="Team Collaboration" className="faqGroupImgUnique" />
         </div>
 
         {/* RIGHT CONTENT */}
         <div className="faqContentUnique">
-          <span className="faqBadgeUnique">FAQ</span>
+          <span className="faqBadgeUnique">CloudXSecure FAQ</span>
 
           <h2 className="faqTitleUnique">
-            Prioritize Your Site’s Safety <br />
-            And Security
+            Prioritize Your Website’s Security, <br />Performance & Growth
           </h2>
 
           <div className="faqListUnique">

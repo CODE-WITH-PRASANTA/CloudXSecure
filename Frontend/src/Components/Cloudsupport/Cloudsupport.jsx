@@ -17,13 +17,13 @@ const SupportBanner = () => {
         <div className="sb24-content">
           <span className="sb24-subtitle">
             <span className="sb24-line"></span>
-            CONTACT US
+           CONTACT CLOUDXSECURE
             <span className="sb24-line"></span>
           </span>
 
           <h2 className="sb24-title">
-            24/7 Expert Hosting Support Our <br />
-            Customers Love
+           24/7 Cloud, Web & App Support Trusted by <br />
+            Growing Businesses
           </h2>
         </div>
 

@@ -7,10 +7,10 @@ import icon3 from "../../assets/service3.webp";
 import icon4 from "../../assets/service4.webp";
 
 const services = [
-  { icon: icon1, title: "Woo Commerce", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
-  { icon: icon2, title: "CRM Solutions", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
-  { icon: icon3, title: "Web Design", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
-  { icon: icon4, title: "Data Guard Sentinel", desc: "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services." },
+  { icon: icon1, title: "App Design & Development", desc: "Custom web and mobile apps designed for performance, scalability, and user experience." },
+  { icon: icon2, title: "Cloud Solutions", desc: "Secure and scalable cloud services to optimize performance, reduce costs, and support business growth." },
+  { icon: icon3, title: "Web Design & Development", desc: "Responsive, SEO-optimized websites built for speed, usability, and strong brand presence." },
+  { icon: icon4, title: "Cybersecurity & Data Protection", desc: "Advanced security solutions to protect your data, systems, and cloud infrastructure." },
 ];
 
 const Cloudservice = () => {
@@ -72,7 +72,7 @@ const Cloudservice = () => {
     <section className="clo-services-section">
       <div className="clo-services-header">
         <span className="clo-services-sub">← OUR SERVICES →</span>
-        <h2>Elevating Businesses With IT Ingenuity</h2>
+        <h2>CloudXSecure Professional IT Services</h2>
 
         <div className="clo-services-arrows">
           <button className="arrow-btn" onClick={scrollLeft}>←</button>

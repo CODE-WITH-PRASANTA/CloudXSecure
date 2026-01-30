@@ -1,0 +1,190 @@
+.monitoring-testimonial-section {
+    width: 100%;
+    background: #051d4a;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.monitoring-testimonial-container {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* LEFT AREA */
+
+.mt-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+/* Circular Image Box With Gradient Ring */
+
+.mt-img-wrapper {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Gradient glowing border */
+    box-shadow: 0 0 35px rgba(0, 140, 255, 0.5), 0 0 65px rgba(0, 140, 255, 0.3);
+}
+
+
+/* User Image */
+
+.mt-user-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mt-user-img:hover {
+    transform: scale(1.05);
+}
+
+
+/* QUOTATION ICON IN TOP-LEFT CORNER */
+
+.mt-quote-icon {
+    width: 60px;
+    height: 65px;
+    padding: 12px;
+    background: rgba(0, 123, 255, 0.9);
+    /* Blue glowing background */
+    border-radius: 12px;
+    /* Smooth rounded square */
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    z-index: 10;
+    /* Glow shadow around the badge */
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.7);
+}
+
+
+/* Floating Shapes Background */
+
+.mt-left::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(0, 132, 255, 0.25);
+    border-radius: 50%;
+    top: 20%;
+    left: 5%;
+    filter: blur(40px);
+    z-index: 0;
+}
+
+.mt-left::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    bottom: 10%;
+    right: 5%;
+    filter: blur(40px);
+    z-index: 0;
+}
+
+
+/* RIGHT AREA */
+
+.mt-right {
+    flex: 1;
+    color: #ffffff;
+    padding-left: 40px;
+}
+
+
+/* Star Rating */
+
+.mt-stars {
+    font-size: 26px;
+    color: #fbc02d;
+    margin-bottom: 15px;
+}
+
+
+/* Testimonial Text */
+
+.mt-text {
+    font-size: 20px;
+    line-height: 32px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+
+/* User Info */
+
+.mt-user-info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.mt-user-info p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+
+/* Controls */
+
+.mt-controls {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.mt-control-btn {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.mt-control-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.1);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .monitoring-testimonial-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .mt-right {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    .quote-icon {
+        left: 10px;
+        top: 10px;
+    }
+}

@@ -9,17 +9,16 @@ const services = [
   "Network Solution",
   "Consulting Service",
   "Software Development",
-  "Cloud Solution",
 ];
 
 const RunningServices = () => {
   return (
     <div className="marquee-wrapper">
       <div className="marquee-track">
-        {/* duplicate list for seamless loop */}
         {[...services, ...services].map((item, index) => (
           <span key={index} className="marquee-item">
-            ✳ {item}
+            <span className="marquee-icon">✳</span>
+            {item}
           </span>
         ))}
       </div>

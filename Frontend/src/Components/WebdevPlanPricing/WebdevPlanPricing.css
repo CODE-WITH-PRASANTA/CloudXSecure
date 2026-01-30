@@ -3,25 +3,17 @@
 ================================ */
 .pricing2-section {
   position: relative;
-  padding: 120px 20px 140px;
+  padding: 120px 20px 120px;
   background: #f7f9ff;
   overflow: hidden;
 }
 
-/* BACKGROUND SHAPES */
+/* BACKGROUND */
 .pricing2-bg {
   position: absolute;
   bottom: -40px;
   left: 0;
   width: 100%;
-  z-index: 0;
-}
-
-.pricing2-top-shape {
-  position: absolute;
-  top: 120px;
-  right: 0;
-  width: 320px;
   z-index: 0;
 }
 
@@ -37,16 +29,17 @@
 }
 
 .pricing2-subtitle {
-  font-size: 14px;
+  font-size: 13px;
   color: #6c63ff;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .pricing2-header h2 {
-  font-size: 42px;
-  margin: 14px 0 30px;
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 14px 0 26px;
   color: #0b1023;
+  line-height: 1.25;
 }
 
 .pricing2-header h2 span {
@@ -54,7 +47,7 @@
 }
 
 /* ===============================
-   TABS
+   TABS (RESPONSIVE)
 ================================ */
 .pricing2-tabs {
   display: inline-flex;
@@ -62,17 +55,23 @@
   border-radius: 40px;
   padding: 6px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.pricing2-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .pricing2-tab {
   border: none;
   background: transparent;
-  padding: 10px 26px;
+  padding: 10px 24px;
   font-weight: 600;
   cursor: pointer;
   border-radius: 30px;
   color: #333;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .pricing2-tab.active {
@@ -81,53 +80,64 @@
 }
 
 /* ===============================
-   CARDS
+   CARDS GRID
 ================================ */
 .pricing2-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 1200px;
-  margin: 80px auto 0;
+  margin: 70px auto 0;
   position: relative;
   z-index: 2;
 }
 
+/* ===============================
+   CARD
+================================ */
 .pricing2-card {
   position: relative;
   background: #060b1c;
-  border-radius: 16px;
-  padding: 42px 34px;
+  border-radius: 18px;
+  padding: 38px 30px;
   color: #fff;
   overflow: hidden;
-  min-height: 520px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* CARD BG TEXTURE */
+.pricing2-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(108, 99, 255, 0.25);
+}
+
+/* CARD BG */
 .pricing2-card-bg {
   position: absolute;
   bottom: -20px;
   right: -20px;
   width: 100%;
-  opacity: 0.25;
+  opacity: 0.22;
   z-index: 0;
 }
 
-/* CONTENT */
+/* TEXT */
 .pricing2-plan {
   color: #6c63ff;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  font-size: 13px;
 }
 
 .pricing2-price {
-  font-size: 46px;
-  margin: 14px 0;
+  font-size: clamp(34px, 4vw, 46px);
+  margin: 14px 0 8px;
 }
 
 .pricing2-note {
+  font-size: 15px;
   opacity: 0.85;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
+  line-height: 1.6;
 }
 
 /* BUTTON */
@@ -137,14 +147,10 @@
   background: #6c63ff;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.35s;
-}
-
-.pricing2-btn span {
-  margin-left: 6px;
+  transition: all 0.3s ease;
 }
 
 .pricing2-btn:hover {
@@ -154,7 +160,7 @@
 
 /* FEATURES */
 .pricing2-features {
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .pricing2-features p {
@@ -163,7 +169,7 @@
 }
 
 .pricing2-features .disabled {
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 /* ===============================
@@ -176,11 +182,20 @@
 }
 
 @media (max-width: 600px) {
-  .pricing2-header h2 {
-    font-size: 30px;
+  .pricing2-section {
+    padding: 90px 15px 100px;
   }
 
   .pricing2-cards {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing2-card {
+    padding: 32px 24px;
+  }
+
+  .pricing2-tabs {
+    max-width: 100%;
   }
 }

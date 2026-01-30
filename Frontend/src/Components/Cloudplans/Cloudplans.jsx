@@ -27,7 +27,7 @@ const Cloudplans = () => {
       {/* HEADER */}
       <div className="pricingHeaderUnique">
         <span className="pricingBadgeUnique">OUR PRICING</span>
-        <h2 className="pricingTitleUnique">Our Awesome Pricing Plans</h2>
+        <h2 className="pricingTitleUnique">CloudXSecure Regular Plan</h2>
 
         {/* TOGGLE */}
         <div className="pricingToggleWrapUnique">
@@ -86,7 +86,7 @@ const Cloudplans = () => {
                 <span className="pricingIcon tick">
                   <FaCheck />
                 </span>
-                <span className="pricingText">100 GB SSD Storage</span>
+                <span className="pricingText">Secure Cloud Storage</span>
                 <FaQuestionCircle className="pricingHelpIcon" />
               </li>
 
@@ -94,7 +94,7 @@ const Cloudplans = () => {
                 <span className="pricingIcon tick">
                   <FaCheck />
                 </span>
-                <span className="pricingText">Weekly Backups</span>
+                <span className="pricingText">Weekly Automated Backups</span>
                 <FaQuestionCircle className="pricingHelpIcon" />
               </li>
 
@@ -102,7 +102,7 @@ const Cloudplans = () => {
                 <span className="pricingIcon tick">
                   <FaCheck />
                 </span>
-                <span className="pricingText">Unlimited Free SSL</span>
+                <span className="pricingText">Free SSL Certificate</span>
                 <FaQuestionCircle className="pricingHelpIcon" />
               </li>
 
@@ -119,16 +119,16 @@ const Cloudplans = () => {
                   <FaCheck />
                 </span>
                 <span className="pricingText">
-                  Free Domain ($9.99 Value)
+                  Free Domain Setup
                 </span>
                 <FaQuestionCircle className="pricingHelpIcon" />
               </li>
 
-              <li className="pricingItemUnique disabled">
-                <span className="pricingIcon cross">
-                  <FaTimes />
+              <li className="pricingItemUnique ">
+                <span className="pricingIcon tick">
+                  <FaCheck  />
                 </span>
-                <span className="pricingText">Frame 164236</span>
+                <span className="pricingText">Web & App Deployment Support</span>
                 <FaQuestionCircle className="pricingHelpIcon" />
               </li>
 

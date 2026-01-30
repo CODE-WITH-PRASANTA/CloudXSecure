@@ -1,0 +1,92 @@
+.brand-section {
+  padding: 70px 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Outer container */
+.brand-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Track */
+.brand-track {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  width: max-content;
+  animation: brandScroll 25s linear infinite;
+}
+
+/* Animation */
+@keyframes brandScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Logo item */
+.brand-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-item img {
+  max-height: 48px;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Slight highlight on hover */
+.brand-item img:hover {
+  opacity: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .brand-track {
+    gap: 70px;
+  }
+
+  .brand-item img {
+    max-height: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-wrapper {
+    padding: 0 24px;
+  }
+
+  .brand-track {
+    gap: 60px;
+  }
+
+  .brand-item img {
+    max-height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-wrapper {
+    padding: 0 16px;
+  }
+
+  .brand-track {
+    gap: 45px;
+  }
+
+  .brand-item img {
+    max-height: 34px;
+  }
+}

@@ -11,21 +11,18 @@ const SkillsBlueSection = () => {
           <span className="txb-tag">Our Skills</span>
 
           <h2 className="txb-title">
-            See Our Work in Action <br />
+            See Our Work in Action – CloudXSecure<br />
             Featured Projects
           </h2>
 
           <p className="txb-desc">
-            Explore our diverse portfolio of successful projects & client
-            engagements. From implementing robust cybersecurity solutions to
-            developing cutting-edge software applications and optimizing
-            network infrastructure.
+            CloudXSecure delivers secure cloud services, custom web design, and scalable app development to help businesses innovate faster. From cloud infrastructure and DevOps automation to responsive websites and high-performance mobile applications, we provide end-to-end cloud solutions that enhance security, improve efficiency, and drive sustainable digital growth.
           </p>
 
           {/* PROGRESS */}
           <div className="txb-progress">
             <div className="txb-progress-head">
-              <span>IT Consulting</span>
+              <span>Cloud Consulting & Architecture</span>
               <span>80%</span>
             </div>
             <div className="txb-progress-bar">
@@ -35,7 +32,7 @@ const SkillsBlueSection = () => {
 
           <div className="txb-progress">
             <div className="txb-progress-head">
-              <span>Cyber Security</span>
+              <span>Cybersecurity & Cloud Security</span>
               <span>90%</span>
             </div>
             <div className="txb-progress-bar">
@@ -45,7 +42,7 @@ const SkillsBlueSection = () => {
 
           <div className="txb-progress">
             <div className="txb-progress-head">
-              <span>Cloud Solutions</span>
+              <span>Web & App Development</span>
               <span>70%</span>
             </div>
             <div className="txb-progress-bar">

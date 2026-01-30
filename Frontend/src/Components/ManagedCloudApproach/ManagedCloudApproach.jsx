@@ -43,7 +43,7 @@ const ApproachFaq = () => {
       <div className="approach-grid">
         {/* LEFT */}
         <div className="approach-left">
-          <h2>Our Eitech Approach</h2>
+          <h2>Our CloudXSecure Approach</h2>
           <p>
                In an era where cyber threats, cloud complexity, and digital transformation are rapidly increasing, CloudXSecure follows a proactive and security-first approach to protect and scale your business.
 

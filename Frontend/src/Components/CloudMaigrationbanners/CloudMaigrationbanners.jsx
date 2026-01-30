@@ -62,18 +62,17 @@ export default function HeroWaveSlider() {
           {/* content */}
           <div className="heroWaveSlider__content">
             <span className="heroWaveSlider__tag">— best it company</span>
-            <h1>Get Our Business This IT Solution</h1>
+            <h1>Seamless Cloud Migration & Smart Digital Solutions</h1>
             <p>
-              Consectetur adipiscing elit sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua.
+             CloudXSecure delivers secure cloud services, modern web design, custom app development, and end-to-end cloud solutions to help businesses migrate faster, scale smarter, and stay protected. We simplify your digital transformation with reliable infrastructure, performance-driven design, and expert support.
             </p>
 
             <div className="heroWaveSlider__buttons">
               <button className="heroWaveSlider__btn primary">
-                Explore More →
+                Start Your Cloud Journey →
               </button>
               <button className="heroWaveSlider__btn outline">
-                Contact Us →
+                Talk to Our Experts →
               </button>
             </div>
           </div>

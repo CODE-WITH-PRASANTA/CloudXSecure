@@ -12,21 +12,21 @@ const testimonials = [
     role: "Web Designer",
     img: user1,
     text:
-      "Extech has completely transformed our process. The user-friendly interface and powerful features maintaining our website.",
+      "CloudXSecure transformed our business with reliable cloud solutions and a beautifully designed website. Their team delivered fast, secure, and scalable results.",
   },
   {
     name: "Theresa Webb",
     role: "Tech Enthusiast",
     img: user2,
     text:
-      "I've been using Extech for several months now, and I'm extremely impressed with the ease of customization it offers.",
+      "From cloud infrastructure to custom app development, CloudXSecure handled everything professionally. Outstanding support and performance-driven solutions.",
   },
   {
     name: "Ronald Richards",
     role: "Web Entrepreneur",
     img: user3,
     text:
-      "Extech offers exceptional value for money. The comprehensive suite of tools makes it a for all.",
+      "Highly recommend CloudXSecure for web design and cloud services. They helped us launch faster, improve security, and scale with confidence.",
   },
 ];
 

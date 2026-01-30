@@ -38,26 +38,22 @@ const AboutCompany = () => {
           <span className="ac-subtitle">← ABOUT COMPANY →</span>
 
           <h2 className="ac-title">
-            Navigating Tech Horizons <br /> Together
+           Powering Digital Growth with  <br /> Secure Cloud & Smart Development
           </h2>
 
           <p className="ac-desc">
-            There are many variations of passages of Lorem Ipsum available,
-            but the majority have suffered alteration in some form, by
-            injected humour, or randomised words which don't look even
-            slightly believable.
-          </p>
+          CloudXSecure provides cloud services, web design, app development, and complete IT solutions to help businesses grow securely and efficiently.          </p>
 
           {/* feature icons */}
           <div className="ac-feature-row">
             <div className="ac-feature-box">
               <img src={iconBackend} alt="" />
-              <span>Back-End<br />Development</span>
+              <span>Cloud & <br />Infrastructure</span>
             </div>
 
             <div className="ac-feature-box">
               <img src={iconProduct} alt="" />
-              <span>Product<br />Design</span>
+              <span>Web & App <br />Development</span>
             </div>
           </div>
 

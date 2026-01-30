@@ -14,25 +14,25 @@ const teamData = [
   {
     img: person1,
     name: "Masirul Islam",
-    role: "Manager Assistant",
+    role: "Cloud Solutions Architect",
     delay: "0s",
   },
   {
     img: person2,
     name: "Jenny Wilson",
-    role: "Web Designer",
+    role: "Web & UI/UX Designer",
     delay: "1.5s",
   },
   {
     img: person3,
     name: "Floyd Miles",
-    role: "Head Assistant",
+    role: "App Development Specialist",
     delay: "3s",
   },
   {
     img: person4,
     name: "Wade Warren",
-    role: "Medical Assistant",
+    role: "Cloud Security Engineer",
     delay: "4.5s",
   },
 ];
@@ -49,7 +49,7 @@ const TeamExpert = () => {
           ← OUR EXPERT →
         </span>
         <h2 className="expertTeamTitleUnique">
-          See Our Skilled Expert Team
+          Meet the CloudXSecure Expert Team
         </h2>
       </div>
 

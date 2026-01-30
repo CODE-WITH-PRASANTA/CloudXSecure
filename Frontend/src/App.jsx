@@ -3,8 +3,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Pages/Contact/Contact";
-import Pages from "./Pages/Pages/Pages"
-import FAQ from "./Pages/FAQ/FAQ"
+import Pages from "./Pages/Pages/Pages";
+import FAQ from "./Pages/FAQ/FAQ";
 import About from "./Pages/About/About";
 import Blog from "./Pages/Blog/Blog";
 import Services from "./Pages/Services/Services";
@@ -20,6 +20,10 @@ import WebdevlopementService from "./Pages/WebdevlopementService/WebdevlopementS
 import CloudSecurity from "./Pages/CloudSecurity/CloudSecurity";
 import CloudHosting from "./Pages/CloudHosting/CloudHosting";
 import DevOpsAutomation from "./Pages/DevOpsAutomation/DevOpsAutomation"
+import Monitoring from "./Pages/monitoring/Monitoring";
+import BDrecovery from "./Pages/BDrecovery/BDrecovery";
+import PlanAndPricing from "./Pages/PlanAndPricing/PlanAndPricing";
+import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";
 
 function App() {
   return (
@@ -44,7 +48,11 @@ function App() {
         <Route path="/devlopment/webdevlopment" element={<WebdevlopementService/>}/>
         <Route path="/services/security" element={<CloudSecurity />} />
         <Route path="/services/hosting" element={<CloudHosting />} />
-        <Route path="/services/devops" element={<DevOpsAutomation/>}/>
+        <Route path="/services/devops" element={<DevOpsAutomation/>} />
+        <Route path="/services/monitoring" element={<Monitoring/>} />
+        <Route path="/services/backup" element={<BDrecovery/>}/>
+        <Route path="/plan" element={<PlanAndPricing />} />
+        <Route path="/services/consulting" element={<CloudConsulting/>}/>
       </Routes>
       <Footer/>
     </>
