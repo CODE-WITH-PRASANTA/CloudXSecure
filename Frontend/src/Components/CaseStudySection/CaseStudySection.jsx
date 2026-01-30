@@ -25,7 +25,7 @@ const CaseStudySection = () => {
             <FaArrowRight className="arrow" />
           </div>
           <h2 className="case-title">
-            Your Roadmap To Success <br /> With Trusted Projects
+            Your Roadmap to Digital Success  <br /> with CloudXSecure
           </h2>
         </div>
 
@@ -43,7 +43,7 @@ const CaseStudySection = () => {
           </div>
           <div className="case-info">
             <p className="case-category">Technology</p>
-            <h3 className="case-name">Web Development</h3>
+            <h3 className="case-name">Modern Web Development</h3>
           </div>
           <div className="case-index">
             <span>01</span>
@@ -58,7 +58,7 @@ const CaseStudySection = () => {
           </div>
           <div className="case-info">
             <p className="case-category">Graphics</p>
-            <h3 className="case-name">Product Design</h3>
+            <h3 className="case-name">UI/UX Product Design</h3>
           </div>
           <div className="case-index">
             <span>02</span>

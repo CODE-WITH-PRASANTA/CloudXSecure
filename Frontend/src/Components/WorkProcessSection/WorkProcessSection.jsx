@@ -8,54 +8,47 @@ import workprocesshand from "../../assets/workprocesshand.png";
 const WorkProcessSection = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate("/contact");
-  };
-
   return (
-    <section className="workprocess-section">
-      {/* LEFT SIDE CONTENT */}
-      <div className="workprocess-left">
-        <div className="workprocess-header">
-          {/* SUBTITLE WITH ARROWS */}
-          <div className="howwe-do">
-            <FaArrowLeft className="howwe-arrow" />
-            <span className="howwe-text">HOW WE DO</span>
-            <FaArrowRightLong className="howwe-arrow" />
+    <section className="cx-workprocess">
+
+      <div className="cx-container">
+
+        {/* LEFT */}
+        <div className="cx-left">
+
+          <div className="cx-how">
+            <FaArrowLeft />
+            <span>HOW WE WORK</span>
+            <FaArrowRightLong />
           </div>
 
-          {/* MAIN TITLE */}
-          <h2 className="title">Amazing Solutions For Business</h2>
-          <p className="description">
-            We don't believe in a one-size-fits-all approach. Our services are
-            carefully customized to suit your specific needs, ensuring you
-            achieve your goals.
+          <h2>Smart Cloud & Digital Solutions for Modern Businesses</h2>
+
+          <p>
+            At CloudXSecure, we deliver secure cloud services, high-performance web design, scalable app development, and complete cloud solutions—customized to help your business grow faster, stay protected, and succeed digitally.
           </p>
 
-          {/* BUTTON */}
-          <button className="cta-btn" onClick={handleNavigate}>
-            HOW IT WORKS <FaArrowRight className="btn-icon" />
+          <button onClick={() => navigate("/contact")}>
+            Explore How It Works <FaArrowRight />
           </button>
+
         </div>
+
+        {/* RIGHT */}
+        <div className="cx-right">
+
+          <div className="cx-circle">
+
+            <img src={workprocess} alt="" />
+
+          </div>
+
+        </div>
+
       </div>
 
-      {/* RIGHT SIDE IMAGE */}
-      <div className="workprocess-right">
-        <div className="image-wrapper">
-          <img
-            src={workprocess}
-            alt="Work Process"
-            className="workprocess-image"
-          />
-        </div>
-      </div>
+      <img src={workprocesshand} className="cx-hand" alt="" />
 
-      {/* HAND IMAGE AT BOTTOM */}
-      <img
-        src={workprocesshand}
-        alt="Hand Illustration"
-        className="hand-image"
-      />
     </section>
   );
 };

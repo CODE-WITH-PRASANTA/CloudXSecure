@@ -9,10 +9,10 @@ import team3 from "../../assets/team3.png";
 import team4 from "../../assets/team4.png";
 
 const teamMembers = [
-  { id: 1, name: "Kathryn Murphy", role: "Physiotherapist", img: team1 },
-  { id: 2, name: "Darlene Robertson", role: "Web Designer", img: team2 },
-  { id: 3, name: "Leslie Alexander", role: "Nursing Assistant", img: team3 },
-  { id: 4, name: "Masirul", role: "President Of Sales", img: team4 },
+  { id: 1, name: "Kathryn Murphy", role: "Cloud Solutions Architect", img: team1 },
+  { id: 2, name: "Darlene Robertson", role: "Web Design Specialist", img: team2 },
+  { id: 3, name: "Leslie Alexander", role: "App Development Engineer", img: team3 },
+  { id: 4, name: "Masirul", role: "Cloud Security Expert", img: team4 },
 ];
 
 const ExpertTeamSection = () => {
@@ -30,7 +30,7 @@ const ExpertTeamSection = () => {
   return (
     <section className="expert-team-section">
       <div className="team-header">
-        <h2>See Our Skilled Expert Team</h2>
+        <h2>Meet Our Cloud & Digital Experts</h2>
         <div className="arrow-controls">
           <button className="arrow-btn" onClick={() => scroll("left")}> 
             <FaArrowLeft />
