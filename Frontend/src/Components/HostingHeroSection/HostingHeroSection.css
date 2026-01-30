@@ -1,139 +1,129 @@
-/* ================= GLOBAL RESET ================= */
+/* ================= RESET ================= */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
-  overflow-x: hidden;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
 }
 
-/* ================= HERO WRAPPER ================= */
+/* ================= HERO ================= */
 .hero-container {
+  max-width: 1320px;
+  margin: 40px auto;
+  padding: 80px 70px;
+
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: 1.1fr 1fr;
   align-items: center;
-  gap: clamp(24px, 4vw, 64px);
+  gap: 60px;
 
-  max-width: 1400px;
-  width: calc(100% - clamp(16px, 4vw, 48px));
-  margin: clamp(16px, 4vw, 48px) auto;
-
-  padding: clamp(32px, 5vw, 72px);
-  background: #293eff;
-  color: #ffffff;
-  border-radius: clamp(18px, 3vw, 28px);
-
+  background: #2f44ff;
+  border-radius: 28px;
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
 
-/* ================= LEFT CONTENT ================= */
-.hero-content {
-  max-width: 680px;
-}
-
+/* ================= LEFT ================= */
 .hero-subtitle {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 40px;
   background: rgba(255, 255, 255, 0.15);
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: clamp(14px, 1.3vw, 18px);
-  font-weight: 500;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .hero-title {
-  font-size: clamp(28px, 4.6vw, 56px);
-  line-height: 1.18;
+  font-size: 56px;
+  line-height: 1.15;
   font-weight: 700;
   margin-bottom: 18px;
 }
 
 .hero-description {
-  font-size: clamp(15px, 1.6vw, 18px);
-  line-height: 1.75;
-  opacity: 0.92;
-  margin-bottom: 36px;
+  max-width: 520px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 40px;
 }
 
 /* ================= BUTTONS ================= */
 .hero-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  gap: 22px;
+  align-items: center;
 }
 
 .btn-get-started {
-  padding: 14px 30px;
-  border-radius: 999px;
   background: #0b0b0b;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
+  color: #fff;
+  padding: 15px 36px;
+  border-radius: 50px;
   border: none;
+  font-weight: 600;
   cursor: pointer;
-  min-height: 48px;
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition: 0.25s;
 }
 
 .btn-get-started:hover {
-  background: #ffffff;
-  color: #0b0b0b;
-  transform: translateY(-2px);
+  background: #fff;
+  color: #000;
 }
 
 .view-case {
-  font-size: 15px;
-  text-decoration: underline;
-  cursor: pointer;
+  color: #fff;
   opacity: 0.9;
 }
 
-/* ================= RIGHT MEDIA ================= */
+/* ================= RIGHT ================= */
 .hero-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-main-image {
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 26px;
   z-index: 2;
 }
 
-/* ================= PLAY BUTTON ================= */
+/* BIG CIRCLE BEHIND PLAY */
+.hero-image-container::before {
+  content: "";
+  position: absolute;
+  
+  height: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  top: -80px;
+  left: -80px;
+}
+
+/* ================= PLAY ================= */
 .play-button {
   position: absolute;
-  left: 6%;
-  top: 18%;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  z-index: 3;
+  top: 60px;
+  left: 40px;
+  z-index: 5;
 }
 
 .play-bg {
-  width: clamp(64px, 8vw, 96px);
-  animation: spin 6s linear infinite;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-}
+  width: 90px;
+  animation: spin 8s linear infinite;
+  position: absolute;
+  right: -40px;
+  top: -60px;
 
-.play-bg.paused {
-  animation-play-state: paused;
 }
 
 @keyframes spin {
@@ -147,13 +137,12 @@ body {
   width: 100%;
   max-width: 520px;
   aspect-ratio: 16 / 9;
-  position: relative;
 }
 
 .hero-video {
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 24px;
   border: none;
 }
 
@@ -161,63 +150,46 @@ body {
   position: absolute;
   top: -12px;
   right: -12px;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
   border: none;
-  color: #ffffff;
-  cursor: pointer;
-  transition: transform 0.25s ease;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
 }
 
-.close-video-btn:hover {
-  transform: scale(1.1);
-}
-
-/* ================= FLOATING DECOR ================= */
+/* ================= FLOAT IMAGES ================= */
 .small-img {
   position: absolute;
-  width: clamp(48px, 6vw, 80px);
-  animation: float 4s ease-in-out infinite;
+  width: 70px;
 }
 
 .small-img-1 {
-  bottom: -6%;
-  left: 12%;
+  bottom: -20px;
+  left: 120px;
 }
 
 .small-img-2 {
-  bottom: -6%;
-  right: 28%;
-  animation-delay: 1s;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
+  bottom: -20px;
+  right: 160px;
 }
 
 /* ================= RATINGS ================= */
 .rating-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 36px;
-  padding-top: 20px;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 26px;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+  display: flex;
+  justify-content: center;
+  gap: 60px;
 }
 
 .rating-box {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .rating-source {
@@ -226,64 +198,57 @@ body {
 }
 
 .rating-stars span {
-  color: #ffcc00;
+  color: #ffc107;
 }
 
 .rating-stars p {
-  font-size: 16px;
-  opacity: 0.9;
+  margin: 0;
+  font-size: 14px;
 }
 
 /* ================= TABLET ================= */
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
+    padding: 60px 40px;
     text-align: center;
   }
 
-  .hero-content {
-    margin: auto;
+  .hero-description {
+    margin-inline: auto;
   }
 
   .hero-buttons {
     justify-content: center;
   }
 
-  .rating-section {
-    justify-content: center;
-  }
-
   .play-button {
-    left: 8%;
-    top: 14%;
+    left: 30px;
+    top: 40px;
   }
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 640px) {
   .hero-container {
-    padding: 32px 18px;
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 36px;
   }
 
   .btn-get-started {
     width: 100%;
   }
 
-  .hero-main-image {
-    max-width: 300px;
+  .rating-section {
+    flex-direction: column;
+    gap: 24px;
   }
 
   .play-button {
-    left: 10%;
-    top: 12%;
-  }
-
-  .video-wrapper {
-    max-width: 100%;
-  }
-
-  .rating-box {
-    flex-direction: column;
-    text-align: center;
+    left: 20px;
+    top: 30px;
   }
 }

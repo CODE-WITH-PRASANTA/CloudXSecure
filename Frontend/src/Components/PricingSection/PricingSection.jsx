@@ -7,10 +7,10 @@ const PricingSection = () => {
   const [planType, setPlanType] = useState("monthly");
 
   const plans = [
-    { title: "Regular Plans", monthlyPrice: 99, save: "75%" },
-    { title: "Premium Plans", monthlyPrice: 59, save: "75%" },
-    { title: "Business Plans", monthlyPrice: 39, save: "75%" },
-    { title: "Cloud Startup", monthlyPrice: 29, save: "75%" },
+    { title: "Cloud Startup", monthlyPrice: 99, save: "75%" },
+    { title: "Business Plan", monthlyPrice: 59, save: "75%" },
+    { title: "Premium Plan", monthlyPrice: 39, save: "75%" },
+    { title: "Enterprise Plan", monthlyPrice: 29, save: "75%" },
   ];
 
   const features = [
@@ -36,7 +36,7 @@ const PricingSection = () => {
         <p className="small-title">
           <span className="pricing-line"></span> OUR PRICING
         </p>
-        <h2>Our Awesome Pricing Plans</h2>
+        <h2>Flexible Cloud & Digital Pricing Plans</h2>
 
         <div className="toggle-container">
           <div className="toggle-buttons">
@@ -73,7 +73,7 @@ const PricingSection = () => {
                 <span>{planType === "monthly" ? "/mo" : "/yr"}</span>
               </h3>
               <p className="desc">
-                Integer sapien ne sapien sollicitudin ultrices cras tempor id lorem et
+                Secure cloud, web & app solutions with backups and 24/7 support—CloudXSecure.
               </p>
             </div>
 

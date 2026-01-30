@@ -18,8 +18,8 @@ const CaseStudySection1 = () => {
 
           {/* Overlay Info */}
           <div className="case-study-info">
-            <p className="case-study-category">Technology</p>
-            <h3 className="case-study-title">Digital SEO Marketing</h3>
+            <p className="case-study-category">Digital SEO Marketing</p>
+            <h3 className="case-study-title">Cloud-Powered SEO Marketing</h3>
           </div>
 
           {/* Index Badge */}
@@ -41,8 +41,8 @@ const CaseStudySection1 = () => {
 
           {/* Overlay Info */}
           <div className="case-study-info">
-            <p className="case-study-category">Innovation</p>
-            <h3 className="case-study-title">Smart Technology</h3>
+            <p className="case-study-category">Smart Technology</p>
+            <h3 className="case-study-title">Smart Cloud Technology</h3>
           </div>
 
           {/* Index Badge */}

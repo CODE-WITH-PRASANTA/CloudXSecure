@@ -14,21 +14,21 @@ const FeatureSection = () => {
       icon: icon1,
       title: "Highly Expert Team",
       description:
-        "Our consulting process begins with a thorough assessment of your current situation and needs.",
+        "Our certified cloud architects, web designers, and app developers deliver secure cloud solutions, modern websites, and scalable applications tailored to your business goals.",
       link: "/service-details/expert-team", // ✅ Service detail route
     },
     {
       icon: icon2,
       title: "24/7 Customer Services",
       description:
-        "We offer around-the-clock support to ensure your business keeps running without interruption.",
+        "CloudXSecure provides round-the-clock support, cloud monitoring, and technical assistance to keep your cloud infrastructure, websites, and mobile apps running smoothly.",
       link: "/service-details/customer-support",
     },
     {
       icon: icon3,
       title: "Competitive Pricing",
       description:
-        "We provide top-quality services at affordable prices to keep your operations efficient and cost-effective.",
+        "Get enterprise-grade cloud services, professional web design, and mobile app development at cost-effective pricing—flexible plans built for startups, growing businesses, and enterprises.",
       link: "/service-details/competitive-pricing",
     },
   ];

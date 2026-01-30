@@ -27,24 +27,22 @@ const HostingHeroSection = () => {
   return (
     <section className="hero-container">
       <div className="hero-content">
-        <p className="hero-subtitle">Everything You Need To Create A Website</p>
+        <p className="hero-subtitle">Everything You Need for Secure Cloud & Digital Growth</p>
         <h1 className="hero-title">
-          Business Innovation With <br />
-          <span>IT Services Expertise</span>
+          Powering Business Innovation with <br />
+          <span>Secure Cloud & Digital Solutions</span>
         </h1>
         <p className="hero-description">
-          It is a long established fact that a reader will be distracted by the readable
-          content of a page when looking at its layout. The point of using Lorem Ipsum is
-          that it has a more-or-less normal distribution of letters.
+          CloudXSecure delivers scalable cloud infrastructure, modern web design, and high-performance mobile app development—all backed by enterprise-grade security and 24/7 expert support to help your business grow faster.
         </p>
 
         <div className="hero-buttons">
           {/* ✅ Added navigation on click */}
           <button className="btn-get-started" onClick={handleGetStarted}>
-            Get Started →
+            Get Started Today →
           </button>
           <a href="#" className="view-case">
-            View Case Study
+            View Our Services
           </a>
         </div>
       </div>

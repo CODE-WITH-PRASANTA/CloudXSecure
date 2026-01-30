@@ -21,7 +21,7 @@ const ContactPage = () => {
             <FaArrowLeft className="arrow" /> <span>CONTACT US</span>{" "}
             <FaArrowRight className="arrow" />
           </div>
-          <h2 className="contact-page-title">Have Any Question About Us?</h2>
+          <h2 className="contact-page-title">Have Questions About Your <br />Cloud or Digital Projects?</h2>
         </div>
 
         <div className="contact-page-header-right">
@@ -55,7 +55,7 @@ const ContactPage = () => {
       <div className="contact-page-body">
         {/* LEFT FORM SIDE */}
         <div className="contact-page-form fade-in-left">
-          <h3>Get In Touch</h3>
+          <h3>Get In Touch With CloudXSecure</h3>
           <form>
             <div className="form-row">
               <input type="text" placeholder="Full Name" />
@@ -72,8 +72,7 @@ const ContactPage = () => {
             <div className="checkbox-row">
               <input type="checkbox" id="consent" />
               <label htmlFor="consent">
-                Collaboratively formulate principle capital. Progressively
-                evolve user
+                I agree to be contacted by CloudXSecure regarding cloud, web, and app development services.
               </label>
             </div>
 

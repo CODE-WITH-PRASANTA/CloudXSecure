@@ -1,215 +1,299 @@
 .price-section {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(180deg, #f3f6ff 0%, #ffffff 100%);
-    padding: 100px 60px;
-    text-align: center;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #f3f6ff 0%, #ffffff 100%);
+  padding: 100px 60px;
+  text-align: center;
+  overflow: hidden;
 }
 
 .price-icon-top {
-    position: absolute;
-    top: 60px;
-    right: 80px;
-    width: 70px;
-    opacity: 0.8;
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  width: 70px;
+  opacity: 0.8;
 }
 
+/* ================= HEADER ================= */
+
 .price-header {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .price-header .small-title {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 18px;
-    color: #3b47ff;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+  color: #3b47ff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .pricing-line {
-    width: 35px;
-    height: 3px;
-    background: #3b47ff;
-    border-radius: 2px;
+  width: 35px;
+  height: 3px;
+  background: #3b47ff;
+  border-radius: 2px;
 }
 
 .price-header h2 {
-    font-size: 50px;
-    font-weight: 800;
-    color: #0a0a1e;
-    margin-top: 15px;
-    margin-bottom: 40px;
+  font-size: 50px;
+  font-weight: 800;
+  color: #0a0a1e;
+  margin-top: 15px;
+  margin-bottom: 40px;
 }
 
+/* ================= TOGGLE ================= */
+
 .toggle-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .toggle-buttons {
-    display: flex;
-    background: #ffffff;
-    border: 1px solid #cfd5ff;
-    border-radius: 40px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #cfd5ff;
+  border-radius: 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 .toggle-buttons button {
-    padding: 12px 35px;
-    border: none;
-    background: transparent;
-    font-weight: 600;
-    font-size: 18px;
-    cursor: pointer;
-    color: #6067a3;
-    transition: 0.3s;
+  padding: 12px 35px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  color: #6067a3;
+  transition: 0.3s;
 }
 
 .toggle-buttons button.active {
-    background: #3b47ff;
-    color: #fff;
-    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.3);
+  background: #3b47ff;
+  color: #fff;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .toggle-hint {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .price-icon-bottom {
-    width: 60px;
+  width: 60px;
 }
 
 .save-text {
-    color: #3b47ff;
-    font-weight: 700;
-    font-size: 20px;
+  color: #3b47ff;
+  font-weight: 700;
+  font-size: 20px;
 }
+
+/* ================================================= */
+/* ================= PLANS GRID ==================== */
+/* ================================================= */
 
 .plans-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 60px;
+  align-items: stretch;
 }
 
+/* ================= CARD ================= */
+
 .plan-card {
-    background: #ffffff;
-    border-radius: 25px;
-    padding: 45px 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-    transition: all 0.3s ease;
-    position: relative;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 0 32px 40px;
+  position: relative;
+  border: 1px solid #e4e8ff;
+  transition: 0.35s ease;
 }
 
 .plan-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(59, 71, 255, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(59, 71, 255, 0.15);
 }
+
+/* middle card highlight */
+
+.plan-card:nth-child(2) {
+  border: 2px solid #3b47ff;
+}
+
+/* ================= TOP HEX RIBBON */ 
 
 .plan-title {
-    background: #3b47ff;
-    color: #fff;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 10px 0;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+  position: relative;
+  margin: -22px auto 30px;
+  width: 80%;
+  background: #3b47ff;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 700;
+  border-radius: 8px;
+  clip-path: polygon(6% 0,94% 0,100% 50%,94% 100%,6% 100%,0 50%);
 }
 
-.plan-price .old-price {
-    color: #777;
-    font-size: 16px;
-    font-weight: 500;
+/* center ribbon dark */
+
+.plan-card:nth-child(2) .plan-title {
+  background: #0a0a3c;
+}
+
+/* ================= PRICE ================= */
+
+.plan-price {
+  text-align: center;
+}
+
+.old-price {
+  color: #777;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 10px;
 }
 
 .save-badge {
-    background: #e8eaff;
-    color: #3b47ff;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 5px 12px;
-    border-radius: 15px;
-    margin-left: 10px;
+  background: #e8eaff;
+  color: #3b47ff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 15px;
 }
 
 .plan-price h3 {
-    font-size: 42px;
-    color: #0a0a1e;
-    margin: 15px 0;
-    font-weight: 800;
+  font-size: 44px;
+  color: #0a0a1e;
+  margin: 18px 0;
+  font-weight: 800;
 }
 
 .plan-price h3 span {
-    font-size: 18px;
-    color: #6a6a99;
+  font-size: 18px;
+  color: #6a6a99;
 }
 
 .desc {
-    color: #6067a3;
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 25px;
+  color: #6067a3;
+  font-size: 16px;
+  line-height: 1.7;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e7e9ff;
 }
 
+/* ================= FEATURES ================= */
+
 .plan-features {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin-bottom: 25px;
+  list-style: none;
+  padding: 25px 0 10px;
+  text-align: left;
 }
 
 .plan-features li {
-    font-size: 18px;
-    margin: 8px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 8px 0;
 }
 
 .plan-features li.included {
-    color: #1a1a33;
+  color: #1a1a33;
 }
 
 .plan-features li.not-included {
-    color: #e74c3c;
+  color: #e74c3c;
 }
 
+/* right side ? icon */
+
+.plan-features li::after {
+  content: "?";
+  width: 18px;
+  height: 18px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.plan-features .not-included::after {
+  opacity: 0;
+}
+
+/* ================= BUTTON ================= */
+
 .get-started-btn {
-    background: #3b47ff;
-    color: #fff;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 40px;
-    font-weight: 600;
-    font-size: 17px;
-    cursor: pointer;
-    transition: 0.3s;
+  margin-top: 25px;
+  width: 100%;
+  background: #3b47ff;
+  color: #fff;
+  border: none;
+  padding: 15px 0;
+  border-radius: 35px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .get-started-btn:hover {
-    background: #2c36cc;
+  background: #2c36cc;
+}
+
+/* center button dark */
+
+.plan-card:nth-child(2) .get-started-btn {
+  background: #0a0a3c;
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE ===================== */
+/* ================================================= */
+
+@media (max-width: 1200px) {
+  .plans-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-    .price-section {
-        padding: 70px 30px;
-    }
-    .price-header h2 {
-        font-size: 32px;
-    }
-    .plan-card {
-        padding: 30px 20px;
-    }
+  .price-section {
+    padding: 70px 25px;
+  }
+
+  .price-header h2 {
+    font-size: 32px;
+  }
+
+  .plans-container {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-title {
+    width: 90%;
+  }
+
+  .plan-card {
+    padding: 0 25px 35px;
+  }
 }
