@@ -2,8 +2,8 @@ import React from "react";
 import "./WorkProcessSection.css";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaArrowLeft, FaArrowRightLong } from "react-icons/fa6";
-import workprocess from "../../assets/workprocess.png";
-import workprocesshand from "../../assets/workprocesshand.png";
+import workprocess from "../../assets/workProcess.png";
+import workprocesshand from "../../assets/workProcesshand.png";
 
 const WorkProcessSection = () => {
   const navigate = useNavigate();

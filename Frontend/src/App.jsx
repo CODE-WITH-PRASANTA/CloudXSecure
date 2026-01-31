@@ -20,7 +20,7 @@ import WebdevlopementService from "./Pages/WebdevlopementService/WebdevlopementS
 import CloudSecurity from "./Pages/CloudSecurity/CloudSecurity";
 import CloudHosting from "./Pages/CloudHosting/CloudHosting";
 import DevOpsAutomation from "./Pages/DevOpsAutomation/DevOpsAutomation"
-import Monitoring from "./Pages/monitoring/Monitoring";
+import Monitoring from "./Pages/Monitoring/Monitoring";
 import BDrecovery from "./Pages/BDrecovery/BDrecovery";
 import PlanAndPricing from "./Pages/PlanAndPricing/PlanAndPricing";
 import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";

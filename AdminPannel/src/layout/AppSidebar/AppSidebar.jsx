@@ -1,98 +1,224 @@
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
   FiHome,
-  FiGrid,
-  FiLayers,
-  FiBox,
-  FiImage,
-  FiFileText,
-  FiTable,
-  FiClock,
-  FiBarChart2,
+  FiEdit,
+  FiUsers,
+  FiTag,
+  FiDollarSign,
+  FiMail,
+  FiStar,
   FiChevronRight,
   FiX,
 } from "react-icons/fi";
+import logo from "../../Assets/logo.avif";
 
-const AppSidebar = ({
-  sidebarOpen,
-  mobileOpen,
-  setMobileOpen,
-}) => {
+const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
+  const [openMenu, setOpenMenu] = useState("");
+
+  const toggleMenu = (key) => {
+    setOpenMenu(openMenu === key ? "" : key);
+  };
+
   return (
     <>
-      {/* Mobile overlay */}
+      {/* ================= MOBILE OVERLAY ================= */}
       {mobileOpen && (
         <div
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
           onClick={() => setMobileOpen(false)}
-          className="fixed inset-0 bg-black/40 z-30 lg:hidden"
         />
       )}
 
+      {/* ================= SIDEBAR ================= */}
       <aside
         className={`
-          fixed lg:static z-40 h-screen
-          bg-[#2f3e4e] text-white
+          fixed lg:static z-50 h-screen
+          bg-[#2b3a4a] text-slate-200
           transition-all duration-300
-          ${sidebarOpen ? "lg:w-64" : "lg:w-20"}
-          ${mobileOpen ? "translate-x-0 w-64" : "-translate-x-full"}
-          lg:translate-x-0
+          ${isOpen ? "w-64" : "w-20"}
+          ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
+        {/* ================= LOGO ================= */}
+        <div className="flex items-center gap-3 px-5 py-5 border-b border-white/10">
+          <img src={logo} className="w-8 h-8" alt="logo" />
+          {isOpen && (
+            <span className="font-semibold tracking-wide">ENDLESS</span>
+          )}
 
-        {/* Mobile close */}
-        <div className="lg:hidden flex justify-end p-4">
-          <FiX
-            className="text-2xl cursor-pointer"
+          <button
+            className="ml-auto lg:hidden"
             onClick={() => setMobileOpen(false)}
-          />
+          >
+            <FiX />
+          </button>
         </div>
 
-        {/* Logo */}
-        <div className="h-16 flex items-center gap-3 px-6 border-b border-white/10">
-          <div className="w-9 h-9 rounded-full bg-blue-500 flex items-center justify-center font-bold">
-            E
-          </div>
-          {sidebarOpen && <span className="font-bold">ENDLESS</span>}
-        </div>
-
-        {/* User */}
+        {/* ================= PROFILE ================= */}
         <div className="flex flex-col items-center py-6 border-b border-white/10">
           <img
-            src="https://i.pravatar.cc/80"
-            className="w-14 h-14 rounded-full mb-2"
+            src="https://i.pravatar.cc/100"
+            className="w-16 h-16 rounded-full mb-2"
+            alt="profile"
           />
-          {sidebarOpen && (
+          {isOpen && (
             <>
-              <h4 className="font-semibold">ELANA</h4>
-              <p className="text-xs text-slate-300">GENERAL MANAGER</p>
+              <p className="text-sm font-semibold">ELANA</p>
+              <p className="text-xs text-slate-400">GENERAL MANAGER</p>
             </>
           )}
         </div>
 
-        {/* Menu */}
-        <nav className="px-3 py-4 space-y-1 text-sm">
-          <Item icon={<FiHome />} label="Dashboard" show={sidebarOpen} />
-          <Item icon={<FiGrid />} label="Widgets" show={sidebarOpen} />
-          <Item icon={<FiLayers />} label="Base" show={sidebarOpen} />
-          <Item icon={<FiBox />} label="Advance" show={sidebarOpen} />
-          <Item icon={<FiImage />} label="Gallery" show={sidebarOpen} />
-          <Item icon={<FiFileText />} label="Forms" show={sidebarOpen} />
-          <Item icon={<FiTable />} label="Tables" show={sidebarOpen} />
-          <Item icon={<FiClock />} label="Timeline" show={sidebarOpen} />
-          <Item icon={<FiBarChart2 />} label="Charts" show={sidebarOpen} />
+        {/* ================= MENU ================= */}
+        <nav className="px-3 py-4 text-sm">
+          <ul className="space-y-1">
+
+            {/* DASHBOARD */}
+            <SidebarLink
+              to="/dashboard"
+              icon={<FiHome />}
+              label="Dashboard"
+              open={isOpen}
+            />
+
+            {/* BLOG MANAGEMENT */}
+            <li>
+              <button
+                onClick={() => toggleMenu("blog")}
+                className="sidebar-item w-full justify-between"
+              >
+                <div className="flex items-center gap-3">
+                  <FiEdit />
+                  {isOpen && <span>Blog Management</span>}
+                </div>
+                {isOpen && (
+                  <FiChevronRight
+                    className={`transition ${
+                      openMenu === "blog" ? "rotate-90" : ""
+                    }`}
+                  />
+                )}
+              </button>
+
+              {openMenu === "blog" && isOpen && (
+                <div className="ml-9 mt-1 space-y-1">
+                  <NavLink to="/blog/add" className="submenu">
+                    Add Blog
+                  </NavLink>
+                  <NavLink to="/blog/list" className="submenu">
+                    Blog List
+                  </NavLink>
+                </div>
+              )}
+            </li>
+
+            {/* TEAM */}
+            <SidebarLink
+              to="/team"
+              icon={<FiUsers />}
+              label="Team Posting"
+              open={isOpen}
+            />
+
+            {/* CATEGORIES */}
+            <SidebarLink
+              to="/categories"
+              icon={<FiTag />}
+              label="Categories"
+              open={isOpen}
+            />
+
+            {/* ================= PLANS & PRICING (FIXED) ================= */}
+            <li>
+              <button
+                onClick={() => toggleMenu("pricing")}
+                className="sidebar-item w-full justify-between"
+              >
+                <div className="flex items-center gap-3">
+                  <FiDollarSign />
+                  {isOpen && <span>Plans & Pricing</span>}
+                </div>
+
+                {isOpen && (
+                  <FiChevronRight
+                    className={`transition ${
+                      openMenu === "pricing" ? "rotate-90" : ""
+                    }`}
+                  />
+                )}
+              </button>
+
+              {openMenu === "pricing" && isOpen && (
+                <div className="ml-9 mt-1 space-y-1">
+                  <NavLink to="/pricing/post" className="submenu">
+                    Post Plan
+                  </NavLink>
+                  <NavLink to="/pricing/list" className="submenu">
+                    View Plan
+                  </NavLink>
+                </div>
+              )}
+            </li>
+
+            {/* CONTACT */}
+            <SidebarLink
+              to="/contacts"
+              icon={<FiMail />}
+              label="Contact Management"
+              open={isOpen}
+            />
+
+            {/* TESTIMONIAL */}
+            <SidebarLink
+              to="/testimonials"
+              icon={<FiStar />}
+              label="Testimonials"
+              open={isOpen}
+            />
+
+          </ul>
         </nav>
       </aside>
+
+      {/* ================= LOCAL STYLES ================= */}
+      <style>{`
+        .sidebar-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 10px 12px;
+          border-radius: 8px;
+          transition: background 0.2s;
+        }
+        .sidebar-item:hover {
+          background: rgba(255,255,255,0.08);
+        }
+        .submenu {
+          display: block;
+          padding: 6px 10px;
+          border-radius: 6px;
+          color: #cbd5e1;
+        }
+        .submenu:hover {
+          background: rgba(255,255,255,0.08);
+          color: white;
+        }
+      `}</style>
     </>
   );
 };
 
-const Item = ({ icon, label, show }) => (
-  <div className="flex items-center justify-between px-4 py-2 rounded-lg hover:bg-white/10">
-    <div className="flex items-center gap-3">
-      {icon}
-      {show && <span>{label}</span>}
-    </div>
-    {show && <FiChevronRight className="text-xs opacity-50" />}
-  </div>
+const SidebarLink = ({ to, icon, label, open }) => (
+  <NavLink
+    to={to}
+    className={({ isActive }) =>
+      `sidebar-item ${isActive ? "bg-white/10 text-white" : ""}`
+    }
+  >
+    {icon}
+    {open && <span>{label}</span>}
+  </NavLink>
 );
 
 export default AppSidebar;

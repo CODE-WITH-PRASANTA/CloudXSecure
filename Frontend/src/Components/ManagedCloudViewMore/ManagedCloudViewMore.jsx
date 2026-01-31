@@ -25,18 +25,18 @@ const services = [
 
 const ViewMoreServices = () => {
   return (
-    <section className="services-section">
-      <h2 className="services-title">View More Services</h2>
+    <section className="managedcloud-services-section">
+      <h2 className="managedcloud-services-title">View More Services</h2>
 
-      <div className="services-grid">
+      <div className="managedcloud-services-grid">
         {services.map((item) => (
-          <div className="service-card" key={item.id}>
-            <div className="service-icon">{item.icon}</div>
+          <div className="managedcloud-services-card" key={item.id}>
+            <div className="managedcloud-services-icon">{item.icon}</div>
 
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
 
-            <div className="service-footer">
+            <div className="managedcloud-services-footer">
               <span className="line"></span>
               <span className="number">{item.id}</span>
             </div>

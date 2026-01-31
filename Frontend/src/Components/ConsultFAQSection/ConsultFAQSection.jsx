@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ConsultFaqSection.css";
+import "./ConsultFAQSection.css";
 
 import gridImg from "../../assets/about-one-shape-1.png";
 import mainImg from "../../assets/const-faq_img01.webp";

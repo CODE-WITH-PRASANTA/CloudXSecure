@@ -97,7 +97,7 @@ const Footer = () => {
               <div className="contact-icon"><FiPhone /></div>
               <div className="contact-details">
                 <span className="contact-label">Phone</span>
-                <span className="contact-value">+1 (123) 456-7890</span>
+                <span className="contact-value">7666488777</span>
               </div>
             </div>
 
@@ -105,7 +105,7 @@ const Footer = () => {
               <div className="contact-icon"><FiMail /></div>
               <div className="contact-details">
                 <span className="contact-label">Email</span>
-                <span className="contact-value">support@cloudxsecure.com</span>
+                <span className="contact-value"> cloudxsecure@gmail.com</span>
               </div>
             </div>
 
@@ -113,7 +113,7 @@ const Footer = () => {
               <div className="contact-icon"><FiMapPin /></div>
               <div className="contact-details">
                 <span className="contact-label">Office</span>
-                <span className="contact-value">New York, United States</span>
+                <span className="contact-value">Room 407 c wing building no 18 , Aqsa apt , amrut Nagar near Ajit glass jogeshwari west mumbai 400102</span>
               </div>
             </div>
 

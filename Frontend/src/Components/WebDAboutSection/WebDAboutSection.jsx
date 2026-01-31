@@ -116,7 +116,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <span>Speak With Our Team</span>
-                  <strong>+91 9500 250 526</strong>
+                  <strong>7666488777</strong>
                 </div>
               </div>
             </div>

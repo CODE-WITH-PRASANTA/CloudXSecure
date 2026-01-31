@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
           <div className="phone-icon">📞</div>
           <div>
             <span>Talk to Our Cloud Experts</span>
-            <strong>+1 (123) 456-7890</strong>
+            <strong>7666488777</strong>
           </div>
         </div>
 

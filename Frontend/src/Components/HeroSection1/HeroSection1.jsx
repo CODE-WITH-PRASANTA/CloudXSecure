@@ -5,7 +5,7 @@ import {
   FaBolt,
   FaArrowRight,
 } from "react-icons/fa";
-import "./HeroSection1.css";
+import "./heroSection1.css";
 import heroImg from "../../assets/marketimage.png";
 
 const HeroSection1 = () => {
