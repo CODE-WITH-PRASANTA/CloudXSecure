@@ -29,7 +29,7 @@ const ContactSection = () => {
           <div className="cx-contact__icon">✉️</div>
           <div className="cx-contact__info-text">
             <h4>Email Support</h4>
-            <p>support@cloudxsecure.com</p>
+            <p> cloudxsecure@gmail.com</p>
           </div>
         </div>
 
@@ -37,7 +37,7 @@ const ContactSection = () => {
           <div className="cx-contact__icon">📞</div>
           <div className="cx-contact__info-text">
             <h4>Call Us</h4>
-            <p>+1 (800) 456-7890</p>
+            <p>7666488777</p>
           </div>
         </div>
 

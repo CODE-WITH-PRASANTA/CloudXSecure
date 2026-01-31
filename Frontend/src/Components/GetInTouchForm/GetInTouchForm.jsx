@@ -46,7 +46,7 @@ const GetInTouchForm = () => {
             <span className="icon">📞</span>
             <div>
               <h4>Contact Us</h4>
-              <p>(124) 555-6565</p>
+              <p>7666488777</p>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ const GetInTouchForm = () => {
             <span className="icon">✉️</span>
             <div>
               <h4>Send Us a Mail</h4>
-              <p>admin@techxen.org</p>
+              <p> cloudxsecure@gmail.com</p>
             </div>
           </div>
 
@@ -63,8 +63,8 @@ const GetInTouchForm = () => {
             <div>
               <h4>Office Location</h4>
               <p>
-                73 Bridge St Brooklyn Arakansas<br />
-                85032 United States, NY 10018
+                 Room 407 c wing building no 18 , Aqsa apt<br />
+               amrut Nagar near Ajit glass jogeshwari west mumbai 400102
               </p>
             </div>
           </div>

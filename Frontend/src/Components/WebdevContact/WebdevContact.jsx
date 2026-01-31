@@ -60,7 +60,7 @@ const ContactThree = () => {
               </span>
               <div>
                 <small>Email Us</small>
-                <p>info@domain.com</p>
+                <p> cloudxsecure@gmail.com</p>
               </div>
             </div>
 
@@ -70,7 +70,7 @@ const ContactThree = () => {
               </span>
               <div>
                 <small>Contact Us</small>
-                <p>99 (00) 567 780</p>
+                <p>7666488777</p>
               </div>
             </div>
 
@@ -80,7 +80,7 @@ const ContactThree = () => {
               </span>
               <div>
                 <small>Our Address</small>
-                <p>1629 N. Dixie Avenue, Kentucky, 42701</p>
+                <p>Room 407 c wing building no 18 , Aqsa apt , amrut Nagar near Ajit glass jogeshwari west mumbai 400102</p>
               </div>
             </div>
           </div>

@@ -1,11 +1,11 @@
 /* SECTION */
-.services-section {
+.managedcloud-services-section {
   padding: 90px 6%;
   background: #f6f7fc;
   text-align: center;
 }
 
-.services-title {
+.managedcloud-services-title {
   font-size: 36px;
   font-weight: 600;
   color: #0a0f2c;
@@ -13,14 +13,14 @@
 }
 
 /* GRID */
-.services-grid {
+.managedcloud-services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
 /* CARD */
-.service-card {
+.managedcloud-services-card {
   position: relative;
   background: #ffffff;
   border-radius: 20px;
@@ -31,7 +31,7 @@
 }
 
 /* SMOOTH COLOR FILL */
-.service-card::before {
+.managedcloud-services-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -42,23 +42,23 @@
   z-index: 0;
 }
 
-.service-card:hover::before {
+.managedcloud-services-card:hover::before {
   transform: scaleY(1);
 }
 
 /* CONTENT ABOVE GRADIENT */
-.service-card * {
+.managedcloud-services-card * {
   position: relative;
   z-index: 1;
 }
 
-.service-card:hover {
+.managedcloud-services-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 30px 60px rgba(45, 15, 178, 0.25);
 }
 
 /* ICON */
-.service-icon {
+.managedcloud-services-icon {
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -72,13 +72,13 @@
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-.service-card:hover .service-icon {
+.managedcloud-services-card:hover .managedcloud-services-icon {
   background: #ffffff;
   color: #2d0fb2;
 }
 
 /* TEXT */
-.service-card h3 {
+.managedcloud-services-card h3 {
   font-size: 20px;
   font-weight: 600;
   color: #0a0f2c;
@@ -86,59 +86,59 @@
   transition: color 0.4s ease;
 }
 
-.service-card p {
+.managedcloud-services-card p {
   font-size: 15px;
   line-height: 1.7;
   color: #5a5f7a;
   transition: color 0.4s ease;
 }
 
-.service-card:hover h3,
-.service-card:hover p {
+.managedcloud-services-card:hover h3,
+.managedcloud-services-card:hover p {
   color: #ffffff;
 }
 
 /* FOOTER */
-.service-footer {
+.managedcloud-services-footer {
   margin-top: 30px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.service-footer .line {
+.managedcloud-services-footer .line {
   width: 46px;
   height: 2px;
   background: #5b4bff;
   transition: background 0.4s ease;
 }
 
-.service-footer .number {
+.managedcloud-services-footer .number {
   font-size: 15px;
   font-weight: 600;
   color: #5b4bff;
   transition: color 0.4s ease;
 }
 
-.service-card:hover .line,
-.service-card:hover .number {
+.managedcloud-services-card:hover .line,
+.managedcloud-services-card:hover .number {
   background: #ffffff;
   color: #ffffff;
 }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .services-grid {
+  .managedcloud-services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .services-grid {
+  .managedcloud-services-grid {
     grid-template-columns: 1fr;
   }
 
-  .services-title {
+  .managedcloud-services-title {
     font-size: 28px;
   }
 }

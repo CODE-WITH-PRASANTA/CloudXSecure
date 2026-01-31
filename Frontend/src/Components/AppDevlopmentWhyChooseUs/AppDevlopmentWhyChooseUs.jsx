@@ -66,7 +66,7 @@ const AppDevlopmentWhyChooseUs = () => {
               </span>
               <div>
                 <small>Call Us Any Time</small>
-                <strong>088 (246) 642-27-10</strong>
+                <strong>7666488777</strong>
               </div>
             </div>
           </div>
