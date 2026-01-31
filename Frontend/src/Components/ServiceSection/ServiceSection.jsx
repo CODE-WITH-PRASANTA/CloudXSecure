@@ -1,90 +1,79 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "./ServiceSection.css";
-import { FiMessageCircle } from "react-icons/fi";
 
 import serviceIcon1 from "../../assets/service1.svg";
 import serviceIcon2 from "../../assets/service2.svg";
 import serviceIcon3 from "../../assets/service3.svg";
 import chatPerson from "../../assets/chartperson.png";
 
-const ServiceSection = () => {
-  const navigate = useNavigate();
+const services = [
+  {
+    id: 1,
+    icon: serviceIcon1,
+    title: "Cloud Infrastructure",
+    desc: "Secure, scalable cloud environments built for speed, reliability, and business growth.",
+  },
+  {
+    id: 2,
+    icon: serviceIcon2,
+    title: "Web Design & Development",
+    desc: "High-performance websites designed to engage users and convert visitors into customers.",
+  },
+  {
+    id: 3,
+    icon: serviceIcon3,
+    title: "App Development",
+    desc: "Custom mobile and web apps built for seamless experiences and long-term scalability.",
+  },
+];
 
-  const services = [
-    {
-      id: 1,
-      icon: serviceIcon1,
-      title: "Woo Commerce",
-      description:
-        "Collaboratively formulate principle capital. Progressively evolve user revolutionary hosting services.",
-    },
-    {
-      id: 2,
-      icon: serviceIcon2,
-      title: "Web Development",
-      description:
-        "Progressively evolve interactive solutions. Seamlessly foster collaboration and cutting-edge development.",
-    },
-    {
-      id: 3,
-      icon: serviceIcon3,
-      title: "App Design",
-      description:
-        "Holistically leverage innovation to deliver stunning, responsive, and engaging mobile app experiences.",
-    },
-  ];
+const Services = () => {
+  const [active, setActive] = useState(3);
 
   return (
-    <section className="service-section">
-      {/* ===== Header Section ===== */}
-      <div className="service-header">
-        <p className="subtitle">← OUR SERVICES →</p>
-        <h2 className="service-title">
-          Quickly Drive Interoperable <br /> Amazing Services
-        </h2>
-        <p className="service-description">
-          Monotonically synergize grants to business visualize strategic
-          infomediaries parallel task technically convergence maintenance local
-          business technology done
-        </p>
-      </div>
+    <section className="Hosting-cx-services">
+      <div className="Hosting-cx-container">
 
-      {/* ===== Main Content ===== */}
-      <div className="service-content">
-        {/* Left Side Cards */}
-        <div className="service-cards">
-          {services.map((service) => (
-            <div className="service-card" key={service.id}>
-              <img
-                src={service.icon}
-                alt={service.title}
-                className="service-icon"
-              />
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <button
-                className="read-more-btn"
-                onClick={() => navigate(`/services/${service.id}`)}
-              >
-                Read more <span>→</span>
-              </button>
-            </div>
-          ))}
+        <div className="Hosting-cx-header">
+          <span>OUR SERVICES</span>
+          <h2>Smart Cloud & Digital Solutions <br /> That Power Your Growth</h2>
+
+          <p>
+            CloudXSecure delivers secure cloud services, modern web design, scalable app development, and complete cloud solutions to help businesses grow faster, stay protected, and perform at scale.
+          </p>
         </div>
 
-        {/* Right Side Chat Image */}
-        <div className="chat-container">
-          <div className="live-chat-label">Live Chat</div>
-          <img src={chatPerson} alt="Chat Person" className="chat-person" />
-            {/* ✅ Wrapper for animation */}
-         <div className="chat-icon-wrapper">
-             <FiMessageCircle className="chat-icon" />
-         </div>
+        <div className="Hosting-cx-grid">
+
+          <div className="Hosting-cx-cards">
+            {services.map((item) => (
+              <div
+                key={item.id}
+                className={`Hosting-cx-card ${active === item.id ? "active" : ""}`}
+                onMouseEnter={() => setActive(item.id)}
+              >
+                <div className="Hosting-cx-icon">
+                  <img src={item.icon} alt="" />
+                </div>
+
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+
+                <button>
+                  Read more <span>››</span>
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="Hosting-cx-image">
+            <img src={chatPerson} alt="chat" />
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-export default ServiceSection;
+export default Services;

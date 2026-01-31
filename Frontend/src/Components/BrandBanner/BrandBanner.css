@@ -1,136 +1,116 @@
-/* ================= BRAND BANNER ================= */
-.brand-banner {
+/* ================= RESET SAFETY ================= */
+.Hosting-logo-marquee,
+.Hosting-logo-marquee * {
+  box-sizing: border-box;
+}
+
+/* ================= SECTION ================= */
+.Hosting-logo-marquee {
   width: 100%;
-  overflow: hidden;
   background: #ffffff;
-  padding: clamp(40px, 6vw, 80px) 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+
+  /* REMOVE GAP BETWEEN SECTIONS */
+  margin: 0;
+
+  /* HEIGHT CONTROL */
+  padding: 24px 0;
+
+  /* ❌ BLUE LINES REMOVED */
+  border: none;
+
+  /* PREVENT LINE-HEIGHT GAP */
+  line-height: 0;
+
+  overflow: hidden;
 }
 
 /* ================= TRACK ================= */
-.brand-track {
+.Hosting-logo-track {
   display: flex;
   align-items: center;
-  gap: clamp(60px, 12vw, 260px);
   width: max-content;
-
-  animation: brandScroll 48s linear infinite;
-  will-change: transform;
-  transform: translateZ(0); /* GPU acceleration */
+  animation: marquee 18s linear infinite;
 }
 
-/* Pause animation on hover */
-.brand-banner:hover .brand-track {
+/* Pause on hover */
+.Hosting-logo-marquee:hover .Hosting-logo-track {
   animation-play-state: paused;
 }
 
-/* ================= LOGO ================= */
-.brand-logo {
+/* ================= LOGO ITEM ================= */
+.Hosting-logo-item {
   flex: 0 0 auto;
-  width: clamp(90px, 14vw, 180px);
+  padding: 0 42px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.brand-logo img {
-  width: 100%;
-  height: auto;
+/* FULL COLOR LOGOS */
+.Hosting-logo-item img {
+  height: 42px;
+  width: auto;
   object-fit: contain;
 
-  filter: brightness(1) contrast(1.05);
-  transition: transform 0.6s ease, filter 0.6s ease;
-  pointer-events: none;
+  /* Restore normal line-height */
+  line-height: normal;
+
+  filter: none;
+  opacity: 1;
+
+  transition: transform 0.3s ease;
 }
 
-/* Subtle hover zoom (luxury feel) */
-.brand-logo:hover img {
-  transform: scale(1.1);
-  filter: brightness(1.15) contrast(1.1);
+/* Hover micro-interaction */
+.Hosting-logo-item img:hover {
+  transform: scale(1.06);
 }
 
-/* ================= INFINITE SCROLL ================= */
-@keyframes brandScroll {
-  from {
+/* ================= ANIMATION ================= */
+@keyframes marquee {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
 
-/* ================= FADE EDGES ================= */
-.brand-banner::before,
-.brand-banner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: clamp(40px, 8vw, 120px);
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.brand-banner::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-.brand-banner::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-/* ================= ACCESSIBILITY ================= */
-@media (prefers-reduced-motion: reduce) {
-  .brand-track {
-    animation: none;
-  }
-}
-
-/* ================= TABLET ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .brand-track {
-    gap: clamp(40px, 8vw, 120px);
-    animation-duration: 52s;
+  .Hosting-logo-item {
+    padding: 0 32px;
+  }
+
+  .Hosting-logo-item img {
+    height: 38px;
   }
 }
 
-/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  .brand-banner {
-    padding: 40px 0;
+  .Hosting-logo-marquee {
+    padding: 20px 0;
   }
 
-  .brand-track {
-    gap: 48px;
-    animation-duration: 56s;
+  .Hosting-logo-item {
+    padding: 0 26px;
   }
 
-  .brand-logo {
-    width: 110px;
+  .Hosting-logo-item img {
+    height: 34px;
   }
 }
 
-/* ================= SMALL MOBILE ================= */
 @media (max-width: 480px) {
-  .brand-track {
-    gap: 36px;
-    animation-duration: 60s;
+  .Hosting-logo-marquee {
+    padding: 16px 0;
   }
 
-  .brand-logo {
-    width: 90px;
+  .Hosting-logo-item {
+    padding: 0 20px;
+  }
+
+  .Hosting-logo-item img {
+    height: 30px;
   }
 }
