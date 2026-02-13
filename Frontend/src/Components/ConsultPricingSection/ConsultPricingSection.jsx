@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./ConsultPricingSection.css";
 
 const pricing = {
-  monthly: [19, 39, 99],
-  yearly: [119, 339, 899],
+  monthly: ["₹1,599", "₹3,299", "₹7,999"],
+  yearly: ["₹15,999", "₹32,999", "₹89,999"],
 };
 
 export default function PricingSection() {
@@ -58,18 +58,16 @@ export default function PricingSection() {
         {/* BASIC */}
         <div className="gerowPricing__card">
           <h3 className="gerowPricing__planTitle">Basic Plan</h3>
-          <p className="gerowPricing__planDesc">
-            Best for Startups & Small Businesses
-          </p>
+          <p className="gerowPricing__planDesc">Best for Small Businesses</p>
 
           <div className="gerowPricing__pricePill">
-            <strong>${pricing[billing][0]}</strong>
+            <strong>{pricing[billing][0]}</strong>
             <span>/{billing === "monthly" ? "month" : "year"}</span>
           </div>
 
           <ul className="gerowPricing__list">
             <li>Secure cloud hosting setup</li>
-            <li>Basic website design or landing page</li>
+            <li>Basic website design</li>
             <li>Email & DNS configuration</li>
             <li>Performance monitoring</li>
             <li>SSL & basic security</li>
@@ -82,25 +80,23 @@ export default function PricingSection() {
         </div>
 
         {/* STANDARD */}
-        <div className="gerowPricing__card">
+        <div className="gerowPricing__card gerowPricing__highlight">
           <span className="gerowPricing__badge">Popular</span>
 
           <h3 className="gerowPricing__planTitle">Standard Plan</h3>
-          <p className="gerowPricing__planDesc">
-                   Perfect for Growing Teams          </p>
+          <p className="gerowPricing__planDesc">Perfect for Growing Teams</p>
 
           <div className="gerowPricing__pricePill">
-            <strong>${pricing[billing][1]}</strong>
+            <strong>{pricing[billing][1]}</strong>
             <span>/{billing === "monthly" ? "month" : "year"}</span>
           </div>
 
           <ul className="gerowPricing__list">
             <li>Managed cloud infrastructure</li>
-            <li>Responsive website or web app development</li>
-            <li>Basic mobile app support</li>
-            <li>DevOps monitoring & optimization</li>
-            <li>Priority technical support</li>
-            <li>Monthly reports & updates</li>
+            <li>Web App + Mobile App</li>
+            <li>DevOps monitoring</li>
+            <li>Priority support</li>
+            <li>Monthly reports</li>
           </ul>
 
           <button className="gerowPricing__btn">
@@ -111,22 +107,20 @@ export default function PricingSection() {
         {/* BUSINESS */}
         <div className="gerowPricing__card">
           <h3 className="gerowPricing__planTitle">Business Plan</h3>
-          <p className="gerowPricing__planDesc">
-            Built for Enterprises
-          </p>
+          <p className="gerowPricing__planDesc">Built for Enterprises</p>
 
           <div className="gerowPricing__pricePill">
-            <strong>${pricing[billing][2]}</strong>
+            <strong>{pricing[billing][2]}</strong>
             <span>/{billing === "monthly" ? "month" : "year"}</span>
           </div>
 
           <ul className="gerowPricing__list">
-            <li>Custom cloud architecture & migration</li>
-            <li>Full web + mobile app development</li>
-            <li>Enterprise-grade security & compliance</li>
-            <li>24/7 cloud monitoring & DevOps</li>
-            <li>High-availability infrastructure</li>
-            <li>Disaster recovery planning</li>
+            <li>Custom cloud architecture</li>
+            <li>Full Web + Mobile Development</li>
+            <li>Enterprise Security</li>
+            <li>24/7 Cloud Monitoring</li>
+            <li>High Availability Servers</li>
+            <li>Disaster Recovery Setup</li>
           </ul>
 
           <button className="gerowPricing__btn">

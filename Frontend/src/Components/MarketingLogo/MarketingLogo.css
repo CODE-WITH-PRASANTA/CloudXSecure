@@ -1,23 +1,35 @@
 /* ================= RESET SAFETY ================= */
-
 .marketing-logo-marquee,
 .marketing-logo-marquee * {
     box-sizing: border-box;
 }
 
-
-/* ================= SECTION ================= */
+/* ================= SECTION (Premium UI) ================= */
 
 .marketing-logo-marquee {
     width: 100%;
-    background: #ffffff;
-    margin: 0;
-    padding: 24px 0;
-    border: none;
-    line-height: 0;
+    padding: 35px 0;
+    background: linear-gradient(135deg, #f8fbff, #ffffff);
     overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+    /* Premium floating bg glow */
+    position: relative;
 }
 
+.marketing-logo-marquee::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 400px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.12), transparent 70%);
+    transform: translateX(-50%);
+    filter: blur(50px);
+    pointer-events: none;
+}
 
 /* ================= TRACK ================= */
 
@@ -25,49 +37,54 @@
     display: flex;
     align-items: center;
     width: max-content;
-    animation: marquee 18s linear infinite;
+    gap: 65px;
+    animation: marquee 16s linear infinite;
+    will-change: transform;
 }
 
-
-/* Pause on hover */
-
+/* Pause animation on hover */
 .marketing-logo-marquee:hover .marketing-logo-track {
     animation-play-state: paused;
 }
-
 
 /* ================= LOGO ITEM ================= */
 
 .marketing-logo-item {
     flex: 0 0 auto;
-    padding: 0 42px;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* Premium blur card effect */
+    background: rgba(255, 255, 255, 0.35);
+    padding: 16px 28px;
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* Hover effect */
+.marketing-logo-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
 
-/* FULL COLOR LOGOS */
-
+/* Full-color logos */
 .marketing-logo-item img {
-    height: 42px;
+    height: 46px;
     width: auto;
     object-fit: contain;
-    line-height: normal;
-    filter: none;
-    opacity: 1;
     transition: transform 0.3s ease;
 }
 
-
-/* Hover micro-interaction */
-
+/* Micro interaction */
 .marketing-logo-item img:hover {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
-
-/* ================= ANIMATION ================= */
+/* ================= MARQUEE ANIMATION ================= */
 
 @keyframes marquee {
     0% {
@@ -78,12 +95,20 @@
     }
 }
 
-
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .marketing-logo-item {
-        padding: 0 32px;
+        padding: 14px 26px;
+    }
+    .marketing-logo-item img {
+        height: 42px;
+    }
+}
+
+@media (max-width: 992px) {
+    .marketing-logo-track {
+        gap: 50px;
     }
     .marketing-logo-item img {
         height: 38px;
@@ -92,10 +117,14 @@
 
 @media (max-width: 768px) {
     .marketing-logo-marquee {
-        padding: 20px 0;
+        padding: 26px 0;
+    }
+    .marketing-logo-track {
+        gap: 38px;
     }
     .marketing-logo-item {
-        padding: 0 26px;
+        padding: 12px 20px;
+        border-radius: 14px;
     }
     .marketing-logo-item img {
         height: 34px;
@@ -104,12 +133,15 @@
 
 @media (max-width: 480px) {
     .marketing-logo-marquee {
-        padding: 16px 0;
+        padding: 20px 0;
+    }
+    .marketing-logo-track {
+        gap: 28px;
     }
     .marketing-logo-item {
-        padding: 0 20px;
+        padding: 10px 16px;
     }
     .marketing-logo-item img {
-        height: 30px;
+        height: 28px;
     }
 }

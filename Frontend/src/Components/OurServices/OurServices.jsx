@@ -1,5 +1,6 @@
 import React from "react";
 import "./OurServices.css";
+import { useNavigate } from "react-router-dom";
 import {
   FaShieldAlt,
   FaCloud,
@@ -14,41 +15,49 @@ const services = [
     id: "01",
     title: "Managed Cloud Services",
     desc: "CloudXSecure provides managed cloud services that handle your cloud infrastructure end-to-end. We ensure high availability, performance optimization, security monitoring, and continuous support so you can focus on growing your business.",
-    icon: <FaShieldAlt size={20} />
+    icon: <FaShieldAlt size={20} />,
+    path: "/services/managed-cloud"
   },
   {
     id: "02",
     title: "Cloud Security",
-    desc: "Our cloud security services protect your applications, data, and infrastructure from cyber threats. We implement robust security controls, continuous monitoring, and compliance-ready solutions to keep your cloud environment safe.",
-    icon: <FaCloud size={20} />
+    desc: "Our cloud security services protect your applications, data, and infrastructure from cyber threats.",
+    icon: <FaCloud size={20} />,
+    path: "/services/security"
   },
   {
     id: "03",
     title: "Cloud Hosting",
-    desc: "We deliver secure and scalable cloud hosting services designed for speed, reliability, and performance. Whether hosting websites, applications, or enterprise systems, our cloud hosting ensures maximum uptime and flexibility.",
-    icon: <FaDatabase size={20} />
+    desc: "We deliver secure and scalable cloud hosting services designed for speed, reliability, and performance.",
+    icon: <FaDatabase size={20} />,
+    path: "services/hosting"
   },
   {
     id: "04",
     title: "Cloud Migration",
-    desc: "CloudXSecure helps businesses move to the cloud with minimal downtime. Our cloud migration services ensure safe data transfer, application compatibility, and optimized cloud performance for a seamless transition.",
-    icon: <FaCogs size={20} />
+    desc: "CloudXSecure helps businesses move to the cloud with minimal downtime.",
+    icon: <FaCogs size={20} />,
+    path: "services/migration"
   },
   {
     id: "05",
     title: "DevOps & Automation",
-    desc: "Our DevOps and automation services streamline development and deployment processes. We automate workflows, improve CI/CD pipelines, and enhance system reliability to help businesses deliver faster and smarter.",
-    icon: <FaHeadset size={20} />
+    desc: "Our DevOps and automation services streamline development and deployment processes.",
+    icon: <FaHeadset size={20} />,
+    path: "/services/devops"
   },
   {
     id: "06",
     title: "Monitoring & Cost Optimization",
-    desc: "We provide cloud monitoring and cost optimization services to track performance, detect issues early, and reduce unnecessary cloud spending. Our solutions help you achieve efficiency without compromising performance.",
-    icon: <FaCode size={20} />
+    desc: "We provide cloud monitoring and cost optimization services.",
+    icon: <FaCode size={20} />,
+    path: "/services/monitoring"
   }
 ];
 
 const OurServices = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="OurServices">
       <div className="OurServices-container">
@@ -67,7 +76,8 @@ const OurServices = () => {
             <div
               className="OurServices-card"
               key={item.id}
-              style={{ "--delay": `${index * 0.12}s` }}   // 🔥 PREMIUM SCROLL DELAY
+              onClick={() => navigate(item.path)}   // 🔥 NAVIGATION
+              style={{ "--delay": `${index * 0.12}s` }}
             >
               <div className="OurServices-icon">
                 {item.icon}

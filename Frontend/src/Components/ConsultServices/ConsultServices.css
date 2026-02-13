@@ -1,84 +1,141 @@
+/* ===========================================================
+   PREMIUM SECTION STYLING
+=========================================================== */
 .srv-section {
   background-size: cover;
   background-position: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .srv-container {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: auto;
   text-align: center;
+  animation: fadeIn 0.7s ease-in-out;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================================================
+   TITLES
+=========================================================== */
 .srv-subtitle {
-  color: #7da7ff;
+  color: #9ebeff;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .srv-title {
-  font-size: 42px;
-  margin: 15px 0;
+  font-size: 44px;
+  margin: 18px 0;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
 }
 
 .srv-desc {
-  max-width: 600px;
+  max-width: 650px;
   margin: auto;
-  opacity: 0.8;
+  opacity: 0.9;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
+/* ===========================================================
+   GRID SLIDER WRAPPER
+=========================================================== */
 .srv-slider {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 60px;
+  gap: 35px;
+  margin-top: 70px;
 }
 
+/* ===========================================================
+   CARD — PREMIUM DESIGN
+=========================================================== */
 .srv-card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   color: #000;
-  border-radius: 18px;
-  padding: 25px;
+  border-radius: 20px;
+  padding: 30px;
   text-align: left;
-  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: 0.35s ease;
+  backdrop-filter: blur(10px);
 }
 
+.srv-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 55px rgba(37, 99, 235, 0.35);
+}
+
+/* ===========================================================
+   ICON
+=========================================================== */
 .srv-icon {
-  width: 50px;
-  height: 50px;
-  background: #eef3ff;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #e8f0ff, #f3f7ff);
   color: #2563eb;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 14px;
+  box-shadow: inset 0 0 8px rgba(37, 99, 235, 0.15);
+  transition: 0.3s ease;
 }
 
+.srv-card:hover .srv-icon {
+  transform: scale(1.08);
+}
+
+/* ===========================================================
+   TITLE INSIDE CARD
+=========================================================== */
 .srv-card h3 {
-  margin: 15px 0;
+  margin: 18px 0 14px;
+  font-size: 22px;
+  font-weight: 700;
 }
 
+/* ===========================================================
+   IMAGE ZOOM + OVERLAY BUTTON EFFECT
+=========================================================== */
 .srv-img {
   position: relative;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
+  margin-bottom: 18px;
 }
 
 .srv-img img {
   width: 100%;
   display: block;
+  transition: 0.4s ease;
+}
+
+.srv-card:hover .srv-img img {
+  transform: scale(1.08);
 }
 
 .srv-hover {
   position: absolute;
   inset: 0;
-  background: rgba(37, 99, 235, 0.85);
+  background: rgba(37, 99, 235, 0.82);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: 0.4s;
+  transition: 0.35s ease;
 }
 
 .srv-card:hover .srv-hover {
@@ -86,58 +143,98 @@
 }
 
 .srv-hover button {
-  background: #fff;
+  background: #ffffff;
   color: #2563eb;
-  border: none;
-  padding: 14px 28px;
+  padding: 14px 32px;
   border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
+  border: none;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
+.srv-hover button:hover {
+  transform: translateX(6px);
+}
+
+/* ===========================================================
+   LIST
+=========================================================== */
 .srv-card ul {
-  margin-top: 15px;
-  padding-left: 18px;
+  margin-top: 18px;
+  padding-left: 20px;
 }
 
 .srv-card li {
-  margin-bottom: 8px;
-  font-size: 14px;
+  margin-bottom: 10px;
+  color: #475569;
+  font-size: 15px;
 }
 
+/* ===========================================================
+   DOTS
+=========================================================== */
 .srv-dots {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .srv-dots span {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: #6b7280;
+  width: 12px;
+  height: 12px;
+  background: #94a3b8;
   border-radius: 50%;
+  display: inline-block;
   margin: 0 6px;
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .srv-dots .active {
   background: #2563eb;
+  transform: scale(1.3);
 }
 
-/* RESPONSIVE */
-@media (max-width: 991px) {
+/* ===========================================================
+   RESPONSIVE DESIGN
+=========================================================== */
+
+/* ---------- Large Tablets ---------- */
+@media (max-width: 1100px) {
   .srv-slider {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+/* ---------- Tablets ---------- */
+@media (max-width: 768px) {
+  .srv-section {
+    padding: 90px 16px;
+  }
+
+  .srv-title {
+    font-size: 34px;
+  }
+
   .srv-slider {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- Small Mobile ---------- */
+@media (max-width: 480px) {
   .srv-title {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .srv-card {
+    padding: 24px;
+  }
+
+  .srv-icon {
+    width: 52px;
+    height: 52px;
   }
 }

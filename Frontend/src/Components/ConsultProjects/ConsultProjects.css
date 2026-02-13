@@ -1,103 +1,168 @@
+/* ==========================================================
+   PROJECT SECTION — PREMIUM DESIGN
+========================================================== */
 .project-section {
-  padding: 100px 0;
+  padding: 110px 0;
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  position: relative;
 }
 
-/* ================= HEADER ================= */
+/* Smooth fade-in */
+.project-section * {
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
 .project-header {
-  max-width: 1200px;
-  margin: 0 auto 70px;
+  max-width: 1300px;
+  margin: 0 auto 80px;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  align-items: center;
+  gap: 50px;
 }
 
 .section-tag {
   color: #0d5ef4;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .header-left h2 {
-  font-size: 42px;
+  font-size: 46px;
   color: #0b1b3f;
   margin-top: 12px;
   line-height: 1.25;
+  font-weight: 800;
 }
 
 .header-right p {
-  max-width: 420px;
-  font-size: 16px;
-  color: #6b7280;
-  line-height: 1.7;
+  max-width: 460px;
+  font-size: 17px;
+  color: #64748b;
+  line-height: 1.8;
 }
 
-/* ================= SLIDER WRAPPER ================= */
+/* ==========================================================
+   SLIDER
+========================================================== */
 .project-slider-wrapper {
-  padding: 0 60px;   /* 👈 LEFT & RIGHT SPACE */
+  padding: 0 70px;
+  position: relative;
 }
 
-/* ================= SLIDER ================= */
+/* Soft blur edges */
+.project-slider-wrapper::before,
+.project-slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.project-slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 2%, transparent);
+}
+
+.project-slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 2%, transparent);
+}
+
+/* Track */
 .project-track {
   display: flex;
-  gap: 30px;
-  animation: scroll 30s linear infinite;
+  gap: 36px;
+  animation: scroll 32s linear infinite;
   width: max-content;
 }
 
 @keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-/* ================= CARD ================= */
+/* ==========================================================
+   CARD — PREMIUM GLASS LOOK
+========================================================== */
 .project-card {
-  width: 340px;
+  width: 360px;
   position: relative;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Image */
 .project-img img {
   width: 100%;
-  height: 420px;
+  height: 440px;
   object-fit: cover;
-  border-radius: 20px;
-  transition: all 0.4s ease;
+  border-radius: 24px;
+  transition: all 0.45s ease;
 }
 
 .project-card:hover img {
-  filter: brightness(0.75);
+  transform: scale(1.09);
+  filter: brightness(0.7) saturate(1.2);
 }
 
+/* ==========================================================
+   CARD CONTENT — GLASS BOX
+========================================================== */
 .project-content {
   position: absolute;
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background: #fff;
-  padding: 22px 24px;
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 22px 26px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
+.project-card:hover .project-content {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-6px);
+}
+
+/* Tag */
 .project-content span {
   font-size: 14px;
-  color: #7a7a7a;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
+/* Title */
 .project-content h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 6px;
   color: #0b1b3f;
+  font-weight: 700;
   transition: color 0.3s ease;
 }
 
@@ -105,13 +170,15 @@
   color: #0d5ef4;
 }
 
-/* ================= ARROW ================= */
+/* ==========================================================
+   ARROW BUTTON
+========================================================== */
 .arrow-btn {
   position: absolute;
-  right: 18px;
-  bottom: 18px;
-  width: 44px;
-  height: 44px;
+  right: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
   background: #0d5ef4;
   color: #fff;
   font-size: 22px;
@@ -120,63 +187,56 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transform: translateX(-10px);
-  transition: all 0.3s ease;
+  transform: translateY(8px);
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 15px rgba(13, 94, 244, 0.35);
 }
 
 .project-card:hover .arrow-btn {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1024px) {
-  .header-left h2 {
-    font-size: 34px;
-  }
+/* ==========================================================
+   RESPONSIVE — EVERY DEVICE
+========================================================== */
 
-  .project-slider-wrapper {
-    padding: 0 40px;
-  }
+/* Laptop */
+@media (max-width: 1200px) {
+  .header-left h2 { font-size: 38px; }
+  .project-card { width: 310px; }
+  .project-img img { height: 400px; }
+  .project-slider-wrapper { padding: 0 50px; }
 }
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 900px) {
   .project-header {
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
   }
-
-  .header-left h2 {
-    font-size: 30px;
-  }
-
-  .project-card {
-    width: 260px;
-  }
-
-  .project-img img {
-    height: 340px;
-  }
-
-  .project-slider-wrapper {
-    padding: 0 24px;
+  .header-right p {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .header-left h2 {
-    font-size: 26px;
-  }
+/* Small Tablets */
+@media (max-width: 768px) {
+  .header-left h2 { font-size: 32px; }
+  .project-card { width: 270px; }
+  .project-img img { height: 350px; }
+  .project-slider-wrapper { padding: 0 30px; }
+}
 
-  .project-card {
-    width: 220px;
-  }
+/* Mobile */
+@media (max-width: 520px) {
+  .header-left h2 { font-size: 28px; }
+  .project-card { width: 230px; }
+  .project-img img { height: 300px; }
+}
 
-  .project-img img {
-    height: 300px;
-  }
-
-  .project-slider-wrapper {
-    padding: 0 16px;
-  }
+/* Small Mobile */
+@media (max-width: 400px) {
+  .project-card { width: 200px; }
+  .project-img img { height: 260px; }
 }

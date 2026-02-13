@@ -131,14 +131,14 @@
 }
 
 .bestitsolution-image {
-  width: 100%;
+  width: 70%;
   border-radius: 22px;
   box-shadow: 0 35px 60px rgba(15, 23, 42, 0.15);
 }
 
 .bestitsolution-image-small {
   position: absolute;
-  width: 62%;
+  width: 52%;
   bottom: -40px;
   left: -40px;
   border: 6px solid #ffffff;

@@ -21,27 +21,28 @@ const Pricingplan = () => {
   }, []);
 
   return (
-    <section className="pricing" ref={sectionRef}>
+    <section className="pricing-section" ref={sectionRef}>
       <div className={`pricing-header ${visible ? "animate" : ""}`}>
         <span className="pricing-badge">PRICING PLAN</span>
         <h2>
-          Flexible Pricing Plans for<br />
+          Flexible Pricing Plans for <br />
           Cloud, Web & App Solutions
         </h2>
       </div>
 
       <div className="pricing-grid">
-        {/* BASIC */}
-        <div className={`pricing-card ${visible ? "show delay-1" : ""}`}>
-          <div className="price-badge">
+
+        {/* BASIC PLAN */}
+        <div className={`pricing-card fade-up ${visible ? "show" : ""}`}>
+          <div className="hex-badge">
             <h3>$60</h3>
             <span>Per Month</span>
           </div>
 
-          <span className="plan-label">Best for Startups & Small Businesses</span>
-          <h4>Basic Plan</h4>
+          {/* <span className="sub-label">Best for Startups & Small Businesses</span> */}
+          <h4 className="plan-title">Basic Plan</h4>
 
-          <ul>
+          <ul className="feature-list">
             <li>Managed Cloud Services (Basic)</li>
             <li>Secure Cloud Hosting</li>
             <li>Website Maintenance & Support</li>
@@ -53,21 +54,21 @@ const Pricingplan = () => {
           </ul>
 
           <button className="plan-btn">
-            Choose A Plan <span>↗</span>
+            Choose A Plan ↗
           </button>
         </div>
 
-        {/* PRO */}
-        <div className={`pricing-card active ${visible ? "show delay-2" : ""}`}>
-          <div className="price-badge">
+        {/* PRO PLAN (Highlighted Center Card) */}
+        <div className={`pricing-card pro-card fade-up ${visible ? "show delay-1" : ""}`}>
+          <div className="hex-badge pro-hex">
             <h3>$80</h3>
             <span>Per Month</span>
           </div>
 
-          <span className="plan-label">Pro Packages</span>
-          <h4>Pro Plan</h4>
+          {/* <span className="sub-label pro-label">Pro Packages</span> */}
+          <h4 className="plan-title pro-title">Pro Plan</h4>
 
-          <ul>
+          <ul className="feature-list pro-features">
             <li>Advanced Managed Cloud Services</li>
             <li>Scalable Cloud Solutions</li>
             <li>Cloud Backup & Disaster Recovery</li>
@@ -78,22 +79,22 @@ const Pricingplan = () => {
             <li>Data Encryption & Compliance</li>
           </ul>
 
-          <button className="plan-btn white">
-            Choose A Plan <span>↗</span>
+          <button className="plan-btn pro-btn">
+            Choose A Plan ↗
           </button>
         </div>
 
-        {/* PREMIUM */}
-        <div className={`pricing-card ${visible ? "show delay-3" : ""}`}>
-          <div className="price-badge">
+        {/* PREMIUM PLAN */}
+        <div className={`pricing-card fade-up ${visible ? "show delay-2" : ""}`}>
+          <div className="hex-badge">
             <h3>$70</h3>
             <span>Per Month</span>
           </div>
 
-          <span className="plan-label">Premium Packages</span>
-          <h4>Premium Plan</h4>
+          {/* <span className="sub-label">Premium Packages</span> */}
+          <h4 className="plan-title">Premium Plan</h4>
 
-          <ul>
+          <ul className="feature-list">
             <li>Enterprise Cloud Solutions</li>
             <li>Custom Web & App Development</li>
             <li>Cloud Migration & Optimization</li>
@@ -105,9 +106,10 @@ const Pricingplan = () => {
           </ul>
 
           <button className="plan-btn">
-            Choose A Plan <span>↗</span>
+            Choose A Plan ↗
           </button>
         </div>
+
       </div>
     </section>
   );
