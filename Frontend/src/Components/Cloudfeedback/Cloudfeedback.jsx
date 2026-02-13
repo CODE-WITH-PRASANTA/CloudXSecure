@@ -12,50 +12,56 @@ const testimonials = [
     role: "Web Designer",
     img: user1,
     text:
-      "CloudXSecure transformed our business with reliable cloud solutions and a beautifully designed website. Their team delivered fast, secure, and scalable results.",
+      "CloudXSecure transformed our business with reliable cloud solutions and a beautifully designed website."
   },
   {
     name: "Theresa Webb",
     role: "Tech Enthusiast",
     img: user2,
     text:
-      "From cloud infrastructure to custom app development, CloudXSecure handled everything professionally. Outstanding support and performance-driven solutions.",
+      "From cloud infrastructure to custom app development, CloudXSecure handled everything professionally."
   },
   {
     name: "Ronald Richards",
     role: "Web Entrepreneur",
     img: user3,
     text:
-      "Highly recommend CloudXSecure for web design and cloud services. They helped us launch faster, improve security, and scale with confidence.",
-  },
+      "Highly recommend CloudXSecure for web design and cloud services."
+  }
 ];
 
 const Testimonials = () => {
   const trackRef = useRef(null);
   const wrapperRef = useRef(null);
+  const animationRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const speed = 0.4;
 
-  // auto scroll
   useEffect(() => {
     let pos = 0;
+    let isPaused = false;
 
     const move = () => {
-      pos += 0.5;
-      trackRef.current.style.transform = `translateX(-${pos}px)`;
+      if (!trackRef.current) return;
 
-      if (pos >= trackRef.current.scrollWidth / 2) {
-        pos = 0;
+      if (!isPaused) {
+        pos += speed;
+        trackRef.current.style.transform = `translateX(-${pos}px)`;
+
+        if (pos >= trackRef.current.scrollWidth / 2) {
+          pos = 0;
+        }
+
+        detectCenter();
       }
 
-      detectCenter();
-      requestAnimationFrame(move);
+      animationRef.current = requestAnimationFrame(move);
     };
 
     const detectCenter = () => {
       const cards = trackRef.current.children;
-      const wrapperCenter =
-        wrapperRef.current.getBoundingClientRect().left +
-        wrapperRef.current.offsetWidth / 2;
+      const wrapperRect = wrapperRef.current.getBoundingClientRect();
+      const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
 
       let closest = 0;
       let minDistance = Infinity;
@@ -75,29 +81,34 @@ const Testimonials = () => {
     };
 
     move();
+
+    const wrapper = wrapperRef.current;
+    wrapper.addEventListener("mouseenter", () => (isPaused = true));
+    wrapper.addEventListener("mouseleave", () => (isPaused = false));
+
+    return () => cancelAnimationFrame(animationRef.current);
   }, []);
 
   return (
-    <section className="tsl-section">
-      <div className="tsl-heading">
-        <span className="tsl-sub">TESTIMONIALS</span>
-        <h2 className="tsl-title">Our Latest Client Feedback</h2>
+    <section className="testiPro-section">
+      <div className="testiPro-heading">
+        <span className="testiPro-sub">TESTIMONIALS</span>
+        <h2 className="testiPro-title">Our Latest Client Feedback</h2>
       </div>
 
-      <div className="tsl-slider-wrapper" ref={wrapperRef}>
-        <div className="tsl-slider-track" ref={trackRef}>
+      <div className="testiPro-wrapper" ref={wrapperRef}>
+        <div className="testiPro-track" ref={trackRef}>
           {[...testimonials, ...testimonials].map((item, i) => (
             <div
               key={i}
-              className={`tsl-card ${
-                i === activeIndex ? "tsl-card-active" : ""
+              className={`testiPro-card ${
+                i === activeIndex ? "active" : ""
               }`}
             >
-              <div className="tsl-stars">★★★★★</div>
+              <div className="stars">★★★★★</div>
+              <p>"{item.text}"</p>
 
-              <p className="tsl-text">"{item.text}"</p>
-
-              <div className="tsl-user">
+              <div className="user">
                 <img src={item.img} alt={item.name} />
                 <div>
                   <h4>{item.name}</h4>
@@ -105,7 +116,7 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              <img src={quoteIcon} className="tsl-quote" alt="" />
+              <img src={quoteIcon} className="quote" alt="" />
             </div>
           ))}
         </div>

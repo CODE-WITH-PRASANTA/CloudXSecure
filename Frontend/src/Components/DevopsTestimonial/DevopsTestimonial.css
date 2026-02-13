@@ -146,6 +146,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  
 }
 
 .devops-testimonial-nav button {
@@ -165,6 +166,7 @@
 }
 
 
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 991px) {
   .devops-testimonial-wrapper {
@@ -182,6 +184,7 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
+    
   }
 }
 
