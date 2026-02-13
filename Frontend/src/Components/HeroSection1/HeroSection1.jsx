@@ -12,6 +12,7 @@ const HeroSection1 = () => {
   return (
     <section className="hero-section1">
       <div className="hero-container1">
+        
         {/* Left Content */}
         <div className="hero-content1">
           <span className="hero-badge1">Cloud Monitoring & Digital Solutions</span>

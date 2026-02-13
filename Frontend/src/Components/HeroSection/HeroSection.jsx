@@ -31,10 +31,10 @@ const HeroSection = () => {
 
   return (
     <section className="cx-hero-section">
+      <div className="cx-hero-overlay"></div>
       <div className="cx-hero-particles" ref={cxParticlesRef}></div>
 
       <div className="cx-hero-container">
-        {/* CONTENT */}
         <div className="cx-hero-content">
           <span className="cx-hero-badge">
             🚀 CREATE YOUR DREAM PROJECT WITH US
@@ -52,16 +52,19 @@ const HeroSection = () => {
 
           <div className="cx-hero-actions">
             <button className="cx-hero-btn cx-hero-btn-primary">
-              Explore Our Solutions <span>↗</span>
+              <span className="btn-text">Explore Our Solutions</span>
+              <span className="btn-icon">↗</span>
             </button>
 
             <button className="cx-hero-btn cx-hero-btn-secondary">
-              <span className="cx-hero-play">▶</span> Play Video
+              <span className="cx-hero-play">
+                <span className="play-icon">▶</span>
+              </span>
+              <span className="btn-text">Play Video</span>
             </button>
           </div>
         </div>
 
-        {/* IMAGE */}
         <div className="cx-hero-visual">
           <img src={heroImg} alt="Hero" className="cx-hero-image" />
 

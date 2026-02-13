@@ -10,8 +10,8 @@ const PricingSection1 = () => {
       id: 1,
       icon: <FaRocket />,
       title: "Basic Plan",
-      monthly: 19,
-      yearly: 190,
+      monthly: 1577,   // ₹
+      yearly: 15770,   // ₹
       features: [
         "Cloud monitoring setup",
         "Basic website support",
@@ -24,8 +24,8 @@ const PricingSection1 = () => {
       id: 2,
       icon: <FaLightbulb />,
       title: "Standard",
-      monthly: 39,
-      yearly: 390,
+      monthly: 3237,   // ₹
+      yearly: 32370,   // ₹
       features: [
         "Managed cloud services",
         "Website maintenance",
@@ -38,8 +38,8 @@ const PricingSection1 = () => {
       id: 3,
       icon: <FaBriefcase />,
       title: "Enterprise",
-      monthly: 89,
-      yearly: 890,
+      monthly: 7387,   // ₹
+      yearly: 73870,   // ₹
       features: [
         "Full cloud management",
         "Dedicated DevOps engineer",
@@ -57,7 +57,8 @@ const PricingSection1 = () => {
         <span className="pricing-badge1">FLEXIBLE PRICING PLAN</span>
         <h2 className="pricing-title1">Our Comprehensive Cloud & Digital Services</h2>
         <p className="pricing-subtitle1">
-            CloudXSecure is a trusted technology partner delivering scalable cloud services, modern web design, mobile app development, and end-to-end cloud solutions. We help startups, SMEs, and enterprises accelerate digital transformation with secure infrastructure, high-performance applications, and future-ready technology.        </p>
+            CloudXSecure is a trusted technology partner delivering scalable cloud services, modern web design, mobile app development, and end-to-end cloud solutions. We help startups, SMEs, and enterprises accelerate digital transformation with secure infrastructure, high-performance applications, and future-ready technology.
+        </p>
 
         {/* Toggle Switch */}
         <div className="pricing-toggle1">
@@ -81,7 +82,7 @@ const PricingSection1 = () => {
             <div className="pricing-icon1">{plan.icon}</div>
             <h3 className="plan-title1">{plan.title}</h3>
             <h2 className="plan-price1">
-              ${isYearly ? plan.yearly : plan.monthly}
+              ₹{isYearly ? plan.yearly : plan.monthly}
               <span>/ {isYearly ? "year" : "month"}</span>
             </h2>
             <ul className="plan-features1">
