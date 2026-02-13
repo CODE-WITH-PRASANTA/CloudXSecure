@@ -1,155 +1,148 @@
-/* ================= ROOT ================= */
 :root {
-  --blue-main: #3d57ff;
-  --blue-dark: #1f2fbf;
-  --white: #ffffff;
+  --primary: #3d57ff;
+  --primary-dark: #1f2fbf;
   --text-dark: #0b0b23;
 }
 
 /* ================= SECTION ================= */
-.expertTeamSectionUnique {
-  padding: 100px 20px;
+.teamPro-section {
+  padding: clamp(70px, 8vw, 120px) 20px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  font-family: "Inter", system-ui, sans-serif;
+}
+
+.teamPro-container {
+  max-width: 1400px;
+  margin: auto;
 }
 
 /* ================= HEADER ================= */
-.expertTeamHeaderUnique {
+.teamPro-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: clamp(40px, 6vw, 70px);
 }
 
-.expertTeamBadgeUnique {
+.teamPro-badge {
   font-size: 14px;
-  color: var(--blue-main);
   letter-spacing: 2px;
-  display: inline-block;
-  margin-bottom: 14px;
+  color: var(--primary);
   font-weight: 600;
 }
 
-.expertTeamTitleUnique {
-  font-size: 44px;
+.teamPro-title {
+  font-size: clamp(26px, 4vw, 48px);
   font-weight: 800;
   color: var(--text-dark);
+  margin-top: 14px;
   line-height: 1.2;
 }
 
 /* ================= GRID ================= */
-.expertTeamGridUnique {
-  max-width: 1200px;
-  margin: auto;
+.teamPro-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
+  gap: clamp(20px, 3vw, 30px);
 }
 
 /* ================= CARD ================= */
-.expertTeamCardUnique {
-  background: var(--blue-main);
+.teamPro-card {
+  background: var(--primary);
   border-radius: 20px;
-  padding: 26px 18px 0;
-  position: relative;
-  overflow: hidden;
+  padding: 24px 18px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
 
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
-
-  /* subtle idle animation */
-  animation: expertFloat 7s ease-in-out infinite;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.15);
+  transition: 0.4s ease;
 }
 
-/* pause animation on hover */
-.expertTeamCardUnique:hover {
-  animation-play-state: paused;
-  background: var(--blue-dark);
+.teamPro-card:hover {
+  background: var(--primary-dark);
   transform: translateY(-12px);
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 30px 75px rgba(0,0,0,0.25);
 }
 
 /* ================= IMAGE ================= */
-.expertTeamImageWrapUnique {
-  height: 300px;
+.teamPro-imageWrap {
+  height: clamp(240px, 25vw, 320px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-.expertTeamImageWrapUnique img {
+.teamPro-imageWrap img {
   max-height: 100%;
   width: auto;
   object-fit: contain;
 }
 
 /* ================= INFO ================= */
-.expertTeamInfoUnique {
+.teamPro-info {
   background: #eef1ff;
-  margin-top: -10px;
-  padding: 18px 14px;
+  margin-top: 16px;
+  padding: 18px;
   border-radius: 14px;
   text-align: center;
 }
 
-.expertTeamInfoUnique h4 {
-  font-size: 18px;
+.teamPro-info h4 {
+  font-size: clamp(16px, 1.2vw, 20px);
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
-.expertTeamInfoUnique p {
+.teamPro-info p {
   font-size: 14px;
   color: #555;
 }
 
-/* ================= ANIMATION ================= */
-@keyframes expertFloat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0);
+/* ================= RESPONSIVE ================= */
+
+/* Large Screens */
+@media (min-width: 1600px) {
+  .teamPro-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* ================= RESPONSIVE ================= */
+/* Desktop */
+@media (max-width: 1200px) {
+  .teamPro-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /* Tablet */
-@media (max-width: 1024px) {
-  .expertTeamGridUnique {
+@media (max-width: 992px) {
+  .teamPro-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .expertTeamTitleUnique {
-    font-size: 36px;
   }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-  .expertTeamGridUnique {
+  .teamPro-grid {
     grid-template-columns: 1fr;
   }
 
-  .expertTeamSectionUnique {
-    padding: 70px 16px;
+  .teamPro-section {
+    padding: 60px 16px;
   }
 
-  .expertTeamTitleUnique {
-    font-size: 30px;
+  .teamPro-card {
+    min-height: auto;
   }
 
-  .expertTeamImageWrapUnique {
+  .teamPro-imageWrap {
     height: 260px;
   }
 }
 
-/* ================= ACCESSIBILITY ================= */
+/* ================= REDUCED MOTION ================= */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

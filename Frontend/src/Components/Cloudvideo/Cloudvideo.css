@@ -1,120 +1,116 @@
+:root {
+  --process-dark: #151a5a;
+  --card-bg: #ffffff;
+}
+
 /* ================= WRAPPER ================= */
-.ps-wrapper {
-  background: #151a5a;
-  padding: 90px 20px 110px;
-  color: #ffffff;
+.processPro-wrapper {
+  background: var(--process-dark);
+  padding: clamp(70px, 8vw, 120px) 20px;
+  color: white;
   overflow: hidden;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ================= IMAGE ================= */
-.ps-image-container {
-  max-width: 1200px;
+.processPro-imageContainer {
+  max-width: 1300px;
   margin: auto;
   position: relative;
 }
 
-.ps-main-image {
+.processPro-mainImage {
   width: 100%;
   border-radius: 26px;
   display: block;
-  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 35px 90px rgba(0,0,0,0.45);
 }
 
 /* ================= PLAY BUTTON ================= */
-.ps-play-btn {
+.processPro-playBtn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 76px;
-  height: 76px;
-  background: #ffffff;
+  width: clamp(60px, 6vw, 80px);
+  height: clamp(60px, 6vw, 80px);
+  background: white;
   border-radius: 50%;
   border: none;
-  font-size: 22px;
+  font-size: clamp(18px, 2vw, 24px);
   cursor: pointer;
-  color: #151a5a;
+  color: var(--process-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.45);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 16px 45px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
 }
 
-.ps-play-btn:hover {
-  transform: translate(-50%, -50%) scale(1.12);
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55);
+.processPro-playBtn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* ================= CONTENT ================= */
-.ps-content {
-  max-width: 1200px;
-  margin: 90px auto 0;
-  position: relative;
-  z-index: 2;
+.processPro-content {
+  max-width: 1300px;
+  margin: clamp(60px, 6vw, 100px) auto 0;
 }
 
 /* ================= GRID ================= */
-.ps-grid {
+.processPro-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 36px;
+  gap: clamp(20px, 3vw, 36px);
 }
 
 /* ================= CARD ================= */
-.ps-card {
-  background: #ffffff;
+.processPro-card {
+  background: var(--card-bg);
   border-radius: 20px;
-  padding: 34px 30px;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.16);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  padding: clamp(24px, 3vw, 36px);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.16);
+  transition: 0.3s ease;
   border: 2px solid transparent;
 }
 
-.ps-card:hover {
+.processPro-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.25);
 }
 
-/* ================= NUMBER ================= */
-.ps-number {
-  font-size: 44px;
+.processPro-number {
+  font-size: clamp(32px, 3vw, 48px);
   font-weight: 800;
-  color: rgba(21, 26, 90, 0.25);
-  margin-bottom: 16px;
+  color: rgba(21,26,90,0.25);
+  margin-bottom: 14px;
 }
 
-.ps-card.active .ps-number,
-.ps-card:hover .ps-number {
-  color: #151a5a;
+.processPro-card.active {
+  border-color: var(--process-dark);
 }
 
-/* ================= TEXT ================= */
-.ps-card h4 {
-  font-size: 18px;
+.processPro-card.active .processPro-number,
+.processPro-card:hover .processPro-number {
+  color: var(--process-dark);
+}
+
+.processPro-card h4 {
+  font-size: clamp(16px, 1.2vw, 20px);
   font-weight: 700;
   margin-bottom: 10px;
-  color: #151a5a;
+  color: var(--process-dark);
 }
 
-.ps-card p {
+.processPro-card p {
   font-size: 14.5px;
   line-height: 1.7;
   color: #555a7a;
 }
 
-/* ================= ACTIVE CARD ================= */
-.ps-card.active {
-  border-color: #151a5a;
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.28);
-}
-
 /* ================= VIDEO MODAL ================= */
-.ps-video-overlay {
+.processPro-videoOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(0,0,0,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,72 +118,49 @@
   padding: 20px;
 }
 
-.ps-video-box {
+.processPro-videoBox {
   width: 100%;
-  max-width: 920px;
-  aspect-ratio: 16 / 9;
-  animation: scaleIn 0.35s ease;
+  max-width: 1000px;
+  aspect-ratio: 16/9;
+  animation: fadeScale 0.3s ease;
 }
 
-.ps-video-box iframe {
+.processPro-videoBox iframe {
   width: 100%;
   height: 100%;
   border-radius: 16px;
   border: none;
 }
 
-/* ================= ANIMATION ================= */
-@keyframes scaleIn {
-  from {
-    transform: scale(0.92);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+@keyframes fadeScale {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 /* ================= RESPONSIVE ================= */
 
-/* Tablets */
-@media (max-width: 1024px) {
-  .ps-grid {
+/* Large Tablet */
+@media (max-width: 1200px) {
+  .processPro-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .ps-wrapper {
-    padding: 70px 16px 90px;
-  }
-
-  .ps-content {
-    margin-top: 70px;
-  }
-
-  .ps-grid {
+/* Tablet */
+@media (max-width: 768px) {
+  .processPro-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .ps-card {
-    padding: 28px 24px;
-  }
-
-  .ps-number {
-    font-size: 36px;
-  }
-
-  .ps-play-btn {
-    width: 64px;
-    height: 64px;
-    font-size: 20px;
   }
 }
 
-/* ================= REDUCED MOTION ================= */
+/* Small Mobile */
+@media (max-width: 480px) {
+  .processPro-wrapper {
+    padding: 60px 16px;
+  }
+}
+
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

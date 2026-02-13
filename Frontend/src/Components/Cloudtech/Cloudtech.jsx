@@ -1,7 +1,6 @@
 import React from "react";
 import "./Cloudtech.css";
 
-/* IMAGES */
 import mainImg from "../../assets/aa1.webp";
 import groupImg from "../../assets/aa2.webp";
 import circleText from "../../assets/aa3.webp";
@@ -12,53 +11,59 @@ import iconProduct from "../../assets/aa6.webp";
 
 const AboutCompany = () => {
   return (
-    <section className="ac-section">
-      {/* left half background */}
-      <img src={halfCircle} alt="" className="ac-half-circle" />
+    <section className="aboutPro-section">
 
-      {/* right hand image */}
-      <img src={handImg} alt="" className="ac-hand-img" />
+      {/* Decorative Background Images */}
+      <img src={halfCircle} alt="" className="aboutPro-bgLeft" />
+      <img src={handImg} alt="" className="aboutPro-bgRight" />
 
-      <div className="ac-container">
+      <div className="aboutPro-container">
+
         {/* LEFT IMAGE AREA */}
-        <div className="ac-image-wrap">
-          <img src={mainImg} alt="Main" className="ac-main-img" />
+        <div className="aboutPro-imageWrap">
+          <img src={mainImg} alt="Main" className="aboutPro-mainImg" />
 
-          {/* circular explore image */}
-          <img src={circleText} alt="" className="ac-circle-text" />
+          <img src={circleText} alt="" className="aboutPro-rotateText" />
 
-          {/* small group image */}
-          <div className="ac-small-img-box">
+          <div className="aboutPro-smallImgBox">
             <img src={groupImg} alt="Team work" />
           </div>
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className="ac-content">
-          <span className="ac-subtitle">← ABOUT COMPANY →</span>
+        <div className="aboutPro-content">
 
-          <h2 className="ac-title">
-           Powering Digital Growth with  <br /> Secure Cloud & Smart Development
+          <span className="aboutPro-subtitle">
+            ← ABOUT COMPANY →
+          </span>
+
+          <h2 className="aboutPro-title">
+            Powering Digital Growth with <br />
+            <span>Secure Cloud & Smart Development</span>
           </h2>
 
-          <p className="ac-desc">
-          CloudXSecure provides cloud services, web design, app development, and complete IT solutions to help businesses grow securely and efficiently.          </p>
+          <p className="aboutPro-desc">
+            CloudXSecure provides cloud services, web design, app development,
+            and complete IT solutions to help businesses grow securely and efficiently.
+          </p>
 
-          {/* feature icons */}
-          <div className="ac-feature-row">
-            <div className="ac-feature-box">
+          {/* FEATURES */}
+          <div className="aboutPro-features">
+
+            <div className="aboutPro-featureBox">
               <img src={iconBackend} alt="" />
-              <span>Cloud & <br />Infrastructure</span>
+              <span>Cloud & Infrastructure</span>
             </div>
 
-            <div className="ac-feature-box">
+            <div className="aboutPro-featureBox">
               <img src={iconProduct} alt="" />
-              <span>Web & App <br />Development</span>
+              <span>Web & App Development</span>
             </div>
+
           </div>
 
-          {/* stats */}
-          <div className="ac-stats">
+          {/* STATS */}
+          <div className="aboutPro-stats">
             <div>
               <h3>20.5k</h3>
               <p>Projects Done</p>
@@ -72,6 +77,7 @@ const AboutCompany = () => {
               <p>Team Members</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>

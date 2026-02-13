@@ -23,87 +23,79 @@ const tabs = [
   { id: "uiux", label: "UI/UX Designing", icon: uiuxIcon },
   { id: "app", label: "App Development", icon: appIcon },
   { id: "wp", label: "Wp Development", icon: wpIcon },
-  { id: "3d", label: "Cloud Solutions", icon: design3dIcon },
+  { id: "cloud", label: "Cloud Solutions", icon: design3dIcon },
 ];
 
 const PortfolioShowcase = () => {
   const [activeTab, setActiveTab] = useState("app");
 
   return (
-    <section className="pf-section">
-      <div className="pf-container">
+    <section className="portfolioPro-section">
+      <div className="portfolioPro-container">
 
         {/* HEADER */}
-        <div className="pf-header">
-          <span className="pf-subtitle">
-            <span className="pf-line" /> EXAMPLES OF OUR WORK <span className="pf-line" />
+        <div className="portfolioPro-header">
+          <span className="portfolioPro-subtitle">
+            <span className="line" /> EXAMPLES OF OUR WORK <span className="line" />
           </span>
-          <h2 className="pf-title">Check Our Latest Cloud & Digital Projects</h2>
+          <h2 className="portfolioPro-title">
+            Check Our Latest Cloud & Digital Projects
+          </h2>
         </div>
 
         {/* TABS */}
-        <div className="pf-tabs">
+        <div className="portfolioPro-tabs">
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`pf-tab ${activeTab === tab.id ? "active" : ""}`}
+              className={`portfolioPro-tab ${activeTab === tab.id ? "active" : ""}`}
               onClick={() => setActiveTab(tab.id)}
             >
-              <span className="pf-tab-icon">
+              <div className="portfolioPro-tabIcon">
                 <img src={tab.icon} alt={tab.label} />
-              </span>
-              <span>{tab.label}</span>
+              </div>
+              {tab.label}
             </button>
           ))}
         </div>
 
-        {/* CONTENT CARD */}
-        <div className="pf-card">
+        {/* CARD */}
+        <div className="portfolioPro-card">
 
-          {/* LEFT IMAGE */}
-          <div className="pf-image-wrap">
-            <img src={mainImg} alt="Portfolio" className="pf-main-img" />
+          <div className="portfolioPro-image">
+            <img src={mainImg} alt="Project" />
           </div>
 
-          {/* RIGHT CONTENT */}
-          <div className="pf-content">
-
+          <div className="portfolioPro-content">
             <h3>Detailing Our Cloud & Digital Projects</h3>
             <p>
-              At CloudXSecure, we build secure cloud platforms, high-performance websites, and scalable mobile apps tailored to real business needs. Every project follows a proven process focused on speed, security, usability, and long-term growth.
+              At CloudXSecure, we build secure cloud platforms,
+              high-performance websites, and scalable mobile apps
+              tailored to real business needs.
             </p>
 
-            <div className="pf-features">
-              <div className="pf-feature">
+            <div className="portfolioPro-features">
+              <div className="feature">
                 <img src={responsiveIcon} alt="" />
-                <span>Cloud & Data Analytics</span>
+                Cloud & Data Analytics
               </div>
 
-              <div className="pf-feature">
+              <div className="feature">
                 <img src={satisfactionIcon} alt="" />
-                <span>100% Customers Satisfaction</span>
+                100% Customers Satisfaction
               </div>
 
-              <div className="pf-feature">
+              <div className="feature">
                 <img src={analyticsIcon} alt="" />
-                <span>Custom App Development</span>
+                Custom App Development
               </div>
             </div>
           </div>
 
-          {/* FLOATING CIRCLE TEXT */}
-          <img
-            src={circleText}
-            alt="Explore More"
-            className="pf-circle-text"
-          />
+          {/* Floating Elements */}
+          <img src={circleText} alt="" className="portfolioPro-circle" />
+          <img src={phoneImg} alt="" className="portfolioPro-phone" />
 
-          {/* HALF MOBILE IMAGE */}
-          <img
-            src={phoneImg}
-            alt="Mobile App"
-            className="pf-phone-img"
-          />
         </div>
       </div>
     </section>

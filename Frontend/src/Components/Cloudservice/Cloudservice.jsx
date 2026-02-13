@@ -7,88 +7,99 @@ import icon3 from "../../assets/service3.webp";
 import icon4 from "../../assets/service4.webp";
 
 const services = [
-  { icon: icon1, title: "App Design & Development", desc: "Custom web and mobile apps designed for performance, scalability, and user experience." },
-  { icon: icon2, title: "Cloud Solutions", desc: "Secure and scalable cloud services to optimize performance, reduce costs, and support business growth." },
-  { icon: icon3, title: "Web Design & Development", desc: "Responsive, SEO-optimized websites built for speed, usability, and strong brand presence." },
-  { icon: icon4, title: "Cybersecurity & Data Protection", desc: "Advanced security solutions to protect your data, systems, and cloud infrastructure." },
+  {
+    icon: icon1,
+    title: "App Design & Development",
+    desc: "Custom web and mobile apps designed for performance, scalability, and user experience."
+  },
+  {
+    icon: icon2,
+    title: "Cloud Solutions",
+    desc: "Secure and scalable cloud services to optimize performance and reduce costs."
+  },
+  {
+    icon: icon3,
+    title: "Web Design & Development",
+    desc: "Responsive, SEO-optimized websites built for speed and strong brand presence."
+  },
+  {
+    icon: icon4,
+    title: "Cybersecurity & Data Protection",
+    desc: "Advanced security solutions to protect your data and infrastructure."
+  }
 ];
 
 const Cloudservice = () => {
   const sliderRef = useRef(null);
-  const intervalRef = useRef(null);
+  const animationRef = useRef(null);
 
-  /* START AUTO SCROLL */
-  const startAutoScroll = () => {
-    if (intervalRef.current) return;
-
-    intervalRef.current = setInterval(() => {
-      const slider = sliderRef.current;
-      if (!slider) return;
-
-      slider.scrollLeft += 1;
-
-      if (slider.scrollLeft >= slider.scrollWidth / 2) {
-        slider.scrollLeft = 0;
-      }
-    }, 30);
-  };
-
-  /* STOP AUTO SCROLL */
-  const stopAutoScroll = () => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
-  };
-
+  /* ===== AUTO SCROLL USING requestAnimationFrame ===== */
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
-    startAutoScroll();
+    let speed = 0.5;
+    let isHovered = false;
 
-    slider.addEventListener("mouseenter", stopAutoScroll);
-    slider.addEventListener("mouseleave", startAutoScroll);
+    const animate = () => {
+      if (!isHovered) {
+        slider.scrollLeft += speed;
+
+        if (slider.scrollLeft >= slider.scrollWidth / 2) {
+          slider.scrollLeft = 0;
+        }
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    const handleEnter = () => (isHovered = true);
+    const handleLeave = () => (isHovered = false);
+
+    slider.addEventListener("mouseenter", handleEnter);
+    slider.addEventListener("mouseleave", handleLeave);
 
     return () => {
-      stopAutoScroll();
-      slider.removeEventListener("mouseenter", stopAutoScroll);
-      slider.removeEventListener("mouseleave", startAutoScroll);
+      cancelAnimationFrame(animationRef.current);
+      slider.removeEventListener("mouseenter", handleEnter);
+      slider.removeEventListener("mouseleave", handleLeave);
     };
   }, []);
 
-  /* ARROW CONTROLS */
   const scrollLeft = () => {
-    stopAutoScroll();
-    sliderRef.current.scrollBy({ left: -320, behavior: "smooth" });
-    setTimeout(startAutoScroll, 800);
+    sliderRef.current.scrollBy({ left: -350, behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    stopAutoScroll();
-    sliderRef.current.scrollBy({ left: 320, behavior: "smooth" });
-    setTimeout(startAutoScroll, 800);
+    sliderRef.current.scrollBy({ left: 350, behavior: "smooth" });
   };
 
   return (
-    <section className="clo-services-section">
-      <div className="clo-services-header">
-        <span className="clo-services-sub">← OUR SERVICES →</span>
+    <section className="servicePro-section">
+      <div className="servicePro-header">
+        <span className="servicePro-sub">← OUR SERVICES →</span>
         <h2>CloudXSecure Professional IT Services</h2>
 
-        <div className="clo-services-arrows">
-          <button className="arrow-btn" onClick={scrollLeft}>←</button>
-          <button className="arrow-btn active" onClick={scrollRight}>→</button>
+        <div className="servicePro-arrows">
+          <button onClick={scrollLeft}>←</button>
+          <button onClick={scrollRight}>→</button>
         </div>
       </div>
 
-      <div className="clo-services-slider" ref={sliderRef}>
+      <div className="servicePro-slider" ref={sliderRef}>
         {[...services, ...services].map((item, index) => (
-          <div className="clo-service-card" key={index}>
-            <div className="icon-box">
+          <div className="servicePro-card" key={index}>
+            <div className="servicePro-icon">
               <img src={item.icon} alt={item.title} />
             </div>
+
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
-            <button className="read-btn">Read more »</button>
+
+            <button className="servicePro-read">
+              Read More →
+            </button>
           </div>
         ))}
       </div>
