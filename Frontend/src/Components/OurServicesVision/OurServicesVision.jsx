@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
+// import { useNavigate } from "react-router-dom";
 import "./OurServicesVision.css";
+import {Link} from "react-router-dom"
 
 import vision1 from "../../assets/visiton-img1(OS).webp";
 import vision2 from "../../assets/visiton-img2(OS).webp";
@@ -100,7 +102,7 @@ We envision a future where businesses of all sizes leverage cloud technology and
             </div>
           </div>
 
-          <button className="ourservicesvision-btn">Get In Touch →</button>
+          <Link to="/get-in-touch"><button className="ourservicesvision-btn">Get In Touch →</button></Link>
         </div>
       </div>
     </section>

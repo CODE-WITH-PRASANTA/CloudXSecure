@@ -32,7 +32,7 @@ const CyberSecuritySection = () => {
 
           <h2>Cloud, Security & Digital Solutions You Can Trust</h2>
 
-          <p className="desc">
+          <p className="managecloud-desc">
             In today’s digital-first world, businesses need secure, scalable, and high-performance technology solutions to stay competitive. CloudXSecure delivers end-to-end cloud services, cybersecurity solutions, web design, and app development to help organizations grow securely and efficiently.
 
 We combine industry best practices, modern cloud architecture, and proactive security strategies to protect your digital assets while enabling seamless business operations.

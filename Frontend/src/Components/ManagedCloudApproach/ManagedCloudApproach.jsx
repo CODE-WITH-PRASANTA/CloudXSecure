@@ -45,9 +45,8 @@ const ApproachFaq = () => {
         <div className="approach-left">
           <h2>Our CloudXSecure Approach</h2>
           <p>
-               In an era where cyber threats, cloud complexity, and digital transformation are rapidly increasing, CloudXSecure follows a proactive and security-first approach to protect and scale your business.
-
-              We combine advanced cybersecurity practices, scalable cloud architecture, and modern development strategies to deliver reliable, high-performance digital solutions. Our approach ensures your infrastructure, applications, and data remain secure, compliant, and future-ready while supporting continuous business growth.          </p>
+               In an era where cyber threats, cloud complexity, and digital transformation are rapidly increasing, CloudXSecure follows a proactive and security-first approach to protect and scale your business.We combine advanced cybersecurity practices, scalable cloud architecture, and modern development strategies to deliver reliable, high-performance digital solutions. Our approach ensures your infrastructure, applications, and data remain secure, compliant, and future-ready while supporting continuous business growth.       
+          </p>
 
           <h3>Frequently Asked Question</h3>
           <p className="faq-intro">

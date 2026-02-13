@@ -51,6 +51,7 @@
 .company-description {
   color: #6b7280;
   line-height: 1.7;
+  text-align: justify;
 }
 
 /* BUTTON RIGHT */

@@ -36,7 +36,7 @@ const ProcessSection = () => {
               </p>
             </div>
 
-            <div className="ps-card active">
+            <div className="ps-card">
               <span className="ps-number">02</span>
               <h4>UI/UX & Architecture</h4>
               <p>

@@ -79,7 +79,7 @@
 .prg-card-icon {
   width: 54px;
   height: 54px;
-  background: #4f6df5;
+  background: white;
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -107,6 +107,7 @@
   font-size: 14px;
   color: #666;
   margin-bottom: 12px;
+  text-align: justify;
 }
 
 .prg-read-more {

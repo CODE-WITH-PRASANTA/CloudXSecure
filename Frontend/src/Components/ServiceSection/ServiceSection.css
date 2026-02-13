@@ -23,6 +23,7 @@
   max-width: 500px;
   color: #666;
   margin-left: auto;
+  text-align: justify;
 }
 
 .Hosting-cx-grid {
@@ -77,6 +78,7 @@
 .Hosting-cx-card p {
   font-size: 14px;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .Hosting-cx-card button {
