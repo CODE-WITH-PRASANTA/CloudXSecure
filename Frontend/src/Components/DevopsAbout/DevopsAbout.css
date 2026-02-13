@@ -36,7 +36,7 @@
 }
 
 .experience-badge h3 {
-  font-size: 32px;
+  font-size: 30px;
   margin: 0;
 }
 
@@ -71,6 +71,7 @@
   color: #555;
   max-width: 520px;
   margin-bottom: 22px;
+  text-align: justify;
 }
 
 .about-list {

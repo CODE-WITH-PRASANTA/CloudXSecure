@@ -1,7 +1,6 @@
 import React from "react";
 import "./Cloudlogo.css";
 
-// IMPORT LOGOS (images already include text)
 import contentful from "../../assets/logo1.webp";
 import cultureAmp from "../../assets/logo2.webp";
 import dropbox from "../../assets/logo3.webp";
@@ -18,14 +17,15 @@ const logos = [
 
 const LogoMarquee = () => {
   return (
-    <section className="logo-marquee">
-      <div className="logo-track">
-        {/* duplicate for infinite loop */}
-        {[...logos, ...logos].map((logo, index) => (
-          <div className="logo-item" key={index}>
-            <img src={logo} alt="Brand logo" />
-          </div>
-        ))}
+    <section className="logoPro-section">
+      <div className="logoPro-wrapper">
+        <div className="logoPro-track">
+          {[...logos, ...logos].map((logo, index) => (
+            <div className="logoPro-item" key={index}>
+              <img src={logo} alt="Brand logo" loading="lazy" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
