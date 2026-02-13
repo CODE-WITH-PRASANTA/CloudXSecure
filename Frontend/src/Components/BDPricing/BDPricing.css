@@ -21,7 +21,7 @@
 }
 
 .bd-pricing-header h2 {
-  font-size: 44px;
+  font-size: 43px;
   font-weight: 800;
   line-height: 1.2;
   margin-top: 14px;
@@ -33,6 +33,7 @@
   line-height: 1.8;
   color: #5c6b8a;
   max-width: 520px;
+  text-align: justify;
 }
 
 .bd-badge {
