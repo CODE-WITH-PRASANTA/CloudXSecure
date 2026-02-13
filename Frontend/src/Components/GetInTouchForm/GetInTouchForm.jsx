@@ -63,7 +63,7 @@ const GetInTouchForm = () => {
             <div>
               <h4>Office Location</h4>
               <p>
-                 Room 407 c wing building no 18 , Aqsa apt<br />
+                 Room 407C wing building no 18 , Aqsa apt<br />
                amrut Nagar near Ajit glass jogeshwari west mumbai 400102
               </p>
             </div>
