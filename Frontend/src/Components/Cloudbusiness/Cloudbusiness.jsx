@@ -20,9 +20,9 @@ const HeroITUnique = () => {
             Everything You Need To Create A Website
           </span>
 
-          <h1 className="heroItUnique-title">
+          <h3 className="heroItUnique-title">
             Business Innovation With <br /> IT Services Expertise
-          </h1>
+          </h3>
 
           <ul className="heroItUnique-list">
             <li>Secure Cloud Deployment & 24/7 Support</li>

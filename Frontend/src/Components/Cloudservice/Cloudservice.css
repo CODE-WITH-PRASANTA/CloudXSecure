@@ -122,11 +122,12 @@
 }
 
 .clo-service-card:hover .icon-box {
-  background: rgba(255, 255, 255, 0.15);
+  background: #fff;
 }
 
 .clo-service-card:hover .icon-box img {
   transform: rotate(360deg);
+  background: #fff;
 }
 
 /* ================= TEXT ================= */
