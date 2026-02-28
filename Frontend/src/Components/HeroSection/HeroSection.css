@@ -227,97 +227,123 @@
   font-size: 13px;
 }
 
-/* ============================= */
-/* RESPONSIVE */
-/* ============================= */
+/* ================================================= */
+/* LARGE DESKTOP (1400px+) */
+/* ================================================= */
+@media (min-width: 1400px) {
 
-@media (max-width: 1024px) {
+  .cx-hero-container {
+    max-width: 1320px;
+  }
+
+  .cx-hero-image {
+    max-width: 430px;
+  }
+
+  .cx-hero-float-card {
+    width: 220px;
+  }
+}
+
+
+/* ================================================= */
+/* DESKTOP (1200px - 1399px) */
+/* ================================================= */
+@media (max-width: 1399px) {
+
+  .cx-hero-container {
+    max-width: 1140px;
+  }
+
+  .cx-hero-image {
+    max-width: 410px;
+  }
+
+  .cx-hero-float-card {
+    width: 200px;
+  }
+
+  .cx-users-card {
+    left: -25px;
+  }
+
+  .cx-services-card {
+    right: -25px;
+  }
+}
+
+
+/* ================================================= */
+/* LAPTOP (992px - 1199px) */
+/* ================================================= */
+@media (max-width: 1199px) {
+
   .cx-hero-title {
     font-size: 40px;
   }
 
+  .cx-hero-image {
+    max-width: 420px;
+  }
+
+  .cx-hero-float-card {
+    width: 180px;
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .cx-users-card {
+    left: -15px;
+    top: 22%;
+  }
+
+  .cx-services-card {
+    right: -15px;
+    bottom: 12%;
+  }
+}
+
+
+/* ================================================= */
+/* TABLET (768px - 991px) */
+/* ================================================= */
+@media (max-width: 991px) {
+
   .cx-hero-container {
     flex-direction: column;
     text-align: center;
+    gap: 40px;
   }
 
-  .cx-hero-content {
-    align-items: center;
+  .cx-hero-title {
+    font-size: 34px;
   }
 
   .cx-hero-description {
     margin: 0 auto 30px;
+    max-width: 600px;
   }
 
-  .cx-users-card,
-  .cx-services-card {
-    position: static;
-    margin-top: 20px;
+  .cx-hero-image {
+    max-width: 380px;
   }
 
-  .cx-hero-visual {
-    margin-top: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cx-hero-title {
-    font-size: 32px;
-  }
-
-  .cx-hero-description {
-    font-size: 14px;
-  }
-
-  .cx-hero-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .cx-hero-actions {
-    flex-direction: column;
-    width: 100%;
+  /* Remove floating */
+  .cx-hero-float-card {
+    width: 150px;
+    margin: 15px auto 0;
   }
 }
 
-@media (max-width: 480px) {
-  .cx-hero-section {
-    padding: 40px 15px;
-  }
 
-  .cx-hero-title {
-    font-size: 26px;
-  }
-
-  .cx-hero-badge {
-    font-size: 12px;
-  }
-}
-
-/* ============================= */
-/* PERFECT MOBILE VIEW FIX */
-/* ============================= */
-
-@media (max-width: 768px) {
+/* ================================================= */
+/* MOBILE (0 - 767px) */
+/* ================================================= */
+@media (max-width: 767px) {
 
   .cx-hero-section {
     padding: 80px 20px 60px;
     min-height: auto;
-  }
-
-  .cx-hero-container {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .cx-hero-content {
-    width: 100%;
-  }
-
-  .cx-hero-badge {
-    font-size: 12px;
-    padding: 6px 14px;
   }
 
   .cx-hero-title {
@@ -327,8 +353,6 @@
 
   .cx-hero-description {
     font-size: 14px;
-    max-width: 100%;
-    margin-bottom: 25px;
   }
 
   .cx-hero-actions {
@@ -340,161 +364,28 @@
   .cx-hero-btn {
     width: 100%;
     justify-content: center;
-    padding: 14px;
-  }
-
-  /* IMAGE SECTION */
-  .cx-hero-visual {
-    width: 100%;
-    margin-top: 20px;
   }
 
   .cx-hero-image {
-    max-width: 90%;
-    height: auto;
+    max-width: 100%;
   }
 
-  /* FLOAT CARDS → STACK UNDER IMAGE */
   .cx-hero-float-card {
-    position: static;
-    width: 90%;
-    margin: 15px auto 0;
-  }
-
-  .cx-users-card,
-  .cx-services-card {
-    position: static;
+    display: none;
   }
 }
 
 
-/* EXTRA SMALL DEVICES */
+/* ================================================= */
+/* EXTRA SMALL MOBILE (below 480px) */
+/* ================================================= */
 @media (max-width: 480px) {
 
   .cx-hero-title {
     font-size: 24px;
   }
 
-  .cx-hero-section {
-    padding: 70px 15px 50px;
-  }
-
-  .cx-hero-image {
-    max-width: 100%;
-  }
-}
-/* ===================================== */
-/* PERFECT FIX FOR 1000px SCREEN WIDTH  */
-/* ===================================== */
-
-@media (max-width: 1200px) {
-
-  .cx-hero-container {
-    gap: 30px;
-    padding: 0 30px;
-  }
-
-  /* Reduce heading slightly */
-  .cx-hero-title {
-    font-size: 40px;
-  }
-
-  /* Limit content width */
-  .cx-hero-content {
-    max-width: 500px;
-  }
-
-  /* Image size control */
-  .cx-hero-image {
-    max-width: 420px;
-  }
-
-  /* Adjust float cards */
-  .cx-users-card {
-    top: 18%;
-    left: -20px;
-  }
-
-  .cx-services-card {
-    bottom: 8%;
-    right: -20px;
-  }
-
-  .cx-hero-float-card {
-    padding: 14px;
-    font-size: 13px;
-  }
-}
-
-
-/* ===================================== */
-/* EXTRA FIX FOR 992px AND BELOW        */
-/* ===================================== */
-
-@media (max-width: 992px) {
-
-  .cx-hero-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cx-hero-content {
-    max-width: 100%;
-  }
-
-  .cx-hero-title {
-    font-size: 36px;
-  }
-
-  .cx-hero-visual {
-    margin-top: 40px;
-  }
-
-  .cx-hero-image {
-    max-width: 380px;
-  }
-
-  /* Stack cards under image */
-  .cx-hero-float-card {
-    position: static;
-    margin-top: 20px;
-  }
-}
-
-/* ===================================== */
-/* PERFECT FLOAT CARD SIZE (1000px VIEW) */
-/* ===================================== */
-
-@media (min-width: 992px) and (max-width: 1200px) {
-
-  .cx-hero-float-card {
-    width: 190px;
-    padding: 16px 18px;
-    border-radius: 12px;
-  }
-
-  .cx-hero-float-card h4 {
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-
-  .cx-hero-float-card strong {
-    font-size: 20px;
-  }
-
-  .cx-hero-float-card p {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  /* Better positioning */
-  .cx-users-card {
-    top: 22%;
-    left: -10px;
-  }
-
-  .cx-services-card {
-    bottom: 12%;
-    right: -10px;
+  .cx-hero-badge {
+    font-size: 12px;
   }
 }
