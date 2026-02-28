@@ -82,6 +82,7 @@
   margin-bottom: 10px;
   font-size: 14px;
   opacity: 0.9;
+  
 }
 
 .heroWaveSlider__content h1 {
@@ -90,8 +91,10 @@
 }
 
 .heroWaveSlider__content p {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.7;
+  color: white;
+  
 }
 
 /* buttons */

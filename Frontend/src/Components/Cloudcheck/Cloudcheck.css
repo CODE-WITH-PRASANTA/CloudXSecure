@@ -41,7 +41,7 @@
 }
 
 .pf-title {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 800;
   margin-top: 14px;
   color: var(--pf-text-dark);
@@ -178,7 +178,7 @@
   position: absolute;
   right: -60px;
   bottom: 0;
-  width: 200px;
+  width: 180px;
   animation: floatSlow 6s ease-in-out infinite;
 }
 
