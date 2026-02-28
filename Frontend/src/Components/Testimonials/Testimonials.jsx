@@ -1,40 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Testimonials.css";
 import testimonialImg from "../../assets/dr-pi1.webp";
-
-const DATA = [
-  {
-    id: 1,
-    name: "Ben Stokes",
-    role: "Owner, Taxfirm",
-    text: "Partnering with CloudXSecure has transformed our IT Solution. Their tailored solutions help streamline our operations, improve cybersecurity, and drive efficiency across the board. We've experienced fewer disruptions, faster answers.",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    id: 2,
-    name: "Sarah Miller",
-    role: "CTO, Fintechly",
-    text: "CloudXSecure delivered a seamless migration with zero downtime. Their proactive support and deep expertise gave us confidence from day one.",
-    avatar: "https://randomuser.me/api/portraits/women/45.jpg",
-  },
-  {
-    id: 3,
-    name: "James Cooper",
-    role: "Founder, DevCore",
-    text: "Their team feels like an extension of ours. Reliable, secure, and incredibly fast execution.",
-    avatar: "https://randomuser.me/api/portraits/men/64.jpg",
-  },
-  {
-    id: 4,
-    name: "Emily Watson",
-    role: "Product Lead, Startify",
-    text: "We scaled faster with CloudXSecure's infrastructure solutions. Outstanding experience overall.",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-  },
-];
+import API, { IMAGE_URL } from "../../api/axios";
 
 export default function Testimonials() {
-  const [active, setActive] = useState(DATA[0]);
+  const [DATA, setDATA] = useState([]);
+  const [active, setActive] = useState(null);
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
+
+  const fetchTestimonials = async () => {
+    try {
+      const res = await API.get("/testimonials?status=published");
+      const testimonials = res.data.data || [];
+
+      setDATA(testimonials);
+
+      if (testimonials.length > 0) {
+        setActive(testimonials[0]);
+      }
+    } catch (err) {
+      console.error("FETCH TESTIMONIAL ERROR:", err);
+    }
+  };
+
+  if (!active) return null;
 
   return (
     <section className="Testimonials-container">
@@ -59,23 +51,32 @@ export default function Testimonials() {
         {/* TESTIMONIAL CARD */}
         <div className="Testimonials-card">
           <div className="card-glow"></div>
+
           <div className="Testimonials-stars">
-            <span className="star">★</span>
-            <span className="star">★</span>
-            <span className="star">★</span>
-            <span className="star">★</span>
-            <span className="star">★</span>
+            {[...Array(active.rating || 5)].map((_, i) => (
+              <span key={i} className="star">★</span>
+            ))}
           </div>
 
-          <p className="Testimonials-text">"{active.text}"</p>
+          <p className="Testimonials-text">"{active.message}"</p>
 
           <div className="Testimonials-user">
             <div className="avatar-ring">
-              <img src={active.avatar} alt={active.name} />
+              <img
+                src={
+                  active.image
+                    ? `${IMAGE_URL}${active.image}`
+                    : "https://via.placeholder.com/100"
+                }
+                alt={active.name}
+              />
             </div>
             <div className="user-info">
               <h4>{active.name}</h4>
-              <span>{active.role}</span>
+              <span>
+                {active.designation}
+                {active.company && `, ${active.company}`}
+              </span>
             </div>
           </div>
 
@@ -86,14 +87,21 @@ export default function Testimonials() {
         <div className="Testimonials-switch">
           {DATA.map((item) => (
             <button
-              key={item.id}
+              key={item._id}
               className={`Testimonials-switchItem ${
-                active.id === item.id ? "active" : ""
+                active._id === item._id ? "active" : ""
               }`}
               onClick={() => setActive(item)}
             >
               <div className="avatar-indicator"></div>
-              <img src={item.avatar} alt={item.name} />
+              <img
+                src={
+                  item.image
+                    ? `${IMAGE_URL}${item.image}`
+                    : "https://via.placeholder.com/100"
+                }
+                alt={item.name}
+              />
             </button>
           ))}
         </div>

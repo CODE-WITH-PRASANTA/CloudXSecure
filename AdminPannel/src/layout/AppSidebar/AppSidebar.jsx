@@ -10,8 +10,71 @@ import {
   FiStar,
   FiChevronRight,
   FiX,
+  FiPhoneCall,
 } from "react-icons/fi";
 import logo from "../../Assets/logo.avif";
+
+/* ================= MENU CONFIG ================= */
+
+const MENU = [
+  {
+    type: "link",
+    label: "Dashboard",
+    icon: <FiHome />,
+    path: "/dashboard",
+  },
+  {
+    type: "submenu",
+    key: "blog",
+    label: "Blog Management",
+    icon: <FiEdit />,
+    children: [
+      { label: "Add Blog", path: "/blog/add" },
+      { label: "Blog List", path: "/blog/list" },
+    ],
+  },
+  {
+    type: "link",
+    label: "Team Posting",
+    icon: <FiUsers />,
+    path: "/team",
+  },
+  {
+    type: "link",
+    label: "Categories",
+    icon: <FiTag />,
+    path: "/categories",
+  },
+  {
+    type: "submenu",
+    key: "pricing",
+    label: "Plans & Pricing",
+    icon: <FiDollarSign />,
+    children: [
+      { label: "Post Plan", path: "price-plan/post" },
+      { label: "View Plan", path: "/pricing/list" },
+    ],
+  },
+  {
+    type: "link",
+    label: "Contact Management",
+    icon: <FiMail />,
+    path: "/admin-contact",
+  },
+  
+  {
+    type: "link",
+    label: "Cold Leads",
+    icon: <FiPhoneCall />,
+    path: "/cold-lead",
+  },
+  {
+    type: "link",
+    label: "Testimonials",
+    icon: <FiStar />,
+    path: "/testimonials",
+  },
+];
 
 const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
   const [openMenu, setOpenMenu] = useState("");
@@ -22,7 +85,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
 
   return (
     <>
-      {/* ================= MOBILE OVERLAY ================= */}
+      {/* MOBILE OVERLAY */}
       {mobileOpen && (
         <div
           className="fixed inset-0 bg-black/40 z-40 lg:hidden"
@@ -30,7 +93,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
         />
       )}
 
-      {/* ================= SIDEBAR ================= */}
+      {/* SIDEBAR */}
       <aside
         className={`
           fixed lg:static z-50 h-screen
@@ -40,7 +103,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
           ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
-        {/* ================= LOGO ================= */}
+        {/* LOGO */}
         <div className="flex items-center gap-3 px-5 py-5 border-b border-white/10">
           <img src={logo} className="w-8 h-8" alt="logo" />
           {isOpen && (
@@ -55,7 +118,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
           </button>
         </div>
 
-        {/* ================= PROFILE ================= */}
+        {/* PROFILE */}
         <div className="flex flex-col items-center py-6 border-b border-white/10">
           <img
             src="https://i.pravatar.cc/100"
@@ -70,118 +133,69 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
           )}
         </div>
 
-        {/* ================= MENU ================= */}
+        {/* MENU */}
         <nav className="px-3 py-4 text-sm">
           <ul className="space-y-1">
 
-            {/* DASHBOARD */}
-            <SidebarLink
-              to="/dashboard"
-              icon={<FiHome />}
-              label="Dashboard"
-              open={isOpen}
-            />
-
-            {/* BLOG MANAGEMENT */}
-            <li>
-              <button
-                onClick={() => toggleMenu("blog")}
-                className="sidebar-item w-full justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <FiEdit />
-                  {isOpen && <span>Blog Management</span>}
-                </div>
-                {isOpen && (
-                  <FiChevronRight
-                    className={`transition ${
-                      openMenu === "blog" ? "rotate-90" : ""
-                    }`}
+            {MENU.map((item, index) => {
+              if (item.type === "link") {
+                return (
+                  <SidebarLink
+                    key={index}
+                    to={item.path}
+                    icon={item.icon}
+                    label={item.label}
+                    open={isOpen}
                   />
-                )}
-              </button>
+                );
+              }
 
-              {openMenu === "blog" && isOpen && (
-                <div className="ml-9 mt-1 space-y-1">
-                  <NavLink to="/blog/add" className="submenu">
-                    Add Blog
-                  </NavLink>
-                  <NavLink to="/blog/list" className="submenu">
-                    Blog List
-                  </NavLink>
-                </div>
-              )}
-            </li>
+              if (item.type === "submenu") {
+                return (
+                  <li key={index}>
+                    <button
+                      onClick={() => toggleMenu(item.key)}
+                      className="sidebar-item w-full justify-between"
+                    >
+                      <div className="flex items-center gap-3">
+                        {item.icon}
+                        {isOpen && <span>{item.label}</span>}
+                      </div>
 
-            {/* TEAM */}
-            <SidebarLink
-              to="/team"
-              icon={<FiUsers />}
-              label="Team Posting"
-              open={isOpen}
-            />
+                      {isOpen && (
+                        <FiChevronRight
+                          className={`transition ${
+                            openMenu === item.key ? "rotate-90" : ""
+                          }`}
+                        />
+                      )}
+                    </button>
 
-            {/* CATEGORIES */}
-            <SidebarLink
-              to="/categories"
-              icon={<FiTag />}
-              label="Categories"
-              open={isOpen}
-            />
+                    {openMenu === item.key && isOpen && (
+                      <div className="ml-9 mt-1 space-y-1">
+                        {item.children.map((sub, i) => (
+                          <NavLink
+                            key={i}
+                            to={sub.path}
+                            className="submenu"
+                          >
+                            {sub.label}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                );
+              }
 
-            {/* ================= PLANS & PRICING (FIXED) ================= */}
-            <li>
-              <button
-                onClick={() => toggleMenu("pricing")}
-                className="sidebar-item w-full justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <FiDollarSign />
-                  {isOpen && <span>Plans & Pricing</span>}
-                </div>
-
-                {isOpen && (
-                  <FiChevronRight
-                    className={`transition ${
-                      openMenu === "pricing" ? "rotate-90" : ""
-                    }`}
-                  />
-                )}
-              </button>
-
-              {openMenu === "pricing" && isOpen && (
-                <div className="ml-9 mt-1 space-y-1">
-                  <NavLink to="/pricing/post" className="submenu">
-                    Post Plan
-                  </NavLink>
-                  <NavLink to="/pricing/list" className="submenu">
-                    View Plan
-                  </NavLink>
-                </div>
-              )}
-            </li>
-
-            {/* CONTACT */}
-            <SidebarLink
-              to="/contacts"
-              icon={<FiMail />}
-              label="Contact Management"
-              open={isOpen}
-            />
-
-            {/* TESTIMONIAL */}
-            <SidebarLink
-              to="/testimonials"
-              icon={<FiStar />}
-              label="Testimonials"
-              open={isOpen}
-            />
+              return null;
+            })}
 
           </ul>
         </nav>
       </aside>
 
-      {/* ================= LOCAL STYLES ================= */}
+      {/* STYLES */}
       <style>{`
         .sidebar-item {
           display: flex;

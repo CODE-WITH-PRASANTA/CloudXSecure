@@ -3,6 +3,10 @@ import AppLayout from "./layout/AppLayout/AppLayout";
 import BlogAdmin from "./Component/BlogPost/BlogPost";
 import BlogPage from "./Component/BlogView/BlogView";
 import TeamAdmin from "./Component/TeamPost/TeamPost";
+import AdminTestimonial from "./pages/AdminTestimonial/AdminTestimonial";
+import AdminColdLeads from "./pages/AdminColdLeads/AdminColdLeads";
+import AdminContactPage from "./pages/AdminContactPage/AdminContactPage";
+import AdminPlanManager from "./pages/AdminPlanManager/AdminPlanManager";
 
 function App() {
   return (
@@ -27,7 +31,11 @@ function App() {
         </Route>
 
         <Route path="contacts" element={<div>Contacts</div>} />
-        <Route path="testimonials" element={<div>Testimonials</div>} />
+        <Route path="/testimonials" element={<AdminTestimonial/>} />
+        <Route path="/cold-lead" element={<AdminColdLeads/>} />
+        <Route path="/admin-contact" element={<AdminContactPage/>} />
+        <Route path="price-plan/post" element={<AdminPlanManager/>} />
+
       </Route>
     </Routes>
   );

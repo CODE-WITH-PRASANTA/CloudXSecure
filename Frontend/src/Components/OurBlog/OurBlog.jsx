@@ -1,7 +1,37 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./OurBlog.css";
+import API, { IMAGE_URL } from "../../api/axios";
 
 const OurBlog = memo(() => {
+  const [BLOGS, setBLOGS] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = async () => {
+    try {
+      const res = await API.get("/blogs");
+      const blogs = res.data.data || [];
+
+      // Filter only published blogs
+      const publishedBlogs = blogs.filter(
+        (blog) => blog.status === "published"
+      );
+
+      // Sort latest first and take only 2
+      const latestTwo = publishedBlogs
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        .slice(0, 2);
+
+      setBLOGS(latestTwo);
+    } catch (err) {
+      console.error("FETCH BLOG ERROR:", err);
+    }
+  };
+
   return (
     <section className="ourblog-section">
       <div className="ourblog-container">
@@ -20,11 +50,15 @@ const OurBlog = memo(() => {
 
         {/* Cards */}
         <div className="ourblog-cards">
-          {BLOGS.map((blog, index) => (
-            <article className="ourblog-card" key={index}>
+          {BLOGS.map((blog) => (
+            <article className="ourblog-card" key={blog._id}>
               <div className="ourblog-image-wrapper">
                 <img
-                  src={blog.image}
+                  src={
+                    blog.image
+                      ? `${IMAGE_URL}${blog.image}`
+                      : "https://via.placeholder.com/600x400"
+                  }
                   alt={blog.title}
                   className="ourblog-image"
                   loading="lazy"
@@ -34,16 +68,27 @@ const OurBlog = memo(() => {
 
               <div className="ourblog-content">
                 <div className="ourblog-meta">
-                  <span>📅 {blog.date}</span>
-                  <span>👤 {blog.author}</span>
+                  <span>
+                    📅{" "}
+                    {blog.createdAt
+                      ? new Date(blog.createdAt).toLocaleDateString()
+                      : ""}
+                  </span>
+                  <span>👤 {blog.author || "Admin"}</span>
                 </div>
 
                 <h3>{blog.title}</h3>
-                <p>{blog.desc}</p>
+                <p>
+                  {blog.content
+                    ?.replace(/<[^>]+>/g, "")
+                    .slice(0, 120)}
+                  ...
+                </p>
 
                 <button
                   className="ourblog-arrow"
                   aria-label="Read more"
+                  onClick={() => navigate(`/blogs/${blog._id}`)}
                 >
                   ↗
                 </button>
@@ -54,7 +99,7 @@ const OurBlog = memo(() => {
 
         {/* CTA */}
         <div className="ourblog-cta">
-          <button>
+          <button onClick={() => navigate("/blogs")}>
             Read More Blog And News <span>↗</span>
           </button>
         </div>
@@ -64,27 +109,3 @@ const OurBlog = memo(() => {
 });
 
 export default OurBlog;
-
-/* Static data (keeps component light) */
-const BLOGS = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978",
-    date: "26 August 2024",
-    author: "Alex Roy",
-    title:
-      "How Cloud Solutions Are Transforming Modern Business Operations",
-    desc:
-      "Discover how secure and scalable cloud services help businesses improve efficiency, reduce operational costs, and accelerate digital transformation through modern cloud infrastructure and automation.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-    date: "26 August 2024",
-    author: "Alex Roy",
-    title:
-      "Why Modern Web Design Is Critical for Business Growth in 2024",
-    desc:
-      "Learn how professional web design and development improves user experience, boosts SEO rankings, and increases conversions with fast, responsive, and secure websites.",
-  },
-];
