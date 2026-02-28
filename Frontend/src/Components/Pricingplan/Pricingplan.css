@@ -2,9 +2,10 @@
 .pricing-section {
   padding: 90px 20px;
   background: linear-gradient(145deg, #eef2ff, #ffffff);
+  overflow: hidden;
 }
 
-/* HEADING */
+/* HEADER */
 .pricing-header {
   text-align: center;
   margin-bottom: 70px;
@@ -21,15 +22,15 @@
 
 .pricing-badge {
   font-weight: 700;
-  display: inline-block;
   padding: 6px 16px;
   border-radius: 20px;
   background: #e3e8ff;
   color: #1f3cff;
+  display: inline-block;
   margin-bottom: 12px;
 }
 
-/* GRID */
+/* GRID DESKTOP */
 .pricing-grid {
   max-width: 1300px;
   margin: auto;
@@ -39,7 +40,7 @@
   align-items: stretch;
 }
 
-/* PRICING CARD */
+/* CARD */
 .pricing-card {
   background: #ffffff;
   padding: 42px;
@@ -49,7 +50,6 @@
   transition: 0.35s;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   opacity: 0;
   transform: translateY(40px);
 }
@@ -59,7 +59,12 @@
   transform: translateY(0);
 }
 
-/* PRO (CENTER CARD) */
+.pricing-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* PRO */
 .pro-card {
   background: #2140ff;
   color: white !important;
@@ -67,18 +72,7 @@
   box-shadow: 0 35px 75px rgba(27, 45, 255, 0.35);
 }
 
-/* HOVER EFFECT */
-.pricing-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
-}
-
-.pro-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 40px 90px rgba(27, 45, 255, 0.55);
-}
-
-/* HEX BADGE */
+/* HEX */
 .hex-badge {
   width: 140px;
   height: 140px;
@@ -98,49 +92,23 @@
   color: #2140ff;
 }
 
-.hex-badge h3 {
-  font-size: 30px;
-  margin: 0;
-}
-
-.hex-badge span {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* SUB LABEL */
-.sub-label {
-  font-size: 15px;
-  color: #020202;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.pro-label {
-  color: #d6dfff;
-}
-
-/* PLAN TITLE */
+/* TITLE */
 .plan-title {
   font-size: 28px;
   font-weight: 800;
   margin-bottom: 25px;
-  color: #000;
   text-align: center;
-  /* margin-top: 20px; */
-
 }
 
 .pro-title {
   color: white;
-  /* margin-top: 10px; */
 }
 
 /* FEATURES */
 .feature-list {
-  padding: 0;
   list-style: none;
-  margin: 0 0 35px;
+  padding: 0;
+  margin-bottom: 35px;
 }
 
 .feature-list li {
@@ -148,7 +116,6 @@
   padding-left: 24px;
   margin-bottom: 12px;
   font-size: 16px;
-  opacity: 0.9;
 }
 
 .feature-list li::before {
@@ -179,28 +146,75 @@
   cursor: pointer;
   width: fit-content;
   margin-top: auto;
-  box-shadow: 0 10px 20px rgba(36, 54, 255, 0.25);
-  transition: 0.3s;
 }
 
-.plan-btn:hover {
-  transform: translateY(-4px);
-}
-
-/* PRO BTN (WHITE) */
 .pro-btn {
   background: white !important;
   color: #2140ff !important;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
 }
 
-/* ANIMATION DELAYS */
-.delay-1 { transition-delay: 0.15s; }
-.delay-2 { transition-delay: 0.3s; }
+/* PAGINATION (Hidden Desktop) */
+.pricing-pagination {
+  display: none;
+}
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
+/* ========================= */
+/* TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
   .pricing-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================= */
+/* MOBILE SLIDER */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .pricing-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+  }
+
+  .pricing-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pricing-card {
+    min-width: 100%;
+    scroll-snap-align: center;
+  }
+
+  .pricing-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px;
+  }
+
+  .pricing-pagination button {
+    background: #1f3cff;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #c5ceff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: #1f3cff;
   }
 }
