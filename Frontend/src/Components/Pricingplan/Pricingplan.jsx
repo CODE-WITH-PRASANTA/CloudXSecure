@@ -3,7 +3,55 @@ import "./Pricingplan.css";
 
 const Pricingplan = () => {
   const sectionRef = useRef(null);
+  const sliderRef = useRef(null);
+
   const [visible, setVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const plans = [
+    {
+      price: "₹60",
+      title: "Basic Plan",
+      features: [
+        "Managed Cloud Services (Basic)",
+        "Secure Cloud Hosting",
+        "Website Maintenance & Support",
+        "Basic Cybersecurity Protection",
+        "Data Backup & Recovery",
+        "Performance Monitoring",
+        "IT Infrastructure Management",
+        "Data Encryption & Compliance",
+      ],
+    },
+    {
+      price: "₹80",
+      title: "Pro Plan",
+      pro: true,
+      features: [
+        "Advanced Managed Cloud Services",
+        "Scalable Cloud Solutions",
+        "Cloud Backup & Disaster Recovery",
+        "Professional Web Design & Development",
+        "Secure Data Backup & Recovery",
+        "DevOps & Automation Support",
+        "Mobile App Support & Integration",
+        "Data Encryption & Compliance",
+      ],
+    },
+    {
+      price: "₹70",
+      title: "Premium Plan",
+      features: [
+        "Enterprise Cloud Solutions",
+        "Custom Web & App Development",
+        "Cloud Migration & Optimization",
+        "Priority Support & SLA",
+        "Custom Software Development",
+        "Dedicated Cloud Consulting",
+        "24/7 Cloud Monitoring & Support",
+      ],
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,6 +68,24 @@ const Pricingplan = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToCard = (index) => {
+    if (sliderRef.current) {
+      const width = sliderRef.current.clientWidth;
+      sliderRef.current.scrollTo({
+        left: width * index,
+        behavior: "smooth",
+      });
+      setActiveIndex(index);
+    }
+  };
+
+  const handleScroll = () => {
+    const scrollLeft = sliderRef.current.scrollLeft;
+    const width = sliderRef.current.clientWidth;
+    const index = Math.round(scrollLeft / width);
+    setActiveIndex(index);
+  };
+
   return (
     <section className="pricing-section" ref={sectionRef}>
       <div className={`pricing-header ${visible ? "animate" : ""}`}>
@@ -30,86 +96,69 @@ const Pricingplan = () => {
         </h2>
       </div>
 
-      <div className="pricing-grid">
+      <div
+        className="pricing-grid"
+        ref={sliderRef}
+        onScroll={handleScroll}
+      >
+        {plans.map((plan, index) => (
+          <div
+            key={index}
+            className={`pricing-card fade-up ${
+              visible ? "show" : ""
+            } ${plan.pro ? "pro-card" : ""}`}
+          >
+            <div className={`hex-badge ${plan.pro ? "pro-hex" : ""}`}>
+              <h3>{plan.price}</h3>
+              <span>Per Month</span>
+            </div>
 
-        {/* BASIC PLAN */}
-        <div className={`pricing-card fade-up ${visible ? "show" : ""}`}>
-          <div className="hex-badge">
-            <h3>$60</h3>
-            <span>Per Month</span>
+            <h4 className={`plan-title ${plan.pro ? "pro-title" : ""}`}>
+              {plan.title}
+            </h4>
+
+            <ul className={`feature-list ${plan.pro ? "pro-features" : ""}`}>
+              {plan.features.map((feature, i) => (
+                <li key={i}>{feature}</li>
+              ))}
+            </ul>
+
+            <button className={`plan-btn ${plan.pro ? "pro-btn" : ""}`}>
+              Choose A Plan ↗
+            </button>
           </div>
+        ))}
+      </div>
 
-          {/* <span className="sub-label">Best for Startups & Small Businesses</span> */}
-          <h4 className="plan-title">Basic Plan</h4>
+      {/* Mobile Pagination */}
+      <div className="pricing-pagination">
+        <button
+          onClick={() =>
+            scrollToCard(activeIndex > 0 ? activeIndex - 1 : 0)
+          }
+        >
+          ◀
+        </button>
 
-          <ul className="feature-list">
-            <li>Managed Cloud Services (Basic)</li>
-            <li>Secure Cloud Hosting</li>
-            <li>Website Maintenance & Support</li>
-            <li>Basic Cybersecurity Protection</li>
-            <li>Data Backup & Recovery</li>
-            <li>Performance Monitoring</li>
-            <li>IT Infrastructure Management</li>
-            <li>Data Encryption & Compliance</li>
-          </ul>
+        {plans.map((_, index) => (
+          <span
+            key={index}
+            className={activeIndex === index ? "dot active" : "dot"}
+            onClick={() => scrollToCard(index)}
+          ></span>
+        ))}
 
-          <button className="plan-btn">
-            Choose A Plan ↗
-          </button>
-        </div>
-
-        {/* PRO PLAN (Highlighted Center Card) */}
-        <div className={`pricing-card pro-card fade-up ${visible ? "show delay-1" : ""}`}>
-          <div className="hex-badge pro-hex">
-            <h3>$80</h3>
-            <span>Per Month</span>
-          </div>
-
-          {/* <span className="sub-label pro-label">Pro Packages</span> */}
-          <h4 className="plan-title pro-title">Pro Plan</h4>
-
-          <ul className="feature-list pro-features">
-            <li>Advanced Managed Cloud Services</li>
-            <li>Scalable Cloud Solutions</li>
-            <li>Cloud Backup & Disaster Recovery</li>
-            <li>Professional Web Design & Development</li>
-            <li>Secure Data Backup & Recovery</li>
-            <li>DevOps & Automation Support</li>
-            <li>Mobile App Support & Integration</li>
-            <li>Data Encryption & Compliance</li>
-          </ul>
-
-          <button className="plan-btn pro-btn">
-            Choose A Plan ↗
-          </button>
-        </div>
-
-        {/* PREMIUM PLAN */}
-        <div className={`pricing-card fade-up ${visible ? "show delay-2" : ""}`}>
-          <div className="hex-badge">
-            <h3>$70</h3>
-            <span>Per Month</span>
-          </div>
-
-          {/* <span className="sub-label">Premium Packages</span> */}
-          <h4 className="plan-title">Premium Plan</h4>
-
-          <ul className="feature-list">
-            <li>Enterprise Cloud Solutions</li>
-            <li>Custom Web & App Development</li>
-            <li>Cloud Migration & Optimization</li>
-            <li>Cloud Migration & Optimization</li>
-            <li>Priority Support & SLA</li>
-            <li>Custom Software Development</li>
-            <li>Dedicated Cloud Consulting</li>
-            <li>24/7 Cloud Monitoring & Support</li>
-          </ul>
-
-          <button className="plan-btn">
-            Choose A Plan ↗
-          </button>
-        </div>
-
+        <button
+          onClick={() =>
+            scrollToCard(
+              activeIndex < plans.length - 1
+                ? activeIndex + 1
+                : plans.length - 1
+            )
+          }
+        >
+          ▶
+        </button>
       </div>
     </section>
   );
