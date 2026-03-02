@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   FiHome,
   FiEdit,
@@ -11,168 +11,136 @@ import {
   FiChevronRight,
   FiX,
 } from "react-icons/fi";
-import logo from "../../Assets/logo.avif";
+import logo from "../../assets/cloud.png";
 
 const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
-  const [openMenu, setOpenMenu] = useState("");
+  const [openMenu, setOpenMenu] = useState(null);
+  const location = useLocation();
+
+  // Auto open parent menu when route matches
+  useEffect(() => {
+    if (location.pathname.startsWith("/blog")) {
+      // setOpenMenu("blog");
+    } else if (location.pathname.startsWith("/pricing")) {
+      // setOpenMenu("pricing");
+    } else {
+      // setOpenMenu(null);
+    }
+  }, [location.pathname]);
 
   const toggleMenu = (key) => {
-    setOpenMenu(openMenu === key ? "" : key);
+    setOpenMenu((prev) => (prev === key ? null : key));
   };
 
   return (
     <>
-      {/* ================= MOBILE OVERLAY ================= */}
+      {/* Mobile Overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
           onClick={() => setMobileOpen(false)}
         />
       )}
 
-      {/* ================= SIDEBAR ================= */}
       <aside
-        className={`
-          fixed lg:static z-50 h-screen
-          bg-[#2b3a4a] text-slate-200
-          transition-all duration-300
-          ${isOpen ? "w-64" : "w-20"}
-          ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+        className={`fixed lg:static z-50 h-screen
+        bg-gradient-to-b from-[#0f172a] to-[#1e293b]
+        text-slate-200 shadow-2xl
+        transition-all duration-500 ease-in-out
+        ${isOpen ? "w-64" : "w-20"}
+        ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
-        {/* ================= LOGO ================= */}
-        <div className="flex items-center gap-3 px-5 py-5 border-b border-white/10">
-          <img src={logo} className="w-8 h-8" alt="logo" />
+        {/* Logo */}
+        <div className="flex items-center gap-3 px-5 py-5 border-b border-white/5">
+          <img src={logo} className="w-15 h-15 rounded-md" alt="logo" />
           {isOpen && (
-            <span className="font-semibold tracking-wide">ENDLESS</span>
+            <span className="text-lg font-semibold tracking-wide text-white">
+              ENDLESS
+            </span>
           )}
-
           <button
-            className="ml-auto lg:hidden"
+            className="ml-auto lg:hidden text-white"
             onClick={() => setMobileOpen(false)}
           >
-            <FiX />
+            <FiX size={20} />
           </button>
         </div>
 
-        {/* ================= PROFILE ================= */}
-        <div className="flex flex-col items-center py-6 border-b border-white/10">
+        {/* Profile */}
+        <div className="flex flex-col items-center py-6 border-b border-white/5">
           <img
             src="https://i.pravatar.cc/100"
-            className="w-16 h-16 rounded-full mb-2"
+            className="w-16 h-16 rounded-full mb-3 ring-2 ring-indigo-500/70"
             alt="profile"
           />
           {isOpen && (
             <>
-              <p className="text-sm font-semibold">ELANA</p>
+              <p className="text-sm font-semibold text-white tracking-wide">
+                ELANA
+              </p>
               <p className="text-xs text-slate-400">GENERAL MANAGER</p>
             </>
           )}
         </div>
 
-        {/* ================= MENU ================= */}
-        <nav className="px-3 py-4 text-sm">
-          <ul className="space-y-1">
+        {/* Menu */}
+        <nav className="px-3 py-6 text-sm">
+          <ul className="space-y-2">
 
-            {/* DASHBOARD */}
             <SidebarLink
               to="/dashboard"
-              icon={<FiHome />}
+              icon={<FiHome size={18} />}
               label="Dashboard"
               open={isOpen}
             />
 
-            {/* BLOG MANAGEMENT */}
-            <li>
-              <button
-                onClick={() => toggleMenu("blog")}
-                className="sidebar-item w-full justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <FiEdit />
-                  {isOpen && <span>Blog Management</span>}
-                </div>
-                {isOpen && (
-                  <FiChevronRight
-                    className={`transition ${
-                      openMenu === "blog" ? "rotate-90" : ""
-                    }`}
-                  />
-                )}
-              </button>
+            <DropdownMenu
+              label="Blog Management"
+              icon={<FiEdit size={18} />}
+              open={isOpen}
+              active={openMenu === "blog"}
+              toggle={() => toggleMenu("blog")}
+            >
+              <NavLink to="/blog/add" className="submenu">Add Blog</NavLink>
+              <NavLink to="/blog/list" className="submenu">Blog List</NavLink>
+            </DropdownMenu>
 
-              {openMenu === "blog" && isOpen && (
-                <div className="ml-9 mt-1 space-y-1">
-                  <NavLink to="/blog/add" className="submenu">
-                    Add Blog
-                  </NavLink>
-                  <NavLink to="/blog/list" className="submenu">
-                    Blog List
-                  </NavLink>
-                </div>
-              )}
-            </li>
-
-            {/* TEAM */}
             <SidebarLink
               to="/team"
-              icon={<FiUsers />}
+              icon={<FiUsers size={18} />}
               label="Team Posting"
               open={isOpen}
             />
 
-            {/* CATEGORIES */}
             <SidebarLink
               to="/categories"
-              icon={<FiTag />}
+              icon={<FiTag size={18} />}
               label="Categories"
               open={isOpen}
             />
 
-            {/* ================= PLANS & PRICING (FIXED) ================= */}
-            <li>
-              <button
-                onClick={() => toggleMenu("pricing")}
-                className="sidebar-item w-full justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <FiDollarSign />
-                  {isOpen && <span>Plans & Pricing</span>}
-                </div>
+            <DropdownMenu
+              label="Plans & Pricing"
+              icon={<FiDollarSign size={18} />}
+              open={isOpen}
+              active={openMenu === "pricing"}
+              toggle={() => toggleMenu("pricing")}
+            >
+              <NavLink to="/pricing/post" className="submenu">Post Plan</NavLink>
+              <NavLink to="/pricing/list" className="submenu">View Plan</NavLink>
+            </DropdownMenu>
 
-                {isOpen && (
-                  <FiChevronRight
-                    className={`transition ${
-                      openMenu === "pricing" ? "rotate-90" : ""
-                    }`}
-                  />
-                )}
-              </button>
-
-              {openMenu === "pricing" && isOpen && (
-                <div className="ml-9 mt-1 space-y-1">
-                  <NavLink to="/pricing/post" className="submenu">
-                    Post Plan
-                  </NavLink>
-                  <NavLink to="/pricing/list" className="submenu">
-                    View Plan
-                  </NavLink>
-                </div>
-              )}
-            </li>
-
-            {/* CONTACT */}
             <SidebarLink
               to="/contacts"
-              icon={<FiMail />}
+              icon={<FiMail size={18} />}
               label="Contact Management"
               open={isOpen}
             />
 
-            {/* TESTIMONIAL */}
             <SidebarLink
               to="/testimonials"
-              icon={<FiStar />}
+              icon={<FiStar size={18} />}
               label="Testimonials"
               open={isOpen}
             />
@@ -181,28 +149,48 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
         </nav>
       </aside>
 
-      {/* ================= LOCAL STYLES ================= */}
+      {/* Styling */}
       <style>{`
         .sidebar-item {
           display: flex;
           align-items: center;
-          gap: 12px;
-          padding: 10px 12px;
-          border-radius: 8px;
-          transition: background 0.2s;
+          gap: 14px;
+          padding: 11px 14px;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+          font-weight: 500;
         }
+
         .sidebar-item:hover {
-          background: rgba(255,255,255,0.08);
+          background: rgba(255,255,255,0.06);
+          transform: translateX(4px);
         }
+
+        .sidebar-item.active {
+          background: linear-gradient(90deg, #6366f1, #4f46e5);
+          color: white;
+          box-shadow: 0 6px 18px rgba(99,102,241,0.35);
+        }
+
         .submenu {
           display: block;
-          padding: 6px 10px;
-          border-radius: 6px;
-          color: #cbd5e1;
+          padding: 8px 12px;
+          margin-left: 38px;
+          border-radius: 8px;
+          color: #94a3b8;
+          font-size: 13px;
+          transition: all 0.3s ease;
         }
+
         .submenu:hover {
           background: rgba(255,255,255,0.08);
           color: white;
+          transform: translateX(4px);
+        }
+
+        .dropdown {
+          overflow: hidden;
+          transition: all 0.4s ease;
         }
       `}</style>
     </>
@@ -213,12 +201,46 @@ const SidebarLink = ({ to, icon, label, open }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `sidebar-item ${isActive ? "bg-white/10 text-white" : ""}`
+      `sidebar-item ${isActive ? "active" : ""}`
     }
   >
     {icon}
     {open && <span>{label}</span>}
   </NavLink>
+);
+
+const DropdownMenu = ({ label, icon, open, active, toggle, children }) => (
+  <li>
+    <button
+      onClick={toggle}
+      className={`sidebar-item w-full justify-between ${
+        active ? "active" : ""
+      }`}
+    >
+      <div className="flex items-center gap-3">
+        {icon}
+        {open && <span>{label}</span>}
+      </div>
+
+      {open && (
+        <FiChevronRight
+          className={`transition-transform duration-300 ${
+            active ? "rotate-90 text-indigo-300" : ""
+          }`}
+        />
+      )}
+    </button>
+
+    <div
+      className="dropdown"
+      style={{
+        maxHeight: active && open ? "300px" : "0px",
+        opacity: active && open ? 1 : 0,
+      }}
+    >
+      {children}
+    </div>
+  </li>
 );
 
 export default AppSidebar;
