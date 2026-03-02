@@ -225,31 +225,204 @@ li{
   z-index: 998;
 }
 
-/* ===================== */
-/* Responsive */
-/* ===================== */
-@media (max-width: 992px) {
+/* ========================= */
+/* Desktop (1200px and up) */
+/* ========================= */
+@media (min-width: 1200px) {
+
+  .navbar {
+    height: 82px;
+    padding: 0 60px;
+  }
+
+  .nav-menu {
+    gap: 40px;
+  }
+
+  .nav-logo img {
+    height: 90px;
+  }
+
+}  
+
+/* ======================================= */
+/* Medium Desktop (1101px – 1299px) FIX   */
+/* ======================================= */
+@media (min-width: 1101px) and (max-width: 1299px) {
+
+  .nav-wrapper {
+    padding: 16px 24px;  /* reduce outer spacing */
+  }
+
+  .navbar {
+    padding: 0 36px;     /* balanced inner spacing */
+    height: 78px;
+  }
+
+  .nav-menu {
+    gap: 26px;           /* reduce menu gap */
+  }
+
+  .nav-item {
+    font-size: 15px;
+  }
+
+  .nav-logo img {
+    height: 80px;        /* slightly smaller logo */
+  }
+
+  .nav-cta {
+    padding: 12px 20px;  /* reduce button size */
+    font-size: 14px;
+  }
+
+  .cta-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+}
+
+/* ========================= */
+/* Laptop */
+/* ========================= */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .navbar {
+    height: 78px;
+    padding: 0 40px;
+  }
+
+  .nav-menu {
+    gap: 24px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  .nav-cta {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .nav-logo img {
+    height: 75px;
+  }
+
+}
+
+/* ================================= */
+/* Fix Small Laptop (992px - 1100px) */
+/* ================================= */
+@media (min-width: 992px) and (max-width: 1100px) {
+
+  .navbar {
+    padding: 0 24px;   /* reduce side spacing */
+  }
+
+  .nav-menu {
+    gap: 18px;         /* reduce gap between items */
+  }
+
+  .nav-item {
+    font-size: 14px;   /* slightly smaller text */
+  }
+
+  .nav-cta {
+    padding: 10px 16px;  /* smaller button */
+    font-size: 14px;
+  }
+
+  .cta-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+}
+
+/* ========================= */
+/* Tablet */
+/* ========================= */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .nav-wrapper {
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    height: 70px;
+    padding: 0 24px;
+    border-radius: 40px;
+  }
+
+  /* Hide desktop menu */
   .nav-menu,
   .nav-cta {
     display: none;
   }
 
+  /* Show hamburger */
   .mobile-toggle {
     display: block;
   }
 
-  .navbar {
-    width: 100%;
-    border-radius: 0;
+  .nav-logo img {
+    height: 65px;
   }
+
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+@media (max-width: 767px) {
 
   .nav-wrapper {
     padding: 0;
   }
+
+  .navbar {
+    height: 64px;
+    padding: 0 16px;
+    border-radius: 0;
+  }
+
+  /* Hide desktop menu */
+  .nav-menu,
+  .nav-cta {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-logo img {
+    height: 55px;
+  }
+
+  /* Mobile Menu Adjustments */
+  .mobile-menu {
+    padding: 20px;
+  }
+
+  .mobile-header img {
+    width: 90px;
+    height: auto;
+  }
+
+  .mobile-menu li {
+    font-size: 15px;
+  }
+
+  .mobile-cta {
+    padding: 16px;
+    font-size: 15px;
+  }
+
 }
 
-.navbar a,
-.mobile-menu a {
-  text-decoration: none;
-  color: inherit;
-}

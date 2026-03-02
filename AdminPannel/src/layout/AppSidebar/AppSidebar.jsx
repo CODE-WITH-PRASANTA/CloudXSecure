@@ -10,8 +10,71 @@ import {
   FiStar,
   FiChevronRight,
   FiX,
+  FiPhoneCall,
 } from "react-icons/fi";
-import logo from "../../Assets/logo.avif";
+import logo from "../../Assets/Cloud X Secure.png";
+
+/* ================= MENU CONFIG ================= */
+
+const MENU = [
+  {
+    type: "link",
+    label: "Dashboard",
+    icon: <FiHome />,
+    path: "/dashboard",
+  },
+  {
+    type: "submenu",
+    key: "blog",
+    label: "Blog Management",
+    icon: <FiEdit />,
+    children: [
+      { label: "Add Blog", path: "/blog/add" },
+      { label: "Blog List", path: "/blog/list" },
+    ],
+  },
+  {
+    type: "link",
+    label: "Team Posting",
+    icon: <FiUsers />,
+    path: "/team",
+  },
+  {
+    type: "link",
+    label: "Categories",
+    icon: <FiTag />,
+    path: "/categories",
+  },
+  {
+    type: "submenu",
+    key: "pricing",
+    label: "Plans & Pricing",
+    icon: <FiDollarSign />,
+    children: [
+      { label: "Post Plan", path: "price-plan/post" },
+      { label: "View Plan", path: "/pricing/list" },
+    ],
+  },
+  {
+    type: "link",
+    label: "Contact Management",
+    icon: <FiMail />,
+    path: "/admin-contact",
+  },
+  
+  {
+    type: "link",
+    label: "Cold Leads",
+    icon: <FiPhoneCall />,
+    path: "/cold-lead",
+  },
+  {
+    type: "link",
+    label: "Testimonials",
+    icon: <FiStar />,
+    path: "/testimonials",
+  },
+];
 
 const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
   const [openMenu, setOpenMenu] = useState("");
@@ -22,7 +85,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
 
   return (
     <>
-      {/* ================= MOBILE OVERLAY ================= */}
+      {/* MOBILE OVERLAY */}
       {mobileOpen && (
         <div
           className="fixed inset-0 bg-black/40 z-40 lg:hidden"
@@ -30,21 +93,21 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
         />
       )}
 
-      {/* ================= SIDEBAR ================= */}
+      {/* SIDEBAR */}
       <aside
         className={`
           fixed lg:static z-50 h-screen
           bg-[#2b3a4a] text-slate-200
           transition-all duration-300
-          ${isOpen ? "w-64" : "w-20"}
+          ${isOpen ? "w-80" : "w-18"}
           ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
-        {/* ================= LOGO ================= */}
+        {/* LOGO */}
         <div className="flex items-center gap-3 px-5 py-5 border-b border-white/10">
-          <img src={logo} className="w-8 h-8" alt="logo" />
+          <img src={logo} className="w-20 h-20" alt="logo" />
           {isOpen && (
-            <span className="font-semibold tracking-wide">ENDLESS</span>
+            <span className="font-semibold tracking-wide">Cloud X Secure</span>
           )}
 
           <button
@@ -55,7 +118,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
           </button>
         </div>
 
-        {/* ================= PROFILE ================= */}
+        {/* PROFILE */}
         <div className="flex flex-col items-center py-6 border-b border-white/10">
           <img
             src="https://i.pravatar.cc/100"
@@ -64,147 +127,200 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
           />
           {isOpen && (
             <>
-              <p className="text-sm font-semibold">ELANA</p>
-              <p className="text-xs text-slate-400">GENERAL MANAGER</p>
+              <p className="text-sm font-semibold">SHAHBAAZ SAYED</p>
+              <p className="text-xs text-slate-400">Admin</p>
             </>
           )}
         </div>
 
-        {/* ================= MENU ================= */}
+        {/* MENU */}
         <nav className="px-3 py-4 text-sm">
           <ul className="space-y-1">
 
-            {/* DASHBOARD */}
-            <SidebarLink
-              to="/dashboard"
-              icon={<FiHome />}
-              label="Dashboard"
-              open={isOpen}
-            />
-
-            {/* BLOG MANAGEMENT */}
-            <li>
-              <button
-                onClick={() => toggleMenu("blog")}
-                className="sidebar-item w-full justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <FiEdit />
-                  {isOpen && <span>Blog Management</span>}
-                </div>
-                {isOpen && (
-                  <FiChevronRight
-                    className={`transition ${
-                      openMenu === "blog" ? "rotate-90" : ""
-                    }`}
+            {MENU.map((item, index) => {
+              if (item.type === "link") {
+                return (
+                  <SidebarLink
+                    key={index}
+                    to={item.path}
+                    icon={item.icon}
+                    label={item.label}
+                    open={isOpen}
                   />
-                )}
-              </button>
+                );
+              }
 
-              {openMenu === "blog" && isOpen && (
-                <div className="ml-9 mt-1 space-y-1">
-                  <NavLink to="/blog/add" className="submenu">
-                    Add Blog
-                  </NavLink>
-                  <NavLink to="/blog/list" className="submenu">
-                    Blog List
-                  </NavLink>
-                </div>
-              )}
-            </li>
+              if (item.type === "submenu") {
+                return (
+                  <li key={index}>
+                    <button
+                      onClick={() => toggleMenu(item.key)}
+                      className="sidebar-item w-full justify-between"
+                    >
+                      <div className="flex items-center gap-3">
+                        {item.icon}
+                        {isOpen && <span>{item.label}</span>}
+                      </div>
 
-            {/* TEAM */}
-            <SidebarLink
-              to="/team"
-              icon={<FiUsers />}
-              label="Team Posting"
-              open={isOpen}
-            />
+                      {isOpen && (
+                        <FiChevronRight
+                          className={`transition ${
+                            openMenu === item.key ? "rotate-90" : ""
+                          }`}
+                        />
+                      )}
+                    </button>
 
-            {/* CATEGORIES */}
-            <SidebarLink
-              to="/categories"
-              icon={<FiTag />}
-              label="Categories"
-              open={isOpen}
-            />
+                    {openMenu === item.key && isOpen && (
+                      <div className="ml-9 mt-1 space-y-1">
+                        {item.children.map((sub, i) => (
+                          <NavLink
+                            key={i}
+                            to={sub.path}
+                            className="submenu"
+                          >
+                            {sub.label}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                );
+              }
 
-            {/* ================= PLANS & PRICING (FIXED) ================= */}
-            <li>
-              <button
-                onClick={() => toggleMenu("pricing")}
-                className="sidebar-item w-full justify-between"
-              >
-                <div className="flex items-center gap-3">
-                  <FiDollarSign />
-                  {isOpen && <span>Plans & Pricing</span>}
-                </div>
-
-                {isOpen && (
-                  <FiChevronRight
-                    className={`transition ${
-                      openMenu === "pricing" ? "rotate-90" : ""
-                    }`}
-                  />
-                )}
-              </button>
-
-              {openMenu === "pricing" && isOpen && (
-                <div className="ml-9 mt-1 space-y-1">
-                  <NavLink to="/pricing/post" className="submenu">
-                    Post Plan
-                  </NavLink>
-                  <NavLink to="/pricing/list" className="submenu">
-                    View Plan
-                  </NavLink>
-                </div>
-              )}
-            </li>
-
-            {/* CONTACT */}
-            <SidebarLink
-              to="/contacts"
-              icon={<FiMail />}
-              label="Contact Management"
-              open={isOpen}
-            />
-
-            {/* TESTIMONIAL */}
-            <SidebarLink
-              to="/testimonials"
-              icon={<FiStar />}
-              label="Testimonials"
-              open={isOpen}
-            />
+              return null;
+            })}
 
           </ul>
         </nav>
       </aside>
 
-      {/* ================= LOCAL STYLES ================= */}
-      <style>{`
+      {/* STYLES */}
+   <style>{`
+
+      /* ================= SIDEBAR BACKGROUND ================= */
+      aside {
+        background: linear-gradient(160deg, #0f172a 0%, #1e293b 60%, #1e1b4b 100%);
+        box-shadow: 8px 0 40px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(20px);
+        overflow-y: auto;
+      }
+
+      /* Logo Text */
+      aside span {
+        font-size: 15px;
+        letter-spacing: 1.2px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      /* Profile Section */
+      aside img {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      aside img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+      }
+
+      /* ================= MAIN MENU ITEMS ================= */
+      .sidebar-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        color: #cbd5e1;
+      }
+
+      /* Hover Effect */
+      .sidebar-item:hover {
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        color: #fff;
+        transform: translateX(6px);
+        box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+      }
+
+      /* Active Link */
+      .sidebar-item.bg-white\\/10 {
+        background: linear-gradient(90deg, #3b82f6, #6366f1);
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+      }
+
+      /* Active Left Indicator */
+      .sidebar-item.bg-white\\/10::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 20%;
+        height: 60%;
+        width: 5px;
+        border-radius: 10px;
+        background: #22d3ee;
+      }
+
+      /* Bigger Icons */
+      .sidebar-item svg {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar-item:hover svg {
+        transform: scale(1.1);
+      }
+
+      /* ================= SUBMENU ================= */
+      .submenu {
+        display: block;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #94a3b8;
+        transition: all 0.3s ease;
+      }
+
+      .submenu:hover {
+        background: linear-gradient(90deg, #22c55e, #16a34a);
+        color: #fff;
+        transform: translateX(8px);
+        box-shadow: 0 6px 15px rgba(34, 197, 94, 0.4);
+      }
+
+      /* ================= MOBILE OPTIMIZATION ================= */
+      @media (max-width: 1024px) {
+        aside {
+          box-shadow: 0 0 40px rgba(0,0,0,0.6);
+        }
+
         .sidebar-item {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 10px 12px;
-          border-radius: 8px;
-          transition: background 0.2s;
+          font-size: 17px;
         }
-        .sidebar-item:hover {
-          background: rgba(255,255,255,0.08);
-        }
-        .submenu {
-          display: block;
-          padding: 6px 10px;
-          border-radius: 6px;
-          color: #cbd5e1;
-        }
-        .submenu:hover {
-          background: rgba(255,255,255,0.08);
-          color: white;
-        }
-      `}</style>
+      }
+
+      /* ================= SCROLLBAR ================= */
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      aside::-webkit-scrollbar-thumb {
+        background: #475569;
+        border-radius: 10px;
+      }
+
+      aside::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
+
+`}</style>
     </>
   );
 };

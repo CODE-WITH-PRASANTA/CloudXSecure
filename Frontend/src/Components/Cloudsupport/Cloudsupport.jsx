@@ -1,41 +1,40 @@
 import React from "react";
 import "./Cloudsupport.css";
-
-// IMAGE (use your downloaded image)
 import supportImg from "../../assets/ctaThumb1_1.png";
 
 const SupportBanner = () => {
   return (
-    <section className="sb24-section">
-      <div className="sb24-container">
-        {/* LEFT IMAGE */}
-        <div className="sb24-image-wrap">
+    <section className="supportPro-section">
+      <div className="supportPro-container">
+
+        {/* IMAGE */}
+        <div className="supportPro-image">
           <img src={supportImg} alt="24/7 Support" />
         </div>
 
         {/* CONTENT */}
-        <div className="sb24-content">
-          <span className="sb24-subtitle">
-            <span className="sb24-line"></span>
-           CONTACT CLOUDXSECURE
-            <span className="sb24-line"></span>
+        <div className="supportPro-content">
+          <span className="supportPro-subtitle">
+            <span className="line"></span>
+            CONTACT CLOUDXSECURE
+            <span className="line"></span>
           </span>
 
-          <h2 className="sb24-title">
-           24/7 Cloud, Web & App Support Trusted by <br />
-            Growing Businesses
+          <h2 className="supportPro-title">
+            24/7 Cloud, Web & App Support Trusted by Growing Businesses
           </h2>
         </div>
 
         {/* BUTTON */}
-        <div className="sb24-btn-wrap">
-          <button className="sb24-btn">
-            Talk to a Specialist <span>→</span>
+        <div className="supportPro-btnWrap">
+          <button className="supportPro-btn">
+            Talk to a Specialist →
           </button>
         </div>
 
-        {/* WAVE DECOR */}
-        <div className="sb24-wave"></div>
+        {/* DECOR */}
+        <div className="supportPro-wave"></div>
+
       </div>
     </section>
   );

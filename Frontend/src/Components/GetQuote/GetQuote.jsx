@@ -3,7 +3,7 @@ import "./GetQuote.css";
 import agentImg from "../../assets/agent.png";
 
 const GetQuote = () => {
-  const [activeTab, setActiveTab] = useState("Home");
+  const [activeTab, setActiveTab] = useState("Cloud Services");
   const [limit, setLimit] = useState(400000);
 
   const tabs = ["Cloud Services", "Web Design", "App Development", "All Cloud Solutions"];
@@ -13,10 +13,10 @@ const GetQuote = () => {
       <div className="quote-container">
 
         {/* LEFT FORM */}
-        <div className="quote-left">
+        <div className="quote-left" data-aos="fade-right">
           <span className="quote-badge">FREE CLOUD CONSULTATION</span>
 
-          <h2>
+          <h2 className="quote-title">
             Get a Free Cloud & Digital Solutions Quote <br />
             from CloudXSecure Experts
           </h2>
@@ -37,25 +37,24 @@ const GetQuote = () => {
           {/* FORM */}
           <form className="quote-form">
 
-            {/* COMMON FIELDS */}
             <input type="text" placeholder="Your Full Name" />
             <input type="email" placeholder="Business Email Address" />
             <input type="tel" placeholder="Phone Number" />
 
-            {/* TAB BASED FIELDS */}
-            {activeTab === "Vehicles" && (
-              <input type="text" placeholder="Tell Us About Your Project" />
+            {/* Dynamic Fields */}
+            {activeTab === "Cloud Services" && (
+              <input type="text" placeholder="Describe Your Cloud Requirements" />
             )}
 
-            {activeTab === "Health" && (
-              <input type="text" placeholder="Number of Family Members" />
+            {activeTab === "Web Design" && (
+              <input type="text" placeholder="Type of Website You Need" />
             )}
 
-            {activeTab === "Life" && (
-              <input type="text" placeholder="Annual Income" />
+            {activeTab === "App Development" && (
+              <input type="text" placeholder="Tell Us About Your App Idea" />
             )}
 
-            {/* SLIDER */}
+            {/* BUDGET SLIDER */}
             <div className="slider-box">
               <div className="slider-label">
                 <span>Estimated Project Budget:</span>
@@ -77,8 +76,8 @@ const GetQuote = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="quote-right">
-          <img src={agentImg} alt="Insurance Expert" />
+        <div className="quote-right" data-aos="fade-left">
+          <img src={agentImg} alt="Cloud Expert" />
         </div>
 
       </div>

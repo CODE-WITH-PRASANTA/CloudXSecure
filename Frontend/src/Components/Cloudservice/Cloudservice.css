@@ -1,42 +1,48 @@
 :root {
-  --blue: #1f4aff;
-  --light-bg: #f7faff;
-  --text-dark: #0b0b23;
-  --text-gray: #555;
+  --primary: #1f4aff;
+  --light-bg: #f4f7ff;
+  --dark: #0b0b23;
+  --gray: #555;
 }
 
 /* ================= SECTION ================= */
-.clo-services-section {
-  padding: 90px 20px;
+.servicePro-section {
+  padding: clamp(60px, 8vw, 120px) 20px;
   background: #ffffff;
   overflow: hidden;
 }
 
 /* ================= HEADER ================= */
-.clo-services-header {
-  max-width: 1200px;
+.servicePro-header {
+  max-width: 1300px;
   margin: auto;
   position: relative;
 }
 
-.clo-services-sub {
-  color: var(--blue);
+.servicePro-sub {
+  color: var(--primary);
   font-size: 14px;
   letter-spacing: 2px;
   font-weight: 600;
 }
 
+<<<<<<< HEAD
 .clo-services-header h2 {
   font-size: 42px;
   font-weight: 800;
-  max-width: 560px;
+  max-width: 910px;
+=======
+.servicePro-header h2 {
+  font-size: clamp(28px, 4vw, 46px);
+>>>>>>> 962fa3436e3974892dd73514b46ef8bd2981ab32
   margin-top: 14px;
-  color: var(--text-dark);
+  max-width: 600px;
   line-height: 1.2;
+  color: var(--dark);
 }
 
 /* ================= ARROWS ================= */
-.clo-services-arrows {
+.servicePro-arrows {
   position: absolute;
   right: 0;
   top: 40px;
@@ -44,188 +50,150 @@
   gap: 14px;
 }
 
-.arrow-btn {
-  width: 48px;
-  height: 48px;
+.servicePro-arrows button {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 1px solid #dbe2ff;
-  background: #ffffff;
+  background: white;
   cursor: pointer;
   font-size: 18px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: 0.3s ease;
 }
 
-.arrow-btn:hover,
-.arrow-btn.active {
-  background: var(--blue);
-  color: #ffffff;
+.servicePro-arrows button:hover {
+  background: var(--primary);
+  color: white;
 }
 
 /* ================= SLIDER ================= */
-.clo-services-slider {
-  max-width: 1200px;
+.servicePro-slider {
+  max-width: 1300px;
   margin: 70px auto 0;
   display: flex;
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 8px;
-
   scrollbar-width: none;
 }
 
-.clo-services-slider::-webkit-scrollbar {
+.servicePro-slider::-webkit-scrollbar {
   display: none;
 }
 
 /* ================= CARD ================= */
-.clo-service-card {
-  flex: 0 0 25%;
-  max-width: calc(25% - 18px);
-  height: 255px;
-
+.servicePro-card {
+  flex: 0 0 clamp(280px, 25%, 320px);
   background: var(--light-bg);
-  border-radius: 26px;
-  padding: 26px;
+  border-radius: 24px;
+  padding: 28px;
   border: 1px solid #e3e9ff;
-
+  transition: 0.4s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  transition: background 0.4s ease, transform 0.4s ease;
+  min-height: 280px;
 }
 
-.clo-service-card:hover {
-  background: var(--blue);
-  transform: translateY(-8px);
+.servicePro-card:hover {
+  background: var(--primary);
+  transform: translateY(-10px);
 }
 
-/* ================= ICON ================= */
-.icon-box {
+/* ICON */
+.servicePro-icon {
   width: 64px;
   height: 64px;
-  border-radius: 14px;
   background: #eef2ff;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease;
 }
 
-.icon-box img {
-  width: 34px;
-  transition: transform 0.8s ease;
+.servicePro-icon img {
+  width: 36px;
+  transition: transform 0.6s ease;
 }
 
-.clo-service-card:hover .icon-box {
-  background: #fff;
-}
-
-.clo-service-card:hover .icon-box img {
+.servicePro-card:hover .servicePro-icon img {
   transform: rotate(360deg);
-  background: #fff;
 }
 
-/* ================= TEXT ================= */
-.clo-service-card h3 {
+/* TEXT */
+.servicePro-card h3 {
+  margin-top: 20px;
   font-size: 20px;
-  margin-top: 18px;
-  color: var(--text-dark);
+  color: var(--dark);
   transition: color 0.3s ease;
 }
 
-.clo-service-card p {
-  margin-top: 10px;
+.servicePro-card p {
+  margin-top: 12px;
   font-size: 14px;
   line-height: 1.6;
-  color: var(--text-gray);
+  color: var(--gray);
   transition: color 0.3s ease;
 }
 
-.clo-service-card:hover h3,
-.clo-service-card:hover p {
-  color: #ffffff;
+.servicePro-card:hover h3,
+.servicePro-card:hover p {
+  color: white;
 }
 
-/* ================= BUTTON ================= */
-.read-btn {
-  align-self: flex-start;
+/* BUTTON */
+.servicePro-read {
+  margin-top: 18px;
   background: transparent;
   border: 1px solid #cdd8ff;
   border-radius: 30px;
   padding: 8px 20px;
-  font-size: 14px;
   cursor: pointer;
-  transition: all 0.35s ease;
+  transition: 0.3s ease;
 }
 
-.clo-service-card:hover .read-btn {
-  background: #ffffff;
-  color: var(--blue);
-  border-color: #ffffff;
+.servicePro-card:hover .servicePro-read {
+  background: white;
+  color: var(--primary);
 }
 
 /* ================= RESPONSIVE ================= */
 
-/* Laptop → 3 cards */
+/* Tablet */
 @media (max-width: 1024px) {
-  .clo-service-card {
-    flex: 0 0 33.3333%;
-    max-width: calc(33.3333% - 16px);
-    height: 280px;
+  .servicePro-arrows {
+    position: static;
+    margin-top: 30px;
+    justify-content: center;
   }
 
-  .clo-services-header h2 {
-    font-size: 34px;
-  }
-}
-
-/* Tablet → 2 cards */
-@media (max-width: 768px) {
-  .clo-services-header {
+  .servicePro-header {
     text-align: center;
   }
+}
 
-  .clo-services-arrows {
-    position: static;
-    justify-content: center;
-    margin-top: 24px;
+/* Mobile */
+@media (max-width: 768px) {
+  .servicePro-slider {
+    gap: 18px;
   }
 
-  .clo-service-card {
-    flex: 0 0 50%;
-    max-width: calc(50% - 14px);
-    height: 260px;
+  .servicePro-card {
+    flex: 0 0 80%;
   }
 }
 
-/* Mobile → 1 card */
 @media (max-width: 480px) {
-  .clo-services-section {
-    padding: 60px 14px;
-  }
-
-  .clo-services-header h2 {
-    font-size: 26px;
-  }
-
-  .clo-service-card {
+  .servicePro-card {
     flex: 0 0 90%;
-    max-width: 90%;
-    height: auto;
-    min-height: 260px;
   }
 
-  .clo-services-slider {
-    gap: 20px;
+  .servicePro-section {
+    padding: 60px 15px;
   }
 }
 
-/* ================= REDUCED MOTION ================= */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

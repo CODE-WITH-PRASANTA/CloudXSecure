@@ -69,10 +69,10 @@ const PricingSection = () => {
               <small className="old-price">$120.99</small>
               <span className="save-badge">SAVE {plan.save}</span>
               <h3>
-                ${getPrice(plan.monthlyPrice)}
+                ₹{getPrice(plan.monthlyPrice)}
                 <span>{planType === "monthly" ? "/mo" : "/yr"}</span>
               </h3>
-              <p className="desc">
+              <p className="hosting-desc">
                 Secure cloud, web & app solutions with backups and 24/7 support—CloudXSecure.
               </p>
             </div>

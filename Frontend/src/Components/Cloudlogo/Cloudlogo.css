@@ -1,116 +1,127 @@
-/* ================= RESET SAFETY ================= */
-.logo-marquee,
-.logo-marquee * {
+/* ================= ROOT RESET ================= */
+.logoPro-section,
+.logoPro-section * {
   box-sizing: border-box;
 }
 
-/* ================= SECTION ================= */
-.logo-marquee {
+.logoPro-section {
   width: 100%;
   background: #ffffff;
+  padding: clamp(20px, 3vw, 40px) 0;
+  overflow: hidden;
+  position: relative;
+}
 
-  /* REMOVE GAP BETWEEN SECTIONS */
-  margin: 0;
+/* Optional fade edges (premium look) */
+.logoPro-section::before,
+.logoPro-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
 
-  /* HEIGHT CONTROL */
-  padding: 24px 0;
+.logoPro-section::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
 
-  /* ❌ BLUE LINES REMOVED */
-  border: none;
+.logoPro-section::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
 
-  /* PREVENT LINE-HEIGHT GAP */
-  line-height: 0;
-
+/* ================= WRAPPER ================= */
+.logoPro-wrapper {
+  width: 100%;
   overflow: hidden;
 }
 
 /* ================= TRACK ================= */
-.logo-track {
+.logoPro-track {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee 18s linear infinite;
+  animation: logoScroll 25s linear infinite;
+  will-change: transform;
 }
 
 /* Pause on hover */
-.logo-marquee:hover .logo-track {
+.logoPro-section:hover .logoPro-track {
   animation-play-state: paused;
 }
 
 /* ================= LOGO ITEM ================= */
-.logo-item {
+.logoPro-item {
   flex: 0 0 auto;
-  padding: 0 42px;
+  padding: 0 clamp(25px, 4vw, 60px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* FULL COLOR LOGOS */
-.logo-item img {
-  height: 42px;
+/* LOGO IMAGE */
+.logoPro-item img {
+  height: clamp(28px, 3vw, 50px);
   width: auto;
   object-fit: contain;
-
-  /* Restore normal line-height */
-  line-height: normal;
-
-  filter: none;
-  opacity: 1;
-
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hover micro-interaction */
-.logo-item img:hover {
-  transform: scale(1.06);
+/* Hover effect */
+.logoPro-item img:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
 }
 
 /* ================= ANIMATION ================= */
-@keyframes marquee {
-  0% {
+@keyframes logoScroll {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1024px) {
-  .logo-item {
-    padding: 0 32px;
-  }
-
-  .logo-item img {
-    height: 38px;
+/* ================= LARGE SCREENS ================= */
+@media (min-width: 1600px) {
+  .logoPro-track {
+    animation-duration: 30s;
   }
 }
 
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .logoPro-track {
+    animation-duration: 22s;
+  }
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  .logo-marquee {
-    padding: 20px 0;
+  .logoPro-track {
+    animation-duration: 18s;
   }
 
-  .logo-item {
-    padding: 0 26px;
-  }
-
-  .logo-item img {
-    height: 34px;
+  .logoPro-section::before,
+  .logoPro-section::after {
+    width: 60px;
   }
 }
 
 @media (max-width: 480px) {
-  .logo-marquee {
-    padding: 16px 0;
+  .logoPro-track {
+    animation-duration: 15s;
   }
+}
 
-  .logo-item {
-    padding: 0 20px;
-  }
-
-  .logo-item img {
-    height: 30px;
+/* ================= REDUCED MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+  .logoPro-track {
+    animation: none;
   }
 }

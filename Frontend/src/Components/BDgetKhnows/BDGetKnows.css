@@ -90,7 +90,7 @@
 
 /* ================= RIGHT ================= */
 .af-right h2 {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 800;
   color: #0b1b44;
   line-height: 1.25;
@@ -113,6 +113,7 @@
   line-height: 1.7;
   color: #5b6785;
   margin-bottom: 22px;
+  text-align: justify;
 }
 
 /* LIST */

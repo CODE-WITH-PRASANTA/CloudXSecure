@@ -20,7 +20,7 @@
 }
 
 .bd-team-left h2 {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 800;
   line-height: 1.15;
   color: #0a1a3a;
@@ -31,6 +31,7 @@
   font-size: 16px;
   line-height: 1.8;
   color: #5c6b8a;
+  text-align: justify;
 }
 
 .bd-badge {

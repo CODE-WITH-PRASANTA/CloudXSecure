@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Footer.css";
 import {
   FaFacebookF,
@@ -9,13 +9,36 @@ import {
 import { FiPhone, FiMapPin, FiMail, FiGlobe } from "react-icons/fi";
 import { IoChevronForward } from "react-icons/io5";
 import logo from "../../assets/cloud.png";
+import API from "../../api/axios"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const [contact, setContact] = useState({
+    phone: "",
+    email: "",
+    office: "",
+    website: "",
+  });
+
+  /* ================= FETCH CONTACT ================= */
+  const fetchContact = async () => {
+    try {
+      const res = await API.get("/contact");
+      if (res.data.data) {
+        setContact(res.data.data);
+      }
+    } catch (err) {
+      console.error("FETCH CONTACT ERROR:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchContact();
+  }, []);
+
   return (
     <footer className="footer">
-      {/* Decorative Top */}
       <div className="footer-top-pattern"></div>
 
       <div className="footer-container">
@@ -34,20 +57,11 @@ const Footer = () => {
             the digital era.
           </p>
 
-          {/* Social Media */}
           <div className="footer-socials">
-            <a href="#" className="social-icon" aria-label="Facebook">
-              <FaFacebookF />
-            </a>
-            <a href="#" className="social-icon" aria-label="LinkedIn">
-              <FaLinkedinIn />
-            </a>
-            <a href="#" className="social-icon" aria-label="Instagram">
-              <FaInstagram />
-            </a>
-            <a href="#" className="social-icon" aria-label="YouTube">
-              <FaYoutube />
-            </a>
+            <a href="#" className="social-icon"><FaFacebookF /></a>
+            <a href="#" className="social-icon"><FaLinkedinIn /></a>
+            <a href="#" className="social-icon"><FaInstagram /></a>
+            <a href="#" className="social-icon"><FaYoutube /></a>
           </div>
         </div>
 
@@ -97,7 +111,9 @@ const Footer = () => {
               <div className="contact-icon"><FiPhone /></div>
               <div className="contact-details">
                 <span className="contact-label">Phone</span>
-                <span className="contact-value">7666488777</span>
+                <span className="contact-value">
+                  {contact.phone || "Loading..."}
+                </span>
               </div>
             </div>
 
@@ -105,7 +121,9 @@ const Footer = () => {
               <div className="contact-icon"><FiMail /></div>
               <div className="contact-details">
                 <span className="contact-label">Email</span>
-                <span className="contact-value"> cloudxsecure@gmail.com</span>
+                <span className="contact-value">
+                  {contact.email || "Loading..."}
+                </span>
               </div>
             </div>
 
@@ -113,7 +131,9 @@ const Footer = () => {
               <div className="contact-icon"><FiMapPin /></div>
               <div className="contact-details">
                 <span className="contact-label">Office</span>
-                <span className="contact-value">Room 407 c wing building no 18 , Aqsa apt , amrut Nagar near Ajit glass jogeshwari west mumbai 400102</span>
+                <span className="contact-value">
+                  {contact.office || "Loading..."}
+                </span>
               </div>
             </div>
 
@@ -121,14 +141,15 @@ const Footer = () => {
               <div className="contact-icon"><FiGlobe /></div>
               <div className="contact-details">
                 <span className="contact-label">Website</span>
-                <span className="contact-value">www.cloudxsecure.com</span>
+                <span className="contact-value">
+                  {contact.website || "Loading..."}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ================= FOOTER BOTTOM ================= */}
       <div className="footer-bottom">
         <div className="footer-bottom-content">
           <div className="copyright">
@@ -139,7 +160,6 @@ const Footer = () => {
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms">Terms of Service</a>
             <a href="/cookie-policy">Coming Soon</a>
-            
           </div>
         </div>
       </div>

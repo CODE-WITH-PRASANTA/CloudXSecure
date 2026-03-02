@@ -91,6 +91,7 @@
   line-height: 1.7;
   color: #5a5f7a;
   transition: color 0.4s ease;
+  text-align: justify;
 }
 
 .managedcloud-services-card:hover h3,

@@ -52,6 +52,7 @@ body {
   line-height: 1.7;
   opacity: 0.9;
   margin-bottom: 40px;
+  text-align: justify;
 }
 
 /* ================= BUTTONS ================= */
@@ -204,6 +205,7 @@ body {
 .rating-stars p {
   margin: 0;
   font-size: 14px;
+  
 }
 
 /* ================= TABLET ================= */

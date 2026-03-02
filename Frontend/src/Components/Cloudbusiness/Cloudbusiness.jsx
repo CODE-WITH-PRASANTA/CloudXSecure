@@ -1,7 +1,6 @@
 import React from "react";
 import "./Cloudbusiness.css";
 
-// IMAGES (replace paths with your assets)
 import mainPerson from "../../assets/hero-main.webp";
 import solutionImg from "../../assets/heroShape3.webp";
 import techImg from "../../assets/heroShape4.webp";
@@ -12,95 +11,77 @@ import googleImg from "../../assets/riview.webp";
 
 const HeroITUnique = () => {
   return (
-    <section className="heroItUnique-section">
-      <div className="heroItUnique-container">
-        {/* LEFT CONTENT */}
-        <div className="heroItUnique-content">
-          <span className="heroItUnique-badge">
+    <section className="heroPro-section">
+      <div className="heroPro-container">
+
+        {/* LEFT SIDE */}
+        <div className="heroPro-content">
+          <span className="heroPro-badge">
             Everything You Need To Create A Website
           </span>
 
-          <h3 className="heroItUnique-title">
-            Business Innovation With <br /> IT Services Expertise
-          </h3>
+          <h1 className="heroPro-title">
+            Business Innovation With <br />
+            <span>IT Services Expertise</span>
+          </h1>
 
-          <ul className="heroItUnique-list">
+          <ul className="heroPro-list">
             <li>Secure Cloud Deployment & 24/7 Support</li>
             <li>Custom Web & Mobile App Development</li>
             <li>Scalable Cloud Infrastructure</li>
             <li>Advanced Cybersecurity & Data Protection</li>
           </ul>
 
-          <button className="heroItUnique-btn">Get Started →</button>
+          <button className="heroPro-btn">
+            Get Started →
+          </button>
 
-          {/* REVIEWS CARD */}
-<div className="heroItUnique-reviews">
-  {/* Trustpilot block */}
-  <div className="heroItUnique-reviewBlock">
-    <div className="heroItUnique-reviewTitleRow">
-      <span className="heroItUnique-reviewIcon">★</span>
-      <span className="heroItUnique-reviewPlatform">Trustpilot</span>
-    </div>
+          {/* REVIEW CARD */}
+          <div className="heroPro-reviews">
 
-    <div className="heroItUnique-reviewBottomRow">
-      {/* avatar strip image */}
-      <img
-        src={trustpilotImg}
-        alt="Trustpilot reviewers"
-        className="heroItUnique-reviewAvatars"
-      />
+            <div className="heroPro-reviewBlock">
+              <div className="heroPro-reviewTitle">
+                <span className="heroPro-star">★</span>
+                Trustpilot
+              </div>
 
-      <div className="heroItUnique-reviewMeta">
-        <div className="heroItUnique-stars">
-          ★★★★☆
-        </div>
-        <span className="heroItUnique-reviewCount">450+ reviews</span>
-      </div>
-    </div>
-  </div>
+              <div className="heroPro-reviewBottom">
+                <img src={trustpilotImg} alt="" />
+                <div>
+                  <div className="heroPro-stars">★★★★☆</div>
+                  <span>450+ reviews</span>
+                </div>
+              </div>
+            </div>
 
-  {/* Vertical divider */}
-  <div className="heroItUnique-reviewDivider" />
+            <div className="heroPro-divider"></div>
 
-  {/* Google block */}
-  <div className="heroItUnique-reviewBlock">
-    <div className="heroItUnique-reviewTitleRow">
-      <span className="heroItUnique-reviewPlatform">Google</span>
-    </div>
+            <div className="heroPro-reviewBlock">
+              <div className="heroPro-reviewTitle">
+                Google
+              </div>
 
-    <div className="heroItUnique-reviewBottomRow">
-      <img
-        src={googleImg}
-        alt="Google reviewers"
-        className="heroItUnique-reviewAvatars"
-      />
+              <div className="heroPro-reviewBottom">
+                <img src={googleImg} alt="" />
+                <div>
+                  <div className="heroPro-stars">★★★★☆</div>
+                  <span>450+ reviews</span>
+                </div>
+              </div>
+            </div>
 
-      <div className="heroItUnique-reviewMeta">
-        <div className="heroItUnique-stars">
-          ★★★★☆
-        </div>
-        <span className="heroItUnique-reviewCount">450+ reviews</span>
-      </div>
-    </div>
-  </div>
-</div>
-
+          </div>
         </div>
 
-        {/* RIGHT IMAGE AREA */}
-        <div className="heroItUnique-imageWrap">
-          <img src={whiteCircle} className="heroItUnique-circle" alt="" />
-          <img src={dnaImg} className="heroItUnique-dna" alt="" />
-
-          <img src={solutionImg} className="heroItUnique-solution" alt="" />
-          <img src={techImg} className="heroItUnique-tech" alt="" />
-
-          <img
-            src={mainPerson}
-            className="heroItUnique-mainImg"
-            alt="Main Person"
-          />
+        {/* RIGHT SIDE */}
+        <div className="heroPro-imageWrap">
+          <img src={whiteCircle} alt="" className="heroPro-circle" />
+          <img src={dnaImg} alt="" className="heroPro-dna" />
+          <img src={solutionImg} alt="" className="heroPro-solution" />
+          <img src={techImg} alt="" className="heroPro-tech" />
+          <img src={mainPerson} alt="Hero" className="heroPro-main" />
         </div>
+
       </div>
     </section>
   );
