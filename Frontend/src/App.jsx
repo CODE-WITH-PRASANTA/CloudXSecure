@@ -39,7 +39,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/services/managed-cloud" element={<ManagedCloud />} />
         <Route path="/terms" element={<TermsOfService />} />
-        <Route path="//privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<ComingSoon />} />
         <Route path="/get-in-touch" element={<GetInTouch  />} />
         <Route path="/services/our-services" element={<OurServices />} />

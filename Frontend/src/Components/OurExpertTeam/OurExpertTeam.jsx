@@ -1,33 +1,24 @@
-//jsx//
+// import React, { memo, useEffect, useState } from "react";
 
-import React, { memo, useState } from "react";
+import React, { memo, useState,useEffect } from "react";
 import "./OurExpertTeam.css";
-
-// Local image imports
-import alex from "../../assets/female.webp";
-import shelia from "../../assets/dr-1.webp";
-import devin from "../../assets/dr-2.webp";
-
-/* Static Team Data */
-const TEAM = [
-  {
-    name: "SR. Alex Robertson",
-    role: "Head of Cybersecurity",
-    image: alex,
-  },
-  {
-    name: "Shelia Abernathy",
-    role: "Software Engineer",
-    image: shelia,
-  },
-  {
-    name: "Devin Romaguera",
-    role: "Data Analytics Specialist",
-    image: devin,
-  },
-];
+import API, { IMAGE_URL } from "../../api/axios";
 
 const OurExpertTeam = memo(() => {
+  const [TEAM, setTEAM] = useState([]);
+
+  useEffect(() => {
+    fetchTeam();
+  }, []);
+
+  const fetchTeam = async () => {
+    try {
+      const res = await API.get("/team?status=published");
+      setTEAM(res.data.data || []);
+    } catch (err) {
+      console.error("FETCH TEAM ERROR:", err);
+    }
+  };
   const [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage = 1; // only 1 card per page in mobile
@@ -57,16 +48,24 @@ const OurExpertTeam = memo(() => {
         {/* Desktop / Tablet Grid */}
         <div className="OurExpertTeam-grid desktop-view">
           {TEAM.map((member) => (
-            <article className="OurExpertTeam-card" key={member.name}>
+            <article className="OurExpertTeam-card" key={member._id}>
               <div className="OurExpertTeam-image-wrapper">
                 <img
-                  src={member.image}
+                  src={
+                    member.image
+                      ? `${IMAGE_URL}${member.image}`
+                      : "https://via.placeholder.com/300"
+                  }
                   alt={member.name}
                   loading="lazy"
                   className="OurExpertTeam-image"
                 />
 
                 <div className="OurExpertTeam-socials">
+                  <a href={member.facebook || "#"} target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+                  <a href={member.instagram || "#"} target="_blank" rel="noreferrer" aria-label="Instagram">◎</a>
+                  <a href={member.youtube || "#"} target="_blank" rel="noreferrer" aria-label="YouTube">▶</a>
+                  <a href={member.linkedin || "#"} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
                   <a href="#">f</a>
                   <a href="#">◎</a>
                   <a href="#">▶</a>
