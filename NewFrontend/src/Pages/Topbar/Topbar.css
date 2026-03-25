@@ -1,0 +1,138 @@
+.topbar {
+  width: 100%;
+  background: #020a33;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.topbar__container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 18px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.topbar__left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.topbar__infoItem {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.topbar__infoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.topbar__infoText {
+  white-space: nowrap;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.topbar__divider {
+  margin: 0 18px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.topbar__socialLink {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  color: #0b123f;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.topbar__socialLink:hover {
+  transform: translateY(-2px);
+  background: #ff5e14;
+  color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .topbar__container {
+    min-height: auto;
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar__left {
+    width: 100%;
+    gap: 10px 0;
+  }
+
+  .topbar__right {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  .topbar__container {
+    padding: 10px 12px;
+  }
+
+  .topbar__left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .topbar__infoItem {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .topbar__divider {
+    display: none;
+  }
+
+  .topbar__right {
+    gap: 8px;
+  }
+
+  .topbar__socialLink {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar__infoText {
+    white-space: normal;
+  }
+}
