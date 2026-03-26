@@ -5,6 +5,9 @@ import Topbar from "./Pages/Topbar/Topbar";
 import Navbar from "./Pages/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
 import Home from "./Pages/Home/Home";
+import Blog from "./Pages/Blog/Blog";
+import Contact from "./Pages/Contact/Contact";
+
 
 function App() {
   return (
@@ -15,7 +18,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
+        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        
+       </Routes>
 
       <Footer />
 
