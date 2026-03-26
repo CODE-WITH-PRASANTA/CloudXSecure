@@ -1,49 +1,15 @@
-import React from "react";
-import "./Contact.css";
-
-import bg from "../../assets/contact-bg-1.png";
+import React from 'react'
+import ContactBreadcrum from '../../Component/ContactBreadcrum/ContactBreadcrum'
+import ContactMainPage from '../../Component/ContactMainPage/ContactMainPage'
 
 const Contact = () => {
   return (
-    <section
-      className="contactSection"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      <div className="contactSection-container">
+    <div>
+      <ContactBreadcrum/>
+      <ContactMainPage/>
+      
+    </div>
+  )
+}
 
-        <div className="contactSection-left">
-          <p className="contactSection-subtitle">CONTACT US</p>
-
-          <h2 className="contactSection-title">
-            Make an Online Appoinemnt Booking
-            <br />
-            For Business Planing.
-          </h2>
-
-          <form className="contactSection-form">
-
-            <div className="contactSection-row">
-              <input type="text" placeholder="Your Name *" />
-              <input type="email" placeholder="Your E-Mail *" />
-            </div>
-
-            <div className="contactSection-row">
-              <input type="text" placeholder="Subject *" />
-              <input type="text" placeholder="Phone *" />
-            </div>
-
-            <textarea placeholder="Message"></textarea>
-
-            <button type="submit">
-              SEND NOW ↗
-            </button>
-
-          </form>
-        </div>
-
-      </div>
-    </section>
-  );
-};
-
-export default Contact;
+export default Contact

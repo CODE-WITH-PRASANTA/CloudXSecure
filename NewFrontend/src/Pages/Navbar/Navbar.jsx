@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/cloud-Logo.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [navbarMenuOpen, setNavbarMenuOpen] = useState(false);
   const [navbarDevelopmentOpen, setNavbarDevelopmentOpen] = useState(false);
 
-  // ✅ SIMPLE MENU STRUCTURE (title + path)
   const navbarLinks = [
-    { title: "Home", path: "/home" },
+    { title: "Home", path: "/" },
     { title: "About Us", path: "/about-us" },
     { title: "Services", path: "/services" },
     { title: "FAQ", path: "/faq" },
@@ -22,33 +25,36 @@ const Navbar = () => {
     { title: "App Development", path: "/app-development" },
   ];
 
-  // ✅ NAVIGATION FUNCTION
   const handleNavbarNavigate = (item) => {
-    console.log("Title:", item.title);
-    console.log("Path:", item.path);
-
     setNavbarMenuOpen(false);
     setNavbarDevelopmentOpen(false);
+    navigate(item.path);
   };
+
+  const isActiveLink = (path) => location.pathname === path;
+
+  const isDevelopmentActive = developmentLinks.some(
+    (item) => item.path === location.pathname
+  );
 
   return (
     <header className="navbar">
       <div className="navbar__container">
-        {/* LOGO */}
         <div
           className="navbar__logoWrapper"
-          onClick={() => handleNavbarNavigate({ title: "Home", path: "home" })}
+          onClick={() => handleNavbarNavigate({ title: "Home", path: "/" })}
         >
           <img src={logo} alt="Logo" className="navbar__logo" />
         </div>
 
-        {/* DESKTOP MENU */}
         <nav className="navbar__desktop">
           <ul className="navbar__desktopList">
             {navbarLinks.slice(0, 3).map((item) => (
               <li key={item.path} className="navbar__desktopItem">
                 <button
-                  className="navbar__desktopLink"
+                  className={`navbar__desktopLink ${
+                    isActiveLink(item.path) ? "navbar__desktopLink--active" : ""
+                  }`}
                   onClick={() => handleNavbarNavigate(item)}
                 >
                   {item.title}
@@ -56,10 +62,11 @@ const Navbar = () => {
               </li>
             ))}
 
-            {/* DEVELOPMENT DROPDOWN */}
             <li className="navbar__desktopItem navbar__desktopItem--dropdown">
               <button
-                className="navbar__desktopLink navbar__desktopDropdownToggle"
+                className={`navbar__desktopLink navbar__desktopDropdownToggle ${
+                  isDevelopmentActive ? "navbar__desktopLink--active" : ""
+                }`}
                 onClick={() =>
                   setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
                 }
@@ -84,7 +91,11 @@ const Navbar = () => {
                 {developmentLinks.map((item) => (
                   <button
                     key={item.path}
-                    className="navbar__desktopDropdownLink"
+                    className={`navbar__desktopDropdownLink ${
+                      isActiveLink(item.path)
+                        ? "navbar__desktopDropdownLink--active"
+                        : ""
+                    }`}
                     onClick={() => handleNavbarNavigate(item)}
                   >
                     {item.title}
@@ -96,7 +107,9 @@ const Navbar = () => {
             {navbarLinks.slice(3).map((item) => (
               <li key={item.path} className="navbar__desktopItem">
                 <button
-                  className="navbar__desktopLink"
+                  className={`navbar__desktopLink ${
+                    isActiveLink(item.path) ? "navbar__desktopLink--active" : ""
+                  }`}
                   onClick={() => handleNavbarNavigate(item)}
                 >
                   {item.title}
@@ -106,14 +119,13 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* RIGHT BUTTON */}
         <div className="navbar__actions">
           <button
             className="navbar__contactButton"
             onClick={() =>
               handleNavbarNavigate({
                 title: "Get In Touch",
-                path: "contact",
+                path: "/contact",
               })
             }
           >
@@ -129,7 +141,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* OVERLAY */}
       <div
         className={`navbar__overlay ${
           navbarMenuOpen ? "navbar__overlay--show" : ""
@@ -137,7 +148,6 @@ const Navbar = () => {
         onClick={() => setNavbarMenuOpen(false)}
       ></div>
 
-      {/* MOBILE MENU */}
       <div
         className={`navbar__mobile ${
           navbarMenuOpen ? "navbar__mobile--show" : ""
@@ -158,17 +168,20 @@ const Navbar = () => {
           {navbarLinks.slice(0, 3).map((item) => (
             <button
               key={item.path}
-              className="navbar__mobileLink"
+              className={`navbar__mobileLink ${
+                isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
+              }`}
               onClick={() => handleNavbarNavigate(item)}
             >
               {item.title}
             </button>
           ))}
 
-          {/* MOBILE DROPDOWN */}
           <div className="navbar__mobileDropdown">
             <button
-              className="navbar__mobileLink navbar__mobileDropdownToggle"
+              className={`navbar__mobileLink navbar__mobileDropdownToggle ${
+                isDevelopmentActive ? "navbar__mobileLink--active" : ""
+              }`}
               onClick={() =>
                 setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
               }
@@ -191,7 +204,11 @@ const Navbar = () => {
               {developmentLinks.map((item) => (
                 <button
                   key={item.path}
-                  className="navbar__mobileDropdownLink"
+                  className={`navbar__mobileDropdownLink ${
+                    isActiveLink(item.path)
+                      ? "navbar__mobileDropdownLink--active"
+                      : ""
+                  }`}
                   onClick={() => handleNavbarNavigate(item)}
                 >
                   {item.title}
@@ -203,7 +220,9 @@ const Navbar = () => {
           {navbarLinks.slice(3).map((item) => (
             <button
               key={item.path}
-              className="navbar__mobileLink"
+              className={`navbar__mobileLink ${
+                isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
+              }`}
               onClick={() => handleNavbarNavigate(item)}
             >
               {item.title}
@@ -215,7 +234,7 @@ const Navbar = () => {
             onClick={() =>
               handleNavbarNavigate({
                 title: "Get In Touch",
-                path: "contact",
+                path: "/contact",
               })
             }
           >
