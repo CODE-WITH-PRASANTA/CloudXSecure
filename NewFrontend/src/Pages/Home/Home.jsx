@@ -7,17 +7,26 @@ import FaqSection from '../../Component/FaqSection/FaqSection'
 import Testimonials from '../../Component/Testimonials/Testimonials'
 import ContactSection from '../../Component/ContactSection/ContactSection'
 
+import HeroSection from '../../Component/HeroSection/HeroSection'
+import HeroBusiness from '../../Component/HeroBusiness/HeroBusiness'
+import LatestBlog from '../../Component/LatestBlog/LatestBlog'
 
 const Home = () => {
   return (
     <div>
-      <Services/>
+       <HeroSection />
+       <HeroBusiness />
+        <Services/>
       <BestITSolution/>
       <HowItsWork/>
       <PricingPlans/>
       <FaqSection/>
       <Testimonials/>
       <ContactSection/>
+       <LatestBlog />
+     
+      
+     
     </div>
   )
 }
