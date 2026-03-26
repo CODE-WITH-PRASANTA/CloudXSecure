@@ -7,12 +7,10 @@ import Footer from "./Pages/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 
-
-
-
 function App() {
   return (
     <BrowserRouter>
+
       <Topbar />
       <Navbar />
 
@@ -22,6 +20,7 @@ function App() {
       </Routes>
 
       <Footer />
+
     </BrowserRouter>
   );
 }
