@@ -1,0 +1,174 @@
+/* ===== MAIN SECTION ===== */
+.services {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f7f7f7;
+  font-family: "Inter", sans-serif;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ===== TAG ===== */
+.tag {
+  font-size: 12px;
+  color: #ff4a17;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* ===== HEADING ===== */
+.services-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 50px;
+}
+
+.services-title span {
+  color: #ff4a17;
+}
+
+/* ===== GRID ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.service-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  min-height: 270px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== ICON ===== */
+.service-card .icon {
+  margin-bottom: 15px;
+}
+
+.service-card .icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+/* ===== TITLE ===== */
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+/* ===== DESC ===== */
+.service-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ===== BUTTON ===== */
+.read-more {
+  margin-top: 20px;
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* PLUS ICON */
+.read-more .plus {
+  width: 28px;
+  height: 28px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+/* ===== HOVER EFFECT ===== */
+.service-card:hover {
+  background: #ff4a17;
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover .read-more {
+  color: #fff;
+}
+
+.service-card:hover .plus {
+  background: #fff;
+  color: #ff4a17;
+}
+
+/* ICON COLOR CHANGE */
+.service-card:hover .icon img {
+  filter: brightness(0) invert(1);
+}
+
+/* ===== ACTIVE STATE ===== */
+.service-card.active {
+  background: #ff4a17;
+  color: #fff;
+}
+
+.service-card.active h3,
+.service-card.active p,
+.service-card.active .read-more {
+  color: #fff;
+}
+
+.service-card.active .plus {
+  background: #fff;
+  color: #ff4a17;
+}
+
+.service-card.active .icon img {
+  filter: brightness(0) invert(1);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-title {
+    font-size: 24px;
+  }
+}
