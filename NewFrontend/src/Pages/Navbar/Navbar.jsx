@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -10,6 +10,19 @@ const Navbar = () => {
 
   const [navbarMenuOpen, setNavbarMenuOpen] = useState(false);
   const [navbarDevelopmentOpen, setNavbarDevelopmentOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navbarLinks = [
     { title: "Home", path: "/" },
@@ -38,11 +51,11 @@ const Navbar = () => {
   );
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__container">
         <div
           className="navbar__logoWrapper"
-          onClick={() => handleNavbarNavigate({ title: "Home", path: "/" })}
+          onClick={() => handleNavbarNavigate({ path: "/" })}
         >
           <img src={logo} alt="Logo" className="navbar__logo" />
         </div>
@@ -70,6 +83,7 @@ const Navbar = () => {
                 onClick={() =>
                   setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
                 }
+                type="button"
               >
                 Development
                 <FiChevronDown
@@ -97,6 +111,7 @@ const Navbar = () => {
                         : ""
                     }`}
                     onClick={() => handleNavbarNavigate(item)}
+                    type="button"
                   >
                     {item.title}
                   </button>
@@ -128,6 +143,7 @@ const Navbar = () => {
                 path: "/contact",
               })
             }
+            type="button"
           >
             Get In Touch
           </button>
@@ -135,6 +151,7 @@ const Navbar = () => {
           <button
             className="navbar__menuButton"
             onClick={() => setNavbarMenuOpen(true)}
+            type="button"
           >
             <FiMenu />
           </button>
@@ -159,6 +176,7 @@ const Navbar = () => {
           <button
             className="navbar__closeButton"
             onClick={() => setNavbarMenuOpen(false)}
+            type="button"
           >
             <FiX />
           </button>
@@ -172,6 +190,7 @@ const Navbar = () => {
                 isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
               }`}
               onClick={() => handleNavbarNavigate(item)}
+              type="button"
             >
               {item.title}
             </button>
@@ -185,6 +204,7 @@ const Navbar = () => {
               onClick={() =>
                 setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
               }
+              type="button"
             >
               <span>Development</span>
               <FiChevronDown
@@ -210,6 +230,7 @@ const Navbar = () => {
                       : ""
                   }`}
                   onClick={() => handleNavbarNavigate(item)}
+                  type="button"
                 >
                   {item.title}
                 </button>
@@ -224,6 +245,7 @@ const Navbar = () => {
                 isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
               }`}
               onClick={() => handleNavbarNavigate(item)}
+              type="button"
             >
               {item.title}
             </button>
@@ -237,6 +259,7 @@ const Navbar = () => {
                 path: "/contact",
               })
             }
+            type="button"
           >
             Get In Touch
           </button>

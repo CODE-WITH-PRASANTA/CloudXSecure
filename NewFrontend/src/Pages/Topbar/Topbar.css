@@ -3,6 +3,11 @@
   background: #020a33;
   color: #ffffff;
   font-family: Arial, sans-serif;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
 }
 
 .topbar__container {

@@ -1,0 +1,296 @@
+/* ================= ROOT ================= */
+.bestit {
+  padding: 40px 6%;
+  background: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ================= CONTAINER ================= */
+.bestit__container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+}
+
+/* ================= LEFT CONTENT ================= */
+.bestit__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔶 BADGE (UPDATED) */
+.bestit__badge {
+  display: inline-block;
+  background: #fff2eb;
+  color: #ff5a0f;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.bestit__title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0c1239;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.bestit__desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+/* ================= PROGRESS ================= */
+
+/* 🔶 BOX UPDATED */
+.bestit__progress-box {
+  background: #fff4ee;
+  padding: 26px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+
+.bestit__progress {
+  margin-bottom: 18px;
+}
+
+.bestit__progress:last-child {
+  margin-bottom: 0;
+}
+
+.bestit__progress-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c1239;
+  margin-bottom: 6px;
+}
+
+/* 🔶 BAR TRACK UPDATED */
+.bestit__progress-bar {
+  height: 8px;
+  background: #ffd9c9;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* 🔶 BAR FILL UPDATED */
+.bestit__progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff5a0f, #ff8a3d);
+  border-radius: 20px;
+}
+
+/* ================= BUTTON ================= */
+
+/* 🔶 BUTTON UPDATED */
+.bestit__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #ff5a0f;
+  color: #ffffff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.bestit__btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: #ff6a1f;
+  box-shadow: 0 12px 30px rgba(255, 90, 15, 0.35);
+}
+
+/* ================= RIGHT IMAGES ================= */
+.bestit__images {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Decorative shapes */
+.bestit__bg-shape {
+  position: absolute;
+  top: -60px;
+  right: 20px;
+  opacity: 0.4;
+}
+
+.bestit__round-shape {
+  position: absolute;
+  top: 40px;
+  left: -60px;
+  width: 140px;
+  z-index: 1;
+}
+
+/* Image cards */
+.bestit__img {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.bestit__img img {
+  width: 100%;
+  display: block;
+}
+
+/* Main image */
+.img-one {
+  width: 380px;
+  margin-left: auto;
+  z-index: 2;
+}
+
+/* Floating image */
+.img-two {
+  width: 320px;
+  position: absolute;
+  bottom: -70px;
+  left: 40px;
+  z-index: 4;
+}
+
+/* ================= INITIAL HIDDEN ================= */
+.bestit__content,
+.bestit__images,
+.bestit__btn {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progressGrow {
+  to {
+    width: var(--progress);
+  }
+}
+
+/* ================= VISIBLE STATE ================= */
+.bestit--visible .bestit__content {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.bestit--visible .bestit__images {
+  animation: fadeUp 1s ease forwards;
+}
+
+.bestit--visible .img-one {
+  transform: scale(0.95);
+  animation: fadeScale 1s ease forwards;
+}
+
+.bestit--visible .img-two {
+  transform: scale(0.9);
+  animation: fadeScale 1.2s ease forwards;
+}
+
+.bestit--visible .bestit__progress-bar span {
+  animation: progressGrow 1.3s ease forwards;
+}
+
+.bestit--visible .bestit__btn {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 991px) {
+  .bestit__container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .bestit__images {
+    justify-content: center;
+  }
+
+  .img-one {
+    margin: 0 auto;
+  }
+
+  .img-two {
+    left: 20px;
+  }
+
+  .bestit__desc {
+    margin: 0 auto 30px;
+  }
+
+  .bestit__bg-shape {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .bestit {
+    padding: 30px 4%;
+  }
+
+  .bestit__title {
+    font-size: 24px;
+  }
+
+  .bestit__desc {
+    font-size: 14px;
+  }
+
+  .img-one {
+    width: 280px;
+  }
+
+  .img-two {
+    width: 220px;
+    bottom: -40px;
+  }
+
+  .bestit__progress-box {
+    padding: 18px;
+  }
+
+  .bestit__btn {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+}
