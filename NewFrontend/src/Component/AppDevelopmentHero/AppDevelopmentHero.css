@@ -1,0 +1,508 @@
+/* ===============================
+   HERO BASE
+================================ */
+.app-development-hero {
+  position: relative;
+  padding: 90px 0 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ===============================
+   STACKED STEPS BACKGROUND
+================================ */
+.app-development-bg-steps {
+  position: absolute;
+  inset: 0;
+  background-image: url("../../assets/stacked-steps-haikei.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+  animation: stepsFloat 14s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ===============================
+   GRADIENT OVERLAY
+================================ */
+.app-development-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 247, 240, 0.7)
+  );
+  z-index: 1;
+}
+
+/* ===============================
+   DECORATIVE SHAPES
+================================ */
+.app-development-bg-shape {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.app-development-bg-shape.shape-1 {
+  top: -20px;
+  right: -20px;
+  width: 260px;
+  height: 260px;
+  background-image: url("../../assets/banner-one-img-shape-5.png");
+  animation: bgFloat 8s ease-in-out infinite;
+}
+
+.app-development-bg-shape.shape-2 {
+  bottom: -40px;
+  left: -30px;
+  width: 220px;
+  height: 220px;
+  background-image: url("../../assets/banner-one-img-shape-5.png");
+  opacity: 0.6;
+  animation: bgRotate 16s linear infinite;
+}
+
+/* ===============================
+   CONTENT CONTAINER
+================================ */
+.app-development-hero-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  position: relative;
+  z-index: 4;
+}
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+.app-development-hero-content {
+  max-width: 620px;
+  flex: 1 1 560px;
+}
+
+.app-development-badge {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ff7a00;
+  margin-bottom: 18px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.app-development-title {
+  font-size: 56px;
+  line-height: 1.15;
+  margin-bottom: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #111;
+}
+
+.app-development-title span {
+  color: #ff7a00;
+}
+
+.app-development-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 36px;
+  font-weight: 500;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.app-development-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.app-development-btn {
+  padding: 16px 34px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.app-development-btn.primary {
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(255, 122, 0, 0.22);
+}
+
+.app-development-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(255, 122, 0, 0.4);
+}
+
+.app-development-btn.secondary {
+  background: transparent;
+  color: #ff7a00;
+  border: 2px solid #ff7a00;
+}
+
+.app-development-btn.secondary:hover {
+  background: #ff7a00;
+  color: #fff;
+}
+
+/* ===============================
+   RIGHT IMAGE
+================================ */
+.app-development-hero-image {
+  position: relative;
+  flex-shrink: 0;
+  flex: 1 1 480px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-development-hero-image img {
+  width: 560px;
+  max-width: 100%;
+  height: auto;
+  animation: fadeSlide 1.2s ease forwards;
+}
+
+.app-development-play-btn {
+  position: absolute;
+  top: 42%;
+  right: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ff7a00;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  animation: pulseRing 2s infinite;
+  display: grid;
+  place-items: center;
+}
+
+/* ===============================
+   FLOATING DOTS
+================================ */
+.app-development-shape {
+  position: absolute;
+  z-index: 3;
+  animation: floatDots 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.app-development-shape.circle {
+  width: 28px;
+  height: 28px;
+  background: #ff7a00;
+  border-radius: 50%;
+  top: 25%;
+  left: 12%;
+}
+
+.app-development-shape.circle.small {
+  width: 20px;
+  height: 20px;
+  top: 65%;
+  left: 42%;
+  animation-duration: 4s;
+}
+
+.app-development-shape.square {
+  width: 14px;
+  height: 14px;
+  background: #ff7a00;
+  top: 35%;
+  right: 22%;
+  animation-duration: 5s;
+}
+
+/* ===============================
+   KEYFRAMES
+================================ */
+@keyframes stepsFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bgFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bgRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatDots {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 122, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE — LARGE TABLETS
+================================ */
+@media (max-width: 1024px) {
+  .app-development-hero {
+    padding: 120px 0 80px;
+  }
+
+  .app-development-hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .app-development-hero-content {
+    max-width: 720px;
+    flex: unset;
+  }
+
+  .app-development-hero-image {
+    flex: unset;
+  }
+
+  .app-development-hero-image img {
+    width: 420px;
+  }
+
+  .app-development-buttons {
+    justify-content: center;
+  }
+
+  .app-development-play-btn {
+    right: 20px;
+  }
+
+  .app-development-shape.circle {
+    left: 8%;
+  }
+
+  .app-development-shape.square {
+    right: 10%;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — TABLETS
+================================ */
+@media (max-width: 768px) {
+  .app-development-hero {
+    padding: 100px 0 70px;
+  }
+
+  .app-development-hero-container {
+    padding: 0 18px;
+    gap: 40px;
+  }
+
+  .app-development-title {
+    font-size: 44px;
+  }
+
+  .app-development-description {
+    font-size: 16px;
+  }
+
+  .app-development-hero-image img {
+    width: 360px;
+  }
+
+  .app-development-bg-shape {
+    opacity: 0.4;
+  }
+
+  .app-development-play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    top: 40%;
+    right: 8px;
+  }
+
+  .app-development-shape.circle {
+    width: 22px;
+    height: 22px;
+  }
+
+  .app-development-shape.circle.small {
+    width: 16px;
+    height: 16px;
+  }
+
+  .app-development-shape.square {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE
+================================ */
+@media (max-width: 576px) {
+  .app-development-hero {
+    padding: 90px 0 60px;
+  }
+
+  .app-development-hero-container {
+    padding: 0 14px;
+    gap: 30px;
+  }
+
+  .app-development-hero-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .app-development-badge {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .app-development-title {
+    font-size: 36px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .app-development-description {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .app-development-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .app-development-btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .app-development-hero-image img {
+    display: none;
+  }
+
+  .app-development-play-btn {
+    display: none;
+  }
+
+  .app-development-bg-shape {
+    width: 120px;
+    height: 120px;
+  }
+
+  .app-development-bg-shape.shape-1 {
+    top: 0;
+    right: -10px;
+  }
+
+  .app-development-bg-shape.shape-2 {
+    bottom: -10px;
+    left: -10px;
+  }
+
+  .app-development-shape.circle {
+    top: 18%;
+    left: 6%;
+  }
+
+  .app-development-shape.circle.small {
+    top: 72%;
+    left: 82%;
+  }
+
+  .app-development-shape.square {
+    top: 28%;
+    right: 6%;
+  }
+}
+
+/* ===============================
+   REDUCED MOTION
+================================ */
+@media (prefers-reduced-motion: reduce) {
+  .app-development-bg-steps,
+  .app-development-bg-shape,
+  .app-development-shape,
+  .app-development-hero-image img,
+  .app-development-play-btn {
+    animation: none;
+  }
+
+  .app-development-btn {
+    transition: none;
+  }
+}

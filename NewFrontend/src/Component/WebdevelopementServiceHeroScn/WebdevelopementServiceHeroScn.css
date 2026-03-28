@@ -1,0 +1,248 @@
+/* =========================
+   HERO BASE
+========================= */
+.wd-hero {
+  position: relative;
+  padding: clamp(60px, 8vw, 120px) 16px;
+  background: linear-gradient(135deg, #fff7f0, #ffeede);
+  overflow: hidden;
+}
+
+/* soft white glass layer */
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.wd-container {
+  max-width: 1240px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: clamp(30px, 5vw, 70px);
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   LEFT IMAGE
+========================= */
+.wd-left {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+.wd-right {
+  max-width: 560px;
+}
+
+.tag {
+  display: inline-block;
+  color: #ff7a00; /* changed */
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.wd-right h1 {
+  font-size: clamp(26px, 4vw, 48px);
+  line-height: 1.25;
+  margin: 16px 0;
+  color: #0b0e1b;
+}
+
+.wd-right h1 span {
+  color: #ff7a00; /* changed */
+}
+
+.wd-right p {
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 26px;
+}
+
+/* =========================
+   TRUSTPILOT
+========================= */
+.trustpilot {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.trust-content {
+  font-size: 14px;
+}
+
+.trust-content span {
+  font-weight: 600;
+  color: #0b0e1b;
+}
+
+.trust-content small {
+  color: #6b7280;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-wrap {
+  margin-top: 20px;
+}
+
+.hero-btn {
+  padding: 14px 34px;
+  background: #ff7a00; /* changed */
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 14px 30px rgba(255, 122, 0, 0.35); /* changed */
+}
+
+.hero-btn:hover {
+  background: #e66a00; /* changed */
+  transform: translateY(-3px);
+}
+
+/* =========================
+   SHAPES
+========================= */
+.shape-top {
+  position: absolute;
+  top: 80px;
+  right: 120px;
+  width: 240px;
+  z-index: 0;
+}
+
+.shape-bottom {
+  position: absolute;
+  bottom: -120px;
+  right: -100px;
+  width: 420px;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+.rotate {
+  animation: rotate 22s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal {
+  opacity: 0;
+  transition: all 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.from-left { transform: translateX(-60px); }
+.from-right { transform: translateX(60px); }
+.from-bottom { transform: translateY(60px); }
+
+/* =========================
+   TABLET (≤ 992px)
+========================= */
+@media (max-width: 992px) {
+  .wd-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .wd-right {
+    max-width: 100%;
+  }
+
+  .trustpilot {
+    justify-content: center;
+  }
+
+  .shape-top,
+  .shape-bottom {
+    opacity: 0.3;
+  }
+}
+
+/* =========================
+   MOBILE (≤ 576px)
+========================= */
+@media (max-width: 576px) {
+  .wd-hero {
+    padding: 60px 14px;
+  }
+
+  .hero-img {
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .trustpilot {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .shape-top,
+  .shape-bottom {
+    display: none;
+  }
+}

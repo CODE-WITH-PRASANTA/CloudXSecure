@@ -1,0 +1,174 @@
+/* =========================
+   SECTION
+========================= */
+.wp-section {
+  padding: 100px 20px;
+  background: #fff7f0; /* changed */
+}
+
+/* =========================
+   HEADING
+========================= */
+.wp-heading {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.wp-subtitle {
+  color: #ff7a00; /* changed */
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.wp-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.wp-title .highlight {
+  color: #ff7a00; /* changed */
+}
+
+/* Reveal animation */
+.wp-reveal {
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.wp-reveal.active {
+  animation: wpReveal 0.8s ease forwards;
+}
+
+@keyframes wpReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   GRID
+========================= */
+.wp-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   CARD
+========================= */
+.wp-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.wp-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+.wp-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.wp-card:hover .wp-overlay {
+  opacity: 1;
+}
+
+/* Text animation */
+.wp-overlay span,
+.wp-overlay h3,
+.wp-arrow {
+  color: #fff;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.wp-card:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wp-card:hover h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.wp-card:hover .wp-arrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.wp-overlay span {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.wp-overlay h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* =========================
+   ARROW
+========================= */
+.wp-arrow {
+  margin-top: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #ff7a00; /* changed */
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wp-arrow:hover {
+  background: #e66a00; /* added hover */
+  transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1200px) {
+  .wp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .wp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wp-title {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,329 @@
+/* =========================
+   ABOUT BASE
+========================= */
+.about {
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: #fffaf5;
+  overflow: hidden;
+  position: relative;
+}
+
+/* BACKGROUND SHAPE */
+.about::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  background: url("../../assets/about-three-bg-shape.webp") no-repeat center;
+  background-size: contain;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.about-container {
+  max-width: 1280px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 90px);
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal-left,
+.reveal-right,
+.reveal-left-delay {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.reveal-left-delay {
+  transform: translateX(-60px);
+  transition-delay: 0.35s;
+}
+
+.about.active .reveal-left,
+.about.active .reveal-right,
+.about.active .reveal-left-delay {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================
+   LEFT IMAGE
+========================= */
+.image-box {
+  position: relative;
+  max-width: 560px;
+  margin: auto;
+}
+
+.main-img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.overlay-img {
+  position: absolute;
+  bottom: -50px;
+  right: -30px;
+  width: 60%;
+  border-radius: 16px;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.experience-box {
+  position: absolute;
+  top: 24px;
+  right: -24px;
+  background: #ff7a00;
+  color: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(255, 122, 0, 0.28);
+}
+
+.experience-box h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 0;
+}
+
+/* CLIENT */
+.client-box {
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.client-images img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -12px;
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+.about-right {
+  max-width: 560px;
+}
+
+.about-tag {
+  color: #ff7a00;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.about-title {
+  font-size: clamp(26px, 4vw, 40px);
+  margin: 16px 0;
+  line-height: 1.25;
+  color: #1f2937;
+}
+
+.about-title span {
+  color: #ff7a00;
+}
+
+.about-desc {
+  color: #666;
+  margin-bottom: 26px;
+  line-height: 1.7;
+  font-size: clamp(14px, 1.2vw, 16px);
+}
+
+/* FEATURES */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.feature-grid div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #444;
+  font-size: 15px;
+}
+
+.founder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.founder img {
+  width: 44px;
+  border-radius: 50%;
+}
+
+/* POINTS */
+.points li {
+  list-style: none;
+  margin-bottom: 12px;
+  color: #444;
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+}
+
+/* ACTION */
+.action {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.discover-btn {
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 14px 30px rgba(255, 122, 0, 0.25);
+}
+
+.discover-btn:hover {
+  background: linear-gradient(135deg, #e66a00, #ff8c1a);
+  transform: translateY(-2px);
+}
+
+.call-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.call-box .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff4e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff7a00;
+}
+
+/* =========================
+   MOVING BANNER
+========================= */
+.moving-banner {
+  background: linear-gradient(90deg, #ff7a00, #ff9a2f);
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.banner-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+  animation: bannerMove 25s linear infinite;
+}
+
+.banner-track span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.banner-track .star {
+  font-size: 18px;
+}
+
+@keyframes bannerMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-right {
+    max-width: 100%;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-box {
+    justify-content: center;
+  }
+
+  .overlay-img,
+  .experience-box {
+    right: 0;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 576px) {
+  .overlay-img {
+    position: static;
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .experience-box {
+    position: static;
+    margin-top: 14px;
+  }
+
+  .action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .discover-btn {
+    width: 100%;
+  }
+
+  .banner-track span {
+    font-size: 14px;
+  }
+}

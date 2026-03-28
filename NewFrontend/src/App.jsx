@@ -10,6 +10,8 @@ import Contact from "./Pages/Contact/Contact";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Services from "./Pages/Services/Services";
 import FaqSection from "./Pages/FaqSection/FaqSection";
+import WebDevlopement from "./Pages/WebDevlopement/WebDevlopement";
+import AppDevlopement from "./Pages/AppDevlopement/AppDevlopement";
 
 
 
@@ -27,6 +29,8 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/faq" element={<FaqSection />} />
+        <Route path="/web-development" element={<WebDevlopement />} />
+        <Route path="/app-development" element={<AppDevlopement />} />
       </Routes>
 
       <Footer />

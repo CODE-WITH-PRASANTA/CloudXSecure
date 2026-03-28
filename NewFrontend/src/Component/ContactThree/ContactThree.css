@@ -1,0 +1,238 @@
+/* ================= SECTION ================= */
+.webdev-ct3-section {
+  position: relative;
+  padding: clamp(80px, 10vw, 130px) 16px;
+  background: linear-gradient(180deg, #fff7f0 0%, #ffffff 100%); /* changed */
+  overflow: hidden;
+}
+
+/* ================= BACKGROUND TEXT ================= */
+.webdev-ct3-bg-text {
+  position: absolute;
+  font-size: clamp(70px, 14vw, 150px);
+  font-weight: 900;
+  color: rgba(255, 122, 0, 0.06); /* changed */
+  white-space: nowrap;
+  animation: ctMove 25s linear infinite;
+  pointer-events: none;
+}
+
+.webdev-ct3-bg-text.top {
+  top: 70px;
+  left: -20%;
+}
+
+@keyframes ctMove {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= LAYOUT ================= */
+.webdev-ct3-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(40px, 6vw, 70px);
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= LEFT ================= */
+.webdev-ct3-tag {
+  color: #ff7a00; /* changed */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.webdev-ct3-title {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.webdev-ct3-highlight {
+  color: #ff7a00; /* changed */
+}
+
+.webdev-ct3-desc {
+  margin: 22px 0 34px;
+  color: #666;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* ================= INFO BOX ================= */
+.webdev-ct3-info-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.webdev-ct3-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: #ff7a00; /* changed */
+  color: #ffffff;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.webdev-ct3-info-box:hover {
+  background: #ff7a00; /* changed */
+  color: #ffffff;
+}
+
+.webdev-ct3-info-box:hover .webdev-ct3-icon {
+  background: #ffffff;
+  color: #ff7a00; /* changed */
+}
+
+/* ================= PERSON IMAGE ================= */
+.webdev-ct3-person-fixed {
+  margin-top: 40px;
+  width: 260px;
+  max-width: 100%;
+}
+
+/* ================= FORM ================= */
+.webdev-ct3-form-wrap {
+  position: relative;
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
+  padding: clamp(20px, 4vw, 34px);
+  border-radius: 24px;
+}
+
+.webdev-ct3-form {
+  background: #ffffff;
+  padding: clamp(26px, 4vw, 42px);
+  border-radius: 18px;
+}
+
+/* ================= FORM GRID ================= */
+.webdev-ct3-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.webdev-ct3-field {
+  margin-bottom: 18px;
+}
+
+.webdev-ct3-field label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ================= INPUT ================= */
+.webdev-ct3-input {
+  position: relative;
+}
+
+.webdev-ct3-input input {
+  width: 100%;
+  padding: 14px 42px 14px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.webdev-ct3-input svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff7a00; /* changed */
+}
+
+/* ================= TEXTAREA ================= */
+textarea {
+  width: 100%;
+  height: 130px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  resize: none;
+  font-size: 15px;
+}
+
+/* ================= BUTTON ================= */
+.webdev-ct3-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.webdev-ct3-btn:hover {
+  background: #ffffff;
+  color: #ff7a00; /* changed */
+}
+
+/* ================= REVEAL ================= */
+.ct-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.9s ease;
+}
+
+.ct-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .webdev-ct3-container {
+    grid-template-columns: 1fr;
+  }
+
+  .webdev-ct3-desc {
+    max-width: 100%;
+  }
+
+  .webdev-ct3-person-fixed {
+    margin: 40px auto 0;
+    display: block;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+  .webdev-ct3-row {
+    grid-template-columns: 1fr;
+  }
+
+  .webdev-ct3-bg-text {
+    font-size: 80px;
+  }
+
+  .webdev-ct3-title {
+    font-size: 28px;
+  }
+}
+
+/* ================= REDUCED MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+  .ct-reveal {
+    transition: none;
+  }
+}
