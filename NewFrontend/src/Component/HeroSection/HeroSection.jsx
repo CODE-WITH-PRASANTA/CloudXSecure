@@ -21,31 +21,31 @@ const HeroSection = () => {
       id: 1,
       icon: <FiShield />,
       title: "Data Security",
-      text: "Monotonectally solutek in fermentum quis",
+      text: "Monotonectally Cloud X Secure in fermentum quis",
     },
     {
       id: 2,
       icon: <FiMonitor />,
       title: "Digital Marketing",
-      text: "Monotonectally solutek in fermentum quis",
+      text: "Monotonectally Cloud X Secure in fermentum quis",
     },
     {
       id: 3,
       icon: <FiMessageSquare />,
       title: "IT Consultation",
-      text: "Monotonectally solutek in fermentum quis",
+      text: "Monotonectally Cloud X Secure in fermentum quis",
     },
     {
       id: 4,
       icon: <FiCloud />,
       title: "Cloud Services",
-      text: "Monotonectally solutek in fermentum quis",
+      text: "Monotonectally Cloud X Secure in fermentum quis",
     },
     {
       id: 5,
       icon: <FiSettings />,
       title: "Technology",
-      text: "Monotonectally solutek in fermentum quis",
+      text: "Monotonectally Cloud X Secure in fermentum quis",
     },
   ];
 
@@ -59,7 +59,7 @@ const HeroSection = () => {
           <div className="heroSection__left">
             <div className="heroSection__badge">
               <span className="heroSection__badgeLine"></span>
-              <span className="heroSection__badgeText">SOLUTEK IT SERVICES</span>
+              <span className="heroSection__badgeText">Cloud X Secure IT SERVICES</span>
             </div>
 
             <h1 className="heroSection__title">
