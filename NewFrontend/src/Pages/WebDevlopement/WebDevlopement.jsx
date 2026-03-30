@@ -11,10 +11,12 @@ import ContactThree from '../../Component/ContactThree/ContactThree'
 import BrandTrustBar from '../../Component/BrandTrustBar/BrandTrustBar'
 import TeamCarousel from '../../Component/TeamCarousel/TeamCarousel'
 import PricingSection from '../../Component/PricingSection/PricingSection'
+import WebdevelopmentBreadcrum from '../../Component/WebdevelopmentBreadcrum/WebdevelopmentBreadcrum'
 
 const WebDevlopement = () => {
   return (
     <div>
+      <WebdevelopmentBreadcrum/>
       <WebdevelopementServiceHeroScn />
       <AboutSection />
       <ServicesThree />
