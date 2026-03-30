@@ -5,10 +5,12 @@ import AppDevlopmentOurService from '../../Component/AppDevlopmentOurService/App
 import AppDevlopmentWhyChooseUs from '../../Component/AppDevlopmentWhyChooseUs/AppDevlopmentWhyChooseUs'
 import AppDevlopmentWorkProcess from '../../Component/AppDevlopmentWorkProcess/AppDevlopmentWorkProcess'
 import AppDevlopmentOurPortfolio from '../../Component/AppDevlopmentOurPortfolio/AppDevlopmentOurPortfolio'
+import AppdevlopmentBreadcrum from '../../Component/AppdevlopmentBreadcrum/AppdevlopmentBreadcrum'
 
 const AppDevlopement = () => {
   return (
     <div>
+      <AppdevlopmentBreadcrum/>
       <AppDevelopmentHero />
       <AppDevlopmentAbout />
       <AppDevlopmentOurService />
