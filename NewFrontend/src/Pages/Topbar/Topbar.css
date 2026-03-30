@@ -3,7 +3,6 @@
   background: #020a33;
   color: #ffffff;
   font-family: Arial, sans-serif;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -85,59 +84,9 @@
   color: #ffffff;
 }
 
+/* ================= HIDE TOPBAR ON TABLET + MOBILE ================= */
 @media (max-width: 991px) {
-  .topbar__container {
-    min-height: auto;
-    padding: 10px 16px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .topbar__left {
-    width: 100%;
-    gap: 10px 0;
-  }
-
-  .topbar__right {
-    width: 100%;
-    justify-content: flex-start;
-    margin-top: 4px;
-  }
-}
-
-@media (max-width: 767px) {
-  .topbar__container {
-    padding: 10px 12px;
-  }
-
-  .topbar__left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .topbar__infoItem {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  .topbar__divider {
+  .topbar {
     display: none;
-  }
-
-  .topbar__right {
-    gap: 8px;
-  }
-
-  .topbar__socialLink {
-    width: 26px;
-    height: 26px;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .topbar__infoText {
-    white-space: normal;
   }
 }

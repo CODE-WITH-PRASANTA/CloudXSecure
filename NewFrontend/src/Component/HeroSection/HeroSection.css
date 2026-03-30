@@ -195,7 +195,6 @@
 
 .heroSection__shape {
   position: absolute;
-  top: 45px;
   left: 50%;
   transform: translateX(-50%);
   width: 500px;
@@ -216,7 +215,7 @@
   bottom: -80px;
 }
 
-/* overlapping cards */
+/* cards section */
 .heroSection__cardsWrap {
   width: calc(100% - 44px);
   max-width: 1820px;
@@ -225,14 +224,43 @@
   z-index: 6;
 }
 
-.heroSection__cards {
+.heroSection__slider {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.heroSection__track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+  will-change: transform;
+}
+
+.heroSection__slide {
+  min-width: 100%;
+  width: 100%;
+}
+
+.heroSection__cards {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   gap: 28px;
   justify-content: center;
+}
+
+.heroSection__cards--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.heroSection__cards--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.heroSection__cards--1 {
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .heroSection__card {
@@ -303,6 +331,57 @@
   font-weight: 500;
   line-height: 1.75;
   transition: color 0.35s ease;
+}
+
+/* pagination */
+.heroSection__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.heroSection__paginationArrow {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #020a3b;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heroSection__paginationArrow:hover {
+  background: #ff5a14;
+  transform: translateY(-2px);
+}
+
+.heroSection__paginationDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.heroSection__paginationDot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(2, 10, 59, 0.22);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heroSection__paginationDot.active {
+  width: 34px;
+  border-radius: 999px;
+  background: #ff5a14;
 }
 
 @keyframes heroSectionRotate {
@@ -379,10 +458,6 @@
     width: calc(100% - 28px);
     margin-top: -50px;
   }
-
-  .heroSection__cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 /* tablet */
@@ -443,9 +518,8 @@
     margin-top: -40px;
   }
 
-  .heroSection__cards {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
+  .heroSection__card {
+    min-height: 240px;
   }
 }
 
@@ -540,17 +614,23 @@
     margin-top: -28px;
   }
 
-  .heroSection__cards {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
   .heroSection__card {
     min-height: 220px;
     padding: 34px 20px 24px;
   }
 
   .heroSection__cardTitle {
+    font-size: 24px;
+  }
+
+  .heroSection__pagination {
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .heroSection__paginationArrow {
+    width: 42px;
+    height: 42px;
     font-size: 24px;
   }
 }
@@ -583,5 +663,14 @@
 
   .heroSection__cardText {
     font-size: 15px;
+  }
+
+  .heroSection__paginationDot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .heroSection__paginationDot.active {
+    width: 28px;
   }
 }

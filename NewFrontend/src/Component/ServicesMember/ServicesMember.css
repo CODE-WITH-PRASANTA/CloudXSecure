@@ -213,6 +213,52 @@
   transform: translateY(0);
 }
 
+/* pagination */
+.servicesMember__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 42px;
+  flex-wrap: wrap;
+}
+
+.servicesMember__paginationNumbers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.servicesMember__paginationButton,
+.servicesMember__paginationArrow {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #06133d;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(10, 20, 55, 0.08);
+  transition: all 0.3s ease;
+}
+
+.servicesMember__paginationArrow {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.servicesMember__paginationButton:hover,
+.servicesMember__paginationArrow:hover,
+.servicesMember__paginationButton--active {
+  background: #ff5a0f;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 /* ================= LARGE LAPTOP ================= */
 @media (max-width: 1399px) {
   .servicesMember {
@@ -354,6 +400,22 @@
     bottom: 42px;
     gap: 16px;
   }
+
+  .servicesMember__pagination {
+    margin-top: 34px;
+    gap: 10px;
+  }
+
+  .servicesMember__paginationButton,
+  .servicesMember__paginationArrow {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .servicesMember__paginationArrow {
+    font-size: 20px;
+  }
 }
 
 /* ================= SMALL MOBILE ================= */
@@ -418,6 +480,17 @@
   .servicesMember__socialLink {
     font-size: 12px;
   }
+
+  .servicesMember__paginationButton,
+  .servicesMember__paginationArrow {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .servicesMember__paginationArrow {
+    font-size: 18px;
+  }
 }
 
 /* ================= EXTRA SMALL ================= */
@@ -473,5 +546,21 @@
 
   .servicesMember__card:hover .servicesMember__overlayOrange {
     height: 29%;
+  }
+
+  .servicesMember__pagination {
+    margin-top: 28px;
+    gap: 8px;
+  }
+
+  .servicesMember__paginationNumbers {
+    gap: 8px;
+  }
+
+  .servicesMember__paginationButton,
+  .servicesMember__paginationArrow {
+    width: 34px;
+    height: 34px;
+    font-size: 11px;
   }
 }
