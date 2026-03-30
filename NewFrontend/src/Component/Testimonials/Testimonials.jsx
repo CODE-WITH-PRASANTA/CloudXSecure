@@ -1,7 +1,7 @@
 import React from "react";
 import "./Testimonials.css";
 
-// avatar images (you can replace later)
+// avatar images
 import avatar1 from "../../assets/testi-1.webp";
 import avatar2 from "../../assets/testi-2.webp";
 import avatar3 from "../../assets/testi-3.webp";
@@ -13,20 +13,26 @@ const testimonialData = [
   {
     id: 1,
     name: "Alberta Infantino",
-    role: "DEVELOPER",
+    role: "Software Engineer",
     image: avatar1,
+    feedback:
+      "Working with CloudXsecure has been a great experience. Their team delivered a fast and secure web application that significantly improved our workflow and system performance.",
   },
   {
     id: 2,
     name: "Hosain Al-Amin",
-    role: "DESIGNER",
+    role: "UI/UX Designer",
     image: avatar2,
+    feedback:
+      "CloudXsecure understands both design and technology. They helped us build a clean, responsive platform with strong backend support and excellent user experience.",
   },
   {
     id: 3,
-    name: "M.Kamrul Islam",
-    role: "DEVELOPER",
+    name: "M. Kamrul Islam",
+    role: "Project Manager",
     image: avatar3,
+    feedback:
+      "We partnered with CloudXsecure for cloud infrastructure and DevOps setup. Their solutions are reliable, scalable, and backed by excellent support.",
   },
 ];
 
@@ -34,16 +40,23 @@ const Testimonials = () => {
   return (
     <section
       className="testimonials"
+      id="testimonials"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="testimonials-overlay">
         <div className="testimonials-container">
           
-          <p className="testimonials-subtitle">TESTIMONIALS</p>
+          {/* SUBTITLE */}
+          <p className="testimonials-subtitle">
+            CLOUDXSECURE TESTIMONIALS
+          </p>
 
+          {/* TITLE */}
           <h2 className="testimonials-title">
-            What Our Customer <span>Says</span>
+            Trusted by Businesses for Reliable <span>IT & Cloud Solutions</span>
           </h2>
+
+    
 
           <div className="testimonials-grid">
             {testimonialData.map((item) => (
@@ -52,9 +65,7 @@ const Testimonials = () => {
                 <div className="quote">❝</div>
 
                 <p className="testimonials-text">
-                  paradigms. Monotonectally extend open-source
-                  mvia competitive methods of empowerment dri
-                  revolutionize stand- business
+                  {item.feedback}
                 </p>
 
                 <div className="divider"></div>
@@ -67,7 +78,10 @@ const Testimonials = () => {
 
                 <div className="avatar-wrapper">
                   <div className="line"></div>
-                  <img src={item.image} alt="" />
+                  <img
+                    src={item.image}
+                    alt={`${item.name} testimonial for CloudXsecure IT services`}
+                  />
                 </div>
 
               </div>

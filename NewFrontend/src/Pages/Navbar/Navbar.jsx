@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
+import { FaPhoneAlt } from "react-icons/fa"; // ✅ CALL ICON
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/cloud-Logo.png";
 
@@ -16,12 +17,8 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navbarLinks = [
@@ -53,20 +50,25 @@ const Navbar = () => {
   return (
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__container">
+
+        {/* LOGO */}
         <div
           className="navbar__logoWrapper"
           onClick={() => handleNavbarNavigate({ path: "/" })}
         >
-          <img src={logo} alt="Logo" className="navbar__logo" />
+          <img src={logo} alt="CloudXsecure Logo" className="navbar__logo" />
         </div>
 
+        {/* DESKTOP MENU */}
         <nav className="navbar__desktop">
           <ul className="navbar__desktopList">
             {navbarLinks.slice(0, 3).map((item) => (
-              <li key={item.path} className="navbar__desktopItem">
+              <li key={item.path}>
                 <button
                   className={`navbar__desktopLink ${
-                    isActiveLink(item.path) ? "navbar__desktopLink--active" : ""
+                    isActiveLink(item.path)
+                      ? "navbar__desktopLink--active"
+                      : ""
                   }`}
                   onClick={() => handleNavbarNavigate(item)}
                 >
@@ -75,55 +77,40 @@ const Navbar = () => {
               </li>
             ))}
 
-            <li className="navbar__desktopItem navbar__desktopItem--dropdown">
+            {/* DROPDOWN */}
+            <li className="navbar__desktopItem--dropdown">
               <button
-                className={`navbar__desktopLink navbar__desktopDropdownToggle ${
+                className={`navbar__desktopLink ${
                   isDevelopmentActive ? "navbar__desktopLink--active" : ""
                 }`}
                 onClick={() =>
                   setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
                 }
-                type="button"
               >
-                Development
-                <FiChevronDown
-                  className={`navbar__desktopChevron ${
-                    navbarDevelopmentOpen
-                      ? "navbar__desktopChevron--rotate"
-                      : ""
-                  }`}
-                />
+                Development <FiChevronDown />
               </button>
 
-              <div
-                className={`navbar__desktopDropdown ${
-                  navbarDevelopmentOpen
-                    ? "navbar__desktopDropdown--show"
-                    : ""
-                }`}
-              >
-                {developmentLinks.map((item) => (
-                  <button
-                    key={item.path}
-                    className={`navbar__desktopDropdownLink ${
-                      isActiveLink(item.path)
-                        ? "navbar__desktopDropdownLink--active"
-                        : ""
-                    }`}
-                    onClick={() => handleNavbarNavigate(item)}
-                    type="button"
-                  >
-                    {item.title}
-                  </button>
-                ))}
-              </div>
+              {navbarDevelopmentOpen && (
+                <div className="navbar__desktopDropdown">
+                  {developmentLinks.map((item) => (
+                    <button
+                      key={item.path}
+                      onClick={() => handleNavbarNavigate(item)}
+                    >
+                      {item.title}
+                    </button>
+                  ))}
+                </div>
+              )}
             </li>
 
             {navbarLinks.slice(3).map((item) => (
-              <li key={item.path} className="navbar__desktopItem">
+              <li key={item.path}>
                 <button
                   className={`navbar__desktopLink ${
-                    isActiveLink(item.path) ? "navbar__desktopLink--active" : ""
+                    isActiveLink(item.path)
+                      ? "navbar__desktopLink--active"
+                      : ""
                   }`}
                   onClick={() => handleNavbarNavigate(item)}
                 >
@@ -134,135 +121,52 @@ const Navbar = () => {
           </ul>
         </nav>
 
+        {/* ACTION BUTTON */}
         <div className="navbar__actions">
-          <button
+
+          {/* ✅ CALL BUTTON */}
+          <a
+            href="tel:7666488777"
             className="navbar__contactButton"
-            onClick={() =>
-              handleNavbarNavigate({
-                title: "Get In Touch",
-                path: "/contact",
-              })
-            }
-            type="button"
           >
+            <FaPhoneAlt className="call-icon" />
             Get In Touch
-          </button>
+          </a>
 
           <button
             className="navbar__menuButton"
             onClick={() => setNavbarMenuOpen(true)}
-            type="button"
           >
             <FiMenu />
           </button>
         </div>
       </div>
 
-      <div
-        className={`navbar__overlay ${
-          navbarMenuOpen ? "navbar__overlay--show" : ""
-        }`}
-        onClick={() => setNavbarMenuOpen(false)}
-      ></div>
-
-      <div
-        className={`navbar__mobile ${
-          navbarMenuOpen ? "navbar__mobile--show" : ""
-        }`}
-      >
+      {/* MOBILE MENU */}
+      <div className={`navbar__mobile ${navbarMenuOpen ? "navbar__mobile--show" : ""}`}>
+        
         <div className="navbar__mobileHeader">
-          <img src={logo} alt="Logo" className="navbar__mobileLogo" />
-
-          <button
-            className="navbar__closeButton"
-            onClick={() => setNavbarMenuOpen(false)}
-            type="button"
-          >
+          <img src={logo} alt="Logo" />
+          <button onClick={() => setNavbarMenuOpen(false)}>
             <FiX />
           </button>
         </div>
 
         <div className="navbar__mobileBody">
-          {navbarLinks.slice(0, 3).map((item) => (
+          {navbarLinks.map((item) => (
             <button
               key={item.path}
-              className={`navbar__mobileLink ${
-                isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
-              }`}
               onClick={() => handleNavbarNavigate(item)}
-              type="button"
             >
               {item.title}
             </button>
           ))}
 
-          <div className="navbar__mobileDropdown">
-            <button
-              className={`navbar__mobileLink navbar__mobileDropdownToggle ${
-                isDevelopmentActive ? "navbar__mobileLink--active" : ""
-              }`}
-              onClick={() =>
-                setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
-              }
-              type="button"
-            >
-              <span>Development</span>
-              <FiChevronDown
-                className={`navbar__mobileChevron ${
-                  navbarDevelopmentOpen ? "navbar__mobileChevron--rotate" : ""
-                }`}
-              />
-            </button>
-
-            <div
-              className={`navbar__mobileDropdownMenu ${
-                navbarDevelopmentOpen
-                  ? "navbar__mobileDropdownMenu--show"
-                  : ""
-              }`}
-            >
-              {developmentLinks.map((item) => (
-                <button
-                  key={item.path}
-                  className={`navbar__mobileDropdownLink ${
-                    isActiveLink(item.path)
-                      ? "navbar__mobileDropdownLink--active"
-                      : ""
-                  }`}
-                  onClick={() => handleNavbarNavigate(item)}
-                  type="button"
-                >
-                  {item.title}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {navbarLinks.slice(3).map((item) => (
-            <button
-              key={item.path}
-              className={`navbar__mobileLink ${
-                isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
-              }`}
-              onClick={() => handleNavbarNavigate(item)}
-              type="button"
-            >
-              {item.title}
-            </button>
-          ))}
-
-          <button
-            className="navbar__mobileButton"
-            onClick={() =>
-              handleNavbarNavigate({
-                title: "Get In Touch",
-                path: "/contact",
-              })
-            }
-            type="button"
-          >
-            Get In Touch
-          </button>
+          {/* ✅ MOBILE CALL BUTTON */}
+          <a href="tel:7666488777" className="navbar__mobileButton">
+            <FaPhoneAlt className="call-icon" />
+            Call Now
+          </a>
         </div>
       </div>
     </header>

@@ -22,7 +22,7 @@ const Topbar = () => {
     {
       id: 2,
       icon: <FiMail />,
-      text: "example@gmail.com",
+      text: "mail-cloudxsecure@gmail.com",
     },
     {
       id: 3,
