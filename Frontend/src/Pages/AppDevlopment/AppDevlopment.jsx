@@ -12,7 +12,9 @@ const AppDevlopment = () => {
      <AppDevelopmentHero/>
      <AppDevlopmentAbout/>
      <AppDevlopmentOurService/>
+
      <AppDevlopmentWhyChooseUs/>
+     
      <AppDevlopmentWorkProcess/>
      <AppDevlopmentOurPortfolio/>
     </>

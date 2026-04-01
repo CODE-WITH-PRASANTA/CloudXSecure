@@ -13,14 +13,14 @@ const WebdevelopmentBreadcrum = () => {
         <div className="breadcrumb__overlay"></div>
 
         <div className="breadcrumb__content">
-          <h1 className="breadcrumb__title">WEBDEVLOPMENT</h1>
+          <h1 className="breadcrumb__title">WEB  DEVLOPMENT</h1>
 
           <div className="breadcrumb__path">
             <span className="breadcrumb__pathLink">HOME</span>
             <span className="breadcrumb__pathIcon">
               <FiChevronRight />
             </span>
-            <span className="breadcrumb__pathActive">WEBDEVLOMENT</span>
+            <span className="breadcrumb__pathActive">WEB  DEVLOMENT</span>
           </div>
         </div>
       </div>
