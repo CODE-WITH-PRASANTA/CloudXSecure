@@ -12,7 +12,7 @@ import {
   FiX,
   FiPhoneCall,
 } from "react-icons/fi";
-import logo from "../../assets/cloud.png";
+import logo from "../../Assets/Cloud X Secure.png";
 
 /* ================= MENU CONFIG ================= */
 
@@ -106,21 +106,19 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
 
       {/* SIDEBAR */}
       <aside
-        className={`fixed lg:static z-50 h-screen
-        bg-gradient-to-b from-[#0f172a] to-[#1e293b]
-        text-slate-200 shadow-2xl
-        transition-all duration-500 ease-in-out
-        ${isOpen ? "w-64" : "w-20"}
-        ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+        className={`
+          fixed lg:static z-50 h-screen
+          bg-[#2b3a4a] text-slate-200
+          transition-all duration-300
+          ${isOpen ? "w-80" : "w-18"}
+          ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
         {/* LOGO */}
         <div className="flex items-center gap-3 px-5 py-5 border-b border-white/10">
-          <img src={logo} className="w-15 h-15" alt="logo" />
+          <img src={logo} className="w-20 h-20" alt="logo" />
           {isOpen && (
-            <span className="text-lg font-semibold tracking-wide text-white">
-              ENDLESS
-            </span>
+            <span className="font-semibold tracking-wide">Cloud X Secure</span>
           )}
           <button
             className="ml-auto lg:hidden text-white"
@@ -139,10 +137,8 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
           />
           {isOpen && (
             <>
-              <p className="text-sm font-semibold text-white tracking-wide">
-                ELANA
-              </p>
-              <p className="text-xs text-slate-400">GENERAL MANAGER</p>
+              <p className="text-sm font-semibold">SHAHBAAZ SAYED</p>
+              <p className="text-xs text-slate-400">Admin</p>
             </>
           )}
         </div>
@@ -208,44 +204,131 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
       </aside>
 
       {/* STYLES */}
-      <style>{`
+   <style>{`
+
+      /* ================= SIDEBAR BACKGROUND ================= */
+      aside {
+        background: linear-gradient(160deg, #0f172a 0%, #1e293b 60%, #1e1b4b 100%);
+        box-shadow: 8px 0 40px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(20px);
+        overflow-y: auto;
+      }
+
+      /* Logo Text */
+      aside span {
+        font-size: 15px;
+        letter-spacing: 1.2px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      /* Profile Section */
+      aside img {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      aside img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+      }
+
+      /* ================= MAIN MENU ITEMS ================= */
+      .sidebar-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        color: #cbd5e1;
+      }
+
+      /* Hover Effect */
+      .sidebar-item:hover {
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        color: #fff;
+        transform: translateX(6px);
+        box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+      }
+
+      /* Active Link */
+      .sidebar-item.bg-white\\/10 {
+        background: linear-gradient(90deg, #3b82f6, #6366f1);
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+      }
+
+      /* Active Left Indicator */
+      .sidebar-item.bg-white\\/10::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 20%;
+        height: 60%;
+        width: 5px;
+        border-radius: 10px;
+        background: #22d3ee;
+      }
+
+      /* Bigger Icons */
+      .sidebar-item svg {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .sidebar-item:hover svg {
+        transform: scale(1.1);
+      }
+
+      /* ================= SUBMENU ================= */
+      .submenu {
+        display: block;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #94a3b8;
+        transition: all 0.3s ease;
+      }
+
+      .submenu:hover {
+        background: linear-gradient(90deg, #22c55e, #16a34a);
+        color: #fff;
+        transform: translateX(8px);
+        box-shadow: 0 6px 15px rgba(34, 197, 94, 0.4);
+      }
+
+      /* ================= MOBILE OPTIMIZATION ================= */
+      @media (max-width: 1024px) {
+        aside {
+          box-shadow: 0 0 40px rgba(0,0,0,0.6);
+        }
+
         .sidebar-item {
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          padding: 11px 14px;
-          border-radius: 12px;
-          transition: all 0.3s ease;
-          font-weight: 500;
+          font-size: 17px;
         }
+      }
 
-        .sidebar-item:hover {
-          background: rgba(255,255,255,0.06);
-          transform: translateX(4px);
-        }
+      /* ================= SCROLLBAR ================= */
+      aside::-webkit-scrollbar {
+        width: 6px;
+      }
 
-        .sidebar-item.active {
-          background: linear-gradient(90deg, #6366f1, #4f46e5);
-          color: white;
-          box-shadow: 0 6px 18px rgba(99,102,241,0.35);
-        }
+      aside::-webkit-scrollbar-thumb {
+        background: #475569;
+        border-radius: 10px;
+      }
 
-        .submenu {
-          display: block;
-          padding: 8px 12px;
-          margin-left: 38px;
-          border-radius: 8px;
-          color: #94a3b8;
-          font-size: 13px;
-          transition: all 0.3s ease;
-        }
+      aside::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
 
-        .submenu:hover {
-          background: rgba(255,255,255,0.08);
-          color: white;
-          transform: translateX(4px);
-        }
-      `}</style>
+`}</style>
     </>
   );
 };
