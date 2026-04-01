@@ -1,0 +1,222 @@
+/* ===============================
+   BASE
+================================ */
+.work-process {
+  padding: 10px 0 0;
+  background:
+    radial-gradient(circle at top, rgba(255,122,0,0.08), transparent 40%),
+    linear-gradient(180deg, #ffffff, #fff7f0);
+  overflow: hidden;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.work-process-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px 120px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.work-process-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.process-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff7a00;
+  letter-spacing: 1.8px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.work-process-header h2 {
+  font-size: 46px;
+  font-weight: 800;
+}
+
+.work-process-header span {
+  color: #ff7a00;
+}
+
+/* ===============================
+   PROCESS
+================================ */
+.process-wrapper {
+  overflow: visible;
+  padding-bottom: 80px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;
+  transition: transform 0.5s ease;
+}
+
+.process-card {
+  position: relative;
+  background: linear-gradient(180deg, #fff2e6, #ffe5cc);
+  padding: 46px 28px 72px;
+  border-radius: 26px;
+  text-align: center;
+  border: 1px solid rgba(255,122,0,0.2);
+  transition: all 0.45s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.process-card:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 35px 80px rgba(255,122,0,0.25);
+}
+
+/* ===============================
+   ICON
+================================ */
+.process-icon {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 26px;
+  background: linear-gradient(135deg, #ff7a00, #ff9a3c);
+  color: #fff;
+  border-radius: 55% 45% 60% 40%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  animation: floatIcon 4s ease-in-out infinite;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.process-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.process-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.75;
+}
+
+/* ===============================
+   NUMBER
+================================ */
+.process-number {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #ff7a00, #ff9a3c);
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  outline: 6px solid #fff;
+}
+
+/* ===============================
+   DOTS (MOBILE)
+================================ */
+.process-dots {
+  display: none;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ffd6b3;
+  border-radius: 50%;
+  margin: 0 7px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ff7a00;
+  transform: scale(1.3);
+}
+
+/* ===============================
+   INFINITE LINE
+================================ */
+.infinite-line {
+  width: 100%;
+  background: linear-gradient(135deg, #ff7a00, #ff9a3c);
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.infinite-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.infinite-track span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 26px;
+  white-space: nowrap;
+}
+
+.infinite-track .star {
+  font-size: 22px;
+  opacity: 0.9;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .process-grid {
+    grid-template-columns: repeat(4, 100%);
+    gap: 0;
+  }
+
+  .process-card {
+    min-width: 100%;
+    padding-bottom: 90px;
+  }
+
+  .process-dots {
+    display: flex;
+  }
+
+  .work-process-header h2 {
+    font-size: 32px;
+  }
+}

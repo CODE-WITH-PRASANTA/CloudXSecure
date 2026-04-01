@@ -18,10 +18,12 @@ const WebdevlopementService = () => {
       <WebdevelopementServiceHeroScn/>
       <WebDAboutSection/>
       <WebdevServices/>
+
       <WebdevcounterStrip/>
       <WebdevWhyChooseUs/>
       <WebdevFeature/>
       <WebdevProjects/>
+      
       <WebdevTestimonial/>
       <WebdevContact/>
       <WebdevBrandTrustBar/>

@@ -1,0 +1,304 @@
+/* ===============================
+   BASE
+================================ */
+.app-about {
+  position: relative;
+  padding: 100px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ===============================
+   BACKGROUND SHAPES
+================================ */
+.about-shape {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-shape.shape-1 {
+  top: 60px;
+  left: 40px;
+  width: 90px;
+  height: 90px;
+  background-image: url("../../assets/about-one-shape-1.png");
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.about-shape.shape-2 {
+  top: 100px;
+  right: 80px;
+  width: 140px;
+  height: 140px;
+  background-image: url("../../assets/about-one-shape-2.png");
+  animation: fadeScale 8s ease-in-out infinite;
+}
+
+.about-shape.shape-3 {
+  bottom: 80px;
+  left: 45%;
+  width: 180px;
+  height: 180px;
+  background-image: url("../../assets/banner-one-img-shape-5.png");
+  animation: rotateSlow 18s linear infinite;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.app-about-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+.app-about-content {
+  flex: 1;
+}
+
+.app-about-tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ff7a00; /* changed */
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.app-about-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.app-about-title span {
+  color: #ff7a00; /* changed */
+}
+
+.app-about-desc {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* ===============================
+   FEATURES
+================================ */
+.app-about-feature {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.app-about-feature .icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
+  color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+.app-about-feature h4 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.app-about-feature p {
+  font-size: 14.5px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.app-about-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.app-about-btn {
+  padding: 13px 30px;
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.app-about-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255, 122, 0, 0.35); /* changed */
+}
+
+.app-about-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-about-author img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.app-about-author span {
+  display: block;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ===============================
+   RIGHT IMAGES
+================================ */
+.app-about-images {
+  flex: 1;
+  position: relative;
+}
+
+.img-box.large img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.img-box.small {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+}
+
+.img-box.small img {
+  width: 180px;
+  border-radius: 16px;
+}
+
+/* ===============================
+   PLAY BUTTON
+================================ */
+.play-btn {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ff7a00; /* changed */
+  color: #fff;
+  border: none;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  animation: pulseRing 2s infinite;
+}
+
+/* ===============================
+   EXPERIENCE BOX
+================================ */
+.experience-box {
+  position: absolute;
+  top: 30px;
+  right: -30px;
+  background: #0f172a;
+  color: #fff;
+  padding: 22px 24px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* ===============================
+   CLIENT BOX
+================================ */
+.clients-box {
+  position: absolute;
+  bottom: -50px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
+  color: #fff;
+  padding: 20px 22px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.clients-box span {
+  background: #fff;
+  color: #ff7a00; /* changed */
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(255,122,0,0.6); }
+  70% { box-shadow: 0 0 0 18px rgba(255,122,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,122,0,0); }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .app-about {
+    padding: 80px 0;
+  }
+
+  .app-about-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .img-box.small,
+  .experience-box,
+  .clients-box,
+  .about-shape {
+    display: none;
+  }
+
+  .img-box.large img {
+    max-height: 360px;
+  }
+}
+
+@media (max-width: 576px) {
+  .app-about-title {
+    font-size: 32px;
+  }
+
+  .app-about-desc {
+    font-size: 15px;
+  }
+
+  .app-about-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .img-box.large img {
+    max-height: 300px;
+  }
+}

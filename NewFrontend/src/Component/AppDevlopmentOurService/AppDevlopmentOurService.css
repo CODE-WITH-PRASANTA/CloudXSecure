@@ -1,0 +1,235 @@
+/* ===============================
+   BASE
+================================ */
+.app-devlopment-our-service {
+  padding: 110px 0;
+  background: linear-gradient(180deg, #fff7f0 0%, #ffffff 70%); /* changed */
+  overflow-x: hidden;
+}
+
+.app-devlopment-our-service-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.app-devlopment-our-service-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.app-devlopment-our-service-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff7a00; /* changed */
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.app-devlopment-our-service-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.app-devlopment-our-service-header span {
+  color: #ff7a00; /* changed */
+}
+
+.app-devlopment-our-service-subtext {
+  max-width: 640px;
+  margin: 16px auto 0;
+  font-size: 15px;
+  color: #555;
+}
+
+/* ===============================
+   CAROUSEL
+================================ */
+.app-devlopment-our-service-carousel {
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.app-devlopment-our-service-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===============================
+   CARD
+================================ */
+.app-devlopment-our-service-card {
+  min-width: calc(25% - 24px);
+  margin: 0 12px;
+  padding: 30px 24px;
+  background: rgba(255, 240, 230, 0.5); /* changed */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 122, 0, 0.2); /* changed */
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.app-devlopment-our-service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 22px 55px rgba(255, 122, 0, 0.35); /* changed */
+}
+
+/* ===============================
+   ICON
+================================ */
+.app-devlopment-our-service-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
+  color: #fff;
+  border-radius: 40% 51% 40% 67%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  animation: floatIcon 4.5s ease-in-out infinite;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.app-devlopment-our-service-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.app-devlopment-our-service-desc {
+  font-size: 20px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.app-devlopment-our-service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.app-devlopment-our-service-list li {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.app-devlopment-our-service-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ff7a00; /* changed */
+  font-weight: 700;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.app-devlopment-our-service-btn {
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===============================
+   DOTS
+================================ */
+.app-devlopment-our-service-dots {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.app-devlopment-our-service-dot {
+  width: 9px;
+  height: 9px;
+  background: #ffe0cc; /* changed */
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.app-devlopment-our-service-dot.active {
+  background: #ff7a00; /* changed */
+  transform: scale(1.2);
+}
+
+/* ===============================
+   TABLET
+================================ */
+@media (max-width: 1024px) {
+  .app-devlopment-our-service-card {
+    min-width: calc(50% - 24px);
+  }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 576px) {
+  .app-devlopment-our-service-carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .app-devlopment-our-service-track {
+    transform: none !important;
+    transition: none;
+  }
+
+  .app-devlopment-our-service-card {
+    min-width: 100%;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  .app-devlopment-our-service-list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-devlopment-our-service-list li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    gap: 6px;
+  }
+
+  .app-devlopment-our-service-list li::before {
+    position: static;
+  }
+
+  .app-devlopment-our-service-dots {
+    display: none;
+  }
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}

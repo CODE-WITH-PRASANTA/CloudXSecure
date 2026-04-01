@@ -1,0 +1,284 @@
+/* =========================
+   COUNTER SECTION
+========================= */
+.counter2-section {
+  position: relative;
+  background: linear-gradient(135deg, #ff7a00, #e66a00);
+  padding: clamp(60px, 8vw, 100px) 16px;
+  overflow: hidden;
+}
+
+/* Background Wave */
+.counter2-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: repeat-x;
+  opacity: 0.18;
+  animation: waveFloat 6s ease-in-out infinite;
+}
+
+/* Subtle motion only */
+@keyframes waveFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.counter2-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  text-align: center;
+}
+
+/* =========================
+   COUNTER BOX
+========================= */
+.counter2-box {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  min-height: 210px;
+  justify-content: center;
+}
+
+/* =========================
+   ICON
+========================= */
+.counter2-icon {
+  width: clamp(70px, 8vw, 90px);
+  height: clamp(70px, 8vw, 90px);
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(6px);
+}
+
+.counter2-icon svg {
+  font-size: clamp(28px, 4vw, 36px);
+  color: #ffffff;
+}
+
+.counter2-box:hover .counter2-icon {
+  background: #ffffff;
+  transform: translateY(-6px);
+}
+
+.counter2-box:hover .counter2-icon svg {
+  color: #ff7a00;
+}
+
+/* =========================
+   NUMBER
+========================= */
+.counter2-number {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+/* =========================
+   LABEL
+========================= */
+.counter2-text {
+  margin: 0;
+  font-size: clamp(14px, 2vw, 16px);
+  opacity: 0.92;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+.counter2-pagination {
+  position: relative;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.counter2-paginationDots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter2-paginationDot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.counter2-paginationDot--active,
+.counter2-paginationDot:hover {
+  background: #ffffff;
+  transform: scale(1.12);
+}
+
+.counter2-paginationArrow {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+}
+
+.counter2-paginationArrow:hover {
+  background: #ffffff;
+  color: #ff7a00;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+  .counter2-section {
+    padding: 70px 18px;
+  }
+
+  .counter2-container {
+    max-width: 760px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .counter2-box {
+    min-height: 200px;
+  }
+
+  .counter2-pagination {
+    display: flex;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 576px) {
+  .counter2-section {
+    padding: 60px 14px;
+  }
+
+  .counter2-container {
+    max-width: 360px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .counter2-box {
+    min-height: 190px;
+    gap: 12px;
+  }
+
+  .counter2-icon {
+    width: 74px;
+    height: 74px;
+  }
+
+  .counter2-number {
+    font-size: 34px;
+  }
+
+  .counter2-text {
+    font-size: 14px;
+  }
+
+  .counter2-pagination {
+    margin-top: 28px;
+    gap: 10px;
+  }
+
+  .counter2-paginationDots {
+    gap: 8px;
+  }
+
+  .counter2-paginationArrow {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .counter2-paginationDot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL
+========================= */
+@media (max-width: 380px) {
+  .counter2-section {
+    padding: 54px 12px;
+  }
+
+  .counter2-container {
+    max-width: 100%;
+  }
+
+  .counter2-box {
+    min-height: 180px;
+  }
+
+  .counter2-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .counter2-number {
+    font-size: 30px;
+  }
+
+  .counter2-text {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .counter2-bg {
+    animation: none;
+  }
+
+  .counter2-box:hover .counter2-icon {
+    transform: none;
+  }
+}
