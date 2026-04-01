@@ -4,55 +4,64 @@ import { FiPlay } from "react-icons/fi";
 import { RiCustomerService2Line } from "react-icons/ri";
 
 import aboutMain from "../../assets/About-main.webp";
-import aboutSmall from "../../assets/About-main.webp"; // replace with your 2nd image if available
-// import leftShape from "../../assets/Bg-icon-1.webp";
+import aboutSmall from "../../assets/About-main.webp";
 import arrowShape from "../../assets/Bg-icon-2.webp";
-// import rightShape from "../../assets/us-shape.png";
 
 const AboutSolution = () => {
   return (
     <section className="aboutSolution">
-    
-
       <div className="aboutSolution__container">
         <div className="aboutSolution__content">
           <div className="aboutSolution__subTitle">
             <span className="aboutSolution__subTitleLine"></span>
-            <span className="aboutSolution__subTitleText">SOLUTEK COMPANY</span>
+            <span className="aboutSolution__subTitleText">
+              CLOUDXSECURE IT SOLUTIONS
+            </span>
           </div>
 
           <h2 className="aboutSolution__title">
-            We Can Clients With The
+            Delivering Reliable IT Services
             <br />
-            About <span>Solution.</span>
+            Built Around Your <span>Business Needs</span>
           </h2>
 
           <p className="aboutSolution__desc">
-            Monotonectally repurpose maintainable infrastruct whereas solutek in
-            fermentum quis tempo sapien maximus design.
+            At CloudXSecure, we focus on providing practical and secure IT
+            solutions that help businesses operate smoothly in a digital
+            environment. Our team works closely with clients to understand their
+            challenges and deliver systems that are dependable, scalable, and
+            built for long-term performance.
           </p>
 
           <ul className="aboutSolution__list">
             <li className="aboutSolution__listItem">
               <span className="aboutSolution__dot"></span>
-              <span>Best IT Solutions &amp; Service</span>
+              <span>
+                End-to-end IT solutions including cloud, security, and
+                development services
+              </span>
             </li>
 
             <li className="aboutSolution__listItem">
               <span className="aboutSolution__dot"></span>
-              <span>24 Hour&apos;s Customer Service</span>
+              <span>
+                Dedicated support with fast response and consistent service
+                quality
+              </span>
             </li>
           </ul>
 
           <div className="aboutSolution__bottom">
-            <button className="aboutSolution__btn">EXPLORE MORE</button>
+            <button className="aboutSolution__btn">CONTACT US</button>
 
             <div className="aboutSolution__counterCard">
               <div className="aboutSolution__counterIcon">
                 <RiCustomerService2Line />
               </div>
-              <h3 className="aboutSolution__counterNumber">826</h3>
-              <p className="aboutSolution__counterText">SATISFIED CLIENTS</p>
+              <h3 className="aboutSolution__counterNumber">800+</h3>
+              <p className="aboutSolution__counterText">
+                CLIENTS TRUST OUR SERVICES
+              </p>
             </div>
           </div>
         </div>
@@ -62,29 +71,34 @@ const AboutSolution = () => {
             <span className="aboutSolution__accentBar"></span>
             <img
               src={aboutMain}
-              alt="Main"
+              alt="CloudXSecure IT Solutions"
               className="aboutSolution__mainImage"
             />
 
             <div className="aboutSolution__arrowShape">
-              <img src={arrowShape} alt="Arrow shape" />
+              <img src={arrowShape} alt="decorative arrow" />
             </div>
           </div>
 
           <div className="aboutSolution__sideWrap">
             <div className="aboutSolution__videoCard">
-              <button className="aboutSolution__videoBtn" aria-label="Watch video">
+              <button
+                className="aboutSolution__videoBtn"
+                aria-label="Watch CloudXSecure overview video"
+              >
                 <span className="aboutSolution__videoInner">
                   <FiPlay />
                 </span>
               </button>
-              <span className="aboutSolution__videoText">WATCH VIDEO</span>
+              <span className="aboutSolution__videoText">
+                WATCH OUR STORY
+              </span>
             </div>
 
             <div className="aboutSolution__smallImageWrap">
               <img
                 src={aboutSmall}
-                alt="Small"
+                alt="CloudXSecure team working on IT solutions"
                 className="aboutSolution__smallImage"
               />
               <div className="aboutSolution__smallOverlay"></div>

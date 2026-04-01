@@ -1,24 +1,23 @@
-/* ================= SECTION ================= */
+/* SECTION */
 .webdev-ct3-section {
   position: relative;
-  padding: clamp(80px, 10vw, 130px) 16px;
-  background: linear-gradient(180deg, #fff7f0 0%, #ffffff 100%); /* changed */
+  padding: clamp(80px, 10vw, 120px) 16px;
+  background: linear-gradient(180deg, #fff7f0 0%, #ffffff 100%);
   overflow: hidden;
 }
 
-/* ================= BACKGROUND TEXT ================= */
+/* BACKGROUND TEXT */
 .webdev-ct3-bg-text {
   position: absolute;
-  font-size: clamp(70px, 14vw, 150px);
+  font-size: clamp(70px, 14vw, 140px);
   font-weight: 900;
-  color: rgba(255, 122, 0, 0.06); /* changed */
+  color: rgba(255, 122, 0, 0.05);
   white-space: nowrap;
   animation: ctMove 25s linear infinite;
-  pointer-events: none;
 }
 
 .webdev-ct3-bg-text.top {
-  top: 70px;
+  top: 60px;
   left: -20%;
 }
 
@@ -28,170 +27,128 @@
   }
 }
 
-/* ================= LAYOUT ================= */
+/* LAYOUT FIX (NO EXTRA SPACE) */
 .webdev-ct3-container {
-  max-width: 1200px;
+  max-width: 1150px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: clamp(40px, 6vw, 70px);
-  position: relative;
-  z-index: 2;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
 }
 
-/* ================= LEFT ================= */
+/* LEFT */
 .webdev-ct3-tag {
-  color: #ff7a00; /* changed */
+  color: #ff7a00;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 .webdev-ct3-title {
-  font-size: clamp(30px, 4vw, 46px);
-  line-height: 1.2;
+  font-size: clamp(30px, 4vw, 44px);
   font-weight: 800;
   margin-top: 10px;
 }
 
 .webdev-ct3-highlight {
-  color: #ff7a00; /* changed */
+  color: #ff7a00;
 }
 
 .webdev-ct3-desc {
-  margin: 22px 0 34px;
-  color: #666;
-  max-width: 480px;
+  margin: 20px 0 30px;
+  color: #555;
   line-height: 1.7;
 }
 
-/* ================= INFO BOX ================= */
+/* INFO BOX */
 .webdev-ct3-info-box {
   display: flex;
-  align-items: center;
-  gap: 18px;
-  background: #ffffff;
-  padding: 18px;
-  border-radius: 14px;
-  margin-bottom: 16px;
-  transition: 0.4s;
-  cursor: pointer;
+  gap: 16px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  transition: 0.3s;
 }
 
 .webdev-ct3-icon {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
+  background: #ff7a00;
+  color: white;
   display: grid;
   place-items: center;
-  background: #ff7a00; /* changed */
-  color: #ffffff;
   border-radius: 50%;
-  transition: 0.4s;
 }
 
-.webdev-ct3-info-box:hover {
-  background: #ff7a00; /* changed */
-  color: #ffffff;
-}
-
-.webdev-ct3-info-box:hover .webdev-ct3-icon {
-  background: #ffffff;
-  color: #ff7a00; /* changed */
-}
-
-/* ================= PERSON IMAGE ================= */
-.webdev-ct3-person-fixed {
-  margin-top: 40px;
-  width: 260px;
-  max-width: 100%;
-}
-
-/* ================= FORM ================= */
+/* FORM */
 .webdev-ct3-form-wrap {
-  position: relative;
-  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
-  padding: clamp(20px, 4vw, 34px);
-  border-radius: 24px;
-}
-
-.webdev-ct3-form {
-  background: #ffffff;
-  padding: clamp(26px, 4vw, 42px);
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f);
+  padding: 18px; /* reduced padding */
   border-radius: 18px;
 }
 
-/* ================= FORM GRID ================= */
+.webdev-ct3-form {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+}
+
+/* GRID */
 .webdev-ct3-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
 .webdev-ct3-field {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
-.webdev-ct3-field label {
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
-}
-
-/* ================= INPUT ================= */
 .webdev-ct3-input {
   position: relative;
 }
 
 .webdev-ct3-input input {
   width: 100%;
-  padding: 14px 42px 14px 14px;
-  border-radius: 10px;
+  padding: 12px 38px 12px 12px;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 15px;
 }
 
 .webdev-ct3-input svg {
   position: absolute;
-  right: 14px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: #ff7a00; /* changed */
+  color: #ff7a00;
 }
 
-/* ================= TEXTAREA ================= */
 textarea {
   width: 100%;
-  height: 130px;
-  padding: 14px;
-  border-radius: 10px;
+  height: 110px;
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  resize: none;
-  font-size: 15px;
 }
 
-/* ================= BUTTON ================= */
+/* BUTTON */
 .webdev-ct3-btn {
-  margin-top: 10px;
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   border: none;
-  background: linear-gradient(135deg, #ff7a00, #ff9a2f); /* changed */
-  color: #ffffff;
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f);
+  color: white;
   font-weight: 700;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.webdev-ct3-btn:hover {
-  background: #ffffff;
-  color: #ff7a00; /* changed */
-}
-
-/* ================= REVEAL ================= */
+/* ANIMATION */
 .ct-reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.9s ease;
+  transform: translateY(30px);
+  transition: 0.7s;
 }
 
 .ct-reveal.active {
@@ -199,40 +156,13 @@ textarea {
   transform: translateY(0);
 }
 
-/* ================= TABLET ================= */
-@media (max-width: 992px) {
+/* RESPONSIVE */
+@media (max-width: 768px) {
   .webdev-ct3-container {
     grid-template-columns: 1fr;
   }
 
-  .webdev-ct3-desc {
-    max-width: 100%;
-  }
-
-  .webdev-ct3-person-fixed {
-    margin: 40px auto 0;
-    display: block;
-  }
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 576px) {
   .webdev-ct3-row {
     grid-template-columns: 1fr;
-  }
-
-  .webdev-ct3-bg-text {
-    font-size: 80px;
-  }
-
-  .webdev-ct3-title {
-    font-size: 28px;
-  }
-}
-
-/* ================= REDUCED MOTION ================= */
-@media (prefers-reduced-motion: reduce) {
-  .ct-reveal {
-    transition: none;
   }
 }
