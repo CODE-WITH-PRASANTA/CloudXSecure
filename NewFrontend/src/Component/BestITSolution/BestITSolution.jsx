@@ -5,9 +5,9 @@ import imageLarge from "../../assets/work-img1.png";
 import imageSmall from "../../assets/work-img2.webp";
 
 const progressData = [
-  { label: "IT Solution", value: 98 },
-  { label: "Devops & Automation", value: 99 },
-  { label: "Cloud Solution", value: 99 },
+  { label: "IT Solutions Expertise", value: 98 },
+  { label: "DevOps & Automation Efficiency", value: 99 },
+  { label: "Cloud Infrastructure & Security", value: 99 },
 ];
 
 const BestITSolution = () => {
@@ -58,23 +58,34 @@ const BestITSolution = () => {
   }, [animate]);
 
   return (
-    <section className="bestitsolution" ref={sectionRef}>
+    <section
+      className="bestitsolution"
+      id="best-it-solution"
+      ref={sectionRef}
+    >
       <div className="bestitsolution-container">
 
         {/* LEFT CONTENT */}
         <div className="bestitsolution-content">
+
+          {/* SEO BADGE */}
           <span className="bestitsolution-badge">
-            ⚡ Best IT & Cloud Solutions Provider
+            ⚡ CloudXsecure – Trusted IT & Cloud Solutions Partner
           </span>
 
+          {/* SEO HEADING */}
           <h1 className="bestitsolution-title">
-            End-to-End Cloud, Web & App Solutions For <br />
-            <span>Growing Businesses</span>
+            Secure, Scalable & High-Performance IT Solutions <br />
+            <span>For Modern Growing Businesses</span>
           </h1>
 
+          {/* SEO DESCRIPTION */}
           <p className="bestitsolution-description">
-            CloudXSecure is a trusted technology partner providing comprehensive cloud
-            solutions, modern web design, and mobile app development services.
+            At CloudXsecure, we help businesses build a strong digital foundation
+            with reliable cloud infrastructure, custom web applications, and
+            secure mobile solutions. Our team focuses on performance, data
+            protection, and long-term scalability so you can operate with
+            confidence in a rapidly evolving digital environment.
           </p>
 
           {/* PROGRESS CARD */}
@@ -97,8 +108,9 @@ const BestITSolution = () => {
             ))}
           </div>
 
-          <a href="#" className="bestitsolution-btn">
-            Discover Our Solutions →
+          {/* CTA */}
+          <a href="#services" className="bestitsolution-btn">
+            Explore CloudXsecure Services →
           </a>
         </div>
 
@@ -106,12 +118,12 @@ const BestITSolution = () => {
         <div className="bestitsolution-images">
           <img
             src={imageLarge}
-            alt="IT team discussion"
+            alt="CloudXsecure IT experts working on secure cloud infrastructure solutions"
             className="bestitsolution-image"
           />
           <img
             src={imageSmall}
-            alt="Team collaboration"
+            alt="CloudXsecure team collaborating on DevOps automation and application development"
             className="bestitsolution-image bestitsolution-image-small"
           />
         </div>

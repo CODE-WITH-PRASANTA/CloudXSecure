@@ -238,25 +238,28 @@
 }
 
 /* =========================
-   MOVING BANNER
+   🔥 MOVING BANNER FIXED
 ========================= */
 .moving-banner {
   background: linear-gradient(90deg, #ff7a00, #ff9a2f);
   overflow: hidden;
   padding: 16px 0;
+  width: 100%;
 }
 
 .banner-track {
   display: inline-flex;
   align-items: center;
-  gap: 26px;
-  animation: bannerMove 25s linear infinite;
+  gap: 40px;
+  white-space: nowrap; /* 🔥 NO LINE BREAK */
+  animation: bannerMove 18s linear infinite;
 }
 
 .banner-track span {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
+  white-space: nowrap; /* 🔥 IMPORTANT */
 }
 
 .banner-track .star {
@@ -325,5 +328,10 @@
 
   .banner-track span {
     font-size: 14px;
+  }
+
+  .banner-track {
+    gap: 24px;
+    animation: bannerMove 14s linear infinite; /* faster on mobile */
   }
 }

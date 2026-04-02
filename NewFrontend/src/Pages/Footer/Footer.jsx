@@ -62,8 +62,7 @@ const Footer = () => {
             </div>
 
             <a href="tel:+44920090505" className="footer__callButton">
-              +44 920 090 505
-            </a>
+              +91 76664 88777            </a>
           </div>
         </div>
 
@@ -147,7 +146,7 @@ const Footer = () => {
             {/* BOTTOM */}
             <div className="footer__bottom">
               <p className="footer__copyright">
-                © Copyright 2024 By Solutek
+                ©  2025 CloudXsecure Trust. Crafted with ❤️ by PR Webstock
               </p>
 
               <div className="footer__bottomLinks">

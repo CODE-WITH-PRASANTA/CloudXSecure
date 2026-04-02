@@ -1,15 +1,15 @@
 :root {
-  --bestitsolution-primary: #2563eb;
-  --bestitsolution-primary-dark: #1e40af;
+  --bestitsolution-primary: #f97316; /* ORANGE */
+  --bestitsolution-primary-dark: #c2410c;
   --bestitsolution-text-dark: #0f172a;
   --bestitsolution-text-light: #64748b;
-  --bestitsolution-bg-soft: #f1f5ff;
+  --bestitsolution-bg-soft: #fff7ed; /* soft orange background */
   --bestitsolution-radius: 16px;
 }
 
 .bestitsolution {
   padding: 100px 0;
-  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);
   font-family: "Inter", sans-serif;
 }
 
@@ -30,7 +30,7 @@
   gap: 8px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.12);
+  background: rgba(249, 115, 22, 0.12);
   color: var(--bestitsolution-primary);
   font-weight: 600;
   font-size: 14px;
@@ -82,7 +82,7 @@
 
 .bestitsolution-progress-bar {
   height: 8px;
-  background: #e0e7ff;
+  background: #fed7aa; /* light orange track */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -90,21 +90,14 @@
 .bestitsolution-progress-fill {
   display: block;
   height: 100%;
+  width: 0%;
   background: linear-gradient(
     90deg,
     var(--bestitsolution-primary),
-    #3b82f6
+    #fb923c
   );
   border-radius: 8px;
-}
-
-/* Progress widths */
-.fill-98 {
-  width: 98%;
-}
-
-.fill-99 {
-  width: 99%;
+  transition: width 1.2s ease-in-out;
 }
 
 /* BUTTON */
@@ -143,19 +136,6 @@
   left: -40px;
   border: 6px solid #ffffff;
 }
-.bestitsolution-progress-fill {
-  display: block;
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(
-    90deg,
-    var(--bestitsolution-primary),
-    #3b82f6
-  );
-  border-radius: 8px;
-  transition: width 1.2s ease-in-out;
-}
-
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
