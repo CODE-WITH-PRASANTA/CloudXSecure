@@ -1,27 +1,50 @@
 import React, { useState } from "react";
 import "./BackupSidebar.css";
+import { useNavigate } from "react-router-dom";
 
 import categoryIcon from "../../assets/category-icon.png";
 
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiDownload, FiMail } from "react-icons/fi";
 import { BsFileEarmarkPdf } from "react-icons/bs";
-import { FiDownload, FiMail } from "react-icons/fi";
 
 const services = [
-  "DATABASE SECURITY",
-  "IT SOLUTION",
-  "TECHNOLOGY CONSULT",
-  "APP DEVELOPMENT",
-  "UI/UX DESIGN",
-  "CYBER SECURITY",
+  {
+    name: "DATABASE SECURITY",
+    path: "/cloudsecurity/service/details",
+  },
+  {
+    name: "IT SOLUTION",
+    path: "/it/service/details",
+  },
+  {
+    name: "TECHNOLOGY CONSULT",
+    path: "/cloudconsult/service/details",
+  },
+  {
+    name: "APP DEVELOPMENT",
+    path: "/app-development",
+  },
+  {
+    name: "UI/UX DESIGN",
+    path: "/services",
+  },
+  {
+    name: "CYBER SECURITY",
+    path: "/cloudsecurity/service/details",
+  },
 ];
 
 const BackupSidebar = () => {
   const [active, setActive] = useState(null);
+  const navigate = useNavigate();
+
+  const handleServiceClick = (index, path) => {
+    setActive(index);
+    navigate(path);
+  };
 
   return (
     <div className="backup-sd">
-
       {/* MAIN SERVICES */}
       <div className="backup-sd__box">
         <h3 className="backup-sd__title">Main Services</h3>
@@ -31,11 +54,11 @@ const BackupSidebar = () => {
             <div
               key={i}
               className={`backup-sd__item ${active === i ? "active" : ""}`}
-              onClick={() => setActive(i)}
+              onClick={() => handleServiceClick(i, item.path)}
             >
               <div className="backup-sd__left">
-                <img src={categoryIcon} alt="" />
-                <span>{item}</span>
+                <img src={categoryIcon} alt="service icon" />
+                <span>{item.name}</span>
               </div>
 
               <FiArrowRight className="backup-sd__arrow" />
@@ -69,17 +92,19 @@ const BackupSidebar = () => {
       <div className="backup-sd__contactBox">
         <h4>Call Us Anytime</h4>
 
-        <h2>+123 (4567) 890</h2>
+        <h2>+91 766488777</h2>
 
         <p>
-          <FiMail /> example@gmail.com
+          <FiMail /> cloudxsecure@gmail.com
         </p>
 
-        <button className="backup-sd__btn">
+        <button
+          className="backup-sd__btn"
+          onClick={() => navigate("/contact")}
+        >
           Contact Us <FiArrowRight />
         </button>
       </div>
-
     </div>
   );
 };

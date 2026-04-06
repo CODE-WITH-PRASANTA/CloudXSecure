@@ -2,8 +2,25 @@ import React, { useState } from "react";
 import "./CloudConsultingCont.css";
 import { FiPlus } from "react-icons/fi";
 
-import serviceImg from "../../assets/service-details.webp";
-import iconImg from "../../assets/det-icon.png"; 
+import iconImg from "../../assets/det-icon.png";
+
+const faqData = [
+  {
+    question: "What is cloud consulting and how can CloudXSecure help?",
+    answer:
+      "Cloud consulting helps businesses plan, design, and manage their cloud infrastructure effectively. At CloudXSecure, we guide organizations in choosing the right cloud solutions, optimizing performance, improving security, and ensuring long-term scalability based on their business goals.",
+  },
+  {
+    question: "Do you support cloud migration and optimization?",
+    answer:
+      "Yes, CloudXSecure provides complete support for cloud migration, optimization, and cost management. We help businesses move their applications and data to the cloud smoothly while improving performance and reducing unnecessary infrastructure costs.",
+  },
+  {
+    question: "Which industries benefit from cloud consulting services?",
+    answer:
+      "Cloud consulting is valuable for startups, SaaS companies, eCommerce platforms, healthcare systems, financial services, and enterprises. Any business that wants scalable, secure, and cost-efficient infrastructure can benefit from CloudXSecure cloud consulting solutions.",
+  },
+];
 
 const CloudConsultingCont = () => {
   const [active, setActive] = useState(2);
@@ -13,80 +30,102 @@ const CloudConsultingCont = () => {
   };
 
   return (
-    <div className="cloud-consult-cont">
-
+    <section className="cloud-consult-cont">
       {/* IMAGE */}
       <div className="cloud-consult-cont__imageWrap">
-        <img src={serviceImg} alt="service" />
+        <img
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+          alt="CloudXSecure cloud consulting services for scalable and secure cloud infrastructure"
+        />
       </div>
 
       {/* TITLE */}
-      <h2 className="cloud-consult-cont__title">
-        Best Solutions for App Development
+      <h1 className="cloud-consult-cont__title">
+        CloudXSecure Cloud Consulting Services for Scalable, Secure, and Cost-Effective Infrastructure
+      </h1>
+
+      {/* SUBTITLE */}
+      <h2 className="cloud-consult-cont__subtitle">
+        CLOUD CONSULTING
       </h2>
 
       {/* TEXT */}
       <p className="cloud-consult-cont__text">
-        Alternative innovation to ethical network environmental whiteboard pursue
-        compelling results for premier methods empowerment.
+        At <strong>CloudXSecure</strong>, our <strong>Cloud Consulting</strong>{" "}
+        services help businesses make confident decisions about their cloud
+        infrastructure. Whether you are planning to move to the cloud, optimize
+        your existing setup, or scale your applications, we provide practical
+        guidance tailored to your business needs.
       </p>
 
       <p className="cloud-consult-cont__text">
-        Continually fashion orthogonal leadership skills whereas wireless metrics.
-        Globally enhance fully tested meta-services rather than pandemic solutions.
+        We focus on building cloud strategies that are reliable, secure, and
+        cost-efficient. From selecting the right cloud platform to improving
+        performance and managing resources, CloudXSecure ensures your cloud
+        environment supports growth without unnecessary complexity or risk.
       </p>
 
       {/* CARDS */}
       <div className="cloud-consult-cont__cards">
-
         {/* LEFT CARD */}
         <div className="cloud-consult-cont__card">
-          <h3>Why Choose Us</h3>
+          <h3>Why Choose CloudXSecure Cloud Consulting</h3>
 
           <p>
-            Alternative innovation to ethical network environmental whiteboard
-            pursue compelling results.
+            We provide expert cloud guidance that helps businesses improve
+            performance, reduce costs, and build secure, scalable infrastructure.
           </p>
 
           <ul className="cloud-consult-cont__list">
-            <li><span className="cloud-consult-cont__arrow">→</span> Success Stories</li>
-            <li><span className="cloud-consult-cont__arrow">→</span> Success service</li>
-            <li><span className="cloud-consult-cont__arrow">→</span> Success store</li>
+            <li>
+              <span className="cloud-consult-cont__arrow">→</span> Smart cloud
+              strategy and architecture planning
+            </li>
+            <li>
+              <span className="cloud-consult-cont__arrow">→</span> Cost optimization
+              and resource management
+            </li>
+            <li>
+              <span className="cloud-consult-cont__arrow">→</span> Secure and scalable
+              cloud solutions
+            </li>
           </ul>
         </div>
 
         {/* RIGHT CARD */}
         <div className="cloud-consult-cont__card cloud-consult-cont__card--highlight">
-          <img src={iconImg} alt="icon" className="cloud-consult-cont__customIcon" />
-          <h3>Empowering Your Success</h3>
+          <img
+            src={iconImg}
+            alt="CloudXSecure cloud consulting expertise"
+            className="cloud-consult-cont__customIcon"
+          />
+          <h3>Guiding Your Cloud Journey with Confidence</h3>
 
           <p>
-            Alternative innovation to ethical network environmental whiteboard
-            pursue compelling results for premier methods empowerment forward.
+            CloudXSecure supports businesses at every stage of their cloud
+            journey, from planning and migration to optimization and management.
+            Our consulting approach ensures your infrastructure is built for
+            performance, security, and long-term success.
           </p>
         </div>
-
       </div>
 
       {/* FAQ */}
       <div className="cloud-consult-cont__faq">
-        <h2>Frequently Asked Questions</h2>
+        <h2>CloudXSecure Cloud Consulting – Frequently Asked Questions</h2>
 
-        {[0, 1, 2].map((item, i) => (
+        {faqData.map((item, i) => (
           <div key={i} className="cloud-consult-cont__faqItem">
-
             <div
               className="cloud-consult-cont__faqHeader"
               onClick={() => toggle(i)}
             >
-              <span>
-                {i === 0 && "What Medical Services Do You Provide?"}
-                {i === 1 && "What is your customer geography?"}
-                {i === 2 && "What are the main industries we serve?"}
-              </span>
+              <span>{item.question}</span>
 
               <FiPlus
-                className={`cloud-consult-cont__plus ${active === i ? "active" : ""}`}
+                className={`cloud-consult-cont__plus ${
+                  active === i ? "active" : ""
+                }`}
               />
             </div>
 
@@ -95,17 +134,12 @@ const CloudConsultingCont = () => {
                 active === i ? "open" : ""
               }`}
             >
-              <p>
-                Appropriately promote enterprise-wide vortals through innovative
-                information evolve go forward markets whereas synergistic applications.
-              </p>
+              <p>{item.answer}</p>
             </div>
-
           </div>
         ))}
       </div>
-
-    </div>
+    </section>
   );
 };
 
