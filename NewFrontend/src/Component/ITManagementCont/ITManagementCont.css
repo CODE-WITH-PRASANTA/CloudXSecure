@@ -1,0 +1,161 @@
+.itm {
+  width: 100%;
+}
+
+/* IMAGE */
+.itm__imageWrap img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* TITLE */
+.itm__title {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 30px 0 15px;
+  color: #0f172a;
+}
+
+/* TEXT */
+.itm__text {
+  color: #6b7280;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  max-width: 95%;
+}
+
+/* CARDS */
+.itm__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin: 50px 0;
+}
+
+.itm__card {
+  background: #f9fafb;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.itm__card:hover {
+  transform: translateY(-4px);
+}
+
+/* LEFT CARD */
+.itm__card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.itm__list {
+  margin-top: 18px;
+  margin-left: -45px;
+}
+
+.itm__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+/* EXACT ORANGE ARROW */
+.itm__arrow {
+  color: #ff5c35;
+  font-size: 18px;
+}
+
+/* RIGHT CARD */
+.itm__card--highlight {
+  text-align: center;
+}
+
+.itm__customIcon {
+  width: 55px;
+  margin-bottom: 12px;
+}
+
+/* FAQ */
+.itm__faq h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+/* FAQ ITEM */
+.itm__faqItem {
+  background: #f9fafb;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+/* HEADER */
+.itm__faqHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* PLUS ICON */
+.itm__plus {
+  font-size: 20px;
+  color: #ff5c35;
+  transition: 0.3s;
+}
+
+.itm__plus.active {
+  transform: rotate(45deg);
+}
+
+/* BODY (SMOOTH ANIMATION) */
+.itm__faqBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 0 20px;
+}
+
+.itm__faqBody.open {
+  max-height: 200px;
+  padding: 10px 20px 20px;
+}
+
+.itm__faqBody p {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .itm__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .itm__title {
+    font-size: 26px;
+  }
+
+  .itm__faq h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .itm__card {
+    padding: 20px;
+  }
+
+  .itm__faqHeader {
+    font-size: 14px;
+  }
+}

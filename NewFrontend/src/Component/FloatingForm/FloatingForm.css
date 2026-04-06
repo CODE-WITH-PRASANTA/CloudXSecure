@@ -1,0 +1,201 @@
+/* Floating Button
+.float-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background: #ff6a1a;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 8px 25px rgba(255, 106, 26, 0.4); 
+}*/
+
+/* Overlay with blur */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 35, 0.6);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  z-index: 998;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Center Wrapper */
+.modal-wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+.modal-wrapper.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Form Card */
+.floating-form {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, #0b1630, #0f1c3f);
+  border-radius: 20px;
+  padding: 22px;
+  color: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  animation: popup 0.35s ease;
+  margin-top: 125px;
+}
+
+/* Animation */
+@keyframes popup {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.form-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #1e2a4a;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+/* 🔥 Fix dropdown visibility */
+select {
+  appearance: none;
+  background-color: #0f1c3f;
+  color: #fff;
+}
+
+/* Focus */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff6a1a;
+  box-shadow: 0 0 10px rgba(255, 106, 26, 0.4);
+}
+
+/* Button */
+.submit-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(90deg, #ff6a1a, #ff7d33);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Actions */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.call-btn,
+.whatsapp-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.call-btn {
+  background: #1e2a4a;
+  color: #fff;
+}
+
+.whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+}
+
+/* Responsive */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .floating-form {
+    max-width: 380px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .floating-form {
+    max-width: 95%;
+    padding: 18px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .floating-form {
+    border-radius: 16px;
+  }
+
+  .form-header h3 {
+    font-size: 18px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 13px;
+  }
+}

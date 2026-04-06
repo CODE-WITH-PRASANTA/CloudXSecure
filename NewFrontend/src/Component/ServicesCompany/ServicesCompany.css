@@ -1,3 +1,4 @@
+/* ================= BASE ================= */
 .servicesCompany {
   position: relative;
   width: 100%;
@@ -6,6 +7,7 @@
   overflow: hidden;
 }
 
+/* Container */
 .servicesCompany__container {
   width: 100%;
   max-width: 1320px;
@@ -14,6 +16,7 @@
   z-index: 2;
 }
 
+/* Top Shape */
 .servicesCompany__topShape {
   position: absolute;
   top: 0;
@@ -26,6 +29,7 @@
   pointer-events: none;
 }
 
+/* ================= HEADER ================= */
 .servicesCompany__header {
   text-align: center;
   margin-bottom: 54px;
@@ -34,7 +38,6 @@
 .servicesCompany__badge {
   width: fit-content;
   margin: 0 auto 22px;
-  min-height: 40px;
   padding: 0 22px;
   border: 1px solid rgba(255, 90, 15, 0.12);
   border-radius: 999px;
@@ -49,7 +52,6 @@
   height: 6px;
   border-radius: 999px;
   background: #ff5a0f;
-  display: block;
 }
 
 .servicesCompany__badgeText {
@@ -63,27 +65,46 @@
   margin: 0;
   color: #07133d;
   font-size: clamp(32px, 4vw, 58px);
-  line-height: 1.12;
   font-weight: 800;
+  line-height: 1.2;
 }
 
 .servicesCompany__title span {
   color: #ff5a0f;
 }
 
+/* ================= GRID ================= */
 .servicesCompany__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* Desktop */
   gap: 24px;
 }
 
+/* Tablet (3 columns) */
+@media (max-width: 992px) {
+  .servicesCompany__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile (1 column) */
+@media (max-width: 576px) {
+  .servicesCompany__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= CARD ================= */
 .servicesCompany__card {
   position: relative;
   background: #ffffff;
   border-radius: 22px;
   overflow: hidden;
   box-shadow: 0 14px 40px rgba(8, 18, 54, 0.06);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .servicesCompany__card:hover {
@@ -91,232 +112,206 @@
   box-shadow: 0 22px 50px rgba(8, 18, 54, 0.12);
 }
 
+/* ================= IMAGE ================= */
 .servicesCompany__imageWrap {
   width: 100%;
-  height: 205px;
+  height: 200px;
   overflow: hidden;
-  background: #d9d9d9;
+  background: #ddd;
 }
 
-.servicesCompany__image {
+.servicesCompany__imageWrap img {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
   transition: transform 0.7s ease;
 }
 
-.servicesCompany__card:hover .servicesCompany__image {
+.servicesCompany__card:hover .servicesCompany__imageWrap img {
   transform: scale(1.1);
 }
 
+/* ================= CONTENT ================= */
 .servicesCompany__content {
   position: relative;
-  padding: 0 28px 26px;
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 24px 24px;
 }
 
+/* ================= ICON ================= */
 .servicesCompany__icon {
-  width: 64px;
-  height: 64px;
-  margin-top: -26px;
+  width: 60px;
+  height: 60px;
+  margin-top: -28px;
   border-radius: 50%;
   background: #f3f3f3;
   color: #ff5a0f;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 31px;
+  font-size: 28px;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .servicesCompany__card:hover .servicesCompany__icon {
   background: #ff5a0f;
   color: #ffffff;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
 }
 
+
+
+/* ================= TITLE ================= */
 .servicesCompany__cardTitle {
-  margin: 18px 0 18px;
+  margin: 16px 0 14px;
   color: #07133d;
-  font-size: 21px;
-  font-weight: 500;
-  line-height: 1.2;
-  transition: color 0.3s ease;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .servicesCompany__card:hover .servicesCompany__cardTitle {
   color: #ff5a0f;
 }
 
+/* ================= DESCRIPTION ================= */
 .servicesCompany__description {
   margin: 0;
   color: #6d7688;
-  font-size: 16px;
-  line-height: 1.65;
-  min-height: 78px;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 70px;
+  flex-grow: 1;
+  text-align: justify;
 }
 
+/* ================= FOOTER ================= */
 .servicesCompany__footer {
-  margin-top: 24px;
+  margin-top: auto;
   display: flex;
+  /* justify-content: flex-start; */
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
 }
 
+/* ================= READ MORE ================= */
 .servicesCompany__readMore {
-  padding: 0;
-  border: none;
-  background: transparent;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  border: none;
+  background: transparent;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: all 0.3s ease;
+  text-decoration: none;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
-.servicesCompany__card:hover .servicesCompany__readMore {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
+/* Circle */
 .servicesCompany__readMoreCircle {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: #ff5a0f;
   color: #ffffff;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
+.servicesCompany__readMore:hover .servicesCompany__readMoreCircle {
+  transform: rotate(90deg);
+}
+
+/* Text */
 .servicesCompany__readMoreText {
   color: #ff5a0f;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
-.servicesCompany__dots {
-  display: grid;
-  grid-template-columns: repeat(2, 5px);
-  gap: 7px 8px;
-  justify-content: end;
-  padding-right: 2px;
+/* ================= PAGINATION ================= */
+.servicesCompany__pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-.servicesCompany__dots span {
-  width: 4px;
-  height: 4px;
+.servicesCompany__pagination span {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #8c8c8c;
-  display: block;
+  background: #cfcfcf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.servicesCompany__pagination span:hover {
+  background: #ff7a2f;
+}
+
+.servicesCompany__pagination span.active {
+  background: #ff5a0f;
+  transform: scale(1.4);
+  box-shadow: 0 0 10px rgba(255, 90, 15, 0.6);
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 1199px) {
+
+/* Tablet */
+@media (max-width: 992px) {
   .servicesCompany {
-    padding: 100px 18px 80px;
-  }
-
-  .servicesCompany__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .servicesCompany__topShape {
-    width: 280px;
-    max-width: 34vw;
-  }
-}
-
-@media (max-width: 767px) {
-  .servicesCompany {
-    padding: 84px 14px 74px;
-  }
-
-  .servicesCompany__header {
-    margin-bottom: 38px;
-  }
-
-  .servicesCompany__grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .servicesCompany__topShape {
-    width: 180px;
-    max-width: 42vw;
+    padding: 90px 16px 70px;
   }
 
   .servicesCompany__content {
-    padding: 0 20px 22px;
-  }
-
-  .servicesCompany__imageWrap {
-    height: 220px;
+    padding: 0 20px 20px;
   }
 
   .servicesCompany__icon {
-    width: 58px;
-    height: 58px;
+    width: 56px;
+    height: 56px;
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .servicesCompany {
+    padding: 70px 12px;
+  }
+
+  .servicesCompany__title {
     font-size: 28px;
+  }
+
+  .servicesCompany__imageWrap {
+    height: 180px;
   }
 
   .servicesCompany__cardTitle {
     font-size: 18px;
-    margin: 16px 0 14px;
   }
 
   .servicesCompany__description {
-    font-size: 15px;
-    min-height: auto;
+    font-size: 14px;
   }
 
-  .servicesCompany__footer {
-    margin-top: 20px;
+  .servicesCompany__icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
   }
 
   .servicesCompany__readMoreText {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .servicesCompany__badge {
-    padding: 0 16px;
-    gap: 10px;
-  }
-
-  .servicesCompany__badgeLine {
-    width: 24px;
-    height: 5px;
-  }
-
-  .servicesCompany__badgeText {
-    font-size: 11px;
-  }
-
-  .servicesCompany__title {
-    font-size: 30px;
-  }
-
-  .servicesCompany__imageWrap {
-    height: 205px;
-  }
-
-  .servicesCompany__content {
-    padding: 0 16px 18px;
-  }
-
-  .servicesCompany__footer {
-    gap: 12px;
+    font-size: 13px;
   }
 }

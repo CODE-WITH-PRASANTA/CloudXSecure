@@ -1,0 +1,32 @@
+.dev-auto {
+  padding: 0; /* removed all outer padding */
+}
+
+/* Add spacing ONLY below breadcrumb */
+.dev-auto__container {
+  max-width: 1200px;
+  margin: 60px auto 0; /* top gap from breadcrumb */
+  padding: 0 20px; /* small side padding for responsiveness */
+}
+
+.dev-auto__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .dev-auto__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dev-auto__right {
+    order: -1;
+  }
+
+  .dev-auto__container {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+}
