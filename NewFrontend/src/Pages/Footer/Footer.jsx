@@ -1,163 +1,125 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
-import logo from "../../assets/cloud-Logo.png";
-import footerBg from "../../assets/footer-bg.png";
-
 import {
   FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
   FaInstagram,
+  FaYoutube,
 } from "react-icons/fa";
-
-import { FiPhoneCall, FiSend } from "react-icons/fi";
-
-// ✅ FIXED ICON
-import { HiOutlinePhone } from "react-icons/hi";
+import { FiPhone, FiMapPin, FiMail, FiGlobe } from "react-icons/fi";
+import { IoChevronForward } from "react-icons/io5";
+import logo from "../../assets/cloud-Logo.png";
 
 const Footer = () => {
-  const footerUsefulLinks = [
-    "About Company",
-    "Meet Our Team",
-    "Latest Blog",
-    "Contact Us",
-    "Testimonials",
-  ];
+  const currentYear = new Date().getFullYear();
 
-  const footerServices = [
-    "IT Management",
-    "Digital Marketing",
-    "Web Development",
-    "App Development",
-    "Digital Marketing",
-  ];
-
-  const footerSocialLinks = [
-    { id: 1, icon: <FaFacebookF />, link: "#" },
-    { id: 2, icon: <FaTwitter />, link: "#" },
-    { id: 3, icon: <FaLinkedinIn />, link: "#" },
-    { id: 4, icon: <FaInstagram />, link: "#" },
-  ];
+  // ✅ Static contact data (no API)
+  const [contact] = useState({
+    phone: "+91 9876543210",
+    email: "support@cloudxsecure.com",
+    office: "Bhubaneswar, Odisha, India",
+    website: "https://cloudxsecure.com",
+  });
 
   return (
     <footer className="footer">
-      <div className="footer__wrapper">
+      <div className="footer-top-pattern"></div>
 
-        {/* TOP CTA */}
-        <div className="footer__cta">
-          <div className="footer__ctaLeft">
-            <div className="footer__ctaIconWrap">
-              {/* ✅ FIXED ICON */}
-              <HiOutlinePhone className="footer__ctaIcon" />
+      <div className="footer-container">
+        {/* ================= BRAND ================= */}
+        <div className="footer-brand">
+          <div className="footer-logo-wrapper">
+            <div className="logo-container">
+              <img
+                src={logo}
+                alt="CloudXSecure - Web Development and Cloud Solutions Company"
+                className="logo-image"
+              />
+              <div className="logo-glow"></div>
             </div>
-
-            <h2 className="footer__ctaTitle">
-              Elevating Customer Experience.
-            </h2>
           </div>
 
-          <div className="footer__ctaRight">
-            <div className="footer__callIconWrap">
-              <FiPhoneCall className="footer__callIcon" />
-            </div>
+          <p className="brand-description">
+            CloudXSecure is a professional web development and cloud solutions
+            company focused on building fast, secure, and scalable digital
+            platforms.
+          </p>
 
-            <a href="tel:+44920090505" className="footer__callButton">
-              +91 76664 88777            </a>
-          </div>
-        </div>
-
-        {/* MAIN FOOTER */}
-        <div
-          className="footer__main"
-          style={{ backgroundImage: `url(${footerBg})` }}
-        >
-          <div className="footer__overlay"></div>
-
-          <div className="footer__content">
-            <div className="footer__grid">
-
-              {/* BRAND */}
-              <div className="footer__column footer__column--brand">
-                <a href="/" className="footer__logoWrap">
-                  <img src={logo} alt="Logo" className="footer__logo" />
-                </a>
-
-                <p className="footer__description">
-                  Globally monetize plug-and-play data it solu monotonecatlly
-                  disseminate oriented busine multifunctional mind design.
-                </p>
-
-                <div className="footer__socials">
-                  {footerSocialLinks.map((item) => (
-                    <a key={item.id} href={item.link} className="footer__socialLink">
-                      {item.icon}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* LINKS */}
-              <div className="footer__column">
-                <h3 className="footer__heading">Useful Links</h3>
-                <ul className="footer__list">
-                  {footerUsefulLinks.map((item, index) => (
-                    <li key={index} className="footer__listItem">
-                      <a href="/" className="footer__listLink">{item}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* SERVICES */}
-              <div className="footer__column">
-                <h3 className="footer__heading">Services.</h3>
-                <ul className="footer__list">
-                  {footerServices.map((item, index) => (
-                    <li key={index} className="footer__listItem">
-                      <a href="/" className="footer__listLink">{item}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* NEWSLETTER */}
-              <div className="footer__column footer__column--newsletter">
-                <h3 className="footer__heading">Newsletter</h3>
-
-                <p className="footer__description footer__description--newsletter">
-                  Globally monetize plug-and-play data it solu monotonecatlly
-                  disseminate oriented busine multifunctional mind design.
-                </p>
-
-                <form className="footer__newsletterForm">
-                  <input
-                    type="email"
-                    placeholder="Enter Your E-mail"
-                    className="footer__newsletterInput"
-                  />
-                  <button className="footer__newsletterButton">
-                    <FiSend />
-                  </button>
-                </form>
-              </div>
-
-            </div>
-
-            {/* BOTTOM */}
-            <div className="footer__bottom">
-              <p className="footer__copyright">
-                ©  2025 CloudXsecure Trust. Crafted with ❤️ by PR Webstock
-              </p>
-
-              <div className="footer__bottomLinks">
-                <a href="/" className="footer__bottomLink">Privacy Policy</a>
-                <a href="/" className="footer__bottomLink">Supports</a>
-              </div>
-            </div>
-
+          <div className="footer-socials">
+            <a href="#" className="social-icon"><FaFacebookF /></a>
+            <a href="#" className="social-icon"><FaLinkedinIn /></a>
+            <a href="#" className="social-icon"><FaInstagram /></a>
+            <a href="#" className="social-icon"><FaYoutube /></a>
           </div>
         </div>
 
+        {/* ================= QUICK LINKS ================= */}
+        <div className="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><IoChevronForward /> <a href="/">Home</a></li>
+            <li><IoChevronForward /> <a href="/about">About Us</a></li>
+            <li><IoChevronForward /> <a href="/plan">Pricing</a></li>
+            <li><IoChevronForward /> <a href="/faq">FAQs</a></li>
+            <li><IoChevronForward /> <a href="/blogs">Blogs</a></li>
+            <li><IoChevronForward /> <a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* ================= SERVICES ================= */}
+        <div className="footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><IoChevronForward /> <a href="/services/web-development">Web Development</a></li>
+            <li><IoChevronForward /> <a href="/services/security">Cyber Security</a></li>
+            <li><IoChevronForward /> <a href="/services/hosting">Cloud Hosting</a></li>
+            <li><IoChevronForward /> <a href="/services/migration">Cloud Migration</a></li>
+            <li><IoChevronForward /> <a href="/services/devops">DevOps Solutions</a></li>
+            <li><IoChevronForward /> <a href="/services/backup">Backup & Recovery</a></li>
+          </ul>
+        </div>
+
+        {/* ================= CONTACT ================= */}
+        <div className="footer-contact">
+          <h4>Contact Us</h4>
+
+          <div className="contact-info">
+            <div className="contact-item">
+              <FiPhone />
+              <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+            </div>
+
+            <div className="contact-item">
+              <FiMail />
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            </div>
+
+            <div className="contact-item">
+              <FiMapPin />
+              <span>{contact.office}</span>
+            </div>
+
+            <div className="contact-item">
+              <FiGlobe />
+              <a href={contact.website} target="_blank" rel="noreferrer">
+                {contact.website}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= BOTTOM ================= */}
+      <div className="footer-bottom">
+        <div className="footer-bottom-content">
+          <div>© {currentYear} CloudXSecure. All rights reserved.</div>
+
+          <div className="footer-legal">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms">Terms & Conditions</a>
+            <a href="/cookie-policy">Cookie Policy</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

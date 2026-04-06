@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Topbar from "./Pages/Topbar/Topbar";
+
 import Navbar from "./Pages/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
 import Home from "./Pages/Home/Home";
@@ -28,11 +28,12 @@ import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
 
-      <Topbar />
+     
       <Navbar />
       <FloatingForm/>
       <FloatingIcons/>

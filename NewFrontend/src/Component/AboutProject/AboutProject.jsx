@@ -10,77 +10,61 @@ import brandImg4 from "../../assets/brand-img4.webp";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const AboutProject = () => {
+
+  // ✅ REAL PROJECT DATA (SEO FRIENDLY)
   const aboutProjectCards = useMemo(
     () => [
       {
         id: 1,
-        title: "Digital Product Design",
-        category: "SOFTWARE",
+        title: "Learning Step School Website Development",
+        category: "VIEW PROJECT",
+        link: "https://learningstepschool.in/",
         image:
-          "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80",
       },
       {
         id: 2,
-        title: "Software Development",
-        category: "SOFTWARE",
+        title: "Bright Stars Montessori School Website",
+        category: "VIEW PROJECT",
+        link:
+          "https://www.justdial.com/Bhubaneshwar/Bright-Stars-Montessori-Naharakanta/0674PX674-X674-230518005607-T9M5_BZDET",
         image:
-          "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
       },
       {
         id: 3,
-        title: "CMC Softwar Solution",
-        category: "SOFTWARE",
+        title: "Tezz Dimag Coaching Institute Website",
+        category: "VIEW PROJECT",
+        link: "https://www.tezzdimagbhubaneswar.in/",
         image:
-          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
       },
+
+      // ✅ repeat for slider smooth loop
       {
         id: 4,
-        title: "App Development",
-        category: "SOFTWARE",
+        title: "Learning Step School Digital Platform",
+        category: "VIEW PROJECT",
+        link: "https://learningstepschool.in/",
         image:
-          "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80",
       },
       {
         id: 5,
-        title: "Corporate Research",
-        category: "SOFTWARE",
+        title: "Bright Stars Montessori Web Presence",
+        category: "VIEW PROJECT",
+        link:
+          "https://www.justdial.com/Bhubaneshwar/Bright-Stars-Montessori-Naharakanta/0674PX674-X674-230518005607-T9M5_BZDET",
         image:
-          "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
       },
       {
         id: 6,
-        title: "Project for Marketing",
-        category: "SOFTWARE",
+        title: "Tezz Dimag Online Learning Website",
+        category: "VIEW PROJECT",
+        link: "https://www.tezzdimagbhubaneswar.in/",
         image:
-          "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        id: 7,
-        title: "Business Analytics",
-        category: "SOFTWARE",
-        image:
-          "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        id: 8,
-        title: "Creative Brand Planning",
-        category: "SOFTWARE",
-        image:
-          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        id: 9,
-        title: "Mobile App Strategy",
-        category: "SOFTWARE",
-        image:
-          "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        id: 10,
-        title: "Product Growth System",
-        category: "SOFTWARE",
-        image:
-          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
       },
     ],
     []
@@ -88,11 +72,11 @@ const AboutProject = () => {
 
   const aboutProjectLogos = useMemo(
     () => [
-      { id: 1, image: brandImg, alt: "Technology Logo" },
-      { id: 2, image: brandImg1, alt: "Grameen" },
-      { id: 3, image: brandImg2, alt: "Walmart" },
-      { id: 4, image: brandImg3, alt: "Deluxon" },
-      { id: 5, image: brandImg4, alt: "Arounds" },
+      { id: 1, image: brandImg, alt: "CloudXSecure Partner" },
+      { id: 2, image: brandImg1, alt: "Client Brand" },
+      { id: 3, image: brandImg2, alt: "Business Partner" },
+      { id: 4, image: brandImg3, alt: "Technology Partner" },
+      { id: 5, image: brandImg4, alt: "Global Client" },
     ],
     []
   );
@@ -108,25 +92,25 @@ const AboutProject = () => {
   const [aboutProjectTransition, setAboutProjectTransition] = useState(true);
 
   useEffect(() => {
-    const aboutProjectInterval = setInterval(() => {
+    const interval = setInterval(() => {
       setAboutProjectTransition(true);
       setAboutProjectIndex((prev) => prev + 1);
-    }, 2000);
+    }, 2500);
 
-    return () => clearInterval(aboutProjectInterval);
+    return () => clearInterval(interval);
   }, []);
 
-  const handleAboutProjectPrev = () => {
+  const handlePrev = () => {
     setAboutProjectTransition(true);
     setAboutProjectIndex((prev) => prev - 1);
   };
 
-  const handleAboutProjectNext = () => {
+  const handleNext = () => {
     setAboutProjectTransition(true);
     setAboutProjectIndex((prev) => prev + 1);
   };
 
-  const handleAboutProjectTransitionEnd = () => {
+  const handleTransitionEnd = () => {
     if (aboutProjectIndex >= aboutProjectCards.length * 2) {
       setAboutProjectTransition(false);
       setAboutProjectIndex(aboutProjectCards.length);
@@ -140,13 +124,17 @@ const AboutProject = () => {
 
   useEffect(() => {
     if (!aboutProjectTransition) {
-      const aboutProjectTimeout = setTimeout(() => {
+      const timeout = setTimeout(() => {
         setAboutProjectTransition(true);
       }, 60);
-
-      return () => clearTimeout(aboutProjectTimeout);
+      return () => clearTimeout(timeout);
     }
   }, [aboutProjectTransition]);
+
+  // ✅ OPEN PROJECT LINK
+  const openProject = (link) => {
+    window.open(link, "_blank");
+  };
 
   return (
     <section className="aboutProject">
@@ -157,42 +145,34 @@ const AboutProject = () => {
           <div className="aboutProject__headingSide">
             <div className="aboutProject__badge">
               <span className="aboutProject__badgeLine" />
-              <span className="aboutProject__badgeText">SOLUTEK PROJECT</span>
+              <span className="aboutProject__badgeText">
+                CLOUDXSECURE PROJECTS
+              </span>
             </div>
 
             <div className="aboutProject__titleRow">
               <h2 className="aboutProject__title">
-                Explore Our Recent <span>Projects.</span>
+                Our Latest <span>Web Development Projects</span>
               </h2>
               <div className="aboutProject__titleLine" />
             </div>
           </div>
 
           <div className="aboutProject__arrows">
-            <button
-              type="button"
-              className="aboutProject__arrowBtn"
-              onClick={handleAboutProjectPrev}
-              aria-label="Previous"
-            >
+            <button className="aboutProject__arrowBtn" onClick={handlePrev}>
               <FiArrowLeft />
             </button>
-
-            <button
-              type="button"
-              className="aboutProject__arrowBtn"
-              onClick={handleAboutProjectNext}
-              aria-label="Next"
-            >
+            <button className="aboutProject__arrowBtn" onClick={handleNext}>
               <FiArrowRight />
             </button>
           </div>
         </div>
 
+        {/* SLIDER */}
         <div className="aboutProject__slider">
           <div
             className="aboutProject__track"
-            onTransitionEnd={handleAboutProjectTransitionEnd}
+            onTransitionEnd={handleTransitionEnd}
             style={{
               transform: `translateX(calc(-${aboutProjectIndex} * (var(--aboutProject-card-width) + var(--aboutProject-card-gap))))`,
               transition: aboutProjectTransition
@@ -201,7 +181,7 @@ const AboutProject = () => {
             }}
           >
             {aboutProjectCardsLoop.map((item, index) => (
-              <article className="aboutProject__card" key={`${item.id}-${index}`}>
+              <article className="aboutProject__card" key={index}>
                 <div className="aboutProject__cardImageWrap">
                   <img
                     src={item.image}
@@ -212,7 +192,12 @@ const AboutProject = () => {
 
                 <div className="aboutProject__cardContent">
                   <h3 className="aboutProject__cardTitle">{item.title}</h3>
-                  <button type="button" className="aboutProject__cardTag">
+
+                  {/* ✅ CLICKABLE BUTTON */}
+                  <button
+                    className="aboutProject__cardTag"
+                    onClick={() => openProject(item.link)}
+                  >
                     {item.category}
                   </button>
                 </div>
@@ -221,19 +206,18 @@ const AboutProject = () => {
           </div>
         </div>
 
+        {/* BRAND STRIP */}
         <div className="aboutProject__brandBar">
           <div className="aboutProject__brandTrack">
-            {[...aboutProjectLogos, ...aboutProjectLogos, ...aboutProjectLogos].map(
-              (logo, index) => (
-                <div className="aboutProject__brandItem" key={`${logo.id}-${index}`}>
-                  <img
-                    src={logo.image}
-                    alt={logo.alt}
-                    className="aboutProject__brandImage"
-                  />
-                </div>
-              )
-            )}
+            {[...aboutProjectLogos, ...aboutProjectLogos].map((logo, i) => (
+              <div className="aboutProject__brandItem" key={i}>
+                <img
+                  src={logo.image}
+                  alt={logo.alt}
+                  className="aboutProject__brandImage"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

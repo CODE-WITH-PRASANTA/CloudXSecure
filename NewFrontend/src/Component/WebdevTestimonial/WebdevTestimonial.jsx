@@ -11,23 +11,60 @@ const testimonials = [
   {
     img: img1,
     name: "Alisha Martin",
-    role: "Senior Marketing Manager",
+    role: "Marketing Manager",
     text:
-      "Open gathering they are nights multiple brings living abundantly cent that may be wonor wasinton created shell first two beginning beast all airot you ando divide subdue one herb light",
+      "CloudXSecure delivered exactly what we needed — a fast, clean, and professional website. Their team understood our business and built a solution that improved both our visibility and user engagement.",
   },
   {
     img: img2,
     name: "Kevin Martin",
-    role: "Senior Marketing Manager",
+    role: "Business Owner",
     text:
-      "Open gathering they are nights multiple brings living abundantly cent that may be wonor wasinton created shell first two beginning beast all airot you ando divide subdue one herb light",
+      "We were looking for a reliable web development partner, and CloudXSecure exceeded expectations. The website is fast, secure, and easy to manage. Their support team is also very responsive.",
   },
   {
     img: img3,
     name: "Jessica Brown",
-    role: "Senior Marketing Manager",
+    role: "Startup Founder",
     text:
-      "Open gathering they are nights multiple brings living abundantly cent that may be wonor wasinton created shell first two beginning beast all airot you ando divide subdue one herb light",
+      "The team at CloudXSecure helped us launch our platform smoothly. Their attention to detail and focus on performance made a big difference in how our users interact with the website.",
+  },
+
+  // NEW TESTIMONIALS
+  {
+    img: img1,
+    name: "Rahul Verma",
+    role: "E-commerce Owner",
+    text:
+      "Our online store performance improved significantly after working with CloudXSecure. The website is now faster, more secure, and optimized for conversions.",
+  },
+  {
+    img: img2,
+    name: "Priya Sharma",
+    role: "Digital Consultant",
+    text:
+      "What I liked most is their practical approach. No unnecessary complexity — just clean development, proper structure, and strong SEO fundamentals.",
+  },
+  {
+    img: img3,
+    name: "Amit Patel",
+    role: "IT Manager",
+    text:
+      "CloudXSecure built a scalable system for our business that handles traffic efficiently. Their technical expertise and communication were both excellent.",
+  },
+  {
+    img: img1,
+    name: "Sneha Kapoor",
+    role: "Brand Manager",
+    text:
+      "They transformed our outdated website into a modern, user-friendly platform. The design and performance improvements were clearly noticeable.",
+  },
+  {
+    img: img2,
+    name: "Vikram Singh",
+    role: "Entrepreneur",
+    text:
+      "From planning to execution, everything was handled professionally. The final website reflects our brand perfectly and performs well across devices.",
   },
 ];
 
@@ -80,7 +117,7 @@ const WebdevTestimonial = () => {
 
         {/* RIGHT IMAGE */}
         <div className="wt-main-img slide">
-          <img src={testimonials[active].img} alt="" />
+          <img src={testimonials[active].img} alt="Client testimonial" />
         </div>
 
         {/* THUMB CIRCLES */}
@@ -93,7 +130,7 @@ const WebdevTestimonial = () => {
               }`}
               onClick={() => setActive(index)}
             >
-              <img src={item.img} alt="" />
+              <img src={item.img} alt="client" />
             </div>
           ))}
         </div>

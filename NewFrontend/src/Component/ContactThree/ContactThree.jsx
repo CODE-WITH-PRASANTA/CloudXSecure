@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./ContactThree.css";
-import contactImg from "../../assets/contact-three-img-1.webp";
 
 import {
   FaEnvelope,
@@ -30,37 +29,42 @@ const ContactThree = () => {
 
   return (
     <section className="webdev-ct3-section">
-      {/* BACKGROUND MOVING TEXT (TOP FIXED) */}
+      
+      {/* BACKGROUND TEXT */}
       <div className="webdev-ct3-bg-text top">
-        GET IN TOUCH * GET IN TOUCH * GET IN TOUCH *
+        CONTACT CLOUDXSECURE • GET IN TOUCH • CONTACT CLOUDXSECURE •
       </div>
 
       <div className="webdev-ct3-container">
+        
         {/* LEFT CONTENT */}
         <div className="webdev-ct3-left">
-          <span className="webdev-ct3-tag ct-reveal">GET IN TOUCH</span>
+          <span className="webdev-ct3-tag ct-reveal">
+            GET IN TOUCH
+          </span>
 
           <h2 className="webdev-ct3-title">
-            <span className="ct-reveal">Conversation –</span>
+            <span className="ct-reveal">Let’s Build Something Great –</span>
             <span className="webdev-ct3-highlight ct-reveal">
-              {" "}
-              Reach Out Anytime
+              {" "}Contact CloudXSecure
             </span>
           </h2>
 
           <p className="webdev-ct3-desc ct-reveal">
-            We're here to listen! Whether you have questions, feedback,
-            or just want to say hello, feel free to reach out.
+            Looking for reliable web development, cloud solutions, or cybersecurity services? 
+            At CloudXSecure, we help businesses grow with secure, scalable, and high-performance digital solutions. 
+            Reach out to our team for project discussions, technical support, or business inquiries — we’re here to help you move forward with confidence.
           </p>
 
           <div className="webdev-ct3-info ct-reveal">
+            
             <div className="webdev-ct3-info-box">
               <span className="webdev-ct3-icon">
                 <FaEnvelope />
               </span>
               <div>
                 <small>Email Us</small>
-                <p> cloudxsecure@gmail.com</p>
+                <p>cloudxsecure@gmail.com</p>
               </div>
             </div>
 
@@ -69,8 +73,8 @@ const ContactThree = () => {
                 <FaPhoneAlt />
               </span>
               <div>
-                <small>Contact Us</small>
-                <p>7666488777</p>
+                <small>Call / WhatsApp</small>
+                <p>+91 7666488777</p>
               </div>
             </div>
 
@@ -79,31 +83,26 @@ const ContactThree = () => {
                 <FaMapMarkerAlt />
               </span>
               <div>
-                <small>Our Address</small>
-                <p>Room 407 c wing building no 18 , Aqsa apt , amrut Nagar near Ajit glass jogeshwari west mumbai 400102</p>
+                <small>Office Location</small>
+                <p>
+                  Room 407, C Wing, Building No.18, Aqsa Apartment, 
+                  Amrut Nagar, Near Ajit Glass, Jogeshwari West, Mumbai – 400102
+                </p>
               </div>
             </div>
-          </div>
 
-          {/* FIXED GIRL IMAGE */}
-          <img
-            src={contactImg}
-            alt="Support"
-            className="webdev-ct3-person-fixed"
-          />
+          </div>
         </div>
 
-        {/* FORM SECTION */}
+        {/* FORM */}
         <div className="webdev-ct3-form-wrap ct-reveal">
-          {/* BLUE TRIANGLE */}
-          <span className="webdev-ct3-form-triangle"></span>
-
           <div className="webdev-ct3-form">
+
             <div className="webdev-ct3-row">
               <div className="webdev-ct3-field">
                 <label>Full Name</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="Thomas Alison" />
+                  <input placeholder="Enter your full name" />
                   <FaUser />
                 </div>
               </div>
@@ -111,7 +110,7 @@ const ContactThree = () => {
               <div className="webdev-ct3-field">
                 <label>Email Address</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="thomas@domain.com" />
+                  <input placeholder="Enter your email address" />
                   <FaEnvelope />
                 </div>
               </div>
@@ -121,7 +120,7 @@ const ContactThree = () => {
               <div className="webdev-ct3-field">
                 <label>Phone Number</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="12 (00) 123 4567 890" />
+                  <input placeholder="Enter your phone number" />
                   <FaPhoneAlt />
                 </div>
               </div>
@@ -129,22 +128,24 @@ const ContactThree = () => {
               <div className="webdev-ct3-field">
                 <label>Subject</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="Subject" />
+                  <input placeholder="Project or inquiry subject" />
                   <FaPen />
                 </div>
               </div>
             </div>
 
             <div className="webdev-ct3-field">
-              <label>Inquiry about</label>
-              <textarea placeholder="Write your message"></textarea>
+              <label>Your Message</label>
+              <textarea placeholder="Tell us about your project or requirement..."></textarea>
             </div>
 
             <button className="webdev-ct3-btn">
-              Submit Now <span>→</span>
+              Send Message →
             </button>
+
           </div>
         </div>
+
       </div>
     </section>
   );

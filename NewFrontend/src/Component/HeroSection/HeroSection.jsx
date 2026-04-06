@@ -26,62 +26,62 @@ const HeroSection = () => {
       {
         id: 1,
         icon: <FiShield />,
-        title: "Data Security",
-        text: "Monotonectally solutek in fermentum quis",
+        title: "Advanced Data Security",
+        text: "Protect your business with enterprise-grade cybersecurity and data protection solutions.",
       },
       {
         id: 2,
         icon: <FiMonitor />,
         title: "Digital Marketing",
-        text: "Monotonectally solutek in fermentum quis",
+        text: "Grow your brand with data-driven digital marketing strategies and performance campaigns.",
       },
       {
         id: 3,
         icon: <FiMessageSquare />,
         title: "IT Consultation",
-        text: "Monotonectally solutek in fermentum quis",
+        text: "Expert IT consulting services to optimize your infrastructure and business workflows.",
       },
       {
         id: 4,
         icon: <FiCloud />,
-        title: "Cloud Services",
-        text: "Monotonectally solutek in fermentum quis",
+        title: "Cloud Solutions",
+        text: "Scalable and secure cloud services tailored to modern business needs.",
       },
       {
         id: 5,
         icon: <FiSettings />,
-        title: "Technology",
-        text: "Monotonectally solutek in fermentum quis",
+        title: "Technology Services",
+        text: "Innovative technology solutions designed to improve efficiency and productivity.",
       },
       {
         id: 6,
         icon: <FiDatabase />,
-        title: "Data Analysis",
-        text: "Monotonectally solutek in fermentum quis",
+        title: "Data Analytics",
+        text: "Transform raw data into actionable insights with advanced analytics tools.",
       },
       {
         id: 7,
         icon: <FiCode />,
         title: "Web Development",
-        text: "Monotonectally solutek in fermentum quis",
+        text: "Build high-performance websites with modern technologies and best practices.",
       },
       {
         id: 8,
         icon: <FiSmartphone />,
         title: "App Development",
-        text: "Monotonectally solutek in fermentum quis",
+        text: "Custom mobile applications designed for seamless user experience.",
       },
       {
         id: 9,
         icon: <FiGlobe />,
         title: "SEO Optimization",
-        text: "Monotonectally solutek in fermentum quis",
+        text: "Improve your online visibility with proven search engine optimization strategies.",
       },
       {
         id: 10,
         icon: <FiLock />,
         title: "Cyber Protection",
-        text: "Monotonectally solutek in fermentum quis",
+        text: "Defend your systems against cyber threats with proactive security solutions.",
       },
     ],
     []
@@ -107,10 +107,6 @@ const HeroSection = () => {
     return () => window.removeEventListener("resize", updateCardsPerPage);
   }, []);
 
-  useEffect(() => {
-   
-  }, [cardsPerPage]);
-
   const totalPages = Math.ceil(heroSectionCards.length / cardsPerPage);
 
   const handlePrev = () => {
@@ -132,47 +128,57 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="heroSection__content">
+          {/* LEFT */}
           <div className="heroSection__left">
             <div className="heroSection__badge">
               <span className="heroSection__badgeLine"></span>
-              <span className="heroSection__badgeText">SOLUTEK IT SERVICES</span>
+              <span className="heroSection__badgeText">
+                CLOUDXSECURE IT SOLUTIONS
+              </span>
             </div>
 
+            {/* ✅ SEO H1 */}
             <h1 className="heroSection__title">
-              The Beauty Behind
-              <br />
-              IT Services.
+              Secure, Scalable & Smart <br />
+              IT Solutions for Modern Businesses
             </h1>
 
+            {/* ✅ SEO paragraph */}
             <p className="heroSection__description">
-              Where your interests international networks intersect provid
-              custom software solutions for any value software.
+              CloudXSecure delivers advanced cloud computing, cybersecurity,
+              and IT consulting services to help businesses grow faster, stay
+              secure, and operate efficiently in the digital world. We combine
+              innovation, technology, and expertise to build reliable solutions
+              tailored to your needs.
             </p>
 
             <div className="heroSection__actions">
               <button className="heroSection__primaryButton">
-                EXPLORE MORE
+                Explore Services
               </button>
 
               <div className="heroSection__videoWrap">
                 <button className="heroSection__videoButton">
                   <FiPlay />
                 </button>
-                <button className="heroSection__videoText">WATCH VIDEO</button>
+                <button className="heroSection__videoText">
+                  Watch Overview
+                </button>
               </div>
             </div>
           </div>
 
+          {/* RIGHT */}
           <div className="heroSection__right">
             <div className="heroSection__imageWrap">
               <img
                 src={heroShape}
-                alt="Hero Shape"
+                alt="CloudXSecure background design"
                 className="heroSection__shape"
               />
               <img
                 src={heroThumb}
-                alt="Hero Person"
+                alt="IT professional working on cloud security"
                 className="heroSection__thumb"
               />
             </div>
@@ -180,6 +186,7 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* SERVICES CARDS */}
       <div className="heroSection__cardsWrap">
         <div className="heroSection__slider">
           <div
@@ -205,10 +212,14 @@ const HeroSection = () => {
                         style={{ backgroundImage: `url(${cardBg})` }}
                       >
                         <div className="heroSection__cardIconWrap">
-                          <span className="heroSection__cardIcon">{card.icon}</span>
+                          <span className="heroSection__cardIcon">
+                            {card.icon}
+                          </span>
                         </div>
 
-                        <h3 className="heroSection__cardTitle">{card.title}</h3>
+                        <h3 className="heroSection__cardTitle">
+                          {card.title}
+                        </h3>
                         <p className="heroSection__cardText">{card.text}</p>
                       </div>
                     ))}
@@ -218,11 +229,11 @@ const HeroSection = () => {
             })}
           </div>
 
+          {/* PAGINATION */}
           <div className="heroSection__pagination">
             <button
               className="heroSection__paginationArrow"
               onClick={handlePrev}
-              aria-label="Previous"
             >
               ‹
             </button>
@@ -235,7 +246,6 @@ const HeroSection = () => {
                     currentPage === index ? "active" : ""
                   }`}
                   onClick={() => handleDotClick(index)}
-                  aria-label={`Go to page ${index + 1}`}
                 ></button>
               ))}
             </div>
@@ -243,7 +253,6 @@ const HeroSection = () => {
             <button
               className="heroSection__paginationArrow"
               onClick={handleNext}
-              aria-label="Next"
             >
               ›
             </button>

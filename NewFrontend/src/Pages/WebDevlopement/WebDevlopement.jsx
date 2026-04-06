@@ -27,7 +27,7 @@ const WebDevlopement = () => {
       <WebdevTestimonial />
       <ContactThree />
       <BrandTrustBar />
-      <TeamCarousel />
+      {/* <TeamCarousel /> */}
       <PricingSection />
 
     </div>
