@@ -1,0 +1,163 @@
+/* ================================
+   BRAND TRUST BAR
+================================ */
+:root {
+  --brand-width: 180px;
+}
+
+.btb-wrapper {
+  background: linear-gradient(90deg, #1a0f05 0%, #2a1606 100%); /* changed */
+  padding: 22px 0;
+  overflow: hidden;
+}
+
+.btb-container {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+/* ================= TRUSTPILOT ================= */
+.btb-trustpilot {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.btb-small-imgs {
+  display: flex;
+}
+
+.btb-small-imgs img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #3a2410; /* changed */
+  margin-left: -10px;
+  background: #fff;
+}
+
+.btb-small-imgs img:first-child {
+  margin-left: 0;
+}
+
+.btb-tp-logo {
+  width: 90px;
+}
+
+.btb-rating {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btb-score {
+  color: #ff7a00; /* changed */
+  font-weight: 600;
+}
+
+.btb-review {
+  color: #ffd6b0; /* changed */
+  margin-left: 6px;
+}
+
+.btb-divider {
+  width: 1px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ================= BRAND SLIDER ================= */
+.btb-brand-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.btb-brand-slider {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  will-change: transform;
+}
+
+.btb-brand-item {
+  min-width: var(--brand-width);
+  display: flex;
+  justify-content: center;
+}
+
+.btb-brand-item img {
+  max-height: 32px;
+  opacity: 0.85;
+  transition: all 0.35s ease;
+}
+
+.btb-brand-item:hover img {
+  opacity: 1;
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 10px rgba(255, 122, 0, 0.6)); /* changed */
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1200px) {
+  :root {
+    --brand-width: 160px;
+  }
+
+  .btb-brand-slider {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .btb-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btb-divider {
+    display: none;
+  }
+
+  :root {
+    --brand-width: 150px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  :root {
+    --brand-width: 130px;
+  }
+
+  .btb-brand-item img {
+    max-height: 28px;
+  }
+
+  .btb-rating {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --brand-width: 120px;
+  }
+
+  .btb-small-imgs img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .btb-tp-logo {
+    width: 78px;
+  }
+
+  .btb-brand-item img {
+    max-height: 24px;
+  }
+}

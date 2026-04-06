@@ -1,0 +1,163 @@
+/* ==========================
+   SECTION
+========================== */
+.feature1-section {
+  position: relative;
+  padding: clamp(70px, 10vw, 110px) 16px clamp(90px, 12vw, 140px);
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ==========================
+   ANIMATED GRADIENT OVERLAY
+========================== */
+.feature1-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 122, 0, 0.1),   /* changed */
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 122, 0, 0.1)    /* changed */
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+.feature1-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 36px);
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================
+   CARD
+========================== */
+.feature1-card {
+  background: #ffffff;
+  padding: clamp(28px, 4vw, 40px) clamp(22px, 3vw, 32px);
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.feature1-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 26px 55px rgba(255, 122, 0, 0.22); /* changed */
+}
+
+/* ==========================
+   IMAGE
+========================== */
+.feature1-img {
+  margin-bottom: 22px;
+}
+
+.feature1-img img {
+  width: clamp(90px, 12vw, 120px);
+  height: auto;
+}
+
+/* ==========================
+   TEXT
+========================== */
+.feature1-title {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0b0e1b;
+}
+
+.feature1-desc {
+  font-size: clamp(14px, 2vw, 15px);
+  color: #5f6475;
+  line-height: 1.7;
+  max-width: 360px;
+  margin: auto;
+}
+
+/* ==========================
+   WAVE SHAPE
+========================== */
+.feature1-wave {
+  position: absolute;
+  bottom: clamp(50px, 10vw, 90px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(70px, 10vw, 110px);
+  opacity: 0.35;
+  z-index: 1;
+  animation: waveFloat 4s ease-in-out infinite;
+}
+
+@keyframes waveFloat {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -8px);
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+@media (max-width: 992px) {
+  .feature1-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature1-desc {
+    max-width: 100%;
+  }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+@media (max-width: 576px) {
+  .feature1-container {
+    grid-template-columns: 1fr;
+  }
+
+  .feature1-card {
+    padding: 26px 20px;
+  }
+
+  .feature1-section {
+    padding: 60px 14px 100px;
+  }
+
+  .feature1-wave {
+    display: none;
+  }
+}
+
+/* ==========================
+   ACCESSIBILITY
+========================== */
+@media (prefers-reduced-motion: reduce) {
+  .feature1-gradient,
+  .feature1-wave {
+    animation: none;
+  }
+
+  .feature1-card {
+    transition: none;
+  }
+}

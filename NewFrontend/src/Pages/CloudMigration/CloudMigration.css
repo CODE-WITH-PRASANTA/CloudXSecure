@@ -1,0 +1,32 @@
+.cloudmi {
+  padding: 0; /* removed all outer padding */
+}
+
+/* Add spacing ONLY below breadcrumb */
+.cloudmi__container {
+  max-width: 1200px;
+  margin: 60px auto 0; /* top gap from breadcrumb */
+  padding: 0 20px; /* small side padding for responsiveness */
+}
+
+.cloudmi__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .cloudmi__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cloudmi__right {
+    order: -1;
+  }
+
+  .cloudmi__container {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+}

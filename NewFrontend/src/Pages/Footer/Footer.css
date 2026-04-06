@@ -1,0 +1,213 @@
+/* ================= ROOT ================= */
+.footer {
+  background: #0d1117;
+  color: #c9d1d9;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer a {
+  color: #c9d1d9;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #58a6ff;
+}
+
+/* ================= CONTAINER ================= */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* ================= BRAND ================= */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo-container {
+  position: relative;
+  width: 140px;
+}
+
+.logo-image {
+  width: 100%;
+}
+
+.brand-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #8b949e;
+}
+
+/* ================= SOCIAL ================= */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #161b22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  background: #58a6ff;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ================= LINKS ================= */
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.footer-links li svg {
+  font-size: 12px;
+}
+
+/* ================= CONTACT ================= */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.contact-item svg {
+  margin-top: 4px;
+  font-size: 16px;
+  color: #58a6ff;
+}
+
+.contact-item a {
+  word-break: break-word;
+}
+
+/* ================= BOTTOM ================= */
+.footer-bottom {
+  border-top: 1px solid #21262d;
+  margin-top: 30px;
+}
+
+.footer-bottom-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ✅ Tablet */
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-links ul {
+    padding-left: 0;
+  }
+
+  .footer-links li {
+    justify-content: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-legal {
+    justify-content: center;
+  }
+}
+
+/* ✅ Extra Small Devices */
+@media (max-width: 400px) {
+  .brand-description {
+    font-size: 13px;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 16px;
+  }
+
+  .footer-links li {
+    font-size: 13px;
+  }
+}

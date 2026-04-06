@@ -1,0 +1,97 @@
+/* ================= TOPBAR ================= */
+.topbar {
+  width: 100%;
+  background: #020b3d; /* dark blue */
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* ================= CONTAINER ================= */
+.topbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================= LEFT ================= */
+.topbar-left {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.topbar-left span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+}
+
+/* ================= RIGHT ================= */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-text {
+  opacity: 0.8;
+}
+
+/* ================= BUTTON ================= */
+.topbar-whatsapp {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.topbar-whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .topbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .topbar-left {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .topbar-text {
+    font-size: 12px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .topbar-text {
+    display: none; /* clean UI */
+  }
+
+  .topbar-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+}

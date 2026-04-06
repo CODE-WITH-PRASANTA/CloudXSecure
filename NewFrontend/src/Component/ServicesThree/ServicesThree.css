@@ -1,0 +1,195 @@
+/* ==========================
+   SECTION
+========================== */
+.services3-section {
+  position: relative;
+  padding: clamp(70px, 8vw, 120px) 16px;
+  background: #fff7f0;
+  overflow: hidden;
+}
+
+/* Background Shape */
+.services3-bg-shape {
+  position: absolute;
+  right: -40px;
+  top: 80px;
+  width: clamp(260px, 35vw, 420px);
+  z-index: 1;
+}
+
+.services3-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.88);
+  z-index: 2;
+}
+
+.services3-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ==========================
+   HEADING
+========================== */
+.services3-heading {
+  margin-bottom: 50px;
+}
+
+.services3-subtitle {
+  color: #ff7a00; /* changed */
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.services3-title {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  margin-top: 14px;
+  line-height: 1.25;
+}
+
+.services3-title .highlight {
+  color: #ff7a00; /* changed */
+}
+
+/* ==========================
+   CAROUSEL
+========================== */
+.services3-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.services3-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.8s ease-in-out;
+  will-change: transform;
+}
+
+/* Slide animation (DESKTOP = 3 cards) */
+.services3-track.slide {
+  transform: translateX(calc(-100% / 3));
+}
+
+/* ==========================
+   CARD
+========================== */
+.services3-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-align: center;
+}
+
+.services3-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 122, 0, 0.25); /* changed */
+}
+
+/* ==========================
+   ICON
+========================== */
+.services3-icon {
+  width: 84px;
+  height: 84px;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  transition: transform 0.4s ease;
+}
+
+.services3-icon svg {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.services3-card:hover .services3-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* ==========================
+   TEXT
+========================== */
+.services3-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0b0b23;
+}
+
+.services3-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+.services3-btn {
+  background: transparent;
+  border: none;
+  color: #ff7a00; /* changed */
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.services3-btn span {
+  transition: transform 0.3s ease;
+}
+
+.services3-btn:hover span {
+  transform: translateX(6px);
+}
+
+/* ==========================
+   TABLET (2 CARDS)
+========================== */
+@media (max-width: 992px) {
+  .services3-track.slide {
+    transform: translateX(-50%);
+  }
+
+  .services3-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+/* ==========================
+   MOBILE (1 CARD)
+========================== */
+@media (max-width: 576px) {
+  .services3-heading {
+    margin-bottom: 36px;
+  }
+
+  .services3-track {
+    gap: 16px;
+  }
+
+  .services3-track.slide {
+    transform: translateX(-100%);
+  }
+
+  .services3-card {
+    flex: 0 0 100%;
+    padding: 34px 22px;
+  }
+}
