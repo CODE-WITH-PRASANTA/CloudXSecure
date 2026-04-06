@@ -1,237 +1,371 @@
-.chsd {
+.chsdsidebar {
   position: sticky;
   top: 100px;
+  width: 100%;
 }
 
 /* BOX */
-.chsd__box {
-  background: #fff;
-  border: 1px solid #eee;
+.chsdsidebar__box {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
   border-radius: 18px;
   padding: 25px;
   margin-bottom: 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 /* TITLE */
-.chsd__title {
+.chsdsidebar__title {
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 20px;
+  color: #0b1d26;
+  margin: 0 0 24px;
   position: relative;
+  line-height: 1.2;
 }
 
-.chsd__title::after {
+.chsdsidebar__title::after {
   content: "";
-  width: 40px;
-  height: 3px;
-  background: #ff5a0f;
   position: absolute;
-  bottom: -8px;
   left: 0;
+  bottom: -8px;
+  width: 42px;
+  height: 3px;
+  border-radius: 20px;
+  background: #ff5a0f;
 }
 
 /* LIST */
-.chsd__list {
+.chsdsidebar__list {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 /* ITEM */
-.chsd__item {
+.chsdsidebar__item {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border: 1px solid #eee;
-  border-radius: 12px;
+  justify-content: space-between;
+  gap: 14px;
   padding: 16px 18px;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  background: #ffffff;
   cursor: pointer;
-  transition: all 0.35s ease;
-  background: #fff;
   overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* HOVER SLIDE EFFECT */
+.chsdsidebar__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -100%;
+  background: #fff;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.chsdsidebar__item:hover::before {
+  left: 0;
+  color: #0b1d26;
+  background-color: #e94e08;
 }
 
 /* LEFT */
-.chsd__left {
+.chsdsidebar__left {
   display: flex;
   align-items: center;
   gap: 12px;
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
 
-.chsd__left img {
+.chsdsidebar__left img {
   width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: 0.3s ease;
 }
 
-/* TEXT */
-.chsd__item span {
-  font-weight: 500;
+.chsdsidebar__left span {
   font-size: 14px;
-}
-
-.chsd__item:hover img {
-  filter: brightness(0) invert(1);
+  font-weight: 500;
+  color: #0b1d26;
+  line-height: 1.4;
+  transition: 0.3s ease;
+  word-break: break-word;
 }
 
 /* ARROW */
-.chsd__arrow {
+.chsdsidebar__arrow {
+  font-size: 18px;
+  color: #0b1d26;
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
+  flex-shrink: 0;
 }
 
-/* 🔥 HOVER BACKGROUND SLIDE EFFECT */
-.chsd__item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: #ff5a0f;
-  transition: all 0.4s ease;
-  z-index: 1;
-}
-
-/* HOVER EFFECT */
-.chsd__item:hover::before {
-  left: 0;
-}
-
-/* ARROW SHOW */
-.chsd__item:hover .chsd__arrow {
-  opacity: 1;
-  transform: translateX(0);
-  color: #fff;
-}
-
-/* ACTIVE STATE (PERMANENT) */
-.chsd__item.active::before {
-  left: 0;
-}
-
-/* ACTIVE */
-.chsd__item.active {
-  background: #ff5a0f;
-  color: #fff;
+/* HOVER STATE */
+.chsdsidebar__item:hover {
   border-color: #ff5a0f;
 }
 
-.chsd__item.active span {
-  color: #fff;
+.chsdsidebar__item:hover .chsdsidebar__left span {
+  color: #ffffff;
 }
 
-.chsd__item.active img {
+.chsdsidebar__item:hover .chsdsidebar__left img {
   filter: brightness(0) invert(1);
 }
 
-.chsd__item.active .chsd__arrow {
+.chsdsidebar__item:hover .chsdsidebar__arrow {
   opacity: 1;
   transform: translateX(0);
-  color: #fff;
+  color: #ffffff;
+}
+
+/* ACTIVE STATE */
+.chsdsidebar__item.active {
+  border-color: #ff5a0f;
+}
+
+.chsdsidebar__item.active::before {
+  left: 0;
+}
+
+.chsdsidebar__item.active .chsdsidebar__left span {
+  color: #ffffff;
+}
+
+.chsdsidebar__item.active .chsdsidebar__left img {
+  filter: brightness(0) invert(1);
+}
+
+.chsdsidebar__item.active .chsdsidebar__arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: #ffffff;
 }
 
 /* DOWNLOAD */
-.chsd__download {
+.chsdsidebar__download {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 16px 18px;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-top: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.chsd__download div {
+.chsdsidebar__download div {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 500;
 }
 
-/* DARK */
-.chsd__download--dark {
+.chsdsidebar__download span {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.chsdsidebar__download svg {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.chsdsidebar__download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* DOWNLOAD VARIANTS */
+.chsdsidebar__download--dark {
   background: #0b1d26;
-  color: #fff;
+  color: #ffffff;
 }
 
-/* ORANGE */
-.chsd__download--orange {
+.chsdsidebar__download--orange {
   background: #ff5a0f;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* CONTACT BOX */
-.chsd__contactBox {
+.chsdsidebar__contactBox {
   background: #0b1d26;
-  color: #fff;
+  color: #ffffff;
   padding: 30px;
   border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(11, 29, 38, 0.18);
 }
 
-.chsd__contactBox h4 {
+.chsdsidebar__contactBox h4 {
   font-size: 16px;
-  margin-bottom: 10px;
+  font-weight: 500;
+  margin: 0 0 10px;
+  color: #d9e3e8;
 }
 
-.chsd__contactBox h2 {
-  font-size: 26px;
-  margin-bottom: 15px;
+.chsdsidebar__contactBox h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: #ffffff;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
-.chsd__contactBox p {
+.chsdsidebar__contactBox p {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 20px;
+  margin: 0 0 22px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #d9e3e8;
+  word-break: break-word;
+}
+
+.chsdsidebar__contactBox p svg {
+  color: #ff5a0f;
+  flex-shrink: 0;
+  font-size: 17px;
 }
 
 /* BUTTON */
-.chsd__btn {
-  background: #ff5a0f;
+.chsdsidebar__btn {
   border: none;
-  padding: 12px 20px;
-  color: #fff;
-  border-radius: 8px;
+  outline: none;
+  background: #ff5a0f;
+  color: #ffffff;
+  padding: 13px 20px;
+  border-radius: 10px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.chsd__btn:hover {
-  opacity: 0.9;
+.chsdsidebar__btn:hover {
+  background: #e94e08;
+  transform: translateY(-2px);
+}
+
+.chsdsidebar__btn svg {
+  font-size: 16px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-  .chsd {
+  .chsdsidebar {
     position: static;
+    top: auto;
   }
 }
 
 @media (max-width: 768px) {
-  .chsd__box {
+  .chsdsidebar__box {
     padding: 20px;
+    margin-bottom: 20px;
   }
 
-  .chsd__contactBox {
-    padding: 25px;
+  .chsdsidebar__title {
+    font-size: 20px;
+  }
+
+  .chsdsidebar__item {
+    padding: 15px 16px;
+  }
+
+  .chsdsidebar__download {
+    padding: 15px 16px;
+  }
+
+  .chsdsidebar__contactBox {
+    padding: 24px;
+  }
+
+  .chsdsidebar__contactBox h2 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .chsd__item {
-    padding: 14px;
+  .chsdsidebar__box {
+    padding: 16px;
+    border-radius: 16px;
   }
 
-  .chsd__title {
+  .chsdsidebar__title {
     font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .chsdsidebar__list {
+    gap: 12px;
+  }
+
+  .chsdsidebar__item {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .chsdsidebar__left {
+    gap: 10px;
+  }
+
+  .chsdsidebar__left span {
+    font-size: 13px;
+  }
+
+  .chsdsidebar__arrow {
+    font-size: 16px;
+  }
+
+  .chsdsidebar__download {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .chsdsidebar__download span {
+    font-size: 13px;
+  }
+
+  .chsdsidebar__contactBox {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .chsdsidebar__contactBox h4 {
+    font-size: 15px;
+  }
+
+  .chsdsidebar__contactBox h2 {
+    font-size: 22px;
+  }
+
+  .chsdsidebar__contactBox p {
+    font-size: 14px;
+  }
+
+  .chsdsidebar__btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
   }
 }

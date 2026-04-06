@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CloudHostingCont.css";
 import { FiPlus } from "react-icons/fi";
 
-import serviceImg from "../../assets/service-details.webp";
+import serviceImg from "../../assets/CloudHosting.jpg";
 import iconImg from "../../assets/det-icon.png"; 
 
 const CloudHostingCont = () => {
