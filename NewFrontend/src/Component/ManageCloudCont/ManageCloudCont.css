@@ -32,6 +32,10 @@
   margin: 50px 0;
 }
 
+.mcc__cards p{
+  text-align: justify;
+}
+
 .mcc__card {
   background: #f9fafb;
   padding: 30px;

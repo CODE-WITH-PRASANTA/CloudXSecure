@@ -39,6 +39,9 @@
   border: 1px solid #eee;
   transition: 0.3s;
 }
+.dmc__card p{
+  text-align: justify;
+}
 
 .dmc__card:hover {
   transform: translateY(-4px);

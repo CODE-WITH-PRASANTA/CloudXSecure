@@ -32,6 +32,9 @@
   margin: 50px 0;
 }
 
+.cloudmicont__cards p{
+   text-align: justify;
+}
 .cloudmicont__card {
   background: #f9fafb;
   padding: 30px;
