@@ -8,36 +8,35 @@ const faqData = [
   {
     question: "What services does CloudXSecure provide?",
     answer:
-      "CloudXSecure delivers end-to-end cloud services, secure cloud infrastructure, modern web design, mobile & web app development, and complete cloud solutions."
+      "CloudXSecure delivers end-to-end cloud services, secure cloud infrastructure, modern web design, mobile & web app development, and complete cloud solutions.",
   },
   {
     question: "How does CloudXSecure improve website performance and security?",
     answer:
-      "We combine cloud optimization, SSL security, performance tuning, and scalable architecture to ensure fast-loading, secure, and reliable platforms."
+      "We combine cloud optimization, SSL security, performance tuning, and scalable architecture to ensure fast-loading, secure, and reliable platforms.",
   },
   {
     question: "Do you offer custom web and app development?",
     answer:
-      "Yes. We build fully customized websites and applications tailored to your business goals."
+      "Yes. We build fully customized websites and applications tailored to your business goals.",
   },
   {
     question: "What types of businesses do you work with?",
     answer:
-      "We support startups, small businesses, and enterprises across industries with flexible cloud and development solutions."
-  }
+      "We support startups, small businesses, and enterprises across industries with flexible cloud and development solutions.",
+  },
 ];
 
 const FAQSection = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleItem = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex((prev) => (prev === index ? -1 : index));
   };
 
   return (
     <section className="faqPro-section">
       <div className="faqPro-container">
-
         {/* LEFT IMAGES */}
         <div className="faqPro-imageWrap">
           <img src={mainImg} alt="FAQ" className="faqPro-mainImg" />
@@ -46,42 +45,43 @@ const FAQSection = () => {
 
         {/* RIGHT CONTENT */}
         <div className="faqPro-content">
-          <span className="faqPro-badge">
-            CloudXSecure FAQ
-          </span>
+          <span className="faqPro-badge">CloudXSecure FAQ</span>
 
           <h2 className="faqPro-title">
             Prioritize Your Website’s Security, Performance & Growth
           </h2>
 
           <div className="faqPro-list">
-            {faqData.map((item, index) => (
-              <div
-                key={index}
-                className={`faqPro-item ${activeIndex === index ? "active" : ""}`}
-              >
-                <button
-                  className="faqPro-question"
-                  onClick={() => toggleItem(index)}
-                >
-                  {item.question}
-                  <span className="faqPro-icon">
-                    {activeIndex === index ? "−" : "+"}
-                  </span>
-                </button>
+            {faqData.map((item, index) => {
+              const isOpen = activeIndex === index;
 
+              return (
                 <div
-                  className="faqPro-answerWrap"
-                  style={{
-                    maxHeight: activeIndex === index ? "200px" : "0px"
-                  }}
+                  key={index}
+                  className={`faqPro-item ${isOpen ? "active" : ""}`}
                 >
-                  <p>{item.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+                  <button
+                    type="button"
+                    className="faqPro-question"
+                    onClick={() => toggleItem(index)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className="faqPro-qText">{item.question}</span>
 
+                    <span className="faqPro-icon" aria-hidden="true">
+                      <span className="faqPro-plus" />
+                    </span>
+                  </button>
+
+                  <div className="faqPro-answerWrap">
+                    <div className="faqPro-answerInner">
+                      <p>{item.answer}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

@@ -1,51 +1,118 @@
-:root {
-  --cx-hero-gradient: linear-gradient(135deg, #1e3a8a, #2563eb, #7c3aed);
-  --cx-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
 
-/* ================= HERO ================= */
 .cx-hero-section {
-  background: var(--cx-hero-gradient);
-  color: #fff;
+  position: relative;
+  width: 100%;
   min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: center;
   overflow: hidden;
-  padding: 80px 0;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
 }
+
+/* Overlay */
+.cx-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(59,130,246,0.15), transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(139,92,246,0.15), transparent 40%);
+  z-index: 0;
+}
+
+/* ============================= */
+/* PARTICLES */
+/* ============================= */
+
+.cx-hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.cx-hero-particle {
+  position: absolute;
+  background: #60a5fa;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-200px);
+  }
+}
+
+/* ============================= */
+/* CONTAINER */
+/* ============================= */
 
 .cx-hero-container {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  align-items: center;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
 }
 
-/* ================= CONTENT ================= */
+/* ============================= */
+/* LEFT CONTENT */
+/* ============================= */
+
+.cx-hero-content {
+  flex: 1;
+}
+
+.cx-hero-badge {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
 
 .cx-hero-title {
-  font-size: clamp(32px, 5vw, 60px);
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 24px;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.cx-hero-title span {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cx-hero-description {
-  font-size: clamp(14px, 2vw, 18px);
-  max-width: 540px;
-  line-height: 1.7;
-  margin-bottom: 36px;
-  opacity: 0.9;
+  font-size: 16px;
+  color: #cbd5e1;
+  max-width: 500px;
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-/* ================= BUTTONS ================= */
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
 
 .cx-hero-actions {
   display: flex;
@@ -54,48 +121,57 @@
 }
 
 .cx-hero-btn {
-  padding: 16px 28px;
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 15px;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 40px;
+  border: none;
   cursor: pointer;
+  font-weight: 600;
   transition: all 0.3s ease;
-  white-space: nowrap;
+  font-size: 15px;
 }
 
+/* Primary Button */
 .cx-hero-btn-primary {
-  background: #ffffff;
-  color: #000;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
 }
 
 .cx-hero-btn-primary:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.6);
 }
 
+/* Secondary Button */
 .cx-hero-btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.cx-hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .cx-hero-play {
-  width: 42px;
-  height: 42px;
+  width: 35px;
+  height: 35px;
+  background: #3b82f6;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ================= IMAGE ================= */
+/* ============================= */
+/* RIGHT VISUAL */
+/* ============================= */
 
 .cx-hero-visual {
+  flex: 1;
   position: relative;
   display: flex;
   justify-content: center;
@@ -103,80 +179,94 @@
 
 .cx-hero-image {
   width: 100%;
-  max-width: 450px;
-  border-radius: 28px;
-  box-shadow: var(--cx-shadow);
+  max-width: 500px;
+  animation: floatImage 4s ease-in-out infinite;
 }
 
-/* ================= FLOAT CARDS ================= */
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ============================= */
+/* FLOAT CARDS */
+/* ============================= */
 
 .cx-hero-float-card {
   position: absolute;
-  background: #fff;
-  color: #000;
-  padding: 20px 24px;
-  border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  min-width: 220px;
-}
-
-.cx-users-card {
-  top: 20px;
-  right: -20px;
-}
-
-.cx-services-card {
-  bottom: -30px;
-  left: -30px;
-}
-
-.cx-services-card h4 {
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.cx-services-card p {
-  margin: 6px 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   font-size: 14px;
 }
 
-.cx-hero-growth {
-  color: #10b981;
-  font-weight: 700;
+.cx-users-card {
+  top: 20%;
+  left: -40px;
 }
 
-/* ================= TABLET ================= */
+.cx-services-card {
+  bottom: 10%;
+  right: -40px;
+}
+
+.cx-hero-float-card h4 {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.cx-hero-float-card strong {
+  font-size: 22px;
+  display: block;
+}
+
+.cx-hero-growth {
+  color: #4ade80;
+  font-size: 13px;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
 @media (max-width: 1024px) {
+  .cx-hero-title {
+    font-size: 40px;
+  }
+
   .cx-hero-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
   }
 
+  .cx-hero-content {
+    align-items: center;
+  }
+
   .cx-hero-description {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 30px;
   }
 
-  .cx-hero-actions {
-    justify-content: center;
+  .cx-users-card,
+  .cx-services-card {
+    position: static;
+    margin-top: 20px;
   }
 
-  .cx-hero-float-card {
-    display: none;
+  .cx-hero-visual {
+    margin-top: 40px;
   }
 }
 
-/* ================= MOBILE ================= */
-
-@media (max-width: 600px) {
-  .cx-hero-section {
-    padding: 60px 0;
+@media (max-width: 768px) {
+  .cx-hero-title {
+    font-size: 32px;
   }
 
-  .cx-hero-actions {
-    flex-direction: column;
-    width: 100%;
+  .cx-hero-description {
+    font-size: 14px;
   }
 
   .cx-hero-btn {
@@ -184,7 +274,227 @@
     justify-content: center;
   }
 
+  .cx-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cx-hero-section {
+    padding: 40px 15px;
+  }
+
+  .cx-hero-title {
+    font-size: 26px;
+  }
+
+  .cx-hero-badge {
+    font-size: 12px;
+  }
+}
+
+/* ============================= */
+/* PERFECT MOBILE VIEW FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .cx-hero-section {
+    padding: 80px 20px 60px;
+    min-height: auto;
+  }
+
+  .cx-hero-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .cx-hero-content {
+    width: 100%;
+  }
+
+  .cx-hero-badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .cx-hero-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .cx-hero-description {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .cx-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .cx-hero-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+  }
+
+  /* IMAGE SECTION */
+  .cx-hero-visual {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .cx-hero-image {
+    max-width: 90%;
+    height: auto;
+  }
+
+  /* FLOAT CARDS → STACK UNDER IMAGE */
+  .cx-hero-float-card {
+    position: static;
+    width: 90%;
+    margin: 15px auto 0;
+  }
+
+  .cx-users-card,
+  .cx-services-card {
+    position: static;
+  }
+}
+
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+  .cx-hero-title {
+    font-size: 24px;
+  }
+
+  .cx-hero-section {
+    padding: 70px 15px 50px;
+  }
+
   .cx-hero-image {
     max-width: 100%;
+  }
+}
+/* ===================================== */
+/* PERFECT FIX FOR 1000px SCREEN WIDTH  */
+/* ===================================== */
+
+@media (max-width: 1200px) {
+
+  .cx-hero-container {
+    gap: 30px;
+    padding: 0 30px;
+  }
+
+  /* Reduce heading slightly */
+  .cx-hero-title {
+    font-size: 40px;
+  }
+
+  /* Limit content width */
+  .cx-hero-content {
+    max-width: 500px;
+  }
+
+  /* Image size control */
+  .cx-hero-image {
+    max-width: 420px;
+  }
+
+  /* Adjust float cards */
+  .cx-users-card {
+    top: 18%;
+    left: -20px;
+  }
+
+  .cx-services-card {
+    bottom: 8%;
+    right: -20px;
+  }
+
+  .cx-hero-float-card {
+    padding: 14px;
+    font-size: 13px;
+  }
+}
+
+
+/* ===================================== */
+/* EXTRA FIX FOR 992px AND BELOW        */
+/* ===================================== */
+
+@media (max-width: 992px) {
+
+  .cx-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cx-hero-content {
+    max-width: 100%;
+  }
+
+  .cx-hero-title {
+    font-size: 36px;
+  }
+
+  .cx-hero-visual {
+    margin-top: 40px;
+  }
+
+  .cx-hero-image {
+    max-width: 380px;
+  }
+
+  /* Stack cards under image */
+  .cx-hero-float-card {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/* ===================================== */
+/* PERFECT FLOAT CARD SIZE (1000px VIEW) */
+/* ===================================== */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+  .cx-hero-float-card {
+    width: 190px;
+    padding: 16px 18px;
+    border-radius: 12px;
+  }
+
+  .cx-hero-float-card h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .cx-hero-float-card strong {
+    font-size: 20px;
+  }
+
+  .cx-hero-float-card p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Better positioning */
+  .cx-users-card {
+    top: 22%;
+    left: -10px;
+  }
+
+  .cx-services-card {
+    bottom: 12%;
+    right: -10px;
   }
 }

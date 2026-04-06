@@ -38,7 +38,7 @@
   width: 18px;
   height: 18px;
   background: #5b4dfc;
-  color: #fff;
+  color: #ffffff;
   border-radius: 50%;
   font-size: 11px;
   display: flex;
@@ -147,16 +147,18 @@
   font-size: 17px;
   font-weight: 700;
   color: #0f172a;
+  margin: 0;
 }
 
 .OurExpertTeam-info p {
   font-size: 14px;
   color: #64748b;
   margin-top: 4px;
+  margin-bottom: 0;
 }
 
 /* ===============================
-   Share Button (Subtle)
+   Share Button
 ================================ */
 .OurExpertTeam-share {
   position: absolute;
@@ -178,20 +180,80 @@
 }
 
 /* ===============================
+   Mobile View Hidden by Default
+================================ */
+.mobile-view {
+  display: none;
+}
+
+/* ===============================
+   Pagination
+================================ */
+.OurExpertTeam-pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.OurExpertTeam-pagination button {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.OurExpertTeam-pagination button:hover {
+  background: #5b4dfc;
+  color: #ffffff;
+  border-color: #5b4dfc;
+}
+
+.OurExpertTeam-pagination button.active {
+  background: #5b4dfc;
+  color: #ffffff;
+  border-color: #5b4dfc;
+}
+
+.OurExpertTeam-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===============================
    Responsive
 ================================ */
+
+/* Tablet */
 @media (max-width: 1024px) {
   .OurExpertTeam-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Mobile */
 @media (max-width: 640px) {
+
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
   .OurExpertTeam-grid {
-    grid-template-columns: 1fr;
+    display: none;
   }
 
   .OurExpertTeam-title {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .OurExpertTeam-section {
+    padding: 60px 0;
   }
 }
