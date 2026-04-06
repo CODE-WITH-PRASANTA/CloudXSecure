@@ -10,76 +10,85 @@ import trustpilotImg from "../../assets/riview.webp";
 import googleImg from "../../assets/riview.webp";
 
 const HeroITUnique = () => {
+  const base = "cloudbusiness";
+
   return (
-    <section className="heroPro-section">
-      <div className="heroPro-container">
+    <section className={`${base}__section`}>
+      <div className={`${base}__container`}>
 
-        {/* LEFT SIDE */}
-        <div className="heroPro-content">
-          <span className="heroPro-badge">
-            Everything You Need To Create A Website
-          </span>
+        {/* LEFT */}
+        <div className={`${base}__content`}>
 
-          <h1 className="heroPro-title">
+          {/* ✅ SMALL HEIGHT BREADCRUMB */}
+          <div className={`${base}__breadcrumb`}>
+            <span>Home</span>
+            <span className={`${base}__sep`}>›</span>
+            <span>Services</span>
+            <span className={`${base}__sep`}>›</span>
+            <span className={`${base}__active`}>
+              IT Services
+            </span>
+          </div>
+
+          <h1 className={`${base}__title`}>
             Business Innovation With <br />
             <span>IT Services Expertise</span>
           </h1>
 
-          <ul className="heroPro-list">
+          <ul className={`${base}__list`}>
             <li>Secure Cloud Deployment & 24/7 Support</li>
             <li>Custom Web & Mobile App Development</li>
             <li>Scalable Cloud Infrastructure</li>
             <li>Advanced Cybersecurity & Data Protection</li>
           </ul>
 
-          <button className="heroPro-btn">
+          <button className={`${base}__btn`}>
             Get Started →
           </button>
 
-          {/* REVIEW CARD */}
-          <div className="heroPro-reviews">
-
-            <div className="heroPro-reviewBlock">
-              <div className="heroPro-reviewTitle">
-                <span className="heroPro-star">★</span>
+          {/* REVIEWS */}
+          <div className={`${base}__reviews`}>
+            <div className={`${base}__reviewBlock`}>
+              <div className={`${base}__reviewTitle`}>
+                <span className={`${base}__star`}>★</span>
                 Trustpilot
               </div>
 
-              <div className="heroPro-reviewBottom">
-                <img src={trustpilotImg} alt="" />
+              <div className={`${base}__reviewBottom`}>
+                <img src={trustpilotImg} alt="Trustpilot" />
                 <div>
-                  <div className="heroPro-stars">★★★★☆</div>
+                  <div className={`${base}__stars`}>★★★★☆</div>
                   <span>450+ reviews</span>
                 </div>
               </div>
             </div>
 
-            <div className="heroPro-divider"></div>
+            <div className={`${base}__divider`} />
 
-            <div className="heroPro-reviewBlock">
-              <div className="heroPro-reviewTitle">
+            <div className={`${base}__reviewBlock`}>
+              <div className={`${base}__reviewTitle`}>
                 Google
               </div>
 
-              <div className="heroPro-reviewBottom">
-                <img src={googleImg} alt="" />
+              <div className={`${base}__reviewBottom`}>
+                <img src={googleImg} alt="Google" />
                 <div>
-                  <div className="heroPro-stars">★★★★☆</div>
+                  <div className={`${base}__stars`}>★★★★☆</div>
                   <span>450+ reviews</span>
                 </div>
               </div>
             </div>
-
           </div>
+
         </div>
 
-        {/* RIGHT SIDE */}
-        <div className="heroPro-imageWrap">
-          <img src={whiteCircle} alt="" className="heroPro-circle" />
-          <img src={dnaImg} alt="" className="heroPro-dna" />
-          <img src={solutionImg} alt="" className="heroPro-solution" />
-          <img src={techImg} alt="" className="heroPro-tech" />
-          <img src={mainPerson} alt="Hero" className="heroPro-main" />
+        {/* RIGHT */}
+        <div className={`${base}__imageWrap`}>
+          <img src={whiteCircle} alt="" className={`${base}__circle`} />
+          <img src={dnaImg} alt="" className={`${base}__dna`} />
+          <img src={solutionImg} alt="" className={`${base}__solution`} />
+          <img src={techImg} alt="" className={`${base}__tech`} />
+          <img src={mainPerson} alt="Hero" className={`${base}__main`} />
         </div>
 
       </div>

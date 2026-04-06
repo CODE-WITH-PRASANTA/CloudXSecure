@@ -1,250 +1,270 @@
-/* ================= ROOT ================= */
 :root {
   --primary: #3f51ff;
   --orange: #ff9800;
   --white: #ffffff;
 }
 
-/* ================= RESET ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.heroPro-section {
+/* ================= SECTION ================= */
+.cloudbusiness__section {
   background: #f4f6ff;
   padding: 40px 20px;
 }
 
-.heroPro-container {
+/* ================= CONTAINER ================= */
+.cloudbusiness__container {
   max-width: 1400px;
   margin: auto;
   background: var(--primary);
   border-radius: 40px;
-  padding: 70px 60px;
+  padding: 60px 60px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
   gap: 60px;
-  position: relative;
   overflow: hidden;
 }
 
-/* ================= LEFT ================= */
-.heroPro-badge {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 1px solid rgba(255,255,255,0.4);
+/* ================= SMALL HEIGHT BREADCRUMB ================= */
+.cloudbusiness__breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;          /* small padding */
+  height: 32px;               /* ✅ small height */
   border-radius: 50px;
-  color: white;
-  font-size: 14px;
-  margin-bottom: 25px;
+  font-size: 13px;            /* compact font */
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 22px;
+  white-space: nowrap;
 }
 
-.heroPro-title {
+.cloudbusiness__breadcrumb span {
+  display: flex;
+  align-items: center;
+}
+
+.cloudbusiness__active {
+  color: #ffffff;
+}
+
+.cloudbusiness__sep {
+  opacity: 0.6;
+}
+
+/* ================= TITLE ================= */
+.cloudbusiness__title {
   font-size: clamp(28px, 4vw, 56px);
-  font-weight: 500;
-  color: white;
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 30px;
 }
 
-.heroPro-title span {
+.cloudbusiness__title span {
   font-weight: 700;
 }
 
-.heroPro-list {
+/* ================= LIST ================= */
+.cloudbusiness__list {
   list-style: none;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
-  gap: 15px 30px;
+  gap: 12px 25px;
 }
 
-.heroPro-list li {
-  color: white;
-  font-size: 16px;
+.cloudbusiness__list li {
+  color: #ffffff;
+  font-size: 15px;
+  padding-left: 20px;
   position: relative;
-  padding-left: 22px;
 }
 
-.heroPro-list li::before {
+.cloudbusiness__list li::before {
   content: "✔";
   position: absolute;
   left: 0;
   color: #b4c4ff;
 }
 
-/* BUTTON */
-.heroPro-btn {
+/* ================= BUTTON ================= */
+.cloudbusiness__btn {
   background: var(--orange);
   border: none;
-  padding: 15px 35px;
+  padding: 13px 30px;
   border-radius: 50px;
-  color: white;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
-.heroPro-btn:hover {
+.cloudbusiness__btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* ================= REVIEWS ================= */
-.heroPro-reviews {
-  margin-top: 40px;
-  padding: 25px 35px;
-  border-radius: 25px;
-  background: rgba(0,0,0,0.1);
+.cloudbusiness__reviews {
+  margin-top: 35px;
+  padding: 20px 25px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.12);
   display: flex;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.heroPro-reviewBlock {
+.cloudbusiness__reviewBlock {
   flex: 1;
-  min-width: 200px;
+  min-width: 180px;
 }
 
-.heroPro-reviewTitle {
+.cloudbusiness__reviewTitle {
   font-weight: 700;
-  color: white;
-  margin-bottom: 12px;
+  color: #ffffff;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.heroPro-star {
+.cloudbusiness__star {
   background: #00e676;
   color: #0b1b4a;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 11px;
   padding: 3px 6px;
 }
 
-.heroPro-reviewBottom {
+.cloudbusiness__reviewBottom {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
 }
 
-.heroPro-reviewBottom img {
-  height: 45px;
+.cloudbusiness__reviewBottom img {
+  height: 40px;
 }
 
-.heroPro-stars {
+.cloudbusiness__stars {
   color: #ffc107;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-.heroPro-divider {
+.cloudbusiness__divider {
   width: 1px;
-  height: 60px;
+  height: 50px;
   background: rgba(255,255,255,0.4);
 }
 
-/* ================= RIGHT SIDE ================= */
-.heroPro-imageWrap {
+/* ================= RIGHT ================= */
+.cloudbusiness__imageWrap {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.heroPro-main {
+.cloudbusiness__main {
   max-width: 420px;
   width: 100%;
   position: relative;
   z-index: 2;
 }
 
-.heroPro-circle {
+.cloudbusiness__circle {
   position: absolute;
-  width: 520px;
+  width: 500px;
   z-index: 0;
 }
 
-.heroPro-dna {
+.cloudbusiness__dna {
   position: absolute;
-  width: 220px;
-  left: -80px;
-  bottom: 40px;
-  animation: floatSlow 6s ease-in-out infinite;
+  width: 200px;
+  left: -60px;
+  bottom: 30px;
 }
 
-.heroPro-solution,
-.heroPro-tech {
+.cloudbusiness__solution,
+.cloudbusiness__tech {
   position: absolute;
-  width: 140px;
-  animation: floatFast 4s ease-in-out infinite;
+  width: 130px;
 }
 
-.heroPro-solution {
-  left: 320px;
-  top: 100px;
+.cloudbusiness__solution {
+  left: 300px;
+  top: 80px;
 }
 
-.heroPro-tech {
-  right: 300px;
-  top: 200px;
-}
-
-/* ================= ANIMATION ================= */
-@keyframes floatFast {
-  50% { transform: translateY(-18px); }
-}
-
-@keyframes floatSlow {
-  50% { transform: translateY(-12px); }
+.cloudbusiness__tech {
+  right: 260px;
+  top: 180px;
 }
 
 /* ================= RESPONSIVE ================= */
+
 @media (max-width: 1200px) {
-  .heroPro-container {
+  .cloudbusiness__container {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .heroPro-list {
+  .cloudbusiness__list {
     grid-template-columns: 1fr;
   }
 
-  .heroPro-divider {
+  .cloudbusiness__divider {
     display: none;
+  }
+
+  .cloudbusiness__breadcrumb {
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  .heroPro-container {
+  .cloudbusiness__container {
     padding: 40px 25px;
     border-radius: 30px;
   }
 
-  .heroPro-main {
+  .cloudbusiness__main {
     max-width: 300px;
   }
 
-  .heroPro-circle {
+  .cloudbusiness__circle {
     width: 320px;
   }
 
-  .heroPro-reviews {
+  .cloudbusiness__reviews {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .cloudbusiness__breadcrumb {
+    font-size: 12px;
+    height: 30px;
+    padding: 5px 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .heroPro-btn {
+  .cloudbusiness__btn {
     width: 100%;
   }
 
-  .heroPro-main {
-    max-width: 250px;
+  .cloudbusiness__breadcrumb {
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .cloudbusiness__active {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

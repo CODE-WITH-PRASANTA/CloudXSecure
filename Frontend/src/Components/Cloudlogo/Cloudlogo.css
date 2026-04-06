@@ -1,80 +1,98 @@
 /* ================= ROOT RESET ================= */
-.logoPro-section,
-.logoPro-section * {
+.logoPro__section,
+.logoPro__section * {
   box-sizing: border-box;
 }
 
-.logoPro-section {
+/* ================= BASE VARIABLES ================= */
+.logoPro__section {
+  --bg: #ffffff;
+  --fadeW: 110px;          /* fade edge width */
+  --gapX: clamp(18px, 3vw, 60px);
+  --logoH: clamp(28px, 3vw, 52px);
+  --speed: 22s;            /* default speed */
+
   width: 100%;
-  background: #ffffff;
-  padding: clamp(20px, 3vw, 40px) 0;
+  background: var(--bg);
+  padding: clamp(18px, 3vw, 44px) 0;
   overflow: hidden;
   position: relative;
 }
 
-/* Optional fade edges (premium look) */
-.logoPro-section::before,
-.logoPro-section::after {
+/* Premium fade edges */
+.logoPro__section::before,
+.logoPro__section::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 120px;
+  width: var(--fadeW);
   height: 100%;
   z-index: 2;
   pointer-events: none;
 }
 
-.logoPro-section::before {
+.logoPro__section::before {
   left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
+  background: linear-gradient(to right, var(--bg), transparent);
 }
 
-.logoPro-section::after {
+.logoPro__section::after {
   right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
+  background: linear-gradient(to left, var(--bg), transparent);
 }
 
 /* ================= WRAPPER ================= */
-.logoPro-wrapper {
+.logoPro__wrapper {
   width: 100%;
   overflow: hidden;
 }
 
 /* ================= TRACK ================= */
-.logoPro-track {
+.logoPro__track {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: logoScroll 25s linear infinite;
+  animation: logoScroll var(--speed) linear infinite;
   will-change: transform;
 }
 
-/* Pause on hover */
-.logoPro-section:hover .logoPro-track {
+/* Pause on hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .logoPro__section:hover .logoPro__track {
+    animation-play-state: paused;
+  }
+}
+
+/* Pause while holding touch (mobile quick pause) */
+.logoPro__section:active .logoPro__track {
   animation-play-state: paused;
 }
 
 /* ================= LOGO ITEM ================= */
-.logoPro-item {
+.logoPro__item {
   flex: 0 0 auto;
-  padding: 0 clamp(25px, 4vw, 60px);
+  padding: 0 var(--gapX);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* LOGO IMAGE */
-.logoPro-item img {
-  height: clamp(28px, 3vw, 50px);
+/* Logo image */
+.logoPro__item img {
+  height: var(--logoH);
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: saturate(1.05);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.95;
 }
 
-/* Hover effect */
-.logoPro-item img:hover {
-  transform: scale(1.08);
-  opacity: 0.9;
+/* Hover effect only on devices that support hover */
+@media (hover: hover) and (pointer: fine) {
+  .logoPro__item img:hover {
+    transform: translateY(-2px) scale(1.06);
+    opacity: 1;
+  }
 }
 
 /* ================= ANIMATION ================= */
@@ -87,41 +105,61 @@
   }
 }
 
-/* ================= LARGE SCREENS ================= */
-@media (min-width: 1600px) {
-  .logoPro-track {
-    animation-duration: 30s;
+/* ================= RESPONSIVE TUNING ================= */
+
+/* Large desktop */
+@media (min-width: 1400px) {
+  .logoPro__section {
+    --speed: 26s;
+    --fadeW: 140px;
+    --logoH: 54px;
   }
 }
 
-/* ================= TABLET ================= */
+/* Laptop / desktop */
+@media (max-width: 1200px) {
+  .logoPro__section {
+    --speed: 22s;
+    --fadeW: 110px;
+    --logoH: 48px;
+  }
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .logoPro-track {
-    animation-duration: 22s;
+  .logoPro__section {
+    --speed: 20s;
+    --fadeW: 80px;
+    --gapX: clamp(14px, 3vw, 40px);
+    --logoH: 42px;
   }
 }
 
-/* ================= MOBILE ================= */
+/* Mobile */
 @media (max-width: 768px) {
-  .logoPro-track {
-    animation-duration: 18s;
-  }
-
-  .logoPro-section::before,
-  .logoPro-section::after {
-    width: 60px;
+  .logoPro__section {
+    --speed: 17s;
+    --fadeW: 60px;
+    --gapX: 22px;
+    --logoH: 36px;
   }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
-  .logoPro-track {
-    animation-duration: 15s;
+  .logoPro__section {
+    --speed: 15s;
+    --fadeW: 46px;
+    --gapX: 18px;
+    --logoH: 32px;
+    padding: 18px 0;
   }
 }
 
 /* ================= REDUCED MOTION ================= */
 @media (prefers-reduced-motion: reduce) {
-  .logoPro-track {
+  .logoPro__track {
     animation: none;
+    transform: none;
   }
 }

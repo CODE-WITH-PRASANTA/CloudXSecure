@@ -32,7 +32,6 @@ const PortfolioShowcase = () => {
   return (
     <section className="portfolioPro-section">
       <div className="portfolioPro-container">
-
         {/* HEADER */}
         <div className="portfolioPro-header">
           <span className="portfolioPro-subtitle">
@@ -50,6 +49,7 @@ const PortfolioShowcase = () => {
               key={tab.id}
               className={`portfolioPro-tab ${activeTab === tab.id ? "active" : ""}`}
               onClick={() => setActiveTab(tab.id)}
+              type="button"
             >
               <div className="portfolioPro-tabIcon">
                 <img src={tab.icon} alt={tab.label} />
@@ -61,7 +61,6 @@ const PortfolioShowcase = () => {
 
         {/* CARD */}
         <div className="portfolioPro-card">
-
           <div className="portfolioPro-image">
             <img src={mainImg} alt="Project" />
           </div>
@@ -95,7 +94,6 @@ const PortfolioShowcase = () => {
           {/* Floating Elements */}
           <img src={circleText} alt="" className="portfolioPro-circle" />
           <img src={phoneImg} alt="" className="portfolioPro-phone" />
-
         </div>
       </div>
     </section>

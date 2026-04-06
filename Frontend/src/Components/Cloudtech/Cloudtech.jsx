@@ -12,13 +12,11 @@ import iconProduct from "../../assets/aa6.webp";
 const AboutCompany = () => {
   return (
     <section className="aboutPro-section">
-
       {/* Decorative Background Images */}
       <img src={halfCircle} alt="" className="aboutPro-bgLeft" />
       <img src={handImg} alt="" className="aboutPro-bgRight" />
 
       <div className="aboutPro-container">
-
         {/* LEFT IMAGE AREA */}
         <div className="aboutPro-imageWrap">
           <img src={mainImg} alt="Main" className="aboutPro-mainImg" />
@@ -32,10 +30,7 @@ const AboutCompany = () => {
 
         {/* RIGHT CONTENT */}
         <div className="aboutPro-content">
-
-          <span className="aboutPro-subtitle">
-            ← ABOUT COMPANY →
-          </span>
+          <span className="aboutPro-subtitle">← ABOUT COMPANY →</span>
 
           <h2 className="aboutPro-title">
             Powering Digital Growth with <br />
@@ -49,7 +44,6 @@ const AboutCompany = () => {
 
           {/* FEATURES */}
           <div className="aboutPro-features">
-
             <div className="aboutPro-featureBox">
               <img src={iconBackend} alt="" />
               <span>Cloud & Infrastructure</span>
@@ -59,7 +53,6 @@ const AboutCompany = () => {
               <img src={iconProduct} alt="" />
               <span>Web & App Development</span>
             </div>
-
           </div>
 
           {/* STATS */}
@@ -77,7 +70,6 @@ const AboutCompany = () => {
               <p>Team Members</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>

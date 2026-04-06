@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
 import "./HeroSection.css";
 import {
   FiChevronDown,
@@ -21,71 +22,78 @@ import heroThumb from "../../assets/hero-thumb.webp";
 import cardBg from "../../assets/Card-bg-1.png";
 
 const HeroSection = () => {
+  const navigate = useNavigate(); // ✅ INIT NAVIGATE
+
   const heroSectionCards = useMemo(
-    () => [
-      {
-        id: 1,
-        icon: <FiShield />,
-        title: "Advanced Data Security",
-        text: "Protect your business with enterprise-grade cybersecurity and data protection solutions.",
-      },
-      {
-        id: 2,
-        icon: <FiMonitor />,
-        title: "Digital Marketing",
-        text: "Grow your brand with data-driven digital marketing strategies and performance campaigns.",
-      },
-      {
-        id: 3,
-        icon: <FiMessageSquare />,
-        title: "IT Consultation",
-        text: "Expert IT consulting services to optimize your infrastructure and business workflows.",
-      },
-      {
-        id: 4,
-        icon: <FiCloud />,
-        title: "Cloud Solutions",
-        text: "Scalable and secure cloud services tailored to modern business needs.",
-      },
-      {
-        id: 5,
-        icon: <FiSettings />,
-        title: "Technology Services",
-        text: "Innovative technology solutions designed to improve efficiency and productivity.",
-      },
-      {
-        id: 6,
-        icon: <FiDatabase />,
-        title: "Data Analytics",
-        text: "Transform raw data into actionable insights with advanced analytics tools.",
-      },
-      {
-        id: 7,
-        icon: <FiCode />,
-        title: "Web Development",
-        text: "Build high-performance websites with modern technologies and best practices.",
-      },
-      {
-        id: 8,
-        icon: <FiSmartphone />,
-        title: "App Development",
-        text: "Custom mobile applications designed for seamless user experience.",
-      },
-      {
-        id: 9,
-        icon: <FiGlobe />,
-        title: "SEO Optimization",
-        text: "Improve your online visibility with proven search engine optimization strategies.",
-      },
-      {
-        id: 10,
-        icon: <FiLock />,
-        title: "Cyber Protection",
-        text: "Defend your systems against cyber threats with proactive security solutions.",
-      },
-    ],
-    []
-  );
+  () => [
+    // ✅ FIRST 5 (CLOUD BASED)
+    {
+      id: 1,
+      icon: <FiCloud />,
+      title: "Cloud Infrastructure",
+      text: "Build scalable and secure cloud infrastructure to support modern business operations.",
+    },
+    {
+      id: 2,
+      icon: <FiShield />,
+      title: "Cloud Security",
+      text: "Protect your cloud environment with advanced security frameworks and monitoring tools.",
+    },
+    {
+      id: 3,
+      icon: <FiDatabase />,
+      title: "Cloud Storage",
+      text: "Store, manage, and access your data efficiently with reliable cloud storage solutions.",
+    },
+    {
+      id: 4,
+      icon: <FiSettings />,
+      title: "Cloud Automation",
+      text: "Automate deployments and workflows to improve performance and reduce manual effort.",
+    },
+    {
+      id: 5,
+      icon: <FiGlobe />,
+      title: "Cloud Networking",
+      text: "Enable seamless global connectivity with optimized cloud networking services.",
+    },
+
+    // 🔽 REMAINING CARDS (UNCHANGED / GENERAL IT)
+    {
+      id: 6,
+      icon: <FiMonitor />,
+      title: "Digital Marketing",
+      text: "Grow your brand with data-driven digital marketing strategies and campaigns.",
+    },
+    {
+      id: 7,
+      icon: <FiMessageSquare />,
+      title: "IT Consultation",
+      text: "Expert IT consulting services to optimize infrastructure and workflows.",
+    },
+    {
+      id: 8,
+      icon: <FiCode />,
+      title: "Web Development",
+      text: "Build high-performance websites using modern technologies.",
+    },
+    {
+      id: 9,
+      icon: <FiSmartphone />,
+      title: "App Development",
+      text: "Create user-friendly mobile applications for seamless experience.",
+    },
+    {
+      id: 10,
+      icon: <FiLock />,
+      title: "Cyber Protection",
+      text: "Defend systems against cyber threats with proactive solutions.",
+    },
+  ],
+  []
+);
+    
+  
 
   const [cardsPerPage, setCardsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
@@ -137,23 +145,22 @@ const HeroSection = () => {
               </span>
             </div>
 
-            {/* ✅ SEO H1 */}
             <h1 className="heroSection__title">
               Secure, Scalable & Smart <br />
               IT Solutions for Modern Businesses
             </h1>
 
-            {/* ✅ SEO paragraph */}
             <p className="heroSection__description">
-              CloudXSecure delivers advanced cloud computing, cybersecurity,
-              and IT consulting services to help businesses grow faster, stay
-              secure, and operate efficiently in the digital world. We combine
-              innovation, technology, and expertise to build reliable solutions
-              tailored to your needs.
+              CloudXSecure delivers advanced cloud computing, cybersecurity, and IT consulting services designed to empower modern businesses in a rapidly evolving digital landscape. We specialize in building scalable, secure, and high-performance cloud infrastructures that enable organizations to operate seamlessly, reduce operational costs, and achieve long-term growth.
             </p>
 
             <div className="heroSection__actions">
-              <button className="heroSection__primaryButton">
+              
+              {/* ✅ UPDATED BUTTON */}
+              <button
+                className="heroSection__primaryButton"
+                onClick={() => navigate("/services")}
+              >
                 Explore Services
               </button>
 
