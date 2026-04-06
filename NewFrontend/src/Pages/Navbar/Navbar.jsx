@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
-import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/cloud-Logo.png";
 
@@ -8,21 +8,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [navbarMenuOpen, setNavbarMenuOpen] = useState(false);
-  const [navbarDevelopmentOpen, setNavbarDevelopmentOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [open, setOpen] = useState(false);
+  const [devOpen, setDevOpen] = useState(false);
 
   const navbarLinks = [
     { title: "Home", path: "/" },
@@ -38,234 +25,122 @@ const Navbar = () => {
     { title: "App Development", path: "/app-development" },
   ];
 
-  const handleNavbarNavigate = (item) => {
-    setNavbarMenuOpen(false);
-    setNavbarDevelopmentOpen(false);
-    navigate(item.path);
+  const goTo = (path) => {
+    setOpen(false);
+    setDevOpen(false);
+    navigate(path);
   };
 
-  const isActiveLink = (path) => location.pathname === path;
-
-  const isDevelopmentActive = developmentLinks.some(
-    (item) => item.path === location.pathname
-  );
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
-      <div className="navbar__container">
-        <div
-          className="navbar__logoWrapper"
-          onClick={() => handleNavbarNavigate({ path: "/" })}
-        >
-          <img src={logo} alt="Logo" className="navbar__logo" />
-        </div>
+    <>
+      <header className="navbar">
+        <div className="nav-container">
+          {/* LOGO */}
+          <div className="logo" onClick={() => goTo("/")}>
+            <img src={logo} alt="logo" />
+          </div>
 
-        <nav className="navbar__desktop">
-          <ul className="navbar__desktopList">
+          {/* DESKTOP MENU */}
+          <ul className="nav-links">
             {navbarLinks.slice(0, 3).map((item) => (
-              <li key={item.path} className="navbar__desktopItem">
-                <button
-                  className={`navbar__desktopLink ${
-                    isActiveLink(item.path) ? "navbar__desktopLink--active" : ""
-                  }`}
-                  onClick={() => handleNavbarNavigate(item)}
-                >
-                  {item.title}
-                </button>
+              <li
+                key={item.path}
+                className={isActive(item.path) ? "active" : ""}
+                onClick={() => goTo(item.path)}
+              >
+                {item.title}
               </li>
             ))}
 
-            <li className="navbar__desktopItem navbar__desktopItem--dropdown">
-              <button
-                className={`navbar__desktopLink navbar__desktopDropdownToggle ${
-                  isDevelopmentActive ? "navbar__desktopLink--active" : ""
-                }`}
-                onClick={() =>
-                  setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
-                }
-                type="button"
-              >
-                Development
-                <FiChevronDown
-                  className={`navbar__desktopChevron ${
-                    navbarDevelopmentOpen
-                      ? "navbar__desktopChevron--rotate"
-                      : ""
-                  }`}
-                />
-              </button>
+            {/* DROPDOWN */}
+            <li className="dropdown">
+              <span onClick={() => setDevOpen(!devOpen)}>
+                Development <FiChevronDown />
+              </span>
 
-              <div
-                className={`navbar__desktopDropdown ${
-                  navbarDevelopmentOpen
-                    ? "navbar__desktopDropdown--show"
-                    : ""
-                }`}
-              >
+              <div className={`dropdown-menu ${devOpen ? "show" : ""}`}>
                 {developmentLinks.map((item) => (
-                  <button
+                  <div
                     key={item.path}
-                    className={`navbar__desktopDropdownLink ${
-                      isActiveLink(item.path)
-                        ? "navbar__desktopDropdownLink--active"
-                        : ""
-                    }`}
-                    onClick={() => handleNavbarNavigate(item)}
-                    type="button"
+                    onClick={() => goTo(item.path)}
+                    className={isActive(item.path) ? "active" : ""}
                   >
                     {item.title}
-                  </button>
+                  </div>
                 ))}
               </div>
             </li>
 
             {navbarLinks.slice(3).map((item) => (
-              <li key={item.path} className="navbar__desktopItem">
-                <button
-                  className={`navbar__desktopLink ${
-                    isActiveLink(item.path) ? "navbar__desktopLink--active" : ""
-                  }`}
-                  onClick={() => handleNavbarNavigate(item)}
-                >
-                  {item.title}
-                </button>
+              <li
+                key={item.path}
+                className={isActive(item.path) ? "active" : ""}
+                onClick={() => goTo(item.path)}
+              >
+                {item.title}
               </li>
             ))}
           </ul>
-        </nav>
 
-        <div className="navbar__actions">
-          <button
-            className="navbar__contactButton"
-            onClick={() =>
-              handleNavbarNavigate({
-                title: "Get In Touch",
-                path: "/contact",
-              })
-            }
-            type="button"
-          >
-            Get In Touch
-          </button>
+          {/* RIGHT */}
+          <div className="actions">
+            <button onClick={() => goTo("/contact")}>
+              Get In Touch
+            </button>
 
-          <button
-            className="navbar__menuButton"
-            onClick={() => setNavbarMenuOpen(true)}
-            type="button"
-          >
-            <FiMenu />
-          </button>
+            <FiMenu className="menu-icon" onClick={() => setOpen(true)} />
+          </div>
         </div>
-      </div>
+      </header>
 
+      {/* OVERLAY */}
       <div
-        className={`navbar__overlay ${
-          navbarMenuOpen ? "navbar__overlay--show" : ""
-        }`}
-        onClick={() => setNavbarMenuOpen(false)}
+        className={`overlay ${open ? "show" : ""}`}
+        onClick={() => setOpen(false)}
       ></div>
 
-      <div
-        className={`navbar__mobile ${
-          navbarMenuOpen ? "navbar__mobile--show" : ""
-        }`}
-      >
-        <div className="navbar__mobileHeader">
-          <img src={logo} alt="Logo" className="navbar__mobileLogo" />
-
-          <button
-            className="navbar__closeButton"
-            onClick={() => setNavbarMenuOpen(false)}
-            type="button"
-          >
-            <FiX />
-          </button>
+      {/* MOBILE MENU */}
+      <div className={`mobile-menu ${open ? "open" : ""}`}>
+        <div className="mobile-header">
+          <img src={logo} alt="logo" />
+          <FiX className="close" onClick={() => setOpen(false)} />
         </div>
 
-        <div className="navbar__mobileBody">
+        <div className="mobile-body">
           {navbarLinks.slice(0, 3).map((item) => (
-            <button
-              key={item.path}
-              className={`navbar__mobileLink ${
-                isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
-              }`}
-              onClick={() => handleNavbarNavigate(item)}
-              type="button"
-            >
+            <div key={item.path} onClick={() => goTo(item.path)}>
               {item.title}
-            </button>
+            </div>
           ))}
 
-          <div className="navbar__mobileDropdown">
-            <button
-              className={`navbar__mobileLink navbar__mobileDropdownToggle ${
-                isDevelopmentActive ? "navbar__mobileLink--active" : ""
-              }`}
-              onClick={() =>
-                setNavbarDevelopmentOpen(!navbarDevelopmentOpen)
-              }
-              type="button"
-            >
-              <span>Development</span>
-              <FiChevronDown
-                className={`navbar__mobileChevron ${
-                  navbarDevelopmentOpen ? "navbar__mobileChevron--rotate" : ""
-                }`}
-              />
-            </button>
+          <div className="mobile-dropdown">
+            <div onClick={() => setDevOpen(!devOpen)}>
+              Development <FiChevronDown />
+            </div>
 
-            <div
-              className={`navbar__mobileDropdownMenu ${
-                navbarDevelopmentOpen
-                  ? "navbar__mobileDropdownMenu--show"
-                  : ""
-              }`}
-            >
+            <div className={`mobile-sub ${devOpen ? "show" : ""}`}>
               {developmentLinks.map((item) => (
-                <button
-                  key={item.path}
-                  className={`navbar__mobileDropdownLink ${
-                    isActiveLink(item.path)
-                      ? "navbar__mobileDropdownLink--active"
-                      : ""
-                  }`}
-                  onClick={() => handleNavbarNavigate(item)}
-                  type="button"
-                >
+                <div key={item.path} onClick={() => goTo(item.path)}>
                   {item.title}
-                </button>
+                </div>
               ))}
             </div>
           </div>
 
           {navbarLinks.slice(3).map((item) => (
-            <button
-              key={item.path}
-              className={`navbar__mobileLink ${
-                isActiveLink(item.path) ? "navbar__mobileLink--active" : ""
-              }`}
-              onClick={() => handleNavbarNavigate(item)}
-              type="button"
-            >
+            <div key={item.path} onClick={() => goTo(item.path)}>
               {item.title}
-            </button>
+            </div>
           ))}
 
-          <button
-            className="navbar__mobileButton"
-            onClick={() =>
-              handleNavbarNavigate({
-                title: "Get In Touch",
-                path: "/contact",
-              })
-            }
-            type="button"
-          >
+          <button className="mobile-btn" onClick={() => goTo("/contact")}>
             Get In Touch
           </button>
         </div>
       </div>
-    </header>
+    </>
   );
 };
 

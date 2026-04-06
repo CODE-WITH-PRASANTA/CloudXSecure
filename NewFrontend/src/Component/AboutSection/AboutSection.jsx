@@ -10,7 +10,7 @@ import small3 from "../../assets/small-img-3.webp";
 
 import thomas from "../../assets/about-three-points-list-img.webp";
 
-import { FaCheckCircle, FaPhoneAlt } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 const AboutSection = () => {
   const sectionRef = useRef(null);
@@ -29,120 +29,95 @@ const AboutSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  // WhatsApp handler
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/917666488777", "_blank");
+  };
+
   return (
-    <>
-      {/* ABOUT SECTION */}
-      <section className="about" ref={sectionRef}>
-        <div className="about-container">
+    <section className="about" ref={sectionRef}>
+      <div className="about-container">
 
-          {/* LEFT */}
-          <div className="about-left reveal-left">
-            <div className="image-box">
-              <img src={mainImg} alt="About" className="main-img" />
-              <img src={overlayImg} alt="Team" className="overlay-img" />
+        {/* LEFT */}
+        <div className="about-left reveal-left">
+          <div className="image-box">
+            <img src={mainImg} alt="CloudXSecure Web Development" className="main-img" />
+            <img src={overlayImg} alt="Web Development Team" className="overlay-img" />
 
-              <div className="experience-box reveal-left-delay">
-                <h2>25</h2>
-                <span>Years of Experience</span>
-              </div>
-            </div>
-
-            <div className="client-box reveal-left-delay">
-              <div className="client-images">
-                <img src={small1} alt="" />
-                <img src={small2} alt="" />
-                <img src={small3} alt="" />
-              </div>
-              <p><strong>120K</strong> Satisfied Client</p>
+            <div className="experience-box reveal-left-delay">
+              <h2>10+</h2>
+              <span>Years of Web Development Experience</span>
             </div>
           </div>
 
-          {/* RIGHT */}
-          <div className="about-right reveal-right">
-            <span className="about-tag">ABOUT US</span>
+          <div className="client-box reveal-left-delay">
+            <div className="client-images">
+              <img src={small1} alt="client" />
+              <img src={small2} alt="client" />
+              <img src={small3} alt="client" />
+            </div>
+            <p><strong>5,000+</strong> Happy Clients Worldwide</p>
+          </div>
+        </div>
 
-            <h2 className="about-title">
-              Driving Business Growth with Our <br />
-              <span>Advanced Web Development Solutions</span>
-            </h2>
+        {/* RIGHT */}
+        <div className="about-right reveal-right">
+          <span className="about-tag">WEB DEVELOPMENT - CLOUDXSECURE</span>
 
-            <p className="about-desc">
-              At CloudXsecure, we provide secure, scalable and high-performance
-              web development services designed to help businesses thrive in a
-              competitive digital environment. Our solutions combine modern
-              technologies, cloud infrastructure, UX-focused design, and a
-              results-driven development approach that aligns perfectly with your
-              long-term business goals.
-            </p>
+          <h2 className="about-title">
+            Professional Web Development Services <br />
+            <span>Built for Performance, Security & Growth</span>
+          </h2>
 
-            <div className="feature-grid">
-              <div>
-                <FaCheckCircle /> Custom Website Development & Technical Consulting
-              </div>
-              <div>
-                <FaCheckCircle /> AI-Enabled Digital Transformation & Automation
-              </div>
-              <div>
-                <FaCheckCircle /> Cloud-Integrated Web Solutions for Modern Enterprises
-              </div>
+          <p className="about-desc">
+            CloudXSecure delivers high-quality web development solutions tailored
+            to modern business needs. We design and develop fast, secure, and scalable
+            websites that not only look professional but also perform efficiently.
+            Our focus is on building digital platforms that improve user experience,
+            strengthen online presence, and support long-term business growth.
+          </p>
 
-              <div className="founder">
-                <img src={thomas} alt="davis paker" />
-                <div>
-                  <h4>davis Paker</h4>
-                  <span>Founder & CEO – CloudXsecure</span>
-                </div>
-              </div>
+          <div className="feature-grid">
+            <div>
+              <FaCheckCircle /> Custom Website Development for Businesses & Startups
+            </div>
+            <div>
+              <FaCheckCircle /> SEO-Optimized and Mobile-Responsive Web Design
+            </div>
+            <div>
+              <FaCheckCircle /> Secure, Cloud-Integrated Web Applications
             </div>
 
-            <ul className="points">
-              <li>
-                <FaCheckCircle /> Human-Centered UI/UX Design Focused on Conversion & Engagement
-              </li>
-              <li>
-                <FaCheckCircle /> 24/7 Website Support, Security Monitoring & Maintenance
-              </li>
-              <li>
-                <FaCheckCircle /> Modernization & Re-engineering of Legacy Web Systems
-              </li>
-            </ul>
-
-            <div className="action">
-              <button className="discover-btn">Discover More →</button>
-
-              <div className="call-box">
-                <div className="icon">
-                  <FaPhoneAlt />
-                </div>
-                <div>
-                  <span>Speak With Our Team</span>
-                  <strong>7666488777</strong>
-                </div>
+            <div className="founder">
+              <img src={thomas} alt="Shahbaaz Sayed" />
+              <div>
+                <h4>Shahbaaz Sayed</h4>
+                <span>Director – CloudXSecure</span>
               </div>
             </div>
           </div>
 
-        </div>
-      </section>
+          <ul className="points">
+            <li>
+              <FaCheckCircle /> Fast-loading websites designed for better search engine rankings
+            </li>
+            <li>
+              <FaCheckCircle /> Ongoing support, website maintenance, and security monitoring
+            </li>
+            <li>
+              <FaCheckCircle /> Upgrade and redesign of outdated or slow-performing websites
+            </li>
+          </ul>
 
-      {/* MOVING BANNER */}
-      <div className="moving-banner">
-        <div className="banner-track">
-          <span>BRANDING</span><span className="star">★</span>
-          <span>CYBER SECURITY</span><span className="star">★</span>
-          <span>WEBSITE DEVELOPMENT</span><span className="star">★</span>
-          <span>DIGITAL MARKETING</span><span className="star">★</span>
-          <span>UI / UX DESIGN</span>
-
-          <span className="star">★</span>
-          <span>BRANDING</span><span className="star">★</span>
-          <span>CYBER SECURITY</span><span className="star">★</span>
-          <span>WEBSITE DEVELOPMENT</span><span className="star">★</span>
-          <span>DIGITAL MARKETING</span><span className="star">★</span>
-          <span>UI / UX DESIGN</span>
+          <div className="action">
+            <button className="discover-btn" onClick={handleWhatsApp}>
+              Contact Us →
+            </button>
+          </div>
         </div>
+
       </div>
-    </>
+    </section>
   );
 };
 

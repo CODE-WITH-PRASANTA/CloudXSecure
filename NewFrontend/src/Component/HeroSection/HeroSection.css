@@ -367,7 +367,27 @@
   justify-content: center;
   gap: 10px;
 }
+.heroSection__title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+}
 
+.heroSection__description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.heroSection__cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.heroSection__cardText {
+  font-size: 14px;
+  color: #000000;
+}
 .heroSection__paginationDot {
   width: 12px;
   height: 12px;

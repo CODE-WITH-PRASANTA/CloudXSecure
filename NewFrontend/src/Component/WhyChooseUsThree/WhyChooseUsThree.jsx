@@ -26,6 +26,11 @@ const WhyChooseUsThree = () => {
     return () => observer.disconnect();
   }, []);
 
+  // ✅ WhatsApp function
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/917666488777", "_blank");
+  };
+
   return (
     <section className="wc3-section" ref={sectionRef}>
       <div className="wc3-container">
@@ -75,8 +80,9 @@ const WhyChooseUsThree = () => {
             ))}
           </ul>
 
-          <button className="wc3-btn wc3-reveal">
-            Get Started <span>→</span>
+          {/* ✅ UPDATED BUTTON */}
+          <button className="wc3-btn wc3-reveal" onClick={handleWhatsApp}>
+            Contact Us <span>→</span>
           </button>
         </div>
 

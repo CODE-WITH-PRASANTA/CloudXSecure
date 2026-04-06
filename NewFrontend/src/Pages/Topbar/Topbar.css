@@ -1,92 +1,97 @@
+/* ================= TOPBAR ================= */
 .topbar {
   width: 100%;
-  background: #020a33;
+  background: #020b3d; /* dark blue */
   color: #ffffff;
-  font-family: Arial, sans-serif;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
+  font-size: 14px;
 }
 
-.topbar__container {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 18px;
-  min-height: 42px;
+/* ================= CONTAINER ================= */
+.topbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 16px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================= LEFT ================= */
+.topbar-left {
+  display: flex;
   gap: 20px;
-}
-
-.topbar__left {
-  display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 0;
 }
 
-.topbar__infoItem {
+.topbar-left span {
   display: flex;
   align-items: center;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
+  gap: 6px;
+  opacity: 0.9;
 }
 
-.topbar__infoIcon {
+/* ================= RIGHT ================= */
+.topbar-right {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: 8px;
-  font-size: 15px;
-  color: #ffffff;
+  gap: 16px;
 }
 
-.topbar__infoText {
-  white-space: nowrap;
-  color: #ffffff;
-  opacity: 0.95;
+.topbar-text {
+  opacity: 0.8;
 }
 
-.topbar__divider {
-  margin: 0 18px;
-  color: rgba(255, 255, 255, 0.65);
-  font-weight: 400;
-}
-
-.topbar__right {
+/* ================= BUTTON ================= */
+.topbar-whatsapp {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
 }
 
-.topbar__socialLink {
-  width: 28px;
-  height: 28px;
-  background: #ffffff;
-  color: #0b123f;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
+.topbar-whatsapp:hover {
+  background: #1ebe5d;
 }
 
-.topbar__socialLink:hover {
-  transform: translateY(-2px);
-  background: #ff5e14;
-  color: #ffffff;
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .topbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .topbar-left {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .topbar-text {
+    font-size: 12px;
+  }
 }
 
-/* ================= HIDE TOPBAR ON TABLET + MOBILE ================= */
-@media (max-width: 991px) {
-  .topbar {
-    display: none;
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .topbar-text {
+    display: none; /* clean UI */
+  }
+
+  .topbar-whatsapp {
+    width: 100%;
+    justify-content: center;
   }
 }
