@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   FiHome,
   FiEdit,
@@ -20,14 +20,14 @@ const MENU = [
   {
     type: "link",
     label: "Dashboard",
-    icon: <FiHome />,
+    icon: <FiHome size={18} />,
     path: "/dashboard",
   },
   {
     type: "submenu",
     key: "blog",
     label: "Blog Management",
-    icon: <FiEdit />,
+    icon: <FiEdit size={18} />,
     children: [
       { label: "Add Blog", path: "/blog/add" },
       { label: "Blog List", path: "/blog/list" },
@@ -36,51 +36,62 @@ const MENU = [
   {
     type: "link",
     label: "Team Posting",
-    icon: <FiUsers />,
+    icon: <FiUsers size={18} />,
     path: "/team",
   },
   {
     type: "link",
     label: "Categories",
-    icon: <FiTag />,
+    icon: <FiTag size={18} />,
     path: "/categories",
   },
   {
     type: "submenu",
     key: "pricing",
     label: "Plans & Pricing",
-    icon: <FiDollarSign />,
+    icon: <FiDollarSign size={18} />,
     children: [
-      { label: "Post Plan", path: "price-plan/post" },
+      { label: "Post Plan", path: "/pricing/post" },
       { label: "View Plan", path: "/pricing/list" },
     ],
   },
   {
     type: "link",
     label: "Contact Management",
-    icon: <FiMail />,
+    icon: <FiMail size={18} />,
     path: "/admin-contact",
   },
-  
   {
     type: "link",
     label: "Cold Leads",
-    icon: <FiPhoneCall />,
+    icon: <FiPhoneCall size={18} />,
     path: "/cold-lead",
   },
   {
     type: "link",
     label: "Testimonials",
-    icon: <FiStar />,
+    icon: <FiStar size={18} />,
     path: "/testimonials",
   },
 ];
 
 const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
-  const [openMenu, setOpenMenu] = useState("");
+  const [openMenu, setOpenMenu] = useState(null);
+  const location = useLocation();
+
+  // Auto open submenu based on route
+  useEffect(() => {
+    if (location.pathname.startsWith("/blog")) {
+      setOpenMenu("blog");
+    } else if (location.pathname.startsWith("/pricing")) {
+      setOpenMenu("pricing");
+    } else {
+      setOpenMenu(null);
+    }
+  }, [location.pathname]);
 
   const toggleMenu = (key) => {
-    setOpenMenu(openMenu === key ? "" : key);
+    setOpenMenu((prev) => (prev === key ? null : key));
   };
 
   return (
@@ -88,7 +99,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
       {/* MOBILE OVERLAY */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
           onClick={() => setMobileOpen(false)}
         />
       )}
@@ -109,12 +120,11 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
           {isOpen && (
             <span className="font-semibold tracking-wide">Cloud X Secure</span>
           )}
-
           <button
-            className="ml-auto lg:hidden"
+            className="ml-auto lg:hidden text-white"
             onClick={() => setMobileOpen(false)}
           >
-            <FiX />
+            <FiX size={20} />
           </button>
         </div>
 
@@ -122,7 +132,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
         <div className="flex flex-col items-center py-6 border-b border-white/10">
           <img
             src="https://i.pravatar.cc/100"
-            className="w-16 h-16 rounded-full mb-2"
+            className="w-16 h-16 rounded-full mb-3 ring-2 ring-indigo-500/70"
             alt="profile"
           />
           {isOpen && (
@@ -136,7 +146,6 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
         {/* MENU */}
         <nav className="px-3 py-4 text-sm">
           <ul className="space-y-1">
-
             {MENU.map((item, index) => {
               if (item.type === "link") {
                 return (
@@ -164,7 +173,7 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
 
                       {isOpen && (
                         <FiChevronRight
-                          className={`transition ${
+                          className={`transition-transform duration-300 ${
                             openMenu === item.key ? "rotate-90" : ""
                           }`}
                         />
@@ -190,7 +199,6 @@ const AppSidebar = ({ isOpen, mobileOpen, setMobileOpen }) => {
 
               return null;
             })}
-
           </ul>
         </nav>
       </aside>
@@ -329,7 +337,7 @@ const SidebarLink = ({ to, icon, label, open }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `sidebar-item ${isActive ? "bg-white/10 text-white" : ""}`
+      `sidebar-item ${isActive ? "active" : ""}`
     }
   >
     {icon}
