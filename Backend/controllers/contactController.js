@@ -7,7 +7,7 @@ exports.saveContact = async (req, res) => {
 
     let contact = await Contact.findOne();
 
-    if (contact) {
+    if (contact) {    
       contact.phone = phone;
       contact.email = email;
       contact.office = office;
@@ -26,9 +26,26 @@ exports.saveContact = async (req, res) => {
 /* ================= GET CONTACT ================= */
 exports.getContact = async (req, res) => {
   try {
-    const contact = await Contact.findOne();
-    res.status(200).json({ success: true, data: contact });
+    let contact = await Contact.findOne();
+
+    // ✅ ensure empty object instead of null
+    if (!contact) {
+      contact = {
+        phone: "",
+        email: "",
+        office: "",
+        website: "",
+      };
+    }
+
+    res.status(200).json({
+      success: true,
+      data: contact,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };

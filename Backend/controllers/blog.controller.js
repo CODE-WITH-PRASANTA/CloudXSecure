@@ -6,7 +6,7 @@ exports.createBlog = async (req, res) => {
   try {
     const blog = await Blog.create({
       ...req.body,
-      image: req.body.image || null,
+      image: req.file ? req.file.path : null, // ✅ FIXED
       tags: req.body.tags ? JSON.parse(req.body.tags) : [],
     });
 
@@ -74,7 +74,6 @@ exports.updateBlog = async (req, res) => {
       });
     }
 
-    // Update text fields safely
     blog.title = req.body.title || blog.title;
     blog.category = req.body.category || blog.category;
     blog.author = req.body.author || blog.author;
@@ -87,13 +86,12 @@ exports.updateBlog = async (req, res) => {
       blog.tags = JSON.parse(req.body.tags);
     }
 
-    // ✅ ONLY if new file uploaded
-    if (req.file && req.body.image) {
+    // ✅ FIXED IMAGE UPDATE
+    if (req.file) {
       if (blog.image) {
         deleteImageFile(blog.image);
       }
-
-      blog.image = req.body.image;
+      blog.image = req.file.path;
     }
 
     await blog.save();
@@ -149,8 +147,7 @@ exports.toggleStatus = async (req, res) => {
         message: "Blog not found",
       });
 
-    blog.status =
-      blog.status === "published" ? "draft" : "published";
+    blog.status = blog.status === "published" ? "draft" : "published";
 
     await blog.save();
 

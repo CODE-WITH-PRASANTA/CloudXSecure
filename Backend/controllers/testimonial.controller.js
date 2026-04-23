@@ -6,7 +6,7 @@ exports.createTestimonial = async (req, res) => {
   try {
     const testimonial = await Testimonial.create({
       ...req.body,
-      image: req.body.image || null,
+      image: req.file ? req.file.path : null, // ✅ FIXED
     });
 
     res.status(201).json({
@@ -14,7 +14,11 @@ exports.createTestimonial = async (req, res) => {
       data: testimonial,
     });
   } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
+    console.error("CREATE ERROR:", err);
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
   }
 };
 
@@ -23,9 +27,16 @@ exports.getTestimonials = async (req, res) => {
   try {
     const data = await Testimonial.find().sort({ createdAt: -1 });
 
-    res.json({ success: true, data });
+    res.json({
+      success: true,
+      data,
+    });
   } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
+    console.error("GET ERROR:", err);
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
   }
 };
 
@@ -34,16 +45,27 @@ exports.deleteTestimonial = async (req, res) => {
   try {
     const item = await Testimonial.findById(req.params.id);
 
-    if (!item)
-      return res.status(404).json({ success: false, message: "Not found" });
+    if (!item) {
+      return res.status(404).json({
+        success: false,
+        message: "Testimonial not found",
+      });
+    }
 
     if (item.image) deleteImageFile(item.image);
 
     await Testimonial.findByIdAndDelete(req.params.id);
 
-    res.json({ success: true, message: "Deleted successfully" });
+    res.json({
+      success: true,
+      message: "Deleted successfully",
+    });
   } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
+    console.error("DELETE ERROR:", err);
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
   }
 };
 
@@ -52,13 +74,30 @@ exports.toggleStatus = async (req, res) => {
   try {
     const item = await Testimonial.findById(req.params.id);
 
+    // ✅ FIX: prevent crash
+    if (!item) {
+      return res.status(404).json({
+        success: false,
+        message: "Testimonial not found",
+      });
+    }
+
+    // ✅ toggle logic
     item.status =
       item.status === "published" ? "draft" : "published";
 
     await item.save();
 
-    res.json({ success: true, data: item });
+    res.json({
+      success: true,
+      message: "Status updated",
+      data: item,
+    });
   } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
+    console.error("TOGGLE ERROR:", err);
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
   }
 };

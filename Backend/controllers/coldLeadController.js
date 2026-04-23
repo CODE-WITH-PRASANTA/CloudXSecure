@@ -1,45 +1,159 @@
 const ColdLead = require("../models/ColdLead");
 
-/* CREATE LEAD */
+/* ================= CREATE LEAD ================= */
 exports.createLead = async (req, res) => {
   try {
-    const lead = await ColdLead.create(req.body);
-    res.status(201).json({ success: true, data: lead });
+    const { name, email, phone, service, message } = req.body;
+
+    // ✅ validation
+    if (!name || !email || !phone || !service) {
+      return res.status(400).json({
+        success: false,
+        message: "All required fields must be filled",
+      });
+    }
+
+    const lead = await ColdLead.create({
+      name,
+      email,
+      phone,
+      service,
+      message,
+    });
+
+    res.status(201).json({
+      success: true,
+      message: "Lead created successfully",
+      data: lead,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("CREATE ERROR:", error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
-/* GET ALL LEADS */
+/* ================= GET ALL LEADS ================= */
 exports.getLeads = async (req, res) => {
   try {
     const leads = await ColdLead.find().sort({ createdAt: -1 });
-    res.json({ success: true, data: leads });
+
+    res.status(200).json({
+      success: true,
+      count: leads.length,
+      data: leads,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("GET ERROR:", error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
-/* UPDATE STATUS */
+/* ================= UPDATE STATUS (PATCH) ================= */
 exports.updateStatus = async (req, res) => {
   try {
+    const { status } = req.body;
+
+    // ✅ validate status
+    if (!["new", "contacted", "converted"].includes(status)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid status value",
+      });
+    }
+
     const lead = await ColdLead.findByIdAndUpdate(
       req.params.id,
-      { status: req.body.status },
+      { status },
       { new: true }
     );
-    res.json({ success: true, data: lead });
+
+    if (!lead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Status updated successfully",
+      data: lead,
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("STATUS UPDATE ERROR:", error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 
-/* DELETE LEAD */
+/* ================= FULL UPDATE (PUT) ================= */
+exports.updateLead = async (req, res) => {
+  try {
+    const { name, email, phone, service, message, company } = req.body;
+
+    const updatedLead = await ColdLead.findByIdAndUpdate(
+      req.params.id,
+      {
+        name,
+        email,
+        phone,
+        service,
+        message,
+        company,
+      },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedLead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Lead updated successfully",
+      data: updatedLead,
+    });
+  } catch (error) {
+    console.error("UPDATE ERROR:", error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+/* ================= DELETE LEAD ================= */
 exports.deleteLead = async (req, res) => {
   try {
-    await ColdLead.findByIdAndDelete(req.params.id);
-    res.json({ success: true, message: "Lead deleted" });
+    const lead = await ColdLead.findByIdAndDelete(req.params.id);
+
+    if (!lead) {
+      return res.status(404).json({
+        success: false,
+        message: "Lead not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Lead deleted successfully",
+    });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    console.error("DELETE ERROR:", error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };

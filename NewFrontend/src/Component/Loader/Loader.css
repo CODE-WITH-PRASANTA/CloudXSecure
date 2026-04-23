@@ -1,0 +1,102 @@
+/* FULL SCREEN */
+.main-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at center, #0b0f1a, #020617);
+  z-index: 999999;
+}
+
+/* SVG */
+.ai-loader {
+  width: 320px;
+}
+
+/* NODES */
+.node {
+  fill: #22c55e;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* CONNECTION LINES */
+.line {
+  stroke: #1e293b;
+  stroke-width: 2;
+}
+
+/* FLOW EFFECT */
+.flow {
+  stroke: #00f7ff;
+  stroke-dasharray: 6;
+  animation: flow 2s linear infinite;
+}
+
+.delay1 { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+.delay3 { animation-delay: 1.5s; }
+
+/* PULSE */
+.pulse {
+  fill: #00f7ff;
+  animation: pulse 2s infinite;
+}
+
+.delay1 { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+
+/* TEXT */
+.loading-text {
+  fill: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  animation: textFade 2s infinite ease-in-out;
+}
+
+/* ANIMATIONS */
+
+@keyframes pulse {
+  0% {
+    r: 2;
+    opacity: 1;
+  }
+  100% {
+    r: 10;
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.5;
+    filter: brightness(1);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+}
+
+@keyframes flow {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes textFade {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
