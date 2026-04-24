@@ -27,6 +27,7 @@ import Backup from "./Pages/Backup/Backup";
 import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";
 
 import Loader from "./Component/Loader/Loader"; // ✅ import loader
+import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 
 function App() {
   const location = useLocation();
@@ -73,6 +74,7 @@ function App() {
         <Route path="/monitoring/service/details" element={<Monitoring />} />
         <Route path="/backup/service/details" element={<Backup />} />
         <Route path="/cloudconsult/service/details" element={<CloudConsulting />} />
+        <Route path="/blog/details" element={<BlogDetails/>}/>
       </Routes>
 
       <Footer />
