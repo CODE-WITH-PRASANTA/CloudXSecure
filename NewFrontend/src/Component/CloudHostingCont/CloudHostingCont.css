@@ -32,6 +32,10 @@
   margin: 50px 0;
 }
 
+.chostcont__cards p{
+  text-align: justify;
+}
+
 .chostcont__card {
   background: #f9fafb;
   padding: 30px;

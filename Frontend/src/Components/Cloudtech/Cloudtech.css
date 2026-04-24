@@ -83,6 +83,7 @@
   font-size: 14px;
   letter-spacing: 2px;
   opacity: 0.85;
+  display: inline-block;
 }
 
 .aboutPro-title {
@@ -112,33 +113,89 @@
 
 .aboutPro-featureBox {
   background: rgba(255, 255, 255, 0.15);
-  padding: 14px 20px;
-  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 14px 18px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.aboutPro-featureBox:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .aboutPro-featureBox img {
   width: 36px;
 }
 
-/* STATS */
+/* ================= STATS (PREMIUM SMALL CARD TABLE) ================= */
 .aboutPro-stats {
-  display: flex;
-  gap: 50px;
   margin-top: 40px;
-  flex-wrap: wrap;
+
+  /* ✅ table style layout */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 16px;
+
+  /* ✅ small "table" container feel */
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+/* each stat becomes small premium card */
+.aboutPro-stats > div {
+  border-radius: 16px;
+  padding: 16px 14px;
+  background: rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: grid;
+  gap: 6px;
+  transition: transform 0.25s ease, background 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle shine */
+.aboutPro-stats > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transition: transform 0.7s ease;
+}
+
+.aboutPro-stats > div:hover::before {
+  transform: translateX(120%);
+}
+
+.aboutPro-stats > div:hover {
+  transform: translateY(-3px);
+  background: rgba(0, 0, 0, 0.14);
 }
 
 .aboutPro-stats h3 {
-  font-size: clamp(24px, 3vw, 34px);
-  font-weight: 800;
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
 }
 
 .aboutPro-stats p {
-  font-size: 14px;
-  opacity: 0.9;
+  font-size: 13px;
+  opacity: 0.92;
 }
 
 /* ================= ANIMATION ================= */
@@ -169,13 +226,16 @@
     transform: translateX(50%);
   }
 
-  .aboutPro-stats {
-    justify-content: center;
-    gap: 30px;
-  }
-
   .aboutPro-features {
     justify-content: center;
+  }
+
+  /* ✅ stats becomes 2 columns on tablet */
+  .aboutPro-stats {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -190,12 +250,6 @@
     align-items: center;
   }
 
-  .aboutPro-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
   .aboutPro-smallImgBox {
     width: 200px;
     bottom: -30px;
@@ -203,6 +257,17 @@
 
   .aboutPro-rotateText {
     right: 20px;
+  }
+
+  /* ✅ stats becomes 1 column on mobile */
+  .aboutPro-stats {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .aboutPro-stats > div {
+    padding: 14px 14px;
   }
 }
 

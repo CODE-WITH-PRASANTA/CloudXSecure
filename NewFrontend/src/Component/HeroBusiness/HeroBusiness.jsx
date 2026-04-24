@@ -103,10 +103,14 @@ const HeroBusiness = () => {
               </div>
             </div>
 
-            {/* BUTTON */}
-            <button className="heroBusiness__button">
-              Get Started Today
-            </button>
+           <button
+  className="heroBusiness__button"
+  onClick={() =>
+    window.open("https://wa.me/917666488777", "_blank")
+  }
+>
+  Get Started Today
+</button>
 
           </div>
         </div>

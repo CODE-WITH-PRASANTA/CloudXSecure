@@ -9,33 +9,30 @@ import diamondImg from "../../assets/pa4.webp";
 import { FaCheck, FaTimes, FaQuestionCircle } from "react-icons/fa";
 
 const pricingData = {
-  monthly: "$49",
-  yearly: "$36",
+  monthly: "₹49",
+  yearly: "₹36",
 };
 
 const Cloudplans = () => {
+  const base = "pricingPro";
   const [activeTab, setActiveTab] = useState("monthly");
 
   return (
-    <section className="pricingPro-section">
-
+    <section className={`${base}__section`}>
       {/* Decor */}
-      <img src={diamondImg} alt="" className="pricingPro-diamond" />
-      <img src={handImg} alt="" className="pricingPro-hand" />
+      <img src={diamondImg} alt="" className={`${base}__diamond`} />
+      <img src={handImg} alt="" className={`${base}__hand`} />
 
-      <div className="pricingPro-container">
-
+      <div className={`${base}__container`}>
         {/* HEADER */}
-        <div className="pricingPro-header">
-          <span className="pricingPro-badge">OUR PRICING</span>
-          <h2 className="pricingPro-title">
-            CloudXSecure Regular Plan
-          </h2>
+        <div className={`${base}__header`}>
+          <span className={`${base}__badge`}>OUR PRICING</span>
+          <h2 className={`${base}__title`}>CloudXSecure Regular Plan</h2>
 
-          <div className="pricingPro-toggleWrap">
-
-            <div className="pricingPro-toggle">
+          <div className={`${base}__toggleWrap`}>
+            <div className={`${base}__toggle`}>
               <button
+                type="button"
                 className={activeTab === "monthly" ? "active" : ""}
                 onClick={() => setActiveTab("monthly")}
               >
@@ -43,6 +40,7 @@ const Cloudplans = () => {
               </button>
 
               <button
+                type="button"
                 className={activeTab === "yearly" ? "active" : ""}
                 onClick={() => setActiveTab("yearly")}
               >
@@ -50,24 +48,21 @@ const Cloudplans = () => {
               </button>
             </div>
 
-            <div className="pricingPro-save">
+            <div className={`${base}__save`}>
               <img src={curveArrow} alt="" />
               <span>Save 25%</span>
             </div>
-
           </div>
         </div>
 
         {/* CARDS */}
-        <div className="pricingPro-grid">
+        <div className={`${base}__grid`}>
           {[1, 2, 3].map((_, index) => (
             <div
               key={index}
-              className={`pricingPro-card ${
-                index === 1 ? "active" : ""
-              }`}
+              className={`${base}__card ${index === 1 ? "active" : ""}`}
             >
-              <div className="pricingPro-cardTop">
+              <div className={`${base}__cardTop`}>
                 <div>
                   <h4>Regular Plan</h4>
                   <h3>
@@ -80,36 +75,39 @@ const Cloudplans = () => {
                 <img src={cloudImg} alt="" />
               </div>
 
-              <ul className="pricingPro-list">
+              <ul className={`${base}__list`}>
                 {[
                   "Secure Cloud Storage",
                   "Weekly Automated Backups",
                   "Free SSL Certificate",
                   "24/7 System Monitoring",
                   "Free Domain Setup",
-                  "Web & App Deployment Support"
+                  "Web & App Deployment Support",
                 ].map((feature, i) => (
                   <li key={i}>
-                    <span className="tick"><FaCheck /></span>
+                    <span className="tick">
+                      <FaCheck />
+                    </span>
                     <span>{feature}</span>
                     <FaQuestionCircle className="helpIcon" />
                   </li>
                 ))}
 
                 <li className="disabled">
-                  <span className="cross"><FaTimes /></span>
+                  <span className="cross">
+                    <FaTimes />
+                  </span>
                   <span>20+ Payment Methods</span>
                   <FaQuestionCircle className="helpIcon" />
                 </li>
               </ul>
 
-              <button className="pricingPro-btn">
+              <button type="button" className={`${base}__btn`}>
                 GET STARTED NOW →
               </button>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

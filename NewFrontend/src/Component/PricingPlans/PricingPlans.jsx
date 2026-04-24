@@ -5,25 +5,25 @@ import { FaCheckCircle } from "react-icons/fa";
 const plans = [
   {
     id: 1,
-    price: "$49",
+    price: "₹4,999",
     title: "Starter Plan",
     desc: "Ideal for startups and small businesses looking to establish a secure digital presence.",
   },
   {
     id: 2,
-    price: "$59",
+    price: "₹6,999",
     title: "Business Plan",
     desc: "Perfect for growing companies that need scalable web and cloud solutions.",
   },
   {
     id: 3,
-    price: "$69",
+    price: "₹9,999",
     title: "Growth Plan",
     desc: "Designed for businesses expanding their digital operations with advanced features.",
   },
   {
     id: 4,
-    price: "$79",
+    price: "₹14,999",
     title: "Premium Plan",
     desc: "Complete IT and cloud solution package with enhanced performance and security.",
   },
@@ -71,7 +71,7 @@ const PricingPlans = () => {
                 <p>{plan.title}</p>
               </div>
 
-              {/* PLAN DESCRIPTION */}
+              {/* DESCRIPTION */}
               <p className="pricingPlans-desc">
                 {plan.desc}
               </p>

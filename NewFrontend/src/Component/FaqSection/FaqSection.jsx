@@ -9,29 +9,72 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const faqData = [
   {
-    question: "What IT services does CloudXsecure provide?",
+    question: "What services does CloudXsecure offer in cloud computing and IT solutions?",
     answer:
-      "CloudXsecure offers end-to-end IT solutions including cloud infrastructure setup, web development, mobile app development, DevOps automation, and ongoing technical support tailored to business needs.",
+      "CloudXsecure provides comprehensive cloud computing and IT solutions including cloud infrastructure deployment, secure web and mobile app development, DevOps automation, cybersecurity services, and scalable enterprise solutions.",
   },
   {
-    question: "How secure are your cloud and application solutions?",
+    question: "Why should I choose CloudXsecure for cloud security and data protection?",
     answer:
-      "Security is a core focus at CloudXsecure. We implement industry-standard security practices, including data encryption, secure cloud architecture, and continuous monitoring to protect your business from potential threats.",
+      "CloudXsecure prioritizes advanced cybersecurity with encryption, secure architecture, and proactive threat monitoring.",
   },
   {
-    question: "Do you provide support after project delivery?",
+    question: "Does CloudXsecure provide ongoing support and maintenance services?",
     answer:
-      "Yes, CloudXsecure provides reliable post-launch support, including system monitoring, updates, performance optimization, and technical assistance to ensure your business operations run smoothly.",
+      "Yes, we offer real-time monitoring, updates, and technical support for seamless performance.",
   },
   {
-    question: "Which industries do you work with?",
+    question: "Which industries benefit from CloudXsecure services?",
     answer:
-      "We work with a wide range of industries including healthcare, fintech, e-commerce, startups, and enterprise businesses, delivering customized IT solutions that align with industry-specific requirements.",
+      "Healthcare, fintech, e-commerce, education, startups, and enterprises.",
+  },
+  {
+    question: "How does CloudXsecure help businesses scale?",
+    answer:
+      "Through scalable cloud infrastructure, automation, and performance-driven solutions.",
+  },
+  {
+    question: "Are services suitable for startups?",
+    answer:
+      "Yes, flexible and cost-effective solutions are available for startups.",
+  },
+
+  // NEW QUESTIONS
+  {
+    question: "Do you offer multi-cloud or hybrid cloud solutions?",
+    answer:
+      "Yes, we design and deploy hybrid and multi-cloud environments for flexibility and reliability.",
+  },
+  {
+    question: "Is CloudXsecure compliant with industry standards?",
+    answer:
+      "We follow GDPR, ISO, and other compliance frameworks for secure operations.",
+  },
+  {
+    question: "How fast is deployment?",
+    answer:
+      "Deployment timelines depend on project size but are optimized for speed and efficiency.",
+  },
+  {
+    question: "Do you provide disaster recovery solutions?",
+    answer:
+      "Yes, we offer automated backup and disaster recovery strategies.",
   },
 ];
 
+const ITEMS_PER_PAGE = 4;
+
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(faqData.length / ITEMS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentFaqs = faqData.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE
+  );
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -39,22 +82,14 @@ const FaqSection = () => {
 
   return (
     <section className="faqSection" id="faq">
-      
-      {/* Background Shapes */}
-      <img
-        src={shape1}
-        alt="decorative wave shape background"
-        className="faq-shape faq-shape-1"
-      />
-      <img
-        src={shape2}
-        alt="decorative geometric shape background"
-        className="faq-shape faq-shape-2"
-      />
+
+      {/* Shapes */}
+      <img src={shape1} alt="" className="faq-shape faq-shape-1" />
+      <img src={shape2} alt="" className="faq-shape faq-shape-2" />
 
       <div className="faq-container">
 
-        {/* LEFT SIDE */}
+        {/* LEFT */}
         <div className="faq-left">
           <span className="faq-tag">CLOUDXSECURE FAQ</span>
 
@@ -64,14 +99,11 @@ const FaqSection = () => {
           </h2>
 
           <div className="faq-image">
-            <img
-              src={faqImg}
-              alt="CloudXsecure IT support team assisting businesses with cloud and application solutions"
-            />
+            <img src={faqImg} alt="faq" />
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT */}
         <div className="faq-right">
 
           <h3>
@@ -79,14 +111,12 @@ const FaqSection = () => {
           </h3>
 
           <p className="faq-desc">
-            Find answers to common questions about CloudXsecure services, including
-            cloud solutions, application development, and IT support. We aim to
-            provide clear, transparent information to help you make informed
-            technology decisions.
+            Explore common questions about our cloud and IT services.
           </p>
 
+          {/* FAQ LIST */}
           <div className="faq-list">
-            {faqData.map((item, index) => (
+            {currentFaqs.map((item, index) => (
               <div
                 className={`faq-item ${
                   activeIndex === index ? "active" : ""
@@ -106,6 +136,35 @@ const FaqSection = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* PAGINATION */}
+          <div className="faq-pagination">
+
+            <button
+              onClick={() => setCurrentPage((p) => p - 1)}
+              disabled={currentPage === 1}
+            >
+              Prev
+            </button>
+
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                className={currentPage === i + 1 ? "active" : ""}
+                onClick={() => setCurrentPage(i + 1)}
+              >
+                {i + 1}
+              </button>
+            ))}
+
+            <button
+              onClick={() => setCurrentPage((p) => p + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+
           </div>
 
         </div>

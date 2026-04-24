@@ -74,6 +74,10 @@
   text-align: center;
 }
 
+.itm__card p{
+  text-align: justify;
+}
+
 .itm__customIcon {
   width: 55px;
   margin-bottom: 12px;
