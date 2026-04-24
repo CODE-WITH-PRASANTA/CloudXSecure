@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "./layout/AppLayout/AppLayout";
 
 import BlogAdmin from "./Component/BlogPost/BlogPost";
+import BlogList from "./Component/BlogList/BlogList";
 import BlogPage from "./Component/BlogView/BlogView";
 import TeamAdmin from "./Component/TeamPost/TeamPost";
 import AdminTestimonial from "./pages/AdminTestimonial/AdminTestimonial";
@@ -38,7 +39,7 @@ function App() {
 
         <Route path="blog">
           <Route path="add" element={<BlogAdmin />} />
-          <Route path="list" element={<BlogPage />} />
+          <Route path="list" element={<BlogList />} />
         </Route>
 
         <Route path="team" element={<TeamAdmin />} />
