@@ -55,6 +55,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blogs/:id" element={<BlogDetails/>}/>
         <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
@@ -74,7 +75,6 @@ function App() {
         <Route path="/monitoring/service/details" element={<Monitoring />} />
         <Route path="/backup/service/details" element={<Backup />} />
         <Route path="/cloudconsult/service/details" element={<CloudConsulting />} />
-        <Route path="/blog/details" element={<BlogDetails/>}/>
       </Routes>
 
       <Footer />

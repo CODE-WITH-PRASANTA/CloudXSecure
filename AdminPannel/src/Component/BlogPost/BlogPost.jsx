@@ -160,7 +160,7 @@ const BlogPost = () => {
       const blog = blogs[index];
       if (!blog?._id) return;
 
-      const res = await API.patch(`/blogs/toggle/${blog._id}`);
+      const res = await API.put(`/blogs/toggle/${blog._id}`);
 
       // ✅ Update only that blog instantly
       const updatedBlogs = [...blogs];

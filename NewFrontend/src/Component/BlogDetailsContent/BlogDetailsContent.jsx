@@ -1,5 +1,8 @@
 import React from "react";
 import "./BlogDetailsContent.css";
+import { useEffect, useState } from "react";
+import API, { IMAGE_URL } from "../../api/axios";
+import { useParams } from "react-router-dom";
 
 // IMPORT IMAGES
 import heroImg from "../../assets/blog-thu.webp";
@@ -9,121 +12,111 @@ import img2 from "../../assets/blog-thu3.webp";
 // ICONS
 import { FaCalendarAlt, FaFolderOpen } from "react-icons/fa";
 import { BsCheckCircleFill } from "react-icons/bs";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa";
 
 const BlogDetailsContent = () => {
+  const { id } = useParams();
+  const [blog, setBlog] = useState(null);
+
+  const loadBlog = async () => {
+    try {
+      const res = await API.get(`/blogs/${id}`);
+      setBlog(res.data.data || res.data);
+      // console.log(res.data.data);
+    } catch (error) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    loadBlog();
+  }, [id]);
+
+  if (!blog) return <p>Loading...</p>;
+
   return (
     <div className="bdc">
       <div className="bdc__container">
-
         {/* HERO IMAGE */}
         <div className="bdc__hero">
-          <img src={heroImg} alt="blog" />
+          <img src={`${IMAGE_URL}${blog.image}`} alt="blog" />
         </div>
 
         {/* CONTENT CARD */}
         <div className="bdc__card">
-
           {/* META */}
           <div className="bdc__meta">
             <span className="bdc__metaItem">
-              <span className="bdc__line"></span> By Author
+              <span className="bdc__line"></span> By {blog.author || "Admin"}
             </span>
 
             <span className="bdc__metaItem">
-              <FaCalendarAlt /> 05 January, 2024
+              <FaCalendarAlt /> {new Date(blog.createdAt).toDateString()}
             </span>
 
             <span className="bdc__metaItem">
-              <FaFolderOpen /> IT Solutions
+              <FaFolderOpen /> {blog.category || "General"}
             </span>
           </div>
 
           {/* TITLE */}
-          <h1 className="bdc__title">
-            Solution This Business For is Marketing Blog
-          </h1>
+          <h1 className="bdc__title">{blog.title}</h1>
 
-          {/* TEXT */}
-          <p className="bdc__text">
-            Alternative innovation to ethical network environmental whiteboard
-            pursue compelling results for methods empowerment. Dramatically
-            architect go forward opportunities before user-centric Credibly
-            implement exceptional
-          </p>
+          {/* ✅ MAIN CONTENT (HTML RENDER) */}
+          <div
+            className="bdc__text"
+            dangerouslySetInnerHTML={{
+              __html: blog.content || "<p>No content available</p>",
+            }}
+          />
 
-          <p className="bdc__text">
-            Continually fashion orthogonal leadership skills whereas wireless
-            metrics. Uniquely syndicate exce opportunities with interdependent
-            users. Globally enhance fully tested meta-services rather than
-            solutions. Proactively integrate client-integrate go forward
-            architectures and turnkey meta Interactively harness integrated ROI
-            whereas frictionless products.
-          </p>
+          {/* ✅ QUOTE */}
+          {blog.quotes && (
+            <div className="bdc__quote">
+              <p>“ {blog.quotes} ”</p>
+              <span>{blog.author}</span>
+            </div>
+          )}
 
-          {/* QUOTE */}
-          <div className="bdc__quote">
-            <p>
-              “ Competently architect intermandated deliverables client with
-              niches continually underwhelm build cross-media growth strategies
-              without robust.”
-            </p>
-            <span>CEO & Founder</span>
-          </div>
-
-          {/* SECTION */}
-          <h2 className="bdc__subtitle">
-            Our Begin Now To Beingonl
-          </h2>
+          {/* ✅ OPTIONAL STATIC SECTION (you can remove if not needed) */}
+          <h2 className="bdc__subtitle">Additional Insights</h2>
 
           <p className="bdc__text">
-            Dynamically optimize leading-edge value via pandemic manufactured
-            products. Conveniently seize sticky growth strategies and ethical
-            potentialities. Professionally create high-quality rather than
-            intuitive portals.
+            This section can be used for extra static or dynamic content like
+            recommendations, summaries, or related explanations.
           </p>
 
-          {/* CHECK LIST */}
-          <div className="bdc__list">
-            <div><BsCheckCircleFill /> Innovate wireless market</div>
-            <div><BsCheckCircleFill /> Productivate resource sucking</div>
-            <div><BsCheckCircleFill /> Proactively unleash oriented communities</div>
-            <div><BsCheckCircleFill /> Credibly develop progressive archi</div>
-          </div>
-
-          {/* IMAGE GRID */}
-          <div className="bdc__imageGrid">
-            <img src={img1} alt="img1" />
-            <img src={img2} alt="img2" />
-          </div>
-
-          {/* FINAL TEXT */}
-          <h2 className="bdc__subtitle">
-            Arcu At Mauris Facilisis Fermentum
-          </h2>
-
-          <p className="bdc__text">
-            Progressively target highly efficient business for distributed
-            interfaces. Globally evisculate pand networks rather than viral
-            collaboration and idea-sharing. Continually utilize turnkey networks
-            via productize intuitive information whereas
-          </p>
-
-          {/* FOOTER */}
+          {/* ✅ TAGS */}
           <div className="bdc__footer">
             <div className="bdc__tags">
-              <span>Digital Marketing</span>
-              <span>Development</span>
+              {blog.tags?.length > 0 ? (
+                blog.tags.map((tag, i) => <span key={i}>{tag}</span>)
+              ) : (
+                <span>No Tags</span>
+              )}
             </div>
 
+            {/* SOCIAL */}
             <div className="bdc__social">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaLinkedinIn /></a>
-              <a href="#"><FaInstagram /></a>
+              <a href="#">
+                <FaFacebookF />
+              </a>
+              <a href="#">
+                <FaTwitter />
+              </a>
+              <a href="#">
+                <FaLinkedinIn />
+              </a>
+              <a href="#">
+                <FaInstagram />
+              </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>

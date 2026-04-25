@@ -60,7 +60,7 @@ const BlogDetailsComment = () => {
         </div>
 
         {/* FORM */}
-        <div className="bdcmt__formWrapper">
+        {/* <div className="bdcmt__formWrapper">
           <h3 className="bdcmt__formTitle">Leave A Comments</h3>
 
           <form className="bdcmt__form">
@@ -91,7 +91,7 @@ const BlogDetailsComment = () => {
               POST COMMENTS
             </button>
           </form>
-        </div>
+        </div> */}
 
       </div>
     </div>
