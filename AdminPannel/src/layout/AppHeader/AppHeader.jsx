@@ -9,10 +9,45 @@ import {
   FiLogOut,
   FiUser,
 } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import API from "../../api/axios";
 
 const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
   const [profileOpen, setProfileOpen] = useState(false);
   const profileRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    const result = await Swal.fire({
+      title: "Logout?",
+      text: "Do you want to logout?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+    });
+
+    if (!result.isConfirmed) return;
+
+    try {
+      // ✅ call backend logout
+      await API.post("/auth/logout");
+    } catch (error) {
+      console.log("Logout API error:", error);
+    }
+
+    // ✅ clear all auth data
+    localStorage.removeItem("token");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("admin");
+
+    // ✅ redirect
+    navigate("/login");
+
+    // optional
+    window.location.reload();
+  };
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -27,7 +62,6 @@ const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
 
   return (
     <header className="h-20 bg-gradient-to-r from-slate-50 via-white to-slate-100 backdrop-blur-xl border-b border-slate-200 flex items-center justify-between px-6 lg:px-10 shadow-sm z-50 relative">
-
       {/* ================= LEFT ================= */}
       <div className="flex items-center gap-5">
         <button
@@ -63,10 +97,7 @@ const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
       </div>
 
       {/* ================= RIGHT ================= */}
-      <div
-        className="flex items-center gap-5 relative"
-        ref={profileRef}
-      >
+      <div className="flex items-center gap-5 relative" ref={profileRef}>
         {/* Language */}
         <span className="hidden md:block text-sm font-medium text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
           EN
@@ -98,15 +129,10 @@ const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
           {/* ================= DROPDOWN ================= */}
           {profileOpen && (
             <div className="absolute right-0 top-14 w-60 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-dropdown">
-              
               {/* Profile Info */}
               <div className="px-5 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
-                <p className="text-sm font-semibold">
-                  Jone Copper
-                </p>
-                <p className="text-xs opacity-90">
-                  Super Admin
-                </p>
+                <p className="text-sm font-semibold">Jone Copper</p>
+                <p className="text-xs opacity-90">Super Admin</p>
               </div>
 
               {/* Menu */}
@@ -121,7 +147,10 @@ const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
                   Account Settings
                 </li>
 
-                <li className="flex items-center gap-3 px-5 py-3 text-red-500 hover:bg-red-50 cursor-pointer transition-all border-t">
+                <li
+                  onClick={handleLogout}
+                  className="flex items-center gap-3 px-5 py-3 text-red-500 hover:bg-red-50 cursor-pointer transition-all border-t"
+                >
                   <FiLogOut />
                   Logout
                 </li>

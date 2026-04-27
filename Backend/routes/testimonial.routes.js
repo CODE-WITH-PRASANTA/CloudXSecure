@@ -15,6 +15,6 @@ router.get("/", controller.getTestimonials);
 
 router.delete("/:id", controller.deleteTestimonial);
 
-router.patch("/toggle/:id", controller.toggleStatus);
+router.put("/toggle/:id", controller.toggleStatus);
 
 module.exports = router;

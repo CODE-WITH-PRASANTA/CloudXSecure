@@ -2,8 +2,54 @@ import React, { useEffect, useState } from "react";
 import "./FloatingForm.css";
 import { Phone, MessageCircle, X } from "lucide-react";
 
+import Swal from "sweetalert2";
+import API from "../../api/axios";
+
 const FloatingForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
   const [open, setOpen] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await API.post("/leads", formData);
+
+      if (res.status === 201) {
+        Swal.fire("Success 🎉", "Request submitted!", "success");
+
+        // reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+
+        setOpen(false);
+      }
+    } catch (err) {
+      Swal.fire(
+        "Error ❌",
+        err.response?.data?.message || "Something went wrong",
+        "error",
+      );
+    }
+  };
 
   // ✅ Show every time page loads
   useEffect(() => {
@@ -30,7 +76,6 @@ const FloatingForm = () => {
       {/* Center Modal */}
       <div className={`modal-wrapper ${open ? "show" : ""}`}>
         <div className="floating-form">
-          
           {/* Header */}
           <div className="form-header">
             <h3>Get Free Consultation</h3>
@@ -38,21 +83,49 @@ const FloatingForm = () => {
           </div>
 
           {/* Form */}
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <input type="text" placeholder="Full Name" required />
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="form-group">
-              <input type="email" placeholder="Email Address" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="form-group">
-              <input type="tel" placeholder="Phone Number" required />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                pattern="[0-9]{10}"
+                title="Enter valid 10-digit number"
+                required
+              />
             </div>
 
             <div className="form-group">
-              <select required>
+              <select
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                required
+              >
                 <option value="">Select Service</option>
                 <option>Cloud Migration</option>
                 <option>Cloud Security</option>
@@ -63,7 +136,12 @@ const FloatingForm = () => {
             </div>
 
             <div className="form-group">
-              <textarea placeholder="Message (Optional)" />
+              <textarea
+                name="message"
+                placeholder="Message (Optional)"
+                value={formData.message}
+                onChange={handleChange}
+              />
             </div>
 
             <button type="submit" className="submit-btn">

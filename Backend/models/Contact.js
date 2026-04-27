@@ -7,7 +7,7 @@ const contactSchema = new mongoose.Schema(
     office: { type: String, required: true },
     website: { type: String, required: true },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Contact", contactSchema);

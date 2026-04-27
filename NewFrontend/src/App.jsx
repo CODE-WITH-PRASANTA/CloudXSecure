@@ -1,6 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import Navbar from "./Pages/Navbar/Navbar";
 import Footer from "./Pages/Footer/Footer";
@@ -26,17 +26,30 @@ import Monitoring from "./Pages/Monitoring/Monitoring";
 import Backup from "./Pages/Backup/Backup";
 import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";
 
-
-
+import Loader from "./Component/Loader/Loader"; // ✅ import loader
 
 function App() {
-  return (
-    <BrowserRouter>
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
-     
+  useEffect(() => {
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1300); // adjust speed if needed
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  return (
+    <>
+      {/* ✅ GLOBAL LOADER */}
+      {loading && <Loader />}
+
       <Navbar />
-      <FloatingForm/>
-      <FloatingIcons/>
+      <FloatingForm />
+      <FloatingIcons />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -47,26 +60,23 @@ function App() {
         <Route path="/faq" element={<FaqSection />} />
         <Route path="/web-development" element={<WebDevlopement />} />
         <Route path="/app-development" element={<AppDevlopement />} />
-        <Route path="/service/details" element={<ServiceDetails/>} />
+        <Route path="/service/details" element={<ServiceDetails />} />
 
         {/* SERVICES */}
-
-        <Route path="/it/service/details" element={<ITManagement/>} />
-        <Route path="/digital/service/details" element={<DigitalMarketing/>} />
-        <Route path="/managecloud/service/details" element={<ManageCloud/>} />
-        <Route path="/cloudsecurity/service/details" element={<CloudSecurity/>} />
-        <Route path="/cloudhosting/service/details" element={<CloudHosting/>} />
-        <Route path="/cloudmigration/service/details" element={<CloudMigration/>}/>
-        <Route path="/devops/details" element={<DevAuto/>}/>
-        <Route path="/monitoring/service/details" element={<Monitoring/>}/>
-        <Route path="/backup/service/details" element={<Backup/>}/>
-        <Route path="/cloudconsult/service/details" element={<CloudConsulting/>}/>
+        <Route path="/it/service/details" element={<ITManagement />} />
+        <Route path="/digital/service/details" element={<DigitalMarketing />} />
+        <Route path="/managecloud/service/details" element={<ManageCloud />} />
+        <Route path="/cloudsecurity/service/details" element={<CloudSecurity />} />
+        <Route path="/cloudhosting/service/details" element={<CloudHosting />} />
+        <Route path="/cloudmigration/service/details" element={<CloudMigration />} />
+        <Route path="/devops/details" element={<DevAuto />} />
+        <Route path="/monitoring/service/details" element={<Monitoring />} />
+        <Route path="/backup/service/details" element={<Backup />} />
+        <Route path="/cloudconsult/service/details" element={<CloudConsulting />} />
       </Routes>
-      
-      <Footer />
-      
 
-    </BrowserRouter>
+      <Footer />
+    </>
   );
 }
 

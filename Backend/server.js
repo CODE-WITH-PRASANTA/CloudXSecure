@@ -12,9 +12,10 @@ const testimonialRoutes = require("./routes/testimonial.routes");
 const coldLeadRoutes = require("./routes/coldLeadRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const planRoutes = require("./routes/planRoutes");
-
+const authRoutes = require("./routes/adminAuth.routes")
 
 const app = express();
+require("dotenv").config();
 
 /* ================= CORS ================= */
 app.use(
@@ -38,6 +39,8 @@ app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/leads", coldLeadRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/plans", planRoutes);
+app.use("/api/auth", authRoutes);
+
 
 
 

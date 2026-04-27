@@ -1,68 +1,27 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./ServicesMember.css";
-
-const servicesMemberData = [
-  {
-    id: 1,
-    name: "Cameron William",
-    role: "UI/UX DESIGNER",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 2,
-    name: "Sophia Carter",
-    role: "WEB DEVELOPER",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 3,
-    name: "Emma Watson",
-    role: "MARKETING EXPERT",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 4,
-    name: "Daniel Robert",
-    role: "APP DESIGNER",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 5,
-    name: "Olivia James",
-    role: "GRAPHIC DESIGNER",
-    image:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 6,
-    name: "Noah Smith",
-    role: "FRONTEND DEVELOPER",
-    image:
-      "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 7,
-    name: "Ava Johnson",
-    role: "CONTENT STRATEGIST",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 8,
-    name: "Liam Walker",
-    role: "SEO SPECIALIST",
-    image:
-      "https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=900&q=80",
-  },
-];
+import API, { IMAGE_URL } from "../../api/axios";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const ServicesMember = () => {
+  const [members, setMembers] = useState([]);
   const [cardsPerPage, setCardsPerPage] = useState(4);
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    fetchMembers();
+  }, []);
+
+  const fetchMembers = async () => {
+    try {
+      const res = await API.get("/team");
+      console.log("Fetched team members:", res.data.data); // ✅ debug log
+
+      setMembers(res.data.data || []);
+    } catch (err) {
+      console.error("Team fetch error:", err);
+    }
+  };
 
   useEffect(() => {
     const updateCardsPerPage = () => {
@@ -82,8 +41,13 @@ const ServicesMember = () => {
   }, []);
 
   const totalPages = useMemo(() => {
-    return Math.ceil(servicesMemberData.length / cardsPerPage);
-  }, [cardsPerPage]);
+    return Math.ceil(members.length / cardsPerPage) || 1;
+  }, [members, cardsPerPage]);
+
+  const currentCards = useMemo(() => {
+    const startIndex = (currentPage - 1) * cardsPerPage;
+    return members.slice(startIndex, startIndex + cardsPerPage);
+  }, [currentPage, cardsPerPage, members]);
 
   useEffect(() => {
     if (currentPage > totalPages) {
@@ -91,10 +55,10 @@ const ServicesMember = () => {
     }
   }, [currentPage, totalPages]);
 
-  const currentCards = useMemo(() => {
-    const startIndex = (currentPage - 1) * cardsPerPage;
-    return servicesMemberData.slice(startIndex, startIndex + cardsPerPage);
-  }, [currentPage, cardsPerPage]);
+  const formatLink = (url) => {
+    if (!url) return null;
+    return url.startsWith("http") ? url : `https://${url}`;
+  };
 
   const handlePrev = () => {
     setCurrentPage((prev) => (prev === 1 ? totalPages : prev - 1));
@@ -118,40 +82,61 @@ const ServicesMember = () => {
 
         <div className="servicesMember__grid">
           {currentCards.map((item) => (
-            <article key={item.id} className="servicesMember__card">
+            <article key={item._id} className="servicesMember__card">
               <div className="servicesMember__imageWrap">
-                <div className="servicesMember__topLine">
-                  <span className="servicesMember__topLineOrange"></span>
-                  <span className="servicesMember__topLineNavy"></span>
-                </div>
-
                 <img
-                  src={item.image}
+                  src={
+                    item.image
+                      ? item.image.startsWith("http")
+                        ? item.image
+                        : `${IMAGE_URL}${item.image}`
+                      : "https://via.placeholder.com/300"
+                  }
                   alt={item.name}
                   className="servicesMember__image"
                 />
-
                 <div className="servicesMember__overlay">
                   <div className="servicesMember__overlayDark"></div>
 
                   <div className="servicesMember__overlayOrange">
                     <h3 className="servicesMember__name">{item.name}</h3>
-                    <p className="servicesMember__role">{item.role}</p>
-                  </div>
 
-                  <div className="servicesMember__overlaySocial">
-                    <a href="/" className="servicesMember__socialLink">
-                      FACEBOOK
-                    </a>
-                    <a href="/" className="servicesMember__socialLink">
-                      TWITTER
-                    </a>
-                    <a
-                      href="/"
-                      className="servicesMember__socialLink servicesMember__socialLink--active"
-                    >
-                      BEHANCE
-                    </a>
+                    <p className="servicesMember__role">
+                      {item.role || item.designation}
+                    </p>
+
+                    {/* ✅ MOVE HERE */}
+                    <div className="servicesMember__social">
+                      {item.facebook && (
+                        <a
+                          href={formatLink(item.facebook)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <FaFacebookF />
+                        </a>
+                      )}
+
+                      {item.linkedin && (
+                        <a
+                          href={formatLink(item.linkedin)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <FaLinkedinIn />
+                        </a>
+                      )}
+
+                      {item.instagram && (
+                        <a
+                          href={formatLink(item.instagram)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <FaInstagram />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -159,39 +144,41 @@ const ServicesMember = () => {
           ))}
         </div>
 
-        <div className="servicesMember__pagination">
-          <button
-            className="servicesMember__paginationArrow"
-            onClick={handlePrev}
-            aria-label="Previous page"
-          >
-            ‹
-          </button>
+        {totalPages > 1 && (
+          <div className="servicesMember__pagination">
+            <button
+              className="servicesMember__paginationArrow"
+              onClick={handlePrev}
+              aria-label="Previous page"
+            >
+              ‹
+            </button>
 
-          <div className="servicesMember__paginationNumbers">
-            {[...Array(totalPages)].map((_, index) => (
-              <button
-                key={index + 1}
-                className={`servicesMember__paginationButton ${
-                  currentPage === index + 1
-                    ? "servicesMember__paginationButton--active"
-                    : ""
-                }`}
-                onClick={() => setCurrentPage(index + 1)}
-              >
-                {index + 1}
-              </button>
-            ))}
+            <div className="servicesMember__paginationNumbers">
+              {[...Array(totalPages)].map((_, index) => (
+                <button
+                  key={index + 1}
+                  className={`servicesMember__paginationButton ${
+                    currentPage === index + 1
+                      ? "servicesMember__paginationButton--active"
+                      : ""
+                  }`}
+                  onClick={() => setCurrentPage(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+
+            <button
+              className="servicesMember__paginationArrow"
+              onClick={handleNext}
+              aria-label="Next page"
+            >
+              ›
+            </button>
           </div>
-
-          <button
-            className="servicesMember__paginationArrow"
-            onClick={handleNext}
-            aria-label="Next page"
-          >
-            ›
-          </button>
-        </div>
+        )}
       </div>
     </section>
   );

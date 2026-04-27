@@ -85,7 +85,7 @@ const AdminTestimonial = () => {
   };
 
   const toggleStatus = async (id) => {
-    await API.patch(`/testimonials/toggle/${id}`);
+    await API.put(`/testimonials/toggle/${id}`);
     fetchTestimonials();
   };
 

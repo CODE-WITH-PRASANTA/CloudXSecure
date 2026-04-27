@@ -259,6 +259,29 @@
   transform: translateY(-2px);
 }
 
+
+
+.servicesMember__social {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.servicesMember__social a {
+  color: #fff;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.servicesMember__social a:hover {
+  background: #ff6600;
+  transform: scale(1.1);
+}
+
 /* ================= LARGE LAPTOP ================= */
 @media (max-width: 1399px) {
   .servicesMember {

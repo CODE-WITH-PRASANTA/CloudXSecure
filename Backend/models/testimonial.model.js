@@ -7,7 +7,7 @@ const testimonialSchema = new mongoose.Schema(
       required: true,
     },
     designation: {
-      type: String,
+      type: String,  
     },
     company: {
       type: String,

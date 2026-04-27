@@ -16,9 +16,13 @@ export default function AdminContactPage() {
   const fetchContact = async () => {
     try {
       const res = await API.get("/contact");
-      if (res.data.data) {
-        setForm(res.data.data);
-      }
+
+      setForm({
+        phone: res.data.data?.phone || "",
+        email: res.data.data?.email || "",
+        office: res.data.data?.office || "",
+        website: res.data.data?.website || "",
+      });
     } catch (err) {
       console.error("FETCH ERROR:", err);
     }
@@ -36,10 +40,21 @@ export default function AdminContactPage() {
   /* ================= SAVE ================= */
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       setLoading(true);
+
       await API.post("/contact", form);
+
       alert("Contact Saved Successfully");
+
+      // ✅ RESET FORM
+      setForm({
+        phone: "",
+        email: "",
+        office: "",
+        website: "",
+      });
     } catch (err) {
       console.error("SAVE ERROR:", err);
     } finally {
@@ -52,7 +67,6 @@ export default function AdminContactPage() {
       <h2 className="text-2xl font-bold mb-6">Contact Management</h2>
 
       <div className="grid md:grid-cols-2 gap-6">
-
         {/* ================= FORM ================= */}
         <div className="bg-white p-6 rounded-xl shadow-md">
           <h3 className="text-lg font-semibold mb-4">Edit Contact Info</h3>
@@ -106,7 +120,6 @@ export default function AdminContactPage() {
           <h3 className="text-lg font-semibold mb-4">Live Preview</h3>
 
           <div className="space-y-6">
-
             <div className="flex items-start gap-4">
               <div className="bg-blue-100 p-3 rounded-lg">
                 <FiPhone className="text-blue-600 text-xl" />
@@ -146,10 +159,8 @@ export default function AdminContactPage() {
                 <p className="font-medium">{form.website || "Not Added"}</p>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   );

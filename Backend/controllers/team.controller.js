@@ -7,7 +7,7 @@ exports.createMember = async (req, res) => {
     const member = await Team.create({
       ...req.body,
       image: req.body.image || null,
-    });
+    });      
 
     res.status(201).json({
       success: true,

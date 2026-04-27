@@ -9,17 +9,37 @@ import {
 import { FiPhone, FiMapPin, FiMail, FiGlobe } from "react-icons/fi";
 import { IoChevronForward } from "react-icons/io5";
 import logo from "../../assets/cloud-Logo.png";
+import API from "../../api/axios";
+import { useEffect } from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // ✅ Static contact data (no API)
-  const [contact] = useState({
-    phone: "+91 9876543210",
-    email: "support@cloudxsecure.com",
-    office: "Bhubaneswar, Odisha, India",
-    website: "https://cloudxsecure.com",
+  const [contact, setContact] = useState({
+    phone: "",
+    email: "",
+    office: "",
+    website: "",
   });
+
+  useEffect(() => {
+    fetchContact();
+  }, []);
+
+  const fetchContact = async () => {
+    try {
+      const res = await API.get("/contact");
+
+      setContact({
+        phone: res.data.data?.phone || "",
+        email: res.data.data?.email || "",
+        office: res.data.data?.office || "",
+        website: res.data.data?.website || "",
+      });
+    } catch (err) {
+      console.error("Footer contact fetch error:", err);
+    }
+  };
 
   return (
     <footer className="footer">
@@ -46,10 +66,18 @@ const Footer = () => {
           </p>
 
           <div className="footer-socials">
-            <a href="#" className="social-icon"><FaFacebookF /></a>
-            <a href="#" className="social-icon"><FaLinkedinIn /></a>
-            <a href="#" className="social-icon"><FaInstagram /></a>
-            <a href="#" className="social-icon"><FaYoutube /></a>
+            <a href="#" className="social-icon">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="social-icon">
+              <FaLinkedinIn />
+            </a>
+            <a href="#" className="social-icon">
+              <FaInstagram />
+            </a>
+            <a href="#" className="social-icon">
+              <FaYoutube />
+            </a>
           </div>
         </div>
 
@@ -57,12 +85,24 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><IoChevronForward /> <a href="/">Home</a></li>
-            <li><IoChevronForward /> <a href="/about">About Us</a></li>
-            <li><IoChevronForward /> <a href="/plan">Pricing</a></li>
-            <li><IoChevronForward /> <a href="/faq">FAQs</a></li>
-            <li><IoChevronForward /> <a href="/blogs">Blogs</a></li>
-            <li><IoChevronForward /> <a href="/contact">Contact</a></li>
+            <li>
+              <IoChevronForward /> <a href="/">Home</a>
+            </li>
+            <li>
+              <IoChevronForward /> <a href="/about">About Us</a>
+            </li>
+            <li>
+              <IoChevronForward /> <a href="/plan">Pricing</a>
+            </li>
+            <li>
+              <IoChevronForward /> <a href="/faq">FAQs</a>
+            </li>
+            <li>
+              <IoChevronForward /> <a href="/blogs">Blogs</a>
+            </li>
+            <li>
+              <IoChevronForward /> <a href="/contact">Contact</a>
+            </li>
           </ul>
         </div>
 
@@ -70,12 +110,29 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><IoChevronForward /> <a href="/services/web-development">Web Development</a></li>
-            <li><IoChevronForward /> <a href="/services/security">Cyber Security</a></li>
-            <li><IoChevronForward /> <a href="/services/hosting">Cloud Hosting</a></li>
-            <li><IoChevronForward /> <a href="/services/migration">Cloud Migration</a></li>
-            <li><IoChevronForward /> <a href="/services/devops">DevOps Solutions</a></li>
-            <li><IoChevronForward /> <a href="/services/backup">Backup & Recovery</a></li>
+            <li>
+              <IoChevronForward />{" "}
+              <a href="/services/web-development">Web Development</a>
+            </li>
+            <li>
+              <IoChevronForward />{" "}
+              <a href="/services/security">Cyber Security</a>
+            </li>
+            <li>
+              <IoChevronForward /> <a href="/services/hosting">Cloud Hosting</a>
+            </li>
+            <li>
+              <IoChevronForward />{" "}
+              <a href="/services/migration">Cloud Migration</a>
+            </li>
+            <li>
+              <IoChevronForward />{" "}
+              <a href="/services/devops">DevOps Solutions</a>
+            </li>
+            <li>
+              <IoChevronForward />{" "}
+              <a href="/services/backup">Backup & Recovery</a>
+            </li>
           </ul>
         </div>
 
@@ -86,23 +143,27 @@ const Footer = () => {
           <div className="contact-info">
             <div className="contact-item">
               <FiPhone />
-              <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+              <a href={`tel:${contact.phone}`}>
+                {contact.phone || "Not Available"}
+              </a>
             </div>
 
             <div className="contact-item">
               <FiMail />
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              <a href={`mailto:${contact.email}`}>
+                {contact.email || "Not Available"}
+              </a>
             </div>
 
             <div className="contact-item">
               <FiMapPin />
-              <span>{contact.office}</span>
+              <span>{contact.office || "Not Available"}</span>
             </div>
 
             <div className="contact-item">
               <FiGlobe />
-              <a href={contact.website} target="_blank" rel="noreferrer">
-                {contact.website}
+              <a href={contact.website || "#"} target="_blank" rel="noreferrer">
+                {contact.website || "Not Available"}
               </a>
             </div>
           </div>
