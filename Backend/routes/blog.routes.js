@@ -29,6 +29,6 @@ router.put(
 
 router.delete("/:id", blogController.deleteBlog);
 
-router.patch("/toggle/:id", blogController.toggleStatus);
+router.put("/toggle/:id", blogController.toggleStatus);
 
 module.exports = router;

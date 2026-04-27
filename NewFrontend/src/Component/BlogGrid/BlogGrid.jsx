@@ -4,16 +4,21 @@ import "./BlogGrid.css";
 import { FaUser, FaCalendarAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import API, { IMAGE_URL } from "../../api/axios";
+import { useNavigate } from "react-router-dom";
 
 const BlogGrid = () => {
+  const navigate = useNavigate();
   const [blogs, setBlogs] = useState([]);
-  console.log(blogs[1]);
+
   const loadBlogs = async () => {
     try {
       const res = await API.get("/blogs");
 
       // adjust based on your backend response
-      setBlogs(res.data.data || res.data);
+      //  public/blogs only show
+
+      const publishedBlogs = res.data.data.filter((blog)=> blog.status === "published");
+      setBlogs(publishedBlogs);
     } catch (error) {
       console.error("Error fetching blogs:", error);
     }
@@ -49,7 +54,12 @@ const BlogGrid = () => {
               <h3 className="blogGrid-title">{item.title}</h3>
 
               {/* BUTTON */}
-              <button className="blogGrid-btn">Read More →</button>
+              <button
+                className="blogGrid-btn"
+                onClick={() => navigate(`/blogs/${item._id}`)}
+              >
+                Read More →
+              </button>
             </div>
           </div>
         ))}

@@ -1,10 +1,10 @@
-.breadcrumb {
+.BlogDetailsBD {
   width: 100%;
   background: #ffffff;
   padding: 0;
 }
 
-.breadcrumb__inner {
+.BlogDetailsBD__inner {
   width: 100%;
   min-height: 450px;
   border-radius: 0 0 34px 34px;
@@ -16,7 +16,7 @@
   background-size: cover;
 }
 
-.breadcrumb__overlay {
+.BlogDetailsBD__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -28,7 +28,7 @@
   z-index: 1;
 }
 
-.breadcrumb__content {
+.BlogDetailsBD__content {
   position: relative;
   z-index: 2;
   min-height: 450px;
@@ -40,7 +40,7 @@
   padding: 40px 20px;
 }
 
-.breadcrumb__title {
+.BlogDetailsBD__title {
   margin: 0 0 18px;
   color: #ffffff;
   font-size: 64px;
@@ -50,7 +50,7 @@
   text-transform: uppercase;
 }
 
-.breadcrumb__path {
+.BlogDetailsBD__path {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +60,7 @@
   border-radius: 8px;
 }
 
-.breadcrumb__pathLink {
+.BlogDetailsBD__pathLink {
   color: #ffffff;
   font-size: 18px;
   font-weight: 800;
@@ -68,7 +68,7 @@
   cursor: pointer;
 }
 
-.breadcrumb__pathIcon {
+.BlogDetailsBD__pathIcon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +76,7 @@
   font-size: 16px;
 }
 
-.breadcrumb__pathActive {
+.BlogDetailsBD__pathActive {
   color: #ff5a1f;
   font-size: 18px;
   font-weight: 800;
@@ -85,78 +85,76 @@
 
 /* tablet */
 @media (max-width: 992px) {
-  .breadcrumb__inner {
+  .BlogDetailsBD__inner {
     min-height: 360px;
     border-radius: 0 0 26px 26px;
   }
 
-  .breadcrumb__content {
+  .BlogDetailsBD__content {
     min-height: 360px;
     padding: 32px 18px;
   }
 
-  .breadcrumb__title {
+  .BlogDetailsBD__title {
     font-size: 46px;
   }
 }
 
 /* mobile */
 @media (max-width: 768px) {
-  .breadcrumb__inner {
+  .BlogDetailsBD__inner {
     min-height: 280px;
     border-radius: 0 0 22px 22px;
     background-position: left center;
   }
 
-  .breadcrumb__content {
+  .BlogDetailsBD__content {
     min-height: 280px;
     padding: 24px 16px;
   }
 
-  .breadcrumb__title {
+  .BlogDetailsBD__title {
     font-size: 34px;
     margin-bottom: 14px;
   }
 
-  .breadcrumb__path {
+  .BlogDetailsBD__path {
     padding: 10px 14px;
     gap: 8px;
   }
 
-  .breadcrumb__pathLink,
-  .breadcrumb__pathActive {
+  .BlogDetailsBD__pathLink,
+  .BlogDetailsBD__pathActive {
     font-size: 14px;
   }
 
-  .breadcrumb__pathIcon {
+  .BlogDetailsBD__pathIcon {
     font-size: 14px;
   }
 }
 
 /* small mobile */
 @media (max-width: 480px) {
-  .breadcrumb__inner {
+  .BlogDetailsBD__inner {
     min-height: 240px;
     border-radius: 0 0 18px 18px;
   }
 
-  .breadcrumb__content {
+  .BlogDetailsBD__content {
     min-height: 240px;
     padding: 20px 12px;
   }
 
-  .breadcrumb__title {
+  .BlogDetailsBD__title {
     font-size: 28px;
   }
 
-  .breadcrumb__path {
+  .BlogDetailsBD__path {
     padding: 8px 12px;
   }
 
-  .breadcrumb__pathLink,
-  .breadcrumb__pathActive {
+  .BlogDetailsBD__pathLink,
+  .BlogDetailsBD__pathActive {
     font-size: 12px;
   }
 }
-
-

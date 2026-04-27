@@ -1,0 +1,166 @@
+.teamAdmin {
+  padding: 40px 20px;
+  background: #f6f7fb;
+  font-family: "Poppins", sans-serif;
+}
+
+.teamAdmin__container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* CARD */
+.teamAdmin__formCard,
+.teamAdmin__listCard {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* FORM */
+.teamAdmin__form input,
+.teamAdmin__form textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #f1f2f6;
+  margin-bottom: 15px;
+}
+
+.teamAdmin__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* UPLOAD */
+.teamAdmin__upload {
+  /* border: 2px dashed #ddd; */
+  border-radius: 15px;
+  padding: 25px;
+  text-align:center;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.teamAdmin__upload img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.teamAdmin__upload svg {
+  font-size: 20px;
+  color: #888;
+}
+
+/* BUTTON */
+.teamAdmin__submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4d00;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.teamAdmin__submit:hover {
+  background: #e84300;
+}
+
+/* LIST */
+.teamAdmin__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.teamAdmin__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.teamAdmin__left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.teamAdmin__left h4 {
+  margin: 0;
+}
+
+.teamAdmin__left span {
+  font-size: 12px;
+  color: #777;
+}
+
+.teamAdmin__bio {
+  font-size: 13px;
+  color: #666;
+  flex: 1;
+}
+
+.teamAdmin__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.teamAdmin__social a {
+  color: #555;
+  margin-right: 5px;
+}
+
+.teamAdmin__right button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+/* EMPTY */
+.teamAdmin__empty {
+  text-align: center;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .teamAdmin__container {
+    grid-template-columns: 1fr;
+  }
+
+  .teamAdmin__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teamAdmin__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .teamAdmin__right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ManageCloudSidebar.css";
+import "./BlogDetailsSidebar.css";
 import { useNavigate } from "react-router-dom";
 
 import categoryIcon from "../../assets/category-icon.png";
@@ -23,42 +23,42 @@ const services = [
   { name: "APPLICATION SERVICE", path: "/app-development" },
 ];
 
-const ManageCloudSidebar = () => {
+const BlogDetailsSidebar = () => {
   const [active, setActive] = useState(null);
   const navigate = useNavigate(); // ✅ use it
 
   return (
-    <div className="mcs">
+    <div className="bds">
       {/* MAIN SERVICES */}
-      <div className="mcs__box">
-        <h3 className="mcs__title">Main Services</h3>
+      <div className="bds__box">
+        <h3 className="bds__title">Main Services</h3>
 
-        <div className="mcs__list">
+        <div className="bds__list">
           {services.map((item, i) => (
             <div
               key={i}
-              className={`mcs__item ${active === i ? "active" : ""}`}
+              className={`bds__item ${active === i ? "active" : ""}`}
               onClick={() => {
                 setActive(i);
                 navigate(item.path); // ✅ redirect
               }}
             >
-              <div className="mcs__left">
+              <div className="bds__left">
                 <img src={categoryIcon} alt="" />
                 <span>{item.name}</span> {/* ✅ FIX */}
               </div>
 
-              <FiArrowRight className="mcs__arrow" />
+              <FiArrowRight className="bds__arrow" />
             </div>
           ))}
         </div>
       </div>
 
       {/* DOWNLOADS */}
-      <div className="mcs__box">
-        <h3 className="mcs__title">Downloads</h3>
+      <div className="bds__box">
+        <h3 className="bds__title">Downloads</h3>
 
-        <div className="mcs__download mcs__download--dark">
+        <div className="bds__download bds__download--dark">
           <div>
             <BsFileEarmarkPdf />
             <span>SERVICE REPORT</span>
@@ -66,7 +66,7 @@ const ManageCloudSidebar = () => {
           <FiDownload />
         </div>
 
-        <div className="mcs__download mcs__download--orange">
+        <div className="bds__download bds__download--orange">
           <div>
             <BsFileEarmarkPdf />
             <span>DOWNLOAD LISTS</span>
@@ -76,7 +76,7 @@ const ManageCloudSidebar = () => {
       </div>
 
       {/* CONTACT */}
-      <div className="mcs__contactBox">
+      <div className="bds__contactBox">
         <h4>Call Us Anytime</h4>
 
         <h2>766488777</h2>
@@ -86,7 +86,7 @@ const ManageCloudSidebar = () => {
         </p>
 
         <button
-          className="mcs__btn"
+          className="bds__btn"
           onClick={() => navigate("/contact")}
         >
           Contact Us <FiArrowRight />
@@ -96,4 +96,4 @@ const ManageCloudSidebar = () => {
   );
 };
 
-export default ManageCloudSidebar;
+export default BlogDetailsSidebar;
