@@ -45,16 +45,16 @@ const MENU = [
     icon: <FiTag size={18} />,
     path: "/categories",
   },
-  {
-    type: "submenu",
-    key: "pricing",
-    label: "Plans & Pricing",
-    icon: <FiDollarSign size={18} />,
-    children: [
-      { label: "Post Plan", path: "/pricing/post" },
-      { label: "View Plan", path: "/pricing/list" },
-    ],
-  },
+  // {
+  //   type: "submenu",
+  //   key: "pricing",
+  //   label: "Plans & Pricing",
+  //   icon: <FiDollarSign size={18} />,
+  //   children: [
+  //     { label: "Post Plan", path: "/pricing/post" },
+  //     { label: "View Plan", path: "/pricing/list" },
+  //   ],
+  // },
   {
     type: "link",
     label: "Contact Management",

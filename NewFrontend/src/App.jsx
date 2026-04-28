@@ -27,6 +27,7 @@ import Backup from "./Pages/Backup/Backup";
 import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";
 
 import Loader from "./Component/Loader/Loader"; // ✅ import loader
+import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 
 function App() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blogs/:id" element={<BlogDetails/>}/>
         <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
