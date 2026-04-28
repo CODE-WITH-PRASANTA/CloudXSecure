@@ -15,6 +15,7 @@ import ProtectedRoute from "./Auth/ProtectedRoute";
 
 // 👉 create login page also
 import Login from "./pages/LoginPage/LoginPage";
+import CatagoryPost from "./Component/CatagoryPost/CatagoryPost";
 
 function App() {
   return (
@@ -41,7 +42,9 @@ function App() {
           <Route path="add" element={<BlogAdmin />} />
           <Route path="list" element={<BlogList />} />
         </Route>
-
+       
+        <Route path="/categories" element={<CatagoryPost />} />
+        
         <Route path="team" element={<TeamAdmin />} />
         <Route path="categories" element={<div>Categories</div>} />
 
@@ -55,6 +58,7 @@ function App() {
         <Route path="cold-lead" element={<AdminColdLeads />} />
         <Route path="admin-contact" element={<AdminContactPage />} />
         <Route path="price-plan/post" element={<AdminPlanManager />} />
+       
       </Route>
 
       {/* ✅ FALLBACK */}
