@@ -4,7 +4,7 @@ import BestITSolution from "../../Component/BestITSolution/BestITSolution";
 import HowItsWork from "../../Component/HowItsWork/HowItsWork";
 import PricingPlans from "../../Component/PricingPlans/PricingPlans";
 import FaqSection from "../../Component/FaqSection/FaqSection";
-import Testimonials from "../../Component/Testimonials/Testimonials";
+
 import ContactSection from "../../Component/ContactSection/ContactSection";
 
 import HeroSection from "../../Component/HeroSection/HeroSection";
@@ -21,7 +21,7 @@ const Home = () => {
       <HowItsWork />
       {/* <PricingPlans /> */}
       <FaqSection />
-      <Testimonials />
+      
       <ContactSection />
       <LatestBlog />
     </div>

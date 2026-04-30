@@ -4,7 +4,7 @@ import AppDevlopmentAbout from '../../Component/AppDevlopmentAbout/AppDevlopment
 import AppDevlopmentOurService from '../../Component/AppDevlopmentOurService/AppDevlopmentOurService'
 import AppDevlopmentWhyChooseUs from '../../Component/AppDevlopmentWhyChooseUs/AppDevlopmentWhyChooseUs'
 import AppDevlopmentWorkProcess from '../../Component/AppDevlopmentWorkProcess/AppDevlopmentWorkProcess'
-import AppDevlopmentOurPortfolio from '../../Component/AppDevlopmentOurPortfolio/AppDevlopmentOurPortfolio'
+// import AppDevlopmentOurPortfolio from '../../Component/AppDevlopmentOurPortfolio/AppDevlopmentOurPortfolio'
 import AppdevlopmentBreadcrum from '../../Component/AppdevlopmentBreadcrum/AppdevlopmentBreadcrum'
 
 const AppDevlopement = () => {
@@ -16,7 +16,7 @@ const AppDevlopement = () => {
       <AppDevlopmentOurService />
       <AppDevlopmentWhyChooseUs />
       <AppDevlopmentWorkProcess />
-      <AppDevlopmentOurPortfolio />
+      {/* <AppDevlopmentOurPortfolio /> */}
     </div>
   )
 }
