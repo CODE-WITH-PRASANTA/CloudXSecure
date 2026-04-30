@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import API, { IMAGE_URL } from "../../api/axios";
 
 const BlogPost = () => {
+  const [categories, setCategories] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [tagInput, setTagInput] = useState("");
   const [editingId, setEditingId] = useState(null);
@@ -19,7 +21,19 @@ const BlogPost = () => {
     imagePreview: null,
     status: "draft",
   });
+useEffect(() => {
+  fetchBlogs();
+  fetchCategories();
+}, []);
 
+const fetchCategories = async () => {
+  try {
+    const res = await API.get("/categories");
+    setCategories(res.data.data || []);
+  } catch (err) {
+    console.error(err);
+  }
+};
   /* ================= FETCH BLOGS ================= */
   useEffect(() => {
     fetchBlogs();
@@ -203,17 +217,19 @@ const BlogPost = () => {
                 <label className="block text-sm font-medium mb-1">
                   Category
                 </label>
-                <select
-                  name="category"
-                  value={form.category}
-                  onChange={handleChange}
-                  className="w-full border rounded-xl px-4 py-2"
-                >
-                  <option value="">Select</option>
-                  <option>Technology</option>
-                  <option>Design</option>
-                  <option>Business</option>
-                </select>
+               <select
+  name="category"
+  value={form.category}
+  onChange={handleChange}
+  className="w-full border rounded-xl px-4 py-2"
+>
+  <option value="">Select</option>
+  {categories.map((cat) => (
+    <option key={cat._id} value={cat.name}>
+      {cat.name}
+    </option>
+  ))}
+</select>
               </div>
 
               <div>

@@ -8,8 +8,8 @@ const AppLayout = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#f5f7fb]">
-
+    <div className="min-h-screen bg-[#f5f7fb]">
+      
       {/* SIDEBAR */}
       <AppSidebar
         isOpen={sidebarOpen}
@@ -18,8 +18,13 @@ const AppLayout = () => {
       />
 
       {/* RIGHT SIDE */}
-      <div className="flex flex-col flex-1 overflow-hidden">
-
+      <div
+        className={`
+          transition-all duration-300
+          pt-[72px]
+          ${sidebarOpen ? "lg:ml-[240px]" : "lg:ml-[70px]"}
+        `}
+      >
         {/* HEADER */}
         <AppHeader
           sidebarOpen={sidebarOpen}
@@ -27,11 +32,10 @@ const AppLayout = () => {
           setMobileOpen={setMobileOpen}
         />
 
-        {/* SCROLLABLE CONTENT ONLY */}
-        <main className="flex-1 overflow-y-auto p-6">
+        {/* CONTENT */}
+        <main className="p-6 min-h-[calc(100vh-72px)]">
           <Outlet />
         </main>
-
       </div>
     </div>
   );

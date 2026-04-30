@@ -8,6 +8,11 @@ import aboutSmall from "../../assets/About-main.webp";
 import arrowShape from "../../assets/Bg-icon-2.webp";
 
 const AboutSolution = () => {
+
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/917666488777", "_blank");
+  };
+
   return (
     <section className="aboutSolution">
       <div className="aboutSolution__container">
@@ -52,7 +57,12 @@ const AboutSolution = () => {
           </ul>
 
           <div className="aboutSolution__bottom">
-            <button className="aboutSolution__btn">CONTACT US</button>
+            <button 
+              className="aboutSolution__btn"
+              onClick={handleWhatsAppClick}
+            >
+              CONTACT US
+            </button>
 
             <div className="aboutSolution__counterCard">
               <div className="aboutSolution__counterIcon">
