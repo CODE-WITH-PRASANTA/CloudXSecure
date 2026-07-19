@@ -20,7 +20,44 @@
   top: 60px;
   left: -20%;
 }
+/* INPUT TEXT COLOR FIX */
+.webdev-ct3-input input,
+textarea {
+  color: #000 !important;
+  font-size: 14px;
+}
 
+/* PLACEHOLDER COLOR */
+.webdev-ct3-input input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+/* INPUT FOCUS */
+.webdev-ct3-input input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid #ff7a00;
+  box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.1);
+}
+
+/* HOVER EFFECT */
+.webdev-ct3-info-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* BUTTON HOVER */
+.webdev-ct3-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* DISABLED BUTTON */
+.webdev-ct3-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 @keyframes ctMove {
   to {
     transform: translateX(-50%);

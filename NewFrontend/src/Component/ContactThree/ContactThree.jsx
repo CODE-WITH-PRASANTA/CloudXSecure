@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ContactThree.css";
 
 import {
@@ -10,6 +10,17 @@ import {
 } from "react-icons/fa";
 
 const ContactThree = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  // Animation
   useEffect(() => {
     const items = document.querySelectorAll(".ct-reveal");
     const observer = new IntersectionObserver(
@@ -27,17 +38,52 @@ const ContactThree = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Handle Change
+  const handleChange = e => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Handle Submit
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill all required fields");
+      return;
+    }
+
+    setLoading(true);
+
+    // Simulate API call
+    setTimeout(() => {
+      console.log("Form Data:", formData);
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+
+      setLoading(false);
+    }, 1500);
+  };
+
   return (
     <section className="webdev-ct3-section">
-      
-      {/* BACKGROUND TEXT */}
+
       <div className="webdev-ct3-bg-text top">
         CONTACT CLOUDXSECURE • GET IN TOUCH • CONTACT CLOUDXSECURE •
       </div>
 
       <div className="webdev-ct3-container">
-        
-        {/* LEFT CONTENT */}
+
+        {/* LEFT */}
         <div className="webdev-ct3-left">
           <span className="webdev-ct3-tag ct-reveal">
             GET IN TOUCH
@@ -51,17 +97,14 @@ const ContactThree = () => {
           </h2>
 
           <p className="webdev-ct3-desc ct-reveal">
-            Looking for reliable web development, cloud solutions, or cybersecurity services? 
-            At CloudXSecure, we help businesses grow with secure, scalable, and high-performance digital solutions. 
-            Reach out to our team for project discussions, technical support, or business inquiries — we’re here to help you move forward with confidence.
+            Looking for reliable web development, cloud solutions, or cybersecurity services?
+            Reach out to our team — we’re here to help you grow.
           </p>
 
           <div className="webdev-ct3-info ct-reveal">
-            
+
             <div className="webdev-ct3-info-box">
-              <span className="webdev-ct3-icon">
-                <FaEnvelope />
-              </span>
+              <span className="webdev-ct3-icon"><FaEnvelope /></span>
               <div>
                 <small>Email Us</small>
                 <p>cloudxsecure@gmail.com</p>
@@ -69,9 +112,7 @@ const ContactThree = () => {
             </div>
 
             <div className="webdev-ct3-info-box">
-              <span className="webdev-ct3-icon">
-                <FaPhoneAlt />
-              </span>
+              <span className="webdev-ct3-icon"><FaPhoneAlt /></span>
               <div>
                 <small>Call / WhatsApp</small>
                 <p>+91 7666488777</p>
@@ -79,15 +120,10 @@ const ContactThree = () => {
             </div>
 
             <div className="webdev-ct3-info-box">
-              <span className="webdev-ct3-icon">
-                <FaMapMarkerAlt />
-              </span>
+              <span className="webdev-ct3-icon"><FaMapMarkerAlt /></span>
               <div>
                 <small>Office Location</small>
-                <p>
-                  Room 407, C Wing, Building No.18, Aqsa Apartment, 
-                  Amrut Nagar, Near Ajit Glass, Jogeshwari West, Mumbai – 400102
-                </p>
+                <p>Mumbai, India</p>
               </div>
             </div>
 
@@ -96,21 +132,31 @@ const ContactThree = () => {
 
         {/* FORM */}
         <div className="webdev-ct3-form-wrap ct-reveal">
-          <div className="webdev-ct3-form">
+          <form className="webdev-ct3-form" onSubmit={handleSubmit}>
 
             <div className="webdev-ct3-row">
               <div className="webdev-ct3-field">
-                <label>Full Name</label>
+                <label>Full Name *</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="Enter your full name" />
+                  <input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Enter your full name"
+                  />
                   <FaUser />
                 </div>
               </div>
 
               <div className="webdev-ct3-field">
-                <label>Email Address</label>
+                <label>Email *</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="Enter your email address" />
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                  />
                   <FaEnvelope />
                 </div>
               </div>
@@ -118,9 +164,14 @@ const ContactThree = () => {
 
             <div className="webdev-ct3-row">
               <div className="webdev-ct3-field">
-                <label>Phone Number</label>
+                <label>Phone</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="Enter your phone number" />
+                  <input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Enter phone number"
+                  />
                   <FaPhoneAlt />
                 </div>
               </div>
@@ -128,22 +179,36 @@ const ContactThree = () => {
               <div className="webdev-ct3-field">
                 <label>Subject</label>
                 <div className="webdev-ct3-input">
-                  <input placeholder="Project or inquiry subject" />
+                  <input
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject"
+                  />
                   <FaPen />
                 </div>
               </div>
             </div>
 
             <div className="webdev-ct3-field">
-              <label>Your Message</label>
-              <textarea placeholder="Tell us about your project or requirement..."></textarea>
+              <label>Message *</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Write your message..."
+              ></textarea>
             </div>
 
-            <button className="webdev-ct3-btn">
-              Send Message →
+            <button
+              className="webdev-ct3-btn"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Message →"}
             </button>
 
-          </div>
+          </form>
         </div>
 
       </div>

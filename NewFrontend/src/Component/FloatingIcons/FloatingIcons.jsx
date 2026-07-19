@@ -1,21 +1,63 @@
 import React, { useEffect, useState } from "react";
 import "./FloatingIcons.css";
-import { Phone, MessageCircle, ArrowUp } from "lucide-react";
+import {
+  Phone,
+  MessageCircle,
+  ArrowUp,
+} from "lucide-react";
+
+import API from "../../api/axios";
 
 const FloatingIcons = () => {
-  const [showTop, setShowTop] = useState(false);
+  const [showTop, setShowTop] =
+    useState(false);
 
-  // Show scroll-to-top after scroll
+  const [contact, setContact] =
+    useState({
+      phone: "",
+      email: "",
+      office: "",
+      website: "",
+    });
+
+  // ================= FETCH CONTACT =================
+  useEffect(() => {
+    const fetchContact = async () => {
+      try {
+        const res = await API.get(
+          "/contact"
+        );
+
+        if (res.data.success) {
+          setContact(res.data.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchContact();
+  }, []);
+
+  // ================= SHOW TOP BUTTON =================
   useEffect(() => {
     const handleScroll = () => {
       setShowTop(window.scrollY > 300);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
+
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
   }, []);
 
-  // Scroll to top
+  // ================= SCROLL TOP =================
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -26,14 +68,17 @@ const FloatingIcons = () => {
   return (
     <div className="floating-icons">
 
-      {/* Call */}
-      <a href="tel:+919999999999" className="icon call">
+      {/* ================= CALL ================= */}
+      <a
+        href={`tel:${contact.phone}`}
+        className="icon call"
+      >
         <Phone size={20} />
       </a>
 
-      {/* WhatsApp */}
+      {/* ================= WHATSAPP ================= */}
       <a
-        href="https://wa.me/919999999999"
+        href={`https://wa.me/${contact.phone}`}
         target="_blank"
         rel="noreferrer"
         className="icon whatsapp"
@@ -41,9 +86,12 @@ const FloatingIcons = () => {
         <MessageCircle size={20} />
       </a>
 
-      {/* Scroll To Top */}
+      {/* ================= SCROLL TOP ================= */}
       {showTop && (
-        <button className="icon top" onClick={scrollToTop}>
+        <button
+          className="icon top"
+          onClick={scrollToTop}
+        >
           <ArrowUp size={20} />
         </button>
       )}

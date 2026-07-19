@@ -3,10 +3,16 @@
   <head>
     <!-- Basic Meta -->
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-    <!-- Title (VERY IMPORTANT FOR SEO) -->
+    <!-- Title -->
     <title>
       CloudXSecure | Cloud Security, Monitoring & Threat Protection Platform
     </title>
@@ -23,43 +29,174 @@
       content="CloudXSecure, cloud security platform, cloud monitoring, cybersecurity, cloud threat detection, cloud infrastructure security, DevSecOps, secure cloud hosting, cloud compliance, cloud firewall, server security, VPS security"
     />
 
-    <!-- Author & Branding -->
-    <meta name="author" content="CloudXSecure Team" />
-    <meta name="application-name" content="CloudXSecure" />
+    <!-- Author -->
+    <meta
+      name="author"
+      content="CloudXSecure Team"
+    />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://cloudxsecure.com/" />
+    <!-- App Name -->
+    <meta
+      name="application-name"
+      content="CloudXSecure"
+    />
+
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      href="https://cloudxsecure.com/"
+    />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png"
+    />
 
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="CloudXSecure | Smart Cloud Security & Monitoring" />
+    <!-- Open Graph -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:title"
+      content="CloudXSecure | Smart Cloud Security & Monitoring"
+    />
+
     <meta
       property="og:description"
       content="Protect your cloud infrastructure with CloudXSecure — real-time monitoring, security analytics, threat detection, and compliance made simple."
     />
-    <meta property="og:url" content="https://cloudxsecure.com/" />
-    <meta property="og:image" content="https://cloudxsecure.com/og-image.png" />
-    <meta property="og:site_name" content="CloudXSecure" />
+
+    <meta
+      property="og:url"
+      content="https://cloudxsecure.com/"
+    />
+
+    <meta
+      property="og:image"
+      content="https://cloudxsecure.com/og-image.png"
+    />
+
+    <meta
+      property="og:site_name"
+      content="CloudXSecure"
+    />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CloudXSecure | Advanced Cloud Security Platform" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content="CloudXSecure | Advanced Cloud Security Platform"
+    />
+
     <meta
       name="twitter:description"
       content="Enterprise-grade cloud security, monitoring, and threat protection powered by CloudXSecure."
     />
-    <meta name="twitter:image" content="https://cloudxsecure.com/twitter-card.png" />
+
+    <meta
+      name="twitter:image"
+      content="https://cloudxsecure.com/twitter-card.png"
+    />
 
     <!-- Robots -->
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
 
     <!-- Theme Color -->
-    <meta name="theme-color" content="#0a0f2c" />
+    <meta
+      name="theme-color"
+      content="#0a0f2c"
+    />
 
-    <!-- Structured Data (Schema.org) -->
+    <!-- =========================
+         META PIXEL CODE
+    ========================== -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {
+        if(f.fbq)return;
+
+        n=f.fbq=function()
+        {
+          n.callMethod
+            ? n.callMethod.apply(n,arguments)
+            : n.queue.push(arguments)
+        };
+
+        if(!f._fbq)f._fbq=n;
+
+        n.push=n;
+        n.loaded=!0;
+        n.version='2.0';
+        n.queue=[];
+
+        t=b.createElement(e);
+        t.async=!0;
+        t.src=v;
+
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)
+
+      }(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+
+      fbq('init', '1648285059859964');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <!-- =========================
+         GOOGLE TAG MANAGER
+    ========================== -->
+    <script>
+      (function(w,d,s,l,i)
+      {
+        w[l]=w[l]||[];
+
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event:'gtm.js'
+        });
+
+        var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'
+              ? '&l='+l
+              : '';
+
+        j.async=true;
+
+        j.src=
+          'https://www.googletagmanager.com/gtm.js?id='
+          + i + dl;
+
+        f.parentNode.insertBefore(j,f);
+
+      })(
+        window,
+        document,
+        'script',
+        'dataLayer',
+        'GTM-KVBZQPMZ'
+      );
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -78,13 +215,46 @@
   </head>
 
   <body>
+    <!-- =========================
+         GOOGLE TAG MANAGER (noscript)
+    ========================== -->
     <noscript>
-      CloudXSecure requires JavaScript to run properly. Please enable JavaScript.
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KVBZQPMZ"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      >
+      </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- =========================
+         META PIXEL (noscript)
+    ========================== -->
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1648285059859964&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel (noscript) -->
+
+    <!-- JavaScript Warning -->
+    <noscript>
+      CloudXSecure requires JavaScript to run properly.
+      Please enable JavaScript.
     </noscript>
 
+    <!-- React Root -->
     <div id="root"></div>
 
     <!-- Main Entry -->
-    <script type="module" src="/src/main.jsx"></script>
+    <script
+      type="module"
+      src="/src/main.jsx"
+    ></script>
   </body>
 </html>
