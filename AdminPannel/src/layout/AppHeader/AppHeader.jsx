@@ -1,21 +1,9 @@
-import { useState, useRef, useEffect } from "react";
-import {
-  FiMenu,
-  FiSearch,
-  FiBell,
-  FiMessageSquare,
-  FiStar,
-  FiSettings,
-  FiLogOut,
-  FiUser,
-} from "react-icons/fi";
+import { useEffect } from "react";
+import { FiMenu, FiBell, FiMessageSquare } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import API from "../../api/axios";
 
 const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
-  const [profileOpen, setProfileOpen] = useState(false);
-  const profileRef = useRef(null);
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -29,10 +17,7 @@ const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
 
     if (!result.isConfirmed) return;
 
-    try {
-      await API.post("/auth/logout");
-    } catch (error) {}
-
+    // ✅ No API call (since backend removed)
     localStorage.removeItem("token");
     localStorage.removeItem("isAdmin");
     localStorage.removeItem("admin");
@@ -40,16 +25,6 @@ const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
     navigate("/login");
     window.location.reload();
   };
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (profileRef.current && !profileRef.current.contains(e.target)) {
-        setProfileOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   return (
     <header
@@ -84,42 +59,17 @@ const AppHeader = ({ sidebarOpen, setSidebarOpen, setMobileOpen }) => {
       </div>
 
       {/* RIGHT */}
-      <div className="flex items-center gap-5" ref={profileRef}>
+      <div className="flex items-center gap-5">
         <FiBell className="text-xl text-slate-700 cursor-pointer" />
         <FiMessageSquare className="text-xl text-slate-700 cursor-pointer" />
 
-        <img
-          src="https://i.pravatar.cc/150?img=12"
-          className="w-10 h-10 rounded-full cursor-pointer border-2 border-white"
-          onClick={() => setProfileOpen(!profileOpen)}
-          alt=""
-        />
-
-        {profileOpen && (
-          <div className="absolute right-6 top-16 w-56 bg-white rounded-xl shadow-lg border">
-            <div className="p-4 border-b">
-              <p className="font-semibold">Jone Copper</p>
-              <p className="text-xs text-slate-500">Super Admin</p>
-            </div>
-
-            <div className="text-sm">
-              <div className="p-3 hover:bg-slate-100 cursor-pointer flex gap-2 items-center">
-                <FiUser /> Profile
-              </div>
-
-              <div className="p-3 hover:bg-slate-100 cursor-pointer flex gap-2 items-center">
-                <FiSettings /> Settings
-              </div>
-
-              <div
-                onClick={handleLogout}
-                className="p-3 hover:bg-red-50 text-red-500 cursor-pointer flex gap-2 items-center"
-              >
-                <FiLogOut /> Logout
-              </div>
-            </div>
-          </div>
-        )}
+        {/* OPTIONAL: Logout Button directly */}
+        <button
+          onClick={handleLogout}
+          className="px-4 py-2 bg-red-500 text-white rounded-lg text-sm hover:bg-red-600"
+        >
+          Logout
+        </button>
       </div>
     </header>
   );

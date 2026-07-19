@@ -1,166 +1,315 @@
+/* ================= BASE ================= */
 .teamAdmin {
-  padding: 40px 20px;
+  padding: 30px 15px;
   background: #f6f7fb;
   font-family: "Poppins", sans-serif;
 }
 
+/* CONTAINER */
 .teamAdmin__container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 25px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .teamAdmin__formCard,
 .teamAdmin__listCard {
   background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
+/* HEADER */
+.cardHeader {
+  background: linear-gradient(90deg, #ff4d00, #ff7a00);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 18px;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 .teamAdmin__form input,
 .teamAdmin__form textarea {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   border-radius: 10px;
   border: none;
   background: #f1f2f6;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  transition: 0.2s;
 }
 
+.teamAdmin__form input:focus,
+.teamAdmin__form textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(255,77,0,0.2);
+  outline: none;
+}
+
+/* GRID */
 .teamAdmin__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 12px;
 }
 
-/* UPLOAD */
+/* ================= UPLOAD (FIXED) ================= */
 .teamAdmin__upload {
-  /* border: 2px dashed #ddd; */
-  border-radius: 15px;
+  border: 2px dashed #ddd;
+  border-radius: 14px;
   padding: 25px;
-  text-align:center;
+  background: #fafafa;
   cursor: pointer;
-  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
 }
 
+/* remove any extra borders */
+.teamAdmin__upload * {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.teamAdmin__upload:hover {
+  border-color: #ff4d00;
+  background: #fff5f0;
+}
+
+.uploadContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.uploadContent svg {
+  font-size: 22px;
+  color: #888;
+}
+
+.uploadContent p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+/* image preview */
 .teamAdmin__upload img {
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.teamAdmin__upload svg {
-  font-size: 20px;
-  color: #888;
+/* hide input */
+.hiddenFileInput {
+  display: none;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .teamAdmin__submit {
   width: 100%;
-  padding: 14px;
+  padding: 13px;
   border: none;
   border-radius: 10px;
-  background: #ff4d00;
-  color: white;
+  background: linear-gradient(90deg, #ff4d00, #ff7a00);
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .teamAdmin__submit:hover {
-  background: #e84300;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(255,77,0,0.3);
 }
 
-/* LIST */
-.teamAdmin__item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 15px;
+/* ================= TABLE ================= */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+/* scrollbar styling */
+.tableWrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.teamTable {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+}
+
+/* header */
+.teamTable thead {
+  background: #f4f6fa;
+}
+
+.teamTable th {
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #eee;
+}
+
+/* body */
+.teamTable td {
+  padding: 12px;
   border-bottom: 1px solid #eee;
+  font-size: 14px;
+  vertical-align: middle;
 }
 
-.teamAdmin__left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.teamTable tr:hover {
+  background: #fafafa;
 }
 
-.teamAdmin__left img {
-  width: 50px;
-  height: 50px;
+/* image */
+.tableImg {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
-.teamAdmin__left h4 {
-  margin: 0;
-}
-
-.teamAdmin__left span {
-  font-size: 12px;
-  color: #777;
-}
-
-.teamAdmin__bio {
+/* bio */
+.bioCell {
+  max-width: 200px;
   font-size: 13px;
   color: #666;
-  flex: 1;
 }
 
-.teamAdmin__right {
+/* ================= SOCIAL ================= */
+.socialIcons {
+  display: flex;
+  gap: 6px;
+}
+
+.socialIcons a {
+  width: 26px;
+  height: 26px;
+  background: #f1f2f6;
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.teamAdmin__social a {
+  justify-content: center;
+  border-radius: 6px;
   color: #555;
-  margin-right: 5px;
+  transition: 0.2s;
 }
 
-.teamAdmin__right button {
-  background: none;
+.socialIcons a:hover {
+  background: #ff4d00;
+  color: #fff;
+}
+
+/* ================= ACTION ================= */
+.editBtn {
+  background: #4caf50;
+  color: white;
   border: none;
-  color: red;
+  padding: 6px 8px;
+  margin-right: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-/* EMPTY */
+.deleteBtn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  margin-top: 18px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.pagination button.active {
+  background: #ff4d00;
+  color: white;
+}
+
+/* ================= EMPTY ================= */
 .teamAdmin__empty {
   text-align: center;
   color: #aaa;
   margin-top: 20px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
   .teamAdmin__container {
     grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .teamAdmin {
+    padding: 20px 10px;
   }
 
   .teamAdmin__grid {
     grid-template-columns: 1fr;
   }
 
-  .teamAdmin__item {
-    flex-direction: column;
-    align-items: flex-start;
+  .teamTable {
+    min-width: 650px;
   }
 
-  .teamAdmin__right {
-    width: 100%;
-    justify-content: space-between;
+  .teamAdmin__upload {
+    padding: 20px;
+  }
+
+  .uploadContent svg {
+    font-size: 20px;
+  }
+
+  .uploadContent p {
+    font-size: 12px;
+  }
+
+  .teamAdmin__submit {
+    padding: 12px;
+    font-size: 14px;
   }
 }

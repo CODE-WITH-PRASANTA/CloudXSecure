@@ -1,16 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
   FaTrash,
   FaUpload,
+  FaEdit,
 } from "react-icons/fa";
 import API, { IMAGE_URL } from "../../api/axios";
 import "./TeamPost.css";
 
 const TeamPost = () => {
   const [members, setMembers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const fileRef = useRef(null);
+
+  const itemsPerPage = 5;
 
   const [form, setForm] = useState({
     name: "",
@@ -23,7 +28,6 @@ const TeamPost = () => {
     preview: "",
   });
 
-  /* ================= FETCH TEAM ================= */
   useEffect(() => {
     fetchMembers();
   }, []);
@@ -33,7 +37,7 @@ const TeamPost = () => {
       const res = await API.get("/team");
       setMembers(res.data.data || []);
     } catch (err) {
-      console.error("FETCH ERROR:", err);
+      console.error(err);
     }
   };
 
@@ -52,23 +56,18 @@ const TeamPost = () => {
     });
   };
 
-  /* ================= ADD MEMBER ================= */
+  const handleUploadClick = () => {
+    fileRef.current.click();
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const formData = new FormData();
-
-      formData.append("name", form.name);
-      formData.append("role", form.role);
-      formData.append("bio", form.bio);
-      formData.append("facebook", form.facebook);
-      formData.append("instagram", form.instagram);
-      formData.append("linkedin", form.linkedin);
-
-      if (form.image) {
-        formData.append("image", form.image);
-      }
+      Object.keys(form).forEach((key) => {
+        if (form[key]) formData.append(key, form[key]);
+      });
 
       await API.post("/team", formData);
       fetchMembers();
@@ -84,140 +83,131 @@ const TeamPost = () => {
         preview: "",
       });
     } catch (err) {
-      console.error("ADD ERROR:", err);
+      console.error(err);
     }
   };
 
-  /* ================= DELETE MEMBER ================= */
   const removeMember = async (id) => {
-    try {
-      await API.delete(`/team/${id}`);
-      fetchMembers();
-    } catch (err) {
-      console.error("DELETE ERROR:", err);
-    }
+    await API.delete(`/team/${id}`);
+    fetchMembers();
   };
+
+  // Pagination
+  const indexOfLast = currentPage * itemsPerPage;
+  const indexOfFirst = indexOfLast - itemsPerPage;
+  const currentMembers = members.slice(indexOfFirst, indexOfLast);
+  const totalPages = Math.ceil(members.length / itemsPerPage);
 
   return (
     <div className="teamAdmin">
       <div className="teamAdmin__container">
 
-        {/* ================= LEFT FORM ================= */}
+        {/* FORM */}
         <div className="teamAdmin__formCard">
-          <h2>Team Management</h2>
+          <div className="cardHeader">Team Management</div>
 
           <form onSubmit={handleSubmit} className="teamAdmin__form">
 
             <div className="teamAdmin__grid">
-              <input
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Full Name"
-                required
-              />
-
-              <input
-                name="role"
-                value={form.role}
-                onChange={handleChange}
-                placeholder="Designation"
-                required
-              />
+              <input name="name" value={form.name} onChange={handleChange} placeholder="Full Name" required />
+              <input name="role" value={form.role} onChange={handleChange} placeholder="Designation" required />
             </div>
 
-            <textarea
-              name="bio"
-              value={form.bio}
-              onChange={handleChange}
-              placeholder="Short Bio"
-            />
+            <textarea name="bio" value={form.bio} onChange={handleChange} placeholder="Short Bio" />
 
-            {/* IMAGE UPLOAD */}
-            <label className="teamAdmin__upload">
+            {/* ✅ FIXED UPLOAD */}
+            <div className="teamAdmin__upload" onClick={handleUploadClick}>
               {form.preview ? (
                 <img src={form.preview} alt="preview" />
               ) : (
-                <div>
+                <div className="uploadContent">
                   <FaUpload />
                   <p>Upload Profile Image</p>
                 </div>
               )}
-              <input type="file" hidden onChange={handleImage} />
-            </label>
-
-            <div className="teamAdmin__grid">
               <input
-                name="facebook"
-                value={form.facebook}
-                onChange={handleChange}
-                placeholder="Facebook URL"
-              />
-              <input
-                name="instagram"
-                value={form.instagram}
-                onChange={handleChange}
-                placeholder="Instagram URL"
+                type="file"
+                ref={fileRef}
+                onChange={handleImage}
+                className="hiddenFileInput"
               />
             </div>
 
-            <input
-              name="linkedin"
-              value={form.linkedin}
-              onChange={handleChange}
-              placeholder="LinkedIn URL"
-            />
+            <div className="teamAdmin__grid">
+              <input name="facebook" value={form.facebook} onChange={handleChange} placeholder="Facebook URL" />
+              <input name="instagram" value={form.instagram} onChange={handleChange} placeholder="Instagram URL" />
+            </div>
 
-            <button className="teamAdmin__submit">
-              Add Member
-            </button>
+            <input name="linkedin" value={form.linkedin} onChange={handleChange} placeholder="LinkedIn URL" />
 
+            <button className="teamAdmin__submit">Add Member</button>
           </form>
         </div>
 
-        {/* ================= RIGHT LIST ================= */}
+        {/* TABLE */}
         <div className="teamAdmin__listCard">
-          <h2>Team Members</h2>
+          <div className="cardHeader">Team Members</div>
 
-          <div className="teamAdmin__list">
-            {members.map((m) => (
-              <div key={m._id} className="teamAdmin__item">
+          <div className="tableWrapper">
+            <table className="teamTable">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Bio</th>
+                  <th>Social</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
 
-                <div className="teamAdmin__left">
-                  <img
-                    src={
-                      m.image
-                        ? `${IMAGE_URL}${m.image}`
-                        : "https://i.pravatar.cc/100"
-                    }
-                  />
-                  <div>
-                    <h4>{m.name}</h4>
-                    <span>{m.role}</span>
-                  </div>
-                </div>
+              <tbody>
+                {currentMembers.map((m) => (
+                  <tr key={m._id}>
+                    <td>
+                      <img
+                        src={m.image ? `${IMAGE_URL}${m.image}` : "https://i.pravatar.cc/100"}
+                        className="tableImg"
+                        alt=""
+                      />
+                    </td>
+                    <td>{m.name}</td>
+                    <td>{m.role}</td>
+                    <td className="bioCell">{m.bio}</td>
 
-                <p className="teamAdmin__bio">{m.bio}</p>
+                    <td>
+                      <div className="socialIcons">
+                        <a href={m.facebook}><FaFacebookF /></a>
+                        <a href={m.instagram}><FaInstagram /></a>
+                        <a href={m.linkedin}><FaLinkedinIn /></a>
+                      </div>
+                    </td>
 
-                <div className="teamAdmin__right">
-                  <div className="teamAdmin__social">
-                    <a href={m.facebook}><FaFacebookF /></a>
-                    <a href={m.instagram}><FaInstagram /></a>
-                    <a href={m.linkedin}><FaLinkedinIn /></a>
-                  </div>
-
-                  <button onClick={() => removeMember(m._id)}>
-                    <FaTrash />
-                  </button>
-                </div>
-
-              </div>
-            ))}
-
-            {!members.length && (
-              <p className="teamAdmin__empty">No team members yet.</p>
-            )}
+                    <td>
+                      <button className="editBtn"><FaEdit /></button>
+                      <button className="deleteBtn" onClick={() => removeMember(m._id)}>
+                        <FaTrash />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+
+          {/* PAGINATION */}
+          <div className="pagination">
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                className={currentPage === i + 1 ? "active" : ""}
+                onClick={() => setCurrentPage(i + 1)}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+
         </div>
 
       </div>
