@@ -105,7 +105,7 @@ const ServicesCompany = () => {
     },
     {
       title: "Cloud Migration",
-      path: "/cloudmigration/service/details",
+      path: "/services/migration",
       desc: "CloudXSecure provides seamless cloud migration services to help businesses transition from on-premise infrastructure to the cloud. We ensure minimal downtime, data integrity, and optimized performance using migration tools and strategies tailored to AWS, Azure, and hybrid environments.",
       img: cloudmig,
       icon: <TbCloud />,

@@ -70,7 +70,7 @@ function App() {
         <Route path="/managecloud/service/details" element={<ManageCloud />} />
         <Route path="/cloudsecurity/service/details" element={<CloudSecurity />} />
         <Route path="/cloudhosting/service/details" element={<CloudHosting />} />
-        <Route path="/cloudmigration/service/details" element={<CloudMigration />} />
+        <Route path="/services/migration" element={<CloudMigration />} />
         <Route path="/devops/details" element={<DevAuto />} />
         <Route path="/monitoring/service/details" element={<Monitoring />} />
         <Route path="/backup/service/details" element={<Backup />} />
