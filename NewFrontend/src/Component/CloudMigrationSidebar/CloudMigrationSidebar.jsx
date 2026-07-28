@@ -9,18 +9,18 @@ import { BsFileEarmarkPdf } from "react-icons/bs";
 
 const services = [
   
-  {name: "IT MANAGEMENT", path: "/it/service/details"},
-  { name: "DIGITAL MARKETING", path: "/digital/service/details" },
-  { name: "MANAGED CLOUD SERVICES", path: "/managecloud/service/details" },
-  { name: "CLOUD SECURITY", path: "/cloudsecurity/service/details" },
-  { name: "CLOUD HOSTING", path: "/cloudhosting/service/details" },
-  { name: "CLOUD MIGRATION", path: "/cloudmigration/service/details" },
-  { name: "DEVOPS & AUTOMATION", path: "/devops/details" },
-  { name: "MONITORING", path: "/monitoring/service/details" },
-  { name: "BACKUP & DISASTER RECOVERY", path: "/backup/service/details" },
-  { name: "CLOUD CONSULTING", path: "/cloudconsult/service/details" },
-  { name: "WEB DEVELOPMENT SERVICE", path: "/web-development" },
-  { name: "APPLICATION SERVICE", path: "/app-development" },
+  {name: "AWS CONSULTING", path: "/services/aws-consulting"},
+  { name: "AZURE CONSULTING", path: "/services/azure-consulting" },
+  { name: "WEB DEVELOPMENT", path: "/services/web-development" },
+  { name: "MOBILE APP DEVELOPMENT", path: "/services/mobile-app-development" },
+  { name: "MANAGED CLOUD SERVICES", path: "/services/managed-cloud" },
+  { name: "CLOUD SECURITY", path: "/services/cloud-security" },
+  { name: "AI DEVELOPMENT", path: "/services/ai-development" },
+  { name: "CLOUD MIGRATION", path: "/services/migration" },
+  { name: "DEVOPS SERVICES", path: "/services/devops" },
+  { name: "CUSTOM SOFTWARE DEVELOPMENT", path: "/cloudconsult/service/details" },
+  { name: "IT INFRASTRUCTURE CONSULTING", path: "/services/it-infrastructure-consulting" },
+  
 ];
 
 const CloudMigrationSidebar = () => {

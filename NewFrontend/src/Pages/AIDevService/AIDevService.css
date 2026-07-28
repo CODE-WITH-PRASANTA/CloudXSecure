@@ -1,0 +1,32 @@
+.aidevservice {
+  padding: 0;
+}
+
+/* Spacing below breadcrumb */
+.aidevservice__container {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.aidevservice__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .aidevservice__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aidevservice__right {
+    order: -1;
+  }
+
+  .aidevservice__container {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+}

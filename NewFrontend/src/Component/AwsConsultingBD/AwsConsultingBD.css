@@ -1,0 +1,159 @@
+.awsconsultingBD {
+  width: 100%;
+  background: #ffffff;
+  padding: 0;
+}
+
+.awsconsultingBD__inner {
+  width: 100%;
+  min-height: 450px;
+  border-radius: 0 0 34px 34px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.awsconsultingBD__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 11, 61, 0.2) 0%,
+    rgba(2, 11, 61, 0.08) 40%,
+    rgba(2, 11, 61, 0.18) 100%
+  );
+  z-index: 1;
+}
+
+.awsconsultingBD__content {
+  position: relative;
+  z-index: 2;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.awsconsultingBD__title {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.awsconsultingBD__path {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: rgba(17, 21, 50, 0.95);
+  border-radius: 8px;
+}
+
+.awsconsultingBD__pathLink {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.awsconsultingBD__pathIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.awsconsultingBD__pathActive {
+  color: #ff5a1f;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .awsconsultingBD__inner {
+    min-height: 360px;
+    border-radius: 0 0 26px 26px;
+  }
+
+  .awsconsultingBD__content {
+    min-height: 360px;
+    padding: 32px 18px;
+  }
+
+  .awsconsultingBD__title {
+    font-size: 46px;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .awsconsultingBD__inner {
+    min-height: 280px;
+    border-radius: 0 0 22px 22px;
+    background-position: left center;
+  }
+
+  .awsconsultingBD__content {
+    min-height: 280px;
+    padding: 24px 16px;
+  }
+
+  .awsconsultingBD__title {
+    font-size: 34px;
+    margin-bottom: 14px;
+  }
+
+  .awsconsultingBD__path {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .awsconsultingBD__pathLink,
+  .awsconsultingBD__pathActive {
+    font-size: 14px;
+  }
+
+  .awsconsultingBD__pathIcon {
+    font-size: 14px;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .awsconsultingBD__inner {
+    min-height: 240px;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .awsconsultingBD__content {
+    min-height: 240px;
+    padding: 20px 12px;
+  }
+
+  .awsconsultingBD__title {
+    font-size: 28px;
+  }
+
+  .awsconsultingBD__path {
+    padding: 8px 12px;
+  }
+
+  .awsconsultingBD__pathLink,
+  .awsconsultingBD__pathActive {
+    font-size: 12px;
+  }
+}
