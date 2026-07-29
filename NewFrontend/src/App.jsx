@@ -15,19 +15,22 @@ import AppDevlopement from "./Pages/AppDevlopement/AppDevlopement";
 import FloatingForm from "./Component/FloatingForm/FloatingForm";
 import FloatingIcons from "./Component/FloatingIcons/FloatingIcons";
 import ServiceDetails from "./Pages/ServiceDetails/ServiceDetails";
-import ITManagement from "./Pages/ITManagement/ITManagement";
-import DigitalMarketing from "./Pages/DigitalMarketing/DigitalMarketing";
+
 import ManageCloud from "./Pages/ManageCloud/ManageCloud";
 import CloudSecurity from "./Pages/CloudSecurity/CloudSecurity";
-import CloudHosting from "./Pages/CloudHosting/CloudHosting";
 import CloudMigration from "./Pages/CloudMigration/CloudMigration";
-import DevAuto from "./Pages/DevAuto/DevAuto";
-import Monitoring from "./Pages/Monitoring/Monitoring";
-import Backup from "./Pages/Backup/Backup";
-import CloudConsulting from "./Pages/CloudConsulting/CloudConsulting";
+
 
 import Loader from "./Component/Loader/Loader"; // ✅ import loader
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
+
+import AwsConsultingCont from "./Component/AwsConsultingCont/AwsConsultingCont";
+import AzureConsulting from "./Pages/AzureConsulting/AzureConsulting";
+import DevOpsServices from "./Pages/DevOpsServices/DevOpsServices";
+import AIDevService from "./Pages/AIDevService/AIDevService";
+import CustomSoftwareService from "./Pages/CustomSoftwareService/CustomSoftwareService";
+import ITInfraConsultService from "./Pages/ITInfraConsultService/ITInfraConsultService";
+import AwsConsulting from "./Pages/AwsConsulting/AwsConsulting";
 
 function App() {
   const location = useLocation();
@@ -60,21 +63,21 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/faq" element={<FaqSection />} />
-        <Route path="/web-development" element={<WebDevlopement />} />
-        <Route path="/app-development" element={<AppDevlopement />} />
         <Route path="/service/details" element={<ServiceDetails />} />
 
         {/* SERVICES */}
-        <Route path="/it/service/details" element={<ITManagement />} />
-        <Route path="/digital/service/details" element={<DigitalMarketing />} />
-        <Route path="/managecloud/service/details" element={<ManageCloud />} />
-        <Route path="/cloudsecurity/service/details" element={<CloudSecurity />} />
-        <Route path="/cloudhosting/service/details" element={<CloudHosting />} />
-        <Route path="/cloudmigration/service/details" element={<CloudMigration />} />
-        <Route path="/devops/details" element={<DevAuto />} />
-        <Route path="/monitoring/service/details" element={<Monitoring />} />
-        <Route path="/backup/service/details" element={<Backup />} />
-        <Route path="/cloudconsult/service/details" element={<CloudConsulting />} />
+        <Route path="/services/migration" element={<CloudMigration />} />
+        <Route path="/services/cloud-security" element={<CloudSecurity />} />
+        <Route path="/services/managed-cloud" element={<ManageCloud />} />
+        <Route path="/services/aws-consulting" element={<AwsConsulting />} />
+        <Route path="/services/azure-consulting" element={<AzureConsulting />} />
+        <Route path="/services/devops" element={<DevOpsServices />} />
+        <Route path="/services/web-development" element={<WebDevlopement />} />
+        <Route path="/services/mobile-app-development" element={<AppDevlopement />} />
+        <Route path="/services/ai-development" element={<AIDevService />} />
+        <Route path="/services/custom-software-development" element={<CustomSoftwareService />} />
+        <Route path="/services/it-infrastructure-consulting" element={<ITInfraConsultService />} />
+
       </Routes>
 
       <Footer />

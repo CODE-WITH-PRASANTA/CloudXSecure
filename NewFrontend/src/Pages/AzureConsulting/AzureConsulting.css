@@ -1,0 +1,32 @@
+.azureconsult {
+  padding: 0;
+}
+
+/* Spacing below breadcrumb */
+.azureconsult__container {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.azureconsult__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .azureconsult__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .azureconsult__right {
+    order: -1;
+  }
+
+  .azureconsult__container {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+}

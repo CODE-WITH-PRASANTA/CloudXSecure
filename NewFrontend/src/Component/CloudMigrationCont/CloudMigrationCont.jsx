@@ -6,105 +6,139 @@ import serviceImg from "../../assets/service-details.webp";
 import iconImg from "../../assets/det-icon.png";
 
 const CloudMigrationCont = () => {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
 
   const toggle = (i) => {
     setActive(active === i ? null : i);
   };
 
+  const faqData = [
+    {
+      question: "How long does a cloud migration take?",
+      answer:
+        "Timelines depend directly on data volume and architecture complexity. Small-scale application moves can take a few days, while complex enterprise migrations take several weeks. We provide a detailed timeline during your initial assessment.",
+    },
+    {
+      question: "Is my data safe during the migration process?",
+      answer:
+        "Yes. We follow strict security and compliance standards, using end-to-end encrypted transfer protocols, automated backup validation, and strict access controls at every phase.",
+    },
+    {
+      question: "Will our business experience downtime?",
+      answer:
+        "We design our migration paths to eliminate or minimize downtime. Critical cutover steps are scheduled during off-peak hours or low-traffic windows to keep your operations running continuously.",
+    },
+    {
+      question: "What post-migration support does CloudXSecure offer?",
+      answer:
+        "Our team provides ongoing managed cloud services, including 24/7 infrastructure monitoring, cost optimization, performance tuning, and disaster recovery management.",
+    },
+  ];
+
   return (
     <div className="cloudmicont">
-      {/* IMAGE */}
-      <div className="cloudmicont__imageWrap">
-        <img src={serviceImg} alt="CloudXSecure cloud migration services" />
+      {/* HERO IMAGE & MAIN H1 */}
+      <div className="cloudmicont__hero">
+        <div className="cloudmicont__imageWrap">
+          <img
+            src={serviceImg}
+            alt="CloudXSecure AWS and Azure Cloud Migration Services in Mumbai"
+          />
+        </div>
+        <h1 className="cloudmicont__h1">Cloud Migration Services</h1>
       </div>
 
-      {/* TITLE */}
-      <h2 className="cloudmicont__title">
-        CloudXSecure – Seamless Cloud Migration & IT Transformation
-      </h2>
+      {/* MAIN INTRO SECTION */}
+      <section className="cloudmicont__intro">
+        <h2 className="cloudmicont__title">
+          Move to the Cloud Without the Risk
+        </h2>
+        <p className="cloudmicont__text">
+          Migrating your data, applications, or infrastructure to the cloud—or switching between providers like AWS and Azure—requires precise planning. Without a clear strategy, businesses risk costly downtime, data loss, or security oversights. 
+        </p>
+        <p className="cloudmicont__text">
+          At <strong>CloudXSecure</strong>, we provide end-to-end <strong>cloud migration services</strong> tailored to your business goals. Whether you need a local <strong>Azure migration in Mumbai</strong> or an enterprise-wide <strong>AWS migration</strong>, our team executes every phase with zero data loss and minimal disruption to your daily operations.
+        </p>
+      </section>
 
-      {/* TEXT */}
-      <p className="cloudmicont__text">
-        <strong>Cloudxsecure</strong> offers secure and efficient cloud
-        migration services designed to move your business infrastructure to the
-        cloud without downtime or data loss. With <strong>CloudX secure</strong>
-        , you can modernize legacy systems, enhance scalability, and ensure
-        smooth digital transformation.
-      </p>
-
-      <p className="cloudmicont__text">
-        <strong>CloudxSecure</strong> enables organizations to migrate
-        applications, databases, and workloads with precision. Our solutions
-        include automated migration tools, risk assessment, performance
-        optimization, and ongoing IT management to ensure your cloud environment
-        runs efficiently and securely.
-      </p>
-
-      {/* CARDS */}
+      {/* MIGRATION PROCESS & SCOPE CARDS */}
       <div className="cloudmicont__cards">
-        {/* LEFT CARD */}
+        {/* OUR PROCESS */}
         <div className="cloudmicont__card">
-          <h3>Why Choose CloudXSecure</h3>
-
+          <h3>Our Proven Migration Process</h3>
           <p>
-            <strong>Cloudxsecure</strong> delivers reliable cloud migration
-            backed by advanced tools and expert IT management support for
-            businesses of all sizes.
+            We take a structured, multi-phase approach to modernizing your digital infrastructure:
           </p>
-
-          <ul className="cloudmicont__list">
-            <li>
-              <span className="cloudmicont__arrow">→</span> Zero Downtime
-              Migration
-            </li>
-            <li>
-              <span className="cloudmicont__arrow">→</span> Secure Data Transfer
-              & Backup
-            </li>
-            <li>
-              <span className="cloudmicont__arrow">→</span> 24/7 IT Management &
-              Monitoring
-            </li>
-          </ul>
+          <ol className="cloudmicont__processList">
+            <li><strong>Assessment:</strong> Review legacy systems and identify workloads ready for the cloud.</li>
+            <li><strong>Planning:</strong> Build a custom roadmap with timelines, security checks, and rollback plans.</li>
+            <li><strong>Migration:</strong> Securely move applications, databases, and file archives.</li>
+            <li><strong>Testing:</strong> Conduct thorough performance and data integrity validations.</li>
+            <li><strong>Go-Live & Support:</strong> Final cutover backed by continuous monitoring.</li>
+          </ol>
         </div>
 
-        {/* RIGHT CARD */}
+        {/* WHAT WE MIGRATE */}
         <div className="cloudmicont__card cloudmicont__card--highlight">
           <img
             src={iconImg}
-            alt="CloudXSecure cloud migration icon"
+            alt="CloudXSecure cloud migration process icon"
             className="cloudmicont__customIcon"
           />
-          <h3>Transform Your Business with CloudXSecure</h3>
-
+          <h3>What We Migrate</h3>
           <p>
-            <strong>CloudX secure</strong> helps businesses accelerate
-            innovation through seamless cloud migration, infrastructure
-            modernization, and advanced IT management solutions.{" "}
-            <strong>CloudxSecure</strong> supports workload optimization,
-            disaster recovery planning, hybrid cloud setup, and real-time
-            performance monitoring to ensure long-term success in the cloud.
+            Our engineering team handles complex migrations across varied environments:
           </p>
+          <ul className="cloudmicont__list">
+            <li><span className="cloudmicont__arrow">→</span> Application & server infrastructure modernization</li>
+            <li><span className="cloudmicont__arrow">→</span> Production & legacy databases (SQL, NoSQL, PostgreSQL)</li>
+            <li><span className="cloudmicont__arrow">→</span> Large-scale media archives and file storage</li>
+            <li><span className="cloudmicont__arrow">→</span> On-premise to cloud, and seamless cloud-to-cloud transitions</li>
+          </ul>
         </div>
       </div>
 
-      {/* FAQ */}
+      {/* CASE STUDY HIGHLIGHT */}
+      <section className="cloudmicont__casestudy">
+        <h2>Featured Case Study: Bad Studio</h2>
+        <blockquote className="cloudmicont__quote">
+          <p>
+            We successfully migrated <strong>Bad Studio’s</strong> entire media archive to AWS with zero data loss and minimal operational downtime. The transition provided their team with a scalable, secure cloud library capable of supporting high-bandwidth creative assets and remote collaboration.
+          </p>
+        </blockquote>
+      </section>
+
+      {/* INTERNAL LINKS / NAVIGATION HUB */}
+      <section className="cloudmicont__servicesNav">
+        <h3>Explore Our Cloud Solutions</h3>
+        <p>Looking for specialized assistance? Discover how we help businesses scale:</p>
+        <div className="cloudmicont__links">
+          <a href="/aws-consulting">AWS Consulting</a>
+          <a href="/azure-consulting">Azure Consulting</a>
+          <a href="/managed-cloud-services">Managed Cloud Services</a>
+          <a href="/cloud-security">Cloud Security</a>
+        </div>
+      </section>
+
+      {/* CALL TO ACTION */}
+      <div className="cloudmicont__ctaBox">
+        <h3>Ready to Modernize Your Infrastructure?</h3>
+        <p>Get a free migration assessment—see your timeline and cost upfront.</p>
+        <a href="/contact" className="cloudmicont__ctaBtn">Contact Us →</a>
+      </div>
+
+      {/* FAQ SECTION */}
       <div className="cloudmicont__faq">
         <h2>Frequently Asked Questions</h2>
-
-        {[0, 1, 2, 3].map((item, i) => (
+        {faqData.map((item, i) => (
           <div key={i} className="cloudmicont__faqItem">
-            <div className="cloudmicont__faqHeader" onClick={() => toggle(i)}>
-              <span>
-                {i === 0 && "What is CloudXSecure cloud migration service?"}
-                {i === 1 &&
-                  "Is CloudX secure migration safe for sensitive data?"}
-                {i === 2 &&
-                  "What IT management support does CloudxSecure provide after migration?"}
-                {i === 3 && "How long does Cloudxsecure migration take?"}
-              </span>
-
+            <div
+              className="cloudmicont__faqHeader"
+              onClick={() => toggle(i)}
+              role="button"
+              tabIndex={0}
+            >
+              <span>{item.question}</span>
               <FiPlus
                 className={`cloudmicont__plus ${active === i ? "active" : ""}`}
               />
@@ -113,19 +147,7 @@ const CloudMigrationCont = () => {
             <div
               className={`cloudmicont__faqBody ${active === i ? "open" : ""}`}
             >
-              <p>
-                {i === 0 &&
-                  "Cloudxsecure cloud migration service helps businesses move applications, data, and infrastructure from on-premise or legacy systems to a secure and scalable cloud environment with minimal downtime."}
-
-                {i === 1 &&
-                  "Yes, CloudX secure uses advanced encryption, secure transfer protocols, and continuous monitoring to ensure all sensitive data is protected during and after migration."}
-
-                {i === 2 &&
-                  "CloudxSecure provides complete IT management support including server monitoring, performance optimization, backup management, disaster recovery, and 24/7 technical assistance after migration."}
-
-                {i === 3 &&
-                  "Cloudxsecure migration timelines depend on the size and complexity of your infrastructure, but our optimized process ensures fast, efficient, and low-risk migration with minimal disruption."}
-              </p>
+              <p>{item.answer}</p>
             </div>
           </div>
         ))}

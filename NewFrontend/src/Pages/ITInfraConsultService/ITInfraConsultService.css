@@ -1,0 +1,32 @@
+.itinfraconsultservice {
+  padding: 0;
+}
+
+/* Spacing below breadcrumb */
+.itinfraconsultservice__container {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.itinfraconsultservice__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .itinfraconsultservice__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .itinfraconsultservice__right {
+    order: -1;
+  }
+
+  .itinfraconsultservice__container {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+}

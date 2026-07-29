@@ -2,17 +2,28 @@
   width: 100%;
 }
 
-/* IMAGE */
+/* HERO SECTION & H1 */
+.cloudmicont__hero {
+  margin-bottom: 20px;
+}
+
 .cloudmicont__imageWrap img {
   width: 100%;
   border-radius: 20px;
 }
 
-/* TITLE */
-.cloudmicont__title {
-  font-size: 34px;
+.cloudmicont__h1 {
+  font-size: 38px;
   font-weight: 700;
-  margin: 30px 0 15px;
+  margin: 25px 0 10px;
+  color: #0f172a;
+}
+
+/* SECTION TITLES & HEADINGS */
+.cloudmicont__title {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 20px 0 15px;
   color: #0f172a;
 }
 
@@ -24,17 +35,20 @@
   max-width: 95%;
 }
 
-/* CARDS */
+/* CARDS GRID */
 .cloudmicont__cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
-  margin: 50px 0;
+  margin: 40px 0;
 }
 
-.cloudmicont__cards p{
-   text-align: justify;
+.cloudmicont__cards p {
+  text-align: justify;
+  color: #6b7280;
+  line-height: 1.7;
 }
+
 .cloudmicont__card {
   background: #f9fafb;
   padding: 30px;
@@ -47,15 +61,32 @@
   transform: translateY(-4px);
 }
 
-/* LEFT CARD */
 .cloudmicont__card h3 {
   font-size: 22px;
   margin-bottom: 12px;
+  color: #0f172a;
+}
+
+/* LISTS INSIDE CARDS */
+.cloudmicont__processList {
+  margin-top: 15px;
+  padding-left: 20px;
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+.cloudmicont__processList li {
+  margin-bottom: 10px;
+}
+
+.cloudmicont__processList strong {
+  color: #0f172a;
 }
 
 .cloudmicont__list {
   margin-top: 18px;
-  margin-left: -45px;
+  list-style: none;
+  padding-left: 0;
 }
 
 .cloudmicont__list li {
@@ -63,16 +94,18 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
-  font-weight: 800;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: left;
 }
 
-/* EXACT ORANGE ARROW */
+/* ORANGE ARROW */
 .cloudmicont__arrow {
   color: #ff5c35;
   font-size: 18px;
 }
 
-/* RIGHT CARD */
+/* HIGHLIGHT CARD */
 .cloudmicont__card--highlight {
   text-align: center;
 }
@@ -82,13 +115,121 @@
   margin-bottom: 12px;
 }
 
-/* FAQ */
+/* CASE STUDY SECTION */
+.cloudmicont__casestudy {
+  background: #f9fafb;
+  border: 1px solid #eee;
+  border-left: 4px solid #ff5c35;
+  padding: 25px 30px;
+  border-radius: 14px;
+  margin: 40px 0;
+}
+
+.cloudmicont__casestudy h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.cloudmicont__quote {
+  margin: 0;
+  padding: 0;
+}
+
+.cloudmicont__quote p {
+  color: #6b7280;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* INTERNAL LINKS / NAVIGATION */
+.cloudmicont__servicesNav {
+  margin: 40px 0;
+}
+
+.cloudmicont__servicesNav h3 {
+  font-size: 22px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.cloudmicont__servicesNav p {
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.cloudmicont__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cloudmicont__links a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f9fafb;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.cloudmicont__links a:hover {
+  background: #ff5c35;
+  color: #ffffff;
+  border-color: #ff5c35;
+}
+
+/* CALL TO ACTION (CTA) */
+.cloudmicont__ctaBox {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cloudmicont__ctaBox h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.cloudmicont__ctaBox p {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.cloudmicont__ctaBtn {
+  display: inline-block;
+  background: #ff5c35;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cloudmicont__ctaBtn:hover {
+  background: #e04b27;
+  transform: translateY(-2px);
+}
+
+/* FAQ SECTION */
+.cloudmicont__faq {
+  margin-top: 40px;
+}
+
 .cloudmicont__faq h2 {
   font-size: 30px;
   margin-bottom: 25px;
+  color: #0f172a;
 }
 
-/* FAQ ITEM */
 .cloudmicont__faqItem {
   background: #f9fafb;
   border-radius: 14px;
@@ -97,17 +238,16 @@
   border: 1px solid #eee;
 }
 
-/* HEADER */
 .cloudmicont__faqHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 20px;
   font-weight: 600;
+  color: #0f172a;
   cursor: pointer;
 }
 
-/* PLUS ICON */
 .cloudmicont__plus {
   font-size: 20px;
   color: #ff5c35;
@@ -118,7 +258,6 @@
   transform: rotate(45deg);
 }
 
-/* BODY (SMOOTH ANIMATION) */
 .cloudmicont__faqBody {
   max-height: 0;
   overflow: hidden;
@@ -134,9 +273,10 @@
 .cloudmicont__faqBody p {
   color: #6b7280;
   line-height: 1.7;
+  margin: 0;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE DESIGN */
 @media (max-width: 992px) {
   .cloudmicont__cards {
     grid-template-columns: 1fr;
@@ -144,12 +284,24 @@
 }
 
 @media (max-width: 768px) {
+  .cloudmicont__h1 {
+    font-size: 30px;
+  }
+
   .cloudmicont__title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .cloudmicont__faq h2 {
     font-size: 24px;
+  }
+
+  .cloudmicont__ctaBox {
+    padding: 25px 20px;
+  }
+
+  .cloudmicont__ctaBox h3 {
+    font-size: 22px;
   }
 }
 
@@ -160,5 +312,13 @@
 
   .cloudmicont__faqHeader {
     font-size: 14px;
+  }
+
+  .cloudmicont__links {
+    flex-direction: column;
+  }
+
+  .cloudmicont__links a {
+    text-align: center;
   }
 }

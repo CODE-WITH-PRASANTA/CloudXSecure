@@ -1,18 +1,18 @@
-.managecloudcont {
+.awsconsultcont {
   width: 100%;
 }
 
 /* HERO SECTION & H1 */
-.managecloudcont__hero {
+.awsconsultcont__hero {
   margin-bottom: 20px;
 }
 
-.managecloudcont__imageWrap img {
+.awsconsultcont__imageWrap img {
   width: 100%;
   border-radius: 20px;
 }
 
-.managecloudcont__h1 {
+.awsconsultcont__h1 {
   font-size: 38px;
   font-weight: 700;
   margin: 25px 0 10px;
@@ -20,7 +20,7 @@
 }
 
 /* SECTION TITLES & HEADINGS */
-.managecloudcont__title {
+.awsconsultcont__title {
   font-size: 30px;
   font-weight: 700;
   margin: 20px 0 15px;
@@ -28,7 +28,7 @@
 }
 
 /* TEXT */
-.managecloudcont__text {
+.awsconsultcont__text {
   color: #6b7280;
   line-height: 1.8;
   margin-bottom: 15px;
@@ -36,20 +36,20 @@
 }
 
 /* CARDS GRID */
-.managecloudcont__cards {
+.awsconsultcont__cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
   margin: 40px 0;
 }
 
-.managecloudcont__cards p {
+.awsconsultcont__cards p {
   text-align: justify;
   color: #6b7280;
   line-height: 1.7;
 }
 
-.managecloudcont__card {
+.awsconsultcont__card {
   background: #f9fafb;
   padding: 30px;
   border-radius: 18px;
@@ -57,24 +57,24 @@
   transition: 0.3s;
 }
 
-.managecloudcont__card:hover {
+.awsconsultcont__card:hover {
   transform: translateY(-4px);
 }
 
-.managecloudcont__card h3 {
+.awsconsultcont__card h3 {
   font-size: 22px;
   margin-bottom: 12px;
   color: #0f172a;
 }
 
 /* LISTS INSIDE CARDS */
-.managecloudcont__list {
+.awsconsultcont__list {
   margin-top: 18px;
   list-style: none;
   padding-left: 0;
 }
 
-.managecloudcont__list li {
+.awsconsultcont__list li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -84,30 +84,30 @@
   line-height: 1.6;
 }
 
-.managecloudcont__list li strong {
+.awsconsultcont__list li strong {
   color: #0f172a;
 }
 
 /* ORANGE ARROW */
-.managecloudcont__arrow {
+.awsconsultcont__arrow {
   color: #ff5c35;
   font-size: 18px;
   line-height: 1;
 }
 
 /* HIGHLIGHT CARD */
-.managecloudcont__card--highlight {
+.awsconsultcont__card--highlight {
   text-align: left;
 }
 
-.managecloudcont__customIcon {
+.awsconsultcont__customIcon {
   width: 55px;
   margin-bottom: 12px;
   display: block;
 }
 
 /* WHY US SECTION */
-.managecloudcont__whyUs {
+.awsconsultcont__whyUs {
   background: #f9fafb;
   border: 1px solid #eee;
   border-left: 4px solid #ff5c35;
@@ -116,46 +116,46 @@
   margin: 40px 0;
 }
 
-.managecloudcont__whyUs h2 {
+.awsconsultcont__whyUs h2 {
   font-size: 24px;
   color: #0f172a;
   margin-bottom: 12px;
 }
 
-.managecloudcont__quote {
+.awsconsultcont__quote {
   margin: 0;
   padding: 0;
 }
 
-.managecloudcont__quote p {
+.awsconsultcont__quote p {
   color: #6b7280;
   line-height: 1.8;
   margin: 0;
 }
 
 /* INTERNAL LINKS / NAVIGATION */
-.managecloudcont__servicesNav {
+.awsconsultcont__servicesNav {
   margin: 40px 0;
 }
 
-.managecloudcont__servicesNav h3 {
+.awsconsultcont__servicesNav h3 {
   font-size: 22px;
   color: #0f172a;
   margin-bottom: 8px;
 }
 
-.managecloudcont__servicesNav p {
+.awsconsultcont__servicesNav p {
   color: #6b7280;
   margin-bottom: 15px;
 }
 
-.managecloudcont__links {
+.awsconsultcont__links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.managecloudcont__links a {
+.awsconsultcont__links a {
   display: inline-block;
   padding: 8px 16px;
   background: #f9fafb;
@@ -168,14 +168,14 @@
   transition: 0.3s;
 }
 
-.managecloudcont__links a:hover {
+.awsconsultcont__links a:hover {
   background: #ff5c35;
   color: #ffffff;
   border-color: #ff5c35;
 }
 
 /* CALL TO ACTION (CTA) */
-.managecloudcont__ctaBox {
+.awsconsultcont__ctaBox {
   background: #0f172a;
   color: #ffffff;
   padding: 35px;
@@ -184,17 +184,17 @@
   margin: 40px 0;
 }
 
-.managecloudcont__ctaBox h3 {
+.awsconsultcont__ctaBox h3 {
   font-size: 26px;
   margin-bottom: 10px;
 }
 
-.managecloudcont__ctaBox p {
+.awsconsultcont__ctaBox p {
   color: #94a3b8;
   margin-bottom: 20px;
 }
 
-.managecloudcont__ctaBtn {
+.awsconsultcont__ctaBtn {
   display: inline-block;
   background: #ff5c35;
   color: #ffffff;
@@ -205,23 +205,23 @@
   transition: 0.3s;
 }
 
-.managecloudcont__ctaBtn:hover {
+.awsconsultcont__ctaBtn:hover {
   background: #e04b27;
   transform: translateY(-2px);
 }
 
 /* FAQ SECTION */
-.managecloudcont__faq {
+.awsconsultcont__faq {
   margin-top: 40px;
 }
 
-.managecloudcont__faq h2 {
+.awsconsultcont__faq h2 {
   font-size: 30px;
   margin-bottom: 25px;
   color: #0f172a;
 }
 
-.managecloudcont__faqItem {
+.awsconsultcont__faqItem {
   background: #f9fafb;
   border-radius: 14px;
   margin-bottom: 14px;
@@ -229,7 +229,7 @@
   border: 1px solid #eee;
 }
 
-.managecloudcont__faqHeader {
+.awsconsultcont__faqHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -239,29 +239,29 @@
   cursor: pointer;
 }
 
-.managecloudcont__plus {
+.awsconsultcont__plus {
   font-size: 20px;
   color: #ff5c35;
   transition: 0.3s;
 }
 
-.managecloudcont__plus.active {
+.awsconsultcont__plus.active {
   transform: rotate(45deg);
 }
 
-.managecloudcont__faqBody {
+.awsconsultcont__faqBody {
   max-height: 0;
   overflow: hidden;
   transition: all 0.4s ease;
   padding: 0 20px;
 }
 
-.managecloudcont__faqBody.open {
+.awsconsultcont__faqBody.open {
   max-height: 200px;
   padding: 10px 20px 20px;
 }
 
-.managecloudcont__faqBody p {
+.awsconsultcont__faqBody p {
   color: #6b7280;
   line-height: 1.7;
   margin: 0;
@@ -269,47 +269,47 @@
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 992px) {
-  .managecloudcont__cards {
+  .awsconsultcont__cards {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .managecloudcont__h1 {
+  .awsconsultcont__h1 {
     font-size: 30px;
   }
 
-  .managecloudcont__title {
+  .awsconsultcont__title {
     font-size: 24px;
   }
 
-  .managecloudcont__faq h2 {
+  .awsconsultcont__faq h2 {
     font-size: 24px;
   }
 
-  .managecloudcont__ctaBox {
+  .awsconsultcont__ctaBox {
     padding: 25px 20px;
   }
 
-  .managecloudcont__ctaBox h3 {
+  .awsconsultcont__ctaBox h3 {
     font-size: 22px;
   }
 }
 
 @media (max-width: 480px) {
-  .managecloudcont__card {
+  .awsconsultcont__card {
     padding: 20px;
   }
 
-  .managecloudcont__faqHeader {
+  .awsconsultcont__faqHeader {
     font-size: 14px;
   }
 
-  .managecloudcont__links {
+  .awsconsultcont__links {
     flex-direction: column;
   }
 
-  .managecloudcont__links a {
+  .awsconsultcont__links a {
     text-align: center;
   }
 }

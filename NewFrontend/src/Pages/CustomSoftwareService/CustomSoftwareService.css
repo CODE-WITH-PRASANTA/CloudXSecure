@@ -1,0 +1,32 @@
+.customsoftwareservice {
+  padding: 0;
+}
+
+/* Spacing below breadcrumb */
+.customsoftwareservice__container {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.customsoftwareservice__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .customsoftwareservice__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customsoftwareservice__right {
+    order: -1;
+  }
+
+  .customsoftwareservice__container {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+}
