@@ -1,5 +1,5 @@
 import React from "react";
-import "./contactMainPage.css";
+import "./ContactMainPage.css";
 
 import bg from "../../assets/contact-bg-1.png";
 import API from "../../api/axios";
