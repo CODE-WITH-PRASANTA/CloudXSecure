@@ -21,8 +21,8 @@ const Navbar = () => {
   ];
 
   const developmentLinks = [
-    { title: "Web Development", path: "/web-development" },
-    { title: "App Development", path: "/app-development" },
+    { title: "Web Development", path: "/services/web-development" },
+    { title: "App Development", path: "/services/mobile-app-development" },
   ];
 
   const goTo = (path) => {

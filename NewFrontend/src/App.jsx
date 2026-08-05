@@ -66,9 +66,6 @@ function App() {
         <Route path="/service/details" element={<ServiceDetails />} />
 
         {/* SERVICES */}
-
-
-
         <Route path="/services/migration" element={<CloudMigration />} />
         <Route path="/services/cloud-security" element={<CloudSecurity />} />
         <Route path="/services/managed-cloud" element={<ManageCloud />} />
@@ -80,15 +77,6 @@ function App() {
         <Route path="/services/ai-development" element={<AIDevService />} />
         <Route path="/services/custom-software-development" element={<CustomSoftwareService />} />
         <Route path="/services/it-infrastructure-consulting" element={<ITInfraConsultService />} />
-
-
-
-
-
-
-
-
- 
 
       </Routes>
 

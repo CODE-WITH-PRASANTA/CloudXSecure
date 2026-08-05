@@ -20,14 +20,12 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const app = express();
 
 /* ================= CORS ================= */
-import cors from "cors";
-
 app.use(
   cors({
     origin: [
       "https://admin.cloudxsecure.com",
       "https://cloudxsecure.com",
-      "https://backend.cloudxsecure.com", // ✅ added
+      "https://backend.cloudxsecure.com",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
