@@ -64,7 +64,7 @@ const ServicesCompany = () => {
     {
       title: "AZURE CONSULTING",
       path: "/services/azure-consulting",
-      desc: "CloudXSecure delivers result-driven digital marketing services to boost your online visibility and ROI. Our expertise includes SEO optimization, Google Ads, social media marketing, content marketing, and performance analytics. Using tools like Google Analytics, SEMrush, and Meta Ads Manager, we create targeted campaigns that drive traffic, generate leads, and improve brand authority across digital platforms.",
+      desc: "CloudXSecure delivers expert Microsoft Azure consulting services to help businesses design, deploy, and optimize their cloud infrastructure. Our expertise includes Azure architecture design, cloud migration, cost optimization, security configuration, and DevOps automation. Using tools like Azure Resource Manager, Azure DevOps, and Azure Monitor, we help businesses build scalable, secure, and cost-efficient cloud environments tailored to their specific needs",
       img: digi,
       icon: <HiOutlineChartBarSquare />,
     },
