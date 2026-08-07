@@ -6,12 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Title (UPDATED) -->
+    <!-- Google Tag (gtag.js) - Google Ads: AW-18136967329 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18136967329"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Primary Tag Initialization
+      gtag('config', 'AW-18136967329');
+
+      // Global Helper Functions for Click & Form Event Tracking
+      function trackPhoneClick(url) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18136967329',
+          'event_category': 'Contact',
+          'event_label': 'Phone Call Click',
+          'event_callback': function() {
+            if (url) window.location = url;
+          }
+        });
+        return false;
+      }
+
+      function trackWhatsAppClick(url) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18136967329',
+          'event_category': 'Contact',
+          'event_label': 'WhatsApp Click',
+          'event_callback': function() {
+            if (url) window.open(url, '_blank');
+          }
+        });
+        return false;
+      }
+
+      function trackFormSubmission() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18136967329',
+          'event_category': 'Lead',
+          'event_label': 'Contact Form Submit'
+        });
+      }
+    </script>
+
+    <!-- Title -->
     <title>
       CloudXSecure | Cloud Security, AWS, DevOps & Managed Cloud Services
     </title>
 
-    <!-- Primary SEO Description (UPDATED) -->
+    <!-- Primary SEO Description -->
     <meta
       name="description"
       content="CloudXSecure offers cloud security, AWS/Azure consulting, DevOps, cloud migration, and managed cloud services for businesses across Mumbai and beyond"
@@ -59,7 +103,7 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#0a0f2c" />
 
-    <!-- Structured Data (UPDATED Schema.org to ProfessionalService) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
