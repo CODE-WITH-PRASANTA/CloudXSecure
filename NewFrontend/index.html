@@ -8,57 +8,79 @@
 
     <!-- Google Tag (gtag.js) - Google Ads: AW-18136967329 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18136967329"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
       gtag('js', new Date());
 
-      // Primary Tag Initialization
+      // Base Google Ads tag
       gtag('config', 'AW-18136967329');
 
-      // Global Helper Functions for Click & Form Event Tracking
-      function trackPhoneClick(url) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-18136967329',
-          'event_category': 'Contact',
-          'event_label': 'Phone Call Click',
-          'event_callback': function() {
-            if (url) window.location = url;
-          }
-        });
-        return false;
-      }
+      // =====================================
+      // CONTACT FORM CONVERSION
+      // =====================================
+      window.trackContactConversion = function (leadId) {
+        if (typeof window.gtag !== 'function') {
+          console.warn('Google Ads gtag not available');
+          return;
+        }
 
-      function trackWhatsAppClick(url) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-18136967329',
-          'event_category': 'Contact',
-          'event_label': 'WhatsApp Click',
-          'event_callback': function() {
-            if (url) window.open(url, '_blank');
-          }
+        window.gtag('event', 'conversion', {
+          // TODO: Replace YOUR_CONTACT_CONVERSION_LABEL with your actual label
+          send_to: 'AW-18136967329/YOUR_CONTACT_CONVERSION_LABEL',
+          transaction_id: leadId ? String(leadId) : undefined
         });
-        return false;
-      }
 
-      function trackFormSubmission() {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-18136967329',
-          'event_category': 'Lead',
-          'event_label': 'Contact Form Submit'
+        console.log('[Google Ads] Contact conversion fired', {
+          leadId: leadId
         });
-      }
+      };
+
+      // =====================================
+      // PHONE CLICK - Analytics Event
+      // =====================================
+      window.trackPhoneClick = function (url) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'phone_click', {
+            event_category: 'Contact',
+            event_label: 'Phone Call Click'
+          });
+        }
+
+        if (url) {
+          window.location.href = url;
+        }
+      };
+
+      // =====================================
+      // WHATSAPP CLICK - Analytics Event
+      // =====================================
+      window.trackWhatsAppClick = function (url) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'whatsapp_click', {
+            event_category: 'Contact',
+            event_label: 'WhatsApp Click'
+          });
+        }
+
+        if (url) {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }
+      };
     </script>
 
     <!-- Title -->
-    <title>
-      CloudXSecure | Cloud Security, AWS, DevOps & Managed Cloud Services
-    </title>
+    <title>CloudXSecure | Cloud Security, AWS, DevOps & Managed Cloud Services</title>
 
     <!-- Primary SEO Description -->
     <meta
       name="description"
-      content="CloudXSecure offers cloud security, AWS/Azure consulting, DevOps, cloud migration, and managed cloud services for businesses across Mumbai and beyond"
+      content="CloudXSecure offers cloud security, AWS/Azure consulting, DevOps, cloud migration, and managed cloud services for businesses across Mumbai and beyond."
     />
 
     <!-- SEO Keywords -->
@@ -75,7 +97,7 @@
     <link rel="canonical" href="https://cloudxsecure.com/" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./src/assets/Favicons.webp" />
+    <link rel="icon" type="image/webp" href="/Favicons.webp" />
 
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website" />
